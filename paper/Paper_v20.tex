@@ -19,6 +19,15 @@
 \usepackage{xcolor}
 % lineno removed: no margin line numbers in any build
 \usepackage{float}
+% LaTeX's defaults are cautious: a page carrying a float must still be a fifth text, and
+% floats filling half a page justify a page of their own. In a document this figure-heavy
+% that ends pages early and makes lonely float pages. Loosen all four so a float shares a
+% page with whatever text is going, and so a float page has to be nearly full to be worth
+% making.
+\renewcommand{\textfraction}{0.10}
+\renewcommand{\topfraction}{0.90}
+\renewcommand{\bottomfraction}{0.60}
+\renewcommand{\floatpagefraction}{0.75}
 \usepackage{multirow}
 \usepackage{array}
 \usepackage{tabularx}

@@ -35,7 +35,9 @@ tests that carry the paper's hydrogen findings
 of Figure~\ref{fig:architecture} sets out the three input layers that feed the pipeline
 and the policy frame they run inside.
 
-\begin{figure}[tbp]
+% [H] like every other figure here. As [tbp] this one floated onto a page of its own and
+% was spread down it, leaving a quarter of page 34 blank above and below.
+\begin{figure}[H]
     \centering
     \caption{Model architecture. Inputs, the demand reconstruction and the scenario
     draws feed three tests applied in order, and a technology that fails an earlier test
@@ -62,7 +64,11 @@ across the EU-27, Switzerland and the United Kingdom, totalling
 is steep and is driven jointly by climate severity and population density, as
 Figure~\ref{fig:nuts3map} shows.
 
-\begin{figure}[H]
+% Full text width plus a long caption, so it cannot fit under the seven lines of prose
+% that introduce it. Held there by [H] it broke the page early and left two thirds of
+% page 35 blank. Allowed to float, it takes the top of the next page and the prose that
+% follows fills the gap.
+\begin{figure}[htbp]
     \centering
     \caption{Useful residential heat demand by NUTS3 region (bottom-up build). The colour scale is logarithmic and runs from 0.3 to 12~TWh/yr, decade-friendly bounds close to the 2nd and 98th percentiles of the 1{,}359 regions the map draws, which are 0.36 and 10.2; the arrowheads mark the 1.0~per cent that fall below the range and the 1.4~per cent above it. The darkest regions are metropolitan. Rome, Nord, Naples, Turin, Milan, Stockholm, Paris, Madrid, Warsaw, Barcelona and Berlin lead the distribution, and within France the eight darkest are Lille, Paris, the Lens and Arras belt, Bordeaux, Marseille, Lyon, Nantes and Grenoble.}
     \includegraphics[width=\textwidth]{paper/P01_nuts3_map.pdf}
