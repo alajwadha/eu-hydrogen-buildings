@@ -1,0 +1,310 @@
+# Country configuration: Croatia (HR)
+# ======================================
+# All Croatia-specific parameters for the building-stock pipeline
+# (scripts 01-04 in code/scripts/country_build/). Sourced and cited inline;
+# methodology in literature/croatia/classification_methodology.md.
+#
+# Schema version: 1 (matches code/src/CountryConfig.py SCHEMA_VERSION).
+#
+# STATUS: DRAFT -- Croatia is NOT a TABULA country. Slovenia (SI) is used as
+# the climate-corrected TABULA proxy (shared Yugoslav-era building stock).
+# Build group 2 (IT + SI, HR, MT).
+
+country_code: HR
+country_name: Croatia
+
+# -- EUBUCCO data source -----------------------------------------------------
+# EUBUCCO v0.2 partitions buildings by NUTS2 region (NUTS 2016 vintage). Under
+# NUTS 2016 Croatia had 2 NUTS2 regions: HR03 Jadranska (Adriatic/coastal) and
+# HR04 Kontinentalna (continental, incl. Zagreb). The 4-region split into
+# HR02/HR03/HR05/HR06 only came with NUTS 2021 and post-dates EUBUCCO's
+# geometry base.
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - HR03   # Jadranska Hrvatska (Adriatic Croatia)
+    - HR04   # Kontinentalna Hrvatska (Continental Croatia)
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  # Citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1.
+  # Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2.
+  license: ODbL v1.0
+  # EUBUCCO area-correction factor (applied 2026-05-20).
+  # The G2 Colab build landed HR at 30.23 TWh vs Hotmaps 18.23 = +65.8 % INV.
+  # The earlier audit (inv_countries_academic_refinements.md, pre-Correction 7)
+  # hypothesised this was an INTENSITY-layer problem requiring a region-split
+  # proxy (HR03 Adriatic <- IT, HR04 continental <- SI) and asserted HR EUBUCCO
+  # area was "likely UNDER-counted (low rural OSM coverage)". DIRECT MEASUREMENT
+  # REFUTES THAT: HR EUBUCCO residential heated_floor_area = 315.4 Mm^2, but
+  # the Croatian census records far less actual stock.
+  #
+  # DZS (Drzavni zavod za statistiku) 2021 Census of Population, Households
+  # and Dwellings:
+  #   1,433,445 occupied dwellings x 92 m^2 mean useful area = 131.9 Mm^2
+  #   + ~0.93 M temporarily-unoccupied / seasonal / holiday dwellings
+  #     (Croatia's coastal second-home stock; temporarily-unoccupied rose
+  #     43 % vs 2011 per DZS) x ~60 m^2 = ~55.6 Mm^2
+  #   = ~187.5 Mm^2 total residential floor area.
+  # Correction = 187.5 / 315.4 = 0.594 ~ 0.59.
+  #
+  # This places HR in the same EUBUCCO area over-count family as EE/LT/AT/
+  # DK/IE/HU (Correction 7): the footprint x floors x useable_fraction
+  # construction roughly doubles the census-implied stock. The region-split
+  # proxy remains a valid SECOND-ORDER intensity-layer refinement (the SI
+  # proxy over-states the warm Adriatic HR03 coastal stock), but it is no
+  # longer required for Hotmaps reconciliation once the area layer is fixed.
+  #
+  # Source: DZS Croatia, 2021 Census (Dwellings results).
+  #   https://dzs.gov.hr/news/number-of-occupied-dwellings-decreases-by-4-2-number-of-temporarily-unoccupied-dwellings-increases-by-43/1734
+  # MECHANISM (clarified 2026-05-21): imputed-floor area over-count.
+  # EUBUCCO HR observed-height share is 1% (Milojevic-Dupont 2023,
+  # Table 1); floors -- hence floor area -- are ML-imputed even though the
+  # footprints are cadastre-sourced. The correction calibrates the imputed
+  # area to the census. See literature/eubucco_census_area_audit.md
+  # (Mechanism A).
+  area_correction: 0.59
+  area_correction_source: |
+    DZS Croatia 2021 Census: 1,433,445 occupied dwellings x 92 m^2 =
+    131.9 Mm^2 + ~0.93 M unoccupied/seasonal x ~60 m^2 = ~55.6 Mm^2;
+    total ~187.5 Mm^2. EUBUCCO HR total: 315.4 Mm^2. Correction =
+    187.5/315.4 = 0.594. Refutes the prior audit claim of HR area
+    under-count; HR joins the EUBUCCO area over-count cluster. Region-
+    split (HR03<-IT, HR04<-SI) remains a second-order intensity refinement.
+
+# -- NUTS3 regions -----------------------------------------------------------
+# Croatia has 21 NUTS3 regions (counties / zupanije). The codes below are the
+# NUTS 2021 vintage (from the repo GISCO file). VINTAGE CAVEAT: EUBUCCO v0.2
+# uses NUTS 2016, where the counties were coded under HR03x/HR04x; the NUTS3
+# code prefixes changed at the 2021 revision. 02_classify.py assigns buildings
+# to NUTS3 by spatial join / EUBUCCO region_id, so the join is robust to the
+# code-vintage difference. Flagged NEEDS_VERIFY in _meta. EUBUCCO documentation
+# flags Croatia as a low-coverage country (sparse construction-year attribute).
+nuts3_regions:
+  - HR021
+  - HR022
+  - HR023
+  - HR024
+  - HR025
+  - HR026
+  - HR027
+  - HR028
+  - HR031
+  - HR032
+  - HR033
+  - HR034
+  - HR035
+  - HR036
+  - HR037
+  - HR050   # Grad Zagreb (City of Zagreb)
+  - HR061
+  - HR062
+  - HR063
+  - HR064
+  - HR065
+
+# -- Geographic bounding box (WGS84) -----------------------------------------
+bbox_wgs84:
+  lon_min: 13.00
+  lat_min: 41.62
+  lon_max: 19.43
+  lat_max: 46.54
+
+# -- TABULA building typology source -----------------------------------------
+# Croatia is NOT a TABULA country. Slovenia (SI) is used as the TABULA proxy.
+#
+# Croatia uses Slovenia TABULA as proxy because:
+#   1. Croatia and Slovenia were both Yugoslav republics until 1991 and share
+#      the same socialist-era multi-family apartment-block construction system
+#      (1960s-1980s estates), comparable post-war detached masonry SFH, and the
+#      same building-code lineage of the period.
+#   2. Of the TABULA countries, Slovenia is the closest single-country analogue
+#      to Croatia's continental, multi-family-heavy stock. Italy (too warm) and
+#      Austria (too cold, alpine) are weaker fits; Serbia is a secondary
+#      cross-check but is not in Eurostat HDD data.
+#   3. Croatia is warmer than Slovenia, so the climate correction is below 1.0.
+# See literature/croatia/classification_methodology.md.
+# Extraction: code/data/raw/tabula/si_intensities.csv (shared with Slovenia).
+tabula:
+  source_country: SI
+  source_country_name: Slovenia
+  intensities_file: code/data/raw/tabula/si_intensities.csv
+  reason_for_proxy: |
+    Croatia has no national TABULA typology. Slovenia is the closest TABULA
+    country: shared Yugoslav-era socialist multi-family construction tradition
+    and comparable continental building stock. Croatian heat intensities are
+    Slovenia-derived, climate-corrected by the HDD_HR/HDD_SI ratio (0.8161) --
+    Croatia is warmer than Slovenia. This SI national proxy remains the
+    fallback / default-region treatment; the region_split below refines the
+    Adriatic coast (see region_split_source).
+
+  # Climate-based region split (NUTS3). Croatia's stock is climatically
+  # bifurcated: the Adriatic coast is Mediterranean (Koppen Csa), the interior
+  # is continental (Cfb/Dfb). A single SI national proxy mis-models the warm
+  # coastal Dalmatian/Istrian stock. The Dalmatian + Istrian NUTS3 regions are
+  # therefore drawn from the ITALIAN Mediterranean TABULA (scaled to the
+  # coastal HDD), the remaining interior regions from the SLOVENIAN TABULA.
+  # NOT YET WIRED into 03_heat_intensity.py (schema + config land first; the
+  # NUTS3-aware build merge is the next code step -- see
+  # literature/tier1_tier2_modelling_extensions.md). Until then the default SI
+  # proxy above is used for the whole country.
+  region_split:
+    default_region: interior
+    regions:
+      coastal:
+        file: code/data/raw/tabula/it_intensities.csv
+        source_country: IT
+        # HR coastal mean HDD ~1300 (Eurostat nrg_chddr2_a NUTS3: Split-Dalmatia
+        # ~1289, Dubrovnik-Neretva ~1104, Istria/Sibenik/Zadar ~1300-1500) over
+        # the Italian TABULA Middle-zone reference HDD ~2500 -> 1300/2500.
+        climate_multiplier: 0.52
+        nuts3: [HR033, HR034, HR035, HR036, HR037]   # Zadar, Sibenik-Knin, Split-Dalmatia, Istria, Dubrovnik-Neretva
+      interior:
+        file: code/data/raw/tabula/si_intensities.csv
+        source_country: SI
+        # HR interior mean HDD ~2150 (Eurostat nrg_chddr2_a NUTS3: Zagreb ~2085,
+        # Osijek-Baranja ~2073, Varazdin ~2266) over SI national HDD 2693.3
+        # -> 2150/2693 ~ 0.80. HR031 (Primorsko-goranska/Gorski Kotar) and
+        # HR032 (Lika-Senj) are assigned to interior despite a coastal strip,
+        # because their large cold mountainous hinterlands behave continentally
+        # (flagged caveat; revisit with a sub-county population-weighted split).
+        climate_multiplier: 0.80
+        nuts3: [HR021, HR022, HR023, HR024, HR025, HR026, HR027, HR028,
+                HR031, HR032, HR050, HR061, HR062, HR063, HR064, HR065]
+  region_split_source: |
+    No national TABULA/EPISCOPE typology exists for Croatia (absent from the
+    EPISCOPE country list), so a climate-matched neighbour split is used.
+    Climate basis: Koppen Csa Adriatic littoral vs Cfb/Dfb interior (Segota &
+    Filipcic regionalisation; Mimic et al. 2024, Atmospheric Science Letters,
+    doi:10.1002/asl.1270). Intensity contrast confirmed by Croatian building
+    regulation (~35 kWh/m2.a coastal vs ~45 continental for new SFH; via
+    Krajcic et al. 2026, MDPI Buildings 16(1):207, doi:10.3390/buildings16010207).
+    NUTS3 HDD from Eurostat nrg_chddr2_a (base 15 C). Coastal dwelling share
+    ~25-28% (the 5 Dalmatian+Istrian counties; 2021 DZS census). Italy TABULA
+    supplies Csa Mediterranean reference buildings; Slovenia the continental
+    neighbour. Multipliers are best-estimate from the cited NUTS3 HDD and MUST
+    be confirmed (and HR reconciliation re-validated) in the Colab build;
+    HR031/HR032 assignment is a flagged judgement.
+
+# -- Climate correction ------------------------------------------------------
+# Source: Eurostat nrg_chdd_a (base 15 C, JRC AGRI4CAST), 5-year mean 2018-2022:
+#   HR annual HDD: 2166.74, 2106.64, 2170.86, 2399.07, 2146.64 -> mean 2197.99
+#   SI annual HDD: 2587.40, 2602.14, 2678.32, 2965.26, 2633.38 -> mean 2693.30
+climate:
+  hdd_country: 2197.99       # HR -- Eurostat nrg_chdd_a 2018-2022 mean
+  hdd_proxy: 2693.30         # SI -- Eurostat nrg_chdd_a 2018-2022 mean
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  climate_multiplier: 0.8161 # 2197.99 / 2693.30
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST), 5-year mean 2018-2022
+
+# -- Retrofit-state distribution ---------------------------------------------
+# Retrofit FACTORS are the Slovenian TABULA typology-averaged refurbishment
+# ratios (Croatia uses the Slovenian proxy). PROVISIONAL pending the
+# si_intensities.csv extraction.
+#
+# Retrofit SHARES are a modelling assumption. Croatia's renovation rate is low
+# (~1 percent/yr; only ~1.5 percent of renovations "medium depth", ~0.1 percent
+# "deep" over 2012-2016). The 0.88/0.10/0.02 split reflects an overwhelmingly
+# original/un-refurbished stock.
+retrofit:
+  share:
+    original: 0.88          # modelling assumption -- see share_source
+    standard: 0.10          # modelling assumption
+    advanced: 0.02          # modelling assumption
+  factor:
+    standard: 0.65          # PROVISIONAL -- Slovenian TABULA standard refurb (proxy)
+    advanced: 0.40          # PROVISIONAL -- Slovenian TABULA advanced refurb (proxy)
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # Computed blend for HR: 0.88 + 0.10x0.65 + 0.02x0.40 = 0.953
+  blend_value: 0.953
+  share_source: |
+    Modelling assumption grounded in the Croatian Long-Term Renovation Strategy
+    and EC renovation-rate data (~1 percent/yr, mostly shallow). Retrofit
+    factors PROVISIONAL pending the si_intensities.csv extraction.
+
+# -- Domestic Hot Water (DHW) intensity --------------------------------------
+dhw:
+  sfh: 20.0
+  mfh: 18.0
+  unit: kWh/m2/yr
+  source: Slovenian TABULA proxy (si_intensities.csv); provisional pending extraction
+
+# -- Non-residential intensity (placeholder) ---------------------------------
+non_residential_intensity:
+  value: 130.0
+  unit: kWh/m2/yr
+  source: estimate -- Croatian non-residential stock space heating
+  status: rough placeholder; contributes 0 TWh (zero heated area); flagged in methodology
+
+# -- External reconciliation benchmarks --------------------------------------
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 18.23            # sum of heat_2015_MWh across all 38 HR NUTS3
+                                #   rows in building_stock_nuts3.csv. All-classes
+                                #   total, per the LU/FR/FI methodology.
+    year: 2015
+    source: Hotmaps Toolbox via building_stock_nuts3.csv; sum across all HR NUTS3 rows
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 188
+    eubucco_mm2: 315
+    census_eubucco_ratio: 0.60
+    source: DZS 2021 (1.433M occupied x 92 m2 + ~0.93M unoccupied/seasonal)
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 15.0             # Order-of-magnitude anchor; the reconciliation
+                                #   BSO row is computed from hr_intensity.csv.
+    year: 2022
+    source: anchored estimate; EU Building Stock Observatory portal not retrievable
+  odyssee_mure:
+    total_twh: 17.2             # Odyssee-Mure HR residential space heating ~1.48
+                                #   Mtoe (2023) ~ 17.2 TWh. Final-energy basis.
+    year: 2023
+    source: Odyssee-Mure Croatia; residential space heating ~1.48 Mtoe
+    note: National total only; final-energy basis -- definitional gap vs Hotmaps useful demand.
+
+# -- Hotmaps NUTS3 ID for model comparison -----------------------------------
+hotmaps_nuts3_id: HR050   # Grad Zagreb (representative reference)
+
+# -- Building classification rules -------------------------------------------
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+  # Rules (sequential, first match wins):
+  # 1. EUBUCCO.type starts with "non-" -> NON_RESIDENTIAL
+  # 2. floors >= 6 AND footprint >= 800 -> MFH_HIGH
+  # 3. floors <= 2 AND footprint < 250  -> SFH
+  # 4. 3 <= floors <= 5                  -> MFH_LOW
+  # 5. default (ambiguous large)         -> MFH_HIGH
+
+# -- Provenance + change log -------------------------------------------------
+_meta:
+  created: 2026-05-19
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 2)
+  last_verified: 2026-05-19
+  schema_version: 1
+  status: DRAFT -- Slovenia-proxy TABULA build; retrofit factors and DHW
+    PROVISIONAL pending the si_intensities.csv extraction.
+  references_doc: literature/croatia/classification_methodology.md
+  verified_2026_05_19:
+    - eubucco.nuts2_partitions (HR03, HR04 -- NUTS 2016)
+    - climate.hdd_country = 2197.99 / hdd_proxy = 2693.30 (Eurostat nrg_chdd_a 2018-2022)
+    - climate.climate_multiplier = 0.8161 (HR/SI HDD ratio)
+    - tabula source = SI (shared si_intensities.csv)
+  needs_verify_summary:
+    - nuts3_regions -- NUTS 2021 codes used; EUBUCCO v0.2 uses NUTS 2016
+      (HR03x/HR04x). The 02_classify.py spatial join handles assignment; spot-
+      check the EUBUCCO HR partition region_id codes.
+    - retrofit factors (0.65/0.40) and DHW (20/18) -- PROVISIONAL; from the
+      Slovenian TABULA proxy, reconcile once si_intensities.csv is extracted.
+    - retrofit shares (0.88/0.10/0.02) -- modelling assumption.
+    - EUBUCCO flags Croatia as a low-coverage country (sparse construction-year
+      attribute) -- expect the result to be fallback-dominated.
+    - non_residential_intensity (130) -- estimate; contributes 0 TWh.
+    - reconciliation_benchmarks.eu_bso -- anchored estimate, BSO portal not retrievable.

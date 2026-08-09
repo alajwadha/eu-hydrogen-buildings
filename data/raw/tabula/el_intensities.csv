@@ -1,0 +1,79 @@
+# TABULA Greece synthetical-average residential building intensities
+#
+# Source: TABULA / EPISCOPE project. The Greek national residential typology
+#   was produced by the National Observatory of Athens (NOA) / NTUA / CRES.
+#   - Country page: episcope.eu/building-typology/country/gr
+#   - Greek TABULA scientific report (NOA):
+#     episcope.eu/fileadmin/tabula/public/docs/scientific/GR_TABULA_ScientificReport_NOA.pdf
+#   - Dascalaki, Balaras et al. (2021), MDPI Applied Sciences 11:14, 6254
+#   - Loga, Stein, Diefenbach (2016). Energy & Buildings 132:4-12.
+#
+# Greece IS a TABULA country -- this is the DIRECT national typology, used
+# without a proxy (tabula.source_country = EL in el.yaml). No climate
+# correction (climate_multiplier = 1.0).
+#
+# CLIMATE ZONE: Greek TABULA defines 4 climate zones (A warmest -- Crete; B --
+# Athens/Patra; C -- Thessaloniki; D coldest -- Florina) per KENAK. The values
+# below are for the reference ZONE B (Athens/Patra), the population-weighted
+# Greek reference.
+#
+# IMPORTANT -- VALUES ARE RESEARCH-SYNTHESISED BEST ESTIMATES, NEEDS_VERIFY
+# ------------------------------------------------------------------------
+# The Greek TABULA full numeric matrix is held in the brochure PDF and the
+# TABULA WebTool, neither machine-extractable. The sh_intensity values below
+# are best estimates from the Greek TABULA range (~56-160 kWh/m2/yr across
+# archetypes) and the Dascalaki/Balaras measured-typology literature. Verify
+# against the TABULA WebTool (country GR, Zone B). Treat as +/-20% uncertainty.
+#
+# Building class mapping (Greek TABULA -> our 3 residential classes):
+#   SFH       <- Greek TABULA SFH (vivienda mono-familiar)
+#   MFH_LOW   <- Greek TABULA MFH (polykatoikia, multi-family)
+#   MFH_HIGH  <- Greek TABULA MFH (same -- the Greek typology has one
+#                multi-family class, so MFH_LOW and MFH_HIGH necessarily carry
+#                identical intensities here -- a documented limitation)
+#   NON_RES   <- not in TABULA; handled separately in 03_heat_intensity.py
+#
+# Cohort mapping (Greek TABULA 3 periods -> our 6 cohorts):
+#   Greek TABULA periods: pre-1980; 1981-2000; 2001-2010
+#   pre-1945    <- Greek TABULA pre-1980 (no further split; uninsulated)
+#   1946-1970   <- Greek TABULA pre-1980 (same period)
+#   1971-1990   <- average of pre-1980 and 1981-2000 (transitional, the 1980
+#                  TOTEE first thermal-insulation regulation straddles)
+#   1991-2010   <- average of 1981-2000 and 2001-2010
+#   2011-2020   <- EXTRAPOLATED using the KENAK-2010 / KENAK-2017 new-build
+#                  standards; FLAGGED
+#   post-2020   <- EXTRAPOLATED -- nZEB; FLAGGED
+#
+# Refurbishment reduction factors (Greek TABULA, typology-averaged):
+#   standard refurbishment ~0.65 of existing-state SH need
+#   advanced refurbishment ~0.35 of existing-state SH need (Exoikonomo deep
+#     retrofits achieve ~65% saving)
+#
+# DHW: Greek TABULA convention ~18 SFH / ~16 MFH.
+#
+# Citations:
+#   Dascalaki E.G., Balaras C.A. et al. (2011). Tabula -- IEE typology approach
+#     to identifying the residential building stock in Greece. NOA / NTUA / CRES.
+#   Dascalaki et al. (2021). Applied Sciences 11(14):6254.
+#   Loga T., Stein B., Diefenbach N. (2016). Energy & Buildings 132:4-12.
+#
+#
+building_class,cohort,sh_intensity_kwh_m2_yr,dhw_intensity_kwh_m2_yr,source_note
+SFH,pre-1945,170,18,"EL TABULA Zone B pre-1980 SFH (uninsulated); ESTIMATE pending WebTool"
+SFH,1946-1970,170,18,"EL TABULA Zone B pre-1980 SFH (same period)"
+SFH,1971-1990,140,18,"avg EL TABULA pre-1980 and 1981-2000 SFH (TOTEE 1980 transition)"
+SFH,1991-2010,80,18,"avg EL TABULA 1981-2000 and 2001-2010 SFH"
+SFH,2011-2020,50,18,"EXTRAPOLATED -- KENAK-2010/2017 new-build standard; FLAGGED"
+SFH,post-2020,30,18,"EXTRAPOLATED -- nZEB; FLAGGED"
+MFH_LOW,pre-1945,115,16,"EL TABULA Zone B pre-1980 MFH (polykatoikia, uninsulated); ESTIMATE"
+MFH_LOW,1946-1970,115,16,"EL TABULA Zone B pre-1980 MFH (same period)"
+MFH_LOW,1971-1990,100,16,"avg EL TABULA pre-1980 and 1981-2000 MFH"
+MFH_LOW,1991-2010,65,16,"avg EL TABULA 1981-2000 and 2001-2010 MFH"
+MFH_LOW,2011-2020,40,16,"EXTRAPOLATED -- KENAK-2010/2017 new-build standard; FLAGGED"
+MFH_LOW,post-2020,25,16,"EXTRAPOLATED -- nZEB; FLAGGED"
+MFH_HIGH,pre-1945,115,16,"EL TABULA Zone B pre-1980 MFH (= MFH_LOW; Greek typology has one MFH class); FLAGGED"
+MFH_HIGH,1946-1970,115,16,"EL TABULA Zone B pre-1980 MFH (= MFH_LOW); FLAGGED limitation"
+MFH_HIGH,1971-1990,100,16,"EL TABULA (= MFH_LOW); FLAGGED limitation"
+MFH_HIGH,1991-2010,65,16,"EL TABULA (= MFH_LOW); FLAGGED limitation"
+MFH_HIGH,2011-2020,40,16,"EXTRAPOLATED (= MFH_LOW); FLAGGED"
+MFH_HIGH,post-2020,25,16,"EXTRAPOLATED (= MFH_LOW); FLAGGED"

@@ -1,0 +1,28 @@
+# EU Building Stock Observatory (BSO) -- Slovakia residential indicators
+#
+# Used by 03_heat_intensity.py for (1) the unknown-cohort stock-weighted
+# fallback intensity (stock_pct_sk column) and (2) the BSO reconciliation row.
+#
+# stock_pct_sk: share of the Slovak residential stock by construction cohort.
+#   Slovakia has a smaller pre-war stock than Czechia, a very large 1971-1990
+#   panelovy dom large-panel era (HK-60; T-06B; BANKS series), and substantial
+#   post-1990 detached-SFH. Distribution approximated from SODB 2021 (Stat. urad
+#   SR; obytne budovy podla obdobia vystavby). Sums to 100. NEEDS_VERIFY exact
+#   SODB 2021 figures.
+#
+# bso_intensity_kwh_m2_yr: BSO-style per-cohort national-average residential
+#   heat intensity (delivered). DERIVED from the Czech-proxy TABULA per-cohort
+#   class-average space-heating need x climate multiplier (0.9382) x retrofit
+#   blend (0.81) + DHW. The EU Building Stock Observatory portal could not be
+#   queried directly; flagged as derived, not an independent BSO query.
+#
+# Source: SODB 2021 (Stat. urad SR); cz_intensities.csv (Czech EPISCOPE proxy);
+#   SFRB Obnova bytoveho domu retrofit shares.
+#
+cohort,stock_pct_sk,bso_intensity_kwh_m2_yr,note
+pre-1945,12,143,"Pre-WWII masonry SFH; mainly rural"
+1946-1970,22,126,"Early socialist; CSN 73 0540 first edition"
+1971-1990,38,110,"Peak panelovy dom era (HK-60; BANKS; T-06B); aggressive 2002-2020 retrofit"
+1991-2010,18,84,"Post-Velvet detached SFH boom; STN 73 0540-2 (2002)"
+2011-2020,8,57,"EPBD-tightened; nZEB transition"
+post-2020,2,44,"nZEB mandatory new-build"

@@ -1,0 +1,72 @@
+# TABULA Belgium synthetical-average residential building intensities
+#
+# Source: TABULA / EPISCOPE project (IEE 2009-2012, follow-up 2013-2016).
+#   - Project: episcope.eu/building-typology/country/be
+#   - VITO (Flemish Institute for Technological Research) led the Belgian
+#     national typology contribution.
+#   - "Synthetical Average" (SyAv) buildings, calculated via the TABULA Common
+#     Calculation Procedure (EN ISO 13790 seasonal method, one-zone model).
+#   - Values are "delivered energy demand for space heating" for the original
+#     (un-refurbished) state of each archetype, in kWh/m²·a per heated floor
+#     area. Domestic hot water (DHW) is added separately below.
+#   - These are calibrated TABULA values for Belgium (cold-temperate climate,
+#     ~2,900 HDD/yr) — used here as the proxy for Luxembourg (~3,200 HDD/yr),
+#     to which a climate-correction multiplier is applied downstream
+#     (see 03_heat_intensity.py).
+#
+# Why BE as proxy for LU:
+#   - LU is not a TABULA country.
+#   - Climate similarity: BE 2,900 HDD vs LU 3,200 HDD (~10% difference)
+#   - Construction practice: both follow Walloon/Luxembourgish stone-masonry
+#     pre-1945 and concrete/brick post-war traditions
+#   - Code harmonisation: both transposed EPBD via comparable building codes
+#     (PEB Wallonia ≈ Luxembourg energy passport)
+#   - DE rejected: too cold (~3,500 HDD) and over-counts MFH share
+#   - IT rejected: wrong climate (~2,000 HDD)
+#
+# Cohort definitions (BE TABULA):
+#   pre-1945:    pre-WWII stock, mostly stone-masonry, no insulation
+#   1946-1970:   reconstruction era, brick cavity walls, no/minimal insulation
+#   1971-1990:   first insulation regulations (post-oil-crisis), some retrofit
+#   1991-2010:   PEB transposition, cavity insulation + double glazing
+#   2011-2020:   tightened PEB / EPBD recast, near-zero-energy from 2017
+#   post-2020:   NZEB mandatory in BE for new builds
+#
+# Building class mapping (TABULA → our 4-class scheme):
+#   SFH         <- TABULA "SFH" (detached single-family house)
+#   MFH_LOW     <- TABULA "TH" + "MFH" (terraced + multi-family up to 5 floors)
+#   MFH_HIGH    <- TABULA "AB" (apartment block, 6+ floors)
+#   NON_RES     <- not in TABULA; handled separately in 03_heat_intensity.py
+#
+# DHW component:
+#   TABULA Belgium reports DHW as ~22 kWh/m²·a for SFH, ~19 kWh/m²·a for
+#   MFH/AB (lower per-m² because higher occupant density). Added as a flat
+#   component to space-heating intensity for "total heat demand" downstream.
+#
+# Citation:
+#   Cyx W., Renders N., Van Holm M., Verbeke S. (2011). IEE TABULA — Typology
+#   Approach for Building Stock Energy Assessment, Belgian Scientific Report.
+#   VITO report 2011/TEM/R/091763, August 2011.
+#   episcope.eu/fileadmin/tabula/public/docs/scientific/BE_TABULA_ScientificReport_VITO.pdf
+#   National brochure (Dutch): www.episcope.eu/building-typology/country/be/
+#
+#
+building_class,cohort,sh_intensity_kwh_m2_yr,dhw_intensity_kwh_m2_yr,source_note
+SFH,pre-1945,265,22,"Original solid-brick or stone-masonry SFH; U_wall=2.0-2.5; U_window=4.5-5.0"
+SFH,1946-1970,225,22,"Brick cavity wall (uninsulated); U_wall=1.4-1.8; double glazing rare"
+SFH,1971-1990,175,22,"First insulation cohort (post-1979 BE regs); U_wall=1.0-1.2"
+SFH,1991-2010,115,22,"PEB Wallonia transposition; U_wall=0.4-0.6 cavity-filled"
+SFH,2011-2020,65,22,"Near-zero-energy push (BE Flemish E60); U_wall=0.24"
+SFH,post-2020,30,22,"NZEB mandatory (BE Flemish E30); triple glazing standard"
+MFH_LOW,pre-1945,210,19,"Solid-masonry terraced rows / pre-war apartment buildings"
+MFH_LOW,1946-1970,180,19,"Brick cavity (uninsulated) MFH; balcony cold bridges"
+MFH_LOW,1971-1990,140,19,"First insulation; concrete-frame MFH dominant"
+MFH_LOW,1991-2010,95,19,"PEB Wallonia; concrete frame + insulated facade"
+MFH_LOW,2011-2020,55,19,"Near-zero-energy MFH; mechanical ventilation w/ HR"
+MFH_LOW,post-2020,28,19,"NZEB; passive standard"
+MFH_HIGH,pre-1945,200,19,"Rare in BE pre-1945; tower estates only post-1960"
+MFH_HIGH,1946-1970,170,19,"Post-war social-housing high-rise (Brussels/Charleroi)"
+MFH_HIGH,1971-1990,130,19,"Concrete tower; first thermal-envelope retrofit wave"
+MFH_HIGH,1991-2010,90,19,"Modern apartment block; insulated facade"
+MFH_HIGH,2011-2020,52,19,"NZEB high-rise (rare but emerging)"
+MFH_HIGH,post-2020,26,19,"NZEB; centralised HP or DH common"

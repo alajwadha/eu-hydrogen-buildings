@@ -1,0 +1,16 @@
+# Belgium climate + retrofit-state national assumptions
+# Mirror of be.yaml; authoritative source is the YAML.
+#
+parameter,value,unit,source
+hdd_be_2018_2022_avg,2520,degree-days/yr,Eurostat nrg_chdd_a (JRC AGRI4CAST) 2018-2022 mean estimate (NEEDS_VERIFY)
+hdd_proxy_2018_2022_avg,2520,degree-days/yr,direct TABULA country (proxy = self)
+tabula_reference_hdd,2900,degree-days/yr,"Uccle / Brussels reference (KU Leuven Lirias 571894 long-term mean)"
+climate_multiplier,0.8690,dimensionless,"2520 / 2900 (national mean vs Uccle TABULA reference)"
+retrofit_share_original,0.82,fraction,"modelling assumption (Climact 2024 BE regional renovation-pace analysis)"
+retrofit_share_standard,0.13,fraction,"modelling assumption (VEKA + Primes Habitation + RENOLUTION standard packages)"
+retrofit_share_advanced,0.05,fraction,"modelling assumption (LIFE BE REEL! + deep-retrofit case studies, ~8000 dwellings)"
+retrofit_factor_standard,0.60,multiplier,"BE TABULA standard refurbishment (VITO 2011 case studies, provisional)"
+retrofit_factor_advanced,0.40,multiplier,"BE TABULA advanced refurbishment (VITO 2011 case studies, provisional)"
+dhw_intensity_sfh,22.0,kWh/m2/yr,"BE TABULA / VITO 2011 scientific report DHW assumption"
+dhw_intensity_mfh,19.0,kWh/m2/yr,"BE TABULA / VITO 2011 scientific report DHW assumption"
+non_residential_intensity,150,kWh/m2/yr,"estimate (Brussels Environment 2011-2012 tertiary heating average)"

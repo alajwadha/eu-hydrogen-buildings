@@ -1,0 +1,12 @@
+# EU Building Stock Observatory (BSO) -- Netherlands residential indicators
+#
+# Distribution approximated from CBS Housing Stock by Period of Construction.
+# Sums to 100. NEEDS_VERIFY against CBS Statline 81528ENG / 82900NED.
+#
+cohort,stock_pct_nl,bso_intensity_kwh_m2_yr,note
+pre-1945,18,200,"Pre-war urban brick (Jugendstil + interbellum stadswoning); large stock in Amsterdam, Utrecht"
+1946-1970,21,165,"Postwar Wederopbouw; brick terrace + first portiekflats"
+1971-1990,30,140,"Bouwbesluit 1992 thermal regs era; cavity-wall standard"
+1991-2010,21,95,"EPN 1996 + EPC tightening; energy-label era"
+2011-2020,8,65,"EPC <0.6 + post-2014 NZEB-track new-build"
+post-2020,2,48,"BENG 2020 NZEB enforcement"

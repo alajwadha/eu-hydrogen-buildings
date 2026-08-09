@@ -1,0 +1,27 @@
+# Italy climate + retrofit-state national assumptions
+#
+# Legacy national-parameters file consumed by 03_heat_intensity.py
+# (load_national_params). The authoritative source is it.yaml; this file
+# mirrors the values for documentation. All values are numeric.
+#
+# Italy is a DIRECT TABULA country, but the Italian TABULA brochure publishes a
+# SINGLE reference climate zone (MIDDLE, 2100-3000 HDD) -- not a country-mean
+# calibration. The climate_multiplier therefore scales Italy's actual HDD (1821)
+# against the Middle-zone reference HDD (~2500), giving 0.7285 (not 1.0).
+# Sources: Eurostat nrg_chdd_a (HDD); Italian TABULA / Politecnico di Torino
+# (retrofit factors, DHW); ENEA Superbonus reporting (retrofit shares).
+# See it.yaml and literature/italy/classification_methodology.md.
+#
+parameter,value,unit,source
+hdd_it_2018_2022_avg,1821.23,degree-days/yr,Eurostat nrg_chdd_a (JRC AGRI4CAST)
+hdd_proxy_2018_2022_avg,1821.23,degree-days/yr,direct TABULA country (proxy = self)
+tabula_reference_hdd,2500,degree-days/yr,"Italian TABULA Middle reference zone midpoint (2100-3000 HDD; it_intensities.csv header)"
+climate_multiplier,0.7285,dimensionless,1821.23 / 2500 (Mediterranean-zone correction)
+retrofit_share_original,0.75,fraction,modelling assumption (ENEA Superbonus 110 reporting)
+retrofit_share_standard,0.20,fraction,modelling assumption
+retrofit_share_advanced,0.05,fraction,modelling assumption
+retrofit_factor_standard,0.62,multiplier,Italian TABULA standard refurbishment (provisional)
+retrofit_factor_advanced,0.30,multiplier,Italian TABULA advanced refurbishment (provisional)
+dhw_intensity_sfh,18.0,kWh/m2/yr,Italian TABULA (provisional)
+dhw_intensity_mfh,18.0,kWh/m2/yr,Italian TABULA (provisional)
+non_residential_intensity,110,kWh/m2/yr,estimate (Italian non-residential space heating)

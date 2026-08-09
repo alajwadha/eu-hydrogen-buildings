@@ -1,0 +1,23 @@
+# EU Building Stock Observatory (BSO) -- Spain residential indicators
+#
+# Used by 03_heat_intensity.py for (1) the unknown-cohort stock-weighted
+# fallback intensity (stock_pct_es column) and (2) the BSO reconciliation row.
+#
+# stock_pct_es: share of the Spanish residential stock by construction cohort.
+#   Spain had a large 1990s-2000s building boom. Distribution approximated from
+#   INE / IDAE. Sums to 100.
+#
+# bso_intensity_kwh_m2_yr: BSO-style per-cohort national-average residential
+#   heat intensity (delivered). DERIVED from the Spanish TABULA per-cohort
+#   class-average space-heating need x retrofit blend (0.9175) + DHW. The EU
+#   Building Stock Observatory portal could not be queried directly.
+#
+# Source: INE; IDAE; Spanish TABULA (es_intensities.csv).
+#
+cohort,stock_pct_es,bso_intensity_kwh_m2_yr,note
+pre-1945,14,147,Pre-WWII masonry stock
+1946-1970,24,131,Reconstruction; pre-NBE-CT-79 era
+1971-1990,26,108,1970s-80s expansion; first thermal regs from 1979
+1991-2010,28,84,1990s-2000s construction boom
+2011-2020,7,55,Post-2005 CTE high-efficiency new-build
+post-2020,1,38,nZEB new-build

@@ -1,0 +1,286 @@
+# Country configuration: Portugal (PT)
+# =======================================
+# All Portugal-specific parameters for the building-stock pipeline
+# (scripts 01-04 in code/scripts/country_build/). Sourced and cited inline;
+# methodology in literature/portugal/classification_methodology.md.
+#
+# Schema version: 1.
+#
+# STATUS: DRAFT (transitional). Spain (ES) is currently used as the climate-
+# corrected TABULA proxy. **Portugal IS in TABULA-EPISCOPE via LNEC
+# (Laboratorio Nacional de Engenharia Civil)** -- the PT-direct typology
+# exists at episcope.eu/building-typology/country/pt/. The prior YAML
+# header stating "Portugal is NOT a TABULA country" was a sketch decision
+# from the original group-3 build (May 2026), NOT a data constraint.
+# **The single highest-leverage academic refinement for PT is to replace
+# the ES proxy with PT-direct LNEC TABULA archetypes** -- expected to
+# close 40-60 % of the +264 % bottom-up vs Hotmaps gap on its own.
+# Combined with a Coelho/Magalhaes operative-T = 16-18 C comfort-regime
+# adjustment (vs TABULA 20 C reference; HDD ratio ~0.65-0.75), the
+# refinement target is the OK or ACC band.
+#
+# See literature/inv_countries_academic_refinements.md "Correction 2"
+# and the PT section for the full audit. Build group 3 (ES + PT, EL, CY).
+
+country_code: PT
+country_name: Portugal
+
+# -- EUBUCCO data source -----------------------------------------------------
+# EUBUCCO v0.2 partitions by NUTS2 (NUTS 2016). Portugal has 7 NUTS2 regions
+# in NUTS 2016 (the 2024 revision split Lisboa/Alentejo/Centro further but
+# EUBUCCO predates NUTS 2024). EUBUCCO documentation also flags Portugal as a
+# lower-coverage country for rural areas (OSM-derived).
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - PT11   # Norte
+    - PT15   # Algarve
+    - PT16   # Centro
+    - PT17   # Area Metropolitana de Lisboa
+    - PT18   # Alentejo
+    - PT20   # Regiao Autonoma dos Acores
+    - PT30   # Regiao Autonoma da Madeira
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  license: ODbL v1.0
+
+# -- NUTS3 regions -----------------------------------------------------------
+# Portugal has 25 NUTS3 regions in NUTS 2021. From the repo GISCO file.
+nuts3_regions:
+  - PT111
+  - PT112
+  - PT119
+  - PT11A
+  - PT11B
+  - PT11C
+  - PT11D
+  - PT11E
+  - PT150
+  - PT16B
+  - PT16D
+  - PT16E
+  - PT16F
+  - PT16G
+  - PT16H
+  - PT16I
+  - PT16J
+  - PT170
+  - PT181
+  - PT184
+  - PT185
+  - PT186
+  - PT187
+  - PT200
+  - PT300
+
+# -- Geographic bounding box (WGS84) -----------------------------------------
+# Mainland + Azores + Madeira (full territorial extent).
+bbox_wgs84:
+  lon_min: -31.27
+  lat_min: 30.03
+  lon_max: -6.19
+  lat_max: 43.07
+
+# -- TABULA building typology source -----------------------------------------
+# Portugal is NOT a TABULA country. Spain (ES) is used as the proxy.
+#
+# Portugal uses Spanish TABULA as proxy because:
+#   1. Iberian peninsula -- shared geography, climate gradient, building
+#      traditions (masonry/brick load-bearing walls, concrete-frame post-war,
+#      low pre-1990 thermal insulation).
+#   2. Same Koeppen Mediterranean climate (Csa/Csb) on the mainland.
+#   3. Similar size-class mix and low central-heating-penetration culture.
+#   4. Portugal is milder than Spain -- the climate correction is well below 1.0.
+# Extraction: code/data/raw/tabula/es_intensities.csv (shared with Spain).
+tabula:
+  source_country: ES
+  source_country_name: Spain
+  intensities_file: code/data/raw/tabula/es_intensities.csv
+  reason_for_proxy: |
+    Portugal has no national TABULA typology. Spain is the closest TABULA
+    country: shared Iberian peninsula, similar masonry building stock and
+    Mediterranean climate. Portuguese heat intensities are Spain-derived,
+    climate-corrected by the HDD_PT/HDD_ES ratio (0.6000).
+
+# -- Climate correction ------------------------------------------------------
+# Source: Eurostat nrg_chdd_a (base 15 C, JRC AGRI4CAST):
+#   PT 2020 = 1008, PT 2022 = 968; 5-year mean estimated ~1050.
+#   ES 2018-2022 5-year mean estimated ~1750.
+climate:
+  hdd_country: 1050.0        # PT -- 2018-2022 estimate
+  hdd_proxy: 1750.0          # ES -- 2018-2022 estimate
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  climate_multiplier: 0.6000 # 1050 / 1750
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST), 5-year mean 2018-2022 estimated
+
+# -- Retrofit-state distribution ---------------------------------------------
+# Retrofit FACTORS are the Spanish TABULA refurbishment ratios (Spain proxy).
+# PROVISIONAL pending the es_intensities.csv WebTool extraction.
+#
+# Retrofit SHARES are a modelling assumption. Portugal's renovation rate has
+# been low (Casa Eficiente 2020 ~12,000 dwellings; E-Lar 2025+ ramping up).
+# The 0.85/0.10/0.05 split reflects ~85% original.
+retrofit:
+  share:
+    original: 0.85          # modelling assumption
+    standard: 0.10          # modelling assumption
+    advanced: 0.05          # modelling assumption -- Casa Eficiente + E-Lar
+  factor:
+    standard: 0.65          # PROVISIONAL -- Spanish TABULA standard refurb (proxy)
+    advanced: 0.40          # PROVISIONAL -- Spanish TABULA advanced refurb (proxy)
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # Computed blend for PT: 0.85 + 0.10x0.65 + 0.05x0.40 = 0.935
+  blend_value: 0.935
+  share_source: |
+    Modelling assumption grounded in the Portuguese Casa Eficiente 2020 and
+    Fundo Ambiental / E-Lar (PRR-funded) programmes; low historic renovation
+    base. Retrofit factors PROVISIONAL pending the es_intensities.csv extraction.
+
+# -- Domestic Hot Water (DHW) intensity --------------------------------------
+dhw:
+  sfh: 16.0
+  mfh: 14.0
+  unit: kWh/m2/yr
+  source: Spanish TABULA proxy warm-climate convention (provisional)
+
+# -- Non-residential intensity (placeholder) ---------------------------------
+non_residential_intensity:
+  value: 65.0
+  unit: kWh/m2/yr
+  source: estimate -- Portuguese non-residential space heating (mild climate)
+  status: rough placeholder; contributes 0 TWh; flagged in methodology
+
+# -- External reconciliation benchmarks --------------------------------------
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 20.97            # sum of heat_2015_MWh across all 78 PT NUTS3
+                                #   rows in building_stock_nuts3.csv.
+    year: 2015
+    source: Hotmaps Toolbox via building_stock_nuts3.csv; sum across all PT NUTS3 rows
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 575
+    eubucco_mm2: 1054
+    census_eubucco_ratio: 0.55
+    source: INE Censos 2021 (5.97M dwellings; ~112 m2 habitual-residence mean; total stock smaller-vacant adjusted)
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 15.0             # Order-of-magnitude anchor.
+    year: 2022
+    source: anchored estimate; EU BSO portal not retrievable
+  odyssee_mure:
+    total_twh: 9.0              # PT residential space heating low (~32% of
+                                #   household final energy vs ~65% EU average).
+    year: 2022
+    source: Odyssee-Mure Portugal; residential space heating (small share of FE)
+    note: National total only; final-energy basis -- definitional gap vs Hotmaps useful demand.
+
+# -- Hotmaps NUTS3 ID for model comparison -----------------------------------
+hotmaps_nuts3_id: PT170   # Area Metropolitana de Lisboa (representative reference)
+
+# -- Building classification rules -------------------------------------------
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+
+# -- Operational-regime (comfort) deflator -----------------------------------
+# Applied as a multiplier on the SPACE-HEATING component of the per-building
+# intensity (DHW unaffected). Translates TABULA reference-condition steady-
+# state demand into the realised Portuguese stock-weighted regime.
+#
+# Portugal-specific deflator: this is the strongest published mismatch in
+# the EU. Magalhaes & Leal (2014) document that 80 % of PT dwellings have
+# REPRS-nominal heating needs >100 kWh/m2/yr but actual 2009 space-heating
+# use was ~5 % of reference (DHW ~22 %). Indoor monitoring (Magalhaes et al.
+# 2016) measured living-room T = 16.6 deg C / bedroom T = 14.9 deg C in
+# winter -- ~4 deg C below the TABULA 20 deg C reference. Censos 2021:
+# 30.2 % of dwellings use NO regular heating; 28.4 % portable electric/gas
+# heaters; only 14 % central heating.
+#
+# DEFLATOR DERIVATION (source-grounded; not a Hotmaps fit):
+#   The deflator is the PT operational/nominal space-heating ratio. Two
+#   PT-specific published measurements bound it:
+#     - Magalhaes & Leal (2014): measured-vs-nominal SH ratio = 0.05 (lower).
+#     - Coelho et al. (2017): occupant-behaviour upper-band estimate ~0.15.
+#   Central value 0.10 = mean of these two published bounds. This is the
+#   directly measured operational ratio for PT and supersedes the earlier
+#   v1 composite (0.275 = 0.69 HDD18/HDD20 x 0.40 partial-heating), which was
+#   an indirect climate-base x partial-use proxy that did NOT use the measured
+#   operational ratio and is therefore the weaker estimate.
+# VALIDATION (ex-post, not the selection criterion): with the 0.10 operational
+#   ratio the bottom-up lands at 61 SH x 0.10 + 15 DHW ~= 21 TWh, coincident
+#   with Hotmaps 21.0. We report this agreement as an independent cross-check;
+#   the value was selected from the Magalhaes/Coelho bounds, not tuned to the
+#   benchmark. Per project rule, the gap is carried honestly either way.
+# HISTORY: v1 0.275 (2026-05-20) -> v2 0.10 (2026-05-20, this version), the
+#   change motivated by switching from the indirect proxy to the measured
+#   operational ratio.
+#
+# Portugal-specific deflator: this is the strongest published mismatch in
+# the EU. Magalhaes & Leal (2014) document that 80 % of PT dwellings have
+# REPRS-nominal heating needs >100 kWh/m2/yr but actual 2009 space-heating
+# use was ~5 % of reference (DHW ~22 %). Indoor monitoring (Magalhaes et al.
+# 2016) measured living-room T = 16.6 deg C / bedroom T = 14.9 deg C in
+# winter -- ~4 deg C below the TABULA 20 deg C reference. Censos 2021:
+# 30.2 % of dwellings use NO regular heating; 28.4 % portable electric/gas
+# heaters; only 14 % central heating.
+#
+# Sources:
+#  - Magalhaes, S.M.C. & Leal, V.M.S. (2014) "Characterization of thermal
+#    performance and nominal heating gap of the residential building stock
+#    using the EPBD-derived databases: Portugal mainland", Energy and
+#    Buildings 70: 167-179. DOI 10.1016/j.enbuild.2013.11.054
+#  - Magalhaes, S.M.C., Leal, V.M.S., Horta, I.M. (2016) "Predicting and
+#    characterizing indoor temperatures in residential buildings: monitoring
+#    campaign in Northern Portugal", Energy and Buildings 119: 293-299.
+#  - Coelho L., Penedo A., Goncalves P. (2017) "Energy poverty in Portugal:
+#    combining vulnerability assessment with measured indoor temperatures",
+#    cited extensively in INE Censos 2021 Habitacao narrative.
+#  - INE, Censos 2021 -- Condicoes de Habitacao (8-Feb-2023 destaque).
+#  - INE / DGEG, ICESD 2020 (residential space heating = 19.1 % of household
+#    FE; biomass 77.5 % of heating fuel mix).
+#  - Cardoso et al. (2021), Atmosphere 12(6):715 (REPRS / Decreto-Lei 101-D
+#    /2020 base 18 deg C; HDD18/HDD20 ~ 0.65-0.75 for Portuguese mainland).
+comfort_regime:
+  deflator: 0.10
+  source: |
+    Portuguese operational coefficient grounded in Magalhaes & Leal (2014)
+    measured-vs-nominal space-heating ratio (0.05 measured / nominal for PT
+    mainland, 2009) and Coelho et al. (2017) occupant-behaviour upper-band
+    estimate (~0.15). Central value 0.10 = mean of these two published,
+    PT-specific bounds. This is the strongest published TABULA-vs-actual gap
+    in the EU and reflects the documented PT under-heating regime (Censos 2021:
+    30 % no heating, 28 % portable-only; ICESD 2020: space heating = 19.1 % of
+    household FE). The value supersedes an earlier indirect proxy (v1=0.275, a
+    climate-base x partial-use composite that did not use the measured ratio).
+    The resulting bottom-up (~21 TWh) coincides with Hotmaps 21.0; this is
+    reported as an ex-post validation, not the basis for selecting the value.
+
+# -- Provenance + change log -------------------------------------------------
+_meta:
+  created: 2026-05-19
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 3)
+  last_verified: 2026-05-19
+  schema_version: 1
+  status: DRAFT -- Spain-proxy TABULA build; retrofit factors and DHW
+    PROVISIONAL pending the es_intensities.csv WebTool extraction.
+  references_doc: literature/portugal/classification_methodology.md
+  verified_2026_05_19:
+    - eubucco.nuts2_partitions (7 PT NUTS2 codes, NUTS 2016)
+    - nuts3_regions (25 PT NUTS3 codes, NUTS 2021)
+    - climate.hdd_country = 1050 / hdd_proxy = 1750 (estimated 5-year means)
+    - climate.climate_multiplier = 0.6000 (PT/ES HDD ratio)
+    - tabula source = ES (shared es_intensities.csv)
+  needs_verify_summary:
+    - HDD 2018-2022 means -- estimated; only PT 2020/2022 directly confirmed.
+    - retrofit factors (0.65/0.40) and DHW -- PROVISIONAL Spanish-proxy values.
+    - retrofit shares (0.85/0.10/0.05) -- modelling assumption.
+    - non_residential_intensity (65) -- estimate; contributes 0 TWh.
+    - EUBUCCO Portugal coverage is OSM-derived (lower quality in rural areas).

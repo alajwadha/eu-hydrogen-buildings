@@ -1,0 +1,53 @@
+# Finland residential stock weights + national-average intensity per cohort
+#
+# Used by 03_heat_intensity.py as the fallback intensity source for buildings
+# with unknown construction year, and by aggregate_results() to compute the
+# stock-weighted national-average intensity for the reconciliation table.
+#
+# IMPORTANT: Finland is a TABULA PROXY country. The per-cohort intensities
+# below are SWEDEN-DERIVED -- they are the climate-corrected Sweden TABULA
+# values, not Finnish measurements. See
+# literature/finland/classification_methodology.md.
+#
+# Sources and derivation
+# ----------------------
+#   - bso_intensity_kwh_m2_yr: a class-weighted average of the Sweden-proxy
+#     space-heating intensities in code/data/raw/tabula/se_intensities.csv,
+#     then multiplied by the FI/SE climate multiplier (1.055, fi.yaml).
+#     Class weights approximate the Finnish residential split:
+#       SFH 0.40, MFH_LOW 0.45, MFH_HIGH 0.15  (i.e. 0.40 SFH / 0.60 MFH;
+#       Sweden TABULA has one MFH class so MFH_LOW and MFH_HIGH share values).
+#     These are SH-only intensities (no DHW, no retrofit blend) -- consistent
+#     with how fr_intensity.csv was built.
+#
+#   - stock_pct_fi: Finnish residential stock distribution by construction
+#     period. ESTIMATE, consistent with Statistics Finland anchor figures:
+#     ~3.12 million dwellings end-2020; "about half completed after 1980";
+#     "almost one-fifth in 1970s dwellings"; buildings completed before 1921
+#     ~6% of the building stock. The split below reproduces those anchors
+#     (1980+ cohorts ~50%, the 1970s ~17-18%, pre-1945 8%). For an exact
+#     decade table see the VTT building-stock dataset "Finnish building
+#     stock forecasts for 2020-2050" (cris.vtt.fi) or the Statistics Finland
+#     StatFin "Dwellings by year of construction" PxWeb table. The exact
+#     decade split is flagged NEEDS_VERIFY in fi.yaml.
+#
+# Cohort mapping (Sweden's 5 TABULA periods -> our 6 cohorts) and the two
+# extrapolated new cohorts are documented in
+# code/data/raw/tabula/se_intensities.csv.
+#
+# NEEDS_VERIFY (also listed in fi.yaml._meta.needs_verify_summary):
+#   - stock_pct_fi exact decade split (estimate; reproduces the Statistics
+#     Finland anchors above -- verify against the StatFin PxWeb table).
+#   - the SFH/MFH class weights used for bso_intensity (0.40/0.60).
+#   - an EU Building Stock Observatory FI residential figure was not found;
+#     this file is the Sweden-proxy implied total, not a BSO measurement.
+#
+# Sum of stock_pct_fi = 100.0% (verified).
+#
+cohort,bso_intensity_kwh_m2_yr,stock_pct_fi
+pre-1945,176.2,8.0
+1946-1970,166.3,24.0
+1971-1990,112.0,34.0
+1991-2010,102.7,26.0
+2011-2020,82.1,7.0
+post-2020,66.7,1.0

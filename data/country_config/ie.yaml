@@ -1,0 +1,193 @@
+# Country configuration: Ireland (IE)
+# =====================================
+# Build group 5 (AT + BE, NL, IE). Direct TABULA country (Energy Action Ltd).
+# Methodology: literature/ireland/classification_methodology.md.
+
+country_code: IE
+country_name: Ireland
+
+# NUTS 2016 revision (effective 2018): 2 NUTS2 -> 3 NUTS2 (IE04/IE05/IE06).
+# EUBUCCO v0.2 partitions on NUTS 2021 boundaries; 3 NUTS2 regions used.
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - IE04   # Northern & Western
+    - IE05   # Southern
+    - IE06   # Eastern & Midland
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  license: ODbL v1.0
+  # EUBUCCO area-correction factor (applied 2026-05-20).
+  # Initial G5 Colab build landed IE at 44.9 TWh vs Hotmaps 34.83 = +29 %
+  # INV. IE is a structurally distinct EUBUCCO case: the IE partition is
+  # built from OpenStreetMap (Ireland has no national open building
+  # footprint dataset), so construction-year coverage is < 15 pct and the
+  # building-count over-statement risks are different from continental
+  # NL/AT/DE-style cadastres.
+  #
+  # EUBUCCO IE total residential heated_floor_area = 301 Mm^2 (sum across
+  # 8 NUTS3 regions in code/data/processed/ie/IE_aggregated_NUTS3.csv,
+  # post-useable_fraction 0.85). CSO Ireland Census 2022 Profile 2 (Housing
+  # in Ireland) anchors actual IE residential floor area at:
+  #   2,112,121 habitable permanent dwellings (1.85 M occupied +
+  #   163,433 vacant + temporarily-absent + other ~ 100,000)
+  #   x ~112 m^2 weighted-mean area (CSO SAPS dwelling-size distribution
+  #   median ~95 m^2; mean inflated by ~20 pct detached-house tail to
+  #   ~112 m^2) = ~237 Mm^2 total residential.
+  # Correction = 237 / 301 = 0.787 ~ 0.78.
+  #
+  # The 0.78 factor (smaller correction than AT 0.575, DK 0.70, EE 0.45)
+  # is consistent with the IE EUBUCCO partition being OSM-sourced and
+  # therefore potentially MISSING some rural / small-detached residential
+  # rather than over-counting it. The +29 pct gap could plausibly arise
+  # equally from IE TABULA intensity over-statement (Energy Action 2012
+  # values pre-date SEAI Retrofit Plan acceleration). The CSO anchor is
+  # the academically conservative fix; intensity refresh is deferred.
+  #
+  # Source: CSO Ireland, Census 2022 Profile 2 -- Housing in Ireland.
+  #   https://www.cso.ie/en/releasesandpublications/ep/p-cpp2/censusofpopulation2022profile2-housinginireland/housingstock/
+  # MECHANISM (clarified 2026-05-21): imputed-floor area over-count.
+  # EUBUCCO IE observed-height share is 13% (Milojevic-Dupont 2023,
+  # Table 1); floors -- hence floor area -- are ML-imputed even though the
+  # footprints are cadastre-sourced. The correction calibrates the imputed
+  # area to the census. See literature/eubucco_census_area_audit.md
+  # (Mechanism A).
+  area_correction: 0.78
+  area_correction_source: |
+    CSO Ireland Census 2022 Profile 2 (Housing in Ireland): 2,112,121
+    habitable permanent dwellings x ~112 m^2 weighted-mean = ~237 Mm^2
+    residential. EUBUCCO IE total: 301 Mm^2 (post-useable_fraction 0.85).
+    Correction = 237/301 = 0.787. IE EUBUCCO is OSM-derived with
+    < 15 pct construction-year coverage; the +29 % G5 gap is partly
+    area-layer (correction handles), partly IE TABULA intensity vintage
+    (Energy Action 2012 pre-dates SEAI Retrofit Plan; deferred).
+
+nuts3_regions:
+  - IE041   # Border
+  - IE042   # West
+  - IE051   # Mid-West
+  - IE052   # South-East
+  - IE053   # South-West
+  - IE061   # Dublin
+  - IE062   # Mid-East
+  - IE063   # Midland
+
+bbox_wgs84:
+  lon_min: -10.48
+  lat_min: 51.42
+  lon_max: -5.99
+  lat_max: 55.39
+
+tabula:
+  source_country: IE
+  source_country_name: Ireland
+  intensities_file: code/data/raw/tabula/ie_intensities.csv
+  reason_for_proxy: |
+    None -- Ireland is a TABULA country (Energy Action Ltd; Badurek, Hanratty,
+    Sheldrick 2012). Direct typology, climate_multiplier ~0.985 (Dublin TABULA
+    reference ~2600 HDD vs national 2018-2022 mean ~2560 HDD; near-identity).
+
+climate:
+  hdd_country: 2560.0
+  hdd_proxy: 2560.0
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  tabula_reference_hdd: 2600.0   # Dublin Airport / DEAP convention
+  climate_multiplier: 0.9846     # 2560 / 2600
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST); 5-year mean 2018-2022 ~2560 (NEEDS_VERIFY exact)
+
+# SEAI National Retrofit Plan: 500k homes to B2 by 2030 + 400k heat pumps.
+# Cumulative 2019-2023 SEAI-supported upgrades ~125k; 2023 alone 47,953
+# upgrades incl. 13,850 to B2. Strong post-2020 acceleration.
+retrofit:
+  share:
+    original: 0.72
+    standard: 0.20
+    advanced: 0.08
+  factor:
+    standard: 0.55    # IE TABULA "usual" ~45 pct reduction
+    advanced: 0.25    # IE TABULA "advanced" ~75 pct reduction (NZEB-equivalent)
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # Computed: 0.72 + 0.20x0.55 + 0.08x0.25 = 0.850
+  blend_value: 0.850
+  share_source: |
+    Modelling assumption grounded in SEAI Retrofit Plan annual reports
+    (2019-2023 cumulative ~125k upgrades, ~25-30k to B2 standard). Strong
+    post-2020 acceleration via Warmer Homes (free for low-income) + One
+    Stop Shop. Retrofit factors PROVISIONAL.
+
+dhw:
+  sfh: 15.0
+  mfh: 15.0
+  unit: kWh/m2/yr
+  source: IE TABULA / DEAP convention DHW assumption (provisional)
+
+non_residential_intensity:
+  value: 110.0
+  unit: kWh/m2/yr
+  source: estimate -- IE non-residential (tertiary) space heating; SEAI CPS 2022
+  status: rough placeholder
+
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 34.83            # Hotmaps 2015 IE residential heat -- exact sum
+                                # across all 11 IE NUTS3 rows in
+                                # code/data/processed/building_stock_nuts3.csv (verified 2026-05-20).
+                                # SEAI Heating & Cooling in Ireland Today states ~26.3 TWh useful,
+                                # but the actual building_stock_nuts3 sum is 34.8 TWh
+                                # (broader definition / 2015 stock; the 11-row IE table notably
+                                # carries OTHER-only rows for several NUTS3 with no per-class split).
+    year: 2015
+    source: Hotmaps Toolbox via building_stock_nuts3.csv; sum across all IE NUTS3 rows
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 237
+    eubucco_mm2: 301
+    census_eubucco_ratio: 0.79
+    source: CSO Census 2022 (2.112M habitable dwellings x ~112 m2)
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 25.0
+    year: 2022
+    source: anchored estimate
+  odyssee_mure:
+    total_twh: 21.6
+    year: 2023
+    source: SEAI Energy in Ireland 2023; residential heating 21.6 TWh; per-m2 fell ~36pct 2000-2021
+    note: National total only; final-energy basis.
+
+hotmaps_nuts3_id: IE061   # Dublin (representative)
+
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+
+_meta:
+  created: 2026-05-20
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 5)
+  last_verified: 2026-05-20
+  schema_version: 1
+  status: DRAFT -- direct IE TABULA build (Energy Action Ltd). climate_multiplier
+    near-unity (Dublin reference matches national mean). Construction-year
+    coverage in EUBUCCO IE is LOW (<15pct per v0.2 docs; BER not ingested);
+    significant unknown-cohort fallback share expected.
+  references_doc: literature/ireland/classification_methodology.md
+  verified_2026_05_20:
+    - eubucco.nuts2_partitions (3 IE NUTS2, NUTS 2016 revision)
+    - nuts3_regions (8 IE NUTS3)
+    - tabula source = IE direct (Energy Action Ltd; not UCD/SEAI)
+    - tabula_reference_hdd = 2600 (Dublin DEAP convention)
+    - climate_multiplier = 0.9846 (2560 / 2600)
+  needs_verify_summary:
+    - HDD 2018-2022 mean -- estimated; pull exact Eurostat nrg_chdd_a.
+    - ie_intensities.csv -- research-synthesised; verify Energy Action brochure.
+    - retrofit factors (0.55/0.25) and DHW (15) -- PROVISIONAL.
+    - EUBUCCO IE construction-year <15pct coverage; substantial unknown-cohort
+      fallback expected; consider supplementing with SEAI BER public research download.
+    - Hotmaps total (26) -- estimate from SEAI + Hotmaps; sum building_stock_nuts3.csv.

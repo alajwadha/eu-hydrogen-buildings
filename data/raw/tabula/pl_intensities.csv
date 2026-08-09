@@ -1,0 +1,100 @@
+# TABULA Poland synthetical-average residential building intensities
+#
+# Source: TABULA / EPISCOPE project. The Polish national residential typology
+#   was produced by NAPE (Narodowa Agencja Poszanowania Energii / Polish
+#   National Energy Conservation Agency).
+#   - Project country page: episcope.eu/building-typology/country/pl
+#   - Polish TABULA Scientific Report (NAPE):
+#     episcope.eu/fileadmin/tabula/public/docs/scientific/PL_TABULA_ScientificReport_NAPE.pdf
+#   - TABULA Final Report Appendix Volume, Appendix A.9 (Poland):
+#     episcope.eu/fileadmin/tabula/public/docs/report/TABULA_FinalReport_AppendixVolume.pdf
+#
+# USED AS A CLIMATE-CORRECTED PROXY FOR THE BALTIC STATES (EE, LV, LT)
+# --------------------------------------------------------------------
+# Estonia, Latvia and Lithuania are not TABULA countries. Poland is used as
+# the proxy for all three because the Baltic residential stock is dominated by
+# the same Soviet/Comecon-era industrialised large-panel ("wielka plyta")
+# concrete apartment blocks and post-war masonry that the Polish TABULA
+# typology explicitly classifies. Of the TABULA countries, Poland is the only
+# one whose multi-family typology carries that large-panel lineage at a
+# climate within ~15-26% HDD of the Baltics. A per-country HDD climate
+# multiplier is applied downstream by 03_heat_intensity.py:
+#   EE/PL ~ 1.26   LV/PL ~ 1.21   LT/PL ~ 1.15
+# (Sweden was considered for Estonia -- it is the existing FI proxy and the
+# only TABULA country colder than the Baltics -- but Poland was chosen for
+# methodological consistency across the three Baltic countries and the
+# large-panel typology match. See literature/{estonia,latvia,lithuania}/.)
+#
+# IMPORTANT METHODOLOGICAL CAVEAT -- VALUES ARE DERIVED, NOT PUBLISHED NET SH
+# ---------------------------------------------------------------------------
+# Unlike most TABULA national reports, the Polish typology was computed with
+# the Polish energy-certificate methodology and publishes only EK (energia
+# koncowa = final/delivered energy, heating + DHW + auxiliaries) and EP
+# (primary energy) per building -- NOT the TABULA-harmonised net/useful
+# space-heating need. The sh_intensity_kwh_m2_yr values below are therefore
+# DERIVED from the published EK figures by deducting a DHW component and
+# applying period-typical heating-system efficiencies (coal/stove eta ~0.55-
+# 0.65 for pre-1990 stock, gas/condensing eta ~0.90-0.95 for newer stock).
+# Treat them as best estimates with roughly +/-15-20% uncertainty. The raw EK
+# values and the full derivation are documented in
+# literature/latvia/classification_methodology.md.
+#
+# Building class mapping (Polish TABULA -> our 4-class scheme):
+#   SFH       <- PL.N.SFH  (dom jednorodzinny, detached single-family)
+#   MFH_LOW   <- average of PL.N.TH (blizniak, terraced 2-4 dwellings)
+#                        and PL.N.MFH (wielorodzinny, multifamily up to 8 floors)
+#   MFH_HIGH  <- PL.N.AB   (wiezowiec/blok, large-panel apartment block, 6+ floors)
+#   NON_RES   <- not in TABULA; handled separately in 03_heat_intensity.py
+#
+# Cohort mapping (Polish TABULA periods -> our 6 cohorts):
+#   pre-1945    <- "before 1945"
+#   1946-1970   <- "1946-1966" (Polish period ends 1966; closest single match)
+#   1971-1990   <- average of "1967-1985" and "1986-1992"
+#   1991-2010   <- average of "1993-2002" and "2003-2008"
+#   2011-2020   <- "after 2008" (newest published Polish period)
+#   post-2020   <- EXTRAPOLATED from "after 2008", adjusted down for the
+#                  WT2017/WT2021 building-code tightening (FLAGGED)
+#
+# MFH_HIGH pre-1945 and 1946-1970: the Polish AB (apartment-block) class has
+# NO building older than 1967 -- large-panel blocks did not exist in Poland
+# before ~1960. Those two cells are proxied/interpolated from PL.N.MFH and the
+# 1967-1985 AB building. FLAGGED below; affects little stock since high-rise
+# floor area before 1967 is small.
+#
+# Refurbishment reduction factors (published in the Polish report, Sec. 3.4.3,
+# typology-averaged): standard/improved refurbishment ~0.63 of existing-state
+# space-heating need; advanced/ambitious refurbishment ~0.50. These inform the
+# retrofit blend in each Baltic country's config YAML.
+#
+# DHW component: the Polish report does not publish a standalone numeric DHW
+# table (DHW is embedded in EK). The dhw_intensity values are DERIVED from the
+# standard Polish-certificate DHW assumption, ~25-30 kWh/m2/yr for SFH/terraced
+# and ~22-24 for multifamily/blocks. FLAGGED.
+#
+# Citations:
+#   NAPE (2012). IEE TABULA - Polish national building typology scientific
+#     report. Narodowa Agencja Poszanowania Energii, Warsaw.
+#   Loga T., Stein B., Diefenbach N. (2016). TABULA building typologies in 20
+#     European countries. Energy & Buildings 132:4-12.
+#     DOI 10.1016/j.enbuild.2016.06.094
+#
+#
+building_class,cohort,sh_intensity_kwh_m2_yr,dhw_intensity_kwh_m2_yr,source_note
+SFH,pre-1945,210,30,"PL.N.SFH.01; U_wall 2.0, U_window 5.0; DERIVED from EK 348 (coal boiler, DHW deducted); existing un-refurbished"
+SFH,1946-1970,195,30,"PL.N.SFH.02; U_wall 1.95, U_window 3.4; DERIVED from EK 327; maps from Polish period 1946-1966"
+SFH,1971-1990,150,28,"avg PL.N.SFH.03 (1967-85, EK 253) and PL.N.SFH.04 (1986-92, EK 186); U_wall 1.4; DERIVED"
+SFH,1991-2010,110,26,"avg PL.N.SFH.05 (1993-2002, EK 160) and PL.N.SFH.06 (2003-08, EK 140); U_wall 0.55-0.3; DERIVED"
+SFH,2011-2020,95,25,"PL.N.SFH.07 (after 2008, EK 141); U_wall 0.3, U_window 1.3; DERIVED"
+SFH,post-2020,55,25,"EXTRAPOLATED from PL.N.SFH.07 for WT2021 standard (U_wall ~0.20); FLAGGED extrapolation"
+MFH_LOW,pre-1945,205,28,"avg PL.N.TH.01 (EK 350) and PL.N.MFH.01 (EK 320); terraced + multifamily; U_wall 1.6-2.0; DERIVED"
+MFH_LOW,1946-1970,160,25,"avg PL.N.TH.02 (EK 260) and PL.N.MFH.02 (EK 262); U_wall 1.46-1.8; DERIVED; Polish 1946-1966"
+MFH_LOW,1971-1990,145,24,"avg PL.N.TH.03/04 and PL.N.MFH.03/04 (EK 220,190,250,197); U_wall 0.75-1.16; DERIVED"
+MFH_LOW,1991-2010,105,22,"avg PL.N.TH.05/06 and PL.N.MFH.05/06 (EK 155,140,160,140); U_wall 0.3-0.55; DERIVED"
+MFH_LOW,2011-2020,95,22,"avg PL.N.TH.07 (EK 135) and PL.N.MFH.07 (EK 140); U_wall 0.3; DERIVED"
+MFH_LOW,post-2020,55,22,"EXTRAPOLATED from 2011-2020 row for WT2021 standard (U_wall ~0.20); FLAGGED extrapolation"
+MFH_HIGH,pre-1945,200,24,"FLAGGED: Polish AB class has no pre-1945 building (large-panel blocks post-1960); proxied from PL.N.MFH.01 EK 320"
+MFH_HIGH,1946-1970,175,24,"FLAGGED: no Polish AB before 1967; interpolated from PL.N.AB.03 (1967-85) and PL.N.MFH.02"
+MFH_HIGH,1971-1990,165,24,"avg PL.N.AB.03 (1967-85, EK 261) and PL.N.AB.04 (1986-92, EK 252); large-panel blocks; U_wall 1.26-1.3; DERIVED"
+MFH_HIGH,1991-2010,105,22,"avg PL.N.AB.05 (1993-2002, EK 179) and PL.N.AB.06 (2003-08, EK 131); U_wall 0.25-0.5; DERIVED"
+MFH_HIGH,2011-2020,90,22,"PL.N.AB.07 (after 2008, EK 125); U_wall 0.25, U_window 1.5; DERIVED"
+MFH_HIGH,post-2020,50,22,"EXTRAPOLATED from PL.N.AB.07 for WT2021 standard; FLAGGED extrapolation"

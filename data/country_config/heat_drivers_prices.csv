@@ -1,0 +1,1306 @@
+country,year,metric,value,unit,source_dataset
+AT,2015,price_gas_residential_EUR_per_MWh,72.05,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+AT,2016,price_gas_residential_EUR_per_MWh,68.18,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+AT,2017,price_gas_residential_EUR_per_MWh,68.6,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+AT,2018,price_gas_residential_EUR_per_MWh,68.51,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+AT,2019,price_gas_residential_EUR_per_MWh,66.72,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+AT,2020,price_gas_residential_EUR_per_MWh,65.19,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+AT,2021,price_gas_residential_EUR_per_MWh,66.54,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+AT,2022,price_gas_residential_EUR_per_MWh,100.09,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+AT,2023,price_gas_residential_EUR_per_MWh,151.85,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+AT,2015,price_electricity_residential_EUR_per_MWh,199.6,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+AT,2016,price_electricity_residential_EUR_per_MWh,202.2,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+AT,2017,price_electricity_residential_EUR_per_MWh,196.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+AT,2018,price_electricity_residential_EUR_per_MWh,198.9,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+AT,2019,price_electricity_residential_EUR_per_MWh,205.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+AT,2020,price_electricity_residential_EUR_per_MWh,213.9,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+AT,2021,price_electricity_residential_EUR_per_MWh,225.05,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+AT,2022,price_electricity_residential_EUR_per_MWh,230.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+AT,2023,price_electricity_residential_EUR_per_MWh,270.05,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+AT,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+AT,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+AT,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+AT,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+AT,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+AT,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+AT,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+AT,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+AT,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+AT,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+AT,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+AT,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+AT,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+AT,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+AT,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+AT,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+AT,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+AT,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+AT,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+AT,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+AT,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+AT,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+AT,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+AT,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+AT,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+AT,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+AT,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+BE,2015,price_gas_residential_EUR_per_MWh,60.25,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+BE,2016,price_gas_residential_EUR_per_MWh,54.04,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+BE,2017,price_gas_residential_EUR_per_MWh,53.7,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+BE,2018,price_gas_residential_EUR_per_MWh,58.04,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+BE,2019,price_gas_residential_EUR_per_MWh,56.33,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+BE,2020,price_gas_residential_EUR_per_MWh,49.69,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+BE,2021,price_gas_residential_EUR_per_MWh,57.21,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+BE,2022,price_gas_residential_EUR_per_MWh,115.26,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+BE,2023,price_gas_residential_EUR_per_MWh,106.97,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+BE,2015,price_electricity_residential_EUR_per_MWh,223.9,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+BE,2016,price_electricity_residential_EUR_per_MWh,264.45,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+BE,2017,price_electricity_residential_EUR_per_MWh,286.7,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+BE,2018,price_electricity_residential_EUR_per_MWh,288.0,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+BE,2019,price_electricity_residential_EUR_per_MWh,284.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+BE,2020,price_electricity_residential_EUR_per_MWh,274.7,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+BE,2021,price_electricity_residential_EUR_per_MWh,284.8,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+BE,2022,price_electricity_residential_EUR_per_MWh,396.3,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+BE,2023,price_electricity_residential_EUR_per_MWh,406.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+BE,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+BE,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+BE,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+BE,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+BE,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+BE,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+BE,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+BE,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+BE,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+BE,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+BE,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+BE,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+BE,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+BE,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+BE,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+BE,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+BE,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+BE,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+BE,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+BE,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+BE,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+BE,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+BE,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+BE,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+BE,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+BE,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+BE,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+BG,2015,price_gas_residential_EUR_per_MWh,43.41,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+BG,2016,price_gas_residential_EUR_per_MWh,33.98,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+BG,2017,price_gas_residential_EUR_per_MWh,35.28,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+BG,2018,price_gas_residential_EUR_per_MWh,40.83,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+BG,2019,price_gas_residential_EUR_per_MWh,44.52,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+BG,2020,price_gas_residential_EUR_per_MWh,37.22,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+BG,2021,price_gas_residential_EUR_per_MWh,53.77,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+BG,2022,price_gas_residential_EUR_per_MWh,96.84,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+BG,2023,price_gas_residential_EUR_per_MWh,79.09,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+BG,2015,price_electricity_residential_EUR_per_MWh,94.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+BG,2016,price_electricity_residential_EUR_per_MWh,94.7,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+BG,2017,price_electricity_residential_EUR_per_MWh,96.9,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+BG,2018,price_electricity_residential_EUR_per_MWh,99.2,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+BG,2019,price_electricity_residential_EUR_per_MWh,97.75,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+BG,2020,price_electricity_residential_EUR_per_MWh,98.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+BG,2021,price_electricity_residential_EUR_per_MWh,105.75,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+BG,2022,price_electricity_residential_EUR_per_MWh,112.0,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+BG,2023,price_electricity_residential_EUR_per_MWh,116.5,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+BG,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+BG,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+BG,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+BG,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+BG,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+BG,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+BG,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+BG,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+BG,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+BG,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+BG,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+BG,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+BG,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+BG,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+BG,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+BG,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+BG,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+BG,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+BG,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+BG,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+BG,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+BG,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+BG,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+BG,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+BG,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+BG,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+BG,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CH,2015,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+CH,2016,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+CH,2017,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+CH,2018,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+CH,2019,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+CH,2020,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+CH,2021,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+CH,2022,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+CH,2023,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+CH,2015,price_electricity_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.3)
+CH,2016,price_electricity_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.3)
+CH,2017,price_electricity_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.3)
+CH,2018,price_electricity_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.3)
+CH,2019,price_electricity_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.3)
+CH,2020,price_electricity_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.3)
+CH,2021,price_electricity_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.3)
+CH,2022,price_electricity_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.3)
+CH,2023,price_electricity_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.3)
+CH,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CH,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CH,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CH,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CH,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CH,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CH,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CH,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CH,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CH,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CH,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CH,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CH,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CH,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CH,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CH,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CH,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CH,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CH,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CH,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CH,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CH,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CH,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CH,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CH,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CH,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CH,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CY,2015,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+CY,2016,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+CY,2017,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+CY,2018,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+CY,2019,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+CY,2020,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+CY,2021,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+CY,2022,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+CY,2023,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+CY,2015,price_electricity_residential_EUR_per_MWh,189.75,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+CY,2016,price_electricity_residential_EUR_per_MWh,157.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+CY,2017,price_electricity_residential_EUR_per_MWh,184.45,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+CY,2018,price_electricity_residential_EUR_per_MWh,203.8,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+CY,2019,price_electricity_residential_EUR_per_MWh,221.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+CY,2020,price_electricity_residential_EUR_per_MWh,191.55,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+CY,2021,price_electricity_residential_EUR_per_MWh,214.0,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+CY,2022,price_electricity_residential_EUR_per_MWh,293.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+CY,2023,price_electricity_residential_EUR_per_MWh,359.55,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+CY,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CY,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CY,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CY,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CY,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CY,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CY,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CY,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CY,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CY,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CY,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CY,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CY,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CY,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CY,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CY,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CY,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CY,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CY,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CY,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CY,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CY,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CY,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CY,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CY,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CY,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CY,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CZ,2015,price_gas_residential_EUR_per_MWh,57.88,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+CZ,2016,price_gas_residential_EUR_per_MWh,57.31,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+CZ,2017,price_gas_residential_EUR_per_MWh,55.8,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+CZ,2018,price_gas_residential_EUR_per_MWh,57.17,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+CZ,2019,price_gas_residential_EUR_per_MWh,58.66,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+CZ,2020,price_gas_residential_EUR_per_MWh,56.55,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+CZ,2021,price_gas_residential_EUR_per_MWh,55.81,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+CZ,2022,price_gas_residential_EUR_per_MWh,88.1,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+CZ,2023,price_gas_residential_EUR_per_MWh,113.19,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+CZ,2015,price_electricity_residential_EUR_per_MWh,139.65,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+CZ,2016,price_electricity_residential_EUR_per_MWh,142.05,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+CZ,2017,price_electricity_residential_EUR_per_MWh,146.3,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+CZ,2018,price_electricity_residential_EUR_per_MWh,157.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+CZ,2019,price_electricity_residential_EUR_per_MWh,175.9,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+CZ,2020,price_electricity_residential_EUR_per_MWh,181.8,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+CZ,2021,price_electricity_residential_EUR_per_MWh,184.25,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+CZ,2022,price_electricity_residential_EUR_per_MWh,208.3,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+CZ,2023,price_electricity_residential_EUR_per_MWh,317.05,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+CZ,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CZ,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CZ,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CZ,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CZ,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CZ,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CZ,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CZ,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CZ,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+CZ,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CZ,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CZ,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CZ,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CZ,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CZ,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CZ,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CZ,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CZ,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+CZ,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CZ,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CZ,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CZ,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CZ,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CZ,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CZ,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CZ,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+CZ,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+DE,2015,price_gas_residential_EUR_per_MWh,67.88,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+DE,2016,price_gas_residential_EUR_per_MWh,65.14,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+DE,2017,price_gas_residential_EUR_per_MWh,61.04,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+DE,2018,price_gas_residential_EUR_per_MWh,60.8,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+DE,2019,price_gas_residential_EUR_per_MWh,60.98,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+DE,2020,price_gas_residential_EUR_per_MWh,60.82,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+DE,2021,price_gas_residential_EUR_per_MWh,66.95,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+DE,2022,price_gas_residential_EUR_per_MWh,87.37,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+DE,2023,price_gas_residential_EUR_per_MWh,118.72,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+DE,2015,price_electricity_residential_EUR_per_MWh,294.85,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+DE,2016,price_electricity_residential_EUR_per_MWh,297.3,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+DE,2017,price_electricity_residential_EUR_per_MWh,304.8,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+DE,2018,price_electricity_residential_EUR_per_MWh,299.35,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+DE,2019,price_electricity_residential_EUR_per_MWh,298.3,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+DE,2020,price_electricity_residential_EUR_per_MWh,302.45,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+DE,2021,price_electricity_residential_EUR_per_MWh,321.35,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+DE,2022,price_electricity_residential_EUR_per_MWh,331.8,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+DE,2023,price_electricity_residential_EUR_per_MWh,407.25,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+DE,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+DE,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+DE,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+DE,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+DE,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+DE,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+DE,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+DE,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+DE,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+DE,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+DE,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+DE,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+DE,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+DE,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+DE,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+DE,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+DE,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+DE,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+DE,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+DE,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+DE,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+DE,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+DE,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+DE,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+DE,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+DE,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+DE,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+DK,2015,price_gas_residential_EUR_per_MWh,90.07,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+DK,2016,price_gas_residential_EUR_per_MWh,84.56,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+DK,2017,price_gas_residential_EUR_per_MWh,88.14,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+DK,2018,price_gas_residential_EUR_per_MWh,89.24,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+DK,2019,price_gas_residential_EUR_per_MWh,81.27,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+DK,2020,price_gas_residential_EUR_per_MWh,74.83,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+DK,2021,price_gas_residential_EUR_per_MWh,107.08,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+DK,2022,price_gas_residential_EUR_per_MWh,179.64,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+DK,2023,price_gas_residential_EUR_per_MWh,143.78,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+DK,2015,price_electricity_residential_EUR_per_MWh,305.5,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+DK,2016,price_electricity_residential_EUR_per_MWh,308.6,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+DK,2017,price_electricity_residential_EUR_per_MWh,302.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+DK,2018,price_electricity_residential_EUR_per_MWh,312.45,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+DK,2019,price_electricity_residential_EUR_per_MWh,295.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+DK,2020,price_electricity_residential_EUR_per_MWh,282.6,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+DK,2021,price_electricity_residential_EUR_per_MWh,317.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+DK,2022,price_electricity_residential_EUR_per_MWh,521.5,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+DK,2023,price_electricity_residential_EUR_per_MWh,368.25,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+DK,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+DK,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+DK,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+DK,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+DK,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+DK,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+DK,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+DK,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+DK,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+DK,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+DK,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+DK,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+DK,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+DK,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+DK,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+DK,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+DK,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+DK,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+DK,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+DK,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+DK,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+DK,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+DK,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+DK,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+DK,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+DK,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+DK,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+EE,2015,price_gas_residential_EUR_per_MWh,42.03,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+EE,2016,price_gas_residential_EUR_per_MWh,33.7,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+EE,2017,price_gas_residential_EUR_per_MWh,41.53,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+EE,2018,price_gas_residential_EUR_per_MWh,41.3,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+EE,2019,price_gas_residential_EUR_per_MWh,45.2,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+EE,2020,price_gas_residential_EUR_per_MWh,42.63,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+EE,2021,price_gas_residential_EUR_per_MWh,59.25,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+EE,2022,price_gas_residential_EUR_per_MWh,109.75,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+EE,2023,price_gas_residential_EUR_per_MWh,94.49,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+EE,2015,price_electricity_residential_EUR_per_MWh,129.65,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+EE,2016,price_electricity_residential_EUR_per_MWh,122.3,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+EE,2017,price_electricity_residential_EUR_per_MWh,126.3,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+EE,2018,price_electricity_residential_EUR_per_MWh,138.3,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+EE,2019,price_electricity_residential_EUR_per_MWh,138.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+EE,2020,price_electricity_residential_EUR_per_MWh,126.35,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+EE,2021,price_electricity_residential_EUR_per_MWh,163.15,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+EE,2022,price_electricity_residential_EUR_per_MWh,235.3,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+EE,2023,price_electricity_residential_EUR_per_MWh,224.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+EE,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+EE,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+EE,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+EE,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+EE,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+EE,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+EE,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+EE,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+EE,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+EE,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+EE,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+EE,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+EE,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+EE,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+EE,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+EE,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+EE,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+EE,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+EE,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+EE,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+EE,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+EE,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+EE,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+EE,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+EE,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+EE,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+EE,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+EL,2015,price_gas_residential_EUR_per_MWh,71.55,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+EL,2016,price_gas_residential_EUR_per_MWh,60.84,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+EL,2017,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+EL,2018,price_gas_residential_EUR_per_MWh,59.35,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+EL,2019,price_gas_residential_EUR_per_MWh,57.06,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+EL,2020,price_gas_residential_EUR_per_MWh,50.01,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+EL,2021,price_gas_residential_EUR_per_MWh,73.16,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+EL,2022,price_gas_residential_EUR_per_MWh,121.0,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+EL,2023,price_gas_residential_EUR_per_MWh,105.65,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+EL,2015,price_electricity_residential_EUR_per_MWh,176.9,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+EL,2016,price_electricity_residential_EUR_per_MWh,171.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+EL,2017,price_electricity_residential_EUR_per_MWh,166.55,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+EL,2018,price_electricity_residential_EUR_per_MWh,165.9,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+EL,2019,price_electricity_residential_EUR_per_MWh,157.3,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+EL,2020,price_electricity_residential_EUR_per_MWh,165.75,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+EL,2021,price_electricity_residential_EUR_per_MWh,182.7,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+EL,2022,price_electricity_residential_EUR_per_MWh,226.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+EL,2023,price_electricity_residential_EUR_per_MWh,231.8,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+EL,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+EL,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+EL,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+EL,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+EL,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+EL,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+EL,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+EL,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+EL,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+EL,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+EL,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+EL,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+EL,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+EL,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+EL,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+EL,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+EL,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+EL,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+EL,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+EL,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+EL,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+EL,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+EL,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+EL,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+EL,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+EL,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+EL,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+ES,2015,price_gas_residential_EUR_per_MWh,84.4,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+ES,2016,price_gas_residential_EUR_per_MWh,76.75,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+ES,2017,price_gas_residential_EUR_per_MWh,76.6,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+ES,2018,price_gas_residential_EUR_per_MWh,76.99,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+ES,2019,price_gas_residential_EUR_per_MWh,87.83,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+ES,2020,price_gas_residential_EUR_per_MWh,80.36,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+ES,2021,price_gas_residential_EUR_per_MWh,88.67,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+ES,2022,price_gas_residential_EUR_per_MWh,123.55,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+ES,2023,price_gas_residential_EUR_per_MWh,104.35,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+ES,2015,price_electricity_residential_EUR_per_MWh,233.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+ES,2016,price_electricity_residential_EUR_per_MWh,223.45,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+ES,2017,price_electricity_residential_EUR_per_MWh,223.65,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+ES,2018,price_electricity_residential_EUR_per_MWh,243.0,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+ES,2019,price_electricity_residential_EUR_per_MWh,239.85,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+ES,2020,price_electricity_residential_EUR_per_MWh,226.85,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+ES,2021,price_electricity_residential_EUR_per_MWh,256.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+ES,2022,price_electricity_residential_EUR_per_MWh,321.05,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+ES,2023,price_electricity_residential_EUR_per_MWh,240.05,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+ES,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+ES,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+ES,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+ES,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+ES,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+ES,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+ES,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+ES,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+ES,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+ES,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+ES,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+ES,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+ES,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+ES,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+ES,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+ES,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+ES,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+ES,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+ES,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+ES,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+ES,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+ES,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+ES,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+ES,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+ES,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+ES,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+ES,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+FI,2015,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+FI,2016,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+FI,2017,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+FI,2018,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+FI,2019,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+FI,2020,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+FI,2021,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+FI,2022,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+FI,2023,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+FI,2015,price_electricity_residential_EUR_per_MWh,154.1,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+FI,2016,price_electricity_residential_EUR_per_MWh,154.3,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+FI,2017,price_electricity_residential_EUR_per_MWh,159.0,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+FI,2018,price_electricity_residential_EUR_per_MWh,165.5,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+FI,2019,price_electricity_residential_EUR_per_MWh,175.85,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+FI,2020,price_electricity_residential_EUR_per_MWh,175.65,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+FI,2021,price_electricity_residential_EUR_per_MWh,180.35,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+FI,2022,price_electricity_residential_EUR_per_MWh,220.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+FI,2023,price_electricity_residential_EUR_per_MWh,248.0,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+FI,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+FI,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+FI,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+FI,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+FI,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+FI,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+FI,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+FI,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+FI,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+FI,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+FI,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+FI,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+FI,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+FI,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+FI,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+FI,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+FI,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+FI,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+FI,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+FI,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+FI,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+FI,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+FI,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+FI,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+FI,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+FI,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+FI,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+FR,2015,price_gas_residential_EUR_per_MWh,71.66,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+FR,2016,price_gas_residential_EUR_per_MWh,66.31,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+FR,2017,price_gas_residential_EUR_per_MWh,66.69,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+FR,2018,price_gas_residential_EUR_per_MWh,71.39,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+FR,2019,price_gas_residential_EUR_per_MWh,78.85,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+FR,2020,price_gas_residential_EUR_per_MWh,73.55,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+FR,2021,price_gas_residential_EUR_per_MWh,73.94,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+FR,2022,price_gas_residential_EUR_per_MWh,93.38,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+FR,2023,price_gas_residential_EUR_per_MWh,111.25,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+FR,2015,price_electricity_residential_EUR_per_MWh,167.9,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+FR,2016,price_electricity_residential_EUR_per_MWh,169.8,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+FR,2017,price_electricity_residential_EUR_per_MWh,173.0,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+FR,2018,price_electricity_residential_EUR_per_MWh,177.35,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+FR,2019,price_electricity_residential_EUR_per_MWh,184.55,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+FR,2020,price_electricity_residential_EUR_per_MWh,192.55,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+FR,2021,price_electricity_residential_EUR_per_MWh,198.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+FR,2022,price_electricity_residential_EUR_per_MWh,214.8,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+FR,2023,price_electricity_residential_EUR_per_MWh,244.55,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+FR,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+FR,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+FR,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+FR,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+FR,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+FR,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+FR,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+FR,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+FR,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+FR,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+FR,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+FR,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+FR,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+FR,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+FR,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+FR,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+FR,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+FR,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+FR,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+FR,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+FR,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+FR,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+FR,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+FR,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+FR,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+FR,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+FR,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+HR,2015,price_gas_residential_EUR_per_MWh,46.6,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+HR,2016,price_gas_residential_EUR_per_MWh,39.93,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+HR,2017,price_gas_residential_EUR_per_MWh,36.23,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+HR,2018,price_gas_residential_EUR_per_MWh,36.36,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+HR,2019,price_gas_residential_EUR_per_MWh,39.06,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+HR,2020,price_gas_residential_EUR_per_MWh,38.31,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+HR,2021,price_gas_residential_EUR_per_MWh,38.6,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+HR,2022,price_gas_residential_EUR_per_MWh,43.13,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+HR,2023,price_gas_residential_EUR_per_MWh,45.01,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+HR,2015,price_electricity_residential_EUR_per_MWh,131.45,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+HR,2016,price_electricity_residential_EUR_per_MWh,132.1,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+HR,2017,price_electricity_residential_EUR_per_MWh,121.6,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+HR,2018,price_electricity_residential_EUR_per_MWh,131.6,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+HR,2019,price_electricity_residential_EUR_per_MWh,132.25,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+HR,2020,price_electricity_residential_EUR_per_MWh,130.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+HR,2021,price_electricity_residential_EUR_per_MWh,130.2,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+HR,2022,price_electricity_residential_EUR_per_MWh,141.65,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+HR,2023,price_electricity_residential_EUR_per_MWh,148.0,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+HR,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+HR,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+HR,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+HR,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+HR,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+HR,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+HR,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+HR,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+HR,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+HR,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+HR,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+HR,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+HR,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+HR,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+HR,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+HR,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+HR,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+HR,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+HR,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+HR,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+HR,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+HR,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+HR,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+HR,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+HR,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+HR,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+HR,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+HU,2015,price_gas_residential_EUR_per_MWh,35.24,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+HU,2016,price_gas_residential_EUR_per_MWh,35.2,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+HU,2017,price_gas_residential_EUR_per_MWh,35.84,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+HU,2018,price_gas_residential_EUR_per_MWh,35.26,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+HU,2019,price_gas_residential_EUR_per_MWh,34.0,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+HU,2020,price_gas_residential_EUR_per_MWh,31.35,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+HU,2021,price_gas_residential_EUR_per_MWh,30.58,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+HU,2022,price_gas_residential_EUR_per_MWh,32.01,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+HU,2023,price_gas_residential_EUR_per_MWh,33.57,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+HU,2015,price_electricity_residential_EUR_per_MWh,113.6,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+HU,2016,price_electricity_residential_EUR_per_MWh,111.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+HU,2017,price_electricity_residential_EUR_per_MWh,112.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+HU,2018,price_electricity_residential_EUR_per_MWh,112.05,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+HU,2019,price_electricity_residential_EUR_per_MWh,110.85,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+HU,2020,price_electricity_residential_EUR_per_MWh,102.0,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+HU,2021,price_electricity_residential_EUR_per_MWh,100.65,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+HU,2022,price_electricity_residential_EUR_per_MWh,101.6,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+HU,2023,price_electricity_residential_EUR_per_MWh,114.45,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+HU,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+HU,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+HU,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+HU,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+HU,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+HU,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+HU,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+HU,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+HU,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+HU,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+HU,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+HU,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+HU,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+HU,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+HU,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+HU,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+HU,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+HU,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+HU,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+HU,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+HU,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+HU,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+HU,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+HU,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+HU,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+HU,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+HU,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+IE,2015,price_gas_residential_EUR_per_MWh,69.86,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+IE,2016,price_gas_residential_EUR_per_MWh,66.51,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+IE,2017,price_gas_residential_EUR_per_MWh,64.08,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+IE,2018,price_gas_residential_EUR_per_MWh,69.66,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+IE,2019,price_gas_residential_EUR_per_MWh,72.35,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+IE,2020,price_gas_residential_EUR_per_MWh,68.53,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+IE,2021,price_gas_residential_EUR_per_MWh,70.14,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+IE,2022,price_gas_residential_EUR_per_MWh,119.53,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+IE,2023,price_gas_residential_EUR_per_MWh,155.16,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+IE,2015,price_electricity_residential_EUR_per_MWh,244.0,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+IE,2016,price_electricity_residential_EUR_per_MWh,232.9,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+IE,2017,price_electricity_residential_EUR_per_MWh,233.0,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+IE,2018,price_electricity_residential_EUR_per_MWh,245.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+IE,2019,price_electricity_residential_EUR_per_MWh,248.45,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+IE,2020,price_electricity_residential_EUR_per_MWh,251.25,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+IE,2021,price_electricity_residential_EUR_per_MWh,276.45,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+IE,2022,price_electricity_residential_EUR_per_MWh,277.45,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+IE,2023,price_electricity_residential_EUR_per_MWh,326.45,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+IE,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+IE,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+IE,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+IE,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+IE,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+IE,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+IE,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+IE,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+IE,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+IE,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+IE,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+IE,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+IE,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+IE,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+IE,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+IE,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+IE,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+IE,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+IE,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+IE,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+IE,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+IE,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+IE,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+IE,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+IE,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+IE,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+IE,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+IT,2015,price_gas_residential_EUR_per_MWh,83.52,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+IT,2016,price_gas_residential_EUR_per_MWh,73.15,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+IT,2017,price_gas_residential_EUR_per_MWh,78.9,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+IT,2018,price_gas_residential_EUR_per_MWh,83.29,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+IT,2019,price_gas_residential_EUR_per_MWh,85.18,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+IT,2020,price_gas_residential_EUR_per_MWh,81.26,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+IT,2021,price_gas_residential_EUR_per_MWh,85.39,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+IT,2022,price_gas_residential_EUR_per_MWh,114.8,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+IT,2023,price_gas_residential_EUR_per_MWh,116.39,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+IT,2015,price_electricity_residential_EUR_per_MWh,243.9,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+IT,2016,price_electricity_residential_EUR_per_MWh,230.15,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+IT,2017,price_electricity_residential_EUR_per_MWh,210.6,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+IT,2018,price_electricity_residential_EUR_per_MWh,211.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+IT,2019,price_electricity_residential_EUR_per_MWh,232.1,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+IT,2020,price_electricity_residential_EUR_per_MWh,218.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+IT,2021,price_electricity_residential_EUR_per_MWh,230.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+IT,2022,price_electricity_residential_EUR_per_MWh,337.8,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+IT,2023,price_electricity_residential_EUR_per_MWh,356.45,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+IT,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+IT,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+IT,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+IT,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+IT,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+IT,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+IT,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+IT,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+IT,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+IT,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+IT,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+IT,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+IT,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+IT,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+IT,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+IT,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+IT,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+IT,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+IT,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+IT,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+IT,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+IT,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+IT,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+IT,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+IT,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+IT,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+IT,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LT,2015,price_gas_residential_EUR_per_MWh,42.97,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LT,2016,price_gas_residential_EUR_per_MWh,40.01,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LT,2017,price_gas_residential_EUR_per_MWh,38.01,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LT,2018,price_gas_residential_EUR_per_MWh,40.2,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LT,2019,price_gas_residential_EUR_per_MWh,42.8,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LT,2020,price_gas_residential_EUR_per_MWh,32.84,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LT,2021,price_gas_residential_EUR_per_MWh,34.42,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LT,2022,price_gas_residential_EUR_per_MWh,93.75,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LT,2023,price_gas_residential_EUR_per_MWh,165.11,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LT,2015,price_electricity_residential_EUR_per_MWh,124.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LT,2016,price_electricity_residential_EUR_per_MWh,120.1,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LT,2017,price_electricity_residential_EUR_per_MWh,111.15,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LT,2018,price_electricity_residential_EUR_per_MWh,109.7,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LT,2019,price_electricity_residential_EUR_per_MWh,125.45,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LT,2020,price_electricity_residential_EUR_per_MWh,137.35,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LT,2021,price_electricity_residential_EUR_per_MWh,141.25,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LT,2022,price_electricity_residential_EUR_per_MWh,196.3,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LT,2023,price_electricity_residential_EUR_per_MWh,252.15,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LT,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LT,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LT,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LT,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LT,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LT,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LT,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LT,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LT,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LT,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LT,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LT,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LT,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LT,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LT,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LT,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LT,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LT,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LT,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LT,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LT,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LT,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LT,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LT,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LT,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LT,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LT,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LU,2015,price_gas_residential_EUR_per_MWh,48.91,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LU,2016,price_gas_residential_EUR_per_MWh,43.63,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LU,2017,price_gas_residential_EUR_per_MWh,40.79,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LU,2018,price_gas_residential_EUR_per_MWh,41.97,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LU,2019,price_gas_residential_EUR_per_MWh,43.07,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LU,2020,price_gas_residential_EUR_per_MWh,38.9,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LU,2021,price_gas_residential_EUR_per_MWh,53.87,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LU,2022,price_gas_residential_EUR_per_MWh,87.33,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LU,2023,price_gas_residential_EUR_per_MWh,86.26,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LU,2015,price_electricity_residential_EUR_per_MWh,176.7,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LU,2016,price_electricity_residential_EUR_per_MWh,169.8,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LU,2017,price_electricity_residential_EUR_per_MWh,161.65,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LU,2018,price_electricity_residential_EUR_per_MWh,168.1,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LU,2019,price_electricity_residential_EUR_per_MWh,179.85,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LU,2020,price_electricity_residential_EUR_per_MWh,198.55,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LU,2021,price_electricity_residential_EUR_per_MWh,198.85,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LU,2022,price_electricity_residential_EUR_per_MWh,202.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LU,2023,price_electricity_residential_EUR_per_MWh,201.15,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LU,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LU,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LU,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LU,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LU,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LU,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LU,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LU,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LU,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LU,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LU,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LU,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LU,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LU,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LU,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LU,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LU,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LU,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LU,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LU,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LU,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LU,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LU,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LU,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LU,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LU,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LU,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LV,2015,price_gas_residential_EUR_per_MWh,49.03,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LV,2016,price_gas_residential_EUR_per_MWh,41.53,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LV,2017,price_gas_residential_EUR_per_MWh,38.51,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LV,2018,price_gas_residential_EUR_per_MWh,41.76,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LV,2019,price_gas_residential_EUR_per_MWh,39.82,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LV,2020,price_gas_residential_EUR_per_MWh,29.73,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LV,2021,price_gas_residential_EUR_per_MWh,36.49,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LV,2022,price_gas_residential_EUR_per_MWh,78.64,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LV,2023,price_gas_residential_EUR_per_MWh,100.28,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+LV,2015,price_electricity_residential_EUR_per_MWh,164.25,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LV,2016,price_electricity_residential_EUR_per_MWh,162.6,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LV,2017,price_electricity_residential_EUR_per_MWh,158.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LV,2018,price_electricity_residential_EUR_per_MWh,152.1,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LV,2019,price_electricity_residential_EUR_per_MWh,163.45,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LV,2020,price_electricity_residential_EUR_per_MWh,142.6,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LV,2021,price_electricity_residential_EUR_per_MWh,164.45,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LV,2022,price_electricity_residential_EUR_per_MWh,237.55,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LV,2023,price_electricity_residential_EUR_per_MWh,291.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+LV,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LV,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LV,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LV,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LV,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LV,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LV,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LV,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LV,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+LV,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LV,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LV,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LV,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LV,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LV,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LV,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LV,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LV,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+LV,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LV,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LV,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LV,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LV,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LV,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LV,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LV,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+LV,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+MT,2015,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+MT,2016,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+MT,2017,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+MT,2018,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+MT,2019,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+MT,2020,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+MT,2021,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+MT,2022,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+MT,2023,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+MT,2015,price_electricity_residential_EUR_per_MWh,126.3,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+MT,2016,price_electricity_residential_EUR_per_MWh,126.55,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+MT,2017,price_electricity_residential_EUR_per_MWh,131.3,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+MT,2018,price_electricity_residential_EUR_per_MWh,129.6,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+MT,2019,price_electricity_residential_EUR_per_MWh,129.7,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+MT,2020,price_electricity_residential_EUR_per_MWh,129.25,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+MT,2021,price_electricity_residential_EUR_per_MWh,130.15,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+MT,2022,price_electricity_residential_EUR_per_MWh,129.1,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+MT,2023,price_electricity_residential_EUR_per_MWh,127.0,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+MT,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+MT,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+MT,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+MT,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+MT,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+MT,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+MT,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+MT,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+MT,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+MT,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+MT,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+MT,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+MT,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+MT,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+MT,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+MT,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+MT,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+MT,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+MT,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+MT,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+MT,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+MT,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+MT,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+MT,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+MT,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+MT,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+MT,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+NL,2015,price_gas_residential_EUR_per_MWh,77.94,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+NL,2016,price_gas_residential_EUR_per_MWh,79.38,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+NL,2017,price_gas_residential_EUR_per_MWh,85.16,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+NL,2018,price_gas_residential_EUR_per_MWh,91.2,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+NL,2019,price_gas_residential_EUR_per_MWh,100.06,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+NL,2020,price_gas_residential_EUR_per_MWh,106.17,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+NL,2021,price_gas_residential_EUR_per_MWh,108.62,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+NL,2022,price_gas_residential_EUR_per_MWh,160.49,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+NL,2023,price_gas_residential_EUR_per_MWh,175.06,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+NL,2015,price_electricity_residential_EUR_per_MWh,191.6,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+NL,2016,price_electricity_residential_EUR_per_MWh,160.6,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+NL,2017,price_electricity_residential_EUR_per_MWh,159.5,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+NL,2018,price_electricity_residential_EUR_per_MWh,180.0,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+NL,2019,price_electricity_residential_EUR_per_MWh,206.5,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+NL,2020,price_electricity_residential_EUR_per_MWh,139.65,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+NL,2021,price_electricity_residential_EUR_per_MWh,136.5,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+NL,2022,price_electricity_residential_EUR_per_MWh,87.85,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+NL,2023,price_electricity_residential_EUR_per_MWh,303.1,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+NL,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+NL,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+NL,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+NL,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+NL,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+NL,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+NL,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+NL,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+NL,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+NL,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+NL,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+NL,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+NL,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+NL,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+NL,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+NL,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+NL,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+NL,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+NL,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+NL,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+NL,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+NL,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+NL,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+NL,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+NL,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+NL,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+NL,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+PL,2015,price_gas_residential_EUR_per_MWh,49.95,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+PL,2016,price_gas_residential_EUR_per_MWh,41.66,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+PL,2017,price_gas_residential_EUR_per_MWh,42.92,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+PL,2018,price_gas_residential_EUR_per_MWh,43.66,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+PL,2019,price_gas_residential_EUR_per_MWh,46.87,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+PL,2020,price_gas_residential_EUR_per_MWh,42.21,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+PL,2021,price_gas_residential_EUR_per_MWh,42.44,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+PL,2022,price_gas_residential_EUR_per_MWh,55.11,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+PL,2023,price_gas_residential_EUR_per_MWh,70.64,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+PL,2015,price_electricity_residential_EUR_per_MWh,143.1,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+PL,2016,price_electricity_residential_EUR_per_MWh,134.2,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+PL,2017,price_electricity_residential_EUR_per_MWh,144.85,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+PL,2018,price_electricity_residential_EUR_per_MWh,140.3,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+PL,2019,price_electricity_residential_EUR_per_MWh,135.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+PL,2020,price_electricity_residential_EUR_per_MWh,149.25,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+PL,2021,price_electricity_residential_EUR_per_MWh,156.1,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+PL,2022,price_electricity_residential_EUR_per_MWh,153.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+PL,2023,price_electricity_residential_EUR_per_MWh,196.55,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+PL,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+PL,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+PL,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+PL,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+PL,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+PL,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+PL,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+PL,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+PL,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+PL,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+PL,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+PL,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+PL,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+PL,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+PL,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+PL,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+PL,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+PL,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+PL,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+PL,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+PL,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+PL,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+PL,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+PL,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+PL,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+PL,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+PL,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+PT,2015,price_gas_residential_EUR_per_MWh,97.9,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+PT,2016,price_gas_residential_EUR_per_MWh,86.36,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+PT,2017,price_gas_residential_EUR_per_MWh,78.58,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+PT,2018,price_gas_residential_EUR_per_MWh,77.11,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+PT,2019,price_gas_residential_EUR_per_MWh,76.83,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+PT,2020,price_gas_residential_EUR_per_MWh,78.39,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+PT,2021,price_gas_residential_EUR_per_MWh,76.73,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+PT,2022,price_gas_residential_EUR_per_MWh,105.68,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+PT,2023,price_gas_residential_EUR_per_MWh,139.02,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+PT,2015,price_electricity_residential_EUR_per_MWh,228.2,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+PT,2016,price_electricity_residential_EUR_per_MWh,232.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+PT,2017,price_electricity_residential_EUR_per_MWh,225.7,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+PT,2018,price_electricity_residential_EUR_per_MWh,226.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+PT,2019,price_electricity_residential_EUR_per_MWh,216.55,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+PT,2020,price_electricity_residential_EUR_per_MWh,212.65,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+PT,2021,price_electricity_residential_EUR_per_MWh,212.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+PT,2022,price_electricity_residential_EUR_per_MWh,221.05,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+PT,2023,price_electricity_residential_EUR_per_MWh,218.5,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+PT,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+PT,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+PT,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+PT,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+PT,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+PT,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+PT,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+PT,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+PT,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+PT,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+PT,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+PT,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+PT,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+PT,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+PT,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+PT,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+PT,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+PT,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+PT,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+PT,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+PT,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+PT,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+PT,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+PT,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+PT,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+PT,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+PT,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+RO,2015,price_gas_residential_EUR_per_MWh,32.58,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+RO,2016,price_gas_residential_EUR_per_MWh,32.77,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+RO,2017,price_gas_residential_EUR_per_MWh,30.53,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+RO,2018,price_gas_residential_EUR_per_MWh,33.72,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+RO,2019,price_gas_residential_EUR_per_MWh,33.96,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+RO,2020,price_gas_residential_EUR_per_MWh,32.21,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+RO,2021,price_gas_residential_EUR_per_MWh,39.58,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+RO,2022,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+RO,2023,price_gas_residential_EUR_per_MWh,55.34,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+RO,2015,price_electricity_residential_EUR_per_MWh,131.1,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+RO,2016,price_electricity_residential_EUR_per_MWh,124.65,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+RO,2017,price_electricity_residential_EUR_per_MWh,124.35,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+RO,2018,price_electricity_residential_EUR_per_MWh,132.5,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+RO,2019,price_electricity_residential_EUR_per_MWh,138.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+RO,2020,price_electricity_residential_EUR_per_MWh,145.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+RO,2021,price_electricity_residential_EUR_per_MWh,156.9,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+RO,2022,price_electricity_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.3)
+RO,2023,price_electricity_residential_EUR_per_MWh,190.1,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+RO,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+RO,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+RO,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+RO,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+RO,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+RO,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+RO,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+RO,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+RO,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+RO,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+RO,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+RO,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+RO,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+RO,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+RO,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+RO,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+RO,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+RO,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+RO,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+RO,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+RO,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+RO,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+RO,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+RO,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+RO,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+RO,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+RO,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SE,2015,price_gas_residential_EUR_per_MWh,115.23,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SE,2016,price_gas_residential_EUR_per_MWh,113.56,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SE,2017,price_gas_residential_EUR_per_MWh,116.88,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SE,2018,price_gas_residential_EUR_per_MWh,118.78,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SE,2019,price_gas_residential_EUR_per_MWh,114.38,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SE,2020,price_gas_residential_EUR_per_MWh,136.13,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SE,2021,price_gas_residential_EUR_per_MWh,174.84,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SE,2022,price_gas_residential_EUR_per_MWh,248.33,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SE,2023,price_gas_residential_EUR_per_MWh,212.96,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SE,2015,price_electricity_residential_EUR_per_MWh,187.3,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SE,2016,price_electricity_residential_EUR_per_MWh,193.85,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SE,2017,price_electricity_residential_EUR_per_MWh,198.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SE,2018,price_electricity_residential_EUR_per_MWh,197.95,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SE,2019,price_electricity_residential_EUR_per_MWh,204.25,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SE,2020,price_electricity_residential_EUR_per_MWh,196.55,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SE,2021,price_electricity_residential_EUR_per_MWh,235.9,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SE,2022,price_electricity_residential_EUR_per_MWh,250.9,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SE,2023,price_electricity_residential_EUR_per_MWh,242.15,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SE,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SE,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SE,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SE,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SE,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SE,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SE,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SE,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SE,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SE,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SE,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SE,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SE,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SE,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SE,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SE,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SE,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SE,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SE,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SE,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SE,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SE,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SE,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SE,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SE,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SE,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SE,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SI,2015,price_gas_residential_EUR_per_MWh,61.9,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SI,2016,price_gas_residential_EUR_per_MWh,58.12,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SI,2017,price_gas_residential_EUR_per_MWh,54.21,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SI,2018,price_gas_residential_EUR_per_MWh,56.16,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SI,2019,price_gas_residential_EUR_per_MWh,56.66,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SI,2020,price_gas_residential_EUR_per_MWh,56.77,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SI,2021,price_gas_residential_EUR_per_MWh,56.7,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SI,2022,price_gas_residential_EUR_per_MWh,81.62,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SI,2023,price_gas_residential_EUR_per_MWh,103.89,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SI,2015,price_electricity_residential_EUR_per_MWh,161.0,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SI,2016,price_electricity_residential_EUR_per_MWh,162.35,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SI,2017,price_electricity_residential_EUR_per_MWh,161.1,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SI,2018,price_electricity_residential_EUR_per_MWh,162.55,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SI,2019,price_electricity_residential_EUR_per_MWh,165.0,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SI,2020,price_electricity_residential_EUR_per_MWh,157.1,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SI,2021,price_electricity_residential_EUR_per_MWh,168.65,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SI,2022,price_electricity_residential_EUR_per_MWh,167.3,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SI,2023,price_electricity_residential_EUR_per_MWh,201.5,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SI,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SI,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SI,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SI,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SI,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SI,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SI,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SI,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SI,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SI,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SI,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SI,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SI,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SI,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SI,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SI,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SI,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SI,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SI,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SI,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SI,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SI,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SI,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SI,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SI,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SI,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SI,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SK,2015,price_gas_residential_EUR_per_MWh,49.54,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SK,2016,price_gas_residential_EUR_per_MWh,45.27,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SK,2017,price_gas_residential_EUR_per_MWh,43.3,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SK,2018,price_gas_residential_EUR_per_MWh,44.32,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SK,2019,price_gas_residential_EUR_per_MWh,46.48,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SK,2020,price_gas_residential_EUR_per_MWh,46.85,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SK,2021,price_gas_residential_EUR_per_MWh,41.69,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SK,2022,price_gas_residential_EUR_per_MWh,49.33,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SK,2023,price_gas_residential_EUR_per_MWh,59.06,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+SK,2015,price_electricity_residential_EUR_per_MWh,151.15,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SK,2016,price_electricity_residential_EUR_per_MWh,148.0,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SK,2017,price_electricity_residential_EUR_per_MWh,143.85,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SK,2018,price_electricity_residential_EUR_per_MWh,151.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SK,2019,price_electricity_residential_EUR_per_MWh,158.1,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SK,2020,price_electricity_residential_EUR_per_MWh,170.5,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SK,2021,price_electricity_residential_EUR_per_MWh,164.6,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SK,2022,price_electricity_residential_EUR_per_MWh,184.0,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SK,2023,price_electricity_residential_EUR_per_MWh,191.75,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+SK,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SK,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SK,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SK,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SK,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SK,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SK,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SK,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SK,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+SK,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SK,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SK,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SK,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SK,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SK,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SK,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SK,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SK,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+SK,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SK,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SK,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SK,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SK,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SK,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SK,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SK,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+SK,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+UK,2015,price_gas_residential_EUR_per_MWh,65.18,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+UK,2016,price_gas_residential_EUR_per_MWh,52.72,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+UK,2017,price_gas_residential_EUR_per_MWh,47.44,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+UK,2018,price_gas_residential_EUR_per_MWh,49.16,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+UK,2019,price_gas_residential_EUR_per_MWh,49.85,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+UK,2020,price_gas_residential_EUR_per_MWh,47.59,EUR/MWh GCV tax-incl,Eurostat nrg_pc_202 band D2
+UK,2021,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+UK,2022,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+UK,2023,price_gas_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.4)
+UK,2015,price_electricity_residential_EUR_per_MWh,215.4,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+UK,2016,price_electricity_residential_EUR_per_MWh,189.1,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+UK,2017,price_electricity_residential_EUR_per_MWh,181.1,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+UK,2018,price_electricity_residential_EUR_per_MWh,195.55,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+UK,2019,price_electricity_residential_EUR_per_MWh,216.6,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+UK,2020,price_electricity_residential_EUR_per_MWh,220.3,EUR/MWh tax-incl,Eurostat nrg_pc_204 band DC
+UK,2021,price_electricity_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.3)
+UK,2022,price_electricity_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.3)
+UK,2023,price_electricity_residential_EUR_per_MWh,NA,EUR/MWh,missing (CH not in Eurostat; UK post-2020 use DESNZ QEP 2.2.3)
+UK,2015,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+UK,2016,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+UK,2017,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+UK,2018,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+UK,2019,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+UK,2020,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+UK,2021,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+UK,2022,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+UK,2023,price_heating_oil_EUR_per_litre,NA,EUR/L,missing (source: EU Weekly Oil Bulletin per-country weekly PDFs; CH use BFS; UK use DESNZ QEP 4.1.1)
+UK,2015,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+UK,2016,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+UK,2017,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+UK,2018,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+UK,2019,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+UK,2020,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+UK,2021,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+UK,2022,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+UK,2023,price_pellets_EUR_per_MWh,NA,EUR/MWh,missing (source: Bioenergy Europe Statistical Reports; national pellet associations)
+UK,2015,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+UK,2016,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+UK,2017,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+UK,2018,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+UK,2019,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+UK,2020,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+UK,2021,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+UK,2022,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)
+UK,2023,price_district_heat_EUR_per_MWh,NA,EUR/MWh,missing (source: Euroheat and Power Country-by-Country report; national regulators)

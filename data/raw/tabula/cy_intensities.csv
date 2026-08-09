@@ -1,0 +1,73 @@
+# TABULA Cyprus synthetical-average residential building intensities
+#
+# Source: TABULA / EPISCOPE project. Cyprus has a national TABULA residential
+#   typology.
+#   - Country page: episcope.eu/building-typology/country/cy
+#   - Loga, Stein, Diefenbach (2016). Energy & Buildings 132:4-12.
+#
+# USED AS A CLIMATE-CORRECTED PROXY FOR MALTA
+# -------------------------------------------
+# Malta is not a TABULA country. Cyprus is used as the proxy (mt.yaml,
+# climate_multiplier 0.7210) -- both are small warm-Mediterranean island states
+# (Koeppen Csa), masonry-dominated, with reverse-cycle air-conditioning as the
+# main heating technology and very low heating demand. Cyprus has higher HDD
+# than Malta, so the climate correction is well below 1.0.
+#
+# IMPORTANT -- VALUES ARE RESEARCH-SYNTHESISED BEST ESTIMATES, NEEDS_VERIFY
+# ------------------------------------------------------------------------
+# The Cyprus TABULA per-type space-heating energy-need values are held in the
+# TABULA WebTool (interactive) and the Cyprus EPI Tables, which are not
+# machine-extractable. The sh_intensity values below are best estimates for a
+# warm-Mediterranean country with low heating demand, consistent with the
+# TABULA span and the Cyprus typology structure. Because Malta's residential
+# heating demand is negligible (Hotmaps 2015 baseline 0.73 TWh) and EUBUCCO may
+# not even hold Malta building data, the precision of this file has minimal
+# effect on study results. Verify against the TABULA WebTool (country CY) if a
+# precise Malta build is needed. Treat as +/-30% uncertainty.
+#
+# Building class mapping (Cyprus TABULA -> our 3 residential classes):
+#   SFH       <- Cyprus TABULA SFH (single-family house)
+#   MFH_LOW   <- Cyprus TABULA TH + MFH
+#   MFH_HIGH  <- Cyprus TABULA MFH (same multi-family typology as MFH_LOW;
+#                FLAGGED limitation -- Cyprus has no separate high-rise class)
+#
+# Cohort mapping (Cyprus TABULA 3 periods -> our 6 cohorts):
+#   Cyprus TABULA periods: Period 1 = ...-1980; Period 2 = 1981-2006;
+#     Period 3 = 2007-... .
+#   pre-1945, 1946-1970, 1971-1990  <- Cyprus Period 1 (...-1980)
+#   1991-2010                       <- Cyprus Period 2 (1981-2006)
+#   2011-2020, post-2020            <- Cyprus Period 3 (2007-...)
+#   The 3->6 expansion means several of our cohorts carry identical values --
+#   a documented limitation of the coarse Cyprus typology.
+#
+# Refurbishment reduction factors (Cyprus TABULA, typology-averaged): standard
+# refurbishment ~0.70 of existing-state SH need; advanced ~0.50. Warm-climate
+# refurbishment yields smaller absolute savings. Inform the retrofit blend in mt.yaml.
+#
+# DHW: warm-climate convention, ~16 kWh/m2/yr SFH, ~14 MFH.
+#
+# Citation:
+#   Loga T., Stein B., Diefenbach N. (2016). TABULA building typologies in 20
+#     European countries. Energy & Buildings 132:4-12.
+#     DOI 10.1016/j.enbuild.2016.06.094
+#
+#
+building_class,cohort,sh_intensity_kwh_m2_yr,dhw_intensity_kwh_m2_yr,source_note
+SFH,pre-1945,100,16,"CY TABULA Period 1 (...-1980); ESTIMATE pending WebTool"
+SFH,1946-1970,100,16,"CY TABULA Period 1 (...-1980); ESTIMATE"
+SFH,1971-1990,100,16,"CY TABULA Period 1 (...-1980); ESTIMATE"
+SFH,1991-2010,65,16,"CY TABULA Period 2 (1981-2006); ESTIMATE"
+SFH,2011-2020,40,16,"CY TABULA Period 3 (2007-...); ESTIMATE"
+SFH,post-2020,35,16,"CY TABULA Period 3 (2007-...); ESTIMATE"
+MFH_LOW,pre-1945,75,14,"CY TABULA Period 1 (...-1980); ESTIMATE pending WebTool"
+MFH_LOW,1946-1970,75,14,"CY TABULA Period 1 (...-1980); ESTIMATE"
+MFH_LOW,1971-1990,75,14,"CY TABULA Period 1 (...-1980); ESTIMATE"
+MFH_LOW,1991-2010,50,14,"CY TABULA Period 2 (1981-2006); ESTIMATE"
+MFH_LOW,2011-2020,35,14,"CY TABULA Period 3 (2007-...); ESTIMATE"
+MFH_LOW,post-2020,30,14,"CY TABULA Period 3 (2007-...); ESTIMATE"
+MFH_HIGH,pre-1945,75,14,"CY TABULA Period 1 (= MFH_LOW; Cyprus has one multi-family class); FLAGGED"
+MFH_HIGH,1946-1970,75,14,"CY TABULA Period 1 (= MFH_LOW); FLAGGED limitation"
+MFH_HIGH,1971-1990,75,14,"CY TABULA Period 1 (= MFH_LOW); FLAGGED limitation"
+MFH_HIGH,1991-2010,50,14,"CY TABULA Period 2 (= MFH_LOW); FLAGGED limitation"
+MFH_HIGH,2011-2020,35,14,"CY TABULA Period 3 (= MFH_LOW); FLAGGED limitation"
+MFH_HIGH,post-2020,30,14,"CY TABULA Period 3 (= MFH_LOW); FLAGGED limitation"

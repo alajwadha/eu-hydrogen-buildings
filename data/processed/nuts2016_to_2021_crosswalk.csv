@@ -1,0 +1,51 @@
+old,old_name,new,new_name,weight
+BE221,Arr. Hasselt,BE224,Arr. Hasselt,1.0
+BE222,Arr. Maaseik,BE225,Arr. Maaseik,1.0
+BE321,Arr. Ath,BE32A,Arr. Ath,1.0
+BE322,Arr. Charleroi,BE32B,Arr. Charleroi,0.8650544847223718
+BE322,Arr. Charleroi,BE32C,Arr. Soignies,0.1349455152776282
+BE324,Arr. Mouscron,BE328,Arr. Tournai-Mouscron,1.0
+BE325,Arr. Soignies,BE32C,Arr. Soignies,0.5789536154083036
+BE325,Arr. Soignies,BE32A,Arr. Ath,0.3261857933675387
+BE325,Arr. Soignies,BE329,Arr. La Louvière,0.0948605912241576
+BE326,Arr. Thuin,BE32D,Arr. Thuin,0.8120503527043517
+BE326,Arr. Thuin,BE329,Arr. La Louvière,0.18794964729564825
+BE327,Arr. Tournai,BE328,Arr. Tournai-Mouscron,1.0
+EE006,Kesk-Eesti,EE009,Kesk-Eesti,1.0
+EE007,Kirde-Eesti,EE00A,Kirde-Eesti,0.8482367645747478
+EE007,Kirde-Eesti,EE008,Lõuna-Eesti,0.1292520861479543
+EE007,Kirde-Eesti,EE009,Kesk-Eesti,0.02251114927729793
+HR041,Grad Zagreb,HR050,Grad Zagreb,1.0
+HR042,Zagrebačka županija,HR065,Zagrebačka županija,1.0
+HR043,Krapinsko-zagorska županija,HR064,Krapinsko-zagorska županija,1.0
+HR044,Varaždinska županija,HR062,Varaždinska županija,1.0
+HR045,Koprivničko-križevačka županija,HR063,Koprivničko-križevačka županija,1.0
+HR046,Međimurska županija,HR061,Međimurska županija,1.0
+HR047,Bjelovarsko-bilogorska županija,HR021,Bjelovarsko-bilogorska županija,1.0
+HR048,Virovitičko-podravska županija,HR022,Virovitičko-podravska županija,1.0
+HR049,Požeško-slavonska županija,HR023,Požeško-slavonska županija,1.0
+HR04A,Brodsko-posavska županija,HR024,Brodsko-posavska županija,1.0
+HR04B,Osječko-baranjska županija,HR025,Osječko-baranjska županija,1.0
+HR04C,Vukovarsko-srijemska županija,HR026,Vukovarsko-srijemska županija,1.0
+HR04D,Karlovačka županija,HR027,Karlovačka županija,1.0
+HR04E,Sisačko-moslavačka županija,HR028,Sisačko-moslavačka županija,1.0
+ITG25,Sassari,ITG2D,Sassari,1.0
+ITG26,Nuoro,ITG2E,Nuoro,1.0
+ITG27,Cagliari,ITG2H,Sud Sardegna,0.7309268869540443
+ITG27,Cagliari,ITG2F,Cagliari,0.2690731130459557
+ITG28,Oristano,ITG2G,Oristano,1.0
+ITG29,Olbia-Tempio,ITG2D,Sassari,1.0
+ITG2A,Ogliastra,ITG2E,Nuoro,0.9390624671474523
+ITG2A,Ogliastra,ITG2H,Sud Sardegna,0.06093753285254767
+ITG2B,Medio Campidano,ITG2H,Sud Sardegna,1.0
+ITG2C,Carbonia-Iglesias,ITG2H,Sud Sardegna,1.0
+UKK21,Bournemouth and Poole,UKK24,"Bournemouth, Christchurch and Poole",1.0
+UKK22,Dorset CC,UKK25,Dorset,0.9753288169636948
+UKK22,Dorset CC,UKK24,"Bournemouth, Christchurch and Poole",0.02467118303630518
+UKN10,Derry City and Strabane,UKN0A,Derry City and Strabane,1.0
+UKN11,Mid Ulster,UKN0B,Mid Ulster,1.0
+UKN12,Causeway Coast and Glens,UKN0C,Causeway Coast and Glens,1.0
+UKN13,Antrim and Newtownabbey,UKN0D,Antrim and Newtownabbey,1.0
+UKN14,Lisburn and Castlereagh,UKN0E,Lisburn and Castlereagh,1.0
+UKN15,Mid and East Antrim,UKN0F,Mid and East Antrim,1.0
+UKN16,Fermanagh and Omagh,UKN0G,Fermanagh and Omagh,1.0

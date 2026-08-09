@@ -1,0 +1,235 @@
+# Country configuration: Austria (AT)
+# =====================================
+# All Austria-specific parameters for the building-stock pipeline.
+# Methodology: literature/austria/classification_methodology.md.
+#
+# Schema version: 1.
+# Austria is a DIRECT TABULA country (AEA / Austrian Energy Agency; Lechner
+# et al. 2011). Build group 5 (AT + BE, NL, IE; NW temperate Europe). Hotmaps
+# 2015 baseline ~72 TWh.
+
+country_code: AT
+country_name: Austria
+
+# -- EUBUCCO data source -----------------------------------------------------
+# EUBUCCO v0.2 partitions by NUTS2 (NUTS 2016). Austria has 9 NUTS2 regions
+# (AT11-AT34); stable across NUTS 2013/2016/2021.
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - AT11   # Burgenland
+    - AT12   # Niederosterreich
+    - AT13   # Wien (Vienna)
+    - AT21   # Karnten
+    - AT22   # Steiermark
+    - AT31   # Oberosterreich
+    - AT32   # Salzburg
+    - AT33   # Tirol
+    - AT34   # Vorarlberg
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  license: ODbL v1.0
+  # EUBUCCO area-correction factor (applied 2026-05-20).
+  # Initial G5 Colab build landed AT at 125.5 TWh vs Hotmaps 82.36 = +52.4 %
+  # INV. AT BU also matched the BSO benchmark (~109 TWh) within ~15 %, which
+  # suggested an EUBUCCO area over-count rather than an intensity issue
+  # (typology is AT-direct, so no proxy mismatch to blame).
+  #
+  # EUBUCCO AT total residential heated_floor_area = 820 Mm^2 (sum across
+  # 9 NUTS2 regions in code/data/processed/at/AT_aggregated_NUTS3.csv,
+  # post-useable_fraction 0.85). Statistik Austria GWZ 2021 (Gebaude- und
+  # Wohnungszahlung Census, reference date 2021-10-31) anchors the actual
+  # AT residential floor area at:
+  #   4.9 M dwellings x 96.2 m^2 weighted-mean useful area (Nutzflache)
+  #   = 471 Mm^2 occupied + main-residence + secondary stock.
+  # Correction = 471 / 820 = 0.574 ~ 0.575.
+  #
+  # The EUBUCCO over-count is concentrated in MFH_LOW unknown-cohort
+  # (432 Mm^2 of the 820 total). Likely driver: EUBUCCO classifies
+  # multi-storey rural / mixed-use ground-floor buildings as MFH_LOW
+  # whose upper-floor residential portion is a fraction of total
+  # footprint x floors. AT GWZ Nutzflache is dwelling-only and excludes
+  # commercial ground-floor, stairwells, attics-not-converted.
+  #
+  # Source: Statistik Austria, Gebaude- und Wohnungszahlung 2021.
+  #   https://www.statistik.at/en/statistics/population-and-society/housing/stock-of-dwellings
+  # MECHANISM (clarified 2026-05-21): imputed-floor area over-count.
+  # EUBUCCO AT observed-height share is 7% (Milojevic-Dupont 2023,
+  # Table 1); floors -- hence floor area -- are ML-imputed even though the
+  # footprints are cadastre-sourced. The correction calibrates the imputed
+  # area to the census. See literature/eubucco_census_area_audit.md
+  # (Mechanism A).
+  area_correction: 0.575
+  area_correction_source: |
+    Statistik Austria GWZ 2021 (Gebaude- und Wohnungszahlung Census,
+    reference 2021-10-31): 4.9 M dwellings x 96.2 m^2 weighted-mean
+    Nutzflache = 471 Mm^2. EUBUCCO AT total: 820 Mm^2 (post-useable_
+    fraction 0.85). Correction = 471/820 = 0.574. AT-direct TABULA
+    typology was correct; the +52 % G5 gap was an area-layer over-count.
+
+# -- NUTS3 regions -----------------------------------------------------------
+# Austria has 35 NUTS3 regions; codes stable across NUTS 2013/2016/2021.
+nuts3_regions:
+  - AT111
+  - AT112
+  - AT113
+  - AT121
+  - AT122
+  - AT123
+  - AT124
+  - AT125
+  - AT126
+  - AT127
+  - AT130
+  - AT211
+  - AT212
+  - AT213
+  - AT221
+  - AT222
+  - AT223
+  - AT224
+  - AT225
+  - AT226
+  - AT311
+  - AT312
+  - AT313
+  - AT314
+  - AT315
+  - AT321
+  - AT322
+  - AT323
+  - AT331
+  - AT332
+  - AT333
+  - AT334
+  - AT335
+  - AT341
+  - AT342
+
+bbox_wgs84:
+  lon_min: 9.53
+  lat_min: 46.37
+  lon_max: 17.16
+  lat_max: 49.02
+
+# -- TABULA building typology source -----------------------------------------
+tabula:
+  source_country: AT
+  source_country_name: Austria
+  intensities_file: code/data/raw/tabula/at_intensities.csv
+  reason_for_proxy: |
+    None -- Austria is a TABULA country. The Austrian national residential
+    typology (AEA / Austrian Energy Agency; Lechner, Tappeiner, Lang 2011)
+    is used directly, no proxy, no climate correction (climate_multiplier
+    = 1.0). The AEA brochure is built from the ZEUS EPC database (~40,000
+    certificates) on a national-mean calibration, so the TABULA reference
+    HDD coincides with the country's actual HDD.
+
+# -- Climate correction ------------------------------------------------------
+# Direct TABULA country with national-mean calibration; multiplier = 1.0.
+climate:
+  hdd_country: 3050.0        # AT -- Eurostat nrg_chdd_a 2018-2022 mean estimate
+  hdd_proxy: 3050.0          # AT direct typology -> proxy = self
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  tabula_reference_hdd: 3050.0  # AEA ZEUS national-mean calibration
+  climate_multiplier: 1.0
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST); 5-year mean 2018-2022 estimated NEEDS_VERIFY
+
+# -- Retrofit-state distribution ---------------------------------------------
+# Austria has run thermal-renovation programmes consistently since the 1990s;
+# Sanierungsoffensive ramped post-2010 and again post-2020 (Raus-aus-Oel-Bonus
+# 2019+, ~52,652 applications by Dec 2024). IIBW + Umweltbundesamt monitoring
+# puts the measured renovation rate at ~1.5 %/yr. Shares below reflect Austria
+# having a higher renovated stock share than DE/CZ at comparable cohort age.
+retrofit:
+  share:
+    original: 0.65          # IIBW + UBA renovation monitoring; mid-DE-CZ
+    standard: 0.27          # Sanierungsoffensive standard package
+    advanced: 0.08          # Sanierungsoffensive deep / Passivhaus track
+  factor:
+    standard: 0.65          # AT TABULA standard refurb (provisional)
+    advanced: 0.40          # AT TABULA advanced refurb (provisional)
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # Computed blend for AT: 0.65 + 0.27x0.65 + 0.08x0.40 = 0.8575
+  blend_value: 0.8575
+  share_source: |
+    Modelling assumption grounded in IIBW + Umweltbundesamt renovation-rate
+    monitoring (~1.5%/yr thermal-only). Sanierungsoffensive (federal, ~360M
+    EUR/yr 2026-2030), Sanierungsbonus, Raus-aus-Oel-Bonus (52,652 applications
+    by Dec 2024), Wohnbauforderung (Lander-funded). Retrofit factors PROVISIONAL.
+
+# -- Domestic Hot Water (DHW) intensity --------------------------------------
+dhw:
+  sfh: 10.0
+  mfh: 15.0
+  unit: kWh/m2/yr
+  source: AT TABULA / OIB Richtlinie 6 reference DHW (provisional)
+
+# -- Non-residential intensity (placeholder) ---------------------------------
+non_residential_intensity:
+  value: 120.0
+  unit: kWh/m2/yr
+  source: estimate -- Austrian non-residential continental-Alpine space heating
+  status: rough placeholder; contributes 0 TWh; flagged in methodology
+
+# -- External reconciliation benchmarks --------------------------------------
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 82.36            # Hotmaps 2015 AT residential heat -- exact sum
+                                # across all 108 AT NUTS3 rows in
+                                # code/data/processed/building_stock_nuts3.csv (verified 2026-05-20).
+    year: 2015
+    source: Hotmaps Toolbox via building_stock_nuts3.csv; sum across all AT NUTS3 rows
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 471
+    eubucco_mm2: 820
+    census_eubucco_ratio: 0.57
+    source: Statistik Austria GWZ 2021 (4.9M dwellings x 96.2 m2 Nutzflache)
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 60.0
+    year: 2022
+    source: anchored estimate; EU BSO portal not retrievable
+  odyssee_mure:
+    total_twh: 52.4
+    year: 2023
+    source: Odyssee-Mure Austria; residential space heating ~4.5 Mtoe climate-corrected
+    note: National total only; final-energy basis -- definitional gap vs Hotmaps useful demand.
+
+hotmaps_nuts3_id: AT130   # Wien (Vienna, representative reference)
+
+# -- Building classification rules -------------------------------------------
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+
+# -- Provenance + change log -------------------------------------------------
+_meta:
+  created: 2026-05-20
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 5)
+  last_verified: 2026-05-20
+  schema_version: 1
+  status: DRAFT -- direct Austrian TABULA build; at_intensities.csv values
+    research-synthesised pending AEA brochure / WebTool verification.
+  references_doc: literature/austria/classification_methodology.md
+  verified_2026_05_20:
+    - eubucco.nuts2_partitions (9 AT NUTS2, stable across NUTS 2013/2016/2021)
+    - nuts3_regions (35 AT NUTS3, stable)
+    - tabula source = AT direct (AEA brochure)
+    - tabula_reference_hdd = 3050 (AEA ZEUS national-mean calibration)
+  needs_verify_summary:
+    - HDD 2018-2022 mean -- estimated; pull exact from Eurostat nrg_chdd_a.
+    - at_intensities.csv -- research-synthesised; verify against AEA brochure.
+    - retrofit factors (0.65/0.40) and DHW (10/15) -- PROVISIONAL.
+    - retrofit shares (0.65/0.27/0.08) -- modelling assumption grounded in
+      IIBW + UBA monitoring; verify against latest Statistik Austria GWZ.
+    - non_residential_intensity (120) -- estimate; contributes 0 TWh.
+    - Hotmaps total (72) -- estimate from D2.3 + HRE4; sum building_stock_nuts3.csv.

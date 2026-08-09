@@ -1,0 +1,390 @@
+# Country configuration: United Kingdom (UK)
+# ======================================
+# All UK-specific parameters for the building-stock pipeline
+# (scripts 01-04). Methodology: literature/united_kingdom/classification_methodology.md.
+#
+# Schema version: 1.
+# STATUS: DRAFT -- non-EU (Phase 1F). UK is NOT in TABULA-12 but has rich
+# national archetype data (Cambridge Housing Model / English Housing Survey /
+# RdSAP). UK-DIRECT typology in uk_intensities.csv; climate_multiplier = 1.0.
+# Build group 7 (UK + CH).
+
+country_code: UK
+country_name: United Kingdom
+
+# -- EUBUCCO data source -----------------------------------------------------
+# COVERAGE: EUBUCCO v0.2 ADDED the UK (v0.1 was EU-27 + CH only, GADM-based --
+# do not cite the v0.1 paper for UK coverage). v0.2 partitions by NUTS2 on the
+# NUTS 2016 UK-prefixed vintage (UKxxx); the post-Brexit ITL "TLxxx" codes are
+# NOT used. UK footprints are OSM + Microsoft-ML sourced (no open national
+# building register), so footprints are good but construction_year / type are
+# SPARSE -> expect a fallback-dominated (unknown-cohort) result driven by the
+# uk_intensity.csv BSO stock weights. Northern Ireland (UKN0) is highest-risk.
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - UKC1
+    - UKC2
+    - UKD1
+    - UKD3
+    - UKD4
+    - UKD6
+    - UKD7
+    - UKE1
+    - UKE2
+    - UKE3
+    - UKE4
+    - UKF1
+    - UKF2
+    - UKF3
+    - UKG1
+    - UKG2
+    - UKG3
+    - UKH1
+    - UKH2
+    - UKH3
+    - UKI3
+    - UKI4
+    - UKI5
+    - UKI6
+    - UKI7
+    - UKJ1
+    - UKJ2
+    - UKJ3
+    - UKJ4
+    - UKK1
+    - UKK2
+    - UKK3
+    - UKK4
+    - UKL1
+    - UKL2
+    - UKM5
+    - UKM6
+    - UKM7
+    - UKM8
+    - UKM9
+    - UKN0
+    - UKN1
+  # NUTS-VINTAGE FIX (2026-05-24): the EUBUCCO v0.2 UK partitions use the
+  # NUTS 2016 Scotland recoding (UKM5/6/7/8/9), NOT the older UKM2/UKM3 that
+  # the Hotmaps building_stock_nuts3.csv carries. The first group7 run failed
+  # at 01_download because UKM2/UKM3 return HTTP 404 from the s3.eubucco.com
+  # bucket. Verified against the live bucket listing 2026-05-24: the UK set is
+  # exactly these 42 NUTS2 keys (UKM5-9 for Scotland; UKN0 + UKN1 for Northern
+  # Ireland). 02_classify uses EUBUCCO's own region_id for NUTS3, so the
+  # nuts3_regions list below is documentation only.
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  license: ODbL v1.0
+  # NO area_correction in this initial build. UK is a candidate for BOTH a
+  # Mechanism-A correction (OSM/Microsoft imputed floors) AND a Mechanism-B
+  # occupancy correction (Census 2021 occupied ~93.5pct; vacant + 2nd homes
+  # ~6.5pct, largely unheated in the mild UK climate). Per the area policy
+  # (literature/eubucco_census_area_audit.md), sized only AFTER the first
+  # Colab build reveals the EUBUCCO area + native gap -- not pre-fitted.
+
+# -- NUTS3 regions (NUTS 2016 vintage; 173 regions) -----------------------------
+nuts3_regions:
+    - UKC11
+    - UKC12
+    - UKC13
+    - UKC14
+    - UKC21
+    - UKC22
+    - UKC23
+    - UKD11
+    - UKD12
+    - UKD33
+    - UKD34
+    - UKD35
+    - UKD36
+    - UKD37
+    - UKD41
+    - UKD42
+    - UKD44
+    - UKD45
+    - UKD46
+    - UKD47
+    - UKD61
+    - UKD62
+    - UKD63
+    - UKD71
+    - UKD72
+    - UKD73
+    - UKD74
+    - UKE11
+    - UKE12
+    - UKE13
+    - UKE21
+    - UKE22
+    - UKE31
+    - UKE32
+    - UKE41
+    - UKE42
+    - UKE44
+    - UKE45
+    - UKF11
+    - UKF12
+    - UKF13
+    - UKF14
+    - UKF15
+    - UKF16
+    - UKF21
+    - UKF22
+    - UKF24
+    - UKF25
+    - UKF30
+    - UKG11
+    - UKG12
+    - UKG13
+    - UKG21
+    - UKG22
+    - UKG23
+    - UKG24
+    - UKG31
+    - UKG32
+    - UKG33
+    - UKG36
+    - UKG37
+    - UKG38
+    - UKG39
+    - UKH11
+    - UKH12
+    - UKH14
+    - UKH15
+    - UKH16
+    - UKH17
+    - UKH21
+    - UKH23
+    - UKH24
+    - UKH25
+    - UKH31
+    - UKH32
+    - UKH34
+    - UKH35
+    - UKH36
+    - UKH37
+    - UKI31
+    - UKI32
+    - UKI33
+    - UKI34
+    - UKI41
+    - UKI42
+    - UKI43
+    - UKI44
+    - UKI45
+    - UKI51
+    - UKI52
+    - UKI53
+    - UKI54
+    - UKI61
+    - UKI62
+    - UKI63
+    - UKI71
+    - UKI72
+    - UKI73
+    - UKI74
+    - UKI75
+    - UKJ11
+    - UKJ12
+    - UKJ13
+    - UKJ14
+    - UKJ21
+    - UKJ22
+    - UKJ25
+    - UKJ26
+    - UKJ27
+    - UKJ28
+    - UKJ31
+    - UKJ32
+    - UKJ34
+    - UKJ35
+    - UKJ36
+    - UKJ37
+    - UKJ41
+    - UKJ43
+    - UKJ44
+    - UKJ45
+    - UKJ46
+    - UKK11
+    - UKK12
+    - UKK13
+    - UKK14
+    - UKK15
+    - UKK21
+    - UKK22
+    - UKK23
+    - UKK30
+    - UKK41
+    - UKK42
+    - UKK43
+    - UKL11
+    - UKL12
+    - UKL13
+    - UKL14
+    - UKL15
+    - UKL16
+    - UKL17
+    - UKL18
+    - UKL21
+    - UKL22
+    - UKL23
+    - UKL24
+    - UKM21
+    - UKM22
+    - UKM23
+    - UKM24
+    - UKM25
+    - UKM26
+    - UKM27
+    - UKM28
+    - UKM31
+    - UKM32
+    - UKM33
+    - UKM34
+    - UKM35
+    - UKM36
+    - UKM37
+    - UKM38
+    - UKM50
+    - UKM61
+    - UKM62
+    - UKM63
+    - UKM64
+    - UKM65
+    - UKM66
+    - UKN01
+    - UKN02
+    - UKN03
+    - UKN04
+    - UKN05
+
+# -- Geographic bounding box (WGS84) -----------------------------------------
+bbox_wgs84:
+  lon_min: -8.65
+  lat_min: 49.86
+  lon_max: 1.77
+  lat_max: 60.86
+
+# -- TABULA building typology source -----------------------------------------
+tabula:
+  source_country: UK
+  source_country_name: United Kingdom
+  intensities_file: code/data/raw/tabula/uk_intensities.csv
+  reason_for_proxy: |
+    None -- the UK uses its own national archetype matrix (Cambridge Housing
+    Model + English Housing Survey + RdSAP), not a TABULA proxy. The UK is not
+    a TABULA-12 participant but its EHS/CHM evidence base is the equivalent
+    national typology. climate_multiplier = 1.0 (UK-calibrated).
+
+# -- Climate correction ------------------------------------------------------
+# UK mild maritime. Eurostat nrg_chdd_a historically reported the UK; 2018-2022
+# mean at base 15 C ~2500 HDD (NEEDS_VERIFY; base 15.5 gives ~2400-2700).
+# Direct typology, national-mean calibration -> tabula_reference_hdd =
+# hdd_country, climate_multiplier = 1.0.
+climate:
+  hdd_country: 2500
+  hdd_proxy: 2500
+  tabula_reference_hdd: 2500
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  climate_multiplier: 1.0
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST) 2018-2022 mean estimate NEEDS_VERIFY
+
+# -- Retrofit-state distribution ---------------------------------------------
+# Large PARTIALLY-retrofitted stock: loft + cavity insulation widespread
+# (ECO/CERT/CESP), but ~8 M solid-wall homes largely un-insulated. EHS 2022
+# EPC: A-C 48pct, D 43pct, E-G 9pct.
+retrofit:
+  share:
+    original: 0.35
+    standard: 0.45
+    advanced: 0.20
+  factor:
+    standard: 0.65
+    advanced: 0.40
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # 0.35 + 0.45x0.65 + 0.20x0.40 = 0.7225
+  blend_value: 0.7225
+  share_source: |
+    Modelling assumption grounded in EHS 2022-23 EPC distribution (A-C 48pct,
+    D 43pct, E-G 9pct) and ECO / Great British Insulation Scheme / Boiler
+    Upgrade Scheme history. ~8 M solid-wall homes remain un-insulated.
+    Retrofit factors PROVISIONAL (CHM/RdSAP-style).
+
+# -- Domestic Hot Water (DHW) intensity --------------------------------------
+dhw:
+  sfh: 20.0
+  mfh: 23.0
+  unit: kWh/m2/yr
+  source: SAP/CHM ~3000 kWh/dwelling/yr DHW (occupancy-driven), per-m2 (provisional)
+
+# -- Non-residential intensity (placeholder) ---------------------------------
+non_residential_intensity:
+  value: 120.0
+  unit: kWh/m2/yr
+  source: estimate -- UK non-residential (tertiary) space heating; mild maritime
+  status: rough placeholder; contributes 0 TWh; flagged in methodology
+
+# -- External reconciliation benchmarks --------------------------------------
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 467.70           # sum of heat_2015_MWh across all 174 UK NUTS3 rows
+    year: 2015                  #   in building_stock_nuts3.csv (Hotmaps EU28; verified 2026-05-21)
+    source: Hotmaps Toolbox via building_stock_nuts3.csv; sum across all UK NUTS3 rows
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 2750
+    eubucco_mm2: 2933
+    census_eubucco_ratio: 0.94
+    source: EHS / Dwelling Stock Estimates -- ~29.6 M dwellings x ~93 m2 ~ 2750 Mm2
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). First Colab
+      build (2026-05-24): EUBUCCO UK residential heated area = 2933 Mm2, census
+      2750 Mm2 -> ratio 0.94 (within 6 %). UK is NOT an area over-count case
+      (unlike the imputed-floor cluster), so NO area_correction is applied. The
+      bottom-up lands at 368.9 TWh = -21.1 % vs Hotmaps (ACC) -- an
+      intensity-layer under-shoot (retrofit blend over-discounting the
+      un-retrofitted solid-wall stock; UK is 99.9 % unknown-cohort). Left
+      native. See literature/eubucco_census_area_audit.md.
+  eu_bso:
+    total_twh: 330.0
+    year: 2022
+    source: anchored estimate (UK residential SH useful demand order-of-magnitude)
+  odyssee_mure:
+    total_twh: 330.0
+    year: 2021
+    source: UK national statistics (DESNZ ECUK); residential space heating ~330 TWh
+    note: National total only; definitional gap vs Hotmaps useful demand.
+
+# -- Hotmaps NUTS3 ID for model comparison -----------------------------------
+hotmaps_nuts3_id: UKI31   # Greater London (representative)
+
+# -- Building classification rules -------------------------------------------
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+
+# -- Provenance + change log -------------------------------------------------
+_meta:
+  created: 2026-05-21
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 7)
+  last_verified: 2026-05-21
+  schema_version: 1
+  status: DRAFT -- UK-direct (CHM/EHS); non-EU Phase 1F. EUBUCCO UK is
+    OSM/Microsoft-sourced with sparse construction_year -> expect fallback-
+    dominated result. Area/occupancy correction pending first reconciliation.
+  references_doc: literature/united_kingdom/classification_methodology.md
+  verified_2026_05_21:
+    - eubucco.nuts2_partitions (42 UK NUTS2; NUTS 2016 UK-prefixed; UKM5-9 Scotland + UKN0/UKN1 NI; verified vs live EUBUCCO bucket 2026-05-24)
+    - nuts3_regions (173 UK NUTS3; NUTS 2016)
+    - reconciliation_benchmarks.hotmaps = 467.70 TWh (174 UK rows)
+    - EUBUCCO v0.2 UK coverage confirmed (docs.eubucco.com/v0.2)
+  needs_verify_summary:
+    - HDD 2018-2022 mean (2500) -- estimate; pull UK from Eurostat nrg_chdd_a / Met Office HadUK.
+    - uk_intensities.csv -- CHM/EHS/RdSAP synthesis; verify vs EHS 2022-23 energy tables.
+    - retrofit shares (0.35/0.45/0.20) -- EHS EPC-derived assumption.
+    - EUBUCCO UK source/coverage -- OSM+Microsoft; check construction_year + NI partition.
+    - census_floor_area.eubucco_mm2 + ratio -- pending first build.

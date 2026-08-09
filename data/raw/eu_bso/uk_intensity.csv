@@ -1,0 +1,15 @@
+# EU Building Stock Observatory (BSO) -- United Kingdom residential indicators
+#
+# stock_pct_uk: UK stock share by construction cohort (EHS age bands; pre-1945
+#   ~37pct reflects the old UK stock). Sums to 100. NEEDS_VERIFY.
+# bso_intensity_kwh_m2_yr: derived = UK CHM class-average SH x retrofit blend
+#   (0.7225) + DHW (~22). UK-direct; BSO portal not queried.
+# Source: English Housing Survey age distribution; uk_intensities.csv (CHM/EHS).
+#
+cohort,stock_pct_uk,bso_intensity_kwh_m2_yr,note
+pre-1945,37,147,"Old UK stock; solid-wall pre-1919 + interwar; largest cohort"
+1946-1970,21,125,"Post-war rebuild; pre-Building-Regs"
+1971-1990,20,107,"1965+ Building Regs era"
+1991-2010,15,84,"Part L 1995/2002/2006"
+2011-2020,6,69,"Part L 2010/2013"
+post-2020,1,59,"Part L 2021 / Future Homes Standard track"

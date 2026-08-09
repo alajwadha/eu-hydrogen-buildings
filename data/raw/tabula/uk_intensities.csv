@@ -1,0 +1,31 @@
+# TABULA-equivalent residential heat intensities -- UNITED KINGDOM (direct)
+#
+# The UK is NOT a TABULA-12 country. This matrix is a UK-DIRECT synthesis from:
+#   - Cambridge Housing Model (CHM; DECC/BRE) -- RdSAP physics over the EHS.
+#   - English Housing Survey 2022-23 Energy Report (DESNZ/MHCLG).
+#   - UK Housing Energy Fact File 2013 (Palmer & Cooper, DECC).
+# Space-heating useful intensity (kWh/m2/yr) by 6 cohorts x 3 classes.
+# UK-climate-calibrated (climate_multiplier = 1.0). SFH <- detached + semi;
+# MFH_LOW <- terraced + low converted flats; MFH_HIGH <- purpose-built flats
+# (most efficient per EHS). RESEARCH-SYNTHESISED, NEEDS_VERIFY (+/-20-30pct;
+# note SAP-modelled vs metered performance gap, esp. pre-1919 solid wall).
+#
+building_class,cohort,sh_intensity_kwh_m2_yr,dhw_intensity_kwh_m2_yr,source_note
+SFH,pre-1945,200,20,"UK detached/semi pre-1945; solid-wall; CHM/EHS; ESTIMATE"
+SFH,1946-1970,160,20,"UK detached/semi 1945-70; pre-Building-Regs cavity; ESTIMATE"
+SFH,1971-1990,130,20,"UK detached/semi 1971-90; 1965+ Building Regs; ESTIMATE"
+SFH,1991-2010,95,20,"UK detached/semi 1991-2010; Part L 1995/2002/2006; ESTIMATE"
+SFH,2011-2020,70,20,"UK detached/semi 2011-20; Part L 2010/2013; ESTIMATE"
+SFH,post-2020,55,20,"UK detached/semi post-2020; Part L 2021 / Future Homes; ESTIMATE"
+MFH_LOW,pre-1945,170,22,"UK terraced/low flats pre-1945; ESTIMATE"
+MFH_LOW,1946-1970,140,22,"UK terraced/low flats 1945-70; ESTIMATE"
+MFH_LOW,1971-1990,115,22,"UK terraced/low flats 1971-90; ESTIMATE"
+MFH_LOW,1991-2010,85,22,"UK terraced/low flats 1991-2010; ESTIMATE"
+MFH_LOW,2011-2020,65,22,"UK terraced/low flats 2011-20; ESTIMATE"
+MFH_LOW,post-2020,50,22,"UK terraced/low flats post-2020; ESTIMATE"
+MFH_HIGH,pre-1945,150,24,"UK purpose-built flats pre-1945; most efficient (EHS); ESTIMATE"
+MFH_HIGH,1946-1970,130,24,"UK purpose-built flats 1945-70; tower-block era; ESTIMATE"
+MFH_HIGH,1971-1990,105,24,"UK purpose-built flats 1971-90; ESTIMATE"
+MFH_HIGH,1991-2010,78,24,"UK purpose-built flats 1991-2010; ESTIMATE"
+MFH_HIGH,2011-2020,60,24,"UK purpose-built flats 2011-20; ESTIMATE"
+MFH_HIGH,post-2020,48,24,"UK purpose-built flats post-2020; ESTIMATE"

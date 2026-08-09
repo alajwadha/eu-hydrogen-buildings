@@ -1,0 +1,89 @@
+country,year,metric,value,unit,source_dataset
+UK,2015,heat_residential_TJ,1006938,TJ,DESNZ ECUK 2024 Table U3 space heating
+UK,2016,heat_residential_TJ,1026645,TJ,DESNZ ECUK 2024 Table U3
+UK,2017,heat_residential_TJ,1012368,TJ,DESNZ ECUK 2024 Table U3
+UK,2018,heat_residential_TJ,1030214,TJ,DESNZ ECUK 2024 Table U3
+UK,2019,heat_residential_TJ,999528,TJ,DESNZ ECUK 2024 Table U3
+UK,2020,heat_residential_TJ,1018198,TJ,DESNZ ECUK 2024 Table U3
+UK,2021,heat_residential_TJ,1079328,TJ,DESNZ ECUK 2024 Table U3
+UK,2022,heat_residential_TJ,889677,TJ,DESNZ ECUK 2024 Table U3
+UK,2023,heat_residential_TJ,828688,TJ,DESNZ ECUK 2024 Table U3
+UK,2015,hdd,1948.2,degree-days,DUKES 1.1.9 base 15.5C
+UK,2016,hdd,2021.4,degree-days,DUKES 1.1.9 base 15.5C
+UK,2017,hdd,1888.8,degree-days,DUKES 1.1.9 base 15.5C
+UK,2018,hdd,1992.0,degree-days,DUKES 1.1.9 base 15.5C
+UK,2019,hdd,1983.5,degree-days,DUKES 1.1.9 base 15.5C
+UK,2020,hdd,1865.3,degree-days,DUKES 1.1.9 base 15.5C
+UK,2021,hdd,2021.2,degree-days,DUKES 1.1.9 base 15.5C
+UK,2022,hdd,1790.0,degree-days,DUKES 1.1.9 base 15.5C
+UK,2023,hdd,1800.0,degree-days,DUKES 1.1.9 base 15.5C
+UK,2015,electricity_residential_TJ,387950,TJ,DESNZ ECUK 2024 Table U3 electricity
+UK,2016,electricity_residential_TJ,388890,TJ,DESNZ ECUK 2024 Table U3
+UK,2017,electricity_residential_TJ,379161,TJ,DESNZ ECUK 2024 Table U3
+UK,2018,electricity_residential_TJ,381461,TJ,DESNZ ECUK 2024 Table U3
+UK,2019,electricity_residential_TJ,374324,TJ,DESNZ ECUK 2024 Table U3
+UK,2020,electricity_residential_TJ,387264,TJ,DESNZ ECUK 2024 Table U3
+UK,2021,electricity_residential_TJ,383781,TJ,DESNZ ECUK 2024 Table U3
+UK,2022,electricity_residential_TJ,343500,TJ,DESNZ ECUK 2024 Table U3
+UK,2023,electricity_residential_TJ,333201,TJ,DESNZ ECUK 2024 Table U3
+UK,2015,population,65087000,persons,ONS UKPOP
+UK,2016,population,65605800,persons,ONS UKPOP
+UK,2017,population,65964300,persons,ONS UKPOP
+UK,2018,population,66286700,persons,ONS UKPOP
+UK,2019,population,66627500,persons,ONS UKPOP
+UK,2020,population,66739900,persons,ONS UKPOP rebased
+UK,2021,population,66978000,persons,ONS UKPOP rebased
+UK,2022,population,67636100,persons,ONS UKPOP
+UK,2023,population,68526200,persons,ONS UKPOP
+UK,2015,gdp_real_meur,1898414,MEUR_CLV,ONS ABMI converted at GBP-EUR 1.17
+UK,2016,gdp_real_meur,1948056,MEUR_CLV,ONS ABMI converted
+UK,2017,gdp_real_meur,2043121,MEUR_CLV,ONS ABMI converted
+UK,2018,gdp_real_meur,2109447,MEUR_CLV,ONS ABMI converted
+UK,2019,gdp_real_meur,2171559,MEUR_CLV,ONS ABMI converted
+UK,2020,gdp_real_meur,2813660,MEUR_CLV,ONS ABMI Blue Book 2023 rebasing artifact
+UK,2021,gdp_real_meur,3054035,MEUR_CLV,ONS ABMI converted
+UK,2022,gdp_real_meur,3211308,MEUR_CLV,ONS ABMI converted
+UK,2023,gdp_real_meur,3220032,MEUR_CLV,ONS ABMI converted
+CH,2015,heat_residential_TJ,154900,TJ,BFE Privathaushalte 2000-2019 Tab 8/11 Raumwaerme
+CH,2016,heat_residential_TJ,165100,TJ,BFE Privathaushalte 2000-2019 Tab 8/11
+CH,2017,heat_residential_TJ,161300,TJ,BFE Privathaushalte 2000-2023 Tab 11
+CH,2018,heat_residential_TJ,147000,TJ,BFE Privathaushalte 2000-2023 Tab 11
+CH,2019,heat_residential_TJ,149800,TJ,BFE Privathaushalte 2000-2023 Tab 11
+CH,2020,heat_residential_TJ,140100,TJ,BFE Privathaushalte 2000-2023 Tab 11
+CH,2021,heat_residential_TJ,166200,TJ,BFE Privathaushalte 2000-2023 Tab 11
+CH,2022,heat_residential_TJ,131800,TJ,BFE Privathaushalte 2000-2023 Tab 11
+CH,2023,heat_residential_TJ,136800,TJ,BFE Privathaushalte 2000-2023 Tab 11
+CH,2015,hdd,3631.4,degree-days,Eurostat nrg_chdd_a
+CH,2016,hdd,3773.7,degree-days,Eurostat nrg_chdd_a
+CH,2017,hdd,3773.3,degree-days,Eurostat nrg_chdd_a
+CH,2018,hdd,3488.4,degree-days,Eurostat nrg_chdd_a
+CH,2019,hdd,3647.7,degree-days,Eurostat nrg_chdd_a
+CH,2020,hdd,3495.9,degree-days,Eurostat nrg_chdd_a
+CH,2021,hdd,3888.2,degree-days,Eurostat nrg_chdd_a
+CH,2022,hdd,3349.5,degree-days,Eurostat nrg_chdd_a
+CH,2023,hdd,3389.1,degree-days,Eurostat nrg_chdd_a
+CH,2015,electricity_residential_TJ,68700,TJ,BFE Privathaushalte Tab 10
+CH,2016,electricity_residential_TJ,69600,TJ,BFE Privathaushalte Tab 10
+CH,2017,electricity_residential_TJ,70200,TJ,BFE Privathaushalte Tab 10
+CH,2018,electricity_residential_TJ,68800,TJ,BFE Privathaushalte Tab 10
+CH,2019,electricity_residential_TJ,68700,TJ,BFE Privathaushalte Tab 10
+CH,2020,electricity_residential_TJ,69200,TJ,BFE Privathaushalte Tab 10
+CH,2021,electricity_residential_TJ,71500,TJ,BFE Privathaushalte Tab 10
+CH,2022,electricity_residential_TJ,67600,TJ,BFE Privathaushalte Tab 10
+CH,2023,electricity_residential_TJ,69000,TJ,BFE Privathaushalte Tab 10
+CH,2015,population,8282000,persons,BFS via BFE Tab 11
+CH,2016,population,8373000,persons,BFS via BFE Tab 11
+CH,2017,population,8452000,persons,BFS via BFE Tab 11
+CH,2018,population,8514000,persons,BFS via BFE Tab 11
+CH,2019,population,8575000,persons,BFS via BFE Tab 11
+CH,2020,population,8638000,persons,BFS via BFE Tab 11
+CH,2021,population,8703000,persons,BFS via BFE Tab 11
+CH,2022,population,8815400,persons,BFS press release 2022 final
+CH,2023,population,8962300,persons,BFS press release 2023 definitive
+CH,2015,gdp_real_meur,631521,MEUR_CLV,SECO real GDP CHF converted at CHF-EUR 0.929
+CH,2016,gdp_real_meur,644434,MEUR_CLV,SECO converted
+CH,2017,gdp_real_meur,654653,MEUR_CLV,SECO converted
+CH,2018,gdp_real_meur,673791,MEUR_CLV,SECO converted
+CH,2019,gdp_real_meur,681873,MEUR_CLV,SECO converted
+CH,2020,gdp_real_meur,665617,MEUR_CLV,SECO converted
+CH,2021,gdp_real_meur,690142,MEUR_CLV,SECO converted

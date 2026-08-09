@@ -1,0 +1,16 @@
+# Bulgaria climate + retrofit-state national assumptions
+# Mirror of bg.yaml.
+#
+parameter,value,unit,source
+hdd_bg_2018_2022_avg,2600,degree-days/yr,Eurostat nrg_chdd_a (JRC AGRI4CAST) 2018-2022 mean estimate (NEEDS_VERIFY)
+hdd_proxy_2018_2022_avg,3260,degree-days/yr,"Czech Republic (proxy; same period)"
+tabula_reference_hdd,3400,degree-days/yr,"CZ TABULA reference (CSN 73 0540 Praha-Ruzyne)"
+climate_multiplier,0.7647,dimensionless,"2600 / 3400 (BG actual vs CZ TABULA reference)"
+retrofit_share_original,0.85,fraction,"modelling assumption (BG LTRS 2020 + BPIE 2016: 91pct of dwellings in E/F/G classes)"
+retrofit_share_standard,0.12,fraction,"modelling assumption (NPEEMRB cumulative ~1923 buildings by Jan 2021)"
+retrofit_share_advanced,0.03,fraction,"modelling assumption (NRRP-funded deep renovations 2021+)"
+retrofit_factor_standard,0.60,multiplier,"CZ TABULA standard refurbishment (proxy)"
+retrofit_factor_advanced,0.32,multiplier,"CZ TABULA advanced refurbishment (proxy)"
+dhw_intensity_sfh,12.0,kWh/m2/yr,"CZ TABULA proxy DHW"
+dhw_intensity_mfh,15.0,kWh/m2/yr,"CZ TABULA proxy DHW"
+non_residential_intensity,110,kWh/m2/yr,"estimate (BG tertiary; Odyssee 1.38 Mtoe + ~75 Mm2)"

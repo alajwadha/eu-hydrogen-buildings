@@ -1,0 +1,5 @@
+nuts_id,nuts_name,nuts_level,country,dwelling_share_basis,heat_MWh,heat_TWh
+MT0,Malta,1,MT,1557078.0,733000.0,0.733
+MT00,Malta,2,MT,1557078.0,733000.0,0.733
+MT001,Malta,3,MT,1439163.0,673000.0,0.673
+MT002,Gozo and Comino/Għawdex u Kemmuna,3,MT,117915.0,60000.0,0.06

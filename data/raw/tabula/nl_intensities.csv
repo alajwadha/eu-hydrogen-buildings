@@ -1,0 +1,59 @@
+# TABULA Netherlands synthetical-average residential building intensities
+#
+# Source: IEE TABULA project (2009-2012) + RVO Voorbeeldwoningen 2022 update.
+#   The Dutch national residential typology was produced by TNO / Agentschap
+#   NL (now RVO).
+#   - Country page: episcope.eu/building-typology/country/nl/
+#   - Voorbeeldwoningen 2011 (Agentschap NL): 30 reference dwellings x 5
+#     build periods x 7 house types.
+#   - Voorbeeldwoningen 2022 (RVO, update): 51 reference dwellings to 2018.
+#   - NTA 8800 (current Dutch EPC method).
+#
+# Netherlands IS a TABULA country -- this is the DIRECT national typology.
+#
+# CLIMATE ZONE: the NL TABULA brochure uses KNMI De Bilt as the reference
+# station. Reference HDD ~2900 (1971-2000 normal) / ~2600 (1991-2020 normal).
+# National 2018-2022 mean ~2475. Per the audit doc, Option B correction
+# applied (tabula_reference_hdd = 2900, multiplier = 2475/2900 = 0.853).
+#
+# IMPORTANT -- VALUES ARE RESEARCH-SYNTHESISED BEST ESTIMATES, NEEDS_VERIFY
+# ------------------------------------------------------------------------
+# The full per-class per-period matrix is held in the TABULA WebTool and the
+# RVO 2022 Voorbeeldwoningen brochure (PDF). Values below are best estimates
+# based on the brochure's published intensity ranges per house type x build
+# period. Treat as +/-20-25 pct uncertainty.
+#
+# Cohort mapping (Voorbeeldwoningen periods -> our 6 cohorts):
+#   pre-1945 / 1946-1964 / 1965-1974 / 1975-1991 / 1992-2005 / 2006-2018
+#
+# Refurbishment factors: NL TABULA "usual" ~30-40 pct reduction; "advanced"
+# ~60-70 pct reduction; use 0.65/0.30 as midpoint.
+#
+# DHW: ~15-18 kWh/m^2 SFH; ~17-20 kWh/m^2 MFH (smaller floor area).
+#
+# Citations:
+#   Agentschap NL (2011). Voorbeeldwoningen 2011 -- bestaande bouw.
+#   RVO (2022). Voorbeeldwoningen 2022 bestaande bouw, updated to 2018.
+#   Majcen D., Itard L., Visscher H. (2013). Actual vs theoretical gas
+#     consumption in Dutch dwellings. TU Delft / Building & Environment.
+#
+#
+building_class,cohort,sh_intensity_kwh_m2_yr,dhw_intensity_kwh_m2_yr,source_note
+SFH,pre-1945,255,17,"NL Voorbeeldwoningen 2011 SFH pre-1945; uninsulated brick; ESTIMATE pending WebTool"
+SFH,1946-1970,235,17,"NL SFH 1946-1965; postwar brick + cavity wall (uninsulated); ESTIMATE"
+SFH,1971-1990,170,17,"NL SFH 1965-1992; bouwbesluit 1992 thermal regs; ESTIMATE"
+SFH,1991-2010,115,17,"NL SFH 1992-2005; EPN 1996 + EPC tightening; ESTIMATE"
+SFH,2011-2020,80,17,"NL SFH 2006-2018; EPC <0.6 era; BENG-track new-build; ESTIMATE"
+SFH,post-2020,55,17,"BENG 2020 NZEB enforcement; FLAGGED"
+MFH_LOW,pre-1945,210,20,"NL MFH pre-1945; Amsterdam stadswoning + brick portiekflats; ESTIMATE"
+MFH_LOW,1946-1970,180,20,"NL MFH postwar Wederopbouw + early portiekflats; ESTIMATE"
+MFH_LOW,1971-1990,145,20,"NL MFH 1965-1992; first thermal regs; ESTIMATE"
+MFH_LOW,1991-2010,90,20,"NL MFH 1992-2005; EPN 1996 + EPC tightening; ESTIMATE"
+MFH_LOW,2011-2020,65,20,"NL MFH 2006-2018; BENG-track; ESTIMATE"
+MFH_LOW,post-2020,48,20,"BENG NZEB; FLAGGED"
+MFH_HIGH,pre-1945,180,20,"NL high-rise pre-1945 (rare); legacy stadswoning; ESTIMATE"
+MFH_HIGH,1946-1970,170,20,"NL high-rise postwar Wederopbouw; gallerij flats; ESTIMATE"
+MFH_HIGH,1971-1990,140,20,"NL high-rise 1965-1992; portiek + gallerij flats; ESTIMATE"
+MFH_HIGH,1991-2010,90,20,"NL high-rise 1992-2005; ESTIMATE"
+MFH_HIGH,2011-2020,65,20,"NL high-rise 2006-2018; BENG-track; ESTIMATE"
+MFH_HIGH,post-2020,48,20,"BENG NZEB; FLAGGED"

@@ -1,0 +1,23 @@
+# EU Building Stock Observatory (BSO) -- Cyprus residential indicators
+#
+# Used by 03_heat_intensity.py for (1) the unknown-cohort stock-weighted
+# fallback intensity and (2) the BSO reconciliation row.
+#
+# stock_pct_cy: share of the Cypriot residential stock by construction cohort.
+#   Cyprus has substantial post-1990 stock growth. EPISCOPE Cyprus refurb
+#   survey: 54.4% of dwellings have no insulation. Sums to 100.
+#
+# bso_intensity_kwh_m2_yr: BSO-style per-cohort national-average residential
+#   heat intensity (delivered). DERIVED from the Cyprus TABULA per-cohort
+#   class-average space-heating need x retrofit blend (0.945) + DHW. Cyprus is
+#   warm; intensities are low.
+#
+# Source: EPISCOPE Cyprus; Cyprus TABULA (cy_intensities.csv).
+#
+cohort,stock_pct_cy,bso_intensity_kwh_m2_yr,note
+pre-1945,5,94,Pre-WWII stone-masonry stock
+1946-1970,15,94,Post-war masonry construction
+1971-1990,25,94,1970s-80s expansion; Cyprus TABULA P1 (...-1980)
+1991-2010,35,67,Cyprus TABULA P2 (1981-2006); post-1990 growth
+2011-2020,17,50,Cyprus TABULA P3 (2007-); KENAK-CY 2010+
+post-2020,3,45,Recent nZEB-trajectory construction

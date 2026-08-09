@@ -1,0 +1,45 @@
+# France climate + retrofit-state national assumptions
+# =====================================================
+# Used by 03_heat_intensity.py as a legacy fallback CSV. The primary source
+# of these values is now code/data/country_config/fr.yaml, which carries
+# the canonical CountryConfig schema-v1 dataset with per-key citations.
+# This CSV mirrors the YAML for any tool path that still reads the older
+# parameter-name format.
+#
+# STATUS: most values verified 2026-05-15 (matches the verified_2026_05_15
+# block in fr.yaml _meta).
+#
+# Sources:
+#   - HDD: Eurostat nrg_chdd_a (JRC AGRI4CAST), 5-year average 2018-2022,
+#     retrieved 2026-05-15 via DBnomics mirror series A.NR.HDD.FR.
+#   - Retrofit shares: SDES, "Le parc de logements par classe de performance
+#     énergétique au 1er janvier 2025", https://www.statistiques.developpement-
+#     durable.gouv.fr/le-parc-de-logements-par-classe-de-performance-
+#     energetique-au-1er-janvier-2025. DPE-to-retrofit-state mapping rule
+#     documented in literature/france/classification_methodology.md.
+#   - Retrofit factors: TABULA-FR brochure (Rochard et al. 2015, Pouget
+#     Consultants + ADEME), Tableau 4 period 1975-2005.
+#     URL: episcope.eu/fileadmin/tabula/public/docs/brochure/
+#          FR_TABULA_TypologyBrochure_Pouget.pdf
+#   - DHW: TABULA harmonised q_w_nd values from tabula-calculator.xlsx
+#     (sheet Calc.Set.Building, filter Code_Country='FR'), downloaded
+#     2026-05-15 from https://episcope.eu/fileadmin/tabula/public/calc/.
+#     Note: differs from FR 3CL-DPE-method values (15.3 SFH / 19.8 MFH)
+#     reported in the FR brochure Section 6.5 — we use TABULA harmonised
+#     for cross-country consistency.
+#
+# Methodological framework matches Luxembourg (LU) — TABULA-based intensities,
+# climate correction, retrofit blending, DHW additions. Key difference:
+# France uses direct French TABULA (no BE-proxy), so climate_multiplier = 1.0.
+parameter,value,unit,source
+hdd_fr_2018_2022_avg,2183,degree-days/yr,Eurostat nrg_chdd_a verified 2026-05-15 via DBnomics A.NR.HDD.FR
+hdd_proxy_2018_2022_avg,2183,degree-days/yr,equal to FR (direct TABULA — no proxy)
+climate_multiplier_fr_vs_proxy,1.000,dimensionless,direct TABULA — no correction
+retrofit_share_original,0.305,fraction,SDES 2025 DPE distribution: E+F+G classes (unrenovated stock)
+retrofit_share_standard,0.609,fraction,SDES 2025 DPE distribution: C+D classes (single-pass refurbishment)
+retrofit_share_advanced,0.086,fraction,SDES 2025 DPE distribution: A+B classes (BBC/RE2020 deep retrofit)
+retrofit_factor_standard,0.57,multiplier on original SH intensity,TABULA-FR Rochard 2015 Tableau 4 (period 1975-2005)
+retrofit_factor_advanced,0.35,multiplier on original SH intensity,TABULA-FR Rochard 2015 Tableau 4 (period 1975-2005)
+dhw_intensity_sfh,10,kWh/m2/yr,TABULA harmonised q_w_nd (SFH/TH) from tabula-calculator.xlsx
+dhw_intensity_mfh,15,kWh/m2/yr,TABULA harmonised q_w_nd (MFH/AB) from tabula-calculator.xlsx
+non_residential_intensity,120,kWh/m2/yr,CEREN/French Ministry tertiary 2020 total (240) × ~50% heating share

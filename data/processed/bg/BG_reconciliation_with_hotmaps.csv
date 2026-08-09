@@ -1,0 +1,6 @@
+source,twh_yr,kwh_m2_yr_avg,note
+"Bottom-up: EUBUCCO + TABULA CZ (this model, all classes)",35.588,78.3,TABULA × HDD ratio × retrofit blend + DHW; non-res flat
+Bottom-up: residential only (excludes NON_RESIDENTIAL),35.588,78.3,Comparable to Hotmaps + EU BSO + Odyssee residential figures
+Hotmaps 2015 baseline (existing model),29.0,63.8,Residential baseline (see cfg.reconciliation_benchmarks.hotmaps)
+EU BSO 2022 weighted-avg implied total,66.557,146.4,BSO per-cohort intensities × BG stock weights × our residential area
+Odyssee-Mure 2022 BG residential (back-calculated),23.0,50.6,"National total only; final-energy basis. Wood/biomass 33pct, electricity 41pct, DH 15pct."

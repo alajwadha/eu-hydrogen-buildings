@@ -1,0 +1,26 @@
+# Poland climate + retrofit-state national assumptions
+#
+# Legacy national-parameters file referenced by 04_diagnostics.py for the
+# existence check. The authoritative source of these values is pl.yaml;
+# this file mirrors them for documentation. All values are numeric.
+#
+# Poland is a DIRECT TABULA country (NAPE / National Energy Conservation
+# Agency). Polish TABULA values are calibrated to Polish national mean climate;
+# tabula_reference_hdd = hdd_proxy = 3158.7, climate_multiplier = 1.0.
+# Sources: Eurostat nrg_chdd_a (HDD); Polish TABULA / NAPE (retrofit factors;
+# Sec 3.4.3); Polish LTRS 2022 + Czyste Powietrze (retrofit shares). See
+# pl.yaml and literature/poland/classification_methodology.md.
+#
+parameter,value,unit,source
+hdd_pl_2018_2022_avg,3158.7,degree-days/yr,Eurostat nrg_chdd_a (JRC AGRI4CAST) 2018-2022 mean
+hdd_proxy_2018_2022_avg,3158.7,degree-days/yr,direct TABULA country (proxy = self)
+tabula_reference_hdd,3158.7,degree-days/yr,"Polish TABULA calibrated to national mean climate (NAPE; EK certificate methodology)"
+climate_multiplier,1.0,dimensionless,direct Polish TABULA
+retrofit_share_original,0.78,fraction,"modelling assumption (coal-heavy un-renovated SFH; Polish LTRS 2022; Czyste Powietrze cumulative)"
+retrofit_share_standard,0.17,fraction,"modelling assumption (Czyste Powietrze shallow; window/boiler swaps)"
+retrofit_share_advanced,0.05,fraction,"modelling assumption (Stop-Smog deep; EU RPO/POIiS)"
+retrofit_factor_standard,0.63,multiplier,"Polish TABULA standard refurbishment (NAPE Sec 3.4.3)"
+retrofit_factor_advanced,0.50,multiplier,"Polish TABULA advanced refurbishment (NAPE Sec 3.4.3)"
+dhw_intensity_sfh,28.0,kWh/m2/yr,"Polish TABULA DHW convention; DERIVED from energy-certificate assumption (provisional)"
+dhw_intensity_mfh,23.0,kWh/m2/yr,"Polish TABULA DHW convention; DERIVED from energy-certificate assumption (provisional)"
+non_residential_intensity,145,kWh/m2/yr,"estimate (Polish non-residential space heating; coal-heavy historical)"

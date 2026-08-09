@@ -1,0 +1,185 @@
+# Country configuration: Luxembourg (LU)
+# ==========================================
+# All Luxembourg-specific parameters used by the building-stock pipeline
+# (scripts 01-04 in code/scripts/country_build/). Sourced and cited; matches the
+# methodology documented in literature/luxembourg/classification_methodology.md
+# and literature/intensity_source_methodology.md.
+#
+# Schema version: 1 (May 2026, first country, sets the template for the
+# remaining 28 countries). Schema may evolve when France is added.
+
+country_code: LU
+country_name: Luxembourg
+
+# ── EUBUCCO data source ─────────────────────────────────────────────────────
+# EUBUCCO v0.2 organises buildings by NUTS2 partition. Luxembourg has a single
+# NUTS2 region (LU00 = the whole country). Multi-partition countries (e.g.
+# France with 22 NUTS2 regions) will list all partitions here.
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - LU00
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  # Citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1.
+  # Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2.
+  # v0.2 data: https://eubucco.com/files/v0.2
+  license: ODbL v1.0
+
+# ── NUTS3 regions ───────────────────────────────────────────────────────────
+# Luxembourg has 1 NUTS3 region. Most countries have many (FR has ~96, DE has
+# ~401). The 02_classify.py aggregation step iterates over this list.
+nuts3_regions:
+  - LU000
+
+# ── Geographic bounding box (WGS84) ─────────────────────────────────────────
+# Used only if a downstream step needs bbox-filtering (e.g. GBA, before it
+# was removed in commit b06998c). Kept in the config in case future cross-
+# checks need it.
+bbox_wgs84:
+  lon_min: 5.7
+  lat_min: 49.4
+  lon_max: 6.6
+  lat_max: 50.2
+
+# ── TABULA building typology source ─────────────────────────────────────────
+# TABULA (IEE 2009-2012, Episcope 2013-2016) is the European harmonised
+# residential building typology with per-class × per-cohort space-heating
+# intensities. 22 countries have direct TABULA reports; the remaining 7 use
+# a neighbouring country as proxy + climate correction.
+#
+# Luxembourg uses Belgium TABULA as proxy because:
+#   1. Adjacent country with similar building stock characteristics
+#   2. Shared cadastre traditions (wall thickness, insulation conventions)
+#   3. Most overlap of construction-cohort categories
+# Source: Cyx W., Renders N., Van Holm M., Verbeke S. (2011). IEE TABULA
+# Belgium project. VITO report 2011/TEM/R/091763. URL: episcope.eu/
+# building-typology/country/be/
+tabula:
+  source_country: BE
+  source_country_name: Belgium
+  intensities_file: code/data/raw/tabula/be_intensities.csv
+  reason_for_proxy: |
+    Direct LU TABULA report does not exist. BE is the geographically and
+    typologically closest neighbour with a published TABULA dataset.
+
+# ── Climate correction ──────────────────────────────────────────────────────
+# Multiplies TABULA-proxy intensities by HDD_LU / HDD_proxy ratio to reflect
+# Luxembourg's slightly colder climate.
+# Source: Eurostat dataset nrg_chdd_a (Cooling and heating degree days by
+# country, annual data). Base temperature 15 °C, sourced from JRC AGRI4CAST
+# gridded meteorological data. 5-year average 2018-2022.
+# URL: ec.europa.eu/eurostat/databrowser/view/nrg_chdd_a/default/table
+climate:
+  hdd_country: 3217          # LU
+  hdd_proxy: 2894            # BE
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  climate_multiplier: 1.112  # 3217 / 2894
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST)
+
+# ── Retrofit-state distribution ─────────────────────────────────────────────
+# Blends TABULA-published refurb scenarios (original / standard refurb /
+# advanced retrofit) weighted by national retrofit penetration. Final blend
+# multiplier: original_share + std_share×std_factor + adv_share×adv_factor.
+#
+# Sources:
+#   - Renovation rate: Odyssee-Mure LU 2024 country profile,
+#     odyssee-mure.eu/publications/efficiency-trends-policies-profiles/luxembourg
+#   - State distribution: derived from Odyssee-Mure cumulative renovation
+#     series + STATEC building age structure
+#   - State factors: TABULA Belgium published refurb scenarios (Cyx 2011)
+retrofit:
+  share:
+    original: 0.55
+    standard: 0.35
+    advanced: 0.10
+  factor:
+    standard: 0.65          # 35% reduction from original SH intensity
+    advanced: 0.35          # 65% reduction from original SH intensity
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # Computed blend for LU: 0.55 + 0.35×0.65 + 0.10×0.35 = 0.813
+  blend_value: 0.813
+
+# ── Domestic Hot Water (DHW) intensity ──────────────────────────────────────
+# Added to space-heating intensity per TABULA convention.
+# Source: TABULA Belgium (Cyx 2011). Occupant-density assumptions:
+# SFH ~33 m²/person, MFH ~28 m²/person.
+dhw:
+  sfh: 22.0
+  mfh: 19.0
+  unit: kWh/m2/yr
+  source: TABULA Belgium (Cyx 2011)
+
+# ── Non-residential intensity (placeholder) ─────────────────────────────────
+# Flat country-average value applied to NON_RESIDENTIAL class. Acknowledged
+# as approximate in the paper methodology; the heat-demand calculation
+# excludes it from the residential-only reconciliation.
+# Source: EU Buildings Stock Observatory 2025 LU non-residential average.
+non_residential_intensity:
+  value: 140.0
+  unit: kWh/m2/yr
+  source: EU Buildings Stock Observatory 2025 (LU non-res average)
+  status: rough placeholder; flagged in methodology
+
+# ── External reconciliation benchmarks ──────────────────────────────────────
+# Used by 03_heat_intensity.py to build the 4-source reconciliation table
+# and by 04_diagnostics.py for the page-1 headline chart.
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 8.27
+    year: 2015
+    source: Hotmaps Toolbox, LU000 row, residential heat demand 2015 baseline
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 33
+    eubucco_mm2: 38
+    census_eubucco_ratio: 0.86
+    source: STATEC RP2021 dwelling stock (estimate)
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 6.747
+    year: 2021
+    source: EU Buildings Stock Observatory 2021 release, LU residential total
+  odyssee_mure:
+    total_twh: 7.20
+    year: 2021
+    source: Odyssee-Mure LU 2024 country profile, residential final energy heating
+    note: Country total only (no class disaggregation)
+
+# ── Hotmaps NUTS3 ID for model comparison ───────────────────────────────────
+# 02_classify.py compares against the existing model's building_stock_nuts3.csv
+# row for this country.
+hotmaps_nuts3_id: LU000
+
+# ── Building classification rules ───────────────────────────────────────────
+# These are universal across countries (TABULA convention + ISO 52000-1
+# floor-area definitions). Listed here for transparency rather than per-
+# country override; future countries with different conventions (e.g. UK)
+# may override.
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  # Floor count: 'eubucco' uses EUBUCCO's own roof-aware `floors` column
+  # (100% populated for LU), replacing the round(height / 3 m) estimate.
+  # Consistent with fr.yaml -- both countries use the same method.
+  floor_source: eubucco
+  # Rules (sequential, first match wins):
+  # 1. EUBUCCO.type starts with "non-" -> NON_RESIDENTIAL
+  # 2. floors >= 6 AND footprint >= 800 -> MFH_HIGH
+  # 3. floors <= 2 AND footprint < 250  -> SFH
+  # 4. 3 <= floors <= 5                  -> MFH_LOW
+  # 5. default (ambiguous large)         -> MFH_HIGH
+
+# ── Provenance + change log ─────────────────────────────────────────────────
+_meta:
+  created: 2026-05-15
+  created_by: Ali Alajwad (extracted from hard-coded values in scripts 01-04)
+  schema_version: 1
+  status: validated against LU pipeline; byte-identical output to pre-refactor
+  references_doc: literature/luxembourg/classification_methodology.md

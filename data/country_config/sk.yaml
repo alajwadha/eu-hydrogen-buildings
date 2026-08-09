@@ -1,0 +1,207 @@
+# Country configuration: Slovakia (SK)
+# ======================================
+# All Slovakia-specific parameters for the building-stock pipeline
+# (scripts 01-04 in code/scripts/country_build/). Sourced and cited inline;
+# methodology in literature/slovakia/classification_methodology.md.
+#
+# Schema version: 1 (matches code/src/CountryConfig.py SCHEMA_VERSION).
+#
+# STATUS: DRAFT. Slovakia is NOT a TABULA country -- Czechia (CZ) is used as
+# the climate-corrected TABULA proxy (Czechoslovak common building code
+# 1948-1993; shared panelove domy typology). Build group 4 (PL + CZ, SK, HU;
+# Visegrad).
+
+country_code: SK
+country_name: Slovakia
+
+# -- EUBUCCO data source -----------------------------------------------------
+# EUBUCCO v0.2 partitions buildings by NUTS2 region (NUTS 2016 vintage).
+# Slovakia's NUTS2 codes have been STABLE across NUTS 2013/2016/2021/2024
+# (no boundary or code changes since the original 2003 introduction).
+# 4 NUTS2 regions: SK01-SK04.
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - SK01   # Bratislavsky kraj (capital region)
+    - SK02   # Zapadne Slovensko (Western Slovakia)
+    - SK03   # Stredne Slovensko (Central Slovakia)
+    - SK04   # Vychodne Slovensko (Eastern Slovakia)
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  # Citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1.
+  # Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2.
+  license: ODbL v1.0
+
+# -- NUTS3 regions -----------------------------------------------------------
+# Slovakia has 8 NUTS3 regions (kraje); codes stable across NUTS 2016/2021/2024.
+nuts3_regions:
+  - SK010   # Bratislavsky
+  - SK021   # Trnavsky
+  - SK022   # Trenciansky
+  - SK023   # Nitriansky
+  - SK031   # Zilinsky
+  - SK032   # Banskobystricky
+  - SK041   # Presovsky
+  - SK042   # Kosicky
+
+# -- Geographic bounding box (WGS84) -----------------------------------------
+bbox_wgs84:
+  lon_min: 16.83
+  lat_min: 47.73
+  lon_max: 22.57
+  lat_max: 49.61
+
+# -- TABULA building typology source -----------------------------------------
+# Slovakia is NOT a TABULA country. Czechia (CZ) is used as the climate-
+# corrected TABULA proxy. STU Bratislava / VUSAPL did not produce a national
+# TABULA typology under the IEE TABULA 2009-2012 or EPISCOPE 2013-2016 phases.
+#
+# CZ chosen as proxy because:
+#   1. SK and CZ shared the Czechoslovak federal building code until 1993
+#      (CSN norms applied identically). Post-1993 Slovak STN largely inherited
+#      the Czech tradition.
+#   2. Shared panelove domy / panelovy dom large-panel typology (HK-60, T-06B,
+#      BANKS series); shared post-1993 detached-SFH pattern.
+#   3. Climate similarity: both continental interiors at ~3200-3500 HDD; SK
+#      only slightly colder than CZ (multiplier ~1.07).
+# PL was considered but is less methodologically close (different building
+# code lineage, different panel system Wk-70 vs T-06B).
+tabula:
+  source_country: CZ
+  source_country_name: Czechia
+  intensities_file: code/data/raw/tabula/cz_intensities.csv
+  reason_for_proxy: |
+    Slovakia has no national TABULA typology. Czechia is the closest TABULA
+    country: shared Czechoslovak federal building code 1948-1993, shared
+    panelove domy / panelovy dom large-panel construction tradition, and
+    similar continental climate. SK is marginally colder than CZ, so the
+    climate correction is slightly above 1.0.
+
+# -- Climate correction ------------------------------------------------------
+# Source: Eurostat nrg_chdd_a (base 15 C, JRC AGRI4CAST), 5-year mean 2018-2022:
+#   SK annual HDD (best estimate): ~3050, ~3120, ~3015, ~3525, ~3240 -> ~3190
+#   CZ annual HDD (best estimate): ~3203, ~3349, ~3257, ~3576, ~3268 -> ~3331
+# tabula_reference_hdd is the CZ reference climate (~3400 = CSN 73 0540 ref);
+# climate_multiplier = HDD_SK / tabula_reference_hdd = 3190 / 3400 = 0.9382
+# (i.e. relative to the Czech-reference climate that cz_intensities.csv is
+# calibrated against, Slovakia averages slightly milder because the SK actual
+# is below the Czech reference). NEEDS_VERIFY exact HDD annuals.
+climate:
+  hdd_country: 3190              # SK -- Eurostat nrg_chdd_a 2018-2022 mean (NEEDS_VERIFY)
+  hdd_proxy: 3331                # CZ actual -- Eurostat nrg_chdd_a 2018-2022 mean
+  tabula_reference_hdd: 3400     # CZ TABULA reference climate (CSN 73 0540; Praha-Ruzyne)
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  climate_multiplier: 0.9382     # 3190 / 3400 (SK actual vs CZ reference climate)
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST), 5-year mean 2018-2022 (NEEDS_VERIFY); tabula_reference_hdd from CZ TABULA calibration (CSN 73 0540)
+
+# -- Retrofit-state distribution ---------------------------------------------
+# Retrofit FACTORS are the Czech EPISCOPE proxy (Slovakia uses CZ TABULA).
+# PROVISIONAL pending the cz_intensities.csv extraction.
+#
+# Retrofit SHARES are a modelling assumption. Slovakia has one of the highest
+# panel-block thermal-retrofit completion rates in the EU: SFRB (State Housing
+# Development Fund) financed ~750k panelovy dom dwellings under the Obnova
+# bytoveho domu programme 2002-2020; estimates 60-75 pct of panel stock has
+# at least standard envelope refurb by 2020. The 0.55/0.40/0.05 split reflects
+# this aggressive panel-renovation history -- markedly higher "standard" share
+# than CZ (which would be ~0.17) or PL (~0.17).
+retrofit:
+  share:
+    original: 0.55          # un-renovated SFH + un-retrofitted panel
+    standard: 0.40          # refurbished panel blocks (SFRB Obnova; window + facade)
+    advanced: 0.05          # deep retrofit; nZEB-grade (small share)
+  factor:
+    standard: 0.60          # PROVISIONAL -- CZ EPISCOPE standard refurb (proxy)
+    advanced: 0.40          # PROVISIONAL -- CZ EPISCOPE advanced refurb (proxy)
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # Computed blend for SK: 0.55 + 0.40x0.60 + 0.05x0.40 = 0.81
+  blend_value: 0.81
+  share_source: |
+    Modelling assumption grounded in the SFRB (State Housing Development Fund)
+    cumulative Obnova bytoveho domu programme reporting (~750k dwellings
+    retrofitted 2002-2020); Slovak Long-Term Renovation Strategy (MDV SR 2020).
+    Retrofit factors PROVISIONAL pending the cz_intensities.csv extraction.
+
+# -- Domestic Hot Water (DHW) intensity --------------------------------------
+dhw:
+  sfh: 22.0
+  mfh: 18.0
+  unit: kWh/m2/yr
+  source: CZ TABULA proxy (cz_intensities.csv DHW convention; provisional pending extraction)
+
+# -- Non-residential intensity (placeholder) ---------------------------------
+non_residential_intensity:
+  value: 135.0
+  unit: kWh/m2/yr
+  source: estimate -- Slovak non-residential space heating (continental climate; comparable to CZ)
+  status: rough placeholder; contributes 0 TWh (zero heated area); flagged in methodology
+
+# -- External reconciliation benchmarks --------------------------------------
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 39.80            # sum of heat_2015_MWh across all 8 SK NUTS3
+                                #   rows in building_stock_nuts3.csv.
+    year: 2015
+    source: Hotmaps Toolbox via building_stock_nuts3.csv; sum across all SK NUTS3 rows
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 157
+    eubucco_mm2: 297
+    census_eubucco_ratio: 0.53
+    source: SU SR 2021 census dwelling stock (occupied -> total)
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 28.0             # Order-of-magnitude anchor; the reconciliation
+                                #   BSO row is computed from sk_intensity.csv.
+    year: 2022
+    source: anchored estimate; EU Building Stock Observatory portal not retrievable
+  odyssee_mure:
+    total_twh: 24.5             # Odyssee-Mure SK residential space heating
+                                #   ~2.1 Mtoe (2022) ~ 24.5 TWh final energy.
+    year: 2022
+    source: Odyssee-Mure Slovakia; residential space heating (final energy basis)
+    note: National total only; final-energy basis -- definitional gap vs Hotmaps useful demand.
+
+# -- Hotmaps NUTS3 ID for model comparison -----------------------------------
+hotmaps_nuts3_id: SK010   # Bratislavsky kraj (capital region; dense MFH stock)
+
+# -- Building classification rules -------------------------------------------
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+  # Rules (sequential, first match wins):
+  # 1. EUBUCCO.type starts with "non-" -> NON_RESIDENTIAL
+  # 2. floors >= 6 AND footprint >= 800 -> MFH_HIGH
+  # 3. floors <= 2 AND footprint < 250  -> SFH
+  # 4. 3 <= floors <= 5                  -> MFH_LOW
+  # 5. default (ambiguous large)         -> MFH_HIGH
+
+# -- Provenance + change log -------------------------------------------------
+_meta:
+  created: 2026-05-19
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 4)
+  last_verified: 2026-05-19
+  schema_version: 1
+  status: DRAFT -- CZ-proxy TABULA build; retrofit factors and DHW PROVISIONAL pending the cz_intensities.csv extraction.
+  references_doc: literature/slovakia/classification_methodology.md
+  verified_2026_05_19:
+    - eubucco.nuts2_partitions (4 codes; stable across all NUTS vintages)
+    - nuts3_regions (8 codes; stable across NUTS 2016/2021/2024)
+    - tabula source = CZ (proxy; cz_intensities.csv); reason documented
+    - reconciliation_benchmarks.hotmaps = 39.80 TWh (sum of heat_2015_MWh)
+  needs_verify_summary:
+    - HDD 2018-2022 mean (SK 3190; CZ 3331) -- best estimates; direct Eurostat nrg_chdd_a extraction not yet done.
+    - tabula_reference_hdd (3400) -- CZ TABULA calibration; verify against Lupisek 2016 brochure header.
+    - retrofit factors (0.60/0.40) and DHW (22/18) -- PROVISIONAL CZ proxy values; reconcile once cz_intensities.csv is extracted.
+    - retrofit shares (0.55/0.40/0.05) -- modelling assumption based on SFRB Obnova cumulative figures; cross-check against latest SFRB / MDV SR data.
+    - non_residential_intensity (135) -- estimate; contributes 0 TWh.
+    - reconciliation_benchmarks.eu_bso (28) -- anchored estimate.
+    - reconciliation_benchmarks.odyssee_mure (24.5) -- back-calculated from Odyssee-Mure SK.
+    - PARALLEL DEPENDENCY: cz_intensities.csv must be created in this same group 4 build for sk.yaml to load. If CZ build slips, fall back to PL proxy (climate_multiplier 3190/3158.7 = 1.010).

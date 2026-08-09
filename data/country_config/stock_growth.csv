@@ -1,0 +1,30 @@
+country,stock_growth_pct_yr,metric,basis_year_range,source,confidence
+AT,1.20,dwellings,2011-2021,"Eurostat/OECD HM1.1 dwelling counts; Statistik Austria",MED
+BE,1.00,dwellings,2019-2023,"Statbel cadastral building stock",HIGH
+BG,0.50,dwellings,2015-2023,"NSI Housing fund series",HIGH
+CY,1.05,dwellings,2010-2020,"OECD HM1.1 / CYSTAT",MED
+CZ,1.15,dwellings,2011-2021,"Eurostat/OECD HM1.1 2021 census",MED
+DE,0.65,dwellings,2011-2021,"Destatis / OECD HM1.1",HIGH
+DK,0.85,dwellings,2010-2022,"Statistics Denmark / OECD HM1.1",MED
+EE,1.00,dwellings,2011-2021,"Statistics Estonia / OECD HM1.1",MED
+EL,0.25,dwellings,2011-2021,"Eurostat/OECD; ELSTAT permits near-stagnant",MED
+ES,0.50,dwellings,2010-2022,"Min. Transportes Estimacion Parque de Viviendas / OECD",HIGH
+FI,1.10,dwellings,2010-2022,"Statistics Finland / OECD HM1.1",HIGH
+FR,0.90,dwellings,2015-2023,"INSEE Focus 332 parc de logements",HIGH
+HR,0.95,dwellings,2013-2021,"Eurostat/OECD census",MED
+HU,0.30,dwellings,2011-2022,"KSH / OECD HM1.1",MED
+IE,0.80,dwellings,2011-2022,"CSO census / OECD",MED
+IT,0.45,dwellings,2011-2021,"ISTAT / ECB RESH / OECD",MED
+LT,1.00,dwellings,2010-2019,"Statistics Lithuania / OECD",MED
+LU,1.60,dwellings,2011-2020,"STATEC / OECD HM1.1",MED
+LV,0.20,dwellings,2010-2021,"CSB Latvia / OECD; shrinking population",MED
+MT,2.50,dwellings,2011-2021,"NSO Malta / OECD census",MED
+NL,0.90,dwellings,2012-2021,"CBS / OECD HM1.1",HIGH
+PL,1.40,dwellings,2015-2022,"GUS Gospodarka mieszkaniowa",HIGH
+PT,0.15,dwellings,2011-2021,"INE / OECD census",MED
+RO,0.70,dwellings,2015-2023,"INS Fondul de locuinte",HIGH
+SE,1.26,dwellings,2015-2023,"SCB BO0104 dwelling stock",HIGH
+SI,0.35,dwellings,2011-2021,"SURS / OECD census",MED
+SK,0.90,dwellings,2015-2021,"Statistics SK completions; OECD 2021 census",MED
+CH,1.05,dwellings,2013-2022,"BFS Gebaeude- und Wohnungsstatistik / OECD",HIGH
+UK,0.90,dwellings,2010-2021,"MHCLG dwelling-stock England / OECD",HIGH

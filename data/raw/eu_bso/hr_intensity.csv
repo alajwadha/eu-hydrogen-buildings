@@ -1,0 +1,26 @@
+# EU Building Stock Observatory (BSO) -- Croatia residential indicators
+#
+# Used by 03_heat_intensity.py for (1) the unknown-cohort stock-weighted
+# fallback intensity (stock_pct_hr column) and (2) the BSO reconciliation row.
+#
+# stock_pct_hr: share of the Croatian residential stock by construction cohort.
+#   Croatia has a large socialist-era (1946-1990) multi-family stock.
+#   Distribution approximated from the Croatian census and Odyssee-Mure Croatia.
+#   Sums to 100.
+#
+# bso_intensity_kwh_m2_yr: BSO-style per-cohort national-average residential
+#   heat intensity (delivered). DERIVED from the Slovenian-proxy TABULA
+#   per-cohort class-average space-heating need x climate multiplier (0.8161)
+#   x retrofit blend (0.953) + DHW. The EU Building Stock Observatory portal
+#   could not be queried directly; flagged as derived, not an independent query.
+#
+# Source: Croatian census; Odyssee-Mure Croatia; Slovenian-proxy TABULA
+#   (si_intensities.csv).
+#
+cohort,stock_pct_hr,bso_intensity_kwh_m2_yr,note
+pre-1945,15,123,Pre-WWII masonry and coastal stone stock
+1946-1970,28,111,Early socialist-era construction
+1971-1990,32,94,Peak socialist-era multi-family expansion
+1991-2010,19,78,Post-independence construction
+2011-2020,5,46,Post-2010 high-efficiency new-build
+post-2020,1,43,nZEB new-build

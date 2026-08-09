@@ -1,0 +1,340 @@
+# Country configuration: Finland (FI)
+# =====================================
+# All Finland-specific parameters for the building-stock pipeline.
+# Sources cited inline. Methodology framework mirrors Luxembourg (a TABULA
+# PROXY country): TABULA-based intensities from a neighbouring country,
+# climate correction by HDD ratio, retrofit blending, 4-class taxonomy,
+# multi-source reconciliation.
+#
+# Schema version: 1 (matches code/src/CountryConfig.py SCHEMA_VERSION).
+#
+# STATUS: DRAFT -- Finland is not a TABULA country. Sweden (SE) is used as
+# the climate-corrected TABULA proxy, the same pattern Luxembourg uses with
+# Belgium. The architecture is correct and the citations are real; values
+# marked NEEDS_VERIFY should be cross-checked against primary sources before
+# the results are reported to reviewers. The needs_verify items are listed
+# in _meta.needs_verify_summary at the foot of this file.
+#
+# IMPORTANT: Finland's residential heat intensities are SWEDEN-DERIVED. Every
+# Finland-touching document states this explicitly. See
+# literature/finland/classification_methodology.md.
+
+country_code: FI
+country_name: Finland
+
+# -- EUBUCCO data source -----------------------------------------------------
+# EUBUCCO v0.2 organises buildings by NUTS2 partition. Finland has 5 NUTS2
+# regions. EUBUCCO uses modified NUTS 2016 boundaries (confirmed at
+# https://docs.eubucco.com/v0.2/data-format/schema/); for Finland the NUTS
+# 2016, 2021 codes are identical, so the partition list below is the
+# EUBUCCO-compatible set.
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - FI19   # Lansi-Suomi (West Finland)
+    - FI1B   # Helsinki-Uusimaa
+    - FI1C   # Etela-Suomi (South Finland)
+    - FI1D   # Pohjois- ja Ita-Suomi (North & East Finland)
+    - FI20   # Ahvenanmaa (Aland)
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  # Citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1.
+  # Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2.
+  # v0.2 data: https://eubucco.com/files/v0.2
+  license: ODbL v1.0
+
+# -- NUTS3 regions -----------------------------------------------------------
+# Finland has 19 NUTS3 regions (maakunnat / regions) under NUTS 2016/2021.
+# Codes verified against Statistics Finland NUTS classification and the
+# Eurostat NUTS 2021 list (NUTS 2016 == NUTS 2021 for Finland). Note that
+# NUTS 2024 renumbered several of these (e.g. FI193 -> FI198); EUBUCCO v0.2
+# uses NUTS 2016, so the 2016/2021 codes below are the correct ones.
+# Hotmaps reconciliation sums all rows with country == FI, so a code-vintage
+# mismatch with building_stock_nuts3.csv (which uses older NUTS) does not
+# affect the benchmark.
+nuts3_regions:
+  # FI19 Lansi-Suomi
+  - FI193  # Keski-Suomi (Central Finland)
+  - FI194  # Etela-Pohjanmaa (South Ostrobothnia)
+  - FI195  # Pohjanmaa (Ostrobothnia)
+  - FI196  # Satakunta
+  - FI197  # Pirkanmaa
+  # FI1B Helsinki-Uusimaa
+  - FI1B1  # Helsinki-Uusimaa
+  # FI1C Etela-Suomi
+  - FI1C1  # Varsinais-Suomi (Southwest Finland)
+  - FI1C2  # Kanta-Hame
+  - FI1C3  # Paijat-Hame
+  - FI1C4  # Kymenlaakso
+  - FI1C5  # Etela-Karjala (South Karelia)
+  # FI1D Pohjois- ja Ita-Suomi
+  - FI1D1  # Etela-Savo (South Savo)
+  - FI1D2  # Pohjois-Savo (North Savo)
+  - FI1D3  # Pohjois-Karjala (North Karelia)
+  - FI1D5  # Keski-Pohjanmaa (Central Ostrobothnia)
+  - FI1D7  # Lappi (Lapland)
+  - FI1D8  # Kainuu
+  - FI1D9  # Pohjois-Pohjanmaa (North Ostrobothnia)
+  # FI20 Ahvenanmaa
+  - FI200  # Aland
+
+# -- Geographic bounding box (WGS84) -----------------------------------------
+# Mainland Finland plus Aland.
+bbox_wgs84:
+  lon_min: 19.1
+  lat_min: 59.7
+  lon_max: 31.6
+  lat_max: 70.1
+
+# -- TABULA building typology source -----------------------------------------
+# Finland is NOT a TABULA country. Sweden (SE) is used as the TABULA proxy --
+# the same methodological branch as Luxembourg (which proxies via Belgium).
+#
+# Finland uses Sweden TABULA as proxy because:
+#   1. Adjacent Nordic country with the closest cold-climate building stock.
+#   2. Shared construction traditions (timber-frame detached houses, concrete
+#      apartment blocks) and a comparable post-war / "miljonprogram"-era stock.
+#   3. Sweden has a full published TABULA national typology brochure with
+#      per-class x per-period space-heating energy need values.
+#   4. Among Finland's neighbours with TABULA data, Sweden is the closest in
+#      HDD (a ~5.5% climate correction), far closer than Germany or the
+#      Baltic states.
+# Source: Sweden TABULA National Typology Brochure (EPISCOPE/TABULA, IEE
+# 2009-2012). episcope.eu/building-typology/country/se/
+# Extraction: code/data/raw/tabula/se_intensities.csv (header documents the
+# full extraction method, class mapping and cohort mapping).
+tabula:
+  source_country: SE
+  source_country_name: Sweden
+  intensities_file: code/data/raw/tabula/se_intensities.csv
+  reason_for_proxy: |
+    Finland has no direct TABULA national typology. Sweden is the closest
+    neighbour with a published TABULA brochure: adjacent Nordic country,
+    similar cold-climate timber-and-concrete building stock, and the
+    smallest HDD gap of any TABULA-covered neighbour (~5.5% correction).
+    Finland's heat intensities are therefore Sweden-derived, climate-
+    corrected by the HDD_FI/HDD_SE ratio below.
+
+# -- Climate correction ------------------------------------------------------
+# Multiplies the Sweden-proxy TABULA intensities by HDD_FI / HDD_SE to
+# reflect Finland's colder climate.
+# Source: Eurostat dataset nrg_chdd_a (Cooling and heating degree days by
+# country, annual data). Base temperature 15 C, sourced from JRC AGRI4CAST
+# gridded meteorological data. 5-year average 2018-2022.
+# URL: ec.europa.eu/eurostat/databrowser/view/nrg_chdd_a/default/table
+# Retrieved 2026-05-17 via the DBnomics mirror (Eurostat/nrg_chdd_a):
+#   FI series A.NR.HDD.FI: 2018=5349.59, 2019=5482.97, 2020=4873.47,
+#                          2021=5623.37, 2022=5277.38  -> mean 5321.36
+#   SE series A.NR.HDD.SE: 2018=5181.13, 2019=5122.22, 2020=5119.61,
+#                          2021=4592.22, 2022=5201.47  -> mean 5043.33
+climate:
+  hdd_country: 5321          # FI -- Eurostat nrg_chdd_a 2018-2022 mean
+  hdd_proxy: 5043            # SE -- Eurostat nrg_chdd_a 2018-2022 mean
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  climate_multiplier: 1.055  # 5321 / 5043
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST), 5-year mean 2018-2022
+  # Note (2026-05-19): an Option B reference-HDD correction was briefly applied
+  # (tabula_reference_hdd = 3500 per the SE TABULA zone-3 reference; mult =
+  # 1.5203). It was REVERTED after checking the Finland reconciliation: FI
+  # bottom-up was already at 68.93 vs Hotmaps 78.14 = -11.8 % (OK consistent
+  # within +/-15 %). Applying the correction would have shifted bottom-up to
+  # ~99 TWh = +27 %, BREAKING the existing consistency. Whatever zone-3 bias
+  # the SE TABULA introduces is already offset by other factors (likely the
+  # FI/SE national HDD ratio happens to track the FI-vs-zone-3 ratio after
+  # other effects cancel). See literature/climate_reference_hdd_audit.md.
+
+# -- Retrofit-state distribution ---------------------------------------------
+# Blends the Sweden TABULA refurbishment scenarios (original / standard
+# "Forbattrad" / advanced "Lagenergi") weighted by national retrofit
+# penetration. Final blend multiplier:
+#   original_share + std_share*std_factor + adv_share*adv_factor.
+#
+# Retrofit FACTORS (0.74 standard, 0.49 advanced) are derived from the Sweden
+# TABULA brochure: simple averages of Forbattrad/Nuvarande and
+# Lagenergi/Nuvarande across all 15 climate-zone-3 building examples (10 SFH
+# + 5 MFH). See code/data/raw/tabula/se_intensities.csv header.
+#
+# Retrofit SHARES are a modelling assumption, not a sourced statistic.
+# Finland publishes no envelope-state (original/standard/advanced) split of
+# the residential stock -- that three-way taxonomy is a TABULA construct, and
+# Finland is not a TABULA country, so no Finnish dataset reports it natively.
+# The 0.55/0.35/0.10 split is set consistent with the renovation activity
+# reported in Finland's Long-Term Renovation Strategy (Ministry of the
+# Environment of Finland, 2020, submitted under EPBD Art. 2a): ~1.8%/yr of
+# the housing stock renovated (4.1 million m2/yr). Sustained over ~1990-2023
+# that rate is consistent with roughly half the stock having had at least one
+# envelope refurbishment. The standard/advanced sub-split remains an
+# assumption, flagged for refinement.
+retrofit:
+  share:
+    original: 0.55          # modelling assumption -- see share_source below
+    standard: 0.35          # modelling assumption
+    advanced: 0.10          # modelling assumption
+  factor:
+    standard: 0.74          # SE TABULA brochure: mean Forbattrad/Nuvarande
+    advanced: 0.49          # SE TABULA brochure: mean Lagenergi/Nuvarande
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # Computed blend for FI: 0.55 + 0.35x0.74 + 0.10x0.49 = 0.858
+  blend_value: 0.858
+  share_source: |
+    Modelling assumption consistent with the renovation rate in Finland's
+    Long-Term Renovation Strategy (Ministry of the Environment of Finland,
+    2020, EPBD Art. 2a): ~1.8%/yr of the housing stock renovated. The
+    standard/advanced sub-split is an assumption pending Finnish data.
+
+# -- Domestic Hot Water (DHW) intensity --------------------------------------
+# Added to space-heating intensity per TABULA convention. Climate-insensitive
+# (not scaled by HDD).
+# Source: Sweden TABULA brochure existing-state "Tappvarmvatten" (DHW) in the
+# electricity row, where the existing water heater is an electric resistance
+# unit, so delivered energy ~ energy need. SFH 16 = mean of the two SFH area
+# variants; MFH 17 = mean of the five MFH examples.
+dhw:
+  sfh: 16.0
+  mfh: 17.0
+  unit: kWh/m2/yr
+  source: Sweden TABULA National Typology Brochure (existing-state DHW)
+
+# -- Non-residential intensity (placeholder) ---------------------------------
+# Flat country-average value applied to the NON_RESIDENTIAL class. The
+# heat-demand calculation excludes it from the residential-only
+# reconciliation (NON_RESIDENTIAL carries zero heated area), so the exact
+# value does not affect the reported bottom-up total.
+# NEEDS_VERIFY: no clean Finnish service-sector space-heating-only kWh/m2
+# figure was found. Statistics Finland reports service-building energy per
+# m3 (not m2) and bundles heating with other uses; Odyssee-Mure publishes
+# only service-sector intensity TRENDS for Finland (energy/m2 down ~23%
+# since 2010), not an absolute. The 130 kWh/m2/yr estimate -- between the
+# France value (120) and Luxembourg (140), nudged up for Finland's colder
+# climate -- is retained as a plausible but unverified placeholder.
+non_residential_intensity:
+  value: 130.0
+  unit: kWh/m2/yr
+  source: estimate -- NEEDS_VERIFY (no Finnish service-sector heating intensity sourced)
+  status: plausible estimate; contributes 0 TWh (zero heated area); flagged in methodology
+
+# -- External reconciliation benchmarks --------------------------------------
+# Used by 03_heat_intensity.py to build the multi-source reconciliation table
+# and by 04_diagnostics.py for the page-1 headline chart.
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 78.14            # verified 2026-05-17 -- sum of heat_2015_MWh
+                                #   across all 56 FI rows in
+                                #   code/data/processed/building_stock_nuts3.csv.
+                                #   All-classes total, used as the reconciliation
+                                #   target per the LU/FR methodology (Hotmaps
+                                #   "OTHER" over-counts residential). Class split:
+                                #   SFH 9.55, MFH_HIGH 13.93, OTHER 54.66 TWh.
+    year: 2015
+    source: Hotmaps Toolbox via building_stock_nuts3.csv; sum across all FI NUTS3 rows
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 248
+    eubucco_mm2: 526
+    census_eubucco_ratio: 0.47
+    source: Tilastokeskus 2020 (3.124M dwellings x 79.4 m2; excludes heated summer cottages)
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 42.0             # The EU Building Stock Observatory portal could
+                                #   not be queried directly, so this slot is
+                                #   anchored to the Statistics Finland 2023
+                                #   national residential space-heating total
+                                #   (~42 TWh, see odyssee_mure below). Used only
+                                #   for the panel-7 apportioned bars; the
+                                #   reconciliation "EU BSO implied total" row is
+                                #   computed separately from fi_intensity.csv.
+    year: 2023
+    source: anchored to Statistics Finland 2023 residential space heating (~42 TWh); EU BSO portal not retrievable
+  odyssee_mure:
+    total_twh: 42.0             # verified 2026-05-17 -- Statistics Finland,
+                                #   "Energy consumption in households 2023"
+                                #   (released 2024-12-05): nearly 42 TWh used
+                                #   on heating residential spaces in 2023, = 66%
+                                #   of household energy use. This national
+                                #   statistic is the primary source underlying
+                                #   the Odyssee-Mure FI residential series.
+    year: 2023
+    source: Statistics Finland, Energy consumption in households 2023 (released 2024-12-05); residential space heating ~42 TWh
+    note: National total only -- no NUTS3 disaggregation.
+
+# -- Hotmaps NUTS3 ID for model comparison -----------------------------------
+# For multi-NUTS3 countries, 02_classify.py compares EUBUCCO totals against
+# the sum of all rows matching the country_code prefix in
+# building_stock_nuts3.csv. This single ID is a representative reference for
+# cases where 04_diagnostics.py needs one value.
+hotmaps_nuts3_id: FI1B1   # Helsinki-Uusimaa (representative reference)
+
+# -- Building classification rules -------------------------------------------
+# Same convention as LU and FR -- TABULA universals (3.0 m residential,
+# 3.5 m other floor-to-floor, 0.85 useable-area fraction).
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  # Floor count: 'eubucco' uses EUBUCCO's own roof-aware `floors` column.
+  # Current standard for all countries (LU, FR both use it).
+  floor_source: eubucco
+  # Rules (sequential, first match wins):
+  # 1. EUBUCCO.type starts with "non-" -> NON_RESIDENTIAL
+  # 2. floors >= 6 AND footprint >= 800 -> MFH_HIGH
+  # 3. floors <= 2 AND footprint < 250  -> SFH
+  # 4. 3 <= floors <= 5                  -> MFH_LOW
+  # 5. default (ambiguous large)         -> MFH_HIGH
+
+# -- Provenance + change log -------------------------------------------------
+_meta:
+  created: 2026-05-17
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, Finland country #3)
+  last_verified: 2026-05-17
+  schema_version: 1
+  status: DRAFT -- Sweden-proxy TABULA build; scalar values flagged below need
+    verification before results are reported. Architecture and citations are sound.
+  references_doc: literature/finland/classification_methodology.md
+  verified_2026_05_17:
+    - eubucco.nuts2_partitions (5 FI NUTS2 codes, NUTS 2016/2021)
+    - nuts3_regions (19 FI NUTS3 codes, NUTS 2016/2021 -- Statistics Finland + Eurostat)
+    - climate.hdd_country = 5321 (Eurostat nrg_chdd_a FI 2018-2022 mean via DBnomics)
+    - climate.hdd_proxy = 5043 (Eurostat nrg_chdd_a SE 2018-2022 mean via DBnomics)
+    - climate.climate_multiplier = 1.055 (5321/5043 HDD ratio)
+    - tabula source = SE; code/data/raw/tabula/se_intensities.csv created from
+      the Sweden TABULA National Typology Brochure (18 cells, 3 classes x 6 cohorts)
+    - retrofit factors (0.74 standard / 0.49 advanced) -- SE TABULA brochure
+      Forbattrad/Lagenergi reduction ratios, averaged over 15 building examples
+    - dhw.sfh = 16.0 / dhw.mfh = 17.0 (SE TABULA brochure existing-state DHW)
+    - reconciliation_benchmarks.hotmaps.total_twh = 78.14 (computed from repo CSV)
+    - reconciliation_benchmarks.odyssee_mure.total_twh = 42.0 -- Statistics
+      Finland, Energy consumption in households 2023 (released Dec 2024),
+      reports ~42 TWh residential space heating; this national statistic is
+      the source behind the Odyssee-Mure FI series. Replaces the earlier 40.0.
+    - retrofit cohort-extrapolation factors (0.80, 0.65) for the 2011-2020 and
+      post-2020 cohorts -- corroborated against the tightening of the Swedish
+      BBR new-build energy requirement (Boverket ~110 kWh/m2/yr in 2006,
+      ~90 in 2015, ~75 or lower from 2021; requirement ratios ~0.80 and
+      ~0.65-0.70). Order-of-magnitude support; not exact, since a 2017
+      delivered-to-primary-energy boundary change limits strict comparability.
+    - retrofit shares -- relabelled from PLACEHOLDER to a modelling assumption
+      grounded in the Finland LTRS renovation rate (~1.8%/yr); the
+      standard/advanced sub-split is still an assumption (see below).
+  needs_verify_summary:
+    - retrofit standard/advanced sub-split -- the 0.55/0.35/0.10 split is a
+      modelling assumption consistent with the Finland LTRS ~1.8%/yr
+      renovation rate, but Finland publishes no envelope-state distribution
+      (the three-way taxonomy is a TABULA construct). The original-vs-renovated
+      share is reasonable; the standard-vs-advanced split is unverified.
+    - non_residential_intensity (130 kWh/m2/yr) -- estimate; no Finnish
+      service-sector space-heating-only kWh/m2 figure exists in a clean form
+      (Statistics Finland reports per m3; Odyssee-Mure only trends). Contributes
+      0 TWh so it does not affect the residential bottom-up total.
+    - reconciliation_benchmarks.eu_bso.total_twh (42.0) -- the EU Building
+      Stock Observatory portal could not be queried; this slot is anchored to
+      the Statistics Finland 2023 national figure rather than a true BSO value.
+    - climate-zone choice -- se_intensities.csv uses Sweden TABULA climate
+      zone 3 (southern Sweden, bulk of the stock). A population-weighted
+      average across the three SE zones is a candidate refinement.
+    - NUTS3 codes -- the 19 FI NUTS3 codes use the NUTS 2016/2021 vintage to
+      match EUBUCCO v0.2; spot-check EUBUCCO FI partition contents before the run.

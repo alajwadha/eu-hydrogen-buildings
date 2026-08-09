@@ -1,0 +1,20 @@
+# EU Building Stock Observatory (BSO) -- Switzerland residential indicators
+#
+# CRITICAL: EUBUCCO CH has ~0pct construction_year, so essentially ALL Swiss
+# buildings fall in the 'unknown' cohort and the result is the stock-weighted
+# fallback from THIS table. The stock_pct_ch weights drive the entire Swiss
+# bottom-up -- the most load-bearing numbers in the CH build.
+#
+# stock_pct_ch: CH stock share by construction period (RegBL/GWR Baujahr;
+#   Streicher 2019 pre-1980 ~70pct). Sums to 100. NEEDS_VERIFY vs RegBL.
+# bso_intensity_kwh_m2_yr: derived = AT-proxy class-average SH x climate_mult
+#   (1.0328) x retrofit blend (0.828) + DHW (~19). Cross-check vs BFE ~56 TWh.
+# Source: BFS RegBL/GWR; at_intensities.csv (AT proxy); Streicher 2019 SwissRes.
+#
+cohort,stock_pct_ch,bso_intensity_kwh_m2_yr,note
+pre-1945,25,201,"Pre-1945 masonry; Streicher pre-1920 ~22pct of SH energy"
+1946-1970,25,192,"Post-war boom; pre-thermal-code"
+1971-1990,22,146,"SIA first thermal norms; oil-boiler era"
+1991-2010,17,98,"SIA 380/1 1988/2009 updates"
+2011-2020,9,83,"Minergie-track new-build"
+post-2020,2,72,"Post-2020 nZEB-equivalent"

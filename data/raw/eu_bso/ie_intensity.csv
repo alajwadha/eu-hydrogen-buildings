@@ -1,0 +1,12 @@
+# EU Building Stock Observatory (BSO) -- Ireland residential indicators
+#
+# Distribution approximated from CSO Census 2022 dwelling-period histogram.
+# Sums to 100. NEEDS_VERIFY against CSO Census 2022 SAPS data.
+#
+cohort,stock_pct_ie,bso_intensity_kwh_m2_yr,note
+pre-1945,11,235,"Pre-war solid-wall masonry; rural cottages + Dublin Georgian terraced"
+1946-1970,15,205,"Postwar cavity-wall (uninsulated); local-authority bungalows + Dublin estates"
+1971-1990,22,165,"Part L 1979 first thermal regs; OFTEC oil-boiler standard"
+1991-2010,32,125,"Celtic Tiger build-out; Part L 1997/2002/2008 tightening; oil + gas heating"
+2011-2020,15,73,"Part L 2011 (60pct reduction vs 2007); A3 BER; HP push"
+post-2020,5,52,"NZEB Part L 2019; A2 BER; near-universal HP for new-build"

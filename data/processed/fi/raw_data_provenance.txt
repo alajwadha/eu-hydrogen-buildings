@@ -1,0 +1,44 @@
+EUBUCCO download — Finland
+Run at: 2026-05-26 00:56:07 UTC
+============================================================
+
+  dataset: EUBUCCO v0.2 NUTS2=FI19
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=FI19/FI19.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/FI19.parquet
+  status: OK
+  md5: 59f394c5067b976bec56067b4c942d9c
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+
+  dataset: EUBUCCO v0.2 NUTS2=FI1B
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=FI1B/FI1B.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/FI1B.parquet
+  status: OK
+  md5: 36eb8e7244c6770a27cfb44f15bbef13
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+
+  dataset: EUBUCCO v0.2 NUTS2=FI1C
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=FI1C/FI1C.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/FI1C.parquet
+  status: OK
+  md5: 45a451ce3ce87c426de68ce64336469c
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+
+  dataset: EUBUCCO v0.2 NUTS2=FI1D
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=FI1D/FI1D.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/FI1D.parquet
+  status: OK
+  md5: 93f35b4660b4703e8e153f273623e987
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+
+  dataset: EUBUCCO v0.2 NUTS2=FI20
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=FI20/FI20.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/FI20.parquet
+  status: OK
+  md5: 13bcf38ab56478ba4673a76783f010ea
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+

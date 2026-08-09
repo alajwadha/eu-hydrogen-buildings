@@ -1,0 +1,27 @@
+# EU Building Stock Observatory (BSO) -- Belgium residential indicators
+#
+# Used by 03_heat_intensity.py for (1) the unknown-cohort stock-weighted
+# fallback intensity and (2) the BSO reconciliation row.
+#
+# stock_pct_be: share of the Belgian residential stock by construction cohort.
+#   Belgium has a large pre-war + interwar urban masonry stock (Brussels
+#   maison-bourgeoise, Antwerp/Ghent rijhuis), substantial 1946-1990
+#   suburbanisation cohort, and a high share of post-1991 new-build.
+#   Distribution approximated from Statbel Recensement 2011 / 2021 update.
+#   Sums to 100. NEEDS_VERIFY against Statbel Census 2021 housing module.
+#
+# bso_intensity_kwh_m2_yr: BSO-style per-cohort national-average residential
+#   heat intensity (delivered). DERIVED from be_intensities.csv x climate
+#   multiplier (0.869) x retrofit blend (0.918) + DHW. NOT an independent
+#   BSO query.
+#
+# Source: Statbel housing census 2021; be_intensities.csv (Belgian TABULA);
+#   Climact 2024 + LIFE BE REEL! retrofit reporting.
+#
+cohort,stock_pct_be,bso_intensity_kwh_m2_yr,note
+pre-1945,28,210,"Pre-war urban masonry; Brussels bourgeois + Vlaams/Wallon stone-masonry SFH"
+1946-1970,22,180,"Postwar suburbanisation; brick MFH + first wave SFH; pre-EPB thermal"
+1971-1990,20,155,"First-generation thermal regs (Vlaams 1985); cavity-wall era"
+1991-2010,18,105,"EPB Flanders 2006 / Wallonia 2010; double-glazing + cavity-fill standard"
+2011-2020,9,75,"EPB tightening + NZEB-track post-2014; passive-house adoption in Flanders"
+post-2020,3,60,"BENG / E-peil 30 NZEB; aggressive Vlaams thermal targets"

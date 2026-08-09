@@ -1,0 +1,19 @@
+# Switzerland climate + retrofit-state national assumptions
+#
+# Legacy national-parameters file (existence check by 04_diagnostics.py).
+# Authoritative source is ch.yaml; this mirrors it. All values numeric.
+# CH is a TABULA PROXY country: Austria (AT) is the proxy (SIA/OIB-aligned).
+#
+parameter,value,unit,source
+hdd_ch_2018_2022_avg,3150,degree-days/yr,Eurostat nrg_chdd_a 2018-2022 mean estimate (NEEDS_VERIFY)
+hdd_proxy_at_2018_2022_avg,3050,degree-days/yr,"Eurostat nrg_chdd_a (AT reference; NEEDS_VERIFY)"
+tabula_reference_hdd,3050,degree-days/yr,"AT TABULA reference climate (AEA ZEUS national-mean)"
+climate_multiplier,1.0328,dimensionless,3150 / 3050 (CH actual vs AT reference climate)
+retrofit_share_original,0.58,fraction,"pre-standard un-retrofitted (GEAK D-G dominant)"
+retrofit_share_standard,0.32,fraction,"partial retrofit (Das Gebaeudeprogramm)"
+retrofit_share_advanced,0.10,fraction,"deep retrofit / Minergie-grade"
+retrofit_factor_standard,0.65,multiplier,"PROVISIONAL -- AT proxy standard refurb"
+retrofit_factor_advanced,0.40,multiplier,"PROVISIONAL -- AT proxy advanced refurb"
+dhw_intensity_sfh,18.0,kWh/m2/yr,"SIA 380/1 adjusted; AT proxy (provisional)"
+dhw_intensity_mfh,20.0,kWh/m2/yr,"SIA 380/1 adjusted; AT proxy (provisional)"
+non_residential_intensity,120,kWh/m2/yr,"estimate (Swiss tertiary space heating)"

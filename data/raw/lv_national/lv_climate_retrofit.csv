@@ -1,0 +1,23 @@
+# Latvia climate + retrofit-state national assumptions
+#
+# Legacy national-parameters file consumed by 03_heat_intensity.py
+# (load_national_params). The authoritative source is lv.yaml; this file
+# mirrors the values for documentation. All values are numeric.
+#
+# Latvia is a TABULA PROXY country: Poland TABULA, climate-corrected by the
+# HDD_LV/HDD_PL ratio. Sources: Eurostat nrg_chdd_a; Poland TABULA
+# (pl_intensities.csv); Latvian LTRS / ALTUM reporting. See lv.yaml and
+# literature/latvia/classification_methodology.md for full citations.
+#
+parameter,value,unit,source
+hdd_lv_2018_2022_avg,3818.3,degree-days/yr,Eurostat nrg_chdd_a (JRC AGRI4CAST)
+hdd_proxy_pl_2018_2022_avg,3158.7,degree-days/yr,Eurostat nrg_chdd_a (Poland TABULA reference)
+climate_multiplier,1.2088,dimensionless,3818.3 / 3158.7 (LV/PL HDD ratio)
+retrofit_share_original,0.90,fraction,modelling assumption (Latvian LTRS; ALTUM renovation reporting)
+retrofit_share_standard,0.07,fraction,modelling assumption
+retrofit_share_advanced,0.03,fraction,modelling assumption
+retrofit_factor_standard,0.63,multiplier,Poland TABULA standard refurbishment
+retrofit_factor_advanced,0.50,multiplier,Poland TABULA advanced refurbishment
+dhw_intensity_sfh,28.0,kWh/m2/yr,Poland TABULA proxy
+dhw_intensity_mfh,23.0,kWh/m2/yr,Poland TABULA proxy
+non_residential_intensity,160,kWh/m2/yr,estimate (Latvian non-residential space heating)

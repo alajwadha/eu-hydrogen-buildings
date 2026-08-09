@@ -1,0 +1,22 @@
+# Spain climate + retrofit-state national assumptions
+#
+# Legacy national-parameters file consumed by 03_heat_intensity.py. The
+# authoritative source is es.yaml; this file mirrors the values for
+# documentation. All values are numeric.
+#
+# Spain is a DIRECT TABULA country: no proxy, climate_multiplier = 1.0.
+# Sources: Eurostat nrg_chdd_a (HDD); Spanish TABULA / CIEMAT / IVE-Valencia
+# (retrofit factors, DHW); IDAE / Odyssee-Mure (retrofit shares).
+#
+parameter,value,unit,source
+hdd_es_2018_2022_avg,1750.0,degree-days/yr,Eurostat nrg_chdd_a (estimate; 2022 confirmed 1478)
+hdd_proxy_2018_2022_avg,1750.0,degree-days/yr,direct TABULA country (proxy = self)
+climate_multiplier,1.0,dimensionless,direct Spanish TABULA
+retrofit_share_original,0.80,fraction,modelling assumption (IDAE deep retrofit ~1 pct/yr)
+retrofit_share_standard,0.15,fraction,modelling assumption
+retrofit_share_advanced,0.05,fraction,modelling assumption
+retrofit_factor_standard,0.65,multiplier,Spanish TABULA standard refurbishment (provisional)
+retrofit_factor_advanced,0.40,multiplier,Spanish TABULA advanced refurbishment (provisional)
+dhw_intensity_sfh,16.0,kWh/m2/yr,Spanish TABULA (provisional)
+dhw_intensity_mfh,14.0,kWh/m2/yr,Spanish TABULA (provisional)
+non_residential_intensity,90,kWh/m2/yr,estimate (Spanish non-residential space heating)

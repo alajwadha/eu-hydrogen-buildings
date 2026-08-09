@@ -1,0 +1,18 @@
+# United Kingdom climate + retrofit-state national assumptions
+#
+# Legacy national-parameters file (existence check by 04_diagnostics.py).
+# Authoritative source is uk.yaml; this mirrors it. All values numeric.
+# UK is a TABULA-DIRECT country (Cambridge Housing Model / EHS).
+#
+parameter,value,unit,source
+hdd_uk_2018_2022_avg,2500,degree-days/yr,Eurostat nrg_chdd_a 2018-2022 mean estimate (NEEDS_VERIFY)
+tabula_reference_hdd,2500,degree-days/yr,CHM/EHS UK national-mean calibration
+climate_multiplier,1.0,dimensionless,UK direct typology (no proxy)
+retrofit_share_original,0.35,fraction,"EHS EPC E-G + older D; ~8M solid-wall homes"
+retrofit_share_standard,0.45,fraction,"loft + cavity insulated (ECO/GBIS legacy)"
+retrofit_share_advanced,0.20,fraction,"deep retrofit + efficient post-1990 (EPC A-B)"
+retrofit_factor_standard,0.65,multiplier,"standard refurb (CHM/RdSAP; provisional)"
+retrofit_factor_advanced,0.40,multiplier,"advanced refurb (deep retrofit; provisional)"
+dhw_intensity_sfh,20.0,kWh/m2/yr,"SAP ~3000 kWh/dwelling occupancy-driven (provisional)"
+dhw_intensity_mfh,23.0,kWh/m2/yr,"SAP DHW per-m2 (provisional)"
+non_residential_intensity,120,kWh/m2/yr,"estimate (UK tertiary space heating)"

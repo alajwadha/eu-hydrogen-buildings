@@ -1,0 +1,11 @@
+# EU Building Stock Observatory (BSO) -- Sweden residential indicators
+# Distribution approximated from SCB BO0104 Bostads- och hyresstatistik.
+# Sums to 100. NEEDS_VERIFY against SCB Statistik om bostader.
+#
+cohort,stock_pct_se,bso_intensity_kwh_m2_yr,note
+pre-1945,17,210,"Pre-WWII trafamiljshus + urban stenhus"
+1946-1970,33,170,"Miljonprogrammet era apartment blocks + folkhem SFH"
+1971-1990,22,135,"Post-oil-crisis insulation tightening; BBR 1980 first thermal regs"
+1991-2010,17,90,"BBR 1995/2002 tightening; energy-declaration era"
+2011-2020,8,72,"BBR 2015 NZEB-track; aggressive Boverket targets"
+post-2020,3,58,"BBR 2021/2025 NZEB enforcement"

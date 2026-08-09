@@ -1,0 +1,24 @@
+# EU Building Stock Observatory (BSO) -- Italy residential indicators
+#
+# Used by 03_heat_intensity.py for (1) the unknown-cohort stock-weighted
+# fallback intensity (stock_pct_it column) and (2) the BSO reconciliation row.
+#
+# stock_pct_it: share of the Italian residential stock by construction cohort.
+#   Italy has a large pre-1991 stock. Distribution approximated from ISTAT
+#   census data and Odyssee-Mure Italy. Sums to 100.
+#
+# bso_intensity_kwh_m2_yr: BSO-style per-cohort national-average residential
+#   heat intensity (delivered). DERIVED from the Italian TABULA per-cohort
+#   class-average space-heating need x retrofit blend (0.889) + DHW. The EU
+#   Building Stock Observatory portal could not be queried directly; flagged as
+#   derived, not an independent BSO query.
+#
+# Source: ISTAT census; Odyssee-Mure Italy; Italian TABULA (it_intensities.csv).
+#
+cohort,stock_pct_it,bso_intensity_kwh_m2_yr,note
+pre-1945,20,193,Pre-WWII masonry stock
+1946-1970,30,166,Post-war and 1960s reconstruction era
+1971-1990,28,137,1970s-80s expansion; first thermal regs (Law 373/1976)
+1991-2010,16,102,Law 10/1991 and EPBD-aligned construction
+2011-2020,5,64,Post-2005 high-efficiency new-build
+post-2020,1,48,nZEB new-build

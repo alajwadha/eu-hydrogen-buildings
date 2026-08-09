@@ -1,0 +1,5 @@
+building_class,eubucco_building_count,eubucco_total_heated_area_m2,model_building_type,model_dwellings,model_heat_MWh
+MFH_HIGH,2473,17751006.40766467,MFH_HIGH,0.0,0.0
+MFH_LOW,76671,65728531.552798666,MFH_HIGH,0.0,0.0
+NON_RESIDENTIAL,1602671,0.0,OTHER,0.0,17294000.0
+SFH,843500,116093400.41535358,SFH,0.0,0.0
