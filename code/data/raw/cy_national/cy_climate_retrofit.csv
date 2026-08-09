@@ -1,0 +1,22 @@
+# Cyprus climate + retrofit-state national assumptions
+#
+# Legacy national-parameters file consumed by 03_heat_intensity.py. The
+# authoritative source is cy.yaml; this file mirrors the values for
+# documentation. All values are numeric.
+#
+# Cyprus is a DIRECT TABULA country: no proxy, climate_multiplier = 1.0.
+# Cyprus is also the proxy source for Malta (mt.yaml). Sources: Eurostat
+# nrg_chdd_a; Cyprus TABULA / Cyprus University of Technology.
+#
+parameter,value,unit,source
+hdd_cy_2018_2022_avg,661.56,degree-days/yr,Eurostat nrg_chdd_a (JRC AGRI4CAST); 2022 confirmed 696
+hdd_proxy_2018_2022_avg,661.56,degree-days/yr,direct TABULA country (proxy = self)
+climate_multiplier,1.0,dimensionless,direct Cyprus TABULA
+retrofit_share_original,0.85,fraction,modelling assumption (EPISCOPE CY 54 pct no insulation)
+retrofit_share_standard,0.10,fraction,modelling assumption
+retrofit_share_advanced,0.05,fraction,modelling assumption
+retrofit_factor_standard,0.70,multiplier,Cyprus TABULA standard refurbishment
+retrofit_factor_advanced,0.50,multiplier,Cyprus TABULA advanced refurbishment
+dhw_intensity_sfh,16.0,kWh/m2/yr,Cyprus TABULA warm-climate convention
+dhw_intensity_mfh,14.0,kWh/m2/yr,Cyprus TABULA warm-climate convention
+non_residential_intensity,70,kWh/m2/yr,"estimate (Cypriot non-residential space heating, warm climate)"

@@ -1,0 +1,27 @@
+# EU Building Stock Observatory (BSO) -- Czechia residential indicators
+#
+# Used by 03_heat_intensity.py for (1) the unknown-cohort stock-weighted
+# fallback intensity (stock_pct_cz column) and (2) the BSO reconciliation row.
+#
+# stock_pct_cz: share of the Czech residential stock by construction cohort.
+#   Czechia has a sizeable pre-war urban kamenice / cinzovni domy multi-family
+#   stock plus a large 1946-1990 panelove domy era (VVU-ETA; T-06B; P1.11).
+#   Distribution approximated from CSU SLDB 2021 (Table 2.3 obytne budovy podle
+#   obdobi vystavby). Sums to 100. NEEDS_VERIFY exact CSU 2021 figures.
+#
+# bso_intensity_kwh_m2_yr: BSO-style per-cohort national-average residential
+#   heat intensity (delivered). DERIVED from the Czech EPISCOPE per-cohort
+#   class-average space-heating need x climate multiplier (0.980) x retrofit
+#   blend (0.898) + DHW. The EU Building Stock Observatory portal could not
+#   be queried directly; flagged as derived, not an independent BSO query.
+#
+# Source: CSU SLDB 2021 housing module; cz_intensities.csv (Czech EPISCOPE
+#   research-synthesised); Czech LTRS 2020 retrofit shares.
+#
+cohort,stock_pct_cz,bso_intensity_kwh_m2_yr,note
+pre-1945,18,195,"Pre-war urban masonry; cinzovni domy (multi-storey rental)"
+1946-1970,22,170,"Early socialist masonry + first panelak cohort (T-series; pre-thermal-code)"
+1971-1990,32,155,"Peak panelove domy era (VVU-ETA; P1.11; BANKS); uninsulated large-panel"
+1991-2010,16,93,"Post-Velvet new-build; CSN 73 0540 1994/2002 thermal updates"
+2011-2020,10,71,"CSN 73 0540-2 2011; PENB-driven new-build"
+post-2020,2,55,"nZEB per EPBD; Czech nZEB definition since 2020"

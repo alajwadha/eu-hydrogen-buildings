@@ -1,0 +1,12 @@
+EUBUCCO download — Luxembourg
+Run at: 2026-05-26 00:53:12 UTC
+============================================================
+
+  dataset: EUBUCCO v0.2 NUTS2=LU00
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=LU00/LU00.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/LU00.parquet
+  status: OK
+  md5: 585dc3267b35743f61f7d0013fb4d325
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+

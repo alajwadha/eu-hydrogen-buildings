@@ -1,0 +1,345 @@
+# Country configuration: Hungary (HU)
+# ======================================
+# All Hungary-specific parameters for the building-stock pipeline
+# (scripts 01-04 in code/scripts/country_build/). Sourced and cited inline;
+# methodology in literature/hungary/classification_methodology.md.
+#
+# Schema version: 1 (matches code/src/CountryConfig.py SCHEMA_VERSION).
+#
+# STATUS: DRAFT. Germany (DE) is currently used as the climate-corrected
+# TABULA proxy for Hungary, BUT this is a transitional state. Hungary IS in
+# TABULA-EPISCOPE via BME (Budapest University of Technology and Economics);
+# the published brochure HU_TABULA_TypologyBrochure_BME.pdf (2014-10-21) is
+# at episcope.eu/fileadmin/tabula/public/docs/brochure/ and carries 15
+# archetypes across 6 cohorts (pre-1944; 1945-60; 1961-79; 1980-89; 1990-2001;
+# post-2001) x building categories (SFH <80 / >=80 m^2; MFH 4-9 flats;
+# MFH >=10 flats traditional / panel / industrialised). The brochure is an
+# image-based scan so manual table extraction is required; until that work
+# is done, DE remains the proxy. Build group 4 (PL + CZ, SK, HU; Visegrad).
+#
+# **The single highest-leverage academic refinement for HU is to replace the
+# DE proxy with HU-direct intensities from the BME brochure.** Companion
+# peer-reviewed sources for the same matrix:
+#   - Csoknyai T. et al. (2016) "Building stock characteristics and energy
+#     performance of residential buildings in Eastern-European countries"
+#     Energy & Buildings 132:39-52. DOI 10.1016/j.enbuild.2016.06.062.
+#   - Hrabovszky-Horvath S. et al. (2013) Energy & Buildings 62:475-485.
+#   - Hrabovszky-Horvath S. (2015) BME doctoral dissertation -- panelhaz
+#     q_h_nd before/after retrofit.
+# See literature/inv_countries_academic_refinements.md "Correction 1" for the
+# full audit + literature/hungary/classification_methodology.md.
+#
+# An earlier (2026-05-19) version of this YAML header asserted "Hungary is
+# NOT a TABULA-12 country" -- VERIFIED INCORRECT 2026-05-20 by direct
+# inspection of episcope.eu/building-typology/country/hu/ and the BME
+# brochure URL above. The misstatement is corrected here.
+
+country_code: HU
+country_name: Hungary
+
+# -- EUBUCCO data source -----------------------------------------------------
+# EUBUCCO v0.2 partitions buildings by NUTS2 region. Hungary had a major
+# NUTS2 recoding at the NUTS 2018 amendment: HU10 (Kozep-Magyarorszag, single
+# Central Hungary region) was split into HU11 (Budapest) + HU12 (Pest),
+# bringing the total from 7 to 8 NUTS2 regions. EUBUCCO v0.2 was built with
+# the POST-amendment NUTS 2021 codes (HU11/HU12/HU21-HU23/HU31-HU33,
+# 8 regions). The pre-2018 HU10 code returns HTTP 404 from the s3.eubucco.com
+# bucket; verified 2026-05-20 by direct probe. PL is the only other country
+# in build groups 1-4 where EUBUCCO uses NUTS 2021 (PL likewise had a major
+# 2018 amendment).
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - HU11   # Budapest (NEW; was part of HU10 under NUTS 2016)
+    - HU12   # Pest (NEW; was part of HU10 under NUTS 2016)
+    - HU21   # Kozep-Dunantul
+    - HU22   # Nyugat-Dunantul
+    - HU23   # Del-Dunantul
+    - HU31   # Eszak-Magyarorszag
+    - HU32   # Eszak-Alfold
+    - HU33   # Del-Alfold
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  # Citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1.
+  # Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2.
+  license: ODbL v1.0
+  # EUBUCCO area-correction factor (applied 2026-05-20).
+  # The G4 Colab build landed HU at 99.68 TWh vs Hotmaps 71.98 = +38.5 % INV.
+  # The earlier audit (Correction 1 / "HU" section) attributed the gap to the
+  # DE-proxy intensity values and prescribed a BME-direct TABULA extraction.
+  # DIRECT MEASUREMENT REFUTES THAT DIAGNOSIS: the model's mean residential
+  # intensity is 99.68 TWh / 664.3 Mm^2 = 150 kWh/m^2, which is BELOW the
+  # Hotmaps-implied intensity (71.98 TWh / 377 Mm^2 census area = 191 kWh/m^2).
+  # So the DE proxy does NOT over-state per-m^2 -- if anything it slightly
+  # under-states. The entire +38.5 % gap is an EUBUCCO AREA over-count.
+  #
+  # KSH (Hungarian Central Statistical Office) 2022 Census, final housing data:
+  #   4.6 M dwellings x 82 m^2 mean floor area (alapterulet) = 377.2 Mm^2
+  #   total residential floor area (this is the full stock incl. vacant).
+  # EUBUCCO HU residential heated_floor_area = 664.3 Mm^2.
+  # Correction = 377.2 / 664.3 = 0.568 ~ 0.57.
+  #
+  # HU thus joins the EUBUCCO area over-count cluster (EE/LT/AT/DK/IE/HR;
+  # Correction 7). With the area corrected, HU lands at ~56.8 TWh = -21 %
+  # vs Hotmaps (ACC band). The mild residual under-shoot is consistent with
+  # MFH common-area (stairwell / circulation) heating that the dwelling-only
+  # KSH census area excludes but EUBUCCO building-gross area includes; HU is
+  # ~35 % MFH (panelhaz + traditional). The BME-direct TABULA switch remains
+  # a valid refinement for the per-archetype distribution but is NOT required
+  # for reconciliation -- the binding constraint was area, not intensity.
+  #
+  # Source: KSH 2022 Census, final housing data.
+  #   https://nepszamlalas2022.ksh.hu/en/news/turned-out-where-in-what-numbers-and-under-what-conditions-we-live
+  # MECHANISM (clarified 2026-05-21): imputed-floor area over-count.
+  # EUBUCCO HU observed-height share is 3% (Milojevic-Dupont 2023,
+  # Table 1); floors -- hence floor area -- are ML-imputed even though the
+  # footprints are cadastre-sourced. The correction calibrates the imputed
+  # area to the census. See literature/eubucco_census_area_audit.md
+  # (Mechanism A).
+  area_correction: 0.57
+  area_correction_source: |
+    KSH (Hungarian Central Statistical Office) 2022 Census: 4.6 M dwellings
+    x 82 m^2 mean floor area = 377.2 Mm^2 total residential. EUBUCCO HU
+    total: 664.3 Mm^2. Correction = 377.2/664.3 = 0.568. The model's mean
+    intensity (150 kWh/m^2) is below the Hotmaps-implied 191 kWh/m^2, so the
+    DE proxy does NOT over-state per-m^2 -- the entire +38.5 % gap is area,
+    not intensity. Refutes the prior Correction-1 DE-proxy diagnosis.
+
+# -- NUTS3 regions -----------------------------------------------------------
+# Hungary has 20 NUTS3 regions under NUTS 2021. HU101 (Budapest) and HU102
+# (Pest) under NUTS 2016 were renumbered to HU110 / HU120 in NUTS 2021; the
+# other 18 NUTS3 codes (HU2xx, HU3xx) are stable across vintages. Codes from
+# code/data/raw/gisco/NUTS_RG_01M_2021_4326_clean.csv. The Hotmaps total of
+# 71.98 TWh is invariant to the renaming.
+nuts3_regions:
+  - HU110   # Budapest (was HU101 under NUTS 2016)
+  - HU120   # Pest (was HU102 under NUTS 2016)
+  - HU211   # Fejer
+  - HU212   # Komarom-Esztergom
+  - HU213   # Veszprem
+  - HU221   # Gyor-Moson-Sopron
+  - HU222   # Vas
+  - HU223   # Zala
+  - HU231   # Baranya
+  - HU232   # Somogy
+  - HU233   # Tolna
+  - HU311   # Borsod-Abauj-Zemplen
+  - HU312   # Heves
+  - HU313   # Nograd
+  - HU321   # Hajdu-Bihar
+  - HU322   # Jasz-Nagykun-Szolnok
+  - HU323   # Szabolcs-Szatmar-Bereg
+  - HU331   # Bacs-Kiskun
+  - HU332   # Bekes
+  - HU333   # Csongrad
+
+# -- Geographic bounding box (WGS84) -----------------------------------------
+bbox_wgs84:
+  lon_min: 16.11
+  lat_min: 45.74
+  lon_max: 22.90
+  lat_max: 48.59
+
+# -- TABULA building typology source -----------------------------------------
+# TRANSITIONAL: Germany (DE) is used as the climate-corrected TABULA proxy
+# for Hungary, BUT Hungary IS in TABULA-EPISCOPE via BME and the highest-
+# leverage academic refinement is to switch to HU-direct intensities once
+# the BME brochure values are extracted (see literature/inv_countries_
+# academic_refinements.md). The DE proxy is structurally an under-fit because:
+#
+#   1. Hungarian per-dwelling heat demand at Hotmaps level (~16.4 MWh/dw)
+#      is essentially identical to German (~17.2 MWh/dw), so DE archetypes
+#      SHOULD reconcile to Hungary at the per-dwelling level. The G4 Colab
+#      result (BU 99.7 vs Hotmaps 72.0 = +38.5 %) shows they do NOT --
+#      pointing the finger at the DE archetype intensities themselves
+#      (specifically: DE.N.AB / GMH archetypes do not match Hungarian
+#      panelhaz HK-60 / T-06B / Larsen-Nielsen series structurally).
+#
+# Why DE was chosen over PL initially:
+#   1. Continental climate band: Hungarian Pannonian-continental winters
+#      (~2440 HDD) are closer to DE actual (2846) than to Polish (3159).
+#   2. DE TABULA has a richer 4-class taxonomy (SFH/TH/MFH/AB) than the PL
+#      EK-derived archetype set.
+#   3. DE TABULA values are direct net q_h_nd published by IWU 2015; PL
+#      values are DERIVED from EK certificates (+/-15-20 % uncertainty).
+tabula:
+  source_country: HU
+  source_country_name: Hungary
+  intensities_file: code/data/raw/tabula/hu_intensities.csv
+  reason_for_proxy: |
+    HU-DIRECT (no proxy). Hungary IS a TABULA-EPISCOPE country via BME. The
+    per-archetype net space-heat-demand values in hu_intensities.csv were
+    extracted directly from the Hungarian national typology brochure
+    (Csoknyai T., Hrabovszky-Horvath S., Seprodi-Egeresi M., Szendro G.,
+    "Lakoepulet tipologia Magyarorszagon / National Typology of Residential
+    Buildings in Hungary", BME, 2014; HU_TABULA_TypologyBrochure_BME.pdf),
+    replacing the earlier transitional German proxy on 2026-05-28. The full
+    cohort/class mapping (BME periods -> our 6 cohorts; BME archetypes -> our
+    4 classes) and per-cell page citations are documented in the
+    hu_intensities.csv header. Because the BME values are calibrated to the
+    Hungarian reference climate, NO climate multiplier is applied
+    (climate_multiplier = 1.0); this removes the previous dependence on the
+    uncertain HU/DE HDD ratio. The DE-proxy build over-stated the HU bottom-up
+    by ~+39 % vs Hotmaps; the net effect of the switch is not sign-obvious
+    (HU old-SFH values exceed DE, but HU MFH/panel values are lower and the HU
+    stock is panel-heavy) and MUST be re-reconciled in Colab. See
+    literature/inv_countries_academic_refinements.md "Correction 1".
+
+# -- Climate correction ------------------------------------------------------
+# HU-DIRECT (2026-05-28): the intensities now come from the Hungarian BME
+# TABULA brochure, calibrated to the Hungarian reference climate, so NO climate
+# scaling is applied (climate_multiplier = 1.0). hdd_proxy and tabula_reference_hdd
+# are set equal to hdd_country so the CountryConfig validator's
+# climate_multiplier == hdd_country / tabula_reference_hdd check passes at 1.0.
+# This is a robustness improvement: the previous DE-proxy build depended on the
+# uncertain HU/DE HDD ratio (hdd_country was flagged NEEDS_VERIFY); with HU-direct
+# values that dependence is removed (the multiplier is exactly 1.0 regardless of
+# the precise HU HDD). hdd_country is retained below for reference / cooling-
+# degree-day work but no longer enters the intensity calculation.
+#
+# Source: Eurostat nrg_chdd_a (base 15 C, JRC AGRI4CAST), 5-year mean 2018-2022.
+climate:
+  hdd_country: 2440          # HU national mean -- Eurostat nrg_chdd_a 2018-2022 (reference only)
+  hdd_proxy: 2440            # = hdd_country (HU-direct, no proxy)
+  tabula_reference_hdd: 2440 # HU brochure calibrated to HU reference climate
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  climate_multiplier: 1.0    # HU-direct: BME values already at HU climate
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST), 5-year mean 2018-2022
+
+# -- Retrofit-state distribution ---------------------------------------------
+# Retrofit FACTORS are best-estimate continental values (Csoknyai 2016 BME
+# context). Standard refurbishment ~0.62 of existing-state SH need; advanced
+# (Panel Plus / Otthon Melege deep retrofit) ~0.35.
+#
+# Retrofit SHARES (UPDATED 2026-05-20 from BPIE / EUKI 2025 JustReno baseline):
+# The earlier (2026-05-19) values 0.78 / 0.17 / 0.05 over-stated Hungarian
+# renovation reach. JustReno reports HU annual renovation rate 0.3-0.5 % --
+# the lowest in the EU (EU average 0.6-1.8 %). Compounded 2005-2022, that
+# implies cumulative ~5-10 % of stock has been renovated, not the 22 % the
+# old shares implied.
+#
+# Programme-specific cumulative counts grounding the new shares:
+#   - Otthon Felujitasi Program (2021-2022): ~370,000 families supported with
+#     HUF 770 bn (Magyar Allamkincstar). ~40-50 % used the subsidy for envelope
+#     work => ~150-185k envelope-affecting dwellings = 3.4-4.2 % of the
+#     ~4.4 M-dwelling stock.
+#   - Panelprogram (2001-2007 official figures: 190k panel dwellings of the
+#     820k Hungarian panel stock = 23 % panel stock; continued under Otthon
+#     Melege branding to cumulative ~250-280k by 2020 per JustReno panel-
+#     retrofit appendix).
+#   - Otthon Melege deep-retrofit subset (2014-2020): only 13,975 dwellings
+#     = 0.3 % of stock.
+# De-duplicated combined envelope-retrofit cumulative ~8-10 % standard;
+# deep ~1-2 %.
+#
+# **Direction note (academic finding):** updating the shares from
+# 0.78/0.17/0.05 to 0.88/0.10/0.02 RAISES the blend factor from 0.9029 to
+# 0.949 and thereby WIDENS the bottom-up vs Hotmaps gap from +38.5 % to
+# ~+45.6 %. This is academically correct: the prior shares over-stated
+# renovation reach and were artificially narrowing the gap. The widening
+# exposes that the DE-archetype intensities are the binding constraint
+# (see TABULA block above for the refinement path).
+retrofit:
+  share:
+    original: 0.88          # JustReno 0.3-0.5 %/yr renovation rate, compounded
+    standard: 0.10          # Otthon Felujitasi envelope subset + Panelprogram facade
+    advanced: 0.02          # Otthon Melege deep + nZEB-grade
+  factor:
+    standard: 0.62          # Csoknyai 2016 BME context (partial-renovation savings)
+    advanced: 0.35          # Panel Plus / Otthon Melege deep retrofit
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # Computed blend for HU: 0.88 + 0.10x0.62 + 0.02x0.35 = 0.949
+  blend_value: 0.949
+  share_source: |
+    BPIE / EUKI (2025) JustReno: Baseline Assessment Report for Hungary
+    (HU annual renovation rate 0.3-0.5 %; cumulative 5-10 % 2005-2022).
+    Magyar Allamkincstar Otthon Felujitasi processing reports (370k families;
+    ~150-185k envelope-affecting dwellings). Panelprogram 2001-2007 official
+    figures (190k panel dwellings of 820k); continued under Otthon Melege
+    to ~250-280k by 2020. Otthon Melege deep-retrofit subset 13,975 dwellings.
+    Hungarian LTRS 2020 (Ministry of Innovation and Technology). See
+    literature/inv_countries_academic_refinements.md "HU" section.
+
+# -- Domestic Hot Water (DHW) intensity --------------------------------------
+dhw:
+  sfh: 14.0
+  mfh: 15.0
+  unit: kWh/m2/yr
+  source: continental-default DHW convention (between DE 11/16 and PL 28/23); NEEDS_VERIFY against Csoknyai 2016 archetype values
+
+# -- Non-residential intensity (placeholder) ---------------------------------
+non_residential_intensity:
+  value: 110.0
+  unit: kWh/m2/yr
+  source: estimate -- Hungarian non-residential space heating (continental tertiary stock)
+  status: rough placeholder; contributes 0 TWh (zero heated area); flagged in methodology
+
+# -- External reconciliation benchmarks --------------------------------------
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 71.98            # sum of heat_2015_MWh across all 20 HU NUTS3
+                                #   rows in building_stock_nuts3.csv.
+    year: 2015
+    source: Hotmaps Toolbox via building_stock_nuts3.csv; sum across all HU NUTS3 rows
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 377
+    eubucco_mm2: 664
+    census_eubucco_ratio: 0.57
+    source: KSH 2022 Census (4.6M dwellings x 82 m2)
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 55.0             # Order-of-magnitude anchor; the reconciliation
+                                #   BSO row is computed from hu_intensity.csv.
+    year: 2022
+    source: anchored estimate; EU Building Stock Observatory portal not retrievable
+  odyssee_mure:
+    total_twh: 45.0             # Hungarian households final energy ~80 TWh;
+                                #   space heating ~56 pct ~ 45 TWh final energy.
+    year: 2022
+    source: Odyssee-Mure Hungary; residential space heating (Eurostat households disaggregation)
+    note: National total only; final-energy basis -- definitional gap vs Hotmaps useful demand.
+
+# -- Hotmaps NUTS3 ID for model comparison -----------------------------------
+hotmaps_nuts3_id: HU110   # Budapest (NUTS 2021; was HU101 under NUTS 2016)
+
+# -- Building classification rules -------------------------------------------
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+  # Rules (sequential, first match wins):
+  # 1. EUBUCCO.type starts with "non-" -> NON_RESIDENTIAL
+  # 2. floors >= 6 AND footprint >= 800 -> MFH_HIGH
+  # 3. floors <= 2 AND footprint < 250  -> SFH
+  # 4. 3 <= floors <= 5                  -> MFH_LOW
+  # 5. default (ambiguous large)         -> MFH_HIGH
+
+# -- Provenance + change log -------------------------------------------------
+_meta:
+  created: 2026-05-19
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 4)
+  last_verified: 2026-05-19
+  schema_version: 1
+  status: DRAFT -- DE-proxy TABULA build; HU is not a TABULA-12 country (memory note "HuTABULA direct" verified incorrect). Hu-direct from BME archetype literature is the documented refinement path.
+  references_doc: literature/hungary/classification_methodology.md
+  verified_2026_05_20:
+    - eubucco.nuts2_partitions (8 codes; NUTS 2021 post-2018 vintage; HU11 Budapest + HU12 Pest separate) -- verified by direct curl probe of s3.eubucco.com 2026-05-20 (HU10 returns 404; HU11/HU12 return 200).
+    - nuts3_regions (20 codes; NUTS 2021; HU110 Budapest + HU120 Pest; from code/data/raw/gisco/NUTS_RG_01M_2021_4326_clean.csv).
+    - tabula source = DE (proxy; de_intensities.csv) -- HU not in TABULA-12 per EPISCOPE country page.
+    - reconciliation_benchmarks.hotmaps = 71.98 TWh (sum of heat_2015_MWh; invariant to NUTS vintage renaming).
+  needs_verify_summary:
+    - HDD 2018-2022 mean (2440) -- best estimate; direct Eurostat nrg_chdd_a extraction via A.NR.HDD.HU not yet done.
+    - retrofit factors (0.62/0.35) -- provisional; cross-check against Csoknyai 2016 panel-block retrofit studies.
+    - retrofit shares (0.78/0.17/0.05) -- modelling assumption from Otthon Felujitasi completion figures and LTRS-HU 2020.
+    - DHW (14/15) -- provisional continental defaults; verify against Csoknyai 2016.
+    - non_residential_intensity (110) -- rough placeholder.
+    - reconciliation_benchmarks.eu_bso (55) -- anchored estimate.
+    - reconciliation_benchmarks.odyssee_mure (45) -- Eurostat households disaggregation.
+    - REFINEMENT PATH -- a Hungary-direct hu_intensities.csv built from BME archetype literature (Csoknyai 2016; Hrabovszky-Horvath 2013) would replace the DE proxy. Documented as a follow-up.

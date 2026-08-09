@@ -1,0 +1,86 @@
+# TABULA Germany synthetical-average residential building intensities
+#
+# Source: TABULA / EPISCOPE project. The German national residential typology
+#   was produced by IWU Darmstadt (Institut Wohnen und Umwelt).
+#   - Project country page: episcope.eu/building-typology/country/de
+#   - IWU 2015, "Deutsche Wohngebaeudetypologie / TABULA Typology Brochure
+#     Germany" (Loga, Stein, Diefenbach, Born), the definitive numeric source:
+#     iwu.de/fileadmin/publikationen/gebaeudebestand/episcope/2015_IWU_LogaEtAl_Deutsche-Wohngebaeudetypologie.pdf
+#   - DE TABULA Scientific Report (IWU):
+#     episcope.eu/fileadmin/tabula/public/docs/scientific/DE_TABULA_ScientificReport_IWU.pdf
+#
+# Germany IS a TABULA country -- this is the DIRECT national typology, used
+# without a proxy (tabula.source_country = DE in de.yaml). No climate
+# correction is applied (climate_multiplier = 1.0).
+#
+# Values: net space-heating energy need (Netto-Heizwaermebedarf, q_h_nd) of the
+# existing / non-refurbished reference building, kWh/m2/yr at the heated
+# living-space reference area, standard TABULA reference calculation
+# (DIN V 18599-10, German reference climate, variant "001"). Source: IWU 2015
+# brochure master table "[TABULA-Analyses.xlsx] DE Tables & Charts".
+#
+# Note: these are CALCULATED net demand, not measured-consumption-adapted
+# values. German TABULA also publishes a measured-consumption-adapted version
+# (~0.5-0.85x for high-demand old stock); the calculated values are used here
+# for consistency with the BE/FR/SE proxy files, which are also calculated
+# energy-need values. The bottom-up total is reported as-is and reconciled
+# against Hotmaps without calibration (see literature/germany/).
+#
+# Building class mapping (German TABULA -> our 4-class scheme):
+#   SFH       <- TABULA SFH  (EFH, Einfamilienhaus, detached 1-2 dwellings)
+#   MFH_LOW   <- average of TABULA TH (RH, Reihenhaus / terraced)
+#                        and TABULA MFH (Mehrfamilienhaus, up to ~12 dwellings)
+#   MFH_HIGH  <- TABULA AB   (GMH Grosses Mehrfamilienhaus + HH Hochhaus,
+#                             large apartment block / high-rise)
+#   NON_RES   <- not in TABULA; handled separately in 03_heat_intensity.py
+#
+# Cohort mapping (German TABULA periods A-L -> our 6 cohorts):
+#   pre-1945    <- avg of A (...1859), B (1860-1918), C (1919-1948)
+#   1946-1970   <- avg of D (1949-1957), E (1958-1968)
+#   1971-1990   <- avg of F (1969-1978), G (1979-1983), H (1984-1994)
+#   1991-2010   <- avg of I (1995-2001), J (2002-2009)
+#   2011-2020   <- avg of K (2010-2015), L (2016+)
+#   post-2020   <- EXTRAPOLATED from L (2016+); German TABULA has no post-2020
+#                  building (FLAGGED)
+#
+# MFH_HIGH gap: the German TABULA defines no large apartment block (GMH/AB)
+# after period F (1969-1978). The MFH_HIGH cohorts 1991-2010, 2011-2020 and
+# post-2020 are therefore estimated (the post-1990 cells proxied to MFH_LOW
+# new-build, since large blocks built post-1990 follow the same EnEV/GEG
+# new-build code). FLAGGED below.
+#
+# Refurbishment reduction factors (German TABULA, typology-averaged):
+#   standard / "konventionell" refurbishment ~0.55 of existing-state SH need
+#   advanced / "zukunftsweisend" refurbishment ~0.18 of existing-state SH need
+#
+# DHW: German TABULA uses a near-constant area-specific DHW energy need --
+#   11.0 kWh/m2/yr for SFH/TH (11.6 for new-build), 16.5 for MFH/AB (16.1 for
+#   new-build). The MFH_LOW DHW (14.6/14.0) is the TH+MFH mean.
+#
+# Citations:
+#   Loga T., Diefenbach N., Stein B., Born R. (2015). Deutsche
+#     Wohngebaeudetypologie / TABULA. 2nd ed. IWU, Darmstadt.
+#   Loga T., Stein B., Diefenbach N. (2016). TABULA building typologies in 20
+#     European countries. Energy & Buildings 132:4-12.
+#     DOI 10.1016/j.enbuild.2016.06.094
+#
+#
+building_class,cohort,sh_intensity_kwh_m2_yr,dhw_intensity_kwh_m2_yr,source_note
+SFH,pre-1945,294.2,11.0,"avg DE.N.SFH.01/02/03 (EFH_A/B/C, ...1859/1860-1918/1919-1948)"
+SFH,1946-1970,307.9,11.0,"avg DE.N.SFH.04/05 (EFH_D/E, 1949-1957/1958-1968); high-demand early-postwar reference buildings"
+SFH,1971-1990,182.2,11.0,"avg DE.N.SFH.06/07/08 (EFH_F/G/H); 1st+2nd Waermeschutzverordnung era"
+SFH,1991-2010,112.0,11.0,"avg DE.N.SFH.09/10 (EFH_I/J, 1995-2001/2002-2009); WSchV95 + EnEV2002"
+SFH,2011-2020,91.9,11.6,"avg DE.N.SFH.11/12 (EFH_K/L, 2010-2015/2016+); EnEV2009/2016 new-build"
+SFH,post-2020,84.2,11.6,"EXTRAPOLATED from DE.N.SFH.12 (EFH_L, 2016+); GEG new-build standard; FLAGGED"
+MFH_LOW,pre-1945,236.0,14.6,"avg DE.N.TH.02/03 + DE.N.MFH.01/02/03 (RH_B/C + MFH_A/B/C)"
+MFH_LOW,1946-1970,181.4,14.6,"avg DE.N.TH.04/05 + DE.N.MFH.04/05 (RH/MFH D/E, 1949-1957/1958-1968)"
+MFH_LOW,1971-1990,146.2,14.6,"avg DE.N.TH.06/07/08 + DE.N.MFH.06/07/08 (RH/MFH F/G/H)"
+MFH_LOW,1991-2010,84.0,14.6,"avg DE.N.TH.09/10 + DE.N.MFH.09/10 (RH/MFH I/J, 1995-2001/2002-2009)"
+MFH_LOW,2011-2020,71.2,14.0,"avg DE.N.TH.11/12 + DE.N.MFH.11/12 (RH/MFH K/L, 2010-2015/2016+)"
+MFH_LOW,post-2020,59.9,14.0,"EXTRAPOLATED from RH/MFH L (2016+), avg(71.3,48.4); GEG standard; FLAGGED"
+MFH_HIGH,pre-1945,172.2,16.5,"avg DE.N.AB.02/03 (GMH_B/C, 1860-1918/1919-1948); no GMH for period A"
+MFH_HIGH,1946-1970,175.4,16.5,"avg DE.N.AB.04/05 (GMH_D/E, 1949-1957/1958-1968)"
+MFH_HIGH,1971-1990,138.8,16.5,"DE.N.AB.06 (GMH_F, 1969-1978); German typology has no large block 1979-1994"
+MFH_HIGH,1991-2010,87.9,16.5,"FLAGGED: no GMH/AB post-1978 in German TABULA; estimated from the MFH I/J-to-F improvement ratio"
+MFH_HIGH,2011-2020,72.1,16.1,"FLAGGED: no GMH/AB new-build in German TABULA; proxied to MFH_LOW 2011-2020 (same EnEV new-build code)"
+MFH_HIGH,post-2020,59.9,16.1,"FLAGGED: no GMH/AB post-1978 data; proxied to MFH_LOW post-2020 estimate"

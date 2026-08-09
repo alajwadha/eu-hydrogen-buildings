@@ -1,0 +1,316 @@
+# Country configuration: Spain (ES)
+# ====================================
+# All Spain-specific parameters for the building-stock pipeline
+# (scripts 01-04 in code/scripts/country_build/). Sourced and cited inline;
+# methodology in literature/spain/classification_methodology.md.
+#
+# Schema version: 1.
+#
+# Spain is a DIRECT TABULA country -- the Spanish residential typology was
+# produced by CIEMAT (with IVE-Valencia, IETcc). No proxy, no climate
+# correction (climate_multiplier = 1.0). Spain is the heavyweight of build
+# group 3 (ES + PT, EL, CY) and is also used as the proxy for Portugal.
+
+country_code: ES
+country_name: Spain
+
+# -- EUBUCCO data source -----------------------------------------------------
+# EUBUCCO v0.2 partitions by NUTS2 (NUTS 2016). Spain has 19 NUTS2 regions
+# (17 autonomous communities + Ceuta + Melilla autonomous cities; Canarias
+# is its own NUTS2 ES70).
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - ES11   # Galicia
+    - ES12   # Asturias
+    - ES13   # Cantabria
+    - ES21   # Pais Vasco
+    - ES22   # Navarra
+    - ES23   # La Rioja
+    - ES24   # Aragon
+    - ES30   # Madrid
+    - ES41   # Castilla y Leon
+    - ES42   # Castilla-La Mancha
+    - ES43   # Extremadura
+    - ES51   # Cataluna
+    - ES52   # Comunidad Valenciana
+    - ES53   # Illes Balears
+    - ES61   # Andalucia
+    - ES62   # Murcia
+    - ES63   # Ceuta
+    - ES64   # Melilla
+    - ES70   # Canarias
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  license: ODbL v1.0
+  # EUBUCCO area-correction factor (applied 2026-05-20).
+  # The first G3 Colab rebuild (commit 86863d9) landed at 272.93 TWh vs
+  # Hotmaps 173.59 = +57.2 pct INV. The deflator delivered the projected
+  # ~150 TWh reduction; the remaining gap is the EUBUCCO floor-area over-
+  # count documented in the audit doc (Correction 3, ES detailed entry).
+  #
+  # Our EUBUCCO ES residential heated-area total is 4,082 Mm^2 (per the
+  # G3 reconciliation table); INE Censos 2021 anchors Spanish residential
+  # floor area at ~2,500 Mm^2 total (18.5 M main residences x ~100 m^2 ~=
+  # 1,850 Mm^2 + ~700 Mm^2 secondary/holiday-home stock).
+  # Correction factor = 2,500 / 4,082 = 0.613.
+  #
+  # The over-count is concentrated in MFH_LOW (EUBUCCO classification rule
+  # `floors >= 3 -> MFH_LOW` captures terraced rural housing + mixed-use
+  # ground-floor commercial that should be excluded). A per-class area
+  # correction would be more granular but requires a Spanish stock-mix
+  # decomposition we do not have; the national-level 0.613 captures the
+  # aggregate without requiring per-class data.
+  #
+  # Source: INE Censo de Poblacion y Viviendas 2021 (Statistics Spain),
+  #   18,536,616 main residences x ~95-100 m^2 mean useful area + ~700
+  #   Mm^2 secondary/empty stock = ~2,500 Mm^2 total. Cross-check via
+  #   IDAE SECH-SPAHOUSEC 2011 (Informe Final, ref. year 2010):
+  #   17,199,630 main residences x 102.4 m^2 = 1,761 Mm^2 consistent.
+  #
+  # MECHANISM (clarified 2026-05-21): EUBUCCO ES observed-height share is
+  # 95 % (Milojevic-Dupont 2023, Table 1), so floor area per building is
+  # well-determined -- this is NOT an imputed-floor data-quality over-count.
+  # The over-count is STOCK UTILIZATION: EUBUCCO counts the full standing
+  # stock, but ~28 % is vacant (~3.8 M) or secondary/holiday (~3.5 M) and is
+  # barely heated in Spain's mild climate. The 0.613 factor calibrates the
+  # total standing stock to the heated (occupied) stock, independent of the
+  # comfort_regime deflator (which scales intensity within occupied homes) --
+  # occupancy x intensity-regime is a clean two-factor decomposition, not
+  # double-counting. See literature/eubucco_census_area_audit.md (Mechanism B).
+  area_correction: 0.613
+  area_correction_source: |
+    INE Censos 2021 -- 18.54 M main residences + ~8 M secondary/empty
+    dwellings, mean useful area ~95-100 m^2 -> total residential ~2,500
+    Mm^2. EUBUCCO ES total: 4,082 Mm^2. Correction = 2,500/4,082 = 0.613.
+    Cross-check via IDAE SECH-SPAHOUSEC 2011 (1,761 Mm^2 for main
+    residences alone) confirms the anchor.
+
+# -- NUTS3 regions -----------------------------------------------------------
+# Spain has 59 NUTS3 regions (provinces + Canarian islands), from the repo
+# GISCO file (NUTS 2021); codes stable between NUTS 2016 and 2021.
+nuts3_regions:
+  - ES111
+  - ES112
+  - ES113
+  - ES114
+  - ES120
+  - ES130
+  - ES211
+  - ES212
+  - ES213
+  - ES220
+  - ES230
+  - ES241
+  - ES242
+  - ES243
+  - ES300
+  - ES411
+  - ES412
+  - ES413
+  - ES414
+  - ES415
+  - ES416
+  - ES417
+  - ES418
+  - ES419
+  - ES421
+  - ES422
+  - ES423
+  - ES424
+  - ES425
+  - ES431
+  - ES432
+  - ES511
+  - ES512
+  - ES513
+  - ES514
+  - ES521
+  - ES522
+  - ES523
+  - ES531
+  - ES532
+  - ES533
+  - ES611
+  - ES612
+  - ES613
+  - ES614
+  - ES615
+  - ES616
+  - ES617
+  - ES618
+  - ES620
+  - ES630
+  - ES640
+  - ES703
+  - ES704
+  - ES705
+  - ES706
+  - ES707
+  - ES708
+  - ES709
+
+# -- Geographic bounding box (WGS84) -----------------------------------------
+# Mainland + Balearics + Canarias.
+bbox_wgs84:
+  lon_min: -21.93
+  lat_min: 24.60
+  lon_max: 4.32
+  lat_max: 43.79
+
+# -- TABULA building typology source -----------------------------------------
+# Spain IS a TABULA country -- the Spanish residential typology was produced
+# by CIEMAT (with IVE-Valencia, IETcc). The DIRECT Spanish typology is used.
+# Extraction: code/data/raw/tabula/es_intensities.csv.
+tabula:
+  source_country: ES
+  source_country_name: Spain
+  intensities_file: code/data/raw/tabula/es_intensities.csv
+  reason_for_proxy: |
+    None -- Spain is a TABULA country. The Spanish national residential
+    typology (CIEMAT / IVE-Valencia) is used directly, no proxy, no climate
+    correction (climate_multiplier = 1.0).
+
+# -- Climate correction ------------------------------------------------------
+# Direct TABULA country: climate_multiplier = 1.0.
+# Source: Eurostat nrg_chdd_a (base 15 C, JRC AGRI4CAST). The 2018-2022
+# 5-year mean is estimated at ~1750 HDD (2022 confirmed at 1478, other years
+# 1700-1900 typical range per Eurostat); flagged for direct API extraction.
+climate:
+  hdd_country: 1750.0        # ES -- 2018-2022 estimate; NEEDS_VERIFY
+  hdd_proxy: 1750.0          # ES direct typology -> proxy = self
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  climate_multiplier: 1.0
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST); 2022 confirmed at 1478, 5-year mean estimated
+
+# -- Retrofit-state distribution ---------------------------------------------
+# Retrofit FACTORS are the Spanish TABULA typology-averaged refurbishment
+# ratios: standard 0.65, advanced 0.40. PROVISIONAL pending WebTool extraction.
+#
+# Retrofit SHARES are a modelling assumption. Spain's deep renovation rate is
+# ~1%/yr; only ~0.2-0.3% of floor area sees deep retrofit per year (EU-wide,
+# similar in Spain). PAREER/PAREER II + RRF-funded Component 2 have improved
+# this since 2021. The 0.80/0.15/0.05 split reflects ~80% original.
+retrofit:
+  share:
+    original: 0.80          # modelling assumption (Spain deep-retrofit ~1%/yr)
+    standard: 0.15          # modelling assumption
+    advanced: 0.05          # modelling assumption -- PAREER + RRF deep retrofits
+  factor:
+    standard: 0.65          # PROVISIONAL -- ES TABULA standard refurb
+    advanced: 0.40          # PROVISIONAL -- ES TABULA advanced refurb
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # Computed blend for ES: 0.80 + 0.15x0.65 + 0.05x0.40 = 0.9175
+  blend_value: 0.9175
+  share_source: |
+    Modelling assumption grounded in IDAE / Odyssee-Mure Spain (deep retrofit
+    ~1%/yr) and ERESEE 2020. Retrofit factors PROVISIONAL pending the Spanish
+    TABULA WebTool extraction.
+
+# -- Domestic Hot Water (DHW) intensity --------------------------------------
+dhw:
+  sfh: 16.0
+  mfh: 14.0
+  unit: kWh/m2/yr
+  source: Spanish TABULA warm-climate convention (provisional)
+
+# -- Non-residential intensity (placeholder) ---------------------------------
+non_residential_intensity:
+  value: 90.0
+  unit: kWh/m2/yr
+  source: estimate -- Spanish non-residential (tertiary) space heating
+  status: rough placeholder; contributes 0 TWh (zero heated area); flagged in methodology
+
+# -- External reconciliation benchmarks --------------------------------------
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 173.59           # sum of heat_2015_MWh across all 180 ES NUTS3
+                                #   rows in building_stock_nuts3.csv.
+    year: 2015
+    source: Hotmaps Toolbox via building_stock_nuts3.csv; sum across all ES NUTS3 rows
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 2500
+    eubucco_mm2: 4082
+    census_eubucco_ratio: 0.61
+    source: INE Censos 2021 (2500 Mm2 principal residences; total stock incl. ~28pct vacant/secondary ~3300 Mm2 = ratio 0.81)
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 100.0            # Order-of-magnitude anchor.
+    year: 2022
+    source: anchored estimate; EU BSO portal not retrievable
+  odyssee_mure:
+    total_twh: 83.0             # Odyssee-Mure ES residential space heating
+                                #   ~7.16 Mtoe (2022, ~40% of household final
+                                #   energy) ~83 TWh final-energy basis.
+    year: 2022
+    source: Odyssee-Mure Spain; residential space heating
+    note: National total only; final-energy basis -- definitional gap vs Hotmaps useful demand.
+
+# -- Hotmaps NUTS3 ID for model comparison -----------------------------------
+hotmaps_nuts3_id: ES300   # Madrid (representative reference)
+
+# -- Building classification rules -------------------------------------------
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+
+# -- Operational-regime (comfort) deflator -----------------------------------
+# Applied as a multiplier on the SPACE-HEATING component of the per-building
+# intensity (DHW unaffected). Translates TABULA reference-condition steady-
+# state demand into the realised Spanish stock-weighted regime.
+#
+# Spain-specific composite: 0.90 (heating-equipment penetration, SPAHOUSEC
+# 2011 p.45 -- 10% of Spanish households use no space-heating at all; 14%
+# in the Mediterranean zone) x 0.65 (operational realisation factor from
+# the Sunikka-Blank & Galvin 2012 "prebound" framework, Mediterranean prior).
+# Combined coefficient 0.585 ~ 0.59.
+#
+# IDAE SECH-SPAHOUSEC 2010 measured Spanish residential heating at ~80 TWh,
+# implying national-average ~45-46 kWh/m2/yr -- well below TABULA-calculated
+# 60-130 kWh/m2/yr for the Spanish archetype mix. The deflator brings the
+# bottom-up into that measured envelope. NOT calibrated to Hotmaps.
+#
+# Sources:
+#  - IDAE (2011), Proyecto SECH-SPAHOUSEC, Informe Final (16-jul-2011),
+#    p.45 (heating-equipment penetration) and p.56 (288,574 TJ residential
+#    heating total = 80.16 TWh, 47% of household FEC).
+#  - Sunikka-Blank, M. & Galvin, R. (2012), "Introducing the prebound effect",
+#    Building Research & Information 40(3). DOI 10.1080/09613218.2012.690952.
+#  - Sanchez-Guevara et al. (2024), Madrid social-housing monitoring,
+#    Building & Environment, DOI 10.1016/j.buildenv.2024.111376.
+comfort_regime:
+  deflator: 0.59
+  source: |
+    Composite Spanish operational coefficient: 0.90 SPAHOUSEC heating-equipment
+    penetration (IDAE 2011 p.45) x 0.65 Sunikka-Blank & Galvin (2012) prebound
+    realisation factor for Mediterranean stock. Anchors against the SPAHOUSEC
+    2010 measured national heating intensity of ~45 kWh/m2/yr (80.16 TWh).
+
+# -- Provenance + change log -------------------------------------------------
+_meta:
+  created: 2026-05-19
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 3)
+  last_verified: 2026-05-19
+  schema_version: 1
+  status: DRAFT -- direct Spanish TABULA build; retrofit factors and DHW
+    PROVISIONAL pending the es_intensities.csv WebTool extraction.
+  references_doc: literature/spain/classification_methodology.md
+  verified_2026_05_19:
+    - eubucco.nuts2_partitions (19 ES NUTS2 codes, NUTS 2016/2021)
+    - nuts3_regions (59 ES NUTS3 codes, from repo GISCO file)
+    - climate.hdd_country = 1750 (2018-2022 estimate; 2022 confirmed 1478)
+    - tabula source = ES direct
+  needs_verify_summary:
+    - HDD 2018-2022 mean -- only 2022 (1478) confirmed; 5-year mean estimated.
+    - retrofit factors (0.65/0.40) and DHW (16/14) -- PROVISIONAL.
+    - retrofit shares (0.80/0.15/0.05) -- modelling assumption.
+    - non_residential_intensity (90) -- estimate; contributes 0 TWh.
+    - es_intensities.csv values -- research-synthesised; verify against TABULA WebTool.

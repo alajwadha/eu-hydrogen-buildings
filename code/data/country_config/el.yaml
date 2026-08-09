@@ -1,0 +1,280 @@
+# Country configuration: Greece (EL)
+# =====================================
+# All Greece-specific parameters for the building-stock pipeline
+# (scripts 01-04 in code/scripts/country_build/). Sourced and cited inline;
+# methodology in literature/greece/classification_methodology.md.
+#
+# Schema version: 1.
+#
+# Greece is a DIRECT TABULA country -- the Greek residential typology was
+# produced by NOA / NTUA / CRES. No proxy, no climate correction. Build
+# group 3 (ES + PT, EL, CY).
+#
+# NOTE on ISO2 code: this model uses EL (the Eurostat convention) for Greece,
+# not GR. EUBUCCO v0.2 uses Eurostat NUTS, so EL is the correct code.
+
+country_code: EL
+country_name: Greece
+
+# -- EUBUCCO data source -----------------------------------------------------
+# EUBUCCO v0.2 partitions by NUTS2 (NUTS 2016). Greece has 13 NUTS2 regions.
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - EL30   # Attiki (Attica)
+    - EL41   # Voreio Aigaio (North Aegean)
+    - EL42   # Notio Aigaio (South Aegean)
+    - EL43   # Kriti (Crete)
+    - EL51   # Anatoliki Makedonia, Thraki
+    - EL52   # Kentriki Makedonia
+    - EL53   # Dytiki Makedonia
+    - EL54   # Ipeiros (Epirus)
+    - EL61   # Thessalia
+    - EL62   # Ionia Nisia
+    - EL63   # Dytiki Ellada
+    - EL64   # Sterea Ellada
+    - EL65   # Peloponnisos
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  license: ODbL v1.0
+
+# -- NUTS3 regions -----------------------------------------------------------
+# Greece has 52 NUTS3 regions (regional units). Codes unchanged NUTS 2016/2021.
+nuts3_regions:
+  - EL301
+  - EL302
+  - EL303
+  - EL304
+  - EL305
+  - EL306
+  - EL307
+  - EL411
+  - EL412
+  - EL413
+  - EL421
+  - EL422
+  - EL431
+  - EL432
+  - EL433
+  - EL434
+  - EL511
+  - EL512
+  - EL513
+  - EL514
+  - EL515
+  - EL521
+  - EL522
+  - EL523
+  - EL524
+  - EL525
+  - EL526
+  - EL527
+  - EL531
+  - EL532
+  - EL533
+  - EL541
+  - EL542
+  - EL543
+  - EL611
+  - EL612
+  - EL613
+  - EL621
+  - EL622
+  - EL623
+  - EL624
+  - EL631
+  - EL632
+  - EL633
+  - EL641
+  - EL642
+  - EL643
+  - EL644
+  - EL645
+  - EL651
+  - EL652
+  - EL653
+
+# -- Geographic bounding box (WGS84) -----------------------------------------
+# Mainland + islands including Kastellorizo (eastern Dodecanese) and Gavdos
+# (southernmost).
+bbox_wgs84:
+  lon_min: 19.25
+  lat_min: 34.70
+  lon_max: 29.73
+  lat_max: 41.83
+
+# -- TABULA building typology source -----------------------------------------
+# Greece IS a TABULA country -- the Greek residential typology was produced by
+# the National Observatory of Athens (NOA) / NTUA / CRES. The DIRECT Greek
+# typology is used. Greek TABULA defines 4 climate zones (A warmest -- Crete;
+# B -- Athens/Patra; C -- Thessaloniki; D coldest -- Florina) per KENAK; the
+# reference values use ZONE B.
+# Extraction: code/data/raw/tabula/el_intensities.csv.
+tabula:
+  source_country: EL
+  source_country_name: Greece
+  intensities_file: code/data/raw/tabula/el_intensities.csv
+  reason_for_proxy: |
+    None -- Greece is a TABULA country. The Greek national residential
+    typology (NOA / NTUA / CRES) is used directly, no proxy, no climate
+    correction (climate_multiplier = 1.0).
+
+# -- Climate correction ------------------------------------------------------
+# Greece is a direct TABULA country with climate_multiplier = 1.0.
+#
+# Note (2026-05-19): an Option B reference-HDD correction was briefly applied
+# (tabula_reference_hdd = 1100, mult = 1.4545, motivated by the el_intensities
+# brochure header citing Zone B Athens/Patra as the reference zone). It was
+# REVERTED after the Group 3 Colab run showed Greece's bottom-up at 102.18 TWh
+# vs Hotmaps 60.60 TWh = +68.6 % (already over Hotmaps WITHOUT a correction).
+# Applying the correction would push the bottom-up to ~149 TWh, moving further
+# from Hotmaps -- the wrong direction. Either the el_intensities values are
+# themselves over-stated (research-synthesised, +/-20 % per file header), or
+# the Hotmaps EL benchmark is under-stated. The +69 % gap is left as a
+# methodology finding pending TABULA-WebTool re-extraction. See
+# literature/climate_reference_hdd_audit.md.
+#
+# Source: Eurostat nrg_chdd_a (base 15 C, JRC AGRI4CAST). 2022 confirmed at
+# 1538; 5-year mean estimated ~1600. NEEDS_VERIFY (direct API extraction).
+climate:
+  hdd_country: 1600.0        # EL -- 2018-2022 estimate; 2022 confirmed 1538
+  hdd_proxy: 1600.0
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  climate_multiplier: 1.0
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST); 2022 confirmed 1538, 5-year mean estimated
+
+# -- Retrofit-state distribution ---------------------------------------------
+# Retrofit FACTORS are the Greek TABULA typology-averaged refurbishment ratios:
+# standard 0.65, advanced 0.35 (Exoikonomo deep retrofits target ~65% saving).
+# PROVISIONAL pending the el_intensities.csv WebTool extraction.
+#
+# Retrofit SHARES are a modelling assumption. The Exoikonomo programme has
+# cumulatively renovated ~47,000 dwellings (early 2026) of a ~4 million stock
+# (~1%). The 0.85/0.10/0.05 split reflects ~85% original.
+retrofit:
+  share:
+    original: 0.85          # modelling assumption (Exoikonomo ~1% deep-renovated)
+    standard: 0.10          # modelling assumption
+    advanced: 0.05          # modelling assumption -- Exoikonomo deep retrofits
+  factor:
+    standard: 0.65          # PROVISIONAL -- EL TABULA standard refurb
+    advanced: 0.35          # PROVISIONAL -- EL TABULA advanced refurb
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # Computed blend for EL: 0.85 + 0.10x0.65 + 0.05x0.35 = 0.9325
+  blend_value: 0.9325
+  share_source: |
+    Modelling assumption grounded in the Greek Exoikonomo programme
+    (cumulative ~47,000 dwellings deep-renovated, ~1% of stock). Retrofit
+    factors PROVISIONAL pending el_intensities.csv WebTool extraction.
+
+# -- Domestic Hot Water (DHW) intensity --------------------------------------
+dhw:
+  sfh: 18.0
+  mfh: 16.0
+  unit: kWh/m2/yr
+  source: Greek TABULA convention (provisional)
+
+# -- Non-residential intensity (placeholder) ---------------------------------
+non_residential_intensity:
+  value: 80.0
+  unit: kWh/m2/yr
+  source: estimate -- Greek non-residential space heating
+  status: rough placeholder; contributes 0 TWh; flagged in methodology
+
+# -- External reconciliation benchmarks --------------------------------------
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 60.60            # sum of heat_2015_MWh across all 159 EL NUTS3
+                                #   rows in building_stock_nuts3.csv.
+    year: 2015
+    source: Hotmaps Toolbox via building_stock_nuts3.csv; sum across all EL NUTS3 rows
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 630
+    eubucco_mm2: 898
+    census_eubucco_ratio: 0.70
+    source: ELSTAT 2021 census (~6.3M dwellings x ~100 m2; lower confidence)
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 35.0             # Order-of-magnitude anchor.
+    year: 2022
+    source: anchored estimate; EU BSO portal not retrievable
+  odyssee_mure:
+    total_twh: 25.0             # Eurostat 2022 households final energy ~50 TWh,
+                                #   space heating ~50% -> ~25 TWh final-energy
+                                #   basis (oil + electricity + biomass).
+    year: 2022
+    source: Eurostat / Odyssee-Mure Greece; residential space heating
+    note: National total only; final-energy basis -- definitional gap vs Hotmaps useful demand.
+
+# -- Hotmaps NUTS3 ID for model comparison -----------------------------------
+hotmaps_nuts3_id: EL303   # Kentrikos Tomeas Athinon (Athens centre, representative)
+
+# -- Building classification rules -------------------------------------------
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+
+# -- Operational-regime (comfort) deflator -----------------------------------
+# Applied as a multiplier on the SPACE-HEATING component of the per-building
+# intensity (DHW unaffected). Translates TABULA reference-condition steady-
+# state demand into the realised Greek stock-weighted regime.
+#
+# Greek-specific deflator: Balaras / Dascalaki et al. (2016) measured the
+# direct measured-vs-calculated heating-energy ratio for the Hellenic
+# residential stock from ~8,500 EPCs plus 100+ household audits:
+#   - SFH adaptation factor f1 = 0.52
+#   - MFH adaptation factor f1 = 0.56
+#   - Stock-weighted (Greek stock ~70 % MFH) ~ 0.55
+# Underlying mechanism documented: KENAK / REPB calculates at 18 h/day
+# whole-house steady-state operation; measured Greek operation averages
+# ~5 h/day, partial-room heating, partial-season (post-2012 oil-tax shock
+# compressed central-heating use further -- Santamouris et al. 2013).
+#
+# Sources:
+#  - Balaras, C.A., Dascalaki, E.G., Droutsa, K.G., Kontoyiannidis, S. (2016)
+#    "Empirical assessment of calculated and actual heating energy use in
+#    Hellenic residential buildings", Applied Energy 164: 115-132.
+#    DOI 10.1016/j.apenergy.2015.11.027
+#  - Dascalaki, E.G., Droutsa, K.G., Balaras, C.A., Kontoyiannidis, S. (2011),
+#    Energy & Buildings 43(12): 3400-3409 (Hellenic TABULA reference values).
+#  - Droutsa, Kontoyiannidis, Dascalaki, Balaras (2021), Applied Sciences
+#    11(14): 6254 (occupancy behaviour: 71 % SFH / 82 % MFH heat <8 h/day).
+#  - Santamouris et al. (2013), Energy & Buildings, DOI 10.1016/j.enbuild
+#    .2013.06.024 (post-2012 heating-oil-tax consumption compression).
+comfort_regime:
+  deflator: 0.55
+  source: |
+    Balaras / Dascalaki et al. (2016) Applied Energy 164: 115-132 -- empirical
+    measured/calculated heating-energy ratio (SFH 0.52, MFH 0.56; stock-weighted
+    0.55). Reflects ~5 h/day actual operation vs 18 h/day KENAK assumption and
+    post-2012 heating-oil-tax compression of central-heating use.
+
+# -- Provenance + change log -------------------------------------------------
+_meta:
+  created: 2026-05-19
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 3)
+  last_verified: 2026-05-19
+  schema_version: 1
+  status: DRAFT -- direct Greek TABULA build; retrofit factors and DHW
+    PROVISIONAL pending the el_intensities.csv WebTool extraction.
+  references_doc: literature/greece/classification_methodology.md
+  verified_2026_05_19:
+    - eubucco.nuts2_partitions (13 EL NUTS2 codes, NUTS 2016)
+    - nuts3_regions (52 EL NUTS3 codes, NUTS 2016/2021)
+    - climate.hdd_country = 1600 (2022 confirmed 1538; 5-year mean estimated)
+    - tabula source = EL direct
+  needs_verify_summary:
+    - HDD 2018-2022 mean -- only 2022 (1538) confirmed.
+    - retrofit factors (0.65/0.35) and DHW (18/16) -- PROVISIONAL.
+    - retrofit shares (0.85/0.10/0.05) -- modelling assumption.
+    - el_intensities.csv -- MFH_LOW = MFH_HIGH limitation (Greek TABULA has
+      only one MFH class); pre-1945/1946-1970 inherit pre-1980 TABULA values.
+    - non_residential_intensity (80) -- estimate; contributes 0 TWh.

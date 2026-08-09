@@ -1,0 +1,205 @@
+# Country configuration: Bulgaria (BG)
+# ======================================
+# Build group 6 (SE + DK, BG, RO). CZ-proxy (Bulgaria has a thin SOFENA TABULA
+# brochure but it's in Bulgarian-only and lacks the full per-cohort matrix).
+# Methodology: literature/bulgaria/classification_methodology.md.
+
+country_code: BG
+country_name: Bulgaria
+
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - BG31   # Severozapaden
+    - BG32   # Severen tsentralen
+    - BG33   # Severoiztochen
+    - BG34   # Yugoiztochen
+    - BG41   # Yugozapaden
+    - BG42   # Yuzhen tsentralen
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  license: ODbL v1.0
+
+nuts3_regions:
+  - BG311
+  - BG312
+  - BG313
+  - BG314
+  - BG315
+  - BG321
+  - BG322
+  - BG323
+  - BG324
+  - BG325
+  - BG331
+  - BG332
+  - BG333
+  - BG334
+  - BG341
+  - BG342
+  - BG343
+  - BG344
+  - BG411
+  - BG412
+  - BG413
+  - BG414
+  - BG415
+  - BG421
+  - BG422
+  - BG423
+  - BG424
+  - BG425
+
+bbox_wgs84:
+  lon_min: 22.36
+  lat_min: 41.24
+  lon_max: 28.61
+  lat_max: 44.22
+
+tabula:
+  source_country: CZ
+  source_country_name: Czechia
+  intensities_file: code/data/raw/tabula/cz_intensities.csv
+  reason_for_proxy: |
+    Bulgaria has a thin SOFENA TABULA brochure (2013, Bulgarian-only, no full
+    per-cohort matrix integration with the WebTool). Czechia is chosen as the
+    primary proxy because the Bulgarian panelki (industrialised concrete-panel
+    MFH, ~60pct of population) share Comecon construction lineage with Czech
+    paneláks; continental winter regime (CZ HDD ~3260) is closer to BG (~2600)
+    than EL (~1600) or PL (~3160 but heavier panel-block bias). PL is the
+    backup proxy. EL only useful for far-south Blagoevgrad coastal stock.
+
+climate:
+  hdd_country: 2600.0
+  hdd_proxy: 3260.0          # CZ 2018-2022 mean (refined from initial cz.yaml 3331)
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  tabula_reference_hdd: 3400.0   # CZ TABULA reference (CSN 73 0540 Praha-Ruzyne); same as cz.yaml
+  climate_multiplier: 0.7647     # 2600 / 3400 (to CZ TABULA reference, not CZ actual)
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST); BG 5-year mean 2018-2022 ~2600 (NEEDS_VERIFY)
+
+# BG has the EU's highest energy-poverty rate; National Programme for EE in
+# Multifamily Residential Buildings (NPEEMRB) renovated ~1,923 buildings by
+# Jan 2021; NRRP adding ~5 Mm2 by 2026. Cumulative renovated share ~3-4pct
+# of dwellings as of 2023; mostly partial (facade + windows).
+retrofit:
+  share:
+    original: 0.85
+    standard: 0.12
+    advanced: 0.03
+  factor:
+    standard: 0.60      # CZ TABULA standard (proxy)
+    advanced: 0.32      # CZ TABULA advanced (proxy)
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # 0.85 + 0.12x0.60 + 0.03x0.32 = 0.9316
+  blend_value: 0.9316
+  share_source: |
+    Modelling assumption grounded in BG LTRS 2020 (91pct of non-renovated
+    dwellings in classes E/F/G) + NPEEMRB cumulative (~1923 buildings by Jan
+    2021) + NRRP target 5 Mm2 by 2026. Pre-2015 deep-renovation rate ~0.1pct
+    /yr per BPIE 2016. Retrofit factors from Czech EPISCOPE proxy.
+
+dhw:
+  sfh: 12.0
+  mfh: 15.0
+  unit: kWh/m2/yr
+  source: CZ TABULA proxy DHW values
+
+non_residential_intensity:
+  value: 110.0
+  unit: kWh/m2/yr
+  source: estimate -- BG tertiary; Odyssee tertiary FEC 1.38 Mtoe + 70-80 Mm2 floor area
+  status: rough placeholder
+
+# Bulgarian residential under-heating is documented (EU-SILC 2022: 20.7pct of
+# HH cannot keep home adequately warm, highest in EU). Applied this session
+# after the first G6 Colab run landed BG at +106.6pct over Hotmaps (BU 59.9 vs
+# Hotmaps 29.0), confirming that the CZ-proxy TABULA values applied without an
+# operational-regime correction substantially over-state realised Bulgarian
+# heating demand. The under-heating + single-room-heating + partial-day-heating
+# pattern documented across the BG building-energy literature is the structural
+# cause.
+#
+# Coefficient: 0.55 (midpoint 0.50-0.60 from BAS/BPIE/EU-SILC triangulation).
+#   - 0.80 base operational coefficient (CZ-proxy fits the panelák/panelki
+#     envelope, but Bulgarian operation is at lower setpoint and partial-room)
+#   - x 0.70 under-heating prevalence adjustment (EU-SILC 20.7pct cannot afford
+#     adequate warmth + ~25pct of pre-1990 stock operates at sub-reference T)
+#   - = 0.56 ~ 0.55
+#
+# Sources:
+#   - Eurostat EU-SILC 2022: 20.7pct of BG HH unable to keep home adequately warm.
+#   - BPIE (2016), Accelerating the renovation of the BG building stock --
+#     documents large measured-vs-calculated gap for unrenovated panelki.
+#   - BG LTRS 2020 -- 91pct of dwellings in EPC classes E/F/G with elevated
+#     calculated demand but compressed actual consumption.
+#   - EEA (2025), Europe's environment -- BG residential energy poverty profile.
+comfort_regime:
+  deflator: 0.55
+  source: |
+    Bulgarian operational-regime coefficient (midpoint 0.50-0.60) reflecting
+    documented under-heating (EU-SILC 2022: 20.7pct cannot afford adequate
+    warmth, EU's highest), partial-room and partial-day heating in panelki
+    MFH, and the BPIE 2016 large measured-vs-calculated gap for unrenovated
+    Bulgarian stock. Applied after the first G6 Colab run (+106.6pct vs
+    Hotmaps) confirmed CZ-proxy TABULA values over-state realised demand.
+
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 29.0
+    year: 2015
+    source: Hotmaps 2015, rounded national residential SH+DHW useful (~28-30 TWh). The
+      NUTS3 surface in building_stock_nuts3.csv sums to 26.8 TWh for BG; this figure is the
+      configured national baseline and the two differ, which REPRODUCE.md sets out.
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 347
+    eubucco_mm2: 455
+    census_eubucco_ratio: 0.76
+    source: NSI Bulgaria Housing Fund 2022 (post-2021-census rebase)
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 28.0
+    year: 2022
+    source: anchored estimate
+  odyssee_mure:
+    total_twh: 23.0
+    year: 2022
+    source: Odyssee-Mure Bulgaria; residential heating ~55pct of HH FE
+    note: National total only; final-energy basis. Wood/biomass 33pct, electricity 41pct, DH 15pct.
+
+hotmaps_nuts3_id: BG411   # Sofia (representative)
+
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+
+_meta:
+  created: 2026-05-20
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 6)
+  last_verified: 2026-05-20
+  schema_version: 1
+  status: DRAFT -- CZ-proxy TABULA build. BG has a thin SOFENA TABULA brochure
+    that does not provide the full per-cohort matrix; CZ proxy chosen for
+    panelák ~ panelki MFH-lineage match (Comecon shared construction tradition).
+    EU's highest under-heating prevalence (20.7pct EU-SILC 2022) -- comfort
+    regime deflator is a candidate follow-up refinement.
+  references_doc: literature/bulgaria/classification_methodology.md
+  verified_2026_05_20:
+    - eubucco.nuts2_partitions (6 BG NUTS2, stable across NUTS vintages)
+    - nuts3_regions (28 BG NUTS3 oblasti, stable)
+    - tabula source = CZ proxy (panelák ~ panelki MFH lineage match)
+    - tabula_reference_hdd = 3400 (CZ CSN 73 0540 reference, same as cz.yaml)
+    - climate_multiplier = 0.7647 (2600 / 3400)
+  needs_verify_summary:
+    - HDD 2018-2022 mean ~2600 -- estimated; pull exact Eurostat nrg_chdd_a.
+    - retrofit shares (0.85/0.12/0.03) -- modelling assumption from LTRS + BPIE.
+    - comfort_regime deflator -- candidate follow-up; EU-SILC 20.7pct underheating
+      is documented but no published Bulgarian measured-vs-calculated ratio identified.
+    - Hotmaps total (29) -- estimate; sum building_stock_nuts3.csv exactly.

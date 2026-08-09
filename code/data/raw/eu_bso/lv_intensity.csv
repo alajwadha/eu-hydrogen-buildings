@@ -1,0 +1,25 @@
+# EU Building Stock Observatory (BSO) -- Latvia residential indicators
+#
+# Used by 03_heat_intensity.py for (1) the unknown-cohort stock-weighted
+# fallback intensity (stock_pct_lv column) and (2) the BSO reconciliation row.
+#
+# stock_pct_lv: share of the Latvian residential stock by construction cohort.
+#   2021 Census: ~32.6% of dwellings pre-1961, ~59.1% built 1961-2000, ~7.6%
+#   in the last 20 years. Mapped to the 6 cohorts below; sums to 100.
+#
+# bso_intensity_kwh_m2_yr: BSO-style per-cohort national-average residential
+#   heat intensity (delivered). DERIVED from the Poland-proxy TABULA per-cohort
+#   class-average space-heating need x climate multiplier (1.2088) x retrofit
+#   blend (0.9591) + DHW. The EU Building Stock Observatory portal could not be
+#   queried directly; flagged as derived, not an independent BSO query.
+#
+# Source: Latvia CSB 2021 Population and Housing Census; Odyssee-Mure Latvia;
+#   Poland TABULA proxy (pl_intensities.csv). Citation in literature/latvia/.
+#
+cohort,stock_pct_lv,bso_intensity_kwh_m2_yr,note
+pre-1945,20,263,Pre-WWII Riga masonry and rural timber stock
+1946-1970,25,230,Early Soviet-era; first panel and brick MFH
+1971-1990,32,203,Peak Soviet-era prefabricated large-panel apartment blocks
+1991-2010,16,149,Post-independence construction
+2011-2020,6,133,nZEB-trajectory new-build
+post-2020,1,87,Class A new-build

@@ -1,0 +1,22 @@
+# EU Building Stock Observatory (BSO) -- Greece residential indicators
+#
+# Used by 03_heat_intensity.py for (1) the unknown-cohort stock-weighted
+# fallback intensity and (2) the BSO reconciliation row.
+#
+# stock_pct_el: share of the Greek residential stock by construction cohort.
+#   ~58-60% of Greek buildings predate 1980 (no thermal insulation regs).
+#   Distribution approximated from ELSTAT and TABULA Greece. Sums to 100.
+#
+# bso_intensity_kwh_m2_yr: BSO-style per-cohort national-average residential
+#   heat intensity (delivered). DERIVED from the Greek TABULA per-cohort
+#   class-average space-heating need x retrofit blend (0.9325) + DHW.
+#
+# Source: ELSTAT; TABULA Greece (el_intensities.csv).
+#
+cohort,stock_pct_el,bso_intensity_kwh_m2_yr,note
+pre-1945,8,141,Pre-WWII masonry stock; inherits TABULA pre-1980 value
+1946-1970,22,141,Post-war reconstruction; inherits TABULA pre-1980 value
+1971-1990,32,123,1970s-80s expansion; TOTEE 1980 transition
+1991-2010,26,82,KENAK pre-2010 era
+2011-2020,10,57,KENAK-2010/2017 high-efficiency new-build
+post-2020,2,42,nZEB new-build

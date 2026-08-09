@@ -1,0 +1,9 @@
+setting,gshp_frac,biomass_cap,cap_basis,status,pv_bn_eur_yr,hp_air_2050,hp_ground_2050,district_heat_2050,biomass_2050,h2_2050,binders_2050,max_price_eur_tco2
+"baseline (central, scope-1)",0.15,0.2,scope1,Optimal,7428.4,44.4,1.0,52.9,0.0,0.3,4,81.0
+GSHP_frac=0.10,0.1,0.2,scope1,Optimal,7429.3,44.7,0.7,52.9,0.0,0.3,4,81.0
+GSHP_frac=0.15,0.15,0.2,scope1,Optimal,7428.4,44.4,1.0,52.9,0.0,0.3,4,81.0
+GSHP_frac=0.25,0.25,0.2,scope1,Optimal,7427.3,43.7,1.7,52.9,0.0,0.3,4,81.0
+biomass_cap=0.10,0.15,0.1,scope1,Optimal,7428.4,44.4,1.0,52.9,0.0,0.3,4,81.0
+biomass_cap=0.20,0.15,0.2,scope1,Optimal,7428.4,44.4,1.0,52.9,0.0,0.3,4,81.0
+biomass_cap=0.30,0.15,0.3,scope1,Optimal,7428.4,44.4,1.0,52.9,0.0,0.3,4,81.0
+scope-2 cap (total emissions),0.15,0.2,total,Optimal,7429.0,44.6,1.0,52.9,0.0,0.3,4,83.0

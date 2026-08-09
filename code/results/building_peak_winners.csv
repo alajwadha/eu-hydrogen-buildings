@@ -1,0 +1,9 @@
+basis,scenario,n,countries
+asymmetric,CURRENT_POLICIES,0,
+asymmetric,STATED_POLICIES,4,DE FR NL DK
+asymmetric,NET_ZERO,9,DE FR UK PL NL RO SE DK IE
+asymmetric,H2_PUSH,16,DE FR UK PL BE NL RO CH SE AT FI DK IE PT EE LU
+symmetric,CURRENT_POLICIES,0,
+symmetric,STATED_POLICIES,2,NL DK
+symmetric,NET_ZERO,7,DE FR UK PL NL SE DK
+symmetric,H2_PUSH,14,DE FR UK PL BE NL RO CH SE AT DK IE EE LU

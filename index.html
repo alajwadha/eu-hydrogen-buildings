@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>EU Hydrogen Buildings — Country Explorer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="data.js"></script>
+<style>
+:root{
+  --bg:#050e1c;--bg2:#0b1929;--bg3:#112240;--bg4:#1a3058;
+  --teal:#00d4aa;--teal-dim:rgba(0,212,170,.12);
+  --blue:#3b82f6;--blue-dim:rgba(59,130,246,.12);
+  --purple:#8b5cf6;--amber:#f59e0b;--red:#ef4444;--green:#10b981;
+  --text:#dde6f5;--text2:#8899b4;--text3:#4e607a;
+  --border:rgba(255,255,255,.06);--border2:rgba(255,255,255,.12);
+  --font:'IBM Plex Sans',system-ui,sans-serif;--mono:'IBM Plex Mono',monospace;
+  --radius:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden}
+body{font-family:var(--font);background:var(--bg);color:var(--text);display:flex;flex-direction:column}
+
+/* ── TOP BAR ── */
+.bar{height:50px;background:var(--bg2);border-bottom:1px solid var(--border2);display:flex;align-items:center;gap:12px;padding:0 18px;flex-shrink:0;z-index:200}
+.logo{font-family:var(--mono);font-size:12px;color:var(--teal);letter-spacing:.07em;white-space:nowrap}
+.logo em{color:var(--text3);font-style:normal}
+.sep{width:1px;height:22px;background:var(--border2)}
+.sw{position:relative}
+#search{background:var(--bg3);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-family:var(--font);font-size:13px;padding:6px 12px;width:190px;outline:none;transition:border-color .2s}
+#search:focus{border-color:var(--teal)}
+#search::placeholder{color:var(--text3)}
+#sr{position:absolute;top:calc(100%+5px);left:0;width:230px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);z-index:300;display:none;max-height:200px;overflow-y:auto;box-shadow:0 16px 40px rgba(0,0,0,.7)}
+.sri{display:flex;align-items:center;gap:9px;padding:8px 12px;font-size:13px;cursor:pointer;border-bottom:1px solid var(--border)}
+.sri:last-child{border:none}
+.sri:hover{background:var(--bg3)}
+.sri span.code{font-family:var(--mono);font-size:10px;color:var(--text3);margin-left:auto}
+.pills{display:flex;gap:5px}
+.pill{font-size:11px;padding:4px 11px;border:1px solid var(--border2);border-radius:20px;cursor:pointer;background:transparent;color:var(--text2);font-family:var(--font);transition:all .2s;white-space:nowrap}
+.pill:hover{border-color:var(--teal);color:var(--teal)}
+.pill.on{background:var(--teal-dim);border-color:var(--teal);color:var(--teal)}
+.pill.cmp-on{background:var(--blue-dim);border-color:var(--blue);color:var(--blue)}
+.map-sel{background:var(--bg3);border:1px solid var(--border2);border-radius:8px;color:var(--text2);font-size:12px;padding:5px 9px;font-family:var(--font);cursor:pointer;outline:none}
+.ts{font-family:var(--mono);font-size:10px;color:var(--text3);margin-left:auto;white-space:nowrap}
+
+/* ── MAIN ── */
+.main{flex:1;display:flex;overflow:hidden;position:relative}
+
+/* ── MAP SIDE ── */
+.map-side{position:relative;overflow:hidden;flex-shrink:0;transition:width .35s ease;background:var(--bg)}
+.map-side.full{width:100%}
+.map-side.half{width:50%}
+.map-side.hidden{width:0}
+#map-svg{width:100%;height:100%}
+.map-hint{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:10px;color:var(--text3);background:rgba(5,14,28,.7);padding:3px 12px;border-radius:20px;pointer-events:none;white-space:nowrap}
+.map-legend{position:absolute;bottom:40px;left:12px;background:rgba(11,25,41,.9);border:1px solid var(--border2);border-radius:var(--radius);padding:10px 12px;display:none}
+.map-legend.show{display:block}
+.ml-t{font-size:10px;color:var(--text3);font-family:var(--mono);margin-bottom:7px;text-transform:uppercase;letter-spacing:.05em}
+.ml-r{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--text2);margin-bottom:3px}
+.ml-d{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+
+/* ── TOOLTIP ── */
+#tt{position:fixed;pointer-events:none;z-index:500;display:none;background:var(--bg2);border:1px solid var(--teal);border-radius:10px;padding:10px 14px;min-width:180px;box-shadow:0 8px 30px rgba(0,0,0,.6)}
+.tt-n{font-size:14px;font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:7px}
+.tt-r{display:flex;justify-content:space-between;gap:16px;font-size:11px;font-family:var(--mono);color:var(--text2);margin-top:3px}
+.tt-v{color:var(--teal)}
+
+/* ── RIGHT (data) SIDE ── */
+.data-side{flex:1;display:flex;overflow:hidden;min-width:0}
+
+/* ── SINGLE COUNTRY VIEW ── */
+.single-view{flex:1;display:flex;flex-direction:column;overflow:hidden}
+
+/* ── COMPARE VIEW ── */
+.cmp-view{flex:1;display:flex;overflow:hidden}
+.cmp-col{flex:1;display:flex;flex-direction:column;overflow:hidden;border-left:1px solid var(--border2)}
+.cmp-col:first-child{border-left:none}
+
+/* ── NO SELECTION ── */
+.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:12px;flex:1}
+.empty-icon{font-size:56px;opacity:.15}
+.empty-t{font-size:16px;color:var(--text2)}
+.empty-s{font-family:var(--mono);font-size:12px;color:var(--text3)}
+
+/* ── COUNTRY HEADER (sticky) ── */
+.c-hdr{padding:11px 18px;background:var(--bg2);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-shrink:0;position:sticky;top:0;z-index:10}
+.c-flag{font-size:28px;line-height:1;flex-shrink:0}
+.c-info{flex:1;min-width:0}
+.c-name{font-size:18px;font-weight:600;letter-spacing:-.015em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.c-sub{font-family:var(--mono);font-size:10px;color:var(--text3);margin-top:1px}
+.c-kpis{display:flex;gap:14px;flex-shrink:0}
+.kpi{text-align:right}
+.kpi-l{font-size:9px;color:var(--text3);font-family:var(--mono);text-transform:uppercase;letter-spacing:.05em}
+.kpi-v{font-size:15px;font-weight:600;font-family:var(--mono);color:var(--teal)}
+
+/* ── TABS ── */
+.tabs{display:flex;border-bottom:1px solid var(--border);padding:0 18px;flex-shrink:0;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{font-family:var(--mono);font-size:11px;padding:9px 12px;cursor:pointer;border-bottom:2px solid transparent;color:var(--text3);white-space:nowrap;letter-spacing:.03em;transition:color .2s}
+.tab:hover{color:var(--text2)}
+.tab.on{color:var(--teal);border-bottom-color:var(--teal)}
+
+/* ── PANEL BODY ── */
+.panel{flex:1;overflow-y:auto;padding:18px;scrollbar-width:thin;scrollbar-color:var(--border2) transparent}
+.panel::-webkit-scrollbar{width:3px}
+.panel::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
+
+/* ── SECTION HEADING ── */
+.sec{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:.07em;text-transform:uppercase;margin:18px 0 9px;display:flex;align-items:center;gap:8px}
+.sec:first-child{margin-top:0}
+.sec::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* ── METRIC GRID ── */
+.mets{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.met{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:11px 13px;cursor:pointer;transition:border-color .2s}
+.met:hover{border-color:var(--border2)}
+.met-l{font-size:11px;color:var(--text3);margin-bottom:5px}
+.met-v{font-size:20px;font-weight:600;font-family:var(--mono)}
+.met-v.ok{color:var(--teal)} .met-v.warn{color:var(--amber)} .met-v.bad{color:var(--red)}
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+.popped{animation:pop .35s ease}
+
+/* ── TIMELINE ── */
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:14px}
+.tl-b{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:10px 12px;position:relative;overflow:hidden}
+.tl-b::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px 0 0 3px}
+.s1::before{background:var(--teal)} .s2::before{background:var(--blue)}
+.s3::before{background:var(--amber)} .s4::before{background:var(--red)}
+.tl-l{font-size:10px;color:var(--text3);margin-bottom:5px}
+.tl-y{font-size:21px;font-weight:600;font-family:var(--mono)}
+.tl-note{font-size:10px;color:var(--amber);margin-top:3px;font-family:var(--mono)}
+
+/* ── POLICY WIDGETS ── */
+.w-box{border-radius:var(--radius);padding:14px 16px;margin-bottom:13px}
+.w-ets2{background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.2)}
+.w-h2{background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.2)}
+.w-shock{background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.18)}
+.w-title{font-size:13px;font-weight:600;margin-bottom:10px}
+.w-ets2 .w-title{color:var(--blue)}
+.w-h2 .w-title{color:#a78bfa}
+.w-shock .w-title{color:var(--amber)}
+.ets2-num{font-family:var(--mono);font-size:30px;font-weight:600;color:var(--blue);margin-bottom:3px}
+.ets2-sub{font-size:12px;color:var(--text3);margin-bottom:10px}
+.ets2-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.ets2-cell{background:var(--bg3);border-radius:8px;padding:9px 11px}
+.ets2-cl{font-size:10px;color:var(--text3);margin-bottom:3px}
+.ets2-cv{font-size:17px;font-weight:600;font-family:var(--mono)}
+.tog{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.tog-sw{width:38px;height:20px;background:var(--bg3);border:1px solid var(--border2);border-radius:10px;cursor:pointer;position:relative;transition:background .25s;flex-shrink:0}
+.tog-sw.on{background:var(--amber)}
+.tog-sw::after{content:'';position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--text2);transition:left .25s}
+.tog-sw.on::after{left:20px}
+.tog-l{font-size:12px;color:var(--text3)}
+
+/* ── YEAR CTRL ── */
+.yc{display:flex;align-items:center;gap:10px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:9px 13px;margin-bottom:12px}
+.yc label{font-size:11px;color:var(--text3);font-family:var(--mono);white-space:nowrap}
+.yc input[type=range]{flex:1;accent-color:var(--teal)}
+.yc-yr{font-family:var(--mono);font-size:15px;font-weight:600;color:var(--teal);min-width:36px}
+.play{font-family:var(--mono);font-size:10px;padding:4px 10px;border:1px solid var(--border2);border-radius:6px;cursor:pointer;background:transparent;color:var(--text3);white-space:nowrap;transition:all .2s}
+.play:hover,.play.on{border-color:var(--teal);color:var(--teal)}
+
+/* ── VIEW TOGGLE ── */
+.vt{display:flex;gap:5px;margin-bottom:11px}
+.vbtn{font-size:11px;padding:4px 12px;border:1px solid var(--border);border-radius:6px;cursor:pointer;background:transparent;color:var(--text3);font-family:var(--mono);transition:all .2s}
+.vbtn.on{border-color:var(--teal);color:var(--teal);background:var(--teal-dim)}
+
+/* ── LCOH BARS ── */
+.bars{}
+.br{display:flex;align-items:flex-start;gap:10px;margin-bottom:7px;cursor:pointer;padding:3px 4px;border-radius:7px;transition:background .15s}
+.br:hover{background:rgba(255,255,255,.02)}
+.br.sel{background:rgba(0,212,170,.05)}
+.br-lbl{font-size:12px;color:var(--text2);width:130px;flex-shrink:0;text-align:right;line-height:1.3;padding-top:3px}
+.br-tracks{flex:1;min-width:0}
+.br-track{height:21px;background:var(--bg3);border-radius:4px;overflow:hidden;border:1px solid var(--border);position:relative}
+.br-fill{height:100%;border-radius:3px;display:flex;align-items:center;padding-left:7px;font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.9);font-weight:500;transition:width .4s cubic-bezier(.4,0,.2,1);min-width:2px}
+.br-cmp{height:11px;background:var(--bg3);border-radius:3px;overflow:hidden;margin-top:3px;border:1px solid var(--border)}
+.br-cmp-fill{height:100%;border-radius:2px;opacity:.4;transition:width .4s cubic-bezier(.4,0,.2,1)}
+.br-val{font-family:var(--mono);font-size:12px;color:var(--text2);min-width:46px;padding-top:3px}
+.br-cmp-val{font-size:9px;color:var(--blue);font-family:var(--mono);display:block;margin-top:2px}
+.badge-best{font-family:var(--mono);font-size:9px;padding:1px 6px;border-radius:20px;background:rgba(0,212,170,.13);color:var(--teal);border:1px solid rgba(0,212,170,.25);margin-left:5px}
+
+/* ── BREAKDOWN ── */
+.bd{background:var(--bg2);border:1px solid var(--teal);border-radius:var(--radius);padding:14px;margin:3px 0 12px;animation:sd .2s ease}
+@keyframes sd{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.bd-title{font-size:13px;font-weight:600;margin-bottom:11px;display:flex;align-items:center;gap:7px}
+.bd-row{display:flex;align-items:center;gap:9px;font-size:12px;margin-bottom:5px}
+.bd-l{color:var(--text3);width:90px;flex-shrink:0}
+.bd-bar{flex:1;height:14px;background:var(--bg3);border-radius:3px;overflow:hidden}
+.bd-fill{height:100%;border-radius:2px;transition:width .35s ease}
+.bd-v{font-family:var(--mono);font-size:12px;min-width:56px;text-align:right}
+.bd-tot{margin-top:9px;padding-top:9px;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-family:var(--mono);font-size:13px;font-weight:600}
+
+/* ── H2 BOX ── */
+.h2b{background:rgba(139,92,246,.07);border:1px solid rgba(139,92,246,.25);border-radius:var(--radius);padding:14px;margin:12px 0}
+.h2b-title{font-size:13px;font-weight:600;color:#a78bfa;margin-bottom:7px}
+.h2b-num{font-family:var(--mono);font-size:26px;font-weight:600;color:#a78bfa}
+.h2b-sub{font-size:12px;color:var(--text3);margin-top:4px;line-height:1.5}
+
+/* ── CHART AREA ── */
+.ct-tabs{display:flex;gap:4px;margin-bottom:9px}
+.ct{font-size:10px;padding:3px 10px;border:1px solid var(--border);border-radius:5px;cursor:pointer;background:transparent;color:var(--text3);font-family:var(--mono);transition:all .2s}
+.ct.on{border-color:var(--purple);color:var(--purple);background:rgba(139,92,246,.08)}
+.chart-wrap{position:relative;margin-bottom:14px}
+
+/* ── GRID CO2 BARS ── */
+.gcb{display:flex;align-items:center;gap:9px;margin-bottom:5px}
+.gcb-yr{font-family:var(--mono);font-size:11px;color:var(--text3);width:34px;text-align:right}
+.gcb-track{flex:1;height:17px;background:var(--bg3);border-radius:4px;overflow:hidden;border:1px solid var(--border)}
+.gcb-fill{height:100%;border-radius:3px;display:flex;align-items:center;padding-left:5px;font-family:var(--mono);font-size:10px;transition:width .4s ease}
+.gcb-v{font-family:var(--mono);font-size:11px;color:var(--text2);min-width:50px}
+
+/* ── BUILDING BARS ── */
+.feas-row{display:flex;align-items:flex-start;gap:9px;margin-bottom:10px}
+.feas-lbl{font-size:11px;color:var(--text2);width:160px;flex-shrink:0;text-align:right;padding-top:2px;line-height:1.3}
+.feas-wrap{flex:1}
+.feas-track{height:18px;background:var(--bg3);border-radius:4px;overflow:hidden;border:1px solid var(--border)}
+.feas-fill{height:100%;border-radius:3px;transition:width .4s ease}
+.feas-note{font-size:10px;color:var(--text3);margin-top:2px}
+.feas-v{font-family:var(--mono);font-size:12px;color:var(--text2);min-width:32px;padding-top:2px}
+
+/* ── SCENARIO CARDS ── */
+.sc-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.sc-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:12px}
+.sc-card-n{font-family:var(--mono);font-size:12px;font-weight:600;margin-bottom:7px}
+.sc-stat{display:flex;justify-content:space-between;font-size:11px;color:var(--text3);margin-bottom:2px}
+.sc-stat span{font-family:var(--mono);font-weight:500}
+
+/* ── ASSUMPTIONS ── */
+.as-t{width:100%;border-collapse:collapse}
+.as-tr{border-bottom:1px solid var(--border);cursor:pointer}
+.as-tr:hover td{background:rgba(255,255,255,.02)}
+.as-tr td{padding:8px 7px;font-size:12px;vertical-align:middle}
+.as-st{width:20px;text-align:center}
+.as-key{font-family:var(--mono);color:var(--text3);width:130px;font-size:11px}
+.as-val{color:var(--text)}
+.as-src{font-family:var(--mono);font-size:10px;color:var(--text3);text-align:right;max-width:130px}
+
+/* ── PROVENANCE POPUP ── */
+#prov{position:fixed;z-index:600;background:var(--bg2);border:1px solid var(--teal);border-radius:14px;padding:16px 20px;max-width:320px;box-shadow:0 16px 48px rgba(0,0,0,.8);display:none;top:50%;left:50%;transform:translate(-50%,-50%)}
+.prov-close{position:absolute;top:10px;right:14px;background:none;border:none;color:var(--text3);cursor:pointer;font-size:16px}
+.prov-t{font-size:14px;font-weight:600;margin-bottom:8px}
+.prov-s{font-size:13px;margin-bottom:8px}
+.prov-body{font-family:var(--mono);font-size:11px;color:var(--text3);line-height:1.6}
+
+/* ── NOTIF ── */
+#notif{position:fixed;top:60px;right:18px;background:var(--teal);color:var(--bg);padding:9px 16px;border-radius:8px;font-size:13px;font-weight:600;z-index:700;display:none}
+@keyframes fin{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.fin{animation:fin .25s ease}
+
+/* ── TECH LEGEND ── */
+.tl-leg{display:flex;flex-wrap:wrap;gap:8px;margin:9px 0}
+.tl-i{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text3)}
+.tl-dot{width:9px;height:9px;border-radius:3px;flex-shrink:0}
+
+/* ── ABBR ── */
+abbr{cursor:help;border-bottom:1px dashed var(--text3);text-decoration:none}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="bar">
+  <div class="logo">EU·H₂·<em>BUILDINGS</em></div>
+  <div class="sep"></div>
+  <div class="sw">
+    <input id="search" type="text" placeholder="Search country…" autocomplete="off"/>
+    <div id="sr"></div>
+  </div>
+  <div class="pills">
+    <button class="pill" id="cmp-btn">+ Compare</button>
+    <button class="pill" id="share-btn">⎘ Share</button>
+  </div>
+  <div class="sep"></div>
+  <label style="font-size:11px;color:var(--text3)">Map:</label>
+  <select class="map-sel" id="map-color">
+    <option value="natural">Natural</option>
+    <option value="cheapest">Cheapest tech (2030)</option>
+    <option value="lcoh">Gas cost gradient</option>
+    <option value="grid">Grid CO₂</option>
+  </select>
+  <div class="ts" id="ts"></div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- MAP -->
+  <div class="map-side full" id="map-side">
+    <svg id="map-svg"></svg>
+    <div class="map-hint">Click a country · Scroll to zoom · Drag to pan</div>
+    <div class="map-legend" id="map-legend"></div>
+  </div>
+
+  <!-- DATA SIDE (hidden until selection) -->
+  <div class="data-side" id="data-side" style="display:none">
+
+    <!-- EMPTY state (compare mode, no 2nd country yet) -->
+    <div class="empty" id="cmp-empty" style="display:none;flex:1;border-left:1px solid var(--border2)">
+      <div class="empty-icon">🔍</div>
+      <div class="empty-t">Click a second country on the map</div>
+      <div class="empty-s">It will appear here side by side</div>
+    </div>
+
+    <!-- SINGLE VIEW -->
+    <div class="single-view" id="single-view" style="display:none"></div>
+
+    <!-- COMPARE VIEW -->
+    <div class="cmp-view" id="cmp-view" style="display:none"></div>
+
+  </div>
+</div>
+
+<!-- TOOLTIP -->
+<div id="tt">
+  <div class="tt-n"><span id="tt-flag"></span><span id="tt-name"></span></div>
+  <div class="tt-r"><span>Cheapest heating (2030)</span><span class="tt-v" id="tt-tech"></span></div>
+  <div class="tt-r"><span>Gas boiler cost</span><span class="tt-v" id="tt-gas"></span></div>
+  <div class="tt-r"><span>Electricity CO₂</span><span class="tt-v" id="tt-grid"></span></div>
+</div>
+
+<!-- PROVENANCE -->
+<div id="prov">
+  <button class="prov-close" onclick="document.getElementById('prov').style.display='none'">✕</button>
+  <div class="prov-t" id="prov-t"></div>
+  <div class="prov-s" id="prov-s"></div>
+  <div class="prov-body" id="prov-b"></div>
+</div>
+
+<!-- NOTIF -->
+<div id="notif"></div>
+
+<script>
+// ── DATA & CONSTANTS ─────────────────────────────────────────────────────────
+const D = DASHBOARD_DATA;
+const C = D.countries;
+
+const TECHS  = ['gas_boiler','hp_air','hp_ground','h2_boiler','district_heat','biomass_boiler','resistance_heater'];
+const TC = {gas_boiler:'#ef4444',hp_air:'#3b82f6',hp_ground:'#1d4ed8',h2_boiler:'#8b5cf6',district_heat:'#00d4aa',biomass_boiler:'#f59e0b',resistance_heater:'#64748b'};
+const TL = {gas_boiler:'Gas boiler',hp_air:'Heat pump (air)',hp_ground:'Heat pump (ground)',h2_boiler:'Hydrogen boiler',district_heat:'District heat',biomass_boiler:'Biomass boiler',resistance_heater:'Electric heater'};
+const ACRONYMS = {
+  'LCOH':'Levelised Cost of Heat — the all-in cost per unit of heat delivered, including capital repayment, running costs, and carbon charges.',
+  'ETS2':'EU Emissions Trading System 2 — the carbon market launching in 2027 that will add a cost to burning gas and oil in buildings across Europe.',
+  'COP':'Coefficient of Performance — how many units of heat a heat pump delivers per unit of electricity used. A COP of 3 means 3× more efficient than an electric heater.',
+  'HP':'Heat Pump — an electric device that extracts heat from outside air or the ground and delivers it inside. 3–5× more efficient than a boiler.',
+  'DH':'District Heating — a network of insulated pipes carrying hot water from a central plant to many buildings, like a shared central heating system.',
+  'SFH':'Single-Family Home — detached house, semi-detached, or terraced house with one household.',
+  'MFH':'Multi-Family Building — apartment block or block of flats with multiple households.',
+  'STATED_POLICIES':'Reference scenario — assumes moderate heat pump uptake and efficiency gains by 2050.',
+  'H2':'Green hydrogen — hydrogen produced by splitting water using renewable electricity. Zero direct carbon emissions when burned.',
+  'GEG':'Gebäudeenergiegesetz — Germany\'s Building Energy Act requiring 65% renewable energy in heating systems from 2024.',
+  'EPBD':'Energy Performance of Buildings Directive — EU law requiring all member states to phase out fossil fuel heating in buildings by 2040.',
+};
+
+// State
+let selA=null, selB=null, activeTabA='policy', activeTabB='policy';
+let yearA=2025, yearB=2025, vmA='detailed', vmB='detailed';
+let chartTabA='trajectory', chartTabB='trajectory';
+let playTimerA=null, playTimerB=null;
+let shockA=false, shockB=false;
+let selTechA=null, selTechB=null;
+let compareMode=false;
+const charts={};
+
+// ── URL STATE ────────────────────────────────────────────────────────────────
+function pushState(){
+  const p=new URLSearchParams();
+  if(selA) p.set('country',selA);
+  if(selB) p.set('compare',selB);
+  p.set('tab',activeTabA);
+  history.replaceState({},'',`?${p}`);
+}
+function loadState(){
+  const p=new URLSearchParams(location.search);
+  const co=p.get('country'),cb=p.get('compare'),ta=p.get('tab');
+  if(co&&C[co]) selectA(co);
+  if(cb&&C[cb]){compareMode=true;document.getElementById('cmp-btn').classList.add('cmp-on');document.getElementById('cmp-btn').textContent='× Compare';selectB(cb);}
+  if(ta&&selA){activeTabA=ta;renderA();}
+}
+
+// ── NOTIFY ───────────────────────────────────────────────────────────────────
+function notify(msg){const n=document.getElementById('notif');n.textContent=msg;n.className='fin';n.style.display='block';setTimeout(()=>n.style.display='none',2200);}
+
+// ── PROVENANCE ───────────────────────────────────────────────────────────────
+const PROV={
+  'Gas price':['✅ Validated','Eurostat nrg_pc_202, H1 2025 — official EU residential gas price survey across all EU member states.'],
+  'Electricity price':['✅ Validated','Eurostat nrg_pc_204, H1 2025 — official EU residential electricity price survey.'],
+  'Grid CO₂':['⚠️ Provisional','EMBER European Electricity Review 2024 (2025 actuals). Future trajectory from EEA Fit-for-55 projections. National Energy and Climate Plans (NECPs) still pending for 9 countries: PL, DE, FR, IT, CZ, RO, HU, BG, SK.'],
+  'HP feasibility':['⚠️ Pending Abdul','Expert judgment: SFH=0.9, MFH=0.5. Based on space constraints and retrofit difficulty. No peer-reviewed source yet. Abdul\'s validation required before publication.'],
+  'DH feasibility':['⚠️ Pending Abdul','Expert judgment: SFH=0.3, MFH=0.8. Based on connection density economics. Abdul\'s validation required.'],
+  'Boiler ban':['✅ Validated','EHPA Boiler Ban Tracker, November 2025 + national legislation: GEG (Germany), EPBD (EU), EnDK 2050+ (Switzerland), Future Homes Standard (UK).'],
+  'Discount rate':['✅ Validated','5% real pre-tax (base case). BPIE 2024 recommends 4–6% for buildings. Consistent with IEA and IRENA convention. Sensitivity: 4% (social) and 8% (private consumer).'],
+  'H₂ price':['✅ Corrected','OIES ET08 (2022): ~€3/kg = €90/MWh from European sources in 2030. OIES ET32 (2024): short pipeline import €60–80/MWh. Original estimate of €180/MWh was incorrect and has been corrected.'],
+  'Annual hours':['⚠️ Provisional','Hotmaps heating degree days (HDD) per country. Climate normal 1991–2020 from Eurostat env_clc_hdd. Base assumption: 2,000 hours at EU average HDD 2,800.'],
+  'Gas grid':['⚠️ Provisional','ACER Gas Factsheet + Eurostat nrg_d_hhq secondary estimates. Not directly measured — primary source should be national gas network operators.'],
+};
+function showProv(key,val){
+  const p=PROV[key]||['—','No source documented yet.'];
+  document.getElementById('prov-t').textContent=key;
+  document.getElementById('prov-s').innerHTML=`<span style="font-size:14px">${p[0].split(' ')[0]}</span> <strong>${p[0].slice(p[0].indexOf(' ')+1)}</strong>`;
+  document.getElementById('prov-b').textContent=p[1]+(val?'\n\nCurrent value: '+val:'');
+  document.getElementById('prov').style.display='block';
+}
+
+// ── HELPERS ──────────────────────────────────────────────────────────────────
+function getLCOH(code,tech,year){
+  const lc=C[code]?.lcoh?.[tech]; if(!lc) return null;
+  // Use real year data directly (26 data points)
+  if(lc[year]!==undefined) return lc[year];
+  // Fallback interpolation for any gaps
+  const ys=[2025,2030,2035,2040,2045,2050];
+  if(year<=2025) return lc[2025];
+  if(year>=2050) return lc[2050];
+  for(let i=0;i<ys.length-1;i++){
+    if(year>=ys[i]&&year<=ys[i+1]){
+      const v0=lc[ys[i]],v1=lc[ys[i+1]];
+      if(v0==null||v1==null) return v0||v1;
+      const t=(year-ys[i])/(ys[i+1]-ys[i]);
+      return Math.round(v0+t*(v1-v0));
+    }
+  }
+  return lc[2050];
+}
+function cheapest(code,year){
+  let bt=null,bv=Infinity;
+  TECHS.forEach(t=>{const v=getLCOH(code,t,year);if(v&&v<bv){bt=t;bv=v;}});
+  return {tech:bt,val:Math.round(bv||0)};
+}
+function getGrid(code,year){
+  const g=C[code]?.grid_co2;if(!g) return 250;
+  if(g[year]!==undefined) return g[year];
+  return g[2025]||250;
+}
+function abbr(term){
+  const def=ACRONYMS[term];
+  return def?`<abbr title="${def}">${term}</abbr>`:term;
+}
+function animNum(el,from,to,prefix='€',suffix=''){
+  const dur=350,start=performance.now();
+  const fn=(now)=>{
+    const p=Math.min((now-start)/dur,1),v=Math.round(from+p*(to-from));
+    el.textContent=prefix+v+suffix;
+    if(p<1) requestAnimationFrame(fn);
+    else{el.textContent=prefix+to+suffix;el.classList.add('popped');setTimeout(()=>el.classList.remove('popped'),400);}
+  };
+  requestAnimationFrame(fn);
+}
+function destroyChart(id){if(charts[id]){charts[id].destroy();delete charts[id];}}
+
+// ── D3 MAP ───────────────────────────────────────────────────────────────────
+const mapSvgEl = document.getElementById('map-svg');
+let mapW=0,mapH=0,projection,pathGen,geoData=null,zoom;
+let hoveredCode=null;
+
+// Country ISO numeric → our country code mapping
+const ISO_MAP = {
+  40:'AT',56:'BE',100:'BG',196:'CY',203:'CZ',276:'DE',208:'DK',
+  233:'EE',724:'ES',246:'FI',250:'FR',300:'EL',191:'HR',348:'HU',
+  372:'IE',380:'IT',440:'LT',442:'LU',428:'LV',470:'MT',528:'NL',
+  616:'PL',620:'PT',642:'RO',752:'SE',705:'SI',703:'SK',756:'CH',826:'UK'
+};
+
+// Natural country colors (terrain-inspired)
+const NAT_COLORS = {
+  AT:'#5a8265',BE:'#4f7f60',BG:'#6a8a5a',CY:'#8a9a60',CZ:'#587a60',
+  DE:'#4a7a5a',DK:'#507860',EE:'#508060',ES:'#6a8f55',FI:'#4a8060',
+  FR:'#4d7f5d',EL:'#7a9055',HR:'#5a8060',HU:'#688060',IE:'#40804d',
+  IT:'#5f8855',LT:'#508065',LU:'#4a7a5a',LV:'#508060',MT:'#8a9860',
+  NL:'#4a7a60',PL:'#58805a',PT:'#6a9050',RO:'#688555',SE:'#4a8060',
+  SI:'#558065',SK:'#588065',CH:'#6a8a65',UK:'#4a7a60',
+};
+
+function initMap(){
+  const panel=document.getElementById('map-side');
+  mapW=panel.clientWidth; mapH=panel.clientHeight;
+  const svg=d3.select('#map-svg').attr('viewBox',`0 0 ${mapW} ${mapH}`).attr('width',mapW).attr('height',mapH);
+  svg.selectAll('*').remove();
+
+  projection=d3.geoMercator()
+    .center([15,54]).scale(mapW*1.1)
+    .translate([mapW*.42,mapH*.58]);
+  pathGen=d3.geoPath().projection(projection);
+
+  zoom=d3.zoom().scaleExtent([1,8]).on('zoom',e=>{
+    svg.select('g.countries').attr('transform',e.transform);
+    svg.select('g.labels').attr('transform',e.transform);
+  });
+  svg.call(zoom);
+
+  const g=svg.append('g').attr('class','countries');
+  const gl=svg.append('g').attr('class','labels');
+
+  // Ocean bg
+  svg.insert('rect','g').attr('width',mapW).attr('height',mapH).attr('fill','#061828');
+
+  if(geoData){
+    renderCountries(g,gl);
+  } else {
+    d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(world=>{
+      geoData=world;
+      renderCountries(g,gl);
+    }).catch(()=>{
+      g.append('text').attr('x',mapW/2).attr('y',mapH/2)
+        .attr('text-anchor','middle').attr('fill','#4e607a').attr('font-size',14)
+        .text('Map loading failed — check connection');
+    });
+  }
+}
+
+function renderCountries(g,gl){
+  const features=topojson.feature(geoData,geoData.objects.countries).features;
+  const mode=document.getElementById('map-color').value;
+
+  function getFill(d){
+    const iso=+d.id;
+    const code=ISO_MAP[iso];
+    if(!code||!C[code]) return '#1a2e40';
+    if(selA===code) return '#ffd700';
+    if(selB===code) return '#3b82f6';
+    if(mode==='natural') return NAT_COLORS[code]||'#3d6050';
+    if(mode==='cheapest'){
+      const ch=C[code]?.cheapest_by_year?.[2030]?.tech;
+      return ch?(TC[ch]||'#3d6050'):'#3d6050';
+    }
+    if(mode==='lcoh'){
+      const v=getLCOH(code,'gas_boiler',2030)||200;
+      const t=Math.min((v-100)/250,1);
+      return d3.interpolateRdYlGn(1-t);
+    }
+    if(mode==='grid'){
+      const v=getGrid(code,2025)||300;
+      const t=Math.min(v/700,1);
+      return d3.interpolateRdYlGn(1-t);
+    }
+    return '#3d6050';
+  }
+
+  g.selectAll('path').data(features)
+    .join('path')
+    .attr('d',pathGen)
+    .attr('fill',d=>getFill(d))
+    .attr('stroke','#0a1828')
+    .attr('stroke-width',.5)
+    .attr('class','country-path')
+    .style('cursor','pointer')
+    .on('mousemove',function(e,d){
+      const iso=+d.id,code=ISO_MAP[iso];
+      if(!code||!C[code]) return;
+      hoveredCode=code;
+      const cd=C[code];
+      const ch=cheapest(code,2030);
+      const tt=document.getElementById('tt');
+      tt.style.display='block';
+      tt.style.left=(e.pageX+14)+'px';
+      tt.style.top=(e.pageY-10)+'px';
+      document.getElementById('tt-flag').textContent=cd.meta.flag;
+      document.getElementById('tt-name').textContent=' '+cd.meta.name;
+      document.getElementById('tt-tech').textContent=TL[ch.tech]||'—';
+      document.getElementById('tt-gas').textContent='€'+(getLCOH(code,'gas_boiler',2030)||'—')+'/MWh';
+      document.getElementById('tt-grid').textContent=(getGrid(code,2025)||'—')+' g/kWh';
+      d3.select(this).attr('fill',selA===code||selB===code?null:'#2a5060').attr('stroke','#00d4aa').attr('stroke-width',1.5);
+    })
+    .on('mouseleave',function(e,d){
+      hoveredCode=null;
+      document.getElementById('tt').style.display='none';
+      const iso=+d.id,code=ISO_MAP[iso];
+      d3.select(this).attr('fill',d2=>getFill(d2)).attr('stroke','#0a1828').attr('stroke-width',.5);
+    })
+    .on('click',(e,d)=>{
+      const iso=+d.id,code=ISO_MAP[iso];
+      if(!code||!C[code]) return;
+      document.getElementById('tt').style.display='none';
+      if(compareMode&&selA&&code!==selA){
+        selectB(code);
+      } else {
+        selectA(code);
+      }
+    });
+
+  // Country labels for larger countries
+  const labelCodes=['DE','FR','PL','IT','ES','UK','SE','FI','RO','UA'];
+  gl.selectAll('text').data(features.filter(d=>labelCodes.includes(ISO_MAP[+d.id])))
+    .join('text')
+    .attr('transform',d=>{
+      const c=pathGen.centroid(d);
+      return `translate(${c[0]},${c[1]})`;
+    })
+    .attr('text-anchor','middle').attr('dy','.35em')
+    .attr('font-size',9).attr('fill','rgba(220,235,255,.35)')
+    .attr('font-family','IBM Plex Sans,sans-serif')
+    .attr('pointer-events','none')
+    .text(d=>ISO_MAP[+d.id]||'');
+
+  updateMapLegend(mode);
+}
+
+function updateMapColors(){
+  const mode=document.getElementById('map-color').value;
+  const g=d3.select('#map-svg g.countries');
+  const gl=d3.select('#map-svg g.labels');
+  if(geoData) renderCountries(g,gl);
+  updateMapLegend(mode);
+}
+
+function updateMapLegend(mode){
+  const leg=document.getElementById('map-legend');
+  leg.innerHTML=''; leg.className='map-legend';
+  if(mode==='natural'){return;}
+  leg.classList.add('show');
+  let items=[];
+  if(mode==='cheapest'){
+    leg.innerHTML='<div class="ml-t">Cheapest tech in 2030</div>'+
+      Object.entries(TL).map(([t,l])=>`<div class="ml-r"><div class="ml-d" style="background:${TC[t]}"></div>${l}</div>`).join('');
+  } else if(mode==='grid'){
+    leg.innerHTML='<div class="ml-t">Electricity CO₂ (2025)</div>'+
+      [['#10b981','< 100 g/kWh'],['#f59e0b','100–400 g/kWh'],['#ef4444','> 400 g/kWh']].map(([c,l])=>`<div class="ml-r"><div class="ml-d" style="background:${c}"></div>${l}</div>`).join('');
+  } else if(mode==='lcoh'){
+    leg.innerHTML='<div class="ml-t">Gas boiler LCOH 2030</div>'+
+      [['#10b981','< €150/MWh'],['#f59e0b','€150–250/MWh'],['#ef4444','> €250/MWh']].map(([c,l])=>`<div class="ml-r"><div class="ml-d" style="background:${c}"></div>${l}</div>`).join('');
+  }
+}
+
+document.getElementById('map-color').addEventListener('change',updateMapColors);
+
+// Resize
+function resizeMap(){
+  const panel=document.getElementById('map-side');
+  if(panel.clientWidth<1) return;
+  initMap();
+}
+window.addEventListener('resize',()=>{setTimeout(resizeMap,100);});
+
+// ── LAYOUT MANAGER ───────────────────────────────────────────────────────────
+function updateLayout(){
+  const ms=document.getElementById('map-side');
+  const ds=document.getElementById('data-side');
+  const sv=document.getElementById('single-view');
+  const cv=document.getElementById('cmp-view');
+  const ce=document.getElementById('cmp-empty');
+
+  if(!selA){
+    ms.className='map-side full'; ds.style.display='none';
+    setTimeout(()=>initMap(),50); return;
+  }
+
+  if(compareMode){
+    ms.className='map-side hidden';
+    ds.style.display='flex';
+    sv.style.display='none';
+    cv.style.display='flex';
+    if(!selB){ cv.style.display='none'; ce.style.display='flex'; }
+    else { ce.style.display='none'; cv.style.display='flex'; }
+  } else {
+    ms.className='map-side half';
+    ds.style.display='flex';
+    sv.style.display='flex';
+    cv.style.display='none';
+    ce.style.display='none';
+    setTimeout(()=>initMap(),50);
+  }
+}
+
+// ── SELECT COUNTRY ────────────────────────────────────────────────────────────
+function selectA(code){
+  selA=code; selTechA=null;
+  updateLayout();
+  renderA();
+  updateMapColors();
+  pushState();
+}
+function selectB(code){
+  selB=code; selTechB=null;
+  updateLayout();
+  renderA(); renderB();
+  updateMapColors();
+  pushState();
+}
+
+// ── COMPARE TOGGLE ────────────────────────────────────────────────────────────
+document.getElementById('cmp-btn').addEventListener('click',()=>{
+  compareMode=!compareMode;
+  const btn=document.getElementById('cmp-btn');
+  btn.classList.toggle('cmp-on',compareMode);
+  btn.textContent=compareMode?'× Compare':'+ Compare';
+  if(!compareMode){selB=null;}
+  updateLayout();
+  if(selA) renderA();
+  updateMapColors();
+  pushState();
+});
+
+// ── SEARCH ────────────────────────────────────────────────────────────────────
+const searchEl=document.getElementById('search');
+const srEl=document.getElementById('sr');
+searchEl.addEventListener('input',()=>{
+  const q=searchEl.value.toLowerCase(); srEl.innerHTML=''; srEl.style.display='none';
+  if(!q) return;
+  Object.entries(C).filter(([c,d])=>d.meta.name.toLowerCase().includes(q)||c.toLowerCase().includes(q))
+    .slice(0,8).forEach(([code,cd])=>{
+      const div=document.createElement('div'); div.className='sri';
+      div.innerHTML=`<span>${cd.meta.flag}</span><span>${cd.meta.name}</span><span class="code">${code}</span>`;
+      div.onclick=()=>{
+        compareMode&&selA?selectB(code):selectA(code);
+        srEl.style.display='none'; searchEl.value='';
+      };
+      srEl.appendChild(div);
+    });
+  srEl.style.display='block';
+});
+document.addEventListener('click',e=>{if(!e.target.closest('.sw'))srEl.style.display='none';});
+
+// ── SHARE ─────────────────────────────────────────────────────────────────────
+document.getElementById('share-btn').addEventListener('click',()=>{
+  navigator.clipboard.writeText(location.href).then(()=>notify('Link copied!'));
+});
+
+// ── GEN TIME ─────────────────────────────────────────────────────────────────
+try{
+  const gt=new Date(D.generated_at);
+  document.getElementById('ts').textContent='Data: '+gt.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});
+}catch(e){}
+
+// ── RENDER COUNTRY PANEL ──────────────────────────────────────────────────────
+function buildPanel(code, activeTab, year, vm, chartTab, shock, selTech, side){
+  // side = 'A' or 'B' — used for unique element IDs
+  const cd=C[code];
+  const ch=cheapest(code,year);
+  const gasV=getLCOH(code,'gas_boiler',year)||0;
+  const gridV=getGrid(code,year)||0;
+
+  // Header
+  const hdrEl=`<div class="c-hdr">
+    <div class="c-flag">${cd.meta.flag}</div>
+    <div class="c-info">
+      <div class="c-name">${cd.meta.name}</div>
+      <div class="c-sub">${cd.meta.eu?'EU member':'Non-EU'} · ${cd.heat_demand_twh?cd.heat_demand_twh+' TWh heat demand (2015)':'—'}</div>
+    </div>
+    <div class="c-kpis">
+      <div class="kpi"><div class="kpi-l">Cheapest (${year})</div><div class="kpi-v" id="kpi-tech-${side}" style="font-size:12px">${TL[ch.tech]?.split(' ')[0]||'—'}</div></div>
+      <div class="kpi"><div class="kpi-l">Gas LCOH</div><div class="kpi-v" id="kpi-gas-${side}">€${gasV}</div></div>
+      <div class="kpi"><div class="kpi-l">CO₂/kWh</div><div class="kpi-v" id="kpi-grid-${side}" style="color:${gridV>300?'var(--red)':gridV>150?'var(--amber)':'var(--teal)'}">${gridV}g</div></div>
+    </div>
+    ${side==='B'?`<button onclick="clearB()" style="background:none;border:none;color:var(--text3);cursor:pointer;font-size:18px;margin-left:10px">✕</button>`:''}
+  </div>`;
+
+  const tabs=['policy','economics','stock','scenarios','assumptions'];
+  const tabsEl=`<div class="tabs">${tabs.map(t=>`<div class="tab ${t===activeTab?'on':''}" onclick="switchTab('${t}','${side}')">${{policy:'Policy',economics:'LCOH & Economics',stock:'Building stock',scenarios:'Scenarios',assumptions:'Data quality'}[t]}</div>`).join('')}</div>`;
+
+  return `${hdrEl}${tabsEl}<div class="panel" id="panel-${side}">${buildTabContent(code,activeTab,year,vm,chartTab,shock,selTech,side)}</div>`;
+}
+
+function buildTabContent(code,tab,year,vm,chartTab,shock,selTech,side){
+  if(tab==='policy')      return buildPolicy(code,year,shock,side);
+  if(tab==='economics')   return buildEconomics(code,year,vm,chartTab,selTech,side);
+  if(tab==='stock')       return buildStock(code,side);
+  if(tab==='scenarios')   return buildScenarios(code,side);
+  if(tab==='assumptions') return buildAssumptions(code,side);
+  return '';
+}
+
+function switchTab(tab,side){
+  if(side==='A'){activeTabA=tab;selTechA=null;renderA();}
+  else{activeTabB=tab;selTechB=null;renderB();}
+  pushState();
+}
+function clearB(){selB=null;compareMode=false;document.getElementById('cmp-btn').classList.remove('cmp-on');document.getElementById('cmp-btn').textContent='+ Compare';updateLayout();renderA();updateMapColors();pushState();}
+
+function renderA(){
+  if(!selA) return;
+  const sv=document.getElementById('single-view');
+  const cv=document.getElementById('cmp-view');
+  if(!compareMode||!selB){
+    sv.innerHTML=buildPanel(selA,activeTabA,yearA,vmA,chartTabA,shockA,selTechA,'A');
+  } else {
+    cv.innerHTML=`<div class="cmp-col">${buildPanel(selA,activeTabA,yearA,vmA,chartTabA,shockA,selTechA,'A')}</div>`+
+                 `<div class="cmp-col">${buildPanel(selB,activeTabB,yearB,vmB,chartTabB,shockB,selTechB,'B')}</div>`;
+  }
+  bindCharts('A');
+}
+function renderB(){
+  if(!selB) return;
+  renderA(); // rebuild both in compare view
+  bindCharts('B');
+}
+
+// ── POLICY TAB ────────────────────────────────────────────────────────────────
+function buildPolicy(code,year,shock,side){
+  const cd=C[code], p=cd.policy, e=cd.energy;
+  const gc=getGrid(code,2025), gc50=getGrid(code,2050);
+  const gcCl=gc>300?'bad':gc>150?'warn':'ok';
+  const ets2Y=2027, yTo=Math.max(0,ets2Y-new Date().getFullYear());
+  const gasAdder=Math.round(122*0.202/0.92);
+  const hpAdder=Math.round(122*(gc/1000)/3.0);
+  const hpBest=Math.min(getLCOH(code,'hp_air',2030)||999,getLCOH(code,'hp_ground',2030)||999);
+  const h2v=getLCOH(code,'h2_boiler',2030)||200;
+  const h2d=Math.round(((h2v-hpBest)/h2v)*100);
+
+  // Grid CO2 bars HTML
+  const gridBars=[2025,2030,2040,2050].map(yr=>{
+    const v=getGrid(code,yr)||0;
+    const pct=Math.round(v/7);
+    const col=v>400?'#ef4444':v>200?'#f59e0b':'#10b981';
+    return `<div class="gcb"><div class="gcb-yr">${yr}</div><div class="gcb-track"><div class="gcb-fill" style="width:${pct}%;background:${col}">${v>80?v+'g':''}</div></div><div class="gcb-v">${v} g/kWh</div></div>`;
+  }).join('');
+
+  return `
+  <div class="mets">
+    <div class="met" onclick="showProv('Gas price','€${e.gas_price_2025}/MWh')"><div class="met-l">Gas price (residential)</div><div class="met-v warn">€${e.gas_price_2025}<span style="font-size:12px;color:var(--text3)">/MWh</span></div></div>
+    <div class="met" onclick="showProv('Electricity price','€${e.elec_price_2025}/MWh')"><div class="met-l">Electricity price</div><div class="met-v">€${e.elec_price_2025}<span style="font-size:12px;color:var(--text3)">/MWh</span></div></div>
+    <div class="met" onclick="showProv('Gas grid','${e.gas_grid_pct}%')"><div class="met-l">Gas grid coverage</div><div class="met-v ${e.gas_grid_pct>60?'warn':'ok'}">${e.gas_grid_pct}<span style="font-size:12px;color:var(--text3)">%</span></div></div>
+    <div class="met" onclick="showProv('Grid CO₂','${gc} g/kWh in 2025')"><div class="met-l">Electricity CO₂ (2025)</div><div class="met-v ${gcCl}">${gc}<span style="font-size:12px;color:var(--text3)">g/kWh</span></div></div>
+    <div class="met" onclick="showProv('Grid CO₂','${gc50} g/kWh projected 2050')"><div class="met-l">Electricity CO₂ (2050)</div><div class="met-v ok">${gc50}<span style="font-size:12px;color:var(--text3)">g/kWh</span></div></div>
+    <div class="met" onclick="showProv('Annual hours','${cd.annual_hours} h/yr')"><div class="met-l">Heating season length</div><div class="met-v">${cd.annual_hours}<span style="font-size:12px;color:var(--text3)">h/yr</span></div></div>
+  </div>
+  <div class="sec">Fossil heating phase-out schedule</div>
+  <div class="tl">
+    <div class="tl-b s1"><div class="tl-l">Subsidies end</div><div class="tl-y">${p.subsidies_end}</div></div>
+    <div class="tl-b s2"><div class="tl-l">New-build ban</div><div class="tl-y">${p.new_build_ban}</div></div>
+    <div class="tl-b s3"><div class="tl-l">Replacement ban</div><div class="tl-y">${p.replacement_ban}</div>${p.replacement_ban_delayed?`<div class="tl-note">Risk: ${p.replacement_ban_delayed}</div>`:''}</div>
+    <div class="tl-b s4"><div class="tl-l">Full phase-out</div><div class="tl-y">${p.full_ban}</div></div>
+  </div>
+  <div style="font-size:13px;color:var(--text2);margin-bottom:14px">${abbr('HP')} mandate: <strong style="color:var(--teal);font-family:var(--mono)">${p.hp_mandate}</strong>${p.hp_mandate_delayed?` &nbsp;·&nbsp; <span style="color:var(--amber)">Delay risk: ${p.hp_mandate_delayed}</span>`:''}</div>
+
+  <div class="sec">${abbr('ETS2')} carbon pricing</div>
+  <div class="w-box w-ets2">
+    <div class="w-title">ETS2 launches in 2027</div>
+    <div class="ets2-num">${yTo} years away</div>
+    <div class="ets2-sub">At €122/tCO₂ central forecast (2030), carbon cost added to:</div>
+    <div class="ets2-grid">
+      <div class="ets2-cell"><div class="ets2-cl">Gas boiler running cost</div><div class="ets2-cv" style="color:var(--red)">+€${gasAdder}/MWh</div></div>
+      <div class="ets2-cell"><div class="ets2-cl">${abbr('HP')} running cost</div><div class="ets2-cv" style="color:var(--teal)">+€${hpAdder}/MWh</div></div>
+    </div>
+  </div>
+
+  <div class="sec">${abbr('H2')} price journey to competitiveness</div>
+  <div class="w-box w-h2">
+    <div class="w-title">Hydrogen must fall ${h2d}% to match best heat pump</div>
+    <canvas id="h2j-${side}" height="70" style="width:100%"></canvas>
+    <div style="font-size:11px;color:var(--text3);font-family:var(--mono);margin-top:6px">Parity: €${hpBest}/MWh &nbsp;·&nbsp; H₂ now (2030): €${h2v}/MWh &nbsp;·&nbsp; Gap: €${h2v-hpBest}/MWh</div>
+  </div>
+
+  <div class="sec">Policy shock: boiler ban delay scenario</div>
+  <div class="w-box w-shock">
+    <div class="w-title">What if the replacement ban slips 7 years?</div>
+    <div class="tog">
+      <div class="tog-sw ${shock?'on':''}" id="shock-sw-${side}" onclick="toggleShock('${side}')"></div>
+      <div class="tog-l" id="shock-l-${side}">${shock?`Delay active — ban ${(p.replacement_ban_delayed||p.replacement_ban+7)}`:`Standard — ban ${p.replacement_ban}`}</div>
+    </div>
+    <div id="shock-impact-${side}" style="font-size:12px;color:var(--text2);line-height:1.5">${shock?'A 7-year delay keeps millions of gas boilers in service longer, adding significant extra carbon emissions and slowing heat pump adoption.':'Standard policy in effect. Toggle to model a political delay scenario.'}</div>
+  </div>
+
+  <div class="sec">Electricity CO₂ decarbonisation trajectory</div>
+  ${gridBars}
+  ${p.notes?`<div style="font-size:11px;color:var(--text3);font-family:var(--mono);line-height:1.6;border-left:2px solid var(--border2);padding-left:10px;margin-top:10px">${p.notes.slice(0,300)}</div>`:''}
+  `;
+}
+
+// ── ECONOMICS TAB ─────────────────────────────────────────────────────────────
+function buildEconomics(code,year,vm,chartTab,selTech,side){
+  const cd=C[code];
+  const ch=cheapest(code,year);
+  const hpBest=Math.min(getLCOH(code,'hp_air',year)||999,getLCOH(code,'hp_ground',year)||999);
+  const h2v=getLCOH(code,'h2_boiler',year)||200;
+  const h2d=Math.round(((h2v-hpBest)/h2v)*100);
+
+  const techsToShow = vm==='detailed'
+    ? TECHS.filter(t=>cd.lcoh?.[t])
+    : ['hp_air','gas_boiler','h2_boiler','district_heat','biomass_boiler'];
+
+  const maxV=360;
+  const barRows=techsToShow
+    .filter(t=>cd.lcoh?.[t])
+    .sort((a,b)=>(getLCOH(code,a,year)||999)-(getLCOH(code,b,year)||999))
+    .map(tech=>{
+      const val=getLCOH(code,tech,year); if(!val) return '';
+      const pct=Math.round(val/maxV*100);
+      const isBest=tech===ch.tech, isSel=tech===selTech;
+      return `<div class="br ${isSel?'sel':''}" onclick="clickTech('${tech}','${side}')">
+        <div class="br-lbl">${TL[tech]||tech}${isBest?`<span class="badge-best">best</span>`:''}</div>
+        <div class="br-tracks">
+          <div class="br-track"><div class="br-fill" style="width:${pct}%;background:${TC[tech]||'#888'}">${val>70?'€'+Math.round(val):''}</div></div>
+        </div>
+        <div class="br-val">€${Math.round(val)}</div>
+      </div>`;
+    }).join('');
+
+  // Breakdown panel
+  let bdPanel='';
+  if(selTech&&cd.lcoh?.[selTech]){
+    const bd=cd.lcoh_breakdown?.[selTech]?.[year<=2025?2025:year<=2030?2030:year<=2035?2035:year<=2040?2040:year<=2045?2045:2050];
+    if(bd){
+      const tot=bd.total||1;
+      bdPanel=`<div class="bd">
+        <div class="bd-title"><div style="width:11px;height:11px;border-radius:3px;background:${TC[selTech]}"></div>${TL[selTech]} — cost breakdown ${year}</div>
+        ${[['Capital repayment',bd.capex,'#3b82f6'],['Fixed maintenance',bd.fom,'#8b5cf6'],['Variable costs',bd.vom,'#64748b'],['Fuel cost',bd.fuel,'#f59e0b'],['Carbon charge',bd.carbon,'#ef4444'],['Delivery network',bd.network||0,'#14b8a6'],['Seasonal storage',bd.storage||0,'#a855f7']].map(([l,v,c])=>`
+        <div class="bd-row"><div class="bd-l">${l}</div><div class="bd-bar"><div class="bd-fill" style="width:${Math.round(v/tot*100)}%;background:${c}"></div></div><div class="bd-v" style="color:${c}">€${v}</div></div>`).join('')}
+        <div class="bd-tot"><span>Total ${abbr('LCOH')}</span><span style="color:var(--teal)">€${bd.total}/MWh</span></div>
+      </div>`;
+    }
+  }
+
+  return `
+  <div class="yc">
+    <label>Year</label>
+    <input type="range" min="2025" max="2050" step="1" value="${year}" id="yr-${side}" oninput="changeYear(this.value,'${side}')"/>
+    <span class="yc-yr" id="yr-disp-${side}">${year}</span>
+    <button class="play" id="play-${side}" onclick="togglePlay('${side}')">▶ Play</button>
+  </div>
+  <div class="vt">
+    <button class="vbtn ${vm==='detailed'?'on':''}" onclick="setVM('detailed','${side}')">All technologies</button>
+    <button class="vbtn ${vm==='grouped'?'on':''}" onclick="setVM('grouped','${side}')">Grouped</button>
+  </div>
+  <div class="tl-leg">${Object.entries(TL).map(([t,l])=>`<div class="tl-i"><div class="tl-dot" style="background:${TC[t]}"></div>${l}</div>`).join('')}</div>
+  <div class="bars">${barRows}</div>
+  ${bdPanel}
+  <div class="h2b">
+    <div class="h2b-title">Hydrogen competitiveness — ${year}</div>
+    <div class="h2b-num">${h2d}% drop needed</div>
+    <div class="h2b-sub">Hydrogen boiler: <strong style="color:#a78bfa;font-family:var(--mono)">€${Math.round(h2v)}/MWh</strong> &nbsp;·&nbsp; Best ${abbr('HP')}: <strong style="color:var(--blue);font-family:var(--mono)">€${Math.round(hpBest)}/MWh</strong> &nbsp;·&nbsp; Gap: <strong style="font-family:var(--mono)">€${Math.round(h2v-hpBest)}/MWh</strong></div>
+  </div>
+  <div class="sec">Cost trajectories 2025–2050</div>
+  <div class="ct-tabs">
+    <button class="ct ${chartTab==='trajectory'?'on':''}" onclick="setCT('trajectory','${side}')">Cost trajectory</button>
+    <button class="ct ${chartTab==='radar'?'on':''}" onclick="setCT('radar','${side}')">Country profile</button>
+    <button class="ct ${chartTab==='h2traj'?'on':''}" onclick="setCT('h2traj','${side}')">H₂ price paths</button>
+  </div>
+  <div class="chart-wrap" id="cwrap-${side}" style="height:${chartTab==='radar'?'260px':'190px'}"><canvas id="echart-${side}" role="img" aria-label="Economics chart"></canvas></div>
+  `;
+}
+
+// ── STOCK TAB ─────────────────────────────────────────────────────────────────
+function buildStock(code,side){
+  const cd=C[code];
+  const sh=cd.building_shares||{};
+  const sfh=sh.SFH||0, mfh=sh.MFH_HIGH||0, oth=sh.OTHER||0;
+  return `
+  <div class="mets" style="grid-template-columns:repeat(2,1fr)">
+    <div class="met"><div class="met-l">Total heat demand (2015)</div><div class="met-v ok">${cd.heat_demand_twh||'—'}<span style="font-size:13px;color:var(--text3)"> TWh</span></div></div>
+    <div class="met"><div class="met-l">Heating hours/year</div><div class="met-v">${cd.annual_hours}<span style="font-size:13px;color:var(--text3)"> h/yr</span></div></div>
+  </div>
+  <div class="sec">Building type mix</div>
+  ${[[`${abbr('SFH')} — single family`,sfh,'#3b82f6','Detached, semi-detached and terraced houses'],
+     [`${abbr('MFH')} — apartment blocks`,mfh,'#00d4aa','Multi-storey buildings with multiple households'],
+     ['Other / mixed',oth,'#64748b','Non-residential and unclassified buildings']].map(([l,v,c,note])=>`
+  <div class="feas-row">
+    <div class="feas-lbl">${l}</div>
+    <div class="feas-wrap"><div class="feas-track"><div class="feas-fill" style="width:${v}%;background:${c}"></div></div><div class="feas-note">${note}</div></div>
+    <div class="feas-v">${v}%</div>
+  </div>`).join('')}
+  <div class="sec">Technology feasibility by building type</div>
+  <div style="font-size:12px;color:var(--text3);margin-bottom:10px">How suitable is each building type for heat pump and district heat installation? (0–100%)</div>
+  ${[['Heat pump — in single-family homes','90','#3b82f6','High: space for outdoor unit, low heat density'],
+     ['Heat pump — in apartment blocks','50','#1d4ed8','Medium: shared walls, retrofit difficulty'],
+     ['District heat — in single-family homes','30','#10b981','Low: too dispersed for economic connection'],
+     ['District heat — in apartment blocks','80','#059669','High: density makes shared network viable']].map(([l,v,c,note])=>`
+  <div class="feas-row">
+    <div class="feas-lbl" style="width:180px">${l}</div>
+    <div class="feas-wrap"><div class="feas-track"><div class="feas-fill" style="width:${v}%;background:${c}"></div></div><div class="feas-note">${note}</div></div>
+    <div class="feas-v">${v}%</div>
+  </div>`).join('')}
+  <div style="margin-top:10px;padding:10px 13px;border:1px solid rgba(245,158,11,.3);border-radius:var(--radius);font-size:11px;color:var(--amber);font-family:var(--mono)">⚠ Feasibility scores are expert judgment — Abdul's validation required before publication.</div>
+  <div class="sec">Data sources</div>
+  <div style="font-size:12px;color:var(--text2);line-height:1.7">
+    EU27 + Switzerland: Eurostat Census 2021 (NUTS3 level, table CENS_21DWBNO_R3).<br>
+    United Kingdom: ONS Census 2021 TS044 (accommodation type by local authority).<br>
+    Heat demand baseline: Hotmaps regional dataset, space heating + hot water, ~2015.
+  </div>`;
+}
+
+// ── SCENARIOS TAB ─────────────────────────────────────────────────────────────
+function buildScenarios(code,side){
+  const cd=C[code];
+  const avail=D.scenarios_available||['STATED_POLICIES'];
+  const sc={REF:'#3b82f6',NET_ZERO:'#00d4aa',H2_PUSH:'#8b5cf6'};
+  return `
+  <div class="sec">EU heat demand trajectories (Monte Carlo median)</div>
+  <div style="display:flex;gap:10px;margin-bottom:9px;flex-wrap:wrap">
+    ${Object.entries(sc).map(([s,c])=>`<div style="display:flex;align-items:center;gap:5px;font-size:11px;color:${avail.includes(s)?'var(--text2)':'var(--text3)'}"><div style="width:9px;height:9px;border-radius:2px;background:${c};opacity:${avail.includes(s)?1:.3}"></div>${s}${avail.includes(s)?'':' (run model)'}</div>`).join('')}
+  </div>
+  <div class="chart-wrap" id="sc-wrap-${side}" style="height:170px"><canvas id="sc-chart-${side}" role="img" aria-label="Scenario heat demand"></canvas></div>
+  <div class="sec">2050 scenario targets</div>
+  <div class="sc-cards">
+    ${[['STATED_POLICIES','#3b82f6',[['HP share','45%'],['H₂ share','5%'],['District heat','18%'],['Fossil','32%'],['Demand reduction','−35%']]],
+       ['NET_ZERO','#00d4aa',[['HP share','65%'],['H₂ share','5%'],['District heat','20%'],['Fossil','10%'],['Demand reduction','−50%']]],
+       ['H2_PUSH','#8b5cf6',[['HP share','40%'],['H₂ share','25%'],['District heat','20%'],['Fossil','15%'],['Demand reduction','−40%']]]].map(([name,col,stats])=>`
+    <div class="sc-card" style="border-color:${avail.includes(name)?col+'44':'var(--border)'}">
+      <div class="sc-card-n" style="color:${avail.includes(name)?col:'var(--text3)'}">${name}</div>
+      ${stats.map(([l,v])=>`<div class="sc-stat"><span>${l}</span><span style="color:${avail.includes(name)?col:'var(--text3)'}">${v}</span></div>`).join('')}
+      ${!avail.includes(name)?`<div style="font-size:10px;color:var(--text3);margin-top:5px;font-family:var(--mono)">Run NET_ZERO/H2_PUSH to unlock</div>`:''}
+    </div>`).join('')}
+  </div>
+  <div class="sec">Carbon price scenarios (€/tCO₂)</div>
+  <div class="chart-wrap" id="cp-wrap-${side}" style="height:130px"><canvas id="cp-chart-${side}" role="img" aria-label="Carbon price scenarios"></canvas></div>
+  <div style="font-size:11px;color:var(--text3);margin-top:3px">Sources: BNEF ETS2 Outlook (CENTRAL €122/t by 2030); Enerdata POLES; PRIMES EC impact assessment.</div>`;
+}
+
+// ── ASSUMPTIONS TAB ───────────────────────────────────────────────────────────
+function buildAssumptions(code,side){
+  const cd=C[code];
+  const rows=[
+    ['Gas price 2025',`€${cd.energy.gas_price_2025}/MWh`,cd.meta.eu?'✅':'⚠️','Eurostat nrg_pc_202 H1 2025','Gas price'],
+    ['Electricity price 2025',`€${cd.energy.elec_price_2025}/MWh`,cd.meta.eu?'✅':'⚠️','Eurostat nrg_pc_204 H1 2025','Electricity price'],
+    ['Electricity CO₂ 2025',`${getGrid(code,2025)} g/kWh`,'⚠️','EMBER 2024 — NECPs pending','Grid CO₂'],
+    ['Electricity CO₂ 2050',`${getGrid(code,2050)} g/kWh`,'⚠️','EEA Fit-for-55 trajectory','Grid CO₂'],
+    ['HP feasibility (single-family homes)','0.9 — expert judgment','⚠️','Abdul validation required','HP feasibility'],
+    ['DH feasibility (apartment blocks)','0.8 — expert judgment','⚠️','Abdul validation required','DH feasibility'],
+    ['Replacement boiler ban',`${cd.policy.replacement_ban}`,'✅','EHPA Boiler Ban Tracker Nov 2025','Boiler ban'],
+    ['Discount rate (base case)','5% real pre-tax','✅','BPIE 2024 / IEA convention','Discount rate'],
+    ['H₂ price 2030 (central)','€90/MWh','✅','OIES ET08/ET32 — corrected from €180','H₂ price'],
+    ['Annual heating hours',`${cd.annual_hours} h/yr`,'⚠️','Hotmaps heating degree days','Annual hours'],
+    ['Gas network coverage',`${cd.energy.gas_grid_pct}%`,'⚠️','ACER + Eurostat estimates','Gas grid'],
+    ...(code==='CH'?[['H₂ import price 2030','€90/MWh (central)','✅','OIES ET08/ET32','H₂ price']]:[] ),
+  ];
+  return `
+  <div style="font-size:14px;font-weight:600;margin-bottom:4px">Data quality — ${cd.meta.name}</div>
+  <div style="font-size:12px;color:var(--text3);margin-bottom:14px">Click any row to see the full source and validation status. ✅ validated &nbsp;·&nbsp; ⚠️ provisional.</div>
+  <table class="as-t"><tbody>
+    ${rows.map(([key,val,status,src,provKey])=>`
+    <tr class="as-tr" onclick="showProv('${provKey||key}','${val}')">
+      <td class="as-st">${status}</td><td class="as-key">${key}</td>
+      <td class="as-val">${val}</td><td class="as-src">${src}</td>
+    </tr>`).join('')}
+  </tbody></table>
+  <div style="margin-top:14px;padding:11px 13px;background:var(--bg2);border-radius:var(--radius);font-size:11px;color:var(--text3);font-family:var(--mono)">
+    Full register: <span style="color:var(--teal)">literature/assumptions_register.md</span><br>
+    Bibliography: <span style="color:var(--teal)">225 references in paper/References_v1.bib</span>
+  </div>`;
+}
+
+// ── CHART BINDING (runs after HTML is injected) ───────────────────────────────
+function bindCharts(side){
+  const code=side==='A'?selA:selB;
+  if(!code) return;
+  const cd=C[code];
+  const tab=side==='A'?activeTabA:activeTabB;
+  const ct=side==='A'?chartTabA:chartTabB;
+  const yr=side==='A'?yearA:yearB;
+
+  setTimeout(()=>{
+    // H2 journey canvas (policy tab)
+    const hj=document.getElementById(`h2j-${side}`);
+    if(hj&&tab==='policy'){
+      const hpBest=Math.min(getLCOH(code,'hp_air',2030)||999,getLCOH(code,'hp_ground',2030)||999);
+      hj.width=hj.parentElement.clientWidth; hj.height=70;
+      const ctx=hj.getContext('2d');
+      const w=hj.width,h=70,pad=8;
+      const traj=cd.h2_prices?.['CENTRAL']||{};
+      const pts=[[2025,traj[2025]||200],[2030,traj[2030]||140],[2040,traj[2040]||90],[2050,traj[2050]||60]];
+      const maxV=220;
+      // Parity line
+      const py=pad+(1-hpBest/maxV)*(h-pad*2);
+      ctx.setLineDash([4,4]); ctx.strokeStyle='#3b82f6'; ctx.lineWidth=1;
+      ctx.beginPath(); ctx.moveTo(pad,py); ctx.lineTo(w-pad,py); ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle='rgba(59,130,246,.7)'; ctx.font='9px IBM Plex Mono'; ctx.fillText('HP parity €'+Math.round(hpBest),w-pad-75,py-3);
+      // H2 line
+      ctx.beginPath(); ctx.strokeStyle='#8b5cf6'; ctx.lineWidth=2.5;
+      pts.forEach(([,v],i)=>{
+        const x=pad+(i/3)*(w-pad*2), y=pad+(1-v/maxV)*(h-pad*2);
+        i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+      });
+      ctx.stroke();
+      pts.forEach(([,v],i)=>{
+        const x=pad+(i/3)*(w-pad*2), y=pad+(1-v/maxV)*(h-pad*2);
+        ctx.beginPath(); ctx.arc(x,y,3.5,0,Math.PI*2); ctx.fillStyle='#8b5cf6'; ctx.fill();
+        ctx.fillStyle='rgba(220,235,255,.7)'; ctx.font='9px IBM Plex Mono'; ctx.textAlign='center';
+        ctx.fillText('€'+Math.round(v),x,y-6);
+      });
+      [[2025,'2025'],[2030,'2030'],[2040,'2040'],[2050,'2050']].forEach(([,l],i)=>{
+        const x=pad+(i/3)*(w-pad*2);
+        ctx.fillStyle='rgba(78,96,122,.7)'; ctx.font='9px IBM Plex Mono'; ctx.textAlign='center';
+        ctx.fillText(l,x,h-1);
+      });
+    }
+
+    // Economics charts
+    if(tab==='economics'){
+      destroyChart(`echart-${side}`);
+      const ec=document.getElementById(`echart-${side}`);
+      if(!ec) return;
+      const wrap=document.getElementById(`cwrap-${side}`);
+      if(wrap) wrap.style.height=(ct==='radar'?'260px':'190px');
+
+      if(ct==='trajectory'){
+        const datasets=TECHS.filter(t=>cd.lcoh?.[t]).map(t=>({
+          label:TL[t],
+          data:D.all_years.map(y=>({x:y,y:getLCOH(code,t,y)})),
+          borderColor:TC[t],backgroundColor:TC[t]+'18',
+          tension:.3,pointRadius:0,borderWidth:2,
+          pointHoverRadius:4,
+        }));
+        charts[`echart-${side}`]=new Chart(ec,{
+          type:'line',
+          data:{datasets},
+          options:{responsive:true,maintainAspectRatio:false,
+            parsing:{xAxisKey:'x',yAxisKey:'y'},
+            interaction:{mode:'index',intersect:false},
+            plugins:{legend:{display:false},
+              tooltip:{backgroundColor:'#0b1929',borderColor:'#1a3058',borderWidth:1,
+                titleColor:'#dde6f5',bodyColor:'#8899b4',
+                callbacks:{label:ctx=>`${ctx.dataset.label}: €${Math.round(ctx.raw.y)}/MWh`}}},
+            scales:{
+              x:{type:'linear',min:2025,max:2050,grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#4e607a',stepSize:5}},
+              y:{title:{display:true,text:'€/MWh (useful heat)',color:'#4e607a',font:{size:10}},grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#4e607a'}}}}
+        });
+      } else if(ct==='radar'){
+        const normalize=(v,min,max)=>Math.max(0,Math.min(100,100-(v-min)/(max-min)*100));
+        const labels=['Gas cost (low=bad)','HP cost advantage','Clean electricity','Low gas price','Early HP mandate','H₂ infrastructure'];
+        const mkData=c=>[
+          normalize(getLCOH(c,'gas_boiler',2030)||200,100,350),
+          normalize(getLCOH(c,'hp_air',2030)||150,50,250),
+          normalize(getGrid(c,2025)||300,0,700),
+          normalize(C[c].energy.gas_price_2025||100,50,220),
+          normalize(C[c].policy.hp_mandate||2035,2020,2045),
+          normalize(C[c].energy.gas_grid_pct||50,0,100),
+        ];
+        const dsets=[{label:C[code].meta.name,data:mkData(code),borderColor:'#00d4aa',backgroundColor:'rgba(0,212,170,.1)',pointBackgroundColor:'#00d4aa',borderWidth:2}];
+        const other=side==='A'?selB:selA;
+        if(other&&C[other]) dsets.push({label:C[other].meta.name,data:mkData(other),borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,.1)',pointBackgroundColor:'#3b82f6',borderWidth:2});
+        charts[`echart-${side}`]=new Chart(ec,{
+          type:'radar',data:{labels,datasets:dsets},
+          options:{responsive:true,maintainAspectRatio:false,
+            plugins:{legend:{labels:{color:'#8899b4',font:{size:10}}}},
+            scales:{r:{grid:{color:'rgba(255,255,255,.07)'},angleLines:{color:'rgba(255,255,255,.07)'},pointLabels:{color:'#8899b4',font:{size:10}},ticks:{display:false}}}}
+        });
+      } else if(ct==='h2traj'){
+        const colors={RAPID:'#10b981',CENTRAL:'#f59e0b',SLOW:'#ef4444',STRANDED:'#8b5cf6'};
+        const dsets=Object.entries(cd.h2_prices||{}).map(([scen,vals])=>({
+          label:scen,
+          data:D.all_years.map(y=>({x:y,y:vals[y]})),
+          borderColor:colors[scen]||'#888',backgroundColor:(colors[scen]||'#888')+'18',
+          tension:.3,pointRadius:0,borderWidth:2,
+        }));
+        // Add HP best line for reference
+        dsets.push({
+          label:'Best HP (reference)',
+          data:D.all_years.map(y=>({x:y,y:Math.min(getLCOH(code,'hp_air',y)||999,getLCOH(code,'hp_ground',y)||999)})),
+          borderColor:'#3b82f6',borderDash:[5,5],tension:.3,pointRadius:0,borderWidth:1.5,
+        });
+        charts[`echart-${side}`]=new Chart(ec,{
+          type:'line',data:{datasets:dsets},
+          options:{responsive:true,maintainAspectRatio:false,
+            parsing:{xAxisKey:'x',yAxisKey:'y'},
+            interaction:{mode:'index',intersect:false},
+            plugins:{legend:{labels:{color:'#8899b4',font:{size:10}}},
+              tooltip:{backgroundColor:'#0b1929',borderColor:'#1a3058',borderWidth:1,
+                titleColor:'#dde6f5',bodyColor:'#8899b4',
+                callbacks:{label:ctx=>`${ctx.dataset.label}: €${Math.round(ctx.raw.y)}/MWh`}}},
+            scales:{
+              x:{type:'linear',min:2025,max:2050,grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#4e607a',stepSize:5}},
+              y:{title:{display:true,text:'€/MWh',color:'#4e607a',font:{size:10}},grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#4e607a'}}}}
+        });
+      }
+    }
+
+    // Scenarios charts
+    if(tab==='scenarios'){
+      destroyChart(`sc-chart-${side}`);
+      const sc=document.getElementById(`sc-chart-${side}`);
+      if(sc&&D.eu_aggregate&&Object.keys(D.eu_aggregate).length){
+        const avail=D.scenarios_available||[];
+        const scCols={REF:'#3b82f6',NET_ZERO:'#00d4aa',H2_PUSH:'#8b5cf6'};
+        const dsets=avail.map(scen=>{
+          const hd=D.eu_aggregate[scen]?.heat_demand||[];
+          return {label:scen,data:[2025,2030,2040,2050].map(y=>{const r=hd.find(x=>x.year===y);return r?Math.round(r.q50):null;}),
+            borderColor:scCols[scen]||'#888',backgroundColor:(scCols[scen]||'#888')+'22',fill:true,tension:.4,pointRadius:4,borderWidth:2};
+        });
+        charts[`sc-chart-${side}`]=new Chart(sc,{type:'line',
+          data:{labels:['2025','2030','2040','2050'],datasets:dsets},
+          options:{responsive:true,maintainAspectRatio:false,
+            plugins:{legend:{labels:{color:'#8899b4',font:{size:10}}}},
+            scales:{y:{title:{display:true,text:'EU heat demand (TWh)',color:'#4e607a',font:{size:10}},grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#4e607a'}},x:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#4e607a'}}}}
+        });
+      } else if(sc){
+        sc.parentElement.innerHTML='<div style="color:var(--text3);font-size:12px;padding:20px;text-align:center">Run the model to generate scenario data</div>';
+      }
+      destroyChart(`cp-chart-${side}`);
+      const cp=document.getElementById(`cp-chart-${side}`);
+      if(cp&&cd.carbon_prices){
+        const cpCols={LOW:'#10b981',CENTRAL:'#f59e0b',HIGH:'#ef4444'};
+        charts[`cp-chart-${side}`]=new Chart(cp,{type:'line',
+          data:{labels:D.snapshot_years.map(String),
+            datasets:['LOW','CENTRAL','HIGH'].map(s=>({label:s,
+              data:D.snapshot_years.map(y=>cd.carbon_prices[s]?.[y]||null),
+              borderColor:cpCols[s],backgroundColor:cpCols[s]+'22',tension:.4,pointRadius:3,borderWidth:2}))},
+          options:{responsive:true,maintainAspectRatio:false,
+            plugins:{legend:{labels:{color:'#8899b4',font:{size:10}}}},
+            scales:{y:{title:{display:true,text:'€/tCO₂',color:'#4e607a',font:{size:10}},grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#4e607a'}},x:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#4e607a'}}}}
+        });
+      }
+    }
+  },60);
+}
+
+// ── EVENT HANDLERS ────────────────────────────────────────────────────────────
+function changeYear(val,side){
+  const prev=side==='A'?yearA:yearB;
+  if(side==='A') yearA=+val; else yearB=+val;
+  document.getElementById(`yr-disp-${side}`).textContent=val;
+  // Update KPIs with animation
+  const code=side==='A'?selA:selB;
+  if(code){
+    const gEl=document.getElementById(`kpi-gas-${side}`);
+    const tEl=document.getElementById(`kpi-tech-${side}`);
+    const gridEl=document.getElementById(`kpi-grid-${side}`);
+    const yr=+val;
+    const newGas=Math.round(getLCOH(code,'gas_boiler',yr)||0);
+    const prevGas=Math.round(getLCOH(code,'gas_boiler',prev)||0);
+    if(gEl) animNum(gEl,prevGas,newGas,'€','/MWh');
+    if(tEl){const ch=cheapest(code,yr);tEl.textContent=TL[ch.tech]?.split(' ')[0]||'—';}
+    if(gridEl){const v=getGrid(code,yr);gridEl.textContent=v+'g';gridEl.style.color=v>300?'var(--red)':v>150?'var(--amber)':'var(--teal)';}
+    // Re-render bars only (not full tab)
+    const panel=document.getElementById(`panel-${side}`);
+    if(panel){
+      const barsEl=panel.querySelector('.bars');
+      if(barsEl) barsEl.innerHTML=buildBarRows(code,yr,side==='A'?vmA:vmB,side==='A'?selTechA:selTechB,side);
+      const h2b=panel.querySelector('.h2b-num');
+      const h2sub=panel.querySelector('.h2b-sub');
+      if(h2b){
+        const hpBest=Math.min(getLCOH(code,'hp_air',yr)||999,getLCOH(code,'hp_ground',yr)||999);
+        const h2v=getLCOH(code,'h2_boiler',yr)||200;
+        const h2d=Math.round(((h2v-hpBest)/h2v)*100);
+        h2b.textContent=h2d+'% drop needed';
+        if(h2sub) h2sub.innerHTML=`Hydrogen boiler: <strong style="color:#a78bfa;font-family:var(--mono)">€${Math.round(h2v)}/MWh</strong> &nbsp;·&nbsp; Best HP: <strong style="color:var(--blue);font-family:var(--mono)">€${Math.round(hpBest)}/MWh</strong> &nbsp;·&nbsp; Gap: <strong style="font-family:var(--mono)">€${Math.round(h2v-hpBest)}/MWh</strong>`;
+      }
+    }
+  }
+}
+
+function buildBarRows(code,year,vm,selTech,side){
+  const cd=C[code]; if(!cd) return '';
+  const techs=(vm==='detailed'?TECHS:['hp_air','gas_boiler','h2_boiler','district_heat','biomass_boiler']).filter(t=>cd.lcoh?.[t]);
+  const ch=cheapest(code,year); const maxV=360;
+  return techs.sort((a,b)=>(getLCOH(code,a,year)||999)-(getLCOH(code,b,year)||999)).map(tech=>{
+    const val=getLCOH(code,tech,year); if(!val) return '';
+    const pct=Math.round(val/maxV*100);
+    const isBest=tech===ch.tech,isSel=tech===selTech;
+    return `<div class="br ${isSel?'sel':''}" onclick="clickTech('${tech}','${side}')">
+      <div class="br-lbl">${TL[tech]||tech}${isBest?`<span class="badge-best">best</span>`:''}</div>
+      <div class="br-tracks"><div class="br-track"><div class="br-fill" style="width:${pct}%;background:${TC[tech]||'#888'}">${val>70?'€'+Math.round(val):''}</div></div></div>
+      <div class="br-val">€${Math.round(val)}</div>
+    </div>`;
+  }).join('');
+}
+
+function togglePlay(side){
+  const key=side==='A'?'playTimerA':'playTimerB';
+  const btn=document.getElementById(`play-${side}`);
+  if(side==='A'?playTimerA:playTimerB){
+    clearInterval(side==='A'?playTimerA:playTimerB);
+    if(side==='A') playTimerA=null; else playTimerB=null;
+    if(btn){btn.textContent='▶ Play';btn.classList.remove('on');}
+  } else {
+    if(btn){btn.textContent='⏸ Pause';btn.classList.add('on');}
+    const timer=setInterval(()=>{
+      const yr=side==='A'?yearA:yearB;
+      const next=yr>=2050?2025:yr+1;
+      if(side==='A') yearA=next; else yearB=next;
+      const sl=document.getElementById(`yr-${side}`),yd=document.getElementById(`yr-disp-${side}`);
+      if(!sl){clearInterval(timer);return;}
+      sl.value=next; changeYear(next,side);
+    },70);
+    if(side==='A') playTimerA=timer; else playTimerB=timer;
+  }
+}
+
+function setVM(vm,side){if(side==='A'){vmA=vm;renderA();}else{vmB=vm;renderB();}}
+function setCT(ct,side){if(side==='A'){chartTabA=ct;renderA();}else{chartTabB=ct;renderB();}bindCharts(side);}
+
+function clickTech(tech,side){
+  if(side==='A'){selTechA=selTechA===tech?null:tech;renderA();}
+  else{selTechB=selTechB===tech?null:tech;renderB();}
+}
+
+function toggleShock(side){
+  if(side==='A'){shockA=!shockA;renderA();}else{shockB=!shockB;renderB();}
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+setTimeout(initMap,100);
+loadState();
+</script>
+</body>
+</html>

@@ -1,0 +1,550 @@
+country,year,metric,value,unit,source_dataset
+AT,2015,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+AT,2016,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+AT,2017,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+AT,2018,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+AT,2019,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+AT,2020,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+AT,2021,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+AT,2022,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+AT,2023,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+AT,2015,dwellings_total,4560000,units,Statistik Austria interp
+AT,2016,dwellings_total,4610000,units,Statistik Austria interp
+AT,2017,dwellings_total,4660000,units,Statistik Austria interp
+AT,2018,dwellings_total,4710000,units,Statistik Austria interp
+AT,2019,dwellings_total,4770000,units,Statistik Austria interp
+AT,2020,dwellings_total,4830000,units,Statistik Austria interp
+AT,2021,dwellings_total,4910000,units,Statistik Austria GWZ 2021
+AT,2022,dwellings_total,4960000,units,Statistik Austria Wohnen
+AT,2023,dwellings_total,5020000,units,Statistik Austria Wohnen
+AT,2012,avg_dwelling_size_m2,99.7,m2,Eurostat ilc_hcmh02
+BE,2015,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+BE,2016,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+BE,2017,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+BE,2018,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+BE,2019,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+BE,2020,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+BE,2021,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+BE,2022,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+BE,2023,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+BE,2015,dwellings_total,5380000,units,Statbel cadastral interp
+BE,2016,dwellings_total,5420000,units,Statbel cadastral interp
+BE,2017,dwellings_total,5460000,units,Statbel cadastral interp
+BE,2018,dwellings_total,5500000,units,Statbel cadastral interp
+BE,2019,dwellings_total,5540000,units,Statbel cadastral interp
+BE,2020,dwellings_total,5577016,units,Statbel 1 Jan 2020
+BE,2021,dwellings_total,5620000,units,Statbel cadastral interp
+BE,2022,dwellings_total,5660000,units,Statbel cadastral interp
+BE,2023,dwellings_total,5700000,units,Statbel cadastral extrap
+BE,2012,avg_dwelling_size_m2,124.3,m2,Eurostat ilc_hcmh02
+BG,2015,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+BG,2016,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+BG,2017,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+BG,2018,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+BG,2019,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+BG,2020,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+BG,2021,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+BG,2022,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+BG,2023,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+BG,2015,dwellings_total,3920000,units,NSI BG interp
+BG,2016,dwellings_total,3930000,units,NSI BG interp
+BG,2017,dwellings_total,3940000,units,NSI BG interp
+BG,2018,dwellings_total,3950000,units,NSI BG interp
+BG,2019,dwellings_total,3960000,units,NSI BG interp
+BG,2020,dwellings_total,3970000,units,NSI BG interp
+BG,2021,dwellings_total,3981000,units,NSI BG 2021 census
+BG,2022,dwellings_total,4000000,units,NSI BG extrap
+BG,2023,dwellings_total,4020000,units,NSI BG extrap
+BG,2012,avg_dwelling_size_m2,73.0,m2,Eurostat ilc_hcmh02
+CY,2015,avg_household_size,2.7,persons,Eurostat ilc_lvph01
+CY,2016,avg_household_size,2.7,persons,Eurostat ilc_lvph01
+CY,2017,avg_household_size,2.7,persons,Eurostat ilc_lvph01
+CY,2018,avg_household_size,2.7,persons,Eurostat ilc_lvph01
+CY,2019,avg_household_size,2.6,persons,Eurostat ilc_lvph01
+CY,2020,avg_household_size,2.6,persons,Eurostat ilc_lvph01
+CY,2021,avg_household_size,2.6,persons,Eurostat ilc_lvph01
+CY,2022,avg_household_size,2.6,persons,Eurostat ilc_lvph01
+CY,2023,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+CY,2015,dwellings_total,450000,units,CYSTAT interp
+CY,2016,dwellings_total,455000,units,CYSTAT interp
+CY,2017,dwellings_total,460000,units,CYSTAT interp
+CY,2018,dwellings_total,466000,units,CYSTAT interp
+CY,2019,dwellings_total,472000,units,CYSTAT interp
+CY,2020,dwellings_total,478000,units,CYSTAT interp
+CY,2021,dwellings_total,484500,units,CYSTAT 2021 census
+CY,2022,dwellings_total,490000,units,CYSTAT extrap
+CY,2023,dwellings_total,496000,units,CYSTAT extrap
+CY,2012,avg_dwelling_size_m2,141.4,m2,Eurostat ilc_hcmh02
+CZ,2015,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+CZ,2016,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+CZ,2017,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+CZ,2018,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+CZ,2019,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+CZ,2020,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+CZ,2021,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+CZ,2022,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+CZ,2023,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+CZ,2015,dwellings_total,4830000,units,CZSO interp
+CZ,2016,dwellings_total,4860000,units,CZSO interp
+CZ,2017,dwellings_total,4890000,units,CZSO interp
+CZ,2018,dwellings_total,4920000,units,CZSO interp
+CZ,2019,dwellings_total,4950000,units,CZSO interp
+CZ,2020,dwellings_total,4980000,units,CZSO interp
+CZ,2021,dwellings_total,5034000,units,CZSO 2021 census
+CZ,2022,dwellings_total,5070000,units,CZSO extrap
+CZ,2023,dwellings_total,5110000,units,CZSO extrap
+CZ,2021,avg_dwelling_size_m2,76.4,m2,CZSO Census 2021 modal band
+DE,2015,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+DE,2016,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+DE,2017,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+DE,2018,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+DE,2019,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+DE,2020,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+DE,2021,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+DE,2022,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+DE,2023,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+DE,2015,dwellings_total,41400000,units,Destatis 2016
+DE,2016,dwellings_total,41700000,units,Destatis interp
+DE,2017,dwellings_total,41968100,units,Destatis dwelling stock
+DE,2018,dwellings_total,42235400,units,Destatis dwelling stock
+DE,2019,dwellings_total,42512800,units,Destatis dwelling stock
+DE,2020,dwellings_total,42803700,units,Destatis dwelling stock
+DE,2021,dwellings_total,43084100,units,Destatis dwelling stock
+DE,2022,dwellings_total,43241000,units,Destatis dwelling stock
+DE,2023,dwellings_total,43517200,units,Destatis dwelling stock
+DE,2023,avg_dwelling_size_m2,94.0,m2,Destatis 4088.9Mm2/43.5Mdw
+DK,2015,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+DK,2016,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+DK,2017,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+DK,2018,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+DK,2019,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+DK,2020,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+DK,2021,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+DK,2022,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+DK,2023,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+DK,2015,dwellings_total,2720000,units,Statistics Denmark BOL101
+DK,2016,dwellings_total,2740000,units,Statistics Denmark BOL101
+DK,2017,dwellings_total,2760000,units,Statistics Denmark BOL101
+DK,2018,dwellings_total,2780000,units,Statistics Denmark BOL101
+DK,2019,dwellings_total,2800000,units,Statistics Denmark BOL101
+DK,2020,dwellings_total,2820000,units,Statistics Denmark BOL101
+DK,2023,dwellings_total,2880000,units,Statistics Denmark BOL101
+DK,2012,avg_dwelling_size_m2,118.1,m2,Eurostat ilc_hcmh02
+EE,2015,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+EE,2016,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+EE,2017,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+EE,2018,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+EE,2019,avg_household_size,2.1,persons,Eurostat ilc_lvph01
+EE,2020,avg_household_size,2.1,persons,Eurostat ilc_lvph01
+EE,2021,avg_household_size,2.1,persons,Eurostat ilc_lvph01
+EE,2022,avg_household_size,2.1,persons,Eurostat ilc_lvph01
+EE,2023,avg_household_size,2.1,persons,Eurostat ilc_lvph01
+EE,2015,dwellings_total,680000,units,Statistics Estonia interp
+EE,2016,dwellings_total,690000,units,Statistics Estonia interp
+EE,2017,dwellings_total,700000,units,Statistics Estonia interp
+EE,2018,dwellings_total,710000,units,Statistics Estonia interp
+EE,2019,dwellings_total,720000,units,Statistics Estonia interp
+EE,2020,dwellings_total,730000,units,Statistics Estonia interp
+EE,2021,dwellings_total,743000,units,Statistics Estonia 2021 census
+EE,2022,dwellings_total,750000,units,Statistics Estonia extrap
+EE,2023,dwellings_total,758000,units,Statistics Estonia extrap
+EE,2012,avg_dwelling_size_m2,66.7,m2,Eurostat ilc_hcmh02
+EL,2015,avg_household_size,2.6,persons,Eurostat ilc_lvph01
+EL,2016,avg_household_size,2.6,persons,Eurostat ilc_lvph01
+EL,2017,avg_household_size,2.6,persons,Eurostat ilc_lvph01
+EL,2018,avg_household_size,2.6,persons,Eurostat ilc_lvph01
+EL,2019,avg_household_size,2.6,persons,Eurostat ilc_lvph01
+EL,2020,avg_household_size,2.6,persons,Eurostat ilc_lvph01
+EL,2021,avg_household_size,2.6,persons,Eurostat ilc_lvph01
+EL,2022,avg_household_size,2.6,persons,Eurostat ilc_lvph01
+EL,2023,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+EL,2015,dwellings_total,6400000,units,ELSTAT interp
+EL,2016,dwellings_total,6410000,units,ELSTAT interp
+EL,2017,dwellings_total,6420000,units,ELSTAT interp
+EL,2018,dwellings_total,6430000,units,ELSTAT interp
+EL,2019,dwellings_total,6440000,units,ELSTAT interp
+EL,2020,dwellings_total,6450000,units,ELSTAT interp
+EL,2021,dwellings_total,6468000,units,ELSTAT 2021 census
+EL,2022,dwellings_total,6490000,units,ELSTAT extrap
+EL,2023,dwellings_total,6510000,units,ELSTAT extrap
+EL,2012,avg_dwelling_size_m2,88.6,m2,Eurostat ilc_hcmh02
+ES,2015,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+ES,2016,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+ES,2017,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+ES,2018,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+ES,2019,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+ES,2020,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+ES,2021,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+ES,2022,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+ES,2023,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+ES,2015,dwellings_total,26000000,units,INE interp
+ES,2016,dwellings_total,26100000,units,INE interp
+ES,2017,dwellings_total,26200000,units,INE interp
+ES,2018,dwellings_total,26300000,units,INE interp
+ES,2019,dwellings_total,26400000,units,INE interp
+ES,2020,dwellings_total,26500000,units,INE interp
+ES,2021,dwellings_total,26623708,units,INE 2021 census
+ES,2022,dwellings_total,26720000,units,INE extrap
+ES,2023,dwellings_total,26820000,units,INE extrap
+ES,2012,avg_dwelling_size_m2,99.1,m2,Eurostat ilc_hcmh02
+FI,2015,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+FI,2016,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+FI,2017,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+FI,2018,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+FI,2019,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+FI,2020,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+FI,2021,avg_household_size,1.9,persons,Eurostat ilc_lvph01
+FI,2022,avg_household_size,1.9,persons,Eurostat ilc_lvph01
+FI,2023,avg_household_size,1.9,persons,Eurostat ilc_lvph01
+FI,2015,dwellings_total,2920000,units,Statistics Finland asuntokanta
+FI,2016,dwellings_total,2950000,units,Statistics Finland asuntokanta
+FI,2017,dwellings_total,2985000,units,Statistics Finland asuntokanta
+FI,2018,dwellings_total,3020000,units,Statistics Finland asuntokanta
+FI,2019,dwellings_total,3055000,units,Statistics Finland asuntokanta
+FI,2020,dwellings_total,3090000,units,Statistics Finland asuntokanta 2020
+FI,2021,dwellings_total,3120000,units,Statistics Finland asuntokanta
+FI,2022,dwellings_total,3150000,units,Statistics Finland asuntokanta
+FI,2023,dwellings_total,3180000,units,Statistics Finland asuntokanta
+FI,2012,avg_dwelling_size_m2,88.6,m2,Eurostat ilc_hcmh02
+FR,2015,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+FR,2016,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+FR,2017,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+FR,2018,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+FR,2019,avg_household_size,2.1,persons,Eurostat ilc_lvph01
+FR,2020,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+FR,2021,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+FR,2022,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+FR,2023,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+FR,2015,dwellings_total,34800000,units,INSEE EAPL interp
+FR,2016,dwellings_total,35200000,units,INSEE EAPL interp
+FR,2017,dwellings_total,35600000,units,INSEE EAPL interp
+FR,2018,dwellings_total,36000000,units,INSEE EAPL interp
+FR,2019,dwellings_total,36400000,units,INSEE EAPL interp
+FR,2020,dwellings_total,36800000,units,INSEE EAPL interp
+FR,2021,dwellings_total,37200000,units,INSEE EAPL
+FR,2022,dwellings_total,37600000,units,INSEE Focus 279
+FR,2023,dwellings_total,37800000,units,INSEE Focus 309
+FR,2012,avg_dwelling_size_m2,93.7,m2,Eurostat ilc_hcmh02
+HR,2015,avg_household_size,2.8,persons,Eurostat ilc_lvph01
+HR,2016,avg_household_size,2.8,persons,Eurostat ilc_lvph01
+HR,2017,avg_household_size,2.8,persons,Eurostat ilc_lvph01
+HR,2018,avg_household_size,2.8,persons,Eurostat ilc_lvph01
+HR,2019,avg_household_size,2.7,persons,Eurostat ilc_lvph01
+HR,2020,avg_household_size,2.7,persons,Eurostat ilc_lvph01
+HR,2021,avg_household_size,2.7,persons,Eurostat ilc_lvph01
+HR,2022,avg_household_size,2.7,persons,Eurostat ilc_lvph01
+HR,2023,avg_household_size,2.7,persons,Eurostat ilc_lvph01
+HR,2015,dwellings_total,2290000,units,DZS interp
+HR,2016,dwellings_total,2300000,units,DZS interp
+HR,2017,dwellings_total,2310000,units,DZS interp
+HR,2018,dwellings_total,2320000,units,DZS interp
+HR,2019,dwellings_total,2330000,units,DZS interp
+HR,2020,dwellings_total,2340000,units,DZS interp
+HR,2021,dwellings_total,2360000,units,DZS 2021 census
+HR,2022,dwellings_total,2370000,units,DZS extrap
+HR,2023,dwellings_total,2380000,units,DZS extrap
+HR,2012,avg_dwelling_size_m2,81.6,m2,Eurostat ilc_hcmh02
+HU,2015,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+HU,2016,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+HU,2017,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+HU,2018,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+HU,2019,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+HU,2020,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+HU,2021,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+HU,2022,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+HU,2023,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+HU,2015,dwellings_total,4440000,units,KSH interp
+HU,2016,dwellings_total,4460000,units,KSH interp
+HU,2017,dwellings_total,4480000,units,KSH interp
+HU,2018,dwellings_total,4500000,units,KSH interp
+HU,2019,dwellings_total,4520000,units,KSH interp
+HU,2020,dwellings_total,4550000,units,KSH interp
+HU,2021,dwellings_total,4580000,units,KSH interp
+HU,2022,dwellings_total,4600000,units,KSH 2022 census
+HU,2023,dwellings_total,4620000,units,KSH extrap
+HU,2012,avg_dwelling_size_m2,75.6,m2,Eurostat ilc_hcmh02
+IE,2015,avg_household_size,2.7,persons,Eurostat ilc_lvph01
+IE,2016,avg_household_size,2.7,persons,Eurostat ilc_lvph01
+IE,2017,avg_household_size,2.7,persons,Eurostat ilc_lvph01
+IE,2018,avg_household_size,2.6,persons,Eurostat ilc_lvph01
+IE,2019,avg_household_size,2.8,persons,Eurostat ilc_lvph01
+IE,2020,avg_household_size,2.7,persons,Eurostat ilc_lvph01
+IE,2021,avg_household_size,2.7,persons,Eurostat ilc_lvph01
+IE,2022,avg_household_size,2.7,persons,Eurostat ilc_lvph01
+IE,2023,avg_household_size,2.7,persons,Eurostat ilc_lvph01
+IE,2015,dwellings_total,1990000,units,CSO interp
+IE,2016,dwellings_total,2003000,units,CSO Census 2016
+IE,2017,dwellings_total,2020000,units,CSO interp
+IE,2018,dwellings_total,2040000,units,CSO interp
+IE,2019,dwellings_total,2060000,units,CSO interp
+IE,2020,dwellings_total,2080000,units,CSO interp
+IE,2021,dwellings_total,2100000,units,CSO interp
+IE,2022,dwellings_total,2124590,units,CSO Census 2022
+IE,2023,dwellings_total,2160000,units,CSO extrap
+IE,2012,avg_dwelling_size_m2,96.0,m2,OECD HM1.1
+IT,2015,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+IT,2016,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+IT,2017,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+IT,2018,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+IT,2019,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+IT,2020,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+IT,2021,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+IT,2022,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+IT,2023,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+IT,2015,dwellings_total,34250000,units,ISTAT interp
+IT,2016,dwellings_total,34400000,units,ISTAT interp
+IT,2017,dwellings_total,34550000,units,ISTAT interp
+IT,2018,dwellings_total,34720000,units,ISTAT permanent census
+IT,2019,dwellings_total,34870000,units,ISTAT permanent census
+IT,2020,dwellings_total,35050000,units,ISTAT permanent census
+IT,2021,dwellings_total,35271829,units,ISTAT Censimento permanente 2021
+IT,2022,dwellings_total,35450000,units,ISTAT extrap
+IT,2023,dwellings_total,35620000,units,ISTAT extrap
+IT,2012,avg_dwelling_size_m2,93.6,m2,Eurostat ilc_hcmh02
+LT,2015,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+LT,2016,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+LT,2017,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+LT,2018,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+LT,2019,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+LT,2020,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+LT,2021,avg_household_size,2.1,persons,Eurostat ilc_lvph01
+LT,2022,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+LT,2023,avg_household_size,1.9,persons,Eurostat ilc_lvph01
+LT,2015,dwellings_total,1420000,units,Statistics Lithuania interp
+LT,2016,dwellings_total,1430000,units,Statistics Lithuania interp
+LT,2017,dwellings_total,1440000,units,Statistics Lithuania interp
+LT,2018,dwellings_total,1450000,units,Statistics Lithuania interp
+LT,2019,dwellings_total,1460000,units,Statistics Lithuania interp
+LT,2020,dwellings_total,1470000,units,Statistics Lithuania interp
+LT,2021,dwellings_total,1486000,units,Statistics Lithuania 2021 census
+LT,2022,dwellings_total,1500000,units,Statistics Lithuania extrap
+LT,2023,dwellings_total,1515000,units,Statistics Lithuania extrap
+LT,2012,avg_dwelling_size_m2,63.2,m2,Eurostat ilc_hcmh02
+LU,2015,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+LU,2016,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+LU,2017,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+LU,2018,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+LU,2019,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+LU,2020,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+LU,2021,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+LU,2022,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+LU,2023,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+LU,2015,dwellings_total,225000,units,STATEC interp
+LU,2016,dwellings_total,230000,units,STATEC interp
+LU,2017,dwellings_total,235000,units,STATEC interp
+LU,2018,dwellings_total,240000,units,STATEC interp
+LU,2019,dwellings_total,245000,units,STATEC interp
+LU,2020,dwellings_total,250000,units,STATEC interp
+LU,2021,dwellings_total,255500,units,STATEC 2021 census
+LU,2022,dwellings_total,261000,units,STATEC extrap
+LU,2023,dwellings_total,266000,units,STATEC extrap
+LU,2012,avg_dwelling_size_m2,131.1,m2,Eurostat ilc_hcmh02
+LV,2015,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+LV,2016,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+LV,2017,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+LV,2018,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+LV,2019,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+LV,2020,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+LV,2021,avg_household_size,2.3,persons,Eurostat ilc_lvph01
+LV,2022,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+LV,2023,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+LV,2015,dwellings_total,1020000,units,CSB Latvia interp
+LV,2016,dwellings_total,1025000,units,CSB Latvia interp
+LV,2017,dwellings_total,1030000,units,CSB Latvia interp
+LV,2018,dwellings_total,1035000,units,CSB Latvia interp
+LV,2019,dwellings_total,1040000,units,CSB Latvia interp
+LV,2020,dwellings_total,1045000,units,CSB Latvia interp
+LV,2021,dwellings_total,1050000,units,CSB Latvia 2021 census
+LV,2022,dwellings_total,1055000,units,CSB Latvia extrap
+LV,2023,dwellings_total,1060000,units,CSB Latvia extrap
+LV,2012,avg_dwelling_size_m2,62.5,m2,Eurostat ilc_hcmh02
+MT,2015,avg_household_size,2.6,persons,Eurostat ilc_lvph01
+MT,2016,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+MT,2017,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+MT,2018,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+MT,2019,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+MT,2020,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+MT,2021,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+MT,2022,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+MT,2023,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+MT,2015,dwellings_total,230000,units,NSO Malta interp
+MT,2016,dwellings_total,235000,units,NSO Malta interp
+MT,2017,dwellings_total,240000,units,NSO Malta interp
+MT,2018,dwellings_total,246000,units,NSO Malta interp
+MT,2019,dwellings_total,252000,units,NSO Malta interp
+MT,2020,dwellings_total,258000,units,NSO Malta interp
+MT,2021,dwellings_total,264400,units,NSO Malta 2021 census
+MT,2022,dwellings_total,270000,units,NSO Malta extrap
+MT,2023,dwellings_total,276000,units,NSO Malta extrap
+MT,2012,avg_dwelling_size_m2,110.0,m2,NSO Malta census 2011
+NL,2015,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+NL,2016,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+NL,2017,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+NL,2018,avg_household_size,2.2,persons,Eurostat ilc_lvph01
+NL,2019,avg_household_size,2.1,persons,Eurostat ilc_lvph01
+NL,2020,avg_household_size,2.1,persons,Eurostat ilc_lvph01
+NL,2021,avg_household_size,2.1,persons,Eurostat ilc_lvph01
+NL,2022,avg_household_size,2.1,persons,Eurostat ilc_lvph01
+NL,2023,avg_household_size,2.1,persons,Eurostat ilc_lvph01
+NL,2015,dwellings_total,7580000,units,CBS 81955ENG
+NL,2016,dwellings_total,7640000,units,CBS 81955ENG
+NL,2017,dwellings_total,7700000,units,CBS 81955ENG
+NL,2018,dwellings_total,7770000,units,CBS 81955ENG
+NL,2019,dwellings_total,7830000,units,CBS 81955ENG
+NL,2020,dwellings_total,7900000,units,CBS 81955ENG
+NL,2021,dwellings_total,7970000,units,CBS 81955ENG
+NL,2022,dwellings_total,8050000,units,CBS 81955ENG
+NL,2023,dwellings_total,8140000,units,CBS 81955ENG
+NL,2012,avg_dwelling_size_m2,106.7,m2,Eurostat ilc_hcmh02
+PL,2015,avg_household_size,2.8,persons,Eurostat ilc_lvph01
+PL,2016,avg_household_size,2.8,persons,Eurostat ilc_lvph01
+PL,2017,avg_household_size,2.8,persons,Eurostat ilc_lvph01
+PL,2018,avg_household_size,2.8,persons,Eurostat ilc_lvph01
+PL,2019,avg_household_size,2.8,persons,Eurostat ilc_lvph01
+PL,2020,avg_household_size,2.8,persons,Eurostat ilc_lvph01
+PL,2021,avg_household_size,2.8,persons,Eurostat ilc_lvph01
+PL,2022,avg_household_size,2.9,persons,Eurostat ilc_lvph01
+PL,2023,avg_household_size,2.9,persons,Eurostat ilc_lvph01
+PL,2015,dwellings_total,14100000,units,GUS interp
+PL,2016,dwellings_total,14270000,units,GUS interp
+PL,2017,dwellings_total,14440000,units,GUS interp
+PL,2018,dwellings_total,14620000,units,GUS interp
+PL,2019,dwellings_total,14800000,units,GUS interp
+PL,2020,dwellings_total,14990000,units,GUS interp
+PL,2021,dwellings_total,15200000,units,GUS NSP 2021
+PL,2022,dwellings_total,15450000,units,GUS interp
+PL,2023,dwellings_total,15700000,units,GUS dwelling stock end 2023
+PL,2023,avg_dwelling_size_m2,75.8,m2,GUS 1190.7Mm2/15.7Mdw
+PT,2015,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+PT,2016,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+PT,2017,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+PT,2018,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+PT,2019,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+PT,2020,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+PT,2021,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+PT,2022,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+PT,2023,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+PT,2015,dwellings_total,5900000,units,INE interp
+PT,2016,dwellings_total,5910000,units,INE interp
+PT,2017,dwellings_total,5920000,units,INE interp
+PT,2018,dwellings_total,5925000,units,INE interp
+PT,2019,dwellings_total,5935000,units,INE interp
+PT,2020,dwellings_total,5950000,units,INE interp
+PT,2021,dwellings_total,5977000,units,INE Censo 2021
+PT,2022,dwellings_total,6000000,units,INE extrap
+PT,2023,dwellings_total,6020000,units,INE extrap
+PT,2012,avg_dwelling_size_m2,106.4,m2,Eurostat ilc_hcmh02
+RO,2015,avg_household_size,2.7,persons,Eurostat ilc_lvph01
+RO,2016,avg_household_size,2.7,persons,Eurostat ilc_lvph01
+RO,2017,avg_household_size,2.6,persons,Eurostat ilc_lvph01
+RO,2018,avg_household_size,2.6,persons,Eurostat ilc_lvph01
+RO,2019,avg_household_size,2.6,persons,Eurostat ilc_lvph01
+RO,2020,avg_household_size,2.6,persons,Eurostat ilc_lvph01
+RO,2021,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+RO,2022,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+RO,2023,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+RO,2015,dwellings_total,8750000,units,INS Romania interp
+RO,2016,dwellings_total,8830000,units,INS Romania interp
+RO,2017,dwellings_total,8910000,units,INS Romania interp
+RO,2018,dwellings_total,8990000,units,INS Romania interp
+RO,2019,dwellings_total,9070000,units,INS Romania interp
+RO,2020,dwellings_total,9150000,units,INS Romania interp
+RO,2021,dwellings_total,9287000,units,INS Romania 2021 census
+RO,2022,dwellings_total,9380000,units,INS Romania extrap
+RO,2023,dwellings_total,9470000,units,INS Romania extrap
+RO,2012,avg_dwelling_size_m2,43.9,m2,Eurostat ilc_hcmh02
+SE,2015,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+SE,2016,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+SE,2017,avg_household_size,2.1,persons,Eurostat ilc_lvph01
+SE,2018,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+SE,2019,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+SE,2020,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+SE,2021,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+SE,2022,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+SE,2023,avg_household_size,2.0,persons,Eurostat ilc_lvph01
+SE,2015,dwellings_total,4750000,units,SCB BO0104
+SE,2016,dwellings_total,4820000,units,SCB BO0104
+SE,2017,dwellings_total,4880000,units,SCB BO0104
+SE,2018,dwellings_total,4940000,units,SCB BO0104
+SE,2019,dwellings_total,5000000,units,SCB BO0104
+SE,2020,dwellings_total,5060000,units,SCB BO0104
+SE,2021,dwellings_total,5110000,units,SCB BO0104
+SE,2022,dwellings_total,5160000,units,SCB BO0104
+SE,2023,dwellings_total,5212028,units,SCB Bostadsbestaendet 31 Dec 2023
+SE,2012,avg_dwelling_size_m2,99.7,m2,Eurostat ilc_hcmh02
+SI,2015,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+SI,2016,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+SI,2017,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+SI,2018,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+SI,2019,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+SI,2020,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+SI,2021,avg_household_size,2.5,persons,Eurostat ilc_lvph01
+SI,2022,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+SI,2023,avg_household_size,2.4,persons,Eurostat ilc_lvph01
+SI,2015,dwellings_total,855000,units,SURS interp
+SI,2016,dwellings_total,858000,units,SURS interp
+SI,2017,dwellings_total,861000,units,SURS interp
+SI,2018,dwellings_total,864000,units,SURS interp
+SI,2019,dwellings_total,867000,units,SURS interp
+SI,2020,dwellings_total,870000,units,SURS interp
+SI,2021,dwellings_total,874000,units,SURS 2021 census
+SI,2022,dwellings_total,877000,units,SURS extrap
+SI,2023,dwellings_total,880000,units,SURS extrap
+SI,2012,avg_dwelling_size_m2,80.3,m2,Eurostat ilc_hcmh02
+SK,2015,avg_household_size,2.8,persons,Eurostat ilc_lvph01
+SK,2016,avg_household_size,2.8,persons,Eurostat ilc_lvph01
+SK,2017,avg_household_size,2.8,persons,Eurostat ilc_lvph01
+SK,2018,avg_household_size,2.9,persons,Eurostat ilc_lvph01
+SK,2019,avg_household_size,2.9,persons,Eurostat ilc_lvph01
+SK,2020,avg_household_size,2.9,persons,Eurostat ilc_lvph01
+SK,2021,avg_household_size,2.9,persons,Eurostat ilc_lvph01
+SK,2022,avg_household_size,3.1,persons,Eurostat ilc_lvph01
+SK,2023,avg_household_size,3.1,persons,Eurostat ilc_lvph01
+SK,2015,dwellings_total,2050000,units,SO SR interp
+SK,2016,dwellings_total,2065000,units,SO SR interp
+SK,2017,dwellings_total,2080000,units,SO SR interp
+SK,2018,dwellings_total,2095000,units,SO SR interp
+SK,2019,dwellings_total,2110000,units,SO SR interp
+SK,2020,dwellings_total,2125000,units,SO SR interp
+SK,2021,dwellings_total,2140000,units,SO SR 2021 census
+SK,2022,dwellings_total,2160000,units,SO SR extrap
+SK,2023,dwellings_total,2180000,units,SO SR extrap
+SK,2012,avg_dwelling_size_m2,87.4,m2,Eurostat ilc_hcmh02
+CH,2015,avg_household_size,2.17,persons,BFS Privathaushalte
+CH,2016,avg_household_size,2.20,persons,BFS Privathaushalte
+CH,2017,avg_household_size,2.21,persons,BFS Privathaushalte
+CH,2018,avg_household_size,2.22,persons,BFS Privathaushalte
+CH,2019,avg_household_size,2.22,persons,BFS Privathaushalte
+CH,2020,avg_household_size,2.21,persons,BFS Privathaushalte
+CH,2021,avg_household_size,2.19,persons,BFS Bestand Haushalte 2021
+CH,2022,avg_household_size,2.19,persons,BFS Privathaushalte
+CH,2023,avg_household_size,2.19,persons,BFS Privathaushalte
+CH,2015,dwellings_total,4360000,units,BFS GWS
+CH,2016,dwellings_total,4410000,units,BFS GWS
+CH,2017,dwellings_total,4460000,units,BFS GWS
+CH,2018,dwellings_total,4500000,units,BFS GWS
+CH,2019,dwellings_total,4550000,units,BFS GWS
+CH,2020,dwellings_total,4600000,units,BFS GWS 2020
+CH,2021,dwellings_total,4640000,units,BFS GWS
+CH,2022,dwellings_total,4680000,units,BFS GWS
+CH,2023,dwellings_total,4720000,units,BFS GWS
+CH,2012,avg_dwelling_size_m2,117.2,m2,Eurostat ilc_hcmh02
+UK,2015,avg_household_size,2.37,persons,ONS Families and Households
+UK,2016,avg_household_size,2.37,persons,ONS Families and Households
+UK,2017,avg_household_size,2.37,persons,ONS Families and Households
+UK,2018,avg_household_size,2.37,persons,ONS Families and Households
+UK,2019,avg_household_size,2.37,persons,ONS Families and Households
+UK,2020,avg_household_size,2.37,persons,ONS Families and Households
+UK,2021,avg_household_size,2.40,persons,ONS Families and Households 2021
+UK,2022,avg_household_size,2.36,persons,ONS Families and Households 2022
+UK,2023,avg_household_size,2.36,persons,ONS Families and Households 2023
+UK,2015,dwellings_total,28400000,units,ONS Dwelling Stock by Tenure
+UK,2016,dwellings_total,28600000,units,ONS Dwelling Stock by Tenure
+UK,2017,dwellings_total,28800000,units,ONS Dwelling Stock by Tenure
+UK,2018,dwellings_total,29100000,units,ONS Dwelling Stock by Tenure
+UK,2019,dwellings_total,29400000,units,ONS Dwelling Stock by Tenure
+UK,2020,dwellings_total,29650000,units,ONS Dwelling Stock by Tenure
+UK,2021,dwellings_total,29950000,units,ONS Dwelling Stock by Tenure
+UK,2022,dwellings_total,30260000,units,MHCLG Live Tables
+UK,2023,dwellings_total,30540000,units,MHCLG Live Tables extrap
+UK,2012,avg_dwelling_size_m2,96.0,m2,OECD HM1.1

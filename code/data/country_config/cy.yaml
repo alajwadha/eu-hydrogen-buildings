@@ -1,0 +1,254 @@
+# Country configuration: Cyprus (CY)
+# =====================================
+# All Cyprus-specific parameters for the building-stock pipeline
+# (scripts 01-04 in code/scripts/country_build/). Sourced and cited inline;
+# methodology in literature/cyprus/classification_methodology.md.
+#
+# Schema version: 1.
+#
+# Cyprus is a DIRECT TABULA country -- the Cypriot residential typology was
+# produced by Cyprus University of Technology (Panayiotou, Kalogirou, Florides).
+# No proxy, no climate correction (climate_multiplier = 1.0). Build group 3
+# (ES + PT, EL, CY). NOTE: the Cyprus TABULA file (cy_intensities.csv) was
+# originally built in build group 2 as the climate-corrected proxy for Malta;
+# here Cyprus uses it directly (multiplier 1.0).
+#
+# CYPRUS CAVEAT: Cyprus is a warm Mediterranean island state with low
+# residential heat demand. The model's Hotmaps 2015 baseline is 3.15 TWh.
+# Heating is mostly delivered by reverse-cycle air-conditioning, with some
+# heating oil. Cyprus has no household natural gas grid (no value reported in
+# Eurostat nrg_pc_202) and essentially no district heating.
+
+country_code: CY
+country_name: Cyprus
+
+# -- EUBUCCO data source -----------------------------------------------------
+# EUBUCCO v0.2 partitions by NUTS2 (NUTS 2016). Cyprus is a single NUTS2
+# region (CY00) covering the Republic of Cyprus (EU-controlled south); EUBUCCO
+# uses official EU statistical geography.
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - CY00
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  license: ODbL v1.0
+  # EUBUCCO area-correction factor (applied 2026-05-20).
+  # The G3 Colab rebuild (commit 276400b) landed CY at 6.5 TWh vs Hotmaps
+  # 3.15 = +107 pct INV. The comfort_regime deflator (0.30) handled the
+  # intensity-layer over-statement; the residual is the EUBUCCO area over-
+  # count, structurally similar to the ES case.
+  #
+  # Our EUBUCCO CY residential heated-area total is ~200 Mm^2 (per the G3
+  # diagnostics). CYSTAT 2021 Census of Population anchors Cypriot
+  # residential floor area: 491,545 occupied dwellings x ~186 m^2 mean
+  # useful area = ~91 Mm^2 main residences. Including ~10 Mm^2 secondary/
+  # holiday stock the total is ~100 Mm^2. Correction = 100/200 = 0.500.
+  # (Using the stricter main-residence-only anchor of 91 Mm^2 gives 0.455;
+  # 0.500 splits between the two and is the more conservative choice.)
+  #
+  # Source: CYSTAT 2021 Census of Population (Statistics Cyprus),
+  #   "Population and Housing Census 2021", 491,545 conventional dwellings;
+  #   mean useful area cross-referenced from EPISCOPE CY country page.
+  #
+  # MECHANISM (clarified 2026-05-21): EUBUCCO CY observed-height share is
+  # 100 % (Milojevic-Dupont 2023, Table 1) -- floor area is well-determined,
+  # NOT an imputed-floor over-count. The over-count is STOCK UTILIZATION:
+  # 697,301 EUBUCCO residential buildings vs 491,545 census dwellings;
+  # Cyprus has ~30 % vacancy plus a large holiday/tourism + unfinished
+  # stock, unheated in the mild winters. The 0.50 factor calibrates the total
+  # standing stock to the heated (occupied) stock, independent of the
+  # comfort_regime deflator. See literature/eubucco_census_area_audit.md
+  # (Mechanism B).
+  area_correction: 0.500
+  area_correction_source: |
+    CYSTAT 2021 Census of Population -- 491,545 occupied dwellings x ~186
+    m^2 mean useful area = ~91 Mm^2 main residences + ~10 Mm^2 secondary
+    = ~100 Mm^2 total. EUBUCCO CY total: ~200 Mm^2. Correction = 0.500
+    (conservative midpoint between 100/200 = 0.500 and the stricter
+    91/200 = 0.455 anchor).
+
+# -- NUTS3 regions -----------------------------------------------------------
+# Cyprus has 1 NUTS3 region (CY000) -- single-region country at NUTS levels 1-3.
+nuts3_regions:
+  - CY000
+
+# -- Geographic bounding box (WGS84) -----------------------------------------
+# Republic of Cyprus / EU-controlled extent (south of UN buffer zone).
+bbox_wgs84:
+  lon_min: 32.27
+  lat_min: 34.56
+  lon_max: 34.65
+  lat_max: 35.74
+
+# -- TABULA building typology source -----------------------------------------
+# Cyprus IS a TABULA country -- the Cypriot residential typology was produced
+# by Cyprus University of Technology (Panayiotou, Kalogirou, Florides). The
+# DIRECT Cyprus typology is used (no proxy, no climate correction).
+# Extraction: code/data/raw/tabula/cy_intensities.csv (shared with Malta;
+# originally created in build group 2 as Malta's proxy).
+tabula:
+  source_country: CY
+  source_country_name: Cyprus
+  intensities_file: code/data/raw/tabula/cy_intensities.csv
+  reason_for_proxy: |
+    None -- Cyprus is a TABULA country. The Cyprus national residential
+    typology (Cyprus University of Technology) is used directly, no proxy, no
+    climate correction (climate_multiplier = 1.0). The cy_intensities.csv file
+    is shared with Malta (which uses it as a climate-corrected proxy).
+
+# -- Climate correction ------------------------------------------------------
+# Direct TABULA country: climate_multiplier = 1.0.
+# Source: Eurostat nrg_chdd_a (base 15 C, JRC AGRI4CAST), 5-year mean 2018-2022
+# = ~661.56 (from values in cy_intensities.csv header). 2022 confirmed at 696.
+climate:
+  hdd_country: 661.56        # CY -- 2018-2022 mean
+  hdd_proxy: 661.56
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  climate_multiplier: 1.0
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST), 5-year mean 2018-2022
+
+# -- Retrofit-state distribution ---------------------------------------------
+# Retrofit FACTORS are the Cyprus TABULA typology-averaged refurbishment
+# ratios: standard 0.70, advanced 0.50 (warm-climate refurbishment yields
+# smaller absolute savings).
+#
+# Retrofit SHARES are a modelling assumption. EPISCOPE Cyprus reports only
+# 7.5% of dwellings have wall insulation, 5.5% roof, 54.4% no insulation;
+# window replacement 43.2%. The 0.85/0.10/0.05 split reflects an overwhelmingly
+# original-state stock (the heating part is marginal anyway).
+retrofit:
+  share:
+    original: 0.85          # modelling assumption (54.4% no insulation per EPISCOPE)
+    standard: 0.10          # modelling assumption
+    advanced: 0.05          # modelling assumption
+  factor:
+    standard: 0.70          # Cyprus TABULA standard refurb
+    advanced: 0.50          # Cyprus TABULA advanced refurb
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # Computed blend for CY: 0.85 + 0.10x0.70 + 0.05x0.50 = 0.945
+  blend_value: 0.945
+  share_source: |
+    Modelling assumption grounded in EPISCOPE Cyprus refurbishment-state
+    survey (~54% of dwellings have no insulation). Retrofit factors are
+    Cyprus TABULA typology-averaged values (best-estimate; same factors used
+    in Malta's mt.yaml).
+
+# -- Domestic Hot Water (DHW) intensity --------------------------------------
+dhw:
+  sfh: 16.0
+  mfh: 14.0
+  unit: kWh/m2/yr
+  source: Cyprus TABULA warm-climate convention
+
+# -- Non-residential intensity (placeholder) ---------------------------------
+non_residential_intensity:
+  value: 70.0
+  unit: kWh/m2/yr
+  source: estimate -- Cypriot non-residential space heating (warm climate)
+  status: rough placeholder; contributes 0 TWh; flagged in methodology
+
+# -- External reconciliation benchmarks --------------------------------------
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 3.15             # sum of heat_2015_MWh across all 6 CY NUTS3
+                                #   rows in building_stock_nuts3.csv.
+    year: 2015
+    source: Hotmaps Toolbox via building_stock_nuts3.csv; sum across all CY NUTS3 rows
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 100
+    eubucco_mm2: 200
+    census_eubucco_ratio: 0.50
+    source: CYSTAT 2021 (491,545 dwellings x ~186 m2 useful; occupied ~91 Mm2 + secondary)
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 2.5              # Order-of-magnitude anchor.
+    year: 2022
+    source: anchored estimate; EU BSO portal not retrievable
+  odyssee_mure:
+    total_twh: 2.0              # Cyprus residential space heating is small;
+                                #   ~40% of household final energy on heating.
+    year: 2022
+    source: Odyssee-Mure Cyprus; residential space heating (small fraction of FE)
+    note: National total only; final-energy basis -- definitional gap vs Hotmaps useful demand.
+
+# -- Hotmaps NUTS3 ID for model comparison -----------------------------------
+hotmaps_nuts3_id: CY000   # Single NUTS3 region
+
+# -- Building classification rules -------------------------------------------
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+
+# -- Operational-regime (comfort) deflator -----------------------------------
+# Applied as a multiplier on the SPACE-HEATING component of the per-building
+# intensity (DHW unaffected). Translates TABULA reference-condition steady-
+# state demand into the realised Cypriot stock-weighted regime.
+#
+# Cyprus-specific deflator: Cyprus residential heating is structurally
+# "comfort top-up", not steady-state heated. CYSTAT (2009, replicated 2018)
+# household survey: 39.3 % use portable heaters as main equipment, 16.9 %
+# split-unit AC (RCAC), only 29.2 % central heating. No piped gas grid, no
+# district heating. Eurostat nrg_d_hhq (2023) puts space heating at 33.5 %
+# of household final energy (one of the lowest in the EU).
+#
+# A direct national-average measured space-heating intensity for Cyprus is
+# not published in a clean form. Top-down derivation from Eurostat residen-
+# tial FE x space-heating share / occupied residential floor area yields
+# ~25-35 kWh/m2/yr delivered, space-heating only -- the realised Cypriot
+# regime. Applied as a deflator of 0.30 (midpoint of 0.25-0.35) against the
+# TABULA reference (~80-120 kWh/m2/yr steady-state-heated).
+#
+# Sources:
+#  - Panayiotou, G.P., Kalogirou, S.A., Florides, G.A. et al. (2010),
+#    "The characteristics and the energy behaviour of the residential
+#    building stock of Cyprus", Energy and Buildings 42: 2083-2089.
+#    DOI 10.1016/j.enbuild.2010.06.001 (NB their 47.8 kWh/m2/yr is TOTAL
+#    delivered energy, all end-uses; not a space-heating-only benchmark).
+#  - Serghides, D., Dimitriou, S., Katafygiotou, M. et al. (2016), "Towards
+#    European targets by monitoring the energy profile of the Cyprus
+#    housing stock", Energy and Buildings 132: 130-140.
+#  - CYSTAT, Survey on Final Energy Consumption in Households 2009 (and
+#    2018 questionnaire) -- equipment-penetration figures.
+#  - Eurostat nrg_d_hhq -- Cyprus space heating = 33.5 % of household FE (2023).
+comfort_regime:
+  deflator: 0.30
+  source: |
+    Cypriot operational-regime coefficient (midpoint 0.25-0.35) derived top-
+    down from Eurostat nrg_d_hhq household FE x space-heating share (33.5 %,
+    2023) / occupied residential area. Reflects Cyprus's comfort-top-up
+    heating regime: 39 % portable heaters, 17 % RCAC, no piped gas, no DH
+    (CYSTAT 2009/2018 household-energy survey).
+
+# -- Provenance + change log -------------------------------------------------
+_meta:
+  created: 2026-05-19
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 3)
+  last_verified: 2026-05-19
+  schema_version: 1
+  status: DRAFT -- direct Cyprus TABULA build; cy_intensities.csv values are
+    research-synthesised pending TABULA WebTool / brochure verification.
+  references_doc: literature/cyprus/classification_methodology.md
+  verified_2026_05_19:
+    - eubucco.nuts2_partitions (CY00, single NUTS2)
+    - nuts3_regions (CY000, single NUTS3)
+    - climate.hdd_country = 661.56 (Eurostat nrg_chdd_a 2018-2022 mean; 2022 confirmed 696)
+    - tabula source = CY direct (shared cy_intensities.csv with Malta)
+  needs_verify_summary:
+    - cy_intensities.csv -- research-synthesised values; verify against the
+      TABULA WebTool / CY_TABULA_TypologyBrochure_CUT.pdf.
+    - MFH_LOW = MFH_HIGH limitation -- Cyprus TABULA has one multi-family class.
+    - Cyprus TABULA 3-period -> 6-cohort expansion means several cohorts carry
+      identical values.
+    - retrofit shares (0.85/0.10/0.05) -- modelling assumption from EPISCOPE
+      Cyprus refurbishment-state survey.
+    - non_residential_intensity (70) -- estimate; contributes 0 TWh.
+    - reconciliation_benchmarks.eu_bso -- anchored estimate.

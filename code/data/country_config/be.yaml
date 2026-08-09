@@ -1,0 +1,212 @@
+# Country configuration: Belgium (BE)
+# =====================================
+# All Belgium-specific parameters for the building-stock pipeline.
+# Methodology: literature/belgium/classification_methodology.md.
+#
+# Schema version: 1. Build group 5 (AT + BE, NL, IE; NW temperate Europe).
+# Belgium is a DIRECT TABULA country (VITO; Cyx, Renders, Van Holm, Verbeke
+# 2011). Note: be_intensities.csv was originally created as the LU proxy; the
+# same file is the DIRECT TABULA source for BE.
+
+country_code: BE
+country_name: Belgium
+
+# -- EUBUCCO data source -----------------------------------------------------
+# 11 NUTS2 regions; stable across NUTS 2013/2016/2021.
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - BE10   # Region de Bruxelles-Capitale
+    - BE21   # Prov. Antwerpen
+    - BE22   # Prov. Limburg (BE)
+    - BE23   # Prov. Oost-Vlaanderen
+    - BE24   # Prov. Vlaams-Brabant
+    - BE25   # Prov. West-Vlaanderen
+    - BE31   # Prov. Brabant Wallon
+    - BE32   # Prov. Hainaut
+    - BE33   # Prov. Liege
+    - BE34   # Prov. Luxembourg (BE)
+    - BE35   # Prov. Namur
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  license: ODbL v1.0
+
+# -- NUTS3 regions -----------------------------------------------------------
+# 44 NUTS3 (arrondissements); BE336/BE337 (Verviers split) from NUTS 2016.
+nuts3_regions:
+  - BE100
+  - BE211
+  - BE212
+  - BE213
+  - BE221
+  - BE223
+  - BE224
+  - BE231
+  - BE232
+  - BE233
+  - BE234
+  - BE235
+  - BE236
+  - BE237
+  - BE238
+  - BE241
+  - BE242
+  - BE251
+  - BE252
+  - BE253
+  - BE254
+  - BE255
+  - BE256
+  - BE257
+  - BE258
+  - BE310
+  - BE321
+  - BE322
+  - BE323
+  - BE324
+  - BE325
+  - BE326
+  - BE327
+  - BE328
+  - BE329
+  - BE331
+  - BE332
+  - BE334
+  - BE335
+  - BE336   # Verviers - communes francophones (NUTS 2016)
+  - BE337   # Verviers - Deutschsprachige Gemeinschaft (NUTS 2016)
+  - BE341
+  - BE342
+  - BE344
+  - BE345
+  - BE351
+  - BE352
+  - BE353
+
+bbox_wgs84:
+  lon_min: 2.55
+  lat_min: 49.50
+  lon_max: 6.41
+  lat_max: 51.51
+
+# -- TABULA building typology source -----------------------------------------
+# Belgium IS a TABULA country -- the same be_intensities.csv used for LU.
+tabula:
+  source_country: BE
+  source_country_name: Belgium
+  intensities_file: code/data/raw/tabula/be_intensities.csv
+  reason_for_proxy: |
+    None -- Belgium is a TABULA country (VITO scientific report, Cyx et al.
+    2011). The same be_intensities.csv that serves as the LU proxy is the
+    DIRECT TABULA source for BE. Option B reference-HDD correction applied
+    because the brochure calibrates to Uccle / Brussels (~2900 HDD) but the
+    BE national 2018-2022 mean is ~2520 HDD.
+
+# -- Climate correction (OPTION B) -------------------------------------------
+# BE TABULA reference is Uccle / Brussels (~2900 HDD), but national 2018-2022
+# mean is ~2520. Multiplier = 2520 / 2900 = 0.869 to scale brochure values
+# down to actual national-mean operation.
+climate:
+  hdd_country: 2520.0        # BE -- Eurostat nrg_chdd_a 2018-2022 mean estimate
+  hdd_proxy: 2520.0          # BE direct typology -> proxy = self
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  tabula_reference_hdd: 2900.0   # Uccle / KU Leuven Lirias long-term mean (KU Leuven 571894)
+  climate_multiplier: 0.8690     # 2520 / 2900
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST); 5-year mean 2018-2022 estimate NEEDS_VERIFY
+
+# -- Retrofit-state distribution ---------------------------------------------
+# Three regional vehicles: VEKA (Flanders) + Wallonia Primes Habitation +
+# Brussels RENOLUTION. Cumulative deep-renovation share of stock low (Climact
+# 2024: pace needs to triple in Flanders, quadruple in Wallonia/Brussels to
+# hit 2050 targets). Defaults reflect a low deep-renovation base.
+retrofit:
+  share:
+    original: 0.82
+    standard: 0.13
+    advanced: 0.05
+  factor:
+    standard: 0.60          # BE TABULA standard refurb (provisional)
+    advanced: 0.40          # BE TABULA advanced refurb (provisional)
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # Computed blend for BE: 0.82 + 0.13x0.60 + 0.05x0.40 = 0.918
+  blend_value: 0.918
+  share_source: |
+    Modelling assumption grounded in Climact 2024 (regional renovation-pace
+    analysis), VEKA / Primes Habitation / RENOLUTION programme reporting,
+    LIFE BE REEL! cumulative ~8,000 deep-renovated dwellings. Retrofit
+    factors PROVISIONAL (BE TABULA standard 0.60, advanced 0.40 per VITO
+    case studies).
+
+# -- DHW and Non-residential ------------------------------------------------
+dhw:
+  sfh: 22.0
+  mfh: 19.0
+  unit: kWh/m2/yr
+  source: Belgian TABULA (VITO 2011 scientific report) DHW assumption
+
+non_residential_intensity:
+  value: 150.0
+  unit: kWh/m2/yr
+  source: estimate -- BE non-residential (tertiary) space heating
+  status: rough placeholder; contributes 0 TWh; flagged in methodology
+
+# -- External reconciliation benchmarks --------------------------------------
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 111.84           # Hotmaps 2015 BE residential heat -- exact sum
+                                # across all 119 BE NUTS3 rows in
+                                # code/data/processed/building_stock_nuts3.csv (verified 2026-05-20).
+    year: 2015
+    source: Hotmaps Toolbox via building_stock_nuts3.csv; sum across all BE NUTS3 rows
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 660
+    eubucco_mm2: 840
+    census_eubucco_ratio: 0.79
+    source: Statbel Census 2021 dwelling stock (estimate)
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 60.0
+    year: 2022
+    source: anchored estimate; EU BSO portal not retrievable
+  odyssee_mure:
+    total_twh: 60.0
+    year: 2022
+    source: Odyssee-Mure Belgium; residential space heating ~74% of HH FE, ~17 MWh/dwelling/yr climate-corrected
+    note: National total only; final-energy basis.
+
+hotmaps_nuts3_id: BE100   # Brussels (representative reference)
+
+# -- Building classification rules -------------------------------------------
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+
+# -- Provenance + change log -------------------------------------------------
+_meta:
+  created: 2026-05-20
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 5)
+  last_verified: 2026-05-20
+  schema_version: 1
+  status: DRAFT -- direct Belgian TABULA build (reuses be_intensities.csv from
+    LU proxy chain). Option B reference-HDD correction applied (Uccle 2900
+    vs national 2520 = mult 0.869).
+  references_doc: literature/belgium/classification_methodology.md
+  verified_2026_05_20:
+    - eubucco.nuts2_partitions (11 BE NUTS2, stable across NUTS vintages)
+    - nuts3_regions (44 BE NUTS3, NUTS 2016+ codes)
+    - tabula source = BE direct (be_intensities.csv shared with LU proxy)
+    - tabula_reference_hdd = 2900 (Uccle / KU Leuven Lirias)
+    - climate_multiplier = 0.8690 (2520 / 2900)
+  needs_verify_summary:
+    - HDD 2018-2022 mean -- estimated; pull exact from Eurostat nrg_chdd_a.
+    - retrofit factors (0.60/0.40) and DHW (22/19) -- PROVISIONAL.
+    - retrofit shares (0.82/0.13/0.05) -- modelling assumption; refine by region.
+    - Hotmaps total (65) -- estimate; sum building_stock_nuts3.csv exactly.

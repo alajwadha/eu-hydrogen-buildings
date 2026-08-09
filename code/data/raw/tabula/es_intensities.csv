@@ -1,0 +1,70 @@
+# TABULA Spain synthetical-average residential building intensities
+#
+# Source: TABULA / EPISCOPE project. The Spanish national residential typology
+#   was produced by CIEMAT (Centro de Investigaciones Energeticas,
+#   Medioambientales y Tecnologicas) with IVE-Valencia and IETcc.
+#   - Country page: episcope.eu/building-typology/country/es
+#   - Spanish TABULA scientific report (IVE):
+#     episcope.eu/fileadmin/tabula/public/docs/scientific/ES_TABULA_Report_IVE.pdf
+#   - Loga, Stein, Diefenbach (2016). Energy & Buildings 132:4-12.
+#
+# Spain IS a TABULA country -- this is the DIRECT national typology, used
+# without a proxy (tabula.source_country = ES in es.yaml). No climate
+# correction (climate_multiplier = 1.0). It is ALSO used as the proxy for
+# Portugal (pt.yaml, multiplier 0.6000) -- Portugal is milder than Spain.
+#
+# IMPORTANT -- VALUES ARE RESEARCH-SYNTHESISED BEST ESTIMATES, NEEDS_VERIFY
+# ------------------------------------------------------------------------
+# The full per-class per-period numeric matrix of the Spanish TABULA is held
+# in the TABULA WebTool (interactive) and the CIEMAT national typology brochure
+# (Catalogo de Tipologias Residenciales, Spanish PDF), neither machine-
+# extractable. The sh_intensity values below are best estimates synthesised
+# from the published Spanish TABULA span and the Mediterranean comparative
+# typology literature (Ballarini/Corgnati/Corrado et al.). They should be
+# verified against the TABULA WebTool (country ES). Treat as +/-20% uncertainty.
+#
+# Building class mapping (Spanish TABULA -> our 4-class scheme):
+#   SFH       <- TABULA SFH  (single-family detached / vivienda unifamiliar)
+#   MFH_LOW   <- TABULA MFH up to ~4 floors (apartment block, low-rise)
+#   MFH_HIGH  <- TABULA AB / MFH 5+ floors (apartment block, mid/high-rise)
+#   NON_RES   <- not in TABULA; handled separately in 03_heat_intensity.py
+#
+# Cohort mapping (Spanish TABULA periods -> our 6 cohorts):
+#   pre-1945    <- pre-1900 + 1900-1920 + 1921-1940 + 1941-1950 portion
+#   1946-1970   <- 1951-1960 + 1961-1970
+#   1971-1990   <- 1971-1980 + 1981-1990 (NBE-CT-79 first thermal-insulation reg)
+#   1991-2010   <- 1991-2001 + 2002-2010 (CTE 2006)
+#   2011-2020   <- EXTRAPOLATED using CTE 2013 / CTE 2019 updates
+#   post-2020   <- EXTRAPOLATED (nZEB / EPBD recast); FLAGGED
+#
+# Refurbishment reduction factors (Spanish TABULA, typology-averaged):
+#   standard refurbishment ~0.65 of existing-state SH need
+#   advanced refurbishment ~0.40 of existing-state SH need
+#
+# DHW: Spanish TABULA uses warm-climate DHW values, ~16 SFH / ~14 MFH.
+#
+# Citations:
+#   IVE / CIEMAT (2014). Catalogo de Tipologias Residenciales de Espana.
+#     Instituto Valenciano de la Edificacion / CIEMAT, Valencia.
+#   Loga T., Stein B., Diefenbach N. (2016). Energy & Buildings 132:4-12.
+#
+#
+building_class,cohort,sh_intensity_kwh_m2_yr,dhw_intensity_kwh_m2_yr,source_note
+SFH,pre-1945,180,16,"ES TABULA pre-1945 SFH (uninsulated masonry); ESTIMATE pending WebTool"
+SFH,1946-1970,155,16,"ES TABULA 1946-1970 SFH; pre-NBE-CT-79 era; ESTIMATE"
+SFH,1971-1990,125,16,"ES TABULA 1971-1990 SFH; first thermal regs from 1979; ESTIMATE"
+SFH,1991-2010,90,16,"ES TABULA 1991-2010 SFH; pre/early CTE; ESTIMATE"
+SFH,2011-2020,52,16,"EXTRAPOLATED -- CTE 2013/2019 updates; FLAGGED"
+SFH,post-2020,30,16,"EXTRAPOLATED -- nZEB / EPBD recast; FLAGGED"
+MFH_LOW,pre-1945,135,14,"ES TABULA pre-1945 MFH low-rise; ESTIMATE pending WebTool"
+MFH_LOW,1946-1970,120,14,"ES TABULA 1946-1970 MFH; ESTIMATE"
+MFH_LOW,1971-1990,95,14,"ES TABULA 1971-1990 MFH; ESTIMATE"
+MFH_LOW,1991-2010,72,14,"ES TABULA 1991-2010 MFH; ESTIMATE"
+MFH_LOW,2011-2020,42,14,"EXTRAPOLATED -- CTE 2013/2019 updates; FLAGGED"
+MFH_LOW,post-2020,25,14,"EXTRAPOLATED -- nZEB; FLAGGED"
+MFH_HIGH,pre-1945,115,14,"ES TABULA pre-1945 AB high-rise (rare); ESTIMATE pending WebTool"
+MFH_HIGH,1946-1970,105,14,"ES TABULA 1946-1970 AB; post-war social housing tower estates; ESTIMATE"
+MFH_HIGH,1971-1990,85,14,"ES TABULA 1971-1990 AB; ESTIMATE"
+MFH_HIGH,1991-2010,62,14,"ES TABULA 1991-2010 AB; ESTIMATE"
+MFH_HIGH,2011-2020,37,14,"EXTRAPOLATED -- CTE updates; FLAGGED"
+MFH_HIGH,post-2020,20,14,"EXTRAPOLATED -- nZEB; FLAGGED"

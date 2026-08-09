@@ -1,0 +1,88 @@
+# TABULA Austria synthetical-average residential building intensities
+#
+# Source: IEE TABULA project (2009-2012). The Austrian national residential
+#   typology was produced by AEA (Austrian Energy Agency) with TU Wien.
+#   - Country page: episcope.eu/building-typology/country/at/
+#   - AT TABULA Scientific Report (AEA):
+#     episcope.eu/fileadmin/tabula/public/docs/scientific/AT_TABULA_ScientificReport_AEA.pdf
+#   - AT TABULA Brochure (AEA, last updated 02.09.2014):
+#     episcope.eu/fileadmin/tabula/public/docs/brochure/AT_TABULA_TypologyBrochure_AEA.pdf
+#   - Underlying calibration dataset: ZEUS (Zentrale Erfassung von
+#     Energieausweisen) -- the national EPC database, ~40,000 certificates.
+#
+# Austria IS a TABULA country -- this is the DIRECT national typology, used
+# without a proxy (tabula.source_country = AT in at.yaml).
+#
+# CLIMATE ZONE: the Austrian TABULA brochure does NOT publish an explicit
+# single-station reference HDD. The AEA built the typology from ~40,000 EPCs
+# in the ZEUS database, calibrated on the national mean (not a single climate
+# zone). The brochure cites OIB Richtlinie 6 (national building energy code,
+# OIB-330.6-026/19) which uses a national reference. Per the audit doc, this
+# is treated as a national-mean calibration (tabula_reference_hdd = hdd_country
+# = 3050), so the climate_multiplier = 1.0. No Option B correction needed.
+#
+# IMPORTANT -- VALUES ARE RESEARCH-SYNTHESISED BEST ESTIMATES, NEEDS_VERIFY
+# ------------------------------------------------------------------------
+# The full per-class per-period numeric matrix of the Austrian TABULA is held
+# in the TABULA WebTool (interactive, not machine-extractable) and in the AEA
+# brochure (PDF). The sh_intensity values below are best estimates bracketing
+# the German TABULA (DIN reference; AT and DE share the German-speaking
+# Wohnungsbauwirtschaft tradition) and the Czech EPISCOPE (continental
+# climate, slightly colder), informed by:
+#   - the Austrian Bauperiode classification (Grundbaus 1850-1918,
+#     Zwischenkriegszeit 1919-1945, Wiederaufbau 1946-1970, Hochbau 1971-1990,
+#     post-1991 Niedrigenergiehaus, post-2010 NZEB/Passivhaus)
+#   - the OIB Richtlinie 6 reference (heat-transmission coefficient U_max
+#     timeline 1979/1990/2007/2014/2023)
+#   - ZEUS EPC stock-weighted intensities published by AEA in summary form
+# Verify against the TABULA WebTool (country AT) or AEA brochure numeric
+# appendix before reporting. Treat as +/-20-30 pct uncertainty.
+#
+# Building class mapping (Austrian TABULA -> our 4-class scheme):
+#   SFH       <- AT TABULA SFH (Einfamilienhaus / Reihenhaus, detached/terraced)
+#   MFH_LOW   <- AT TABULA MFH (Mehrfamilienhaus, multi-family up to ~5 floors)
+#   MFH_HIGH  <- AT TABULA AB (Mehrfamilienhaus Grossbau / Apartment Block,
+#                6+ floors; Plattenbau and Vienna Gemeindebau equivalents)
+#   NON_RES   <- not in TABULA; handled separately in 03_heat_intensity.py
+#
+# Cohort mapping (Austrian TABULA periods -> our 6 cohorts):
+#   pre-1945    <- Grundbaus + Zwischenkriegszeit
+#   1946-1970   <- Wiederaufbau (pre-1979, no thermal code)
+#   1971-1990   <- Hochbau (OIB Wv 1979 first thermal regs)
+#   1991-2010   <- Niedrigenergiehaus (OIB 1990, 2007 updates)
+#   2011-2020   <- OIB 2014 NZEB-track new-build
+#   post-2020   <- OIB 2023 NZEB enforcement
+#
+# Refurbishment reduction factors (AT TABULA typology-averaged):
+#   standard refurbishment ~0.65 of existing-state SH need
+#   advanced refurbishment ~0.40 of existing-state SH need
+# These inform the retrofit blend in at.yaml.
+#
+# DHW: AT TABULA convention; SFH/Reihenhaus ~10, MFH ~15, AB ~15.
+#
+# Citations:
+#   Lechner R., Tappeiner G., Lang G. (2011). IEE TABULA - Austria Scientific
+#     Report. Austrian Energy Agency.
+#   OIB (2023). OIB-Richtlinie 6, Energieeinsparung und Waermeschutz.
+#   Loga T., Stein B., Diefenbach N. (2016). Energy & Buildings 132:4-12.
+#
+#
+building_class,cohort,sh_intensity_kwh_m2_yr,dhw_intensity_kwh_m2_yr,source_note
+SFH,pre-1945,265,10,"AT SFH pre-1945; Grundbaus + Zwischenkriegszeit masonry; ESTIMATE pending WebTool"
+SFH,1946-1970,275,10,"AT SFH 1946-1970; Wiederaufbau, pre-OIB-Wv-1979; ESTIMATE"
+SFH,1971-1990,170,10,"AT SFH 1971-1990; OIB Wv 1979/1990; first thermal code era; ESTIMATE"
+SFH,1991-2010,105,10,"AT SFH 1991-2010; OIB 2007 Niedrigenergiehaus; ESTIMATE"
+SFH,2011-2020,85,10,"AT SFH 2011-2020; OIB 2014 NZEB-track new-build; ESTIMATE"
+SFH,post-2020,70,10,"EXTRAPOLATED -- OIB 2023 NZEB enforcement; FLAGGED"
+MFH_LOW,pre-1945,215,15,"AT MFH pre-1945; Wiener Gruenderzeit Zinshaus + Land masonry; ESTIMATE"
+MFH_LOW,1946-1970,165,15,"AT MFH 1946-1970; early Wiederaufbau masonry; ESTIMATE"
+MFH_LOW,1971-1990,140,15,"AT MFH 1971-1990; mid-rise Wohnbau, post-OIB-Wv-1979; ESTIMATE"
+MFH_LOW,1991-2010,85,15,"AT MFH 1991-2010; OIB 1990/2007 thermal updates; ESTIMATE"
+MFH_LOW,2011-2020,70,15,"AT MFH 2011-2020; OIB 2014 NZEB-track; ESTIMATE"
+MFH_LOW,post-2020,58,15,"EXTRAPOLATED -- OIB 2023 NZEB; FLAGGED"
+MFH_HIGH,pre-1945,160,15,"AT AB pre-1945; Vienna Gemeindebau era (early); ESTIMATE"
+MFH_HIGH,1946-1970,165,15,"AT AB 1946-1970; Wiederaufbau Gemeindebau and panel-block; ESTIMATE"
+MFH_HIGH,1971-1990,135,15,"AT AB 1971-1990; high-rise Plattenbau / Wohnpark; ESTIMATE"
+MFH_HIGH,1991-2010,85,15,"AT AB 1991-2010; high-rise post-1990 thermal updates; ESTIMATE"
+MFH_HIGH,2011-2020,70,15,"AT AB 2011-2020; OIB 2014 NZEB high-rise; ESTIMATE"
+MFH_HIGH,post-2020,58,15,"EXTRAPOLATED -- OIB 2023 NZEB; FLAGGED"

@@ -1,0 +1,5 @@
+variant,mode,target_cut_frac,pv_system_cost_bn_eur_yr,n_countries,n_binding_2050,max_shadow_2050_eur_tco2
+COST_OPT_75,trajectory,0.75,7426.2895,29,4.0,81.39
+COST_OPT_90,trajectory,0.9,7428.3677,29,4.0,81.39
+COST_OPT_90_SNAP,snapshot,0.9,6726.1609,29,,
+COST_OPT_100,trajectory,1.0,7429.8315,29,4.0,81.39

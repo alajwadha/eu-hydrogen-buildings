@@ -1,0 +1,72 @@
+# TABULA France residential building intensities (extracted)
+#
+# Source: TABULA / EPISCOPE project (IEE 2009-2012, follow-up 2013-2016).
+#   - Country page:  episcope.eu/building-typology/country/fr/
+#   - Brochure (FR): episcope.eu/fileadmin/tabula/public/docs/brochure/FR_TABULA_TypologyBrochure_Pouget.pdf
+#     "Bâtiments résidentiels: Typologie du parc existant et solutions
+#      exemplaires pour la rénovation énergétique en France" (Pouget Consultants
+#      + ADEME, March 2015, 121 pp).
+#     Authors: Rochard U., Shanthirabalan S., Brejon C., Chateau Le Bras M.
+#   - Machine-readable underlying data:
+#       tabula-calculator.xlsx  (sheet "Calc.Set.Building", filter Code_Country=FR)
+#       tabula-values.xlsx      (sheet "Tab.ConstrYearClass" for cohort year ranges)
+#     Both downloaded from episcope.eu/fileadmin/tabula/public/calc/ 2026-05-15.
+# Citation: Rochard et al. 2015, French TABULA brochure (Pouget/ADEME).
+#
+# Methodological notes
+# --------------------
+# * Values are q_h_nd ("energy need for heating") from the TABULA standard
+#   calculation (EN ISO 13790 seasonal method, base temperature 12 °C,
+#   harmonised across all TABULA countries). These are HIGHER than the FR
+#   national-EPC-method (3CL-DPE) values shown in the brochure's display
+#   sheets (which use base 19 °C and apply consumption calibration).
+#   The harmonised values are appropriate here because (a) the pipeline
+#   uses the same TABULA convention for all countries and (b) climate
+#   adjustment + retrofit blending are applied downstream.
+# * 18 cells covered (3 classes × 6 cohorts).
+# * DHW (q_w_nd) is the TABULA standard DHW assumption: 10 kWh/m²·a for
+#   SFH/TH, 15 kWh/m²·a for MFH/AB. Note: the FR brochure section 6.5
+#   reports FR national values 15.3 (SFH) / 19.8 (MFH) using the 3CL-DPE
+#   method — those are NOT used here for cross-country comparability.
+# * The pipeline's downstream retrofit blending (03_heat_intensity.py)
+#   then applies the FR ADEME retrofit shares + TABULA retrofit factors
+#   on top of these "initial state" values.
+#
+# Building class mapping (TABULA -> our 4-class scheme):
+#   SFH        <- TABULA "SFH" + "TH" (detached + terraced single-family)
+#   MFH_LOW    <- TABULA "MFH" (small collective)
+#   MFH_HIGH   <- TABULA "AB" (apartment block)
+#   NON_RES    <- not in TABULA; handled separately in 03_heat_intensity.py
+#
+# Cohort mapping (FR TABULA 10 cohorts -> our 6 cohorts):
+#   pre-1945:    FR.01 (<1915) + FR.02 (1915-1948), averaged
+#   1946-1970:   FR.03 (1949-1967) + FR.04 (1968-1974), averaged
+#   1971-1990:   FR.05 (1975-1981) + FR.06 (1982-1989), averaged
+#   1991-2010:   FR.07 (1990-1999) + FR.08 (2000-2005), averaged
+#   2011-2020:   FR.09 (2006-2012) — closest match
+#   post-2020:   FR.10 (2013+) — RT 2012 / RE 2020
+#
+# Aggregation: simple mean across the sub-cohorts (TABULA reports one
+# generic-typology building per cohort per class). For applications
+# requiring stock-weighted aggregation, see fr_intensity.csv which
+# carries the FR cohort weights from the brochure's Tableau 1.
+#
+building_class,cohort,sh_intensity_kwh_m2_yr,dhw_intensity_kwh_m2_yr,source_note
+SFH,pre-1945,294.9,10,"Avg of FR.01 (<1915) + FR.02 (1915-1948), SFH+TH archetypes"
+SFH,1946-1970,295.4,10,"Avg of FR.03 (1949-1967) + FR.04 (1968-1974), SFH+TH"
+SFH,1971-1990,118.4,10,"Avg of FR.05 (1975-1981) + FR.06 (1982-1989), SFH+TH; first FR thermal regs"
+SFH,1991-2010,71.2,10,"Avg of FR.07 (1990-1999) + FR.08 (2000-2005), SFH+TH; RT 1989/2000"
+SFH,2011-2020,65.4,10,"FR.09 (2006-2012), SFH+TH; pre-RT 2012 transition"
+SFH,post-2020,46.8,10,"FR.10 (2013+), SFH+TH; RT 2012 / RE 2020"
+MFH_LOW,pre-1945,222.4,15,"Avg of FR.01 + FR.02, MFH archetype (small collective)"
+MFH_LOW,1946-1970,201.0,15,"Avg of FR.03 + FR.04, MFH"
+MFH_LOW,1971-1990,101.7,15,"Avg of FR.05 + FR.06, MFH"
+MFH_LOW,1991-2010,70.6,15,"Avg of FR.07 + FR.08, MFH"
+MFH_LOW,2011-2020,48.4,15,"FR.09, MFH"
+MFH_LOW,post-2020,40.4,15,"FR.10, MFH"
+MFH_HIGH,pre-1945,222.7,15,"Avg of FR.01 + FR.02, AB archetype (apartment block)"
+MFH_HIGH,1946-1970,149.6,15,"Avg of FR.03 + FR.04, AB; post-war social housing high-rise era"
+MFH_HIGH,1971-1990,94.4,15,"Avg of FR.05 + FR.06, AB"
+MFH_HIGH,1991-2010,64.5,15,"Avg of FR.07 + FR.08, AB"
+MFH_HIGH,2011-2020,39.7,15,"FR.09, AB"
+MFH_HIGH,post-2020,31.6,15,"FR.10, AB"

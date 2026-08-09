@@ -1,0 +1,101 @@
+# TABULA Sweden residential building intensities (extracted)
+#
+# USED AS THE TABULA SOURCE FOR FINLAND. Finland is not a TABULA country;
+# Sweden is its climate-corrected proxy (see code/data/country_config/fi.yaml,
+# tabula.source_country: SE). Climate correction HDD_FI/HDD_SE is applied
+# downstream by 03_heat_intensity.py -- the values in THIS file are the raw
+# Swedish (proxy) intensities, not yet climate-corrected.
+#
+# Source
+# ------
+# Swedish TABULA National Typology Brochure (the EPISCOPE/TABULA Sweden
+# country deliverable), "Exempelsamling - klimatzon 1/2/3", 95 pp, Swedish.
+#   - TABULA / EPISCOPE project, IEE 2009-2012 + follow-up 2013-2016.
+#   - Country page: episcope.eu/building-typology/country/se/
+# The brochure presents, per building type, three envelope states:
+#   Nuvarande  (existing / un-refurbished)
+#   Forbattrad (standard / "usual" refurbishment)
+#   Lagenergi  (advanced / low-energy "ambitious" refurbishment)
+#
+# Methodological notes
+# --------------------
+# * sh_intensity = the brochure line "Sammanlagd energibesparing for
+#   klimatskarmen", value "Nuvarande" -- the building-envelope NET space-
+#   heating energy need (kWh/m2/yr), system-independent. This is the
+#   harmonised "energy need" analogue of TABULA q_h_nd, consistent with how
+#   fr_intensities.csv was built. It is NOT the delivered/final-energy figure
+#   on the facing "Uppvarmning och ventilation" page -- those delivered
+#   numbers are not comparable across states because the brochure switches
+#   heating system (direct electric -> heat pump) between states.
+# * Climate zone: the brochure publishes three climate zones; zone 3
+#   (southern Sweden) is used here because it holds the large majority of
+#   the Swedish building stock and population. Cross-country HDD consistency
+#   is then handled by the FI/SE climate_multiplier in fi.yaml. The
+#   zone-3 choice is flagged in fi.yaml._meta.needs_verify_summary as a
+#   candidate refinement (a population-weighted average across SE zones).
+# * dhw_intensity = brochure existing-state "Tappvarmvatten" (DHW) in the
+#   electricity row, where the existing water heater is an electric
+#   resistance unit so delivered ~ energy need. Averaged across the two
+#   SFH area variants (16) and the five MFH examples (17).
+#
+# Building class mapping (Sweden TABULA -> our 4-class scheme)
+# ------------------------------------------------------------
+#   SFH       <- SE "Enfamiljshus" (single-family house)
+#   MFH_LOW   <- SE "Flerbostadshus" (multi-family / apartment building)
+#   MFH_HIGH  <- SE "Flerbostadshus" (same -- Sweden TABULA has ONE multi-
+#                family class; MFH_LOW and MFH_HIGH both take its values)
+#   NON_RES   <- not in TABULA; handled separately in 03_heat_intensity.py
+# Sweden TABULA has only 2 residential classes (SFH, MFH), so MFH_LOW and
+# MFH_HIGH are necessarily identical. Documented in
+# literature/finland/classification_methodology.md.
+#
+# Cohort mapping (Sweden's 5 periods -> our 6 cohorts)
+# ----------------------------------------------------
+# Sweden periods: <=1960, 1961-1975, 1976-1985, 1986-1995, 1996-2005.
+# Our cohorts:    pre-1945, 1946-1970, 1971-1990, 1991-2010, 2011-2020, post-2020.
+#   pre-1945   <- SE <=1960
+#   1946-1970  <- average(SE <=1960, SE 1961-1975)   [cohort straddles both]
+#   1971-1990  <- average(SE 1976-1985, SE 1986-1995) [cohort straddles both]
+#   1991-2010  <- SE 1996-2005
+#   2011-2020  <- SE 1996-2005 x 0.80  (extrapolation; NEEDS_VERIFY)
+#   post-2020  <- SE 1996-2005 x 0.65  (extrapolation; NEEDS_VERIFY)
+# The Swedish brochure stops at the 1996-2005 period, so the two newest
+# cohorts are extrapolated with new-build improvement factors reflecting the
+# tightening of Swedish BBR new-build energy requirements after 2006. The
+# 0.80 and 0.65 factors are corroborated by Boverket's building regulations
+# (BBR): the new-build residential energy requirement for southern Sweden
+# fell from ~110 kWh/m2/yr (BBR 2006) to ~90 (BBR 2015) to ~75 or lower
+# (BBR 2021, primary-energy / NZEB), giving requirement ratios of roughly
+# 0.80 (2015 vs 2005) and 0.65-0.70 (2021 vs 2005). This is order-of-
+# magnitude support, not an exact mapping (a 2017 delivered-to-primary-
+# energy change limits strict comparability). See
+# fi.yaml._meta.needs_verify_summary.
+# SFH existing-state intensities are the mean of the brochure's two area
+# variants (125 m2 and 160 m2); MFH has a single example per period.
+#
+# Refurbishment factors (for reference; applied via fi.yaml retrofit block):
+#   standard 0.74, advanced 0.49 -- simple averages of Forbattrad/Nuvarande
+#   and Lagenergi/Nuvarande across all 15 zone-3 building examples.
+#
+# Citation: TABULA Sweden National Typology Brochure (EPISCOPE/TABULA,
+# IEE 2009-2012). episcope.eu/building-typology/country/se/
+#
+building_class,cohort,sh_intensity_kwh_m2_yr,dhw_intensity_kwh_m2_yr,source_note
+SFH,pre-1945,209.0,16,"SE Enfamiljshus <=1960, mean of 125/160 m2 variants (214,204)"
+SFH,1946-1970,196.8,16,"Mean of SE <=1960 (209.0) and SE 1961-1975 (184.5)"
+SFH,1971-1990,130.5,16,"Mean of SE 1976-1985 (135.5) and SE 1986-1995 (125.5)"
+SFH,1991-2010,117.3,16,"SE Enfamiljshus 1996-2005, mean of 125/160 m2 variants (119,115.5)"
+SFH,2011-2020,93.8,16,"SE 1996-2005 (117.25) x 0.80 new-build extrapolation; NEEDS_VERIFY"
+SFH,post-2020,76.2,16,"SE 1996-2005 (117.25) x 0.65 new-build extrapolation; NEEDS_VERIFY"
+MFH_LOW,pre-1945,139.0,17,"SE Flerbostadshus <=1960"
+MFH_LOW,1946-1970,131.5,17,"Mean of SE <=1960 (139) and SE 1961-1975 (124)"
+MFH_LOW,1971-1990,90.0,17,"Mean of SE 1976-1985 (95) and SE 1986-1995 (85)"
+MFH_LOW,1991-2010,84.0,17,"SE Flerbostadshus 1996-2005"
+MFH_LOW,2011-2020,67.2,17,"SE 1996-2005 (84) x 0.80 new-build extrapolation; NEEDS_VERIFY"
+MFH_LOW,post-2020,54.6,17,"SE 1996-2005 (84) x 0.65 new-build extrapolation; NEEDS_VERIFY"
+MFH_HIGH,pre-1945,139.0,17,"SE Flerbostadshus <=1960 (Sweden TABULA has one MFH class)"
+MFH_HIGH,1946-1970,131.5,17,"Mean of SE <=1960 (139) and SE 1961-1975 (124)"
+MFH_HIGH,1971-1990,90.0,17,"Mean of SE 1976-1985 (95) and SE 1986-1995 (85)"
+MFH_HIGH,1991-2010,84.0,17,"SE Flerbostadshus 1996-2005 (Sweden TABULA has one MFH class)"
+MFH_HIGH,2011-2020,67.2,17,"SE 1996-2005 (84) x 0.80 new-build extrapolation; NEEDS_VERIFY"
+MFH_HIGH,post-2020,54.6,17,"SE 1996-2005 (84) x 0.65 new-build extrapolation; NEEDS_VERIFY"

@@ -1,0 +1,291 @@
+# Country configuration: Poland (PL)
+# ======================================
+# All Poland-specific parameters for the building-stock pipeline
+# (scripts 01-04 in code/scripts/country_build/). Sourced and cited inline;
+# methodology in literature/poland/classification_methodology.md.
+#
+# Schema version: 1 (matches code/src/CountryConfig.py SCHEMA_VERSION).
+#
+# STATUS: DRAFT. Poland is a DIRECT TABULA country (NAPE / Narodowa Agencja
+# Poszanowania Energii). Build group 4 (PL + CZ, SK, HU; Visegrad).
+# Poland is the heavyweight of group 4 (Hotmaps 2015 baseline 257.93 TWh).
+
+country_code: PL
+country_name: Poland
+
+# -- EUBUCCO data source -----------------------------------------------------
+# EUBUCCO v0.2 partitions buildings by NUTS2 region. Poland's NUTS2 codes were
+# substantially RECODED at the NUTS 2018 amendment (Commission Regulation
+# 2017/2391, effective 2018-01-01). EUBUCCO v0.2 was built with the
+# POST-amendment NUTS 2021 codes for Poland (PL21/PL22/PL41-PL43/.../PL91-PL92,
+# 17 regions). The pre-2018 NUTS 2016 codes (PL11/PL12/PL31-PL34/...) return
+# HTTP 404 from the s3.eubucco.com bucket; verified 2026-05-20 by direct probe.
+# This is the only country in build groups 1-4 where EUBUCCO uses NUTS 2021;
+# all others use NUTS 2016 (some happen to be stable across vintages).
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - PL21   # Malopolskie
+    - PL22   # Slaskie
+    - PL41   # Wielkopolskie
+    - PL42   # Zachodniopomorskie
+    - PL43   # Lubuskie
+    - PL51   # Dolnoslaskie
+    - PL52   # Opolskie
+    - PL61   # Kujawsko-pomorskie
+    - PL62   # Warminsko-mazurskie
+    - PL63   # Pomorskie
+    - PL71   # Lodzkie (was PL11 under NUTS 2016)
+    - PL72   # Swietokrzyskie (was PL33)
+    - PL81   # Lubelskie (was PL31)
+    - PL82   # Podkarpackie (was PL32)
+    - PL84   # Podlaskie (was PL34)
+    - PL91   # Warszawski stoleczny (NEW; was part of PL12)
+    - PL92   # Mazowiecki regionalny (NEW; was part of PL12)
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  # Citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1.
+  # Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2.
+  license: ODbL v1.0
+
+# -- NUTS3 regions -----------------------------------------------------------
+# Poland has 73 NUTS3 regions under NUTS 2021, listed here in line with the
+# EUBUCCO v0.2 partitioning. Codes from code/data/raw/gisco/
+# NUTS_RG_01M_2021_4326_clean.csv. The NUTS 2016 codes (PL113/PL127/PL128/...)
+# were substantially renumbered; e.g. Warsaw is PL911 in NUTS 2021 (was PL127).
+# The Hotmaps building_stock_nuts3.csv carries NUTS 2016 PL codes; aggregation
+# across NUTS3 codes for the country-total Hotmaps benchmark is invariant to
+# the renaming, so the 257.93 TWh total still applies.
+nuts3_regions:
+  - PL213   # Miasto Krakow
+  - PL214   # Krakowski
+  - PL217   # Tarnowski
+  - PL218   # Nowosadecki
+  - PL219   # Nowotarski
+  - PL21A   # Oswiecimski
+  - PL224   # Czestochowski
+  - PL225   # Bielski
+  - PL227   # Rybnicki
+  - PL228   # Bytomski
+  - PL229   # Gliwicki
+  - PL22A   # Katowicki
+  - PL22B   # Sosnowiecki
+  - PL22C   # Tyski
+  - PL411   # Pilski
+  - PL414   # Koninski
+  - PL415   # Miasto Poznan
+  - PL416   # Kaliski
+  - PL417   # Leszczynski
+  - PL418   # Poznanski
+  - PL424   # Miasto Szczecin
+  - PL426   # Koszalinski
+  - PL427   # Szczecinecko-pyrzycki
+  - PL428   # Szczecinski
+  - PL431   # Gorzowski
+  - PL432   # Zielonogorski
+  - PL514   # Miasto Wroclaw
+  - PL515   # Jeleniogorski
+  - PL516   # Legnicko-glogowski
+  - PL517   # Walbrzyski
+  - PL518   # Wroclawski
+  - PL523   # Nyski
+  - PL524   # Opolski
+  - PL613   # Bydgosko-torunski
+  - PL616   # Grudziadzki
+  - PL617   # Inowroclawski
+  - PL618   # Swiecki
+  - PL619   # Wloclawski
+  - PL621   # Elblaski
+  - PL622   # Olsztynski
+  - PL623   # Elcki
+  - PL633   # Trojmiejski (Gdansk/Sopot/Gdynia)
+  - PL634   # Gdanski
+  - PL636   # Slupski
+  - PL637   # Chojnicki
+  - PL638   # Starogardzki
+  - PL711   # Miasto Lodz
+  - PL712   # Lodzki
+  - PL713   # Piotrkowski
+  - PL714   # Sieradzki
+  - PL715   # Skierniewicki
+  - PL721   # Kielecki
+  - PL722   # Sandomiersko-jedrzejowski
+  - PL811   # Bialski
+  - PL812   # Chelmsko-zamojski
+  - PL814   # Lubelski
+  - PL815   # Pulawski
+  - PL821   # Krosnienski
+  - PL822   # Przemyski
+  - PL823   # Rzeszowski
+  - PL824   # Tarnobrzeski
+  - PL841   # Bialostocki
+  - PL842   # Lomzynski
+  - PL843   # Suwalski
+  - PL911   # Miasto Warszawa (Warsaw city)
+  - PL912   # Warszawski wschodni
+  - PL913   # Warszawski zachodni
+  - PL921   # Radomski
+  - PL922   # Ciechanowski
+  - PL923   # Plocki
+  - PL924   # Ostrolecki
+  - PL925   # Siedlecki
+  - PL926   # Zyrardowski
+
+# -- Geographic bounding box (WGS84) -----------------------------------------
+bbox_wgs84:
+  lon_min: 14.12
+  lat_min: 49.00
+  lon_max: 24.15
+  lat_max: 54.84
+
+# -- TABULA building typology source -----------------------------------------
+# Poland IS a TABULA country -- this is the DIRECT national typology
+# (tabula.source_country = PL). Produced by NAPE (Narodowa Agencja
+# Poszanowania Energii / Polish National Energy Conservation Agency) under
+# the IEE TABULA 2009-2012 project. The same pl_intensities.csv file is also
+# used as the climate-corrected proxy for EE, LV, LT (build group 1).
+#
+# IMPORTANT METHODOLOGICAL CAVEAT (carried over from pl_intensities.csv
+# header): Polish TABULA values are DERIVED from published EK (energia
+# koncowa = final energy) figures by deducting DHW + applying period
+# heating-system efficiencies. They are NOT the TABULA-harmonised net SH
+# values; treat as best estimates with +/-15-20% uncertainty.
+tabula:
+  source_country: PL
+  source_country_name: Poland
+  intensities_file: code/data/raw/tabula/pl_intensities.csv
+  reason_for_proxy: |
+    Poland is a TABULA country (NAPE). Direct typology used without proxy
+    (climate_multiplier = 1.0). The same file pl_intensities.csv was originally
+    built as the climate-corrected proxy for the Baltic states; here Poland
+    uses it directly. Values are DERIVED from Polish EK (final energy) figures
+    rather than TABULA-harmonised net SH; flagged in the TABULA file header.
+
+# -- Climate correction ------------------------------------------------------
+# Poland is a direct TABULA country. The Polish TABULA values are calibrated
+# to Polish national-mean climate (the EK certificate methodology uses a
+# climate normalisation built into the certificate, not a fixed reference
+# zone). tabula_reference_hdd defaults to hdd_proxy (= hdd_country for direct),
+# giving climate_multiplier = 1.0. See literature/climate_reference_hdd_audit.md
+# for the audit decision (PL is in the NO CHANGE set).
+#
+# Source: Eurostat nrg_chdd_a (base 15 C, JRC AGRI4CAST), 5-year mean 2018-2022:
+#   PL annual HDD: 3126.18, 2954.00, 3011.03, 3497.15, 3205.03 -> mean 3158.7
+climate:
+  hdd_country: 3158.7            # PL -- Eurostat nrg_chdd_a 2018-2022 mean
+  hdd_proxy: 3158.7              # PL direct typology -> proxy = self
+  tabula_reference_hdd: 3158.7   # PL TABULA calibrated to Polish national mean
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  climate_multiplier: 1.0        # direct TABULA country
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST), 5-year mean 2018-2022
+
+# -- Retrofit-state distribution ---------------------------------------------
+# Retrofit FACTORS are the Polish TABULA typology-averaged refurbishment
+# ratios (published in NAPE Sec. 3.4.3): standard/improved refurbishment
+# ~0.63 of existing-state space-heating need; advanced/ambitious ~0.50.
+#
+# Retrofit SHARES are a modelling assumption. Poland's residential renovation
+# rate is low (~1 percent/yr; mostly shallow). Czyste Powietrze ("Clean Air")
+# programme has funded ~700k mostly-shallow retrofits to 2024 (~6-7 pct of
+# stock). Deep retrofits are a small share (Stop-Smog gminne; EU RPO/POIiS).
+retrofit:
+  share:
+    original: 0.78          # modelling assumption (coal-heavy un-renovated SFH)
+    standard: 0.17          # Czyste Powietrze shallow + window/boiler swaps
+    advanced: 0.05          # deep retrofits (Stop-Smog; EU funds)
+  factor:
+    standard: 0.63          # Polish TABULA standard refurbishment (NAPE Sec 3.4.3)
+    advanced: 0.50          # Polish TABULA advanced refurbishment (NAPE Sec 3.4.3)
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # Computed blend for PL: 0.78 + 0.17x0.63 + 0.05x0.50 = 0.912
+  blend_value: 0.912
+  share_source: |
+    Modelling assumption grounded in the Polish Long-Term Renovation Strategy
+    (Ministerstwo Rozwoju i Technologii 2022) and Czyste Powietrze programme
+    cumulative reporting (NFOSiGW 2024; ~700k retrofits to 2024).
+
+# -- Domestic Hot Water (DHW) intensity --------------------------------------
+dhw:
+  sfh: 28.0
+  mfh: 23.0
+  unit: kWh/m2/yr
+  source: Polish TABULA DHW convention (DERIVED in pl_intensities.csv from the Polish energy-certificate DHW assumption; provisional pending verification)
+
+# -- Non-residential intensity (placeholder) ---------------------------------
+non_residential_intensity:
+  value: 145.0
+  unit: kWh/m2/yr
+  source: estimate -- Polish non-residential stock space heating (coal-heavy historical; offices + retail + public buildings)
+  status: rough placeholder; contributes 0 TWh (zero heated area); flagged in methodology
+
+# -- External reconciliation benchmarks --------------------------------------
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 257.93           # sum of heat_2015_MWh across all 72 PL NUTS3
+                                #   rows in building_stock_nuts3.csv. NUTS 2016
+                                #   vintage; PLZZ extraterritorial excluded.
+    year: 2015
+    source: Hotmaps Toolbox via building_stock_nuts3.csv; sum across all PL NUTS3 rows
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 1139
+    eubucco_mm2: 1716
+    census_eubucco_ratio: 0.66
+    source: GUS NSP 2021 dwelling stock
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 210.0            # Order-of-magnitude anchor; the reconciliation
+                                #   BSO row is computed from pl_intensity.csv.
+    year: 2022
+    source: anchored estimate; EU Building Stock Observatory portal not retrievable
+  odyssee_mure:
+    total_twh: 190.0            # Odyssee-Mure PL residential space heating
+                                #   back-calculated from ~13 Mtoe final energy
+                                #   / 0.7-0.8 efficiency ~ 190 TWh useful demand.
+    year: 2022
+    source: Odyssee-Mure Poland; residential space heating (back-calculated to useful demand)
+    note: National total only; final-energy basis -- definitional gap vs Hotmaps useful demand.
+
+# -- Hotmaps NUTS3 ID for model comparison -----------------------------------
+hotmaps_nuts3_id: PL911   # Miasto Warszawa (NUTS 2021; was PL127 under NUTS 2016)
+
+# -- Building classification rules -------------------------------------------
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+  # Rules (sequential, first match wins):
+  # 1. EUBUCCO.type starts with "non-" -> NON_RESIDENTIAL
+  # 2. floors >= 6 AND footprint >= 800 -> MFH_HIGH
+  # 3. floors <= 2 AND footprint < 250  -> SFH
+  # 4. 3 <= floors <= 5                  -> MFH_LOW
+  # 5. default (ambiguous large)         -> MFH_HIGH
+
+# -- Provenance + change log -------------------------------------------------
+_meta:
+  created: 2026-05-19
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 4)
+  last_verified: 2026-05-19
+  schema_version: 1
+  status: DRAFT -- direct Polish TABULA build (NAPE); pl_intensities.csv carries known +/-15-20 pct uncertainty (EK-derived values).
+  references_doc: literature/poland/classification_methodology.md
+  verified_2026_05_20:
+    - eubucco.nuts2_partitions (17 codes; NUTS 2021 vintage; post-2018 amendment) -- verified by direct curl probe of s3.eubucco.com 2026-05-20 (PL11/PL12 return 404; PL71/PL91 return 200).
+    - nuts3_regions (73 codes; NUTS 2021; from code/data/raw/gisco/NUTS_RG_01M_2021_4326_clean.csv).
+    - climate.hdd_country = 3158.7 (Eurostat nrg_chdd_a 2018-2022 mean).
+    - tabula source = PL direct; code/data/raw/tabula/pl_intensities.csv.
+    - reconciliation_benchmarks.hotmaps = 257.93 TWh (sum of heat_2015_MWh across PL NUTS3 rows; invariant to vintage renaming).
+  needs_verify_summary:
+    - retrofit shares (0.78/0.17/0.05) -- modelling assumption from Polish LTRS 2022 + Czyste Powietrze reporting.
+    - DHW values (28/23) -- derived in pl_intensities.csv from Polish energy-certificate assumption; FLAGGED.
+    - non_residential_intensity (145) -- rough placeholder; contributes 0 TWh.
+    - reconciliation_benchmarks.eu_bso (210) -- anchored estimate.
+    - reconciliation_benchmarks.odyssee_mure (190) -- back-calculated to useful demand.
+    - pl_intensities.csv: MFH_HIGH pre-1945 + 1946-1970 are proxied/interpolated (no large-panel blocks before ~1967); FLAGGED in TABULA file.
+    - pl_intensities.csv: post-2020 cohort EXTRAPOLATED from "after 2008" with WT2017/WT2021 adjustment; FLAGGED in TABULA file.

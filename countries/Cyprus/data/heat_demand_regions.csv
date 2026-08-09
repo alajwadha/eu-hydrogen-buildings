@@ -1,0 +1,4 @@
+nuts_id,nuts_name,nuts_level,country,dwelling_share_basis,heat_MWh,heat_TWh
+CY0,Κύπρος,1,CY,2613329.0,3147000.0,3.147
+CY00,Κύπρος,2,CY,2613329.0,3147000.0,3.147
+CY000,Κύπρος,3,CY,2613329.0,3147000.0,3.147

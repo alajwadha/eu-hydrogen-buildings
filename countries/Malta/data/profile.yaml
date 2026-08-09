@@ -1,0 +1,90 @@
+country: Malta
+iso2: MT
+data_provenance: 'Model files: code/src/Policy.py, code/src/Economics.py, code/results/mc_country_STATED_POLICIES.csv.
+  External: see ../MT/sources.md'
+economics:
+  gas_price_eur_mwh_2025: 90.0
+  electricity_price_eur_mwh_2025: 200.0
+  hp_air_scop_2025: 3.9
+  hp_ground_scop_2025: 4.94
+  annual_heating_hours: 571
+  discount_rate_real_pretax: 0.05
+  lcoh_eur_mwh:
+    2025:
+      gas_boiler: 275.1
+      hp_air: 104.5
+      hp_ground: 95.1
+      h2_boiler: 449.3
+      district_heat: 152.9
+      biomass_boiler: 356.8
+    2030:
+      gas_boiler: 277.4
+      hp_air: 97.2
+      hp_ground: 89.5
+      h2_boiler: 361.8
+      district_heat: 152.7
+      biomass_boiler: 352.9
+    2040:
+      gas_boiler: 265.7
+      hp_air: 77.9
+      hp_ground: 74.4
+      h2_boiler: 287.8
+      district_heat: 146.1
+      biomass_boiler: 338.7
+    2050:
+      gas_boiler: 250.7
+      hp_air: 63.2
+      hp_ground: 62.6
+      h2_boiler: 247.7
+      district_heat: 140.5
+      biomass_boiler: 324.6
+  labour_multiplier: 0.62
+  labour_methodology: CAPEX_country = CAPEX_anchor * [(1 - L) + L * M], FOM analogous with FOM_LABOUR_SHARE=0.70.
+    Anchor = EU27 construction (NACE F) mean hourly labour cost 2024, Eurostat lc_lci_lev. L = LABOUR_SHARE_OF_CAPEX[tech]
+    (HP_air 0.40, HP_ground 0.55, gas_boiler 0.30, district_heat 0.50, h2_boiler 0.35, biomass_boiler
+    0.30). M = country labour multiplier (this country = 0.62).
+grid_co2_gCO2_kWh:
+  2025: 450.0
+  2030: 250.0
+  2040: 90.0
+  2050: 15.0
+gas_grid_coverage_fraction: 0.02
+policy:
+  fossil_boiler_subsidies_end: 2025
+  new_build_fossil_ban: 2030
+  replacement_fossil_ban: 2035
+  full_fossil_ban: 2040
+  hp_mandate_year: 2035
+  notes: "75.4% residential energy from electricity (highest EU share, 2023). Mild climate \u2014 low\
+    \ absolute heating demand."
+carbon_prices_eur_tco2:
+  LOW:
+    2025: 30.0
+    2027: 45.0
+    2030: 70.0
+    2040: 130.0
+    2050: 150.0
+  CENTRAL:
+    2025: 55.0
+    2027: 75.0
+    2030: 122.0
+    2040: 180.0
+    2050: 200.0
+  HIGH:
+    2025: 70.0
+    2027: 100.0
+    2030: 200.0
+    2040: 300.0
+    2050: 350.0
+model_results_note: Not among the top-15 reported per-country emitters (small country).
+building_stock:
+  MFH_HIGH:
+    dwellings_2021: 235365
+    heat_demand_2015_TWh: 0.11
+  OTHER:
+    dwellings_2021: 1038048
+    heat_demand_2015_TWh: 0.49
+  SFH:
+    dwellings_2021: 283665
+    heat_demand_2015_TWh: 0.13
+  _caveat: OTHER category over-counts. Cross-reference national statistical offices.

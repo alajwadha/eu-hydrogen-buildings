@@ -1,0 +1,16 @@
+# Netherlands climate + retrofit-state national assumptions
+# Mirror of nl.yaml; authoritative source is the YAML.
+#
+parameter,value,unit,source
+hdd_nl_2018_2022_avg,2475,degree-days/yr,Eurostat nrg_chdd_a (JRC AGRI4CAST) 2018-2022 mean estimate (NEEDS_VERIFY)
+hdd_proxy_2018_2022_avg,2475,degree-days/yr,direct TABULA country (proxy = self)
+tabula_reference_hdd,2900,degree-days/yr,"KNMI De Bilt 1971-2000 climate normal (NL TABULA reference)"
+climate_multiplier,0.8534,dimensionless,"2475 / 2900 (Option B reference-HDD correction)"
+retrofit_share_original,0.55,fraction,"modelling assumption (CBS energy-label statistics 2026; NL is most-retrofitted EU stock)"
+retrofit_share_standard,0.35,fraction,"modelling assumption (Nationaal Isolatieprogramma + EPC tightening)"
+retrofit_share_advanced,0.10,fraction,"modelling assumption (ISDE heat-pump + insulation subsidy uptake)"
+retrofit_factor_standard,0.65,multiplier,"NL TABULA usual refurbishment (Voorbeeldwoningen 2022, provisional)"
+retrofit_factor_advanced,0.30,multiplier,"NL TABULA advanced refurbishment (provisional)"
+dhw_intensity_sfh,17.0,kWh/m2/yr,"NL Voorbeeldwoningen DHW assumption"
+dhw_intensity_mfh,20.0,kWh/m2/yr,"NL Voorbeeldwoningen DHW assumption"
+non_residential_intensity,130,kWh/m2/yr,"estimate (Hotmaps + RVO EP-online tertiary heating average)"

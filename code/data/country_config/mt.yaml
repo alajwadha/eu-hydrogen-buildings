@@ -1,0 +1,248 @@
+# Country configuration: Malta (MT)
+# ====================================
+# All Malta-specific parameters for the building-stock pipeline
+# (scripts 01-04 in code/scripts/country_build/). Sourced and cited inline;
+# methodology in literature/malta/classification_methodology.md.
+#
+# Schema version: 1 (matches code/src/CountryConfig.py SCHEMA_VERSION).
+#
+# STATUS: DRAFT -- Malta is NOT a TABULA country. Cyprus (CY) is used as the
+# climate-corrected TABULA proxy. Build group 2 (IT + SI, HR, MT).
+#
+# MALTA CAVEAT: Malta has the lowest residential heat demand of any country in
+# this study (Hotmaps 2015 baseline 0.73 TWh). Space heating is a marginal
+# end-use -- the Malta heat market is ~80% electric (reverse-cycle AC), there
+# is no piped gas grid and no district heating. SEPARATELY, EUBUCCO excluded
+# Malta building data in v0.1 for licensing reasons; if this persists in v0.2,
+# the bottom-up build cannot run for Malta and the model falls back to the
+# top-down Hotmaps demand (0.73 TWh). See literature/malta/.
+
+country_code: MT
+country_name: Malta
+
+# -- EUBUCCO data source -----------------------------------------------------
+# EUBUCCO v0.2 partitions buildings by NUTS2 region. Malta is a single NUTS2
+# region (MT00). NOTE: EUBUCCO v0.1 did NOT redistribute Malta building data
+# (licence did not permit redistribution); confirm v0.2 before the run --
+# flagged in _meta.
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - MT00
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  # Citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1.
+  # Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2.
+  license: ODbL v1.0
+
+# -- NUTS3 regions -----------------------------------------------------------
+# Malta has 2 NUTS3 regions, unchanged across NUTS 2016 and 2021.
+nuts3_regions:
+  - MT001   # Malta (the main island)
+  - MT002   # Gozo and Comino (Ghawdex u Kemmuna)
+
+# -- Geographic bounding box (WGS84) -----------------------------------------
+# Tight land extent of the Maltese archipelago.
+bbox_wgs84:
+  lon_min: 14.18
+  lat_min: 35.81
+  lon_max: 14.58
+  lat_max: 36.08
+
+# -- TABULA building typology source -----------------------------------------
+# Malta is NOT a TABULA country. Cyprus (CY) is used as the TABULA proxy.
+#
+# Malta uses Cyprus TABULA as proxy because Cyprus is the only other small,
+# warm-Mediterranean island state with a TABULA typology -- both are warm
+# (Koeppen Csa), masonry-dominated, with reverse-cycle AC as the main heating
+# technology and very low heating demand. Cyprus has higher HDD than Malta, so
+# the climate correction is well below 1.0. Greece is a secondary cross-check.
+# Extraction: code/data/raw/tabula/cy_intensities.csv.
+tabula:
+  source_country: CY
+  source_country_name: Cyprus
+  intensities_file: code/data/raw/tabula/cy_intensities.csv
+  reason_for_proxy: |
+    Malta has no national TABULA typology. Cyprus is the closest TABULA country
+    -- the only other small warm-Mediterranean island state -- with comparable
+    masonry construction and a heating-marginal, AC-dominated heat market.
+    Maltese heat intensities are Cyprus-derived, climate-corrected by the
+    HDD_MT/HDD_CY ratio (0.7210) -- Malta is milder than Cyprus.
+
+# -- Climate correction ------------------------------------------------------
+# Source: Eurostat nrg_chdd_a (base 15 C, JRC AGRI4CAST), 5-year mean 2018-2022:
+#   MT annual HDD: 386.91, 540.06, 418.24, 482.13, 557.81 -> mean 477.03
+#   CY annual HDD: 505.57, 729.19, 678.47, 653.54, 741.05 -> mean 661.56
+# Malta has effectively the lowest HDD in the EU.
+climate:
+  hdd_country: 477.03        # MT -- Eurostat nrg_chdd_a 2018-2022 mean
+  hdd_proxy: 661.56          # CY -- Eurostat nrg_chdd_a 2018-2022 mean
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  climate_multiplier: 0.7210 # 477.03 / 661.56
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST), 5-year mean 2018-2022
+
+# -- Retrofit-state distribution ---------------------------------------------
+# Retrofit FACTORS are the Cyprus TABULA typology-averaged refurbishment ratios
+# (Malta uses the Cyprus proxy). PROVISIONAL pending the cy_intensities.csv
+# extraction.
+#
+# Retrofit SHARES: Malta has no national heating-retrofit programme; the
+# limestone-masonry stock is essentially unrefurbished for heating purposes.
+# Given Malta's negligible heating demand, this parameter is largely immaterial
+# to the result. The 0.92/0.06/0.02 split reflects a near-entirely-original stock.
+retrofit:
+  share:
+    original: 0.92          # modelling assumption -- near-entirely-original stock
+    standard: 0.06          # modelling assumption
+    advanced: 0.02          # modelling assumption
+  factor:
+    standard: 0.70          # PROVISIONAL -- Cyprus TABULA standard refurb (proxy)
+    advanced: 0.50          # PROVISIONAL -- Cyprus TABULA advanced refurb (proxy)
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # Computed blend for MT: 0.92 + 0.06x0.70 + 0.02x0.50 = 0.972
+  blend_value: 0.972
+  share_source: |
+    Modelling assumption -- Malta has no national heating-retrofit programme
+    and the limestone-masonry stock is essentially unrefurbished for heating.
+    Immaterial to the result given Malta's negligible heat demand. Retrofit
+    factors PROVISIONAL pending the cy_intensities.csv extraction.
+
+# -- Domestic Hot Water (DHW) intensity --------------------------------------
+dhw:
+  sfh: 18.0
+  mfh: 16.0
+  unit: kWh/m2/yr
+  source: Cyprus TABULA proxy (cy_intensities.csv); provisional pending extraction
+
+# -- Non-residential intensity (placeholder) ---------------------------------
+non_residential_intensity:
+  value: 120.0
+  unit: kWh/m2/yr
+  source: estimate -- derived from the Cyprus proxy; Malta non-residential heating marginal
+  status: rough placeholder; contributes 0 TWh (zero heated area); flagged in methodology
+
+# -- External reconciliation benchmarks --------------------------------------
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 0.73             # sum of heat_2015_MWh across all 9 MT NUTS3
+                                #   rows in building_stock_nuts3.csv. All-classes
+                                #   total -- the smallest in the study.
+    year: 2015
+    source: Hotmaps Toolbox via building_stock_nuts3.csv; sum across all MT NUTS3 rows
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 42
+    eubucco_mm2: 42
+    census_eubucco_ratio: 1.00
+    source: NSO Malta Census 2021 (297,304 dwellings; area estimated from size/type, no m2 published)
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 0.6              # Order-of-magnitude anchor; the reconciliation
+                                #   BSO row is computed from mt_intensity.csv.
+    year: 2022
+    source: anchored estimate; EU Building Stock Observatory portal not retrievable
+  odyssee_mure:
+    total_twh: 0.5              # Malta residential space heating is marginal and
+                                #   AC-delivered; final-energy basis estimate.
+    year: 2023
+    source: Odyssee-Mure Malta; residential space heating (marginal end-use)
+    note: Malta heating demand is negligible; percentage reconciliation is low-information.
+
+# -- Hotmaps NUTS3 ID for model comparison -----------------------------------
+hotmaps_nuts3_id: MT001   # Malta island (representative reference)
+
+# -- Building classification rules -------------------------------------------
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+  # Rules (sequential, first match wins):
+  # 1. EUBUCCO.type starts with "non-" -> NON_RESIDENTIAL
+  # 2. floors >= 6 AND footprint >= 800 -> MFH_HIGH
+  # 3. floors <= 2 AND footprint < 250  -> SFH
+  # 4. 3 <= floors <= 5                  -> MFH_LOW
+  # 5. default (ambiguous large)         -> MFH_HIGH
+
+# -- Operational-regime (comfort) deflator -----------------------------------
+# Applied as a multiplier on the SPACE-HEATING component of the per-building
+# intensity (DHW unaffected). Translates the TABULA reference-condition
+# steady-state demand into the realised Maltese stock-weighted regime.
+#
+# Malta is the EU's most extreme comfort-top-up heating case -- milder than
+# Cyprus (its TABULA proxy) and even more AC-dominated:
+#   - Climate: MT 2018-2022 mean HDD = 477 (the lowest in the EU; vs CY 662).
+#     This climate gap is ALREADY captured in climate_multiplier = 0.721;
+#     the deflator below is the additional BEHAVIOURAL-regime correction.
+#   - Heating technology: Malta NECP 2030 / EWA (Energy and Water Agency,
+#     Dec 2019, updated Dec 2024) report ~80 % of Maltese residential
+#     heating is reverse-cycle air-conditioning (RCAC), room-and-occupancy
+#     modulated, NOT whole-dwelling steady-state. No piped gas grid, no
+#     district heating.
+#   - Eurostat nrg_d_hhq: space heating is ~20 % of Maltese household final
+#     energy -- among the very lowest in the EU (vs CY 33.5 %). Maltese
+#     household FE is dominated by water heating, cooling and appliances.
+#
+# Deflator derivation: the CY proxy carries comfort_regime.deflator = 0.30
+# (Eurostat nrg_d_hhq space-heating share 33.5 % + CYSTAT equipment survey).
+# Scaling by the MT/CY space-heating FE-share ratio (~0.20 / 0.335 = 0.60)
+# gives 0.30 x 0.60 ~ 0.18; the conservative CY-analogue upper bound is 0.25.
+# Applied value 0.22 (midpoint of 0.18-0.25).
+#
+# IMPORTANT -- low-information caveat: even with this deflator, MT does not
+# land in the OK/ACC band, because the Hotmaps denominator (0.73 TWh, the
+# smallest in the EU) makes any percentage high-variance, and the DHW floor
+# (~0.6 TWh, unaffected by the SH deflator) alone is near Hotmaps. The
+# deflator reduces the bottom-up from +231 % to ~+40 % vs Hotmaps, but MT
+# remains a documented STRUCTURAL LOW-INFORMATION case: the recommended
+# headline demand input for the OIES paper is the Hotmaps top-down 0.73 TWh.
+# See literature/inv_countries_academic_refinements.md Correction 8.
+#
+# Sources:
+#  - Malta NECP 2030 (EWA, Dec 2019; updated Dec 2024) -- RCAC heating share.
+#  - Eurostat nrg_d_hhq -- Malta space-heating share of household FE.
+#  - Panayiotou et al. (2010) Energy & Buildings 42:2083-2089 (CY proxy
+#    measured-stock anchor); CYSTAT 2009/2018 household-energy survey.
+comfort_regime:
+  deflator: 0.22
+  source: |
+    Maltese operational-regime coefficient (0.22; range 0.18-0.25) for the
+    EU's most extreme comfort-top-up heating regime. Derived by scaling the
+    CY-proxy deflator (0.30) by the MT/CY space-heating household-FE-share
+    ratio (~0.20/0.335 ~ 0.60 -> 0.18) and bounding at the CY-analogue 0.25.
+    Grounds: Malta NECP 2030 / EWA ~80 % RCAC heating; Eurostat nrg_d_hhq
+    MT space heating ~20 % of household FE; no piped gas, no district heat.
+    MT remains a structural low-information case (Hotmaps 0.73 TWh
+    denominator); Hotmaps top-down is the recommended headline anchor.
+
+# -- Provenance + change log -------------------------------------------------
+_meta:
+  created: 2026-05-19
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 2)
+  last_verified: 2026-05-19
+  schema_version: 1
+  status: DRAFT -- Cyprus-proxy TABULA build; retrofit factors and DHW
+    PROVISIONAL pending the cy_intensities.csv extraction. Malta heating demand
+    is negligible; EUBUCCO data availability for Malta is uncertain.
+  references_doc: literature/malta/classification_methodology.md
+  verified_2026_05_19:
+    - eubucco.nuts2_partitions (MT00, single NUTS2)
+    - nuts3_regions (MT001, MT002 -- stable NUTS 2016/2021)
+    - climate.hdd_country = 477.03 / hdd_proxy = 661.56 (Eurostat nrg_chdd_a 2018-2022)
+    - climate.climate_multiplier = 0.7210 (MT/CY HDD ratio)
+    - tabula source = CY
+  needs_verify_summary:
+    - EUBUCCO Malta data availability -- v0.1 excluded Malta for licensing
+      reasons; if v0.2 also lacks Malta, the bottom-up build cannot run and the
+      model falls back to top-down Hotmaps demand (0.73 TWh).
+    - retrofit factors (0.70/0.50) and DHW (18/16) -- PROVISIONAL; from the
+      Cyprus TABULA proxy, reconcile once cy_intensities.csv is extracted.
+    - retrofit shares (0.92/0.06/0.02) -- modelling assumption; immaterial
+      given negligible heat demand.
+    - non_residential_intensity (120) -- estimate; contributes 0 TWh.
+    - reconciliation_benchmarks.eu_bso -- anchored estimate, BSO portal not retrievable.

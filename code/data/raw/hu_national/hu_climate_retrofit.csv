@@ -1,0 +1,40 @@
+# Hungary climate + retrofit-state national assumptions
+#
+# Legacy national-parameters file referenced by 04_diagnostics.py for the
+# existence check. The authoritative source of these values is hu.yaml;
+# this file mirrors them for documentation. All values are numeric.
+#
+# Hungary is currently a TABULA PROXY country: Germany (DE) is used as the
+# transitional TABULA proxy. Hungary IS in TABULA-EPISCOPE via BME (Budapest
+# University of Technology and Economics; brochure HU_TABULA_TypologyBrochure
+# _BME.pdf 2014-10-21 at episcope.eu/fileadmin/tabula/public/docs/brochure/);
+# the prior 2026-05-19 claim "HU is NOT a TABULA-12 country" was VERIFIED
+# INCORRECT 2026-05-20. The DE proxy will be replaced once the BME brochure's
+# 15 archetypes x 6 cohorts are manually extracted (the brochure is an
+# image-based scan). See hu.yaml + literature/inv_countries_academic_
+# refinements.md "Correction 1" for the full audit.
+#
+# Retrofit shares UPDATED 2026-05-20 to BPIE/EUKI JustReno 2025 baseline:
+# the previous shares 0.78/0.17/0.05 over-stated renovation reach. JustReno
+# reports HU annual renovation rate 0.3-0.5%/yr (lowest in EU). Otthon
+# Felujitasi 2021-2022 supported 370k families (~150-185k envelope-affecting
+# = 3.4-4.2% of stock). Panelprogram 2001-2007 + Otthon Melege continuation
+# = ~250-280k panel dwellings by 2020 = 5.7-6.4% of stock. Otthon Melege
+# deep-retrofit subset only 13,975 dwellings (0.3%). De-duplicated cumulative
+# ~10% standard + ~2% advanced. New blend 0.949 (was 0.9029); this WIDENS
+# the HU bottom-up vs Hotmaps gap from +38.5% to ~+45.6% which is the
+# academically correct exposure of the binding constraint (DE archetype
+# intensities for HU panelhaz stock).
+#
+parameter,value,unit,source
+hdd_hu_2018_2022_avg,2440,degree-days/yr,Eurostat nrg_chdd_a (JRC AGRI4CAST) 2018-2022 mean (NEEDS_VERIFY exact)
+hdd_proxy_de_2018_2022_avg,2845.85,degree-days/yr,Eurostat nrg_chdd_a (DE national mean)
+climate_multiplier,0.8574,dimensionless,2440 / 2845.85 (HU/DE HDD ratio)
+retrofit_share_original,0.88,fraction,"BPIE/EUKI JustReno 2025: HU annual renovation rate 0.3-0.5%/yr (lowest in EU); compounded ~5-10% cumulative 2005-2022"
+retrofit_share_standard,0.10,fraction,"Otthon Felujitasi envelope subset 150-185k dwellings (Magyar Allamkincstar) + Panelprogram facade ~250-280k by 2020 (de-duplicated)"
+retrofit_share_advanced,0.02,fraction,"Otthon Melege deep-retrofit subset 13,975 dwellings (HU government 2014-2020); nZEB-grade additions"
+retrofit_factor_standard,0.62,multiplier,"Csoknyai 2016 BME context (Hungarian partial-renovation savings; Energy & Buildings 132:39-52)"
+retrofit_factor_advanced,0.35,multiplier,"Panel Plus / Otthon Melege deep retrofit (Hrabovszky-Horvath 2015 BME dissertation)"
+dhw_intensity_sfh,14.0,kWh/m2/yr,"continental-default DHW convention (between DE 11/16 and PL 28/23; NEEDS_VERIFY against Csoknyai 2016)"
+dhw_intensity_mfh,15.0,kWh/m2/yr,"continental-default DHW convention (NEEDS_VERIFY against Csoknyai 2016)"
+non_residential_intensity,110,kWh/m2/yr,"estimate (Hungarian non-residential continental tertiary stock)"

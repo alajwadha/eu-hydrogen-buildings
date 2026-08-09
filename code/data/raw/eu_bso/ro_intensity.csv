@@ -1,0 +1,10 @@
+# EU Building Stock Observatory (BSO) -- Romania residential indicators
+# Distribution approximated from INS Romania Census 2021 dwelling-period histogram.
+#
+cohort,stock_pct_ro,bso_intensity_kwh_m2_yr,note
+pre-1945,12,190,"Pre-WWII urban masonry (Bucuresti, Cluj) + rural Carpathian fachwerk/masonry"
+1946-1970,18,180,"Early socialist masonry + first blocuri cohort (pre-1978)"
+1971-1990,42,160,"Peak blocuri era (panelne stage 1978-1989; wielka-plyta analogues); uninsulated"
+1991-2010,18,100,"Post-1989 transition new-build; first thermal code Mc 001/2006"
+2011-2020,8,70,"Mc 001/2013 update + EPC enforcement; PNRR new-build standards"
+post-2020,2,55,"nZEB Mc 001 update; Casa Verde Plus HP-driven new-build"

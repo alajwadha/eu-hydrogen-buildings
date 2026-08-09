@@ -1,0 +1,5 @@
+scenario,peaker_fleet_gw,peaker_energy_gwh,peaker_flh
+CURRENT_POLICIES,241.5,31673.1,131
+STATED_POLICIES,277.7,38685.7,139
+NET_ZERO,269.6,39945.8,148
+H2_PUSH,264.1,37725.3,143

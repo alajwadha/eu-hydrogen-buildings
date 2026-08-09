@@ -1,0 +1,109 @@
+country: United Kingdom
+iso2: UK
+data_provenance: 'Model files: code/src/Policy.py, code/src/Economics.py, code/results/mc_country_STATED_POLICIES.csv.
+  External: see ../UK/sources.md'
+economics:
+  gas_price_eur_mwh_2025: 120.0
+  electricity_price_eur_mwh_2025: 280.0
+  hp_air_scop_2025: 3.0
+  hp_ground_scop_2025: 3.8
+  annual_heating_hours: 2000
+  discount_rate_real_pretax: 0.05
+  lcoh_eur_mwh:
+    2025:
+      gas_boiler: 201.1
+      hp_air: 119.8
+      hp_ground: 102.2
+      h2_boiler: 303.7
+      district_heat: 114.5
+      biomass_boiler: 171.6
+    2030:
+      gas_boiler: 201.4
+      hp_air: 110.5
+      hp_ground: 95.2
+      h2_boiler: 222.2
+      district_heat: 115.0
+      biomass_boiler: 172.4
+    2040:
+      gas_boiler: 185.6
+      hp_air: 91.2
+      hp_ground: 80.2
+      h2_boiler: 159.9
+      district_heat: 109.9
+      biomass_boiler: 167.2
+    2050:
+      gas_boiler: 168.3
+      hp_air: 78.6
+      hp_ground: 70.4
+      h2_boiler: 131.4
+      district_heat: 105.8
+      biomass_boiler: 162.1
+  labour_multiplier: 1.1
+  labour_methodology: CAPEX_country = CAPEX_anchor * [(1 - L) + L * M], FOM analogous with FOM_LABOUR_SHARE=0.70.
+    Anchor = EU27 construction (NACE F) mean hourly labour cost 2024, Eurostat lc_lci_lev. L = LABOUR_SHARE_OF_CAPEX[tech]
+    (HP_air 0.40, HP_ground 0.55, gas_boiler 0.30, district_heat 0.50, h2_boiler 0.35, biomass_boiler
+    0.30). M = country labour multiplier (this country = 1.10).
+grid_co2_gCO2_kWh:
+  2025: 180.0
+  2030: 90.0
+  2040: 30.0
+  2050: 8.0
+gas_grid_coverage_fraction: 0.85
+policy:
+  fossil_boiler_subsidies_end: 2025
+  new_build_fossil_ban: 2025
+  replacement_fossil_ban: 2035
+  full_fossil_ban: 2035
+  hp_mandate_year: 2030
+  notes: "Future Homes Standard (2025): fossil fuel heating banned in new builds. Gas boiler ban in new\
+    \ builds pushed to 2035 (from 2025 under Sunak). Boiler Upgrade Scheme: \xA37,500 grant for ASHP/GSHP.\
+    \ EHPA (Nov 2025): UK likely to end fossil fuel boilers in new buildings from 2026."
+carbon_prices_eur_tco2:
+  LOW:
+    2025: 30.0
+    2027: 45.0
+    2030: 70.0
+    2040: 130.0
+    2050: 150.0
+  CENTRAL:
+    2025: 55.0
+    2027: 75.0
+    2030: 122.0
+    2040: 180.0
+    2050: 200.0
+  HIGH:
+    2025: 70.0
+    2027: 100.0
+    2030: 200.0
+    2040: 300.0
+    2050: 350.0
+model_results_pre_redesign_run:
+  2025:
+    hp_share: 20.0
+    gas_oil_share: 39.8
+    h2_share: 0.0
+    district_heat_share: 13.3
+    biomass_share: 25.1
+  2030:
+    hp_share: 26.6
+    gas_oil_share: 36.1
+    h2_share: 0.2
+    district_heat_share: 12.3
+    biomass_share: 22.4
+  2050:
+    hp_share: 56.3
+    gas_oil_share: 0.0
+    h2_share: 6.5
+    district_heat_share: 15.5
+    biomass_share: 19.2
+building_stock:
+  MFH_HIGH:
+    dwellings_2021: 37
+    heat_demand_2015_TWh: 101.46
+  OTHER:
+    dwellings_2021: 0
+    heat_demand_2015_TWh: 1.97
+  SFH:
+    dwellings_2021: 135
+    heat_demand_2015_TWh: 364.31
+  _caveat: OTHER category over-counts. Cross-reference national statistical offices.

@@ -1,0 +1,117 @@
+country,scenario,central_pct_yr,low_pct_yr,high_pct_yr,sigma_pct_yr,source
+AT,CURRENT_POLICIES,0.483,0.315,0.651,0.103,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+AT,H2_PUSH,1.13,0.73,1.53,0.241,REF x 1.636 (intermediate; H2 doesnt change envelope)
+AT,NET_ZERO,1.88,1.22,2.54,0.401,REF x 2.727 (Renovation Wave 3%/yr x 50% envelope)
+AT,STATED_POLICIES,0.69,0.45,0.93,0.147,baseline envelope rate from design_intensity_decline.csv
+BE,CURRENT_POLICIES,0.476,0.308,0.644,0.102,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+BE,H2_PUSH,1.11,0.72,1.5,0.237,REF x 1.636
+BE,NET_ZERO,1.85,1.2,2.5,0.395,REF x 2.727
+BE,STATED_POLICIES,0.68,0.44,0.92,0.145,baseline envelope rate from design_intensity_decline.csv
+BG,CURRENT_POLICIES,0.567,0.371,0.763,0.121,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+BG,H2_PUSH,1.33,0.86,1.79,0.283,REF x 1.636
+BG,NET_ZERO,2.21,1.44,2.98,0.471,REF x 2.727
+BG,STATED_POLICIES,0.81,0.53,1.09,0.173,baseline envelope rate
+CH,CURRENT_POLICIES,0.7,0.455,0.945,0.149,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+CH,H2_PUSH,1.64,1.06,2.21,0.349,REF x 1.636
+CH,NET_ZERO,2.73,1.77,3.68,0.58,REF x 2.727
+CH,STATED_POLICIES,1.0,0.65,1.35,0.213,baseline envelope rate (highest EU; BFE Gebaeudeprogramm)
+CY,CURRENT_POLICIES,0.602,0.392,0.812,0.128,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+CY,H2_PUSH,1.41,0.91,1.9,0.3,REF x 1.636
+CY,NET_ZERO,2.34,1.52,3.16,0.499,REF x 2.727
+CY,STATED_POLICIES,0.86,0.56,1.16,0.183,baseline envelope rate
+CZ,CURRENT_POLICIES,0.497,0.322,0.672,0.106,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+CZ,H2_PUSH,1.16,0.75,1.57,0.247,REF x 1.636
+CZ,NET_ZERO,1.94,1.26,2.61,0.413,REF x 2.727
+CZ,STATED_POLICIES,0.71,0.46,0.96,0.151,baseline envelope rate
+DE,CURRENT_POLICIES,0.385,0.252,0.518,0.082,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+DE,H2_PUSH,0.9,0.58,1.22,0.192,REF x 1.636
+DE,NET_ZERO,1.5,0.97,2.02,0.32,REF x 2.727 (Renovation Wave 3%/yr x 50% envelope)
+DE,STATED_POLICIES,0.55,0.36,0.74,0.117,baseline envelope rate
+DK,CURRENT_POLICIES,0.238,0.154,0.322,0.05,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+DK,H2_PUSH,0.56,0.36,0.75,0.119,REF x 1.636
+DK,NET_ZERO,0.93,0.6,1.25,0.198,REF x 2.727
+DK,STATED_POLICIES,0.34,0.22,0.46,0.072,baseline envelope rate
+EE,CURRENT_POLICIES,0.287,0.189,0.385,0.061,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+EE,H2_PUSH,0.67,0.44,0.91,0.143,REF x 1.636
+EE,NET_ZERO,1.12,0.73,1.51,0.238,REF x 2.727
+EE,STATED_POLICIES,0.41,0.27,0.55,0.087,baseline envelope rate
+EL,CURRENT_POLICIES,0.343,0.224,0.462,0.073,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+EL,H2_PUSH,0.8,0.52,1.08,0.171,REF x 1.636
+EL,NET_ZERO,1.34,0.87,1.8,0.285,REF x 2.727
+EL,STATED_POLICIES,0.49,0.32,0.66,0.104,baseline envelope rate
+ES,CURRENT_POLICIES,0.476,0.308,0.644,0.102,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+ES,H2_PUSH,1.11,0.72,1.5,0.237,REF x 1.636
+ES,NET_ZERO,1.85,1.2,2.5,0.395,REF x 2.727
+ES,STATED_POLICIES,0.68,0.44,0.92,0.145,baseline envelope rate
+FI,CURRENT_POLICIES,0.182,0.119,0.245,0.038,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+FI,H2_PUSH,0.43,0.28,0.58,0.091,REF x 1.636
+FI,NET_ZERO,0.71,0.46,0.96,0.151,REF x 2.727
+FI,STATED_POLICIES,0.26,0.17,0.35,0.055,baseline envelope rate (lowest EU; slow retrofit policy)
+FR,CURRENT_POLICIES,0.455,0.294,0.616,0.097,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+FR,H2_PUSH,1.06,0.69,1.44,0.227,REF x 1.636
+FR,NET_ZERO,1.77,1.15,2.4,0.378,REF x 2.727
+FR,STATED_POLICIES,0.65,0.42,0.88,0.138,baseline envelope rate (incl ADEME MaPrimeRenov lift)
+HR,CURRENT_POLICIES,0.532,0.343,0.721,0.113,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+HR,H2_PUSH,1.24,0.81,1.68,0.265,REF x 1.636
+HR,NET_ZERO,2.07,1.35,2.8,0.442,REF x 2.727
+HR,STATED_POLICIES,0.76,0.49,1.03,0.162,baseline envelope rate
+HU,CURRENT_POLICIES,0.294,0.189,0.399,0.062,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+HU,H2_PUSH,0.69,0.45,0.93,0.147,REF x 1.636
+HU,NET_ZERO,1.15,0.75,1.55,0.244,REF x 2.727
+HU,STATED_POLICIES,0.42,0.27,0.57,0.089,baseline envelope rate
+IE,CURRENT_POLICIES,0.385,0.252,0.518,0.082,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+IE,H2_PUSH,0.9,0.58,1.22,0.192,REF x 1.636
+IE,NET_ZERO,1.5,0.97,2.02,0.32,REF x 2.727
+IE,STATED_POLICIES,0.55,0.36,0.74,0.117,baseline envelope rate (incl SEAI NRP lift)
+IT,CURRENT_POLICIES,0.595,0.385,0.805,0.127,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+IT,H2_PUSH,1.39,0.9,1.88,0.297,REF x 1.636
+IT,NET_ZERO,2.32,1.5,3.13,0.494,REF x 2.727
+IT,STATED_POLICIES,0.85,0.55,1.15,0.181,baseline envelope rate (incl ENEA Superbonus lift)
+LT,CURRENT_POLICIES,0.294,0.189,0.399,0.062,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+LT,H2_PUSH,0.69,0.45,0.93,0.147,REF x 1.636
+LT,NET_ZERO,1.15,0.75,1.55,0.244,REF x 2.727
+LT,STATED_POLICIES,0.42,0.27,0.57,0.089,baseline envelope rate
+LU,CURRENT_POLICIES,0.189,0.126,0.252,0.04,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+LU,H2_PUSH,0.44,0.29,0.6,0.094,REF x 1.636
+LU,NET_ZERO,0.74,0.48,0.99,0.157,REF x 2.727
+LU,STATED_POLICIES,0.27,0.18,0.36,0.057,baseline envelope rate (lowest EU after FI)
+LV,CURRENT_POLICIES,0.294,0.189,0.399,0.062,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+LV,H2_PUSH,0.69,0.45,0.93,0.147,REF x 1.636
+LV,NET_ZERO,1.15,0.75,1.55,0.244,REF x 2.727
+LV,STATED_POLICIES,0.42,0.27,0.57,0.089,baseline envelope rate
+MT,CURRENT_POLICIES,0.224,0.147,0.301,0.048,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+MT,H2_PUSH,0.52,0.34,0.71,0.112,REF x 1.636
+MT,NET_ZERO,0.87,0.57,1.18,0.186,REF x 2.727
+MT,STATED_POLICIES,0.32,0.21,0.43,0.068,baseline envelope rate
+NL,CURRENT_POLICIES,0.329,0.217,0.441,0.07,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+NL,H2_PUSH,0.77,0.5,1.04,0.164,REF x 1.636
+NL,NET_ZERO,1.28,0.83,1.73,0.273,REF x 2.727
+NL,STATED_POLICIES,0.47,0.31,0.63,0.1,baseline envelope rate
+PL,CURRENT_POLICIES,0.525,0.343,0.707,0.112,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+PL,H2_PUSH,1.23,0.8,1.66,0.262,REF x 1.636
+PL,NET_ZERO,2.05,1.33,2.76,0.437,REF x 2.727
+PL,STATED_POLICIES,0.75,0.49,1.01,0.16,baseline envelope rate
+PT,CURRENT_POLICIES,0.476,0.308,0.644,0.102,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+PT,H2_PUSH,1.11,0.72,1.5,0.237,REF x 1.636
+PT,NET_ZERO,1.85,1.2,2.5,0.395,REF x 2.727
+PT,STATED_POLICIES,0.68,0.44,0.92,0.145,baseline envelope rate
+RO,CURRENT_POLICIES,0.588,0.385,0.791,0.125,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+RO,H2_PUSH,1.37,0.89,1.86,0.293,REF x 1.636
+RO,NET_ZERO,2.29,1.49,3.09,0.488,REF x 2.727
+RO,STATED_POLICIES,0.84,0.55,1.13,0.179,baseline envelope rate
+SE,CURRENT_POLICIES,0.308,0.203,0.413,0.066,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+SE,H2_PUSH,0.72,0.47,0.97,0.154,REF x 1.636
+SE,NET_ZERO,1.2,0.78,1.62,0.255,REF x 2.727
+SE,STATED_POLICIES,0.44,0.29,0.59,0.094,baseline envelope rate
+SI,CURRENT_POLICIES,0.371,0.238,0.504,0.079,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+SI,H2_PUSH,0.87,0.56,1.18,0.186,REF x 1.636
+SI,NET_ZERO,1.45,0.94,1.96,0.309,REF x 2.727
+SI,STATED_POLICIES,0.53,0.34,0.72,0.113,baseline envelope rate
+SK,CURRENT_POLICIES,0.336,0.217,0.455,0.071,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+SK,H2_PUSH,0.79,0.51,1.07,0.168,REF x 1.636
+SK,NET_ZERO,1.31,0.85,1.77,0.279,REF x 2.727
+SK,STATED_POLICIES,0.48,0.31,0.65,0.102,baseline envelope rate
+UK,CURRENT_POLICIES,0.322,0.21,0.434,0.069,"STATED_POLICIES x 0.70 (current-measures-only, slower renovation)"
+UK,H2_PUSH,0.75,0.49,1.02,0.16,REF x 1.636
+UK,NET_ZERO,1.25,0.81,1.69,0.266,REF x 2.727
+UK,STATED_POLICIES,0.46,0.3,0.62,0.098,baseline envelope rate

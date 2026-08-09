@@ -1,0 +1,20 @@
+EUBUCCO download — Croatia
+Run at: 2026-05-30 06:51:59 UTC
+============================================================
+
+  dataset: EUBUCCO v0.2 NUTS2=HR03
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=HR03/HR03.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/HR03.parquet
+  status: OK
+  md5: eae3ea38ad6883021198c74a26d4b86f
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+
+  dataset: EUBUCCO v0.2 NUTS2=HR04
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=HR04/HR04.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/HR04.parquet
+  status: OK
+  md5: 95c586c744d44e85f3fce50dfe38143f
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+

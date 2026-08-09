@@ -1,0 +1,28 @@
+# EU Building Stock Observatory (BSO) -- Germany residential indicators
+#
+# Used by 03_heat_intensity.py for (1) the unknown-cohort stock-weighted
+# fallback intensity (the stock_pct_de column) and (2) the BSO row of the
+# multi-source reconciliation table (bso_intensity_kwh_m2_yr).
+#
+# stock_pct_de: share of the German residential stock by construction cohort.
+#   Germany has a large pre-1979 stock (~2/3 built before the first thermal
+#   regulations). Distribution is an approximation from the German residential
+#   age structure (Destatis / dena Gebaeudereport 2024). Sums to 100.
+#
+# bso_intensity_kwh_m2_yr: BSO-style per-cohort national-average residential
+#   heat intensity (space heating + DHW, delivered). DERIVED from the German
+#   TABULA per-cohort class-average space-heating need x the retrofit blend
+#   (0.783) + DHW, as a consistent benchmark -- the EU Building Stock
+#   Observatory portal could not be queried directly (same limitation noted in
+#   the LU and FI BSO files). Flagged as derived, not an independent BSO query.
+#
+# Source: Destatis residential building age structure; dena Gebaeudereport
+#   2024; German TABULA (IWU 2015). Citation in literature/germany/.
+#
+cohort,stock_pct_de,bso_intensity_kwh_m2_yr,note
+pre-1945,25,196,Pre-WWII masonry stock; large share; slow demolition
+1946-1970,30,187,Reconstruction + 1960s era; pre-WSchV uninsulated
+1971-1990,25,135,1st/2nd Waermeschutzverordnung era
+1991-2010,15,87,WSchV95 + EnEV2002 insulated construction
+2011-2020,4,74,EnEV2009/2016 near-zero-energy new-build
+post-2020,1,66,GEG new-build standard

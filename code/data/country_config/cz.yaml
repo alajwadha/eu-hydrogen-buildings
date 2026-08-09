@@ -1,0 +1,213 @@
+# Country configuration: Czechia (CZ)
+# ======================================
+# All Czechia-specific parameters for the building-stock pipeline
+# (scripts 01-04 in code/scripts/country_build/). Sourced and cited inline;
+# methodology in literature/czech_republic/classification_methodology.md.
+#
+# Schema version: 1 (matches code/src/CountryConfig.py SCHEMA_VERSION).
+#
+# STATUS: DRAFT. Czechia is a direct EPISCOPE/TABULA country (CTU Prague /
+# UCEEB; Lupisek et al.). Build group 4 (PL + CZ, SK, HU; Visegrad).
+# Czechia is the secondary build of group 4 (Hotmaps 2015 baseline 84.64 TWh).
+
+country_code: CZ
+country_name: Czechia
+
+# -- EUBUCCO data source -----------------------------------------------------
+# EUBUCCO v0.2 partitions buildings by NUTS2 region. Czechia's NUTS2 codes have
+# been STABLE across NUTS 2013 / 2016 / 2021 (no boundary or code change since
+# the original introduction; CZ08 was introduced before EUBUCCO's reference
+# vintage). 8 NUTS2 regions: CZ01-CZ08.
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - CZ01   # Praha
+    - CZ02   # Stredni Cechy
+    - CZ03   # Jihozapad
+    - CZ04   # Severozapad
+    - CZ05   # Severovychod
+    - CZ06   # Jihovychod
+    - CZ07   # Stredni Morava
+    - CZ08   # Moravskoslezsko
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  # Citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1.
+  # Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2.
+  license: ODbL v1.0
+
+# -- NUTS3 regions -----------------------------------------------------------
+# Czechia has 14 NUTS3 regions; codes are stable across NUTS 2013/2016/2021
+# (no boundary changes during EUBUCCO's reference period). The CZZZZ
+# extraterritorial code is excluded.
+nuts3_regions:
+  - CZ010   # Hlavni mesto Praha (Prague)
+  - CZ020   # Stredocesky kraj
+  - CZ031   # Jihocesky kraj
+  - CZ032   # Plzensky kraj
+  - CZ041   # Karlovarsky kraj
+  - CZ042   # Ustecky kraj
+  - CZ051   # Liberecky kraj
+  - CZ052   # Kralovehradecky kraj
+  - CZ053   # Pardubicky kraj
+  - CZ063   # Vysocina
+  - CZ064   # Jihomoravsky kraj
+  - CZ071   # Olomoucky kraj
+  - CZ072   # Zlinsky kraj
+  - CZ080   # Moravskoslezsky kraj
+
+# -- Geographic bounding box (WGS84) -----------------------------------------
+bbox_wgs84:
+  lon_min: 12.09
+  lat_min: 48.55
+  lon_max: 18.86
+  lat_max: 51.06
+
+# -- TABULA building typology source -----------------------------------------
+# Czechia IS a TABULA-participating country, but via the EPISCOPE follow-up
+# (2013-2016), not the original IEE TABULA partnership (2009-2012). The Czech
+# contributor is CTU Prague / UCEEB (University Centre for Energy-Efficient
+# Buildings; Lupisek et al.), with SEVEn as secondary stakeholder.
+# Country page: episcope.eu/building-typology/country/cz
+#
+# IMPORTANT: the Czech EPISCOPE brochure numeric matrix is held in the TABULA
+# WebTool (interactive, not machine-extractable) and the Lupisek 2016 brochure.
+# The values in cz_intensities.csv are research-synthesised best estimates
+# bracketing DE and PL, flagged NEEDS_VERIFY +/-20-30 pct.
+tabula:
+  source_country: CZ
+  source_country_name: Czechia
+  intensities_file: code/data/raw/tabula/cz_intensities.csv
+  reason_for_proxy: |
+    Czechia has its own EPISCOPE typology (Lupisek et al., CTU Prague / UCEEB).
+    Used directly. The Czech panelove domy large-panel stock is structurally
+    distinct from the Polish wielka plyta and from German MFH/AB, so a Czech-
+    specific calibration is preferred over DE or PL proxy. The cz_intensities
+    file is research-synthesised pending verified WebTool extraction.
+
+# -- Climate correction ------------------------------------------------------
+# Czechia is a direct TABULA country. The Czech EPISCOPE brochure calibrates
+# intensities to the Czech reference climate (Praha-Ruzyne long-term mean,
+# ~3400 HDD at base 15 C; equivalent to the CSN 73 0540 reference climate used
+# for the PENB energy-certificate calculation). This is essentially the Czech
+# national mean (2018-2022 actual ~3331), so the multiplier is near-unity.
+#
+# Source: Eurostat nrg_chdd_a (base 15 C, JRC AGRI4CAST), 5-year mean 2018-2022:
+#   CZ annual HDD: ~3203, ~3349, ~3257, ~3576, ~3268 -> mean ~3331 (best
+#   estimate; NEEDS_VERIFY exact Eurostat extraction via series A.NR.HDD.CZ).
+climate:
+  hdd_country: 3331              # CZ -- Eurostat nrg_chdd_a 2018-2022 mean (NEEDS_VERIFY)
+  hdd_proxy: 3331                # CZ direct typology -> proxy = self
+  tabula_reference_hdd: 3400     # Czech reference climate (Praha-Ruzyne; CSN 73 0540)
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  climate_multiplier: 0.9797     # 3331 / 3400 (national mean vs reference climate)
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST), 5-year mean 2018-2022 (NEEDS_VERIFY); tabula_reference_hdd from CSN 73 0540 Czech reference climate
+
+# -- Retrofit-state distribution ---------------------------------------------
+# Retrofit FACTORS estimated from the Czech EPISCOPE brochure refurbishment
+# scenarios (Lupisek et al.): standard refurb ~0.60 of existing-state SH need;
+# advanced ~0.32. Aligns with Nova zelena usporam (NZU; "New Green Savings")
+# standard package (~40 pct cut) and NZU passive/deep package (~65-70 pct cut).
+#
+# Retrofit SHARES are a modelling assumption. Czech renovation rate ~1.0-1.3
+# pct/yr (BPIE 2022 Renovation Wave; CZ LTRS 2020). NZU has run since 2014,
+# successor to the 2009-2014 Zelena usporam funded by AAU emissions trading.
+retrofit:
+  share:
+    original: 0.78          # modelling assumption
+    standard: 0.17          # NZU standard package
+    advanced: 0.05          # NZU passive/deep
+  factor:
+    standard: 0.60          # Czech EPISCOPE standard refurbishment (NEEDS_VERIFY against Lupisek brochure)
+    advanced: 0.32          # Czech EPISCOPE advanced refurbishment (NEEDS_VERIFY)
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # Computed blend for CZ: 0.78 + 0.17x0.60 + 0.05x0.32 = 0.898
+  blend_value: 0.898
+  share_source: |
+    Modelling assumption grounded in the Czech Long-Term Renovation Strategy
+    (2020), the Nova zelena usporam programme reporting, and the BPIE 2022
+    Renovation Wave CZ country profile.
+
+# -- Domestic Hot Water (DHW) intensity --------------------------------------
+dhw:
+  sfh: 12.0
+  mfh: 15.0
+  unit: kWh/m2/yr
+  source: Czech EPISCOPE / CSN 73 0331-1 reference DHW convention (provisional pending brochure extraction)
+
+# -- Non-residential intensity (placeholder) ---------------------------------
+non_residential_intensity:
+  value: 130.0
+  unit: kWh/m2/yr
+  source: estimate -- Czech non-residential space heating (continental-climate offices + retail + public)
+  status: rough placeholder; contributes 0 TWh (zero heated area); flagged in methodology
+
+# -- External reconciliation benchmarks --------------------------------------
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 84.64            # sum of heat_2015_MWh across all 14 CZ NUTS3
+                                #   rows in building_stock_nuts3.csv.
+    year: 2015
+    source: Hotmaps Toolbox via building_stock_nuts3.csv; sum across all CZ NUTS3 rows
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 450
+    eubucco_mm2: 548
+    census_eubucco_ratio: 0.82
+    source: CSU 2021 census dwelling stock (occupied ~394 -> total ~450)
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 78.0             # Order-of-magnitude anchor; the reconciliation
+                                #   BSO row is computed from cz_intensity.csv.
+    year: 2022
+    source: anchored estimate; EU Building Stock Observatory portal not retrievable
+  odyssee_mure:
+    total_twh: 65.0             # Odyssee-Mure CZ residential space heating;
+                                #   final-energy basis (MPO data).
+    year: 2022
+    source: Odyssee-Mure Czechia; residential space heating (MPO / EnergoStat)
+    note: National total only; final-energy basis -- definitional gap vs Hotmaps useful demand.
+
+# -- Hotmaps NUTS3 ID for model comparison -----------------------------------
+hotmaps_nuts3_id: CZ010   # Hlavni mesto Praha
+
+# -- Building classification rules -------------------------------------------
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+  # Rules (sequential, first match wins):
+  # 1. EUBUCCO.type starts with "non-" -> NON_RESIDENTIAL
+  # 2. floors >= 6 AND footprint >= 800 -> MFH_HIGH
+  # 3. floors <= 2 AND footprint < 250  -> SFH
+  # 4. 3 <= floors <= 5                  -> MFH_LOW
+  # 5. default (ambiguous large)         -> MFH_HIGH
+
+# -- Provenance + change log -------------------------------------------------
+_meta:
+  created: 2026-05-19
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 4)
+  last_verified: 2026-05-19
+  schema_version: 1
+  status: DRAFT -- direct Czech EPISCOPE build (CTU/UCEEB); cz_intensities.csv research-synthesised pending TABULA WebTool extraction.
+  references_doc: literature/czech_republic/classification_methodology.md
+  verified_2026_05_19:
+    - eubucco.nuts2_partitions (8 codes; stable across NUTS 2013/2016/2021)
+    - nuts3_regions (14 codes from Hotmaps CZ rows; stable across vintages)
+    - tabula source = CZ direct (EPISCOPE; CTU/UCEEB Lupisek)
+    - reconciliation_benchmarks.hotmaps = 84.64 TWh (sum of heat_2015_MWh)
+  needs_verify_summary:
+    - HDD 2018-2022 mean (3331) -- best estimate from Eurostat nrg_chdd_a A.NR.HDD.CZ; direct API extraction not yet done.
+    - tabula_reference_hdd (3400) -- Czech reference climate from CSN 73 0540 / Praha-Ruzyne long-term mean; verify against Lupisek 2016 brochure header.
+    - cz_intensities.csv 18-row matrix -- research-synthesised; verify against Czech EPISCOPE WebTool / Lupisek 2016 brochure numeric appendix.
+    - retrofit factors (0.60/0.32) -- estimated from NZU savings; verify against Czech EPISCOPE Scientific Report.
+    - retrofit shares (0.78/0.17/0.05) -- modelling assumption.
+    - DHW values (12/15) -- DIN/CSN reference; verify CSN 73 0331-1.
+    - non_residential_intensity (130) -- estimate; contributes 0 TWh.
+    - reconciliation_benchmarks.eu_bso (78) -- anchored estimate.
+    - reconciliation_benchmarks.odyssee_mure (65) -- back-calculated to final energy.

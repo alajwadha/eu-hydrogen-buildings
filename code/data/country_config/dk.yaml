@@ -1,0 +1,179 @@
+# Country configuration: Denmark (DK)
+# =====================================
+# Build group 6 (SE + DK, BG, RO). Direct TABULA country (SBi / Aalborg).
+# Methodology: literature/denmark/classification_methodology.md.
+
+country_code: DK
+country_name: Denmark
+
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - DK01   # Hovedstaden
+    - DK02   # Sjaelland
+    - DK03   # Syddanmark
+    - DK04   # Midtjylland
+    - DK05   # Nordjylland
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  license: ODbL v1.0
+  # EUBUCCO area-correction factor (applied 2026-05-20).
+  # Initial G6 Colab build landed DK at 73.8 TWh vs Hotmaps 55.9 = +32 %
+  # INV. The audit-doc note ("BU matches BSO 74.5 within 1pct; only the
+  # YAML Hotmaps estimate needed correction") was true for the BSO match,
+  # but the Hotmaps benchmark was already correct (55.9 = exact sum from
+  # building_stock_nuts3.csv); the gap is methodologically real.
+  #
+  # EUBUCCO DK total residential heated_floor_area = 510 Mm^2 (sum across
+  # 11 NUTS3 regions in code/data/processed/dk/DK_aggregated_NUTS3.csv,
+  # post-useable_fraction 0.85). Danmarks Statistik BOL101/BOL102
+  # Boligbestanden anchors actual DK residential floor area at:
+  #   ~2.81 M dwellings x ~112 m^2 weighted-mean area = ~315 Mm^2 main
+  #   + ~225,000 holiday cottages x ~70 m^2 = ~16 Mm^2 secondary
+  #   + ~25 Mm^2 vacant / other residential = ~356 Mm^2 total.
+  # Correction = 356 / 510 = 0.698 ~ 0.70.
+  #
+  # The 2021 BOL101 data was temporarily withdrawn due to Bygnings- og
+  # Boligregister revision; figures use 2022-2023 DST aggregates which
+  # are close to but slightly above the 2021 reference. Holiday cottage
+  # stock from DST Sommerhuse register; vacant dwellings from DST
+  # Boligopgorelsen statistics-documentation.
+  #
+  # Source: Danmarks Statistik, Boligbestanden + Sommerhuse registers.
+  #   https://www.dst.dk/en/Statistik/emner/borgere/boligforhold/boligbestanden
+  # MECHANISM (clarified 2026-05-21): imputed-floor area over-count.
+  # EUBUCCO DK observed-height share is 0% (Milojevic-Dupont 2023,
+  # Table 1); floors -- hence floor area -- are ML-imputed even though the
+  # footprints are cadastre-sourced. The correction calibrates the imputed
+  # area to the census. See literature/eubucco_census_area_audit.md
+  # (Mechanism A).
+  area_correction: 0.70
+  area_correction_source: |
+    Danmarks Statistik Boligbestanden (BOL101/BOL102) + Sommerhuse
+    register: ~2.81 M conventional dwellings x ~112 m^2 = ~315 Mm^2
+    main + ~16 Mm^2 holiday + ~25 Mm^2 vacant ~ 356 Mm^2 residential.
+    EUBUCCO DK total: 510 Mm^2. Correction = 356/510 = 0.698. DK-direct
+    SBi TABULA typology unchanged; the +32 % G6 gap was area-driven.
+
+nuts3_regions:
+  - DK011   # Byen Kobenhavn
+  - DK012   # Kobenhavns omegn
+  - DK013   # Nordsjaelland
+  - DK014   # Bornholm
+  - DK021   # Ostsjaelland
+  - DK022   # Vest- og Sydsjaelland
+  - DK031   # Fyn
+  - DK032   # Sydjylland
+  - DK041   # Vestjylland
+  - DK042   # Ostjylland
+  - DK050   # Nordjylland
+
+bbox_wgs84:
+  lon_min: 8.07
+  lat_min: 54.56
+  lon_max: 15.15
+  lat_max: 57.75
+
+tabula:
+  source_country: DK
+  source_country_name: Denmark
+  intensities_file: code/data/raw/tabula/dk_intensities.csv
+  reason_for_proxy: |
+    None -- Denmark is a TABULA country (SBi / Aalborg University BUILD;
+    Wittchen, Kragh 2012). Direct typology. DRY 2010 København reference
+    climate ~2900 HDD; national mean ~2769; climate_multiplier 0.955.
+
+climate:
+  hdd_country: 2769.0
+  hdd_proxy: 2769.0
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  tabula_reference_hdd: 2900.0   # DRY 2010 København reference
+  climate_multiplier: 0.9548     # 2769 / 2900
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST); 5-year mean 2018-2022 ~2769
+
+retrofit:
+  share:
+    original: 0.65
+    standard: 0.25
+    advanced: 0.10
+  factor:
+    standard: 0.50    # DK TABULA standard refurb
+    advanced: 0.30    # DK TABULA advanced refurb (BR18-equivalent)
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # 0.65 + 0.25x0.50 + 0.10x0.30 = 0.805
+  blend_value: 0.805
+  share_source: |
+    Modelling assumption grounded in Bygningsfornyelse + Bygningspuljen
+    (Energistyrelsen) + Boligjobordningen (re-introduced 2025). Energistyrelsen
+    + Bolius: ~25-30pct of pre-1980 SFH have had at least one major envelope
+    measure. TABULA standard halves SH; advanced reaches BR18 ~30-50 kWh/m2.
+
+dhw:
+  sfh: 15.0
+  mfh: 15.0
+  unit: kWh/m2/yr
+  source: DK TABULA / SBi 2012:01 DHW assumption (stock-uniform ~15 useful)
+
+non_residential_intensity:
+  value: 100.0
+  unit: kWh/m2/yr
+  source: estimate -- DK tertiary; Odyssee 170-185 kWh/m2 all uses; SH ~85-100
+  status: rough placeholder
+
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 55.90            # Hotmaps 2015 DK residential heat -- exact sum
+                                # across all 36 DK NUTS3 rows in
+                                # code/data/processed/building_stock_nuts3.csv (verified 2026-05-20).
+                                # The estimate (56.0) from the G6 initial build was already correct.
+    year: 2015
+    source: Hotmaps Toolbox via building_stock_nuts3.csv; sum across all DK NUTS3 rows
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 356
+    eubucco_mm2: 510
+    census_eubucco_ratio: 0.70
+    source: Danmarks Statistik BOL101 + Sommerhuse register
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 53.0
+    year: 2022
+    source: anchored estimate (Energistatistik 2022 households ~53 TWh useful)
+  odyssee_mure:
+    total_twh: 53.0
+    year: 2022
+    source: Odyssee-Mure Denmark; residential heating + DHW ~78pct of HH FE
+    note: National total only; final-energy basis. ~63pct DH delivery.
+
+hotmaps_nuts3_id: DK011   # Byen Kobenhavn (representative)
+
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+
+_meta:
+  created: 2026-05-20
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 6)
+  last_verified: 2026-05-20
+  schema_version: 1
+  status: DRAFT -- direct DK TABULA (SBi 2012:01). Note ~63pct of DK residential
+    heat delivered via district heating -- our bottom-up reports useful heat
+    demand at meter; downstream allocation to DH vs other delivery is separate.
+  references_doc: literature/denmark/classification_methodology.md
+  verified_2026_05_20:
+    - eubucco.nuts2_partitions (5 DK NUTS2, stable since 2007)
+    - nuts3_regions (11 DK NUTS3, stable since 2007)
+    - tabula source = DK direct (SBi 2012:01)
+    - tabula_reference_hdd = 2900 (DRY 2010 København)
+    - climate_multiplier = 0.9548 (2769 / 2900)
+  needs_verify_summary:
+    - dk_intensities.csv -- research-synthesised; verify SBi brochure.
+    - retrofit factors (0.50/0.30) and DHW (15/15) -- provisional.
+    - non_residential_intensity (100) -- estimate.

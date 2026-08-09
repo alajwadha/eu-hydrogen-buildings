@@ -1,0 +1,150 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🏠 Visualizations (country build)",
+      "type": "shell",
+      "command": "& '.venv\\Scripts\\Activate.ps1'; python code\\scripts\\country_build\\04_diagnostics.py --country ${input:country}",
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "new" },
+      "problemMatcher": []
+    },
+    {
+      "label": "🔬 Run ALL scenarios (200 samples)",
+      "type": "shell",
+      "command": "& '.venv\\Scripts\\Activate.ps1'; python run.py --skip-download --samples 200",
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "new" },
+      "problemMatcher": []
+    },
+    {
+      "label": "🔬 Run STATED_POLICIES (200 samples)",
+      "type": "shell",
+      "command": "& '.venv\\Scripts\\Activate.ps1'; python run.py --scenario STATED_POLICIES --skip-download --samples 200",
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "new" },
+      "problemMatcher": []
+    },
+    {
+      "label": "🔬 Run NET_ZERO (200 samples)",
+      "type": "shell",
+      "command": "& '.venv\\Scripts\\Activate.ps1'; python run.py --scenario NET_ZERO --skip-download --samples 200",
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "new" },
+      "problemMatcher": []
+    },
+    {
+      "label": "🔬 Run H2_PUSH (200 samples)",
+      "type": "shell",
+      "command": "& '.venv\\Scripts\\Activate.ps1'; python run.py --scenario H2_PUSH --skip-download --samples 200",
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "new" },
+      "problemMatcher": []
+    },
+    {
+      "label": "🟢 Run ALL scenarios (BOTTOM-UP demand, 200 samples)",
+      "type": "shell",
+      "command": "& '.venv\\Scripts\\Activate.ps1'; python run.py --demand bottomup --skip-download --samples 200",
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "new" },
+      "problemMatcher": []
+    },
+    {
+      "label": "🟢 Run STATED_POLICIES (BOTTOM-UP demand, 200 samples)",
+      "type": "shell",
+      "command": "& '.venv\\Scripts\\Activate.ps1'; python run.py --scenario STATED_POLICIES --demand bottomup --skip-download --samples 200",
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "new" },
+      "problemMatcher": []
+    },
+    {
+      "label": "🎯 Run COST_OPT (least-cost LP, BOTTOM-UP demand)",
+      "type": "shell",
+      "command": "& '.venv\\Scripts\\Activate.ps1'; python run.py --scenario COST_OPT --demand bottomup --skip-download",
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "new" },
+      "problemMatcher": []
+    },
+    {
+      "label": "📊 Figures only (no simulation)",
+      "type": "shell",
+      "command": "& '.venv\\Scripts\\Activate.ps1'; python run.py --figures-only",
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "new" },
+      "problemMatcher": []
+    },
+    {
+      "label": "🔁 Sensitivity analysis (STATED_POLICIES)",
+      "type": "shell",
+      "command": "& '.venv\\Scripts\\Activate.ps1'; python run.py --scenario STATED_POLICIES --skip-download --sensitivity",
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "new" },
+      "problemMatcher": []
+    },
+    {
+      "label": "📄 Build PDF (Paper_v4)",
+      "type": "shell",
+      "command": "Set-Location paper; pdflatex -interaction=nonstopmode Paper_v4.tex; bibtex Paper_v4; pdflatex -interaction=nonstopmode Paper_v4.tex; pdflatex -interaction=nonstopmode Paper_v4.tex; Set-Location ..",
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "new" },
+      "problemMatcher": []
+    },
+    {
+      "label": "📊 Paper v4 figures (fig22-31)",
+      "type": "shell",
+      "command": "& '.venv\\Scripts\\Activate.ps1'; python code\\scripts\\paper_v4_figures.py",
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "new" },
+      "problemMatcher": []
+    },
+    {
+      "label": "📄 Build PDF (Paper_v2)",
+      "type": "shell",
+      "command": "Set-Location paper; pdflatex -interaction=nonstopmode Paper_v2.tex; bibtex Paper_v2; pdflatex -interaction=nonstopmode Paper_v2.tex; pdflatex -interaction=nonstopmode Paper_v2.tex; Set-Location ..",
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "new" },
+      "problemMatcher": []
+    },
+    {
+      "label": "📄 Build PDF (Paper_v1 legacy)",
+      "type": "shell",
+      "command": "Set-Location paper; pdflatex -interaction=nonstopmode Paper_v1.tex; bibtex Paper_v1; pdflatex -interaction=nonstopmode Paper_v1.tex; pdflatex -interaction=nonstopmode Paper_v1.tex; Set-Location ..",
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "new" },
+      "problemMatcher": []
+    },
+    {
+      "label": "📚 Update literature monitor",
+      "type": "shell",
+      "command": "& '.venv\\Scripts\\Activate.ps1'; python code\\scripts\\update_literature.py",
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "new" },
+      "problemMatcher": []
+    },
+    {
+      "label": "☁ Push to GitHub",
+      "type": "shell",
+      "command": "git add .; git commit -m 'Update results, figures, dashboard'; git push",
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "new" },
+      "problemMatcher": []
+    },
+    {
+      "label": "🚀 Full pipeline: ALL + figures + PDF + push",
+      "type": "shell",
+      "command": "& '.venv\\Scripts\\Activate.ps1'; python run.py --skip-download --samples 200; Set-Location paper; pdflatex -interaction=nonstopmode Paper_v2.tex; bibtex Paper_v2; pdflatex -interaction=nonstopmode Paper_v2.tex; pdflatex -interaction=nonstopmode Paper_v2.tex; Set-Location ..; git add .; git commit -m 'Auto: 200-sample results, all figures, dashboard, PDF'; git push",
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "new" },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "country",
+      "type": "pickString",
+      "description": "Country code for the country-build visualizations",
+      "options": ["FR", "LU"],
+      "default": "FR"
+    }
+  ]
+}

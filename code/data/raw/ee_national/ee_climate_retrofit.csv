@@ -1,0 +1,23 @@
+# Estonia climate + retrofit-state national assumptions
+#
+# Legacy national-parameters file consumed by 03_heat_intensity.py
+# (load_national_params). The authoritative source is ee.yaml; this file
+# mirrors the values for documentation. All values are numeric.
+#
+# Estonia is a TABULA PROXY country: Poland TABULA, climate-corrected by the
+# HDD_EE/HDD_PL ratio. Sources: Eurostat nrg_chdd_a; Poland TABULA
+# (pl_intensities.csv); Estonian LTRS 2020. See ee.yaml and
+# literature/estonia/classification_methodology.md for full citations.
+#
+parameter,value,unit,source
+hdd_ee_2018_2022_avg,3987.8,degree-days/yr,Eurostat nrg_chdd_a (JRC AGRI4CAST)
+hdd_proxy_pl_2018_2022_avg,3158.7,degree-days/yr,Eurostat nrg_chdd_a (Poland TABULA reference)
+climate_multiplier,1.2625,dimensionless,3987.8 / 3158.7 (EE/PL HDD ratio)
+retrofit_share_original,0.85,fraction,modelling assumption (Estonian LTRS 2020; KredEx renovation reporting)
+retrofit_share_standard,0.10,fraction,modelling assumption
+retrofit_share_advanced,0.05,fraction,modelling assumption
+retrofit_factor_standard,0.63,multiplier,Poland TABULA standard refurbishment
+retrofit_factor_advanced,0.50,multiplier,Poland TABULA advanced refurbishment
+dhw_intensity_sfh,28.0,kWh/m2/yr,Poland TABULA proxy
+dhw_intensity_mfh,23.0,kWh/m2/yr,Poland TABULA proxy
+non_residential_intensity,130,kWh/m2/yr,estimate (Estonian LTRS 2020 office space heating)

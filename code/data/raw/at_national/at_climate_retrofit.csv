@@ -1,0 +1,31 @@
+# Austria climate + retrofit-state national assumptions
+#
+# Legacy national-parameters file referenced by 04_diagnostics.py for the
+# existence check. The authoritative source of these values is at.yaml;
+# this file mirrors them for documentation. All values are numeric.
+#
+# Austria is a DIRECT TABULA country (AEA / Austrian Energy Agency; Lechner
+# et al. 2011). The Austrian TABULA brochure does NOT publish an explicit
+# single-station reference HDD -- it is built from the ZEUS EPC database
+# (~40,000 certificates) on a national-mean calibration. tabula_reference_hdd
+# is therefore set equal to hdd_country, giving climate_multiplier = 1.0.
+# Sources: Eurostat nrg_chdd_a (HDD); AEA TABULA brochure (retrofit factors;
+# DHW); Statistik Austria GWZ 2011 / Mikrozensus Wohnen 2021 (retrofit shares);
+# Sanierungsoffensive + Raus-aus-Öl-Bonus cumulative renovation reports
+# (~1.5 %/yr renovation rate per IIBW + Umweltbundesamt monitoring).
+# See at.yaml and literature/austria/classification_methodology.md.
+#
+parameter,value,unit,source
+hdd_at_2018_2022_avg,3050,degree-days/yr,Eurostat nrg_chdd_a (JRC AGRI4CAST) 2018-2022 mean (NEEDS_VERIFY exact)
+hdd_proxy_2018_2022_avg,3050,degree-days/yr,direct TABULA country (proxy = self)
+tabula_reference_hdd,3050,degree-days/yr,"AEA ZEUS EPC-derived national mean (no single-station reference)"
+climate_multiplier,1.0,dimensionless,3050 / 3050 (national mean = TABULA reference)
+retrofit_blend_value,0.8575,dimensionless,"0.65 + 0.27 x 0.65 + 0.08 x 0.40"
+retrofit_share_original,0.65,fraction,"modelling assumption (IIBW + Umweltbundesamt renovation monitoring; Austria has higher renovated share than DE/CZ due to longer Sanierungsoffensive tradition)"
+retrofit_share_standard,0.27,fraction,"modelling assumption (Sanierungsoffensive standard package)"
+retrofit_share_advanced,0.08,fraction,"modelling assumption (Sanierungsoffensive deep/Passivhaus track)"
+retrofit_factor_standard,0.65,multiplier,"Austrian TABULA standard refurbishment (NEEDS_VERIFY against AEA brochure)"
+retrofit_factor_advanced,0.40,multiplier,"Austrian TABULA advanced refurbishment (NEEDS_VERIFY against AEA brochure)"
+dhw_intensity_sfh,10.0,kWh/m2/yr,"AT TABULA / OIB Richtlinie 6 reference DHW (provisional)"
+dhw_intensity_mfh,15.0,kWh/m2/yr,"AT TABULA / OIB Richtlinie 6 reference DHW (provisional)"
+non_residential_intensity,120,kWh/m2/yr,"estimate (Austrian non-residential continental-Alpine space heating)"

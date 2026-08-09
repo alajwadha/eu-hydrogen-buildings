@@ -1,0 +1,6 @@
+source,twh_yr,kwh_m2_yr_avg,note
+"Bottom-up: EUBUCCO + TABULA CY (this model, all classes)",0.99,23.7,TABULA × HDD ratio × retrofit blend + DHW; non-res flat
+Bottom-up: residential only (excludes NON_RESIDENTIAL),0.99,23.7,Comparable to Hotmaps + EU BSO + Odyssee residential figures
+Hotmaps 2015 baseline (existing model),0.73,17.5,Residential baseline (see cfg.reconciliation_benchmarks.hotmaps)
+EU BSO 2022 weighted-avg implied total,2.604,62.4,BSO per-cohort intensities × MT stock weights × our residential area
+Odyssee-Mure 2023 MT residential (back-calculated),0.5,12.0,Malta heating demand is negligible; percentage reconciliation is low-information.

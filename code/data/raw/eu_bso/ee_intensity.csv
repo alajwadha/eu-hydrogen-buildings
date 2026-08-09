@@ -1,0 +1,27 @@
+# EU Building Stock Observatory (BSO) -- Estonia residential indicators
+#
+# Used by 03_heat_intensity.py for (1) the unknown-cohort stock-weighted
+# fallback intensity (stock_pct_ee column) and (2) the BSO reconciliation row.
+#
+# stock_pct_ee: share of the Estonian residential stock by construction cohort.
+#   Estonia's stock is dominated by 1946-1990 Soviet-era construction (~45% of
+#   dwellings built 1961-1990 per the 2021 census), with notable post-1991
+#   building. Distribution approximated from Statistics Estonia 2021 census
+#   and the Estonian Long-Term Renovation Strategy. Sums to 100.
+#
+# bso_intensity_kwh_m2_yr: BSO-style per-cohort national-average residential
+#   heat intensity (delivered). DERIVED from the Poland-proxy TABULA per-cohort
+#   class-average space-heating need x climate multiplier (1.2625) x retrofit
+#   blend (0.938) + DHW. The EU Building Stock Observatory portal could not be
+#   queried directly; flagged as derived, not an independent BSO query.
+#
+# Source: Statistics Estonia 2021 Census; Estonian LTRS 2020; Poland TABULA
+#   proxy (pl_intensities.csv). Citation in literature/estonia/.
+#
+cohort,stock_pct_ee,bso_intensity_kwh_m2_yr,note
+pre-1945,15,268,Pre-WWII timber and masonry stock
+1946-1970,25,234,Early Soviet-era; first panel and brick MFH
+1971-1990,33,207,Peak Soviet-era prefabricated large-panel apartment blocks
+1991-2010,20,151,Post-independence construction; EPBD-aligned
+2011-2020,6,135,nZEB-trajectory new-build
+post-2020,1,88,Class A new-build

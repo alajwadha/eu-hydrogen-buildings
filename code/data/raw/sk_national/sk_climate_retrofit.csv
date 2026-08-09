@@ -1,0 +1,27 @@
+# Slovakia climate + retrofit-state national assumptions
+#
+# Legacy national-parameters file referenced by 04_diagnostics.py for the
+# existence check. The authoritative source of these values is sk.yaml;
+# this file mirrors them for documentation. All values are numeric.
+#
+# Slovakia is a TABULA PROXY country: Czechia (CZ) is used as the TABULA
+# proxy (Czechoslovak common building code 1948-1993; shared panelove domy
+# typology). Slovakia is slightly cooler than Czechia, but cooler than the
+# Czech reference climate (3400) -- climate_multiplier scales actual SK HDD
+# (~3190) against the CZ TABULA reference. Sources: Eurostat nrg_chdd_a;
+# Czech TABULA (proxy); SFRB Obnova bytoveho domu programme (retrofit shares).
+# See sk.yaml and literature/slovakia/classification_methodology.md.
+#
+parameter,value,unit,source
+hdd_sk_2018_2022_avg,3190,degree-days/yr,Eurostat nrg_chdd_a (JRC AGRI4CAST) 2018-2022 mean (NEEDS_VERIFY exact)
+hdd_proxy_cz_2018_2022_avg,3331,degree-days/yr,"Eurostat nrg_chdd_a (Czech TABULA reference; NEEDS_VERIFY exact)"
+tabula_reference_hdd,3400,degree-days/yr,"Czech TABULA reference climate (CSN 73 0540; Praha-Ruzyne)"
+climate_multiplier,0.9382,dimensionless,3190 / 3400 (SK actual vs CZ reference climate)
+retrofit_share_original,0.55,fraction,"modelling assumption (un-renovated SFH + un-retrofitted panel; SFRB cumulative)"
+retrofit_share_standard,0.40,fraction,"modelling assumption (SFRB Obnova bytoveho domu 2002-2020; panel renovations)"
+retrofit_share_advanced,0.05,fraction,"modelling assumption (deep retrofit; nZEB-grade)"
+retrofit_factor_standard,0.60,multiplier,"PROVISIONAL -- Czech EPISCOPE standard refurb (proxy; pending cz_intensities.csv extraction)"
+retrofit_factor_advanced,0.40,multiplier,"PROVISIONAL -- Czech EPISCOPE advanced refurb (proxy; pending cz_intensities.csv extraction)"
+dhw_intensity_sfh,22.0,kWh/m2/yr,"Czech TABULA proxy DHW convention (provisional)"
+dhw_intensity_mfh,18.0,kWh/m2/yr,"Czech TABULA proxy DHW convention (provisional)"
+non_residential_intensity,135,kWh/m2/yr,"estimate (Slovak non-residential continental-climate space heating)"

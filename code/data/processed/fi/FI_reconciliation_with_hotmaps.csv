@@ -1,0 +1,6 @@
+source,twh_yr,kwh_m2_yr_avg,note
+"Bottom-up: EUBUCCO + TABULA SE (this model, all classes)",68.926,131.1,TABULA × HDD ratio × retrofit blend + DHW; non-res flat
+Bottom-up: residential only (excludes NON_RESIDENTIAL),68.926,131.1,Comparable to Hotmaps + EU BSO + Odyssee residential figures
+Hotmaps 2015 baseline (existing model),78.14,148.6,Residential baseline (see cfg.reconciliation_benchmarks.hotmaps)
+EU BSO 2023 weighted-avg implied total,65.817,125.2,BSO per-cohort intensities × FI stock weights × our residential area
+Odyssee-Mure 2023 FI residential (back-calculated),42.0,79.9,National total only -- no NUTS3 disaggregation.

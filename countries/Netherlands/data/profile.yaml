@@ -1,0 +1,109 @@
+country: Netherlands
+iso2: NL
+data_provenance: 'Model files: code/src/Policy.py, code/src/Economics.py, code/results/mc_country_STATED_POLICIES.csv.
+  External: see ../NL/sources.md'
+economics:
+  gas_price_eur_mwh_2025: 162.0
+  electricity_price_eur_mwh_2025: 280.0
+  hp_air_scop_2025: 3.0
+  hp_ground_scop_2025: 3.8
+  annual_heating_hours: 2000
+  discount_rate_real_pretax: 0.05
+  lcoh_eur_mwh:
+    2025:
+      gas_boiler: 250.8
+      hp_air: 123.5
+      hp_ground: 106.3
+      h2_boiler: 310.0
+      district_heat: 116.9
+      biomass_boiler: 179.2
+    2030:
+      gas_boiler: 246.4
+      hp_air: 114.5
+      hp_ground: 99.5
+      h2_boiler: 228.2
+      district_heat: 117.5
+      biomass_boiler: 179.8
+    2040:
+      gas_boiler: 221.2
+      hp_air: 94.2
+      hp_ground: 83.6
+      h2_boiler: 165.6
+      district_heat: 112.2
+      biomass_boiler: 174.3
+    2050:
+      gas_boiler: 196.8
+      hp_air: 79.9
+      hp_ground: 72.2
+      h2_boiler: 136.7
+      district_heat: 108.1
+      biomass_boiler: 168.9
+  labour_multiplier: 1.3
+  labour_methodology: CAPEX_country = CAPEX_anchor * [(1 - L) + L * M], FOM analogous with FOM_LABOUR_SHARE=0.70.
+    Anchor = EU27 construction (NACE F) mean hourly labour cost 2024, Eurostat lc_lci_lev. L = LABOUR_SHARE_OF_CAPEX[tech]
+    (HP_air 0.40, HP_ground 0.55, gas_boiler 0.30, district_heat 0.50, h2_boiler 0.35, biomass_boiler
+    0.30). M = country labour multiplier (this country = 1.30).
+grid_co2_gCO2_kWh:
+  2025: 280.0
+  2030: 150.0
+  2040: 60.0
+  2050: 10.0
+gas_grid_coverage_fraction: 0.9
+policy:
+  fossil_boiler_subsidies_end: 2025
+  new_build_fossil_ban: 2018
+  replacement_fossil_ban: 2026
+  full_fossil_ban: 2040
+  hp_mandate_year: 2026
+  notes: "Gas network banned for new buildings since 2018. Hybrid HP mandatory at replacement from 2026.\
+    \ 72.9% of residential space heating still from gas (2023, Eurostat). Highest gas dependency in EU\
+    \ \u2014 transition particularly challenging."
+carbon_prices_eur_tco2:
+  LOW:
+    2025: 30.0
+    2027: 45.0
+    2030: 70.0
+    2040: 130.0
+    2050: 150.0
+  CENTRAL:
+    2025: 55.0
+    2027: 75.0
+    2030: 122.0
+    2040: 180.0
+    2050: 200.0
+  HIGH:
+    2025: 70.0
+    2027: 100.0
+    2030: 200.0
+    2040: 300.0
+    2050: 350.0
+model_results_pre_redesign_run:
+  2025:
+    hp_share: 20.1
+    gas_oil_share: 35.8
+    h2_share: 0.0
+    district_heat_share: 13.5
+    biomass_share: 28.9
+  2030:
+    hp_share: 40.3
+    gas_oil_share: 0.0
+    h2_share: 0.4
+    district_heat_share: 18.6
+    biomass_share: 38.4
+  2050:
+    hp_share: 50.7
+    gas_oil_share: 0.0
+    h2_share: 6.6
+    district_heat_share: 15.6
+    biomass_share: 24.6
+building_stock:
+  MFH_HIGH:
+    dwellings_2021: 3156358
+    heat_demand_2015_TWh: 9.53
+  OTHER:
+    dwellings_2021: 26685690
+    heat_demand_2015_TWh: 120.65
+  SFH:
+    dwellings_2021: 10175635
+    heat_demand_2015_TWh: 30.47
+  _caveat: OTHER category over-counts. Cross-reference national statistical offices.

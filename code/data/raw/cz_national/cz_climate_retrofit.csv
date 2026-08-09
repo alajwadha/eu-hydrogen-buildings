@@ -1,0 +1,27 @@
+# Czechia climate + retrofit-state national assumptions
+#
+# Legacy national-parameters file referenced by 04_diagnostics.py for the
+# existence check. The authoritative source of these values is cz.yaml;
+# this file mirrors them for documentation. All values are numeric.
+#
+# Czechia is a DIRECT EPISCOPE/TABULA country (CTU Prague / UCEEB; Lupisek
+# et al.). The Czech EPISCOPE brochure calibrates intensities to the Czech
+# reference climate (CSN 73 0540; ~3400 HDD; Praha-Ruzyne long-term mean);
+# climate_multiplier scales actual CZ HDD (~3331) against that reference.
+# Sources: Eurostat nrg_chdd_a (HDD); Czech EPISCOPE / Lupisek 2016 (retrofit
+# factors; DHW); Czech LTRS 2020 + Nova zelena usporam (retrofit shares).
+# See cz.yaml and literature/czech_republic/classification_methodology.md.
+#
+parameter,value,unit,source
+hdd_cz_2018_2022_avg,3331,degree-days/yr,Eurostat nrg_chdd_a (JRC AGRI4CAST) 2018-2022 mean (NEEDS_VERIFY exact)
+hdd_proxy_2018_2022_avg,3331,degree-days/yr,direct TABULA country (proxy = self)
+tabula_reference_hdd,3400,degree-days/yr,"Czech reference climate (CSN 73 0540; Praha-Ruzyne long-term mean)"
+climate_multiplier,0.9797,dimensionless,3331 / 3400 (national mean vs CSN reference climate)
+retrofit_share_original,0.78,fraction,"modelling assumption (CZ LTRS 2020; BPIE Renovation Wave 2022)"
+retrofit_share_standard,0.17,fraction,"modelling assumption (Nova zelena usporam standard package)"
+retrofit_share_advanced,0.05,fraction,"modelling assumption (NZU passive/deep package)"
+retrofit_factor_standard,0.60,multiplier,"Czech EPISCOPE standard refurbishment (NEEDS_VERIFY against Lupisek 2016)"
+retrofit_factor_advanced,0.32,multiplier,"Czech EPISCOPE advanced refurbishment (NEEDS_VERIFY against Lupisek 2016)"
+dhw_intensity_sfh,12.0,kWh/m2/yr,"Czech EPISCOPE / CSN 73 0331-1 reference DHW (provisional)"
+dhw_intensity_mfh,15.0,kWh/m2/yr,"Czech EPISCOPE / CSN 73 0331-1 reference DHW (provisional)"
+non_residential_intensity,130,kWh/m2/yr,"estimate (Czech non-residential continental-climate space heating)"

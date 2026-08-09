@@ -1,0 +1,325 @@
+# Country configuration: Italy (IT)
+# ====================================
+# All Italy-specific parameters for the building-stock pipeline
+# (scripts 01-04 in code/scripts/country_build/). Sourced and cited inline;
+# methodology in literature/italy/classification_methodology.md.
+#
+# Schema version: 1 (matches code/src/CountryConfig.py SCHEMA_VERSION).
+#
+# Italy is a DIRECT TABULA country -- the Italian residential typology was
+# produced by Politecnico di Torino. No proxy, no climate correction
+# (climate_multiplier = 1.0). Italy is the heavyweight of build group 2
+# (IT + SI, HR, MT).
+
+country_code: IT
+country_name: Italy
+
+# -- EUBUCCO data source -----------------------------------------------------
+# EUBUCCO v0.2 partitions buildings by NUTS2 region (NUTS 2016 vintage).
+# Italy has 21 NUTS2 regions (Trentino-Alto Adige is split into the two
+# autonomous provinces ITH1 Bolzano and ITH2 Trento).
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - ITC1   # Piemonte
+    - ITC2   # Valle d'Aosta
+    - ITC3   # Liguria
+    - ITC4   # Lombardia
+    - ITF1   # Abruzzo
+    - ITF2   # Molise
+    - ITF3   # Campania
+    - ITF4   # Puglia
+    - ITF5   # Basilicata
+    - ITF6   # Calabria
+    - ITG1   # Sicilia
+    - ITG2   # Sardegna
+    - ITH1   # Provincia Autonoma di Bolzano/Bozen
+    - ITH2   # Provincia Autonoma di Trento
+    - ITH3   # Veneto
+    - ITH4   # Friuli-Venezia Giulia
+    - ITH5   # Emilia-Romagna
+    - ITI1   # Toscana
+    - ITI2   # Umbria
+    - ITI3   # Marche
+    - ITI4   # Lazio
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  # Citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1.
+  # Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2.
+  license: ODbL v1.0
+
+# -- NUTS3 regions -----------------------------------------------------------
+# Italy has 107 NUTS3 regions (province / citta metropolitane). Codes from the
+# repo GISCO file (NUTS 2021); stable enough vs NUTS 2016 for the join
+# (Sardinian provinces saw minor 2016->2021 changes -- flagged in _meta).
+nuts3_regions:
+  - ITC11
+  - ITC12
+  - ITC13
+  - ITC14
+  - ITC15
+  - ITC16
+  - ITC17
+  - ITC18
+  - ITC20
+  - ITC31
+  - ITC32
+  - ITC33
+  - ITC34
+  - ITC41
+  - ITC42
+  - ITC43
+  - ITC44
+  - ITC46
+  - ITC47
+  - ITC48
+  - ITC49
+  - ITC4A
+  - ITC4B
+  - ITC4C
+  - ITC4D
+  - ITF11
+  - ITF12
+  - ITF13
+  - ITF14
+  - ITF21
+  - ITF22
+  - ITF31
+  - ITF32
+  - ITF33
+  - ITF34
+  - ITF35
+  - ITF43
+  - ITF44
+  - ITF45
+  - ITF46
+  - ITF47
+  - ITF48
+  - ITF51
+  - ITF52
+  - ITF61
+  - ITF62
+  - ITF63
+  - ITF64
+  - ITF65
+  - ITG11
+  - ITG12
+  - ITG13
+  - ITG14
+  - ITG15
+  - ITG16
+  - ITG17
+  - ITG18
+  - ITG19
+  - ITG2D
+  - ITG2E
+  - ITG2F
+  - ITG2G
+  - ITG2H
+  - ITH10
+  - ITH20
+  - ITH31
+  - ITH32
+  - ITH33
+  - ITH34
+  - ITH35
+  - ITH36
+  - ITH37
+  - ITH41
+  - ITH42
+  - ITH43
+  - ITH44
+  - ITH51
+  - ITH52
+  - ITH53
+  - ITH54
+  - ITH55
+  - ITH56
+  - ITH57
+  - ITH58
+  - ITH59
+  - ITI11
+  - ITI12
+  - ITI13
+  - ITI14
+  - ITI15
+  - ITI16
+  - ITI17
+  - ITI18
+  - ITI19
+  - ITI1A
+  - ITI21
+  - ITI22
+  - ITI31
+  - ITI32
+  - ITI33
+  - ITI34
+  - ITI35
+  - ITI41
+  - ITI42
+  - ITI43
+  - ITI44
+  - ITI45
+
+# -- Geographic bounding box (WGS84) -----------------------------------------
+# Includes Sicily, Sardinia and the Pelagie Islands (southern bound ~Lampedusa).
+bbox_wgs84:
+  lon_min: 6.63
+  lat_min: 35.29
+  lon_max: 18.78
+  lat_max: 47.09
+
+# -- TABULA building typology source -----------------------------------------
+# Italy IS a TABULA country -- the Italian residential typology was produced
+# by the TEBE research group at Politecnico di Torino. The DIRECT Italian
+# typology is used (no proxy, no climate correction). The Italian TABULA
+# defines three climate zones; the reference typology uses the MIDDLE zone
+# (2100-3000 HDD). Extraction: code/data/raw/tabula/it_intensities.csv.
+tabula:
+  source_country: IT
+  source_country_name: Italy
+  intensities_file: code/data/raw/tabula/it_intensities.csv
+  reason_for_proxy: |
+    None -- Italy is a TABULA country. The Italian national residential
+    typology (Politecnico di Torino) is used directly, no proxy, no climate
+    correction (climate_multiplier = 1.0).
+
+# -- Climate correction ------------------------------------------------------
+# Italy IS a direct TABULA country, but the Italian TABULA brochure publishes a
+# SINGLE reference climate zone -- the MIDDLE zone (2100-3000 HDD per the POLITO
+# brochure's own zone definition) -- not a country-mean calibration. Italy's
+# actual 2018-2022 mean HDD (1821) sits in the Mediterranean zone (<2100), so
+# applying Middle-zone intensities at climate_multiplier=1.0 inflates the bottom-
+# up by ~37% (the Group 2 Colab run landed at 668.5 TWh vs Hotmaps 482 TWh,
+# flagged INVESTIGATE). The fix introduces tabula_reference_hdd = 2500 (Middle
+# zone midpoint) and recomputes climate_multiplier = hdd_country / 2500 = 0.728.
+# Expected post-correction bottom-up ~ 487 TWh, within 2% of Hotmaps.
+#
+# Source: Eurostat nrg_chdd_a (base 15 C, JRC AGRI4CAST), 5-year mean 2018-2022:
+#   IT annual HDD: 1879.86, 1746.84, 1813.91, 1748.95, 1916.57 -> mean 1821.23
+# Reference HDD: it_intensities.csv brochure header, "MIDDLE reference zone
+#   (2100-3000 HDD)". Midpoint 2500 used as best estimate. NEEDS_VERIFY against
+#   the TABULA WebTool's per-zone calibration HDD.
+climate:
+  hdd_country: 1821.23           # IT -- Eurostat nrg_chdd_a 2018-2022 mean
+  hdd_proxy: 1821.23             # IT direct typology -> proxy = self
+  tabula_reference_hdd: 2500     # IT TABULA Middle reference zone midpoint
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  climate_multiplier: 0.7285     # 1821.23 / 2500 (Mediterranean-zone correction)
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST), 5-year mean 2018-2022; tabula_reference_hdd from it_intensities.csv brochure header (Middle zone 2100-3000 HDD)
+
+# -- Retrofit-state distribution ---------------------------------------------
+# Retrofit FACTORS are the Italian TABULA typology-averaged refurbishment
+# ratios (standard / advanced refurbishment space-heating need relative to the
+# existing state). PROVISIONAL pending the it_intensities.csv extraction --
+# reconcile against the Italian TABULA refurbishment scenarios.
+#
+# Retrofit SHARES are a modelling assumption. By May 2024 the Superbonus 110%
+# programme had completed ~495,700 residential renovations (~5% of the stock);
+# most refurbishment is partial ("standard") rather than deep. The 0.75/0.20/
+# 0.05 split reflects ~75% original / ~25% refurbished.
+retrofit:
+  share:
+    original: 0.75          # modelling assumption -- see share_source
+    standard: 0.20          # modelling assumption
+    advanced: 0.05          # modelling assumption -- Superbonus deep retrofits
+  factor:
+    standard: 0.62          # PROVISIONAL -- Italian TABULA standard refurb (~38% cut)
+    advanced: 0.30          # PROVISIONAL -- Italian TABULA advanced refurb (~70% cut)
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # Computed blend for IT: 0.75 + 0.20x0.62 + 0.05x0.30 = 0.889
+  blend_value: 0.889
+  share_source: |
+    Modelling assumption grounded in ENEA Superbonus 110% reporting (~495,700
+    residential renovations to May 2024, ~5% of stock) and Odyssee-Mure Italy.
+    Retrofit factors PROVISIONAL pending the it_intensities.csv extraction.
+
+# -- Domestic Hot Water (DHW) intensity --------------------------------------
+# DHW is added per building from the TABULA file's dhw column. Values below are
+# the Italian TABULA DHW levels (provisional), retained for documentation.
+dhw:
+  sfh: 18.0
+  mfh: 18.0
+  unit: kWh/m2/yr
+  source: Italian TABULA (Politecnico di Torino); provisional pending extraction
+
+# -- Non-residential intensity (placeholder) ---------------------------------
+non_residential_intensity:
+  value: 110.0
+  unit: kWh/m2/yr
+  source: estimate -- Italian non-residential (tertiary) stock space heating
+  status: rough placeholder; contributes 0 TWh (zero heated area); flagged in methodology
+
+# -- External reconciliation benchmarks --------------------------------------
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 482.00           # sum of heat_2015_MWh across all 317 IT NUTS3
+                                #   rows in building_stock_nuts3.csv. All-classes
+                                #   total, per the LU/FR/FI methodology.
+    year: 2015
+    source: Hotmaps Toolbox via building_stock_nuts3.csv; sum across all IT NUTS3 rows
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 3234
+    eubucco_mm2: 4471
+    census_eubucco_ratio: 0.72
+    source: ISTAT Censimento 2021 (occupied ~2561 Mm2; total stock ~3.2-3.5 Bn m2)
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 320.0            # Order-of-magnitude anchor; the reconciliation
+                                #   BSO row is computed from it_intensity.csv.
+    year: 2022
+    source: anchored estimate; EU Building Stock Observatory portal not retrievable
+  odyssee_mure:
+    total_twh: 294.0            # ENEA: Italian residential sector ~294 TWh final
+                                #   energy (2019), space heating ~70%. Final-energy
+                                #   basis -- definitional gap vs Hotmaps useful demand.
+    year: 2019
+    source: ENEA / Odyssee-Mure Italy; residential final energy
+    note: National total only; final-energy basis -- definitional gap vs Hotmaps useful demand.
+
+# -- Hotmaps NUTS3 ID for model comparison -----------------------------------
+hotmaps_nuts3_id: ITI43   # Roma (representative reference)
+
+# -- Building classification rules -------------------------------------------
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+  # Rules (sequential, first match wins):
+  # 1. EUBUCCO.type starts with "non-" -> NON_RESIDENTIAL
+  # 2. floors >= 6 AND footprint >= 800 -> MFH_HIGH
+  # 3. floors <= 2 AND footprint < 250  -> SFH
+  # 4. 3 <= floors <= 5                  -> MFH_LOW
+  # 5. default (ambiguous large)         -> MFH_HIGH
+
+# -- Provenance + change log -------------------------------------------------
+_meta:
+  created: 2026-05-19
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 2)
+  last_verified: 2026-05-19
+  schema_version: 1
+  status: DRAFT -- direct Italian TABULA build; retrofit factors and DHW
+    PROVISIONAL pending the it_intensities.csv extraction.
+  references_doc: literature/italy/classification_methodology.md
+  verified_2026_05_19:
+    - eubucco.nuts2_partitions (21 IT NUTS2 codes, NUTS 2016/2021)
+    - nuts3_regions (107 IT NUTS3 codes, from repo GISCO file)
+    - climate.hdd_country = 1821.23 (Eurostat nrg_chdd_a IT 2018-2022 mean)
+    - tabula source = IT direct
+  needs_verify_summary:
+    - retrofit factors (0.62/0.30) and DHW (18/18) -- PROVISIONAL; reconcile
+      against the Italian TABULA refurbishment scenarios once it_intensities.csv
+      is extracted.
+    - retrofit shares (0.75/0.20/0.05) -- modelling assumption from Superbonus
+      reporting; no published three-state envelope distribution.
+    - nuts3_regions -- NUTS 2021 codes used; Sardinian provinces changed
+      2016->2021; spot-check the EUBUCCO IT partition region_id codes.
+    - non_residential_intensity (110) -- estimate; contributes 0 TWh.
+    - reconciliation_benchmarks.eu_bso -- anchored estimate, BSO portal not retrievable.

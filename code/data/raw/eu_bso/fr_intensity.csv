@@ -1,0 +1,43 @@
+# France residential stock weights + national-average intensity per cohort
+#
+# Used by 03_heat_intensity.py as the fallback intensity source for buildings
+# with unknown construction year, and by aggregate_results() to compute the
+# stock-weighted national-average intensity for the reconciliation table.
+#
+# Sources:
+#   - Stock weights per cohort: French TABULA brochure Tableau 1
+#     (Rochard et al. 2015, p. 11), "Nombre de logements en France selon
+#     classe bâtiment et période constructive". Total = 29,278,465 dwellings.
+#     The brochure data are derived from:
+#       - INSEE recensement 1999_LOG1 (Logements par catégorie selon
+#         l'époque d'achèvement, France métropolitaine).
+#       - ADEME SOFRES (10000 ménages survey) + OPEN database.
+#       - CEREN 2013 publication, table "PARC DES RESIDENCES PRINCIPALES EN
+#         2011 SELON LA DATE DE CONSTRUCTION DU LOGEMENT ET L'ENERGIE DE
+#         CHAUFFAGE": www.ceren.fr/files/static/Publication_donnees_CEREN.xlsx
+#       - SDES Sit@del2 (post-1989 housing starts).
+#
+#   - Intensities per cohort: stock-weighted average across SFH/MFH_LOW/MFH_HIGH
+#     of TABULA-FR intensities in fr_intensities.csv (which derives from
+#     tabula-calculator.xlsx Calc.Set.Building, sheet downloaded
+#     2026-05-15 from episcope.eu/fileadmin/tabula/public/calc/).
+#
+# Cohort mapping (FR brochure 10 periods -> our 6 cohorts):
+#   pre-1945:    avant 1915 + 1915-1944
+#   1946-1970:   1945-1967 + 1968-1975 (1968-1975 included though slightly past 1970)
+#   1971-1990:   1976-1981 + 1982-1989
+#   1991-2010:   1990-2000 + 2001-2005
+#   2011-2020:   2006-2012 (closest match — note FR brochure period ends 2012)
+#   post-2020:   >2012 (RT 2012 / RE 2020 era)
+#
+# Sum of stock_pct_fr = 100.00% (verified).
+# Weighted national intensity = 169.4 kWh/m²·a (verified).
+# Note: this is the TABULA-standard-method value, expected to be higher than
+# real-consumption-calibrated national average ~80-90 kWh/m²·a per Odyssee.
+cohort,bso_intensity_kwh_m2_yr,stock_pct_fr
+pre-1945,269.5,26.72
+1946-1970,220.1,26.84
+1971-1990,110.7,19.31
+1991-2010,69.0,16.74
+2011-2020,54.8,8.47
+post-2020,40.3,1.92

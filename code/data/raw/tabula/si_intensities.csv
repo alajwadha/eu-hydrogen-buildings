@@ -1,0 +1,74 @@
+# TABULA Slovenia synthetical-average residential building intensities
+#
+# Source: TABULA / EPISCOPE project. The Slovenian national residential
+#   typology was produced by the Building and Civil Engineering Institute ZRMK
+#   (Ljubljana), the national contact point.
+#   - Country page: episcope.eu/building-typology/country/si
+#   - Slovenian TABULA Scientific Report (ZRMK):
+#     episcope.eu/fileadmin/tabula/public/docs/scientific/SI_TABULA_ScientificReport_ZRMK.pdf
+#   - Loga, Stein, Diefenbach (2016). Energy & Buildings 132:4-12.
+#
+# Slovenia IS a TABULA country -- this is the DIRECT national typology
+# (tabula.source_country = SI in si.yaml; climate_multiplier = 1.0). It is ALSO
+# used as the climate-corrected PROXY for Croatia (hr.yaml, multiplier 0.8161)
+# -- Croatia and Slovenia share the Yugoslav-era socialist building tradition.
+#
+# IMPORTANT -- VALUES DERIVED FROM THE ZRMK AGGREGATE TABLES, NEEDS_VERIFY
+# -----------------------------------------------------------------------
+# The ZRMK scientific report tabulates heating need (Qnh) aggregated into two
+# classes -- SUH (Single Unit Houses) and MUH (Multi Unit Houses) -- across the
+# Slovenian periods (pre-1970, 1971-1980, 1981-2002, 2003-2008, from-2009). The
+# clean per-type values are in the TABULA WebTool (interactive, not machine-
+# extractable). The sh_intensity values below are DERIVED from the ZRMK
+# aggregate intensities (SUH: pre-1970 ~108, 1981-2002 ~90, 2003-2008 ~49,
+# from-2009 ~34; MUH: pre-1970 ~123, 1971-1980 ~101, 1981-2002 ~88, 2003-2008
+# ~68, from-2009 ~36 kWh/m2/yr) and mapped onto our 6 cohorts. The ZRMK
+# SUH 1971-1980 aggregate (~196) is a known floor-area artefact and is replaced
+# by an interpolated value. Verify against the TABULA WebTool before reporting.
+#
+# Building class mapping (ZRMK 2-class scheme -> our 3 residential classes):
+#   SFH       <- ZRMK SUH (Single Unit Houses)
+#   MFH_LOW   <- ZRMK MUH (Multi Unit Houses)
+#   MFH_HIGH  <- ZRMK MUH (same -- the ZRMK energy-balance model has only SUH
+#                and MUH, so MFH_LOW and MFH_HIGH necessarily carry identical
+#                intensities here. A limitation of the source, disclosed.)
+#
+# Cohort mapping (Slovenian periods -> our 6 cohorts):
+#   pre-1945    <- ZRMK pre-1970 value x ~1.13 (pre-war stock somewhat worse)
+#   1946-1970   <- ZRMK pre-1970
+#   1971-1990   <- average of ZRMK 1971-1980 and 1981-2002
+#   1991-2010   <- average of ZRMK 1981-2002 and 2003-2008
+#   2011-2020   <- ZRMK from-2009
+#   post-2020   <- ZRMK from-2009 x ~0.85 (post-2020 new-build tightening)
+#
+# Refurbishment reduction factors (Slovenian TABULA, typology-averaged):
+#   standard ("medium-refurbished") ~0.65 of existing-state SH need; advanced
+#   ("full-refurbished") ~0.40. These inform the retrofit blend in si.yaml/hr.yaml.
+#
+# DHW: TABULA convention, ~20 kWh/m2/yr SFH, ~18 MFH.
+#
+# Citations:
+#   ZRMK (2012). IEE TABULA - Slovenian national building typology scientific
+#     report. Building and Civil Engineering Institute ZRMK, Ljubljana.
+#   Loga T., Stein B., Diefenbach N. (2016). Energy & Buildings 132:4-12.
+#
+#
+building_class,cohort,sh_intensity_kwh_m2_yr,dhw_intensity_kwh_m2_yr,source_note
+SFH,pre-1945,124,20,"ZRMK SUH pre-1970 (~108) x 1.13; ESTIMATE pending WebTool"
+SFH,1946-1970,108,20,"ZRMK SUH pre-1970 aggregate intensity"
+SFH,1971-1990,100,20,"avg ZRMK SUH 1971-1980 (interpolated ~110) and 1981-2002 (~90)"
+SFH,1991-2010,70,20,"avg ZRMK SUH 1981-2002 (~90) and 2003-2008 (~49)"
+SFH,2011-2020,34,20,"ZRMK SUH from-2009 (survey-based new-build)"
+SFH,post-2020,29,20,"EXTRAPOLATED from ZRMK SUH from-2009; FLAGGED"
+MFH_LOW,pre-1945,138,18,"ZRMK MUH pre-1970 (~123) x 1.12; ESTIMATE pending WebTool"
+MFH_LOW,1946-1970,123,18,"ZRMK MUH pre-1970 aggregate intensity"
+MFH_LOW,1971-1990,95,18,"avg ZRMK MUH 1971-1980 (~101) and 1981-2002 (~88)"
+MFH_LOW,1991-2010,78,18,"avg ZRMK MUH 1981-2002 (~88) and 2003-2008 (~68)"
+MFH_LOW,2011-2020,36,18,"ZRMK MUH from-2009"
+MFH_LOW,post-2020,31,18,"EXTRAPOLATED from ZRMK MUH from-2009; FLAGGED"
+MFH_HIGH,pre-1945,138,18,"ZRMK MUH (= MFH_LOW; ZRMK has one multi-unit class); FLAGGED limitation"
+MFH_HIGH,1946-1970,123,18,"ZRMK MUH (= MFH_LOW); FLAGGED limitation"
+MFH_HIGH,1971-1990,95,18,"ZRMK MUH (= MFH_LOW); FLAGGED limitation"
+MFH_HIGH,1991-2010,78,18,"ZRMK MUH (= MFH_LOW); FLAGGED limitation"
+MFH_HIGH,2011-2020,36,18,"ZRMK MUH (= MFH_LOW); FLAGGED limitation"
+MFH_HIGH,post-2020,31,18,"ZRMK MUH (= MFH_LOW); FLAGGED limitation"
