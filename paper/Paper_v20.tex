@@ -28,6 +28,25 @@
 \renewcommand{\topfraction}{0.90}
 \renewcommand{\bottomfraction}{0.60}
 \renewcommand{\floatpagefraction}{0.75}
+
+% No page may open or close on one or two stray lines of someone else's paragraph. The
+% LaTeX default is 150, a price TeX pays readily, so eight pages opened on the one or two
+% lines a paragraph had left over.
+%
+% \widowpenalty on its own forbids a single line only. The eTeX \widowpenalties form takes
+% one penalty per depth, so depths one and two are forbidden outright here. Depth three is
+% left at the default deliberately: forbidding it too makes every paragraph of four to six
+% lines effectively unbreakable, and the document grew by twenty pages when it was set.
+% As it stands the cost is two pages and six of the eight are gone. The two that remain
+% are reference entries carrying long URLs, where the alternative break is worse.
+\widowpenalties=3 10000 10000 150
+\clubpenalties=3 10000 10000 150
+\displaywidowpenalties=3 10000 10000 150
+\brokenpenalty=10000
+% Forbidding a break is only half of it, because TeX still has to put the displaced lines
+% somewhere. A little give between paragraphs lets a page absorb a line rather than open a
+% new one, and 3 pt of stretch on a one-and-a-half spaced page does not show.
+\setlength{\parskip}{0pt plus 3pt}
 \usepackage{multirow}
 \usepackage{array}
 \usepackage{tabularx}
@@ -57,7 +76,7 @@
     $^{2}$RENEW Lab, Johns Hopkins University, Baltimore, MD, USA\\
     $^{3}$Cornell University, Ithaca, NY, USA\\[0.5em]
     \textit{$^{*}$Corresponding author.}\\[0.5em]
-    \textit{Draft v20, June 2026}
+    \textit{August 2026}
 }
 
 % ─── Document ────────────────────────────────────────────────────────────────
