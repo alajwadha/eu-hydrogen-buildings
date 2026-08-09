@@ -1,0 +1,316 @@
+% ─── Data and Methodology ────────────────────────────────────────────────────
+% Target: 10 to 15 pages.
+% Structure: (1) data sources, (2) building stock, (3) heat demand,
+% (4) technology assumptions, (5) scenario definitions, (6) uncertainty approach.
+%
+\label{sec:method}
+
+\subsection{Model Overview}
+\label{sec:method:overview}
+
+The model is built demand-first; a NUTS3-level estimate of useful heat demand is
+established first, building-type shares are then attached to it, and technology
+shares are applied last to split that demand across heating technologies for each
+region and year. The useful-heat surface is drawn from the Hotmaps regional
+database \citep{Hotmaps2020}, building-type shares from the Eurostat Census 2021
+\citep{Eurostat2021census} and the United Kingdom Census 2021 accommodation tables
+\citep{ONS2021TS044}.
+
+Demand is reconstructed along two independent strands that are reconciled against
+each other (Figure~\ref{fig:architecture}). A \emph{top-down} baseline takes NUTS3
+heat demand from the Hotmaps regional database and attaches census-derived
+building-type shares; an independent \emph{bottom-up} build reconstructs
+residential heat demand from open building-footprint data (EUBUCCO) and a
+harmonised building typology (TABULA). The two agree to $-0.8\,\%$ across the
+EU-27, the United Kingdom and Switzerland and to within $\pm 25\,\%$ in 28 of 29 countries
+(Appendix~\ref{sec:method:bottomup}, Figure~\ref{fig:bottomup}). The headline
+results reported here use the \emph{bottom-up} demand basis, with the Hotmaps
+top-down baseline retained as
+the independent reconciliation benchmark. The single reconciled demand surface
+then propagates through the shared technology, cost and policy layers and through
+the scenario Monte Carlo machinery, so the choice of demand basis does not
+propagate a different downstream treatment; the merit-order and missing-money
+tests that carry the paper's hydrogen findings
+(Appendix~\ref{sec:method:merit}) sit at the end of that common chain. The header band
+of Figure~\ref{fig:architecture} sets out the three input layers that feed the pipeline
+and the policy frame they run inside.
+
+\begin{figure}[tbp]
+    \centering
+    \caption{Model architecture. Inputs, the demand reconstruction and the scenario
+    draws feed three tests applied in order, and a technology that fails an earlier test
+    is not rescued by a later one. The first two are cost comparisons at different time
+    scales, annual and peak-hour; the third asks whether the plant that wins the peak can
+    be financed at all. The subsections below give the data sources and parameter
+    ranges the boxes summarise.}
+    \includegraphics[width=0.80\textwidth]{paper/P00_model_flow.pdf}
+    \label{fig:architecture}
+    \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+\end{figure}
+
+\subsection{Data Sources}
+\label{sec:method:data}
+
+\subsubsection{Heat Demand Baseline}
+
+NUTS3-level useful heat demand for space heating and hot water is taken from the
+Hotmaps regional demand dataset \citep{Hotmaps2020}, which estimates demand from
+building-stock characteristics and climate data for the EU member states. The
+reference year is approximately 2015. Coverage extends to 1{,}369 NUTS3 regions
+across the EU-27, Switzerland and the United Kingdom, totalling
+3{,}863~TWh\,yr$^{-1}$ of residential heat demand. The spatial gradient in demand
+is steep and is driven jointly by climate severity and population density, as
+Figure~\ref{fig:nuts3map} shows.
+
+\begin{figure}[H]
+    \centering
+    \caption{Useful residential heat demand by NUTS3 region (bottom-up build). The colour scale is logarithmic and runs from 0.3 to 12~TWh/yr, decade-friendly bounds close to the 2nd and 98th percentiles of the 1{,}359 regions the map draws, which are 0.36 and 10.2; the arrowheads mark the 1.0~per cent that fall below the range and the 1.4~per cent above it. The darkest regions are metropolitan. Rome, Nord, Naples, Turin, Milan, Stockholm, Paris, Madrid, Warsaw, Barcelona and Berlin lead the distribution, and within France the eight darkest are Lille, Paris, the Lens and Arras belt, Bordeaux, Marseille, Lyon, Nantes and Grenoble.}
+    \includegraphics[width=\textwidth]{paper/P01_nuts3_map.pdf}
+    \label{fig:nuts3map}
+    \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+\end{figure}
+
+\subsubsection{Building Stock}
+
+Building-type shares at NUTS3 level for the EU-27 and Switzerland are derived from
+the Eurostat Census 2021 microdata table CENS\_21DWBNO\_R3
+\citep{Eurostat2021census}, which reports dwelling counts by building type and
+NUTS3 region. Three model building types are defined: single-family homes (SFH,
+corresponding to Eurostat codes RES1 and RES2), multi-family and high-rise
+buildings (MFH, code RES\_GE3), and other residential (the remaining codes). For
+the United Kingdom, national building-type shares are derived from the ONS Census
+2021 TS044 dataset (accommodation type by lower-tier local authority)
+\citep{ONS2021TS044} and applied uniformly to the UK NUTS3 regions.
+
+In the top-down census split, single-family homes account for 769~TWh (20~per cent) of
+the 3{,}863~TWh\,yr$^{-1}$ baseline, multi-family or high-rise buildings for
+594~TWh (15~per cent), and a large `other/mixed' residual for the remainder
+(2{,}501~TWh, 65~per cent). That
+residual is a known artefact of the Hotmaps stock disaggregation, which
+over-counts non-residential records; it is addressed in the Limitations section
+and is one motivation for the bottom-up build, whose class composition is markedly
+cleaner (Appendix~\ref{sec:method:bottomup}).
+
+\subsubsection{NUTS3 Reference Geography}
+
+NUTS3 regional boundaries and typology codes (urban or rural, coastal, mountain)
+are sourced from the Eurostat GISCO service \citep{EurostatGISCO2021} at
+1:1~million scale, coordinate reference system EPSG:4326.
+
+\noindent The detailed treatment of bottom-up validation of the residential building stock is given in Appendix~\ref{sec:method:bottomup}.
+
+\subsection{Heat Demand Trajectory}
+\label{sec:method:demand}
+
+Useful heat demand is projected forward from a base year $t_0 = 2025$ with a
+per-country, multi-driver ratio identity, and the historical $2015\to2025$ change is
+separately attributed across the same drivers with a Logarithmic Mean Divisia Index
+(LMDI; \citealp{Ang2005}) decomposition. The vintage-matched backcast set out below is a third and separate construction, and it scales by dwelling stock alone. The LMDI is an exact decomposition that isolates the
+independent contribution of each driver to a scalar outcome; we adopt it because it
+is factor-neutral and path-independent, leaves no unexplained residual term, and
+assigns each driver a unique weight without the ad hoc parameterisation that
+arithmetic-mean Divisia, Fisher-ideal or regression-based alternatives require
+\citep{Ang2005}. The base-year demand $D_0$ is the NUTS3
+region/building-type baseline of Section~\ref{sec:method:data} (the Hotmaps
+estimate in the top-down chain; the EUBUCCO and TABULA snapshot in the bottom-up
+specification), treated as the demand level in $t_0$. The model operates at the
+NUTS3 region and building-type level and aggregates to the country before the
+trajectory is applied. National useful heat demand then evolves as the 2025
+baseline scaled by three demographic and efficiency drivers: population growth and
+household-size decline (occupancy), both of which add demand, set against
+envelope-renovation intensity, which removes it. The formal decomposition is
+
+\begin{equation}
+    D_c(t) = D_c^{0}\,
+        \underbrace{\frac{\text{Pop}_{c,t}}{\text{Pop}_{c,25}}}_{\text{population}}\,
+        \underbrace{\frac{(\text{Dw}/\text{Pop})_{c,t}}{(\text{Dw}/\text{Pop})_{c,25}}}_{\text{occupancy}}\,
+        \underbrace{\bigl(1-r_{c,s}\bigr)^{\,t-t_0}}_{\text{envelope}},
+    \qquad t \ge t_0,\; t_0 = 2025,
+    \label{eq:demand}
+\end{equation}
+
+\noindent where $D_c^{0}=\sum_{r\in c,\,b} D_0(r,b)$ is the national base-year demand,
+$\text{Pop}_{c,t}$ is projected population (the Eurostat EUROPOP2023 baseline for the
+EU-27, the ONS 2022-based projection for the UK, and the BFS Referenzszenario A-00-2025
+for Switzerland), $(\text{Dw}/\text{Pop})_{c,t}$ is dwellings per capita (the inverse of
+average household size, linearly extrapolated from the observed 2015 to 2023 Eurostat
+\texttt{ilc\_lvph01} trend), and $r_{c,s}$ is the per-country, per-scenario
+\emph{envelope-design} intensity decline rate, so the closing factor
+$\bigl(1-r_{c,s}\bigr)^{\,t-t_0}$ is an exponential decline in the building envelope's
+design heat demand at the annual rate $r_{c,s}$. Average dwelling size ($\text{m}^2$/Dw)
+is held flat over the projection window, since national series drift by less than 2~per
+cent per decade.
+
+The occupancy term captures the increased average heat demand per capita when household
+size shrinks and dwellings are occupied by fewer residents; it assumes the built
+envelope ($\text{m}^2$/Dw) and the heated floor area per $\text{m}^2$ remain constant,
+so a rising dwellings-per-capita ratio raises aggregate demand by adding dwellings to
+heat, not by enlarging each dwelling. Moving the anchor from 2015 to $t_0$ keeps the
+demand path consistent with the technology-share, efficiency and turnover ramps, which
+all originate in 2025, and ensures that the base-year demand equals the baseline
+estimate, not that estimate net of a decade of assumed efficiency gains. The LMDI form
+makes the demand reduction an \emph{emergent} quantity, the net of population growth and
+household-size decline (both of which add demand) against envelope renovation (which
+removes it), rather than an exogenously imposed 2050 target.
+
+The parameter that varies by scenario is the envelope-design intensity decline
+rate $r_{c,s}$, read
+per country and scenario from the scenario parameter register accompanying the supplementary material and sampled
+$r_{c,s}\sim\mathcal{N}(\mu_{c,s},\sigma_{c,s})$ (truncated to 0 to 5~per~cent/yr) in
+the Monte Carlo. The central values are anchored on each country's current
+envelope-relevant renovation pace (EU stock-weighted $\approx$0.55 to 0.7~per cent/yr; \citealp{BPIE2024Tracker,Esser2019renovation}). \textbf{Stated Policies} holds the
+announced-policy pace; \textbf{Current Policies} multiplies it by 0.70
+(current-measures-only, so renovation slows); \textbf{Net Zero} multiplies it by
+2.73 (the EU-average 1.5 to 1.9~per cent/yr implied by a 3~per cent/yr renovation rate at $\approx$50~per cent envelope depth, which is the obligation the Energy Efficiency Directive places on public buildings and roughly the deep-renovation pace advocacy work argues the stock needs, above the Renovation Wave's own commitment to double the rate to about 2~per cent/yr); and \textbf{H2 Push} multiplies
+it by 1.64 (an intermediate pace, since hydrogen substitution does not alter the
+envelope). Because the same multiplier is applied to every country, the scenarios
+scale each country's own baseline \emph{proportionally} instead of converging all
+countries to a common rate, so the cross-country renovation-pace heterogeneity of
+Stated Policies is preserved in every scenario (Appendix~\ref{sec:limitations}).
+
+\paragraph{Vintage-matched reconciliation.}
+Although the bottom-up build is used for all reported results without calibration
+to Hotmaps, the vintage-matched reconciliation provides an independent 2015
+cross-check that the underlying methodology is sound, not a step that adjusts the
+baseline. In the bottom-up specification $D_0$ describes the present-day stock
+(EUBUCCO $\approx$2020 to 2023), and the Hotmaps validation benchmark is dated 2015, so the two are separated by roughly a decade of stock and efficiency change
+and cannot be compared directly. We therefore backcast the national base-year
+demand $D_c^{0}=\sum_{r\in c,\,b} D_0(r,b)$ to 2015 so that the two independent
+estimates can be tested for convergence once vintage is accounted for. The backcast is
+deliberately not the forward identity of Eq.~\eqref{eq:demand} run backwards. It scales
+the snapshot by dwelling-stock growth alone:
+
+\begin{equation}
+    D_c(2015) = D_c^{0}\,\bigl(1+g_c\bigr)^{-10},
+    \label{eq:backcast}
+\end{equation}
+
+\noindent where $g_c$ is the country's net annual dwelling-stock growth rate, running
+from 0.15~per cent a year in Portugal to 2.5 in Malta on a 0.90 median, sourced from
+Eurostat (households, census, populations) and cross-checked with national statistical
+offices (Destatis, INSEE, ISTAT, INE, CBS, SCB, GUS, ONS/MHCLG, CSO, KSH, INS, NSI,
+CYSTAT, CSB, STATEC, SURS, NSO Malta and BFS; the UK and Switzerland from ONS and BFS
+respectively). Across the 29 countries this compounds to an aggregate factor of 0.924.
+The quantity being matched is a stock vintage and not a demand pathway, and the stock
+series is the one input the two estimates share, which is why the backcast carries no
+population, occupancy or envelope term. It follows that the vintage-matched deviation
+sits below the raw one by construction and is the more conservative of the two, not a
+correction to it.
+
+The intensity factor $r_c$ is the country's \emph{envelope-relevant} renovation rate,
+derived from the renovation depth bands of the European Commission's renovation-activity study \citep{Esser2019renovation} with envelope-saving weights $r_c =
+0.50\,\mathrm{deep}_c + 0.25\,\mathrm{medium}_c + 0.05\,\mathrm{light}_c$ (EU
+stock-weighted $\sim 0.55\,\%$\,yr$^{-1}$). The weights are the fraction of each depth
+band's renovations that delivers a lasting cut in envelope-design demand, set from the distribution of renovation depths in that study \citep{Esser2019renovation}; deep
+retrofits are credited at half, medium at a quarter and light at a twentieth, with the
+full derivation given in the supplementary material. The envelope rate is used because the full
+metered Eurostat intensity decline would credit conversion-efficiency improvement
+(boilers, heat pumps) and behavioural prebound response, neither of which changes the
+\emph{design} demand the model represents. The vintage-matched deviation
+against the Hotmaps benchmark $H_c^{2015}$ is
+
+\begin{equation}
+    \Delta_c^{\mathrm{VM}} = \frac{D_c(2015) - H_c^{2015}}{H_c^{2015}}.
+    \label{eq:vmgap}
+\end{equation}
+
+\noindent Across the EU-27+UK+CH aggregate, the four LMDI drivers contribute
+approximately $+1.7\,\%$ (population), $+4.6\,\%$ (occupancy, that is, shrinking
+household size), $0\,\%$ (dwelling size) and $-6.3\,\%$ (envelope retrofit) to the
+change $2015\to2025$ in TWh terms. The two stock-side drivers sum to $+6.3\,\%$, matched
+almost exactly by the envelope-retrofit term, so the net change across the EU-27+UK+CH is only $+0.06\,\%$, a near-coincidence of this particular decade. The EU's actual
+energy renovation rate has remained close to its long-run $\sim 0.55\,\%\text{ yr}^{-1}$
+envelope-relevant baseline through 2015 to 2023, without accelerating towards either the Renovation Wave's doubling commitment or the $3\,\%\text{ yr}^{-1}$ pace used as the Net~Zero anchor \citep{BPIE2024Tracker}; population and
+household decomposition added stock at a similar pace, leaving the net flat.
+
+The matched-vintage deviation is $\Delta^{\mathrm{VM}} = -8.3\,\%$ across the
+EU-27+UK+CH, within the $\pm 15\,\%$ acceptance band, so the model passes its
+independent 2015 validation against Hotmaps without any Hotmaps-targeted calibration.
+Per-country deviations range from $-32.3\,\%$ (Luxembourg, where fast population growth
+sits on a low stock) to $+20.1\,\%$ (Slovenia, followed by Latvia at $+18.0$ and
+Bulgaria at $+16.9$, where the comfort-regime deflator is already applied but residual
+stock factors remain). On the raw and not the vintage-matched basis the range is
+$-21.1\,\%$ (the United Kingdom) to $+35.6\,\%$ (Malta). The per-country acceptance bands of the build are set on the raw deviation and are not recomputed on $\Delta^{\mathrm{VM}}$. An independent Eurostat-derived 2015 reference (climate-corrected to the WMO 1991 to
+2020 normal) is reported alongside; it captures \emph{final} metered energy and lands at $\sim 54\,\%$ of the Hotmaps useful demand. The prebound and performance-gap effect runs in that direction, at a median of about $-11$~per~cent in metered stock studies \citep{Cozza2019Measuring}, so it accounts for part of the gap and not for all of it.
+
+\paragraph{The lower Eurostat anchor.} That gap is large enough to ask what the results
+would look like on the lower anchor, so we re-run the chain on it. Every ranking
+survives. The heat pump is still cheapest in 22 of
+29 markets, the same seven parity markets appear, the salt-cavern power-peak wins are
+still seven, peaker capital recovery is still 9~per~cent, and per-country emissions stay
+monotone in ambition.
+
+Every extensive quantity moves roughly in proportion to the anchor itself. The 2050
+emissions fan falls from 352 (Current Policies), 231 (Stated Policies), 123 (H2 Push) and 10 (Net Zero) to 192, 126, 67 and 5~MtCO$_2$, and the firm peaker fleet falls from 278 to about 151~GW and the cumulative peaker
+shortfall from \euro{}357 to about \euro{}194~bn. Each of those quantities is derived
+where it is first reported, the emissions fan in Section~\ref{sec:results:emissions} and
+the fleet and the shortfall in Section~\ref{sec:power}; they stand here only as the
+scale the anchor sets. The anchor therefore sets the scale of every
+level in this paper and none of its orderings, which is the sense in which the choice of
+anchor is conservative for the comparison at issue.
+
+\paragraph{Three-way benchmark.} A three-way benchmark places the bottom-up build
+against two further independent sources. Against Hotmaps the aggregate
+gap is $-0.8$~per~cent, against the EU Building Stock Observatory $-11.9$~per~cent, and
+against Odyssee-MURE $+52.9$~per~cent, the last because Odyssee reports final metered
+energy and so carries the same prebound gap as the Eurostat reference. The build
+therefore sits between the two useful-heat sources and well above the metered one, which
+is where a useful-heat reconstruction should sit.
+
+\noindent The detailed treatment of the technology mix and its underlying techno-economic
+assumptions is given in Appendix~\ref{sec:method:techshares} and
+Appendix~\ref{sec:method:techassumptions}, while the fuel-price assumptions and the
+hydrogen supply-cost and distribution-infrastructure build are set out in
+Appendix~\ref{sec:method:prices} and Appendix~\ref{sec:method:h2} respectively.
+
+\subsection{Scenario Definitions}
+\label{sec:method:scenarios}
+
+Four multi-lever scenarios are defined to bracket the plausible range of European
+buildings decarbonisation trajectories to 2050 (Table~\ref{tab:scenarios}).
+
+\begin{table}[H]
+\centering
+\caption{Scenario definitions, lever settings and outcomes. The three 2050 share rows are Monte Carlo means and not hard caps. Each draw takes the tabulated value as the centre of a normal, with a standard deviation of 5~percentage points on the heat-pump share, 4 on the fossil share and 3 each on the district-heat and hydrogen shares, censored at its admissible interval rather than resampled. A realised median can therefore sit a little above or below its tabulated setting. Hydrogen's drawn value is applied as a hard per-draw ceiling after the cost reallocation, but the ceiling binds that draw rather than the tabulated mean, so the realised medians sit just above their settings in all four scenarios, at 0.5, 5.5, 3.5 and 8.5~per~cent against 0, 5, 3 and 8.}
+\label{tab:scenarios}
+\small
+\begin{tabularx}{\textwidth}{lXXXX}
+\toprule
+Lever & Current Policies & Stated Policies & Net Zero & H2 Push \\
+\midrule
+Envelope rate (vs announced)  & $\times$0.70 & $\times$1.00 & $\times$2.73 & $\times$1.64 \\
+Carbon price path             & LOW          & CENTRAL      & HIGH         & HIGH    \\
+Hydrogen price path           & STRANDED     & CENTRAL      & CENTRAL      & RAPID \\
+Grid-decarbonisation speed    & $\times$1.15 (slower) & $\times$1.00 & $\times$0.70 (faster) & $\times$1.00 \\
+Fossil share 2050 (ambition)  & 40\%         & 27\%         & 5\%          & 15\% \\
+H$_2$ ceiling 2050 (set $\leq$ derived bound) & 0\% & 5\% & 3\% & 8\% \\
+\midrule
+Demand change 2050 (outcome)  & $-5\%$       & $-9\%$       & $-31\%$      & $-18\%$ \\
+\bottomrule
+\end{tabularx}
+\\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+\end{table}
+
+The four scenarios span the plausible range of buildings decarbonisation to 2050.
+\textbf{Current Policies} freezes policy at today's implemented measures.
+Renovation slows, the carbon price stays low, hydrogen markets strand, and the grid
+decarbonises 15~per cent slower than announced, the implementation-gap bookend.
+\textbf{Stated Policies} delivers announced policy (EPBD bans, ETS2 central, NECP
+renovation), broadly consistent with the IEA World Energy Outlook trajectory and
+the European Commission's 2018 long-term strategy \citep{EuropeanCommission2018LTS}.
+\textbf{Net Zero} represents climate-neutrality-consistent ambition in line with the
+IEA Net Zero scenario \citep{IEA2023NZE}: Renovation-Wave-pace envelope upgrades, a
+high carbon price, and a fast-decarbonising grid. \textbf{H2 Push} is the
+deliberately hydrogen-favourable world envisaged in REPowerEU
+\citep{REpowerEU2022}, in which hydrogen prices fall rapidly
+along the rapid delivered-hydrogen path \citep{OIES2024hydrogenimportsET32}, testing how large the buildings niche
+can become once the fuel-cost barrier is removed. Unlike earlier exogenous-share
+designs, the hydrogen share in every scenario is capped at the ceiling
+\emph{derived} from the merit-order dispatch analysis
+(Section~\ref{sec:results:meritorder}). Hydrogen wins the share its peak-slice
+economics support, and each scenario's ceiling is then set at or below that bound. All levers are sampled stochastically
+around their central values in the Monte Carlo.
+
+\noindent The detailed treatment of peak dispatch, peaking investment and network capital
+is given in Appendix~\ref{sec:method:merit}, and that of the uncertainty quantification in
+Appendix~\ref{sec:method:uncertainty}.

@@ -1,0 +1,276 @@
+%% Applied Energy submission — canonical LaTeX source (elsarticle).
+%% Compile on Overleaf or a local TeX Live: pdflatex -> bibtex -> pdflatex x2.
+\documentclass[review]{elsarticle}
+%% Reproducible output: without these, every rebuild rewrites /CreationDate and
+%% /ID, so an unchanged document still shows as modified in git.
+\ifdefined\pdfinfoomitdate \pdfinfoomitdate=1 \fi
+\ifdefined\pdftrailerid \pdftrailerid{} \fi
+% elsarticle loads natbib itself, so options go through \biboptions. Without this the
+% main paper rendered citation groups unsorted and uncompressed while the SI, which sets
+% the same options directly, sorted and compressed the identical groups.
+\biboptions{numbers,sort&compress}
+
+\usepackage{xurl}
+% hypertexnames=false: the graphicalabstract and highlights pages reset counters, so
+% two objects claimed each figure/table anchor and the PDF link table went bad.
+% hidelinks: the SI hid its link boxes and this document boxed every citation.
+\usepackage[hypertexnames=false,hidelinks]{hyperref}
+% Make the euro glyph copy-pastable: without this every \euro{} extracts as "e".
+\input{glyphtounicode}\pdfgentounicode=1
+\clubpenalty=10000 \widowpenalty=10000 \displaywidowpenalty=10000
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage[version=4]{mhchem}
+\usepackage[official]{eurosym}
+\usepackage{float}
+% Table captions sit above the rule, and at this class's default of 0 pt the second line
+% of a two-line caption was struck through by the \toprule of the table below it. Six
+% points separates them. On figures, whose captions sit below the artwork, this only adds
+% the same gap ahead of the explanatory note.
+\setlength{\belowcaptionskip}{6pt}
+\graphicspath{{../figs/paper/}{../figs/}}
+\journal{Applied Energy}
+
+% Title, authors and affiliations on their own page, abstract and keywords on the next.
+% elsarticle's own hook, so the break happens inside \pprintMaketitle where the class
+% orders the front matter, rather than anywhere the source could put a \newpage.
+\newpageafter{author}
+
+% ---------------------------------------------------------------------------
+% Title page
+%
+% In review mode the graphical abstract and the highlights each take a page of their own
+% ahead of the title, so this page carries the title block and nothing else. At the
+% class's own sizes that is about an inch and a half of type at the top of an eleven-inch
+% page, and the rest is white.
+%
+% The same three elements, one step up in size and spread down the page: the title at
+% \huge, the authors at \Large, the affiliations at \small, with stretchable glue between
+% them so the group runs from the top margin to the corresponding-author footnotes the
+% class anchors to the foot of the page. Nothing is added and nothing is dropped, and
+% every size is one of the class's own steps, so no font is generated at a size Computer
+% Modern does not ship.
+%
+% The class orders the front matter itself inside \pprintMaketitle and offers no hook
+% between the affiliations and the break \newpageafter{author} inserts, so this is that
+% macro from elsarticle 3.3 (2020/11/20) with the sizes and the glue changed. Every other
+% step, \printFirstPageNotes included, runs in the class's own order, and the abstract
+% and keyword branch below is the class's, untouched.
+% ---------------------------------------------------------------------------
+\makeatletter
+\long\def\pprintMaketitle{\clearpage
+  \iflongmktitle\if@twocolumn\let\columnwidth=\textwidth\fi\fi
+  \resetTitleCounters
+  \def\baselinestretch{1}%
+  \printFirstPageNotes
+  \begin{\elsarticletitlealign}%
+  \thispagestyle{pprintTitle}%
+    \def\baselinestretch{1}%
+    \null\vskip0pt plus 0.4fill\relax
+    {\huge\@title\par}%
+    \ifx\@elsarticlenewpageafter\newpage@after@title
+      \newpage
+    \fi%
+    \ifdoubleblind
+      \vspace*{2pc}
+    \else
+      \vskip0pt plus 0.6fill\relax
+      {\Large\elsauthors\par}%
+      \vskip0pt plus 0.6fill\relax
+      {\small\itshape\elsaddress\par}%
+    \fi
+    \ifx\@elsarticlenewpageafter\newpage@after@author
+      \vskip0pt plus 0.8fill\relax
+      \newpage
+    \fi%
+    \hrule\vskip12pt
+    \ifvoid\absbox\else\unvbox\absbox\par\vskip10pt\fi
+    \ifvoid\keybox\else\unvbox\keybox\par\vskip10pt\fi
+    \hrule\vskip12pt
+    \ifx\@elsarticlenewpageafter\newpage@after@abstract
+      \newpage
+    \fi%
+    \end{\elsarticletitlealign}%
+    \gdef\thefootnote{\arabic{footnote}}%
+  }
+\makeatother
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Hydrogen in residential heating and the power system: a merit-order and capital-recovery assessment for 29 European markets}
+% The title says 29 markets, not 1,369 regions, deliberately. NUTS3 resolves the demand
+% reconstruction; every economic test runs after aggregation to the country
+% (Section 2). Reviewers read a NUTS3 headline as a claim that cost orderings are
+% resolved subnationally, and this study does not resolve them there.
+
+\author[oies]{Abdurahman Alsulaiman\corref{cor1}}
+\author[jhu,cornell]{Ali Alajwad}
+% An asterisk marks the corresponding author and nothing else. \ead printed a second
+% footnote reading "Email address: ... (Abdurahman Alsulaiman)" under it, which is the
+% class's default and is not wanted here; the address goes in the submission system.
+% The long paper already marks its corresponding author this way.
+\cortext[cor1]{Corresponding author.}
+\affiliation[oies]{organization={Oxford Institute for Energy Studies}, city={Oxford}, country={UK}}
+\affiliation[jhu]{organization={RENEW Lab, Johns Hopkins University}, city={Baltimore}, state={MD}, country={USA}}
+\affiliation[cornell]{organization={Cornell University}, city={Ithaca}, state={NY}, country={USA}}
+
+\begin{abstract}
+Continental models report hydrogen's role in building heat at national resolution, whereas
+building-stock assessments fix its share exogenously. Neither gives a peaker's standalone
+capital-recovery position market by market. We bound that share from the winter-peak
+dispatch, cap each scenario at or below it, screen it across district heat and power, and
+charge each carrier its last mile on levelised cost. A bottom-up model covers 29 markets
+over 200 Monte Carlo draws.
+
+Three findings follow. On 2050 levelised cost the best heat pump delivers
+\euro{}118.5/MWh against \euro{}122.8 for a hydrogen boiler and \euro{}132.7 for gas,
+beating hydrogen in 22 of 29 markets. That count is the least robust result here, spanning
+13 to 29 across the hydrogen price paths, and two assumptions favour hydrogen throughout:
+taxed retail electricity near \euro{}209/MWh against \euro{}50/MWh delivered, and a green
+price where the blue route costs \euro{}81/MWh.
+
+On short-run marginal cost hydrogen wins the winter power peak on the high carbon path in
+a different seven, all salt-cavern markets on a binary geology screen. No market recovers
+that peaker's capital from energy-only rents, about 9\% in the central case, so at
+\euro{}600/kW a technology-neutral payment procures gas and selecting hydrogen needs an
+emissions-conditioned payment, about \euro{}172/tCO$_2$ in the central case. Residential-heating emissions in
+2050 span 10 to 352~MtCO$_2$ from 644.
+
+The power-sector results rest on one constructed weather year and are a screening
+exercise, not an adequacy assessment.
+\end{abstract}
+
+\begin{graphicalabstract}
+\centering
+\includegraphics[width=\textwidth]{graphical_abstract}
+\end{graphicalabstract}
+
+\begin{highlights}
+\item At central parameters heat pumps beat hydrogen on 2050 heat in 22 of 29 markets
+\item Hydrogen wins the high-carbon power peak in seven cavern markets at equal efficiency
+\item No market recovers peaker capital from energy-only rents, 9\% in the central case
+\item At \euro{}600/kW a technology-neutral capacity payment procures gas, not hydrogen
+\item Scenario ambition moves 2050 heating emissions by 342~MtCO$_2$/yr
+\end{highlights}
+
+\begin{keyword}
+Heat pumps \sep Hydrogen \sep Building heat decarbonisation \sep Seasonal hydrogen storage \sep Missing money
+\end{keyword}
+
+\end{frontmatter}
+
+\clearpage
+\section*{Nomenclature}
+
+\textit{Latin symbols}
+\begin{description}
+ \item[$c^{\mathrm{gas}}_{c},\ c^{\mathrm{H_2}}_{c},\ c^{\mathrm{HP}}_{c}$] Short-run marginal cost of delivered heat from the gas boiler, hydrogen boiler and heat pump in country $c$ (\euro{}/MWh-heat)
+ \item[$\mathrm{COP}^{\mathrm{cold}}_{c}$] Cold-snap heat-pump coefficient of performance in country $c$
+ \item[$\mathrm{CRF}_{c}$] Capital-recovery factor at country discount rate $r_{c}$ over
+the asset life (25 yr for the peaking turbine)
+ \item[$D_{c}(t)$] National useful heat demand in country $c$, year $t$ (TWh/yr)
+ \item[$D_{c}^{0}$] National base-year (2025) useful heat demand in country $c$ (TWh/yr)
+ \item[$D^{\mathrm{pk}}$] System peak electricity demand (GW)
+ \item[$D^{\mathrm{tot}}$] Total electricity demand (TWh/yr)
+ \item[$(\mathrm{Dw}/\mathrm{Pop})_{c,t}$] Dwellings per capita in country $c$, year $t$
+ \item[$e_{\mathrm{g}}$] Natural-gas emission factor ($=0.202$ tCO$_2$/MWh)
+  \item[$E^{\mathrm{pk}}_{c}$] Annual energy generated by the firm peaking fleet in country $c$ (TWh)
+ \item[$f$] Fixed operating-cost rate on peaking-turbine capital ($=2.5\,\%$/yr)
+ \item[$\mathrm{FLH}_{c}$] Full-load hours of the hydrogen peaker in country $c$ (h/yr)
+ \item[$H_{c}$] Equivalent full-load hours of the peak slice in country $c$ ($\approx$518 h/yr, over a 2{,}000 h window)
+ \item[$H_{c}^{2015}$] Hotmaps 2015 benchmark demand for country $c$ (TWh)
+ \item[$K^{\mathrm{T}}$] Hydrogen-ready peaking-turbine overnight capital cost ($=$
+\euro{}600/kW; conventional open-cycle gas $=$ \euro{}450/kW). Eq.~\eqref{eq:recovery}
+turns it into an annual charge by applying $\mathrm{CRF}_{c}+f$; this is the
+\euro{}600/kW of the abstract and of Section~\ref{sec:results:missing}
+ \item[$K^{\mathrm{pk}}_{c}$] Firm peaking-fleet capacity in country $c$ (GW)
+ \item[$N$] Monte Carlo / Saltelli sample size
+ \item[$p^{\mathrm{gas}}_{c}$] Retail gas price in country $c$ (\euro{}/MWh)
+ \item[$p^{\mathrm{gas,w}}$] Winter (backbone) gas price (\euro{}/MWh)
+ \item[$p^{\mathrm{H_2}}_{c}$] Delivered hydrogen price in country $c$ (\euro{}/MWh)
+ \item[$p^{\mathrm{H_2,bb}}_{c}$] Backbone hydrogen price in country $c$ (\euro{}/MWh)
+ \item[$\mathrm{Pop}_{c,t}$] Projected population of country $c$, year $t$
+ \item[$r_{c,s}$] Per-country, per-scenario envelope-renovation rate (\%/yr)
+ \item[$r_{c}$] Country weighted-average cost of capital (WACC)
+ \item[$R_{c}$] Capital recovery of the hydrogen peaker in country $c$, its scarcity rent
+over its annualised capital-and-fixed-operating charge (dimensionless;
+Eq.~\eqref{eq:recovery})
+ \item[$\mathrm{SCOP}_{c}$] Seasonal coefficient of performance of the heat pump in country $c$
+ \item[$S_{T}$] Sobol total-order sensitivity index
+ \item[$t,\ t_{0}$] Projection year; base year ($t_{0}=2025$)
+ \item[$z_{c},\ z_{\mathrm{EU}},\ z_{c}^{\mathrm{idio}}$] Standard-normal shocks (common and idiosyncratic) for sampling renovation rates
+\end{description}
+
+\textit{Greek symbols}
+\begin{description}
+ \item[$\varphi_{y}$] Carbon price (ETS2) in year $y$ (\euro{}/tCO$_2$)
+ \item[$\eta_{\mathrm{g}},\ \eta_{\mathrm{h}}$] Gas-boiler (0.92) and hydrogen-boiler (0.90) efficiencies
+ \item[$\eta_{\mathrm{OCGT}},\ \eta_{\mathrm{T}}$] Open-cycle gas turbine and hydrogen turbine electrical efficiencies. The winter-peak merit order that sets the win counts holds both at $0.40$, so that comparison is even-handed. The capital-recovery layer instead lets them evolve, the gas turbine to $0.42$ by 2050 and the hydrogen turbine to $0.44$, or $0.48$ under H2~Push, which assumes an advanced simple-cycle machine; there the hydrogen unit is deliberately given the better turbine
+ \item[$\mu_{c,s},\ \sigma_{c,s}$] Mean and standard deviation of the sampled renovation rate $r_{c,s}$
+ \item[$\pi^{\mathrm{peak}}_{c}$] Derived scarcity (peak) electricity price in country $c$ (\euro{}/MWh-e)
+ \item[$\pi^{\mathrm{s}}$] Scarcity premium (low/central/high $\{30,60,120\}$ \euro{}/MWh; the sensitivity grid adds 90)
+ \item[$\rho$] Cross-country shock correlation: renovation rate ($=0.5$),
+ fuel prices ($=0.75$); all other sampled parameters are EU-wide scalars, i.e.
+ $\rho=1$ implicitly
+ \item[$\sigma_{c}$] Seasonal hydrogen-storage adder, heat side ($\approx$\euro{}50 to 100/MWh-heat)
+ \item[$\sigma^{e}_{c}$] Seasonal hydrogen-storage adder, electricity side (\euro{}/MWh-e)
+ \item[$\Delta_{c}^{\mathrm{VM}}$] Vintage-matched deviation of the bottom-up backcast from the Hotmaps 2015 benchmark in country $c$
+ \item[$\Phi_{\mathrm{cap}},\ \Phi_{\mathrm{en}}$] Firm dispatchable peaking fleet's share of system peak capacity and of generated energy
+\end{description}
+
+\textit{Subscripts and superscripts}
+\begin{description}
+ \item[$c$] Country (region) index
+ \item[$s$] Scenario index
+ \item[$t,\ t_{0},\ y$] Year; base year; carbon-price year
+ \item[$\mathrm{gas},\ \mathrm{H_2},\ \mathrm{HP}$] Gas-boiler, hydrogen-boiler and heat-pump branches
+ \item[$\mathrm{pk},\ \mathrm{peak},\ \mathrm{cold}$] Peaker; system-peak/scarcity; cold-snap conditions
+\end{description}
+
+\input{sections/intro}
+\input{sections/methods}
+\input{sections/results}
+\input{sections/concl}
+
+%% ---- Back matter ----
+\section*{CRediT authorship contribution statement}
+\textbf{Abdurahman Alsulaiman:} Conceptualization, Methodology, Software, Validation, Formal analysis, Data curation, Visualization, Writing -- original draft, Writing -- review \& editing. \textbf{Ali Alajwad:} Conceptualization, Methodology, Software, Validation, Formal analysis, Data curation, Visualization, Writing -- original draft, Writing -- review \& editing.
+
+\section*{Declaration of competing interest}
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+% TO DO BEFORE SUBMISSION -- author declaration, to be written by the authors.
+% Elsevier requires a "Declaration of generative AI and AI-assisted technologies in the
+% writing process" wherever such tools were used in preparing the manuscript. Insert that
+% section here, immediately before Data availability, or delete this comment if no such
+% tool was used. Submission will be incomplete until this is resolved either way.
+
+\section*{Data availability}
+All model code, input-data provenance, country profiles and figure generators are openly available at \url{https://github.com/alajwadha/eu-hydrogen-buildings} (MIT licence). Large third-party inputs are retrieved by the included download scripts for Hotmaps, Eurostat and GISCO. Two are not. The UK ONS TS044 accommodation-type table is a manual one-time download, and it is committed to the repository, and the EUBUCCO v0.2 building footprints that drive the bottom-up demand basis are fetched from the EUBUCCO object store by the per-country build scripts. The forward model runs from the committed intermediate CSVs; reproducing the bottom-up build from raw footprints additionally requires that object store and the per-country classification step.
+
+% AUTHOR ACTION REQUIRED. The text that stood here named a specific European Union
+% Horizon 2020 Marie Sklodowska-Curie grant, agreement No 945363. No author supplied it
+% and nothing in this repository traces it to a real award, so it was a fabricated
+% funding claim on a journal submission and it has been removed. The corresponding
+% author has an open-access fund whose acknowledgement wording he is providing; drop it
+% in here verbatim. The placeholder prints, deliberately, so this cannot ship unnoticed.
+\section*{Funding}
+\textbf{[FUNDING STATEMENT TO BE INSERTED BY THE AUTHORS BEFORE SUBMISSION.]}
+
+\section*{Acknowledgements}
+The authors thank the Oxford Institute for Energy Studies for access to its gas and
+hydrogen research programme, and the maintainers of the EUBUCCO, TABULA and Hotmaps
+databases, without which the regional demand reconstruction would not have been possible.
+
+\bibliographystyle{elsarticle-num}
+\bibliography{../References_v1}
+
+\end{document}

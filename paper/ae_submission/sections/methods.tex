@@ -1,0 +1,186 @@
+\section{Materials and methods}
+\label{sec:method}
+
+We assess where decarbonised hydrogen can compete with heat-pump electrification for
+European building heat using a spatially resolved, bottom-up techno-economic model coupled
+to a merit-order representation of the power sector. It is a chained simulation rather than
+a system-wide optimisation, reconstructing useful heat demand region by region, splitting
+it across eight technologies, pricing each on a levelised basis and then putting hydrogen
+against its rivals in operating-cost dispatch tests, so hydrogen's share is set
+exogenously and then tested, never co-optimised (Supplementary Section~S1.1). Coverage spans the EU-27, the United Kingdom and
+Switzerland, and demand resolves to the third level of the Nomenclature of Territorial
+Units for Statistics (NUTS3), 1{,}369 regions, aggregating to the country before the
+economic tests apply. The model runs on the milestone years 2025, 2030, 2040 and 2050,
+with 2025 the common anchor for demand, technology-share and cost trajectories alike
+(Fig.~\ref{fig:arch}).
+
+\begin{figure}[tbp]
+ \centering
+ \includegraphics[width=\textwidth]{P00_model_flow}
+ \caption{\textbf{Model architecture.} Inputs, the demand reconstruction and the scenario
+ draws feed three tests applied in order.}
+ \label{fig:arch}
+ \par\vspace{3pt}{\footnotesize\raggedright
+ \textit{Note:} a technology that fails an earlier test is not rescued by a later one.
+ The first two tests are cost comparisons at different time scales, annual and peak-hour,
+ whereas the third asks whether the plant that wins the peak can be financed at all. The
+ text below and the Supplementary Information give the data sources, the price paths, the
+ adder bounds and the parameter ranges the boxes summarise.\par}
+\end{figure}
+
+The demand layer is built before the technology layer. A bottom-up strand reconstructs
+residential heat from open building footprints and a harmonised archetype typology,
+while an independent top-down baseline from the Hotmaps regional database
+\citep{Hotmaps2020}, with census-derived building-type shares
+\citep{Eurostat2021census,ONS2021TS044}, benchmarks it. The two agree to $-0.8$~per~cent across the aggregate and to within $\pm 25$~per~cent in 28
+of the 29 countries. Section~\ref{sec:results:mix} gives the stricter vintage-matched
+comparison (Supplementary Section~S1.2). National demand is then projected forward from 2025 on a multi-driver ratio identity,
+with population growth and falling household size adding demand and envelope renovation
+removing it. Boundary and terrain typologies come from the Eurostat GISCO service
+\citep{EurostatGISCO2021}, and Fig.~\ref{fig:nuts3map} shows the demand field, whose
+steep within-border gradient a country-resolution model averages away.
+
+\begin{figure}[tbp]
+ \centering
+ \includegraphics[width=\textwidth]{P01_nuts3_map}
+ \caption{\textbf{Useful residential heat demand
+ by NUTS3 region, 2025.} From the bottom-up build. The regional resolution sets the demand surface and the demand weights carried through the study (Section~\ref{sec:method}). The colour scale is logarithmic over 0.3 to 12~TWh/yr, close to the 2nd and 98th percentiles of the mapped values, and the colourbar arrowheads mark the regions outside that range.}
+ \label{fig:nuts3map}
+\end{figure}
+
+Each of the eight technologies, comprising gas, oil and biomass boilers, a resistance
+heater, air-source and ground-source heat pumps, district heat and a hydrogen boiler, is
+priced on a levelised cost of heat that annualises capital at the country
+weighted-average cost of capital and adds fuel, fixed and variable operating costs, in
+real EUR$_{2024}$ throughout (Supplementary Section~S1.3). Equipment capital is sized to peak heat demand and not divided a second time by the
+machine's efficiency, the accounting choice that moves the base-load count furthest. Techno-economic parameters are anchored to the Danish Energy Agency Technology Catalogue
+\citep{DEA2023technology} and cross-checked against JRC, IEA and IRENA cost data
+\citep{JRC2023technology,IEA2022heatpumps,IRENA2022heatpumpcosts}. Fossil fuels carry the second emissions trading system for buildings and road transport
+(ETS2) from its 2027 launch \citep{EuropeanCommission2024ETS2}, green hydrogen follows
+the European Hydrogen Observatory central delivered-cost trajectory
+\citep{EHO2024hydrogencosts}, and retail gas and electricity prices are Eurostat
+first-half-2025 figures \citep{Eurostat2025electricityprices,Eurostat2025gasprices}.
+
+A scope-1 inventory runs alongside the cost layer on the same technology split, charging
+gas and oil fixed combustion factors \citep{Calvin2023Ipcc}, biomass and hydrogen zero
+on the European renewable-fuel convention, and electricity and district heat
+country-by-year intensities that each scenario's grid lever scales
+\citep{EMBER2024electricity,EEA2024gridintensity}. Those paths are calibrated
+trajectories rather than published projections, so the emissions levels inherit that
+calibration whereas the scenario ranking does not (Supplementary Section~S1.4).
+Furthermore, two last-mile network charges apply by default, one to each carrier, so that
+neither is priced as though its delivery were free. The hydrogen boiler carries a
+coverage-weighted blend of conversion and new build, a median \euro{}13.4/MWh, and the
+heat pump a low- and medium-voltage reinforcement adder, a median \euro{}4.9/MWh.
+
+Levelised cost compares technologies as base-load suppliers, an arena the review literature
+treats as settled in the heat pump's favour
+\citep{Rosenow2022PipeDream,Rosenow2024MetaReview,Billerbeck2023Race}. Hydrogen's narrower
+case is as a peaker serving the cold-snap slice, modelled as a merit-order dispatch among
+quick-start options whose short-run marginal costs per MWh of useful heat are
+
+\begin{equation}
+\label{eq:srmc}
+ c^{\mathrm{gas}}_{c}
+ = \frac{p^{\mathrm{gas}}_{c} + \varphi_{y}\, e_{\mathrm{g}}}{\eta_{\mathrm{g}}},
+ \qquad
+ c^{\mathrm{H_2}}_{c}
+ = \frac{p^{\mathrm{H_2}}_{c}}{\eta_{\mathrm{h}}} + \sigma_{c},
+ \qquad
+ c^{\mathrm{HP}}_{c}
+ = \frac{\pi^{\mathrm{peak}}_{c}}{\mathrm{COP}^{\mathrm{cold}}_{c}},
+\end{equation}
+
+\noindent where $\varphi_{y}$ is the carbon price, $\eta$ the conversion efficiencies
+and $\sigma_{c}$ the seasonal-storage adder, about \euro{}50/MWh-heat with domestic salt
+caverns and \euro{}100 without. Cold-snap heat-pump performance is derated from the
+seasonal figure, $\mathrm{COP}^{\mathrm{cold}}_{c}=\max(0.60\,\mathrm{SCOP}_{c},1.8)$
+following the low-temperature field measurements \citep{Gibb2023Coming}, which gives 1.80 to 2.84 across the 29
+markets at a median of 2.04 in 2050. The scarcity electricity price
+$\pi^{\mathrm{peak}}_{c}$ that prices the heat-pump branch is taken from the power
+sector's own merit order, set by the marginal winter unit. A country counts as a hydrogen win where its hydrogen-ready turbine undercuts the gas turbine on short-run marginal cost, both machines held at the same efficiency.
+Winning the dispatch is necessary but not sufficient, because an investor must recover the
+peaker's capital from the few hundred hours a year it runs
+(Eq.~\eqref{eq:recovery}). The question therefore shifts from an energy share to one of
+firm capacity, screened consistently across the building winter peak, district heat and
+the power sector. Symbols are listed in the nomenclature above.
+
+Four multi-lever scenarios bracket the plausible range of European buildings
+decarbonisation to 2050. \textbf{Current~Policies} freezes today's implemented measures;
+\textbf{Stated~Policies} delivers announced policy, broadly consistent with the European
+Commission long-term strategy \citep{EuropeanCommission2018LTS}; \textbf{Net~Zero}
+matches the IEA Net~Zero scenario \citep{IEA2023NZE}; and \textbf{H2 Push} is a
+deliberately hydrogen-favourable world along the lines of REPowerEU
+\citep{REpowerEU2022}. Each sets six levers (Table~\ref{tab:levers_body}), the hydrogen
+adoption setting among them. That setting is exogenous; the dispatch screen tests it
+rather than sets it.
+
+\begin{table}[htbp]
+ \centering
+ \caption{\textbf{Scenario lever settings, 2050.} Six exogenous levers per scenario, with
+ the independently derived dispatch-supported potential beneath them.}
+ \label{tab:levers_body}
+ \begin{tabular}{lcccc}
+ \toprule
+ Lever & Current & Stated & Net~Zero & H2~Push \\
+ & Policies & Policies & & \\
+ \midrule
+ Envelope rate (vs announced)\textsuperscript{a} & $\times$0.70 & $\times$1.00 & $\times$2.73 & $\times$1.64 \\
+ Carbon-price path & Low & Central & High & High \\
+ Hydrogen-price path & Stranded & Central & Central & Rapid \\
+ Grid-decarbonisation speed\textsuperscript{a} & $\times$1.15 & $\times$1.00 & $\times$0.70 & $\times$1.00 \\
+ Fossil share 2050 (ambition)\textsuperscript{c} & 40\% & 27\% & 5\% & 15\% \\
+ H$_2$ adoption setting 2050\textsuperscript{b,c} & 0\% & 5\% & 3\% & 8\% \\
+ \midrule
+ \multicolumn{5}{l}{\textit{Derived independently, not a lever}} \\
+ Dispatch-supported potential\textsuperscript{d} & 0\% & 0.6\% & 7.5\% & 9.0\% \\
+ \bottomrule
+ \end{tabular}
+ \\[3pt]{\footnotesize\raggedright
+ \textsuperscript{a} Multipliers on the announced-policy (Stated~Policies) central case.\\
+ \textsuperscript{b} An exogenous adoption pathway, not an output of the dispatch screen.\\
+ \textsuperscript{c} Share settings are Monte~Carlo means rather than hard caps, and the
+ realised medians sit a little above them for the reason given in the text. Supplementary
+ Table~S4 repeats the levers.\\
+ \textsuperscript{d} The demand-weighted peak slice the symmetric screen supports, at the
+ central scarcity premium and derate. Stated~Policies sets adoption above it, which
+ Section~\ref{sec:results:merit} reports as a finding. The earlier asymmetric accounting
+ gives 0, 5.1, 7.9 and 9.3~per~cent (Supplementary Sections~S1.3 and~S1.6).\\
+ \textit{Source: Authors' contribution.}\par}
+\end{table}
+
+\paragraph{The weather the power layer runs on, and what it costs the result}
+The weather series is the strongest assumption in the paper and every power-sector
+number descends from it, so we state it here rather than leaving it to the Supplementary
+Information. The power layer runs on synthetic hourly series, not reanalysis or metered
+data, and on one realisation of a single year. Hourly heat demand is a seasonal profile
+times a fixed daily shape, amplified over one six-day cold snap in mid-January; onshore
+wind is an AR(1) process forced down to a lull over those same six days in all 29
+countries at once; solar and the non-heat baseline load are deterministic. That
+construction makes the event perfectly correlated across the study area, and the sizing
+rule, which takes the fourth-highest residual hour of the year and so admits three hours
+of lost load, is an order statistic on that one year rather than a loss-of-load
+expectation over a distribution of weather years.
+
+The firm-fleet requirement carries a band of about $\pm$9~per~cent from the assumed
+event length alone, and a reader should treat it, the full-load hours and the cumulative
+shortfall as conditional on this constructed year, and not as an adequacy assessment.
+
+Three extensions strengthen the power-sector coupling. An explicit unit commitment
+cross-checks the reduced-form peak-capacity cap, respecting minimum stable output, ramp
+limits, minimum up and down times and an operating-reserve margin; a myopic
+rolling-horizon test relaxes perfect foresight in the least-cost linear program; and an
+endogenous Switzerland treatment couples incremental Swiss heat-pump load back to the EU
+winter electricity price and credits the Swiss reservoir fleet as firm winter capacity.
+Parametric uncertainty is characterised with 200 Monte Carlo draws per scenario,
+sampling the envelope-renovation rate, fuel and hydrogen prices, equipment costs and
+heat-pump performance under a cross-country shock correlation of 0.5 on renovation and
+0.75 on fuel prices, and reported at the 10th, 50th and 90th percentiles. A Sobol screen ranks the four
+demand drivers, and rank-regression coefficients the cost-side ones. Each extension's formulation, the sampling distributions and the
+validation gates are in the Supplementary Information.
+
+The model, the scenario configurations and the analysis code are released in a public
+repository under an MIT licence, with retrieval scripts for the source datasets, so
+every test reported below reproduces from the committed intermediate data; rebuilding
+the regional demand layer from raw building footprints additionally requires the object
+store named in the data-availability statement.

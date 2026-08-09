@@ -1,0 +1,414 @@
+% ─── Cost-optimal pathway and country-specific heating mix ───────────────────
+This section derives the 29-country least-cost residential heating pathway through
+three steps: a source audit of the techno-economic inputs, a country-specific
+reconstruction of the 2025 residential heating mix, and a least-cost
+optimisation that \emph{derives} the per-country technology
+mix from source-audited levelised costs instead of imposing it. The headline
+result is that cost-optimal decarbonisation rests on district heat and heat pumps
+at an approximately 53 to 45~per cent split, and that the depth of the scope-1
+emissions cap barely moves the system cost, with 0.05~per cent separating the
+$-75$, $-90$ and $-100$~per cent targets (Figure~\ref{fig:costopt_pathway}). The
+cap is nonetheless not slack everywhere, and in the handful of countries where it
+binds it does so at a substantial shadow price. Where this endogenous pathway is read
+alongside the four exogenous-share scenarios, and what the comparison implies
+for RQ1, is taken up in Section~\ref{sec:results:costoptcompare}; here the task is to
+establish the least-cost pathway itself and to test its robustness.
+
+\subsection{Source-Audited Techno-Economics}
+Every capital-cost input was re-audited against three public catalogues: the Danish
+Energy Agency technology data catalogue \citep{DEA2023technology}, the International
+Energy Agency heat-pump cost work \citep{IEA2022heatpumps} and European Heat Pump
+Association market data \citep{EHPA2024market}. The audit selects, for each technology,
+the value supported by these sources in preference to the prior model input, and adopts
+the Danish Energy Agency central figure as the default because it is the most complete
+and conservative of the three for the combustion and resistance technologies; the IEA
+and EHPA sources are heat-pump-specific and corroborate the heat-pump inputs, not the
+boiler inputs. The audit made two material corrections.
+
+First, combustion-boiler capital costs were found to be overestimated in the prior
+model, at approximately \euro{}1{,}000 to 1{,}600/kW, and were revised down to Danish
+Energy Agency central values (\euro{}420/kW gas, \euro{}450/kW oil, \euro{}950/kW
+biomass and \euro{}200/kW resistance). Second, the hydrogen-boiler capital cost carried
+in the prior model was unsupported by any of the three catalogues, none of which reports
+a residential hydrogen-boiler input; we therefore adopt the Danish Energy Agency central
+value of \euro{}600/kW, the most conservative public figure for this nascent technology.
+Alongside the capital costs, the air-source heat-pump seasonal coefficient of
+performance was raised from the regulatory average-climate floor of 3.0 to the field
+value of 3.3, and residential gas and electricity prices were re-confirmed against
+Eurostat \citep{Eurostat2025prices}. Table~\ref{tab:costopt_audit} itemises the audit by
+technology.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Source-audited technology capital costs.}
+  \label{tab:costopt_audit}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{@{}l c c c c c X@{}}
+    \toprule
+    Technology & Prior model & DEA 2023 & IEA 2022 & EHPA 2024 & Chosen & Basis \\
+    \midrule
+    Gas boiler        & \euro{}1{,}000 to 1{,}600/kW & \euro{}420/kW & n.r. & n.r. & \euro{}420/kW & Prior value unsupported; DEA central adopted. \\
+    Oil boiler        & overestimated              & \euro{}450/kW & n.r. & n.r. & \euro{}450/kW & DEA central; mature technology. \\
+    Biomass boiler    & overestimated              & \euro{}950/kW & n.r. & n.r. & \euro{}950/kW & DEA central. \\
+    Resistance        & n.r.                       & \euro{}200/kW & n.r. & n.r. & \euro{}200/kW & DEA central; lowest-capital option. \\
+    Hydrogen boiler   & unsupported                & \euro{}600/kW & n.r. & n.r. & \euro{}600/kW & No catalogue input; DEA central, conservative for a nascent technology. \\
+    Air-source HP     & SCOP 3.0 (floor)           & corroborates  & corrob. & corrob. & SCOP 3.3 & Field value replaces regulatory floor. \\
+    \bottomrule
+  \end{tabularx}
+  \\[2pt]{\footnotesize\textit{n.r. = not reported by that source. Source: Authors' contribution.}}
+\end{table}
+
+The same audit benchmarks the 2050 scenario technology shares against the EU
+Reference Scenario 2024 \citep{EC2024RefScenario}, REPowerEU
+\citep{REpowerEU2022}, Gas for Climate \citep{GasForClimate2050} and the
+hydrogen-in-buildings consensus \citep{ICCT2023h2heating, H2ScienceCoalition},
+and is documented in full in the supplementary material. One material reframing follows. The
+high hydrogen share assumed under the H2 Push scenario is retained only as a
+deliberate high-side stress test, since the mainstream literature places the
+residential hydrogen share below 1 to 2~per cent.
+
+\subsection{Country-Specific 2025 Heating Mix}
+Each country's 2025 residential heating mix is estimated over the eight model
+technologies from two independent bases and cross-checked. The first is an
+\emph{energy} basis, the share of household final energy delivered by each fuel,
+drawn from Eurostat disaggregated household final energy by fuel
+\citep{Eurostat2024nrgdhhq}. The second is a \emph{dwelling} basis, the share of
+dwellings equipped with each technology, drawn from national statistics,
+Odyssee-Mure \citep{OdysseeMure} and the European Heat Pump Association. The two
+bases carry different units, energy delivered against dwellings equipped, and so
+bound the quantity the model actually needs from opposite sides.
+
+The model allocates useful heat and not delivered energy, and the two bases
+bracket that quantity. The energy basis over-weights inefficient technologies,
+such as wood, oil and coal, which burn more delivered energy per unit of useful
+heat; the dwelling basis over-weights technologies that deliver more useful heat
+per unit of input, such as heat pumps and district heat. The per-country starting
+mix is therefore taken as the mean of the two. As an illustrative example, a
+country whose energy basis reads 65~per cent gas while its dwelling basis reads
+45~per cent gas would enter the model at the 55~per cent mean; the true useful-heat
+share lies between the two bounds by construction.
+
+The divergence between the two bases at country level is retained as a validation
+diagnostic and reported per country in the supplementary material; it is
+widest where efficient and inefficient technologies coexist in similar shares and
+narrowest in single-technology stocks. The resulting mixes are strongly
+heterogeneous. The United Kingdom and the Netherlands begin at approximately 80~per cent
+gas; Sweden and Denmark are district-heat dominated, at approximately
+48~per cent and 66~per cent respectively; the Baltic states rely on a combination
+of biomass and district heat; and Cyprus and Malta, which have no gas grid, heat
+largely with reversible air-to-air units.
+
+This per-country reconstruction supersedes the single EU-average starting mix used
+in earlier runs, and the change is methodologically material because the
+optimisation operates on each country's own prices, feasibility limits and
+baseline. A single EU-average mix would erase exactly the cross-country
+heterogeneity, from gas-dominated to district-heat-dominated stocks, that
+determines where each technology is least-cost. The per-country mix is used both
+within the least-cost program and as the 2025 base mix from which the four multi-lever
+scenarios (Section~\ref{sec:method}) interpolate.
+
+\subsection{The Least-Cost Optimisation}
+Whereas the four core scenarios impose exogenous 2050 technology shares,
+the least-cost program solves for the cheapest mix. It is a linear program that
+minimises the discounted, period-weighted system cost of the residential heating
+pathway from 2025 to 2050, where $w_y$ is a period weight, $(1+r)^{-(y-2025)}$
+discounts future years at rate $r$, $\mathrm{LCOH}_{c,t,y}$ is the levelised
+cost of heat for technology $t$ in country $c$ and year $y$, $D_{c,y}$ is the
+useful-heat demand and $x_{c,t,y}$ is the technology share. The objective is
+\begin{equation}
+\min \sum_{c,t,y} w_y\,(1+r)^{-(y-2025)}\,\mathrm{LCOH}_{c,t,y}\,D_{c,y}\,x_{c,t,y},
+\label{eq:costopt_obj}
+\end{equation}
+minimised over technology shares $x_{c,t,y}$ for country $c$, technology $t$ and
+milestone year $y$, subject to a set of constraints. A demand balance requires the shares
+in each country and year to serve the full useful-heat demand,
+\begin{equation}
+\sum_{t} x_{c,t,y} = 1,\qquad x_{c,t,y}\ge 0,
+\label{eq:costopt_demand}
+\end{equation}
+with a 2025 anchor fixing $x_{c,t,2025}$ to the country's observed mix. Feasibility
+ceilings cap the deployable share of district heat, ground-source heat pumps,
+hydrogen and sustainable biomass,
+\begin{equation}
+x_{c,t,y} \le \bar{x}_{c,t},\qquad t\in\{\text{DH},\text{GSHP},\text{H}_2,\text{biomass}\},
+\label{eq:costopt_ceiling}
+\end{equation}
+and a stock-turnover limit bounds the year-on-year change in each share by the
+fraction of the boiler stock that reaches end of life within the milestone interval,
+\begin{equation}
+\lvert x_{c,t,y}-x_{c,t,y-1}\rvert \le \delta_{c,t},
+\label{eq:costopt_turnover}
+\end{equation}
+alongside the boiler-ban phase-out drawn from the policy layer. Finally, a
+per-country emissions cap limits 2050 scope-1 emissions,
+\begin{equation}
+\sum_{t} e_{t}\,D_{c,y}\,x_{c,t,y}
+\le \left(1-\kappa\,\frac{y-2025}{25}\right) E_{c,2025}^{\text{scope-1}},
+\label{eq:costopt_cap}
+\end{equation}
+where $e_t$ is the on-site emission factor of technology $t$,
+$E_{c,2025}^{\text{scope-1}}$ the country's 2025 scope-1 baseline, and $\kappa\in[0,1]$
+the required reduction fraction relative to that baseline at 2050. The cap glides
+linearly from the country's own 2025 baseline to $(1-\kappa)$ of it at 2050 rather than
+binding at the terminal value in every year; imposing the terminal cap throughout is
+infeasible at $\kappa=0.90$ given the turnover limit of
+Equation~\eqref{eq:costopt_turnover}. The cap is applied to scope-1
+emissions only, that is, to on-site gas and oil combustion, consistent with the
+zero-emission building definition of the recast Energy Performance of Buildings
+Directive \citep{EPBD2024}, so that the exogenous decarbonisation of the grid and of
+district heat is not double-counted. The scope-1 boundary ensures the model does not
+double-count exogenous grid decarbonisation or district-heat clean-up. It reflects the
+fact that building-level policy levers, namely boiler choice and envelope depth,
+directly control on-site emissions, and grid decarbonisation is an EU-wide system outcome that the building sector does not set. Three ambition variants set $\kappa$ to
+$0.75$, $0.90$ and $1.00$, corresponding to scope-1 cuts of $-75$~per cent, $-90$~per
+cent and $-100$~per cent against each country's own 2025 baseline. The objective uses
+the source-audited levelised cost of heat, with the ETS2 carbon price embedded, so that
+the cost-optimal allocation reflects both the corrected techno-economics and carbon
+pricing.
+
+The shadow price of each country's cap is the implied carbon price that the country
+would require in order to meet its target.\footnote{Four countries, Estonia, Malta,
+Portugal and Sweden, return a degenerate dual because their absolute scope-1 baseline is
+small enough that a tiny tonnage divides into a large per-tonne value that carries no
+meaning as a marginal abatement cost. Their shadow prices are undefined and they are
+excluded from the binding-country count throughout. The largest well-defined value
+anywhere on the path is Cyprus at about \euro{}207/tCO$_2$ in 2030.} To
+isolate the least-cost technology mix independent of assumptions about envelope retrofit
+depth, the demand $D_{c,y}$ is fixed at the Stated Policies LMDI trajectory
+(Section~\ref{sec:method}), using the central per-country envelope rate.
+
+This choice reflects the modelling premise. The least-cost program answers which heating
+technology is cost-optimal at a given demand level, so the demand path is held at a
+moderate, policy-consistent trajectory and not the deeper Net Zero path, whose own
+demand reduction is itself an optimisation outcome that would prejudge the
+supply-versus-demand margin the optimisation is meant to test. The robustness test
+below, which co-optimises retrofit depth, confirms that supply-side switching is the
+least-cost margin and that this choice does not drive the result. Accordingly the 2050
+EU demand of approximately 3,480~TWh tracks Stated Policies.
+
+The 29-country least-cost 2050 mix is approximately 53~per cent district heat and
+45~per cent heat pump, with hydrogen at 0.34~per cent and residual gas at
+1.4~per cent. The shares are expressed on a useful-heat basis, that is, as a
+fraction of the building's physical heat demand, the convention used for every
+share in this paper. The ordering of the two leading technologies is the reverse
+of the one earlier drafts reported, at approximately 59~per cent heat pump and
+41~per cent district heat, and that earlier figure is superseded. The reversal
+follows directly from charging equipment capital against peak sizing, not against annual output, which raises the heat pump's levelised cost by more than it
+raises any boiler's, since a heat pump is sized to the same peak whether or not it
+is efficient.
+
+The composition of the mix is now governed almost entirely by the deployment
+ceilings and not by the cost ranking, and the two have come apart. On 2050
+levelised cost the cheapest single technology is district heat in 25 countries, the
+hydrogen boiler in 2 and a heat pump in 2. Heat pumps nonetheless
+take 45~per cent of EU useful heat, because air-source units are the only major
+option in the program that carries no feasibility ceiling of its own
+(Eq.~\eqref{eq:costopt_ceiling}), so they absorb whatever demand the ceiling-limited
+technologies cannot. The corollary matters for the paper's central question.
+Hydrogen's 0.34~per cent share is a ceiling-and-turnover outcome, not a cost
+outcome, and it can no longer be read as evidence that the least-cost program
+rejects hydrogen on price. The program does not reject hydrogen on price; the
+feasibility ceiling prevents it from selecting more. That ceiling should be read for
+what it is, and it is stronger than a low cap. It is 3~per cent in the Netherlands and
+2~per cent in the United Kingdom and \emph{zero in the other 27 countries}, so in 27
+markets the optimisation is not permitted to select any hydrogen at all. Denmark is the
+sharpest case, because the hydrogen boiler is one of the two markets where it is the
+cheapest single 2050 technology and its ceiling is zero. The ceiling encodes the
+mainstream literature's sub-2~per cent residential share and the physical pace at which
+a distribution network could be converted, which is defensible, but a near-zero
+hydrogen share in this optimisation is an assumption and not a finding.
+
+Within the heat-pump category the optimisation now favours air-source units almost
+exclusively, at 44.4~per cent of useful heat against 1.05~per cent ground-source, so
+the EU mix moves from a fossil-dominated 2025 baseline to a 2050 mix led jointly by
+district heat and air-source heat pumps (Figure~\ref{fig:costopt_pathway}).
+Ground-source units no longer track their feasibility ceiling, as they did before
+the capital charge was corrected; at 1.05~per cent they sit well below it, because
+their higher capital cost is now charged in full against peak sizing and is no
+longer offset by their better seasonal coefficient of performance. District heat
+takes the balance in dense stock and in areas served by an existing network.
+
+The second result of the optimisation concerns the price of carbon, and it is
+weaker than earlier drafts of this paper claimed. The cost of \emph{ambition} is
+negligible. The discounted present-value system cost is
+\euro{}7{,}426.3~bn~EUR-yr at the $-75$~per cent cap, \euro{}7{,}428.4~bn at
+$-90$~per cent and \euro{}7{,}429.8~bn at $-100$~per cent, a spread of
+0.05~per cent across the three depths, so tightening the scope-1 target all the way
+to net zero on-site combustion costs almost nothing at the audited costs.
+Co-optimising retrofit alongside the supply mix lowers the $-90$~per cent present value by \euro{}24.8~bn, and the $-100$~per cent one by \euro{}24.7~bn, 0.33~per cent in each case. That is small against the level and about seven times the 0.05~per cent the cap depth moves, so supply-side switching remains the cheap abatement margin. The renovation the least-cost solution does take, it takes at the interim milestones and lets lapse by 2050, at 2.8~per cent of EU useful heat in 2030 and 5.8~per cent in 2040 (Appendix~\ref{sec:costopt}).
+
+The \emph{shadow price}, however, is not uniformly zero, and where it is not the policy
+reading changes. The cap binds in 4 of the 29 countries in 2050, namely
+Cyprus, Croatia, Poland and the United Kingdom, at an implied carbon price of up to
+\euro{}81/tCO$_2$, and it binds in seven countries at some point along the 2025 to
+2050 path, the three additions being Spain, Hungary and Romania. The four
+degenerate cases noted in the optimisation set-up above are excluded from both
+counts. A
+cap that binds in a handful of markets is a materially different policy statement
+from a cap that is slack everywhere. The first says that ETS2 pricing carries most
+of the EU to its target but leaves an identifiable minority needing a carbon price
+several times higher, or an equivalent non-price instrument, to close the last
+increment. A cap that were slack everywhere would instead say that no supplementary
+instrument is needed anywhere, and that is not what the optimisation gives.
+
+The implication of the cost-optimal result is therefore narrow, and should be stated
+narrowly. For most of the EU, residential heating decarbonisation
+is cost-effective at current ETS2 pricing, in the sense that the cap does not bind
+and no carbon price supplement is required in the model to reach the target. For a
+minority of countries it is not, and the binding shadow price there is large enough
+that the policy question in those markets is a live one. This finding rests on the
+two pillars documented above, the audited techno-economics and the embedding of
+ETS2 in the levelised-cost ranking, and it is conditional throughout on the
+optimisation's perfect-foresight least-cost framing.
+
+\paragraph{Robustness of the cost-optimal mix to cap ambition.} The perturbation
+that matters most for the policy reading is the depth of the emissions cap, and
+Table~\ref{tab:costopt_robust} reports it directly. The present-value system cost
+moves by 0.05~per cent across the three depths, and district heat and hydrogen hold
+their 2050 shares across them while the adjustment falls entirely on the heat-pump
+against residual-gas margin, which runs 43.3 to 45.4 to 46.8~per cent against 3.5 to 1.4
+to zero. The \emph{cost} of ambition is negligible in the sense the earlier drafts
+claimed. What is not stable is the binding status. The cap is slack in most
+countries at every depth, but it binds in 4 countries in 2050 and in 7 at some
+point on the path. Where it binds in 2050 the implied carbon price reaches
+\euro{}81/tCO$_2$, and it is not monotone along the path. Six countries bind in 2030
+at up to \euro{}207/tCO$_2$ in Cyprus, three in 2040 at up to \euro{}37, and four in
+2050. The shadow-price column can no longer be read as a uniform zero, and the
+near-term figures are the larger ones.
+
+\begin{table}[htbp]
+  \centering
+  \caption{The cost of ambition and the cap's binding status across the scope-1 caps.}
+  \label{tab:costopt_robust}
+  \small
+  \begin{tabularx}{\textwidth}{@{}l c c X@{}}
+    \toprule
+    Cap ambition & Present-value system cost & Spread & Binding status \\
+                 & (bn EUR-yr)               &        &                \\
+    \midrule
+    $-75$\,\% scope-1  & 7{,}426.3 & reference        & Binds in 4 of 29 at up to \euro{}81/tCO$_2$. \\
+    $-90$\,\% scope-1  & 7{,}428.4 & $+0.03$\,\%      & Binds in the same 4 at the same shadow price. \\
+    $-100$\,\% scope-1 & 7{,}429.8 & $+0.05$\,\%      & Binds in the same 4 even at net zero on-site combustion. \\
+    \bottomrule
+  \end{tabularx}
+  \smallskip
+  \raggedright\small
+  The spread column is measured against the $-75$~per cent cap. In the headline
+  program the cap binds in 4 of the 29 countries in 2050 (Cyprus, Croatia, Poland
+  and the United Kingdom) at an implied carbon price of up to \euro{}81/tCO$_2$,
+  and in seven countries at some point on the 2025 to 2050 path (adding Spain, Hungary
+  and Romania). The four degenerate cases (Estonia, Malta, Portugal and Sweden) are
+  excluded throughout.
+  \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+\end{table}
+
+Two further perturbations bear on the mix alone. The first is the
+feasibility ceiling on ground-source heat pumps. In earlier runs the ground-source
+share tracked that ceiling almost one for one, so the ceiling set the answer. It no
+longer does. With equipment capital charged against peak sizing, ground-source
+units carry their higher capital in full and are no longer compensated by their
+better seasonal coefficient of performance, so the program selects only
+1.05~per cent of useful heat from them, well inside any ceiling in the tested range.
+The ground-source ceiling has accordingly stopped being a binding assumption of the
+result, and the per-ceiling sweep is documented in the supplementary material. The
+biomass ceiling is likewise not binding, since the linear program selects
+approximately 0~per cent biomass across a ceiling range of 0.10 to 0.30. The
+second is the accounting boundary of the cap, scope-1 against a scope-2-inclusive
+total, which is reported in the supplementary material and discussed as a limitation in
+the emissions-boundary subsection of Appendix~\ref{sec:limitations}.
+
+Finally, as a robustness test outside the central parameter set, we relax the
+fixed-demand assumption itself by endogenising renovation depth. A linear negawatt
+retrofit option avoids useful heat at a country-specific cost drawn from the medium-depth band of the European Commission's renovation-activity study \citep{Esser2019renovation}, set at \euro{}154/m$^2$ for an approximately 41~per cent saving and annualised over a 30-year envelope life, which gives a cost of \euro{}117 to
+1{,}187/MWh of useful heat avoided, cheapest in cold, high-intensity stock.
+Co-optimising retrofit with the supply mix leaves the 2050 mix essentially unchanged, and the least-cost solution selects 0.0~per cent retrofit in 2050 even at the net-zero cap. That endpoint is not the whole story, and reporting it alone would misstate the program's behaviour. Retrofit is selected at the interim milestones and abandoned by 2050: 2.8~per cent of EU useful heat in 2030, in six countries, and 5.8~per cent in 2040, all of Germany's. Every one of those shares sits exactly on its ramp limit, so the program wants more retrofit at those dates than the 2~percentage-point-a-year build rate allows. The ramp is one-sided, with no floor holding the stock in place, so the program builds envelope for the interim caps and lets it lapse when clean supply has caught up. The \euro{}24.8~bn present-value improvement the variant delivers is the value of that interim renovation, and not a residual.
+
+The cheapest negawatt costs about \euro{}117/MWh of useful heat avoided, and the
+heat-pump levelised cost now spans about \euro{}65 to 197/MWh across the 29 countries,
+so the two ranges overlap and the inequality no longer holds universally. In the dearest
+heat-pump markets a deep retrofit is cheaper per avoided megawatt-hour than the supply
+switch it would displace, and the zero-retrofit result survives on the median alone. This still confirms the modelling choice to fix the least-cost program's
+demand at the Stated Policies trajectory, because the optimum is unchanged, but it
+should no longer be presented as a strict cost dominance. It is consistent in that
+qualified form with the Joint Research Centre finding \citep{Filippidou2019} that deep
+envelope renovation is cost-optimal only in specific contexts, namely central-European,
+high-demand stock, not as a general abatement lever.
+
+\subsection{Limitations of the Cost-Optimal Model}
+The robustness tests above show that the headline mix and the negligible cost of
+ambition survive the central parameter choices, while the zero implied carbon price
+does not. Three structural assumptions of the linear program further qualify how
+its results, and in particular the zero-retrofit outcome, should be read. They are
+stated here in full so that the cost-optimality headline is interpreted correctly;
+none overturns the mix, but each bounds its reach.
+
+First, the baseline program assumes \emph{perfect foresight}. It minimises a
+discounted system cost computed against known future levelised costs, so agents in
+effect know the entire 2025 to 2050 price and carbon trajectory in advance, and
+under that assumption the cost-optimal solution selects approximately zero per cent
+envelope retrofit because, at the audited costs, renovation is dearer per
+megawatt-hour than switching supply in most of the stock. The natural
+concern is that the near-zero retrofit is an artefact of this foresight. It is not.
+Relaxing perfect foresight to a \emph{myopic rolling-horizon} optimisation, in which
+each milestone year is solved on the costs visible at the time with a one- or
+two-period look-ahead, not the full trajectory, leaves the result unchanged. The 2050 retrofit share stays at 0.0~per cent, and the heat-pump, district-heat and hydrogen mix is identical in all 29 countries across
+the foresight modes at each target, reproducing the headline mix reported above with hydrogen at 0.34~per cent. Under the one- and two-period look-ahead cases the realised present-value cost matches the perfect-foresight optimum of about \euro{}7{,}430~bn.
+
+The zero-look-ahead snapshot, which re-optimises each
+milestone year in isolation with no inter-period stock memory, is the exception. It
+\emph{diverges} on total cost, because the isolated single-year program does not
+carry the cumulative replacement obligation, yet still returns the same 0.0~per cent 2050 retrofit and the identical technology mix, so the divergence is in the cost accounting
+only and the mix verdict is intact. The result is foresight-invariant because the pathway is
+bound by stock turnover and the feasibility ceilings, with no room for intertemporal arbitrage to bind.
+
+It is not, however, cost-dominated at every horizon in the way earlier
+drafts claimed. The cheapest negawatt retrofit costs about \euro{}117/MWh of useful
+heat avoided, against a heat-pump levelised cost of heat spanning about
+\euro{}65 to 197/MWh, so the two ranges overlap and retrofit is cheaper than a heat
+pump in the dearest heat-pump markets. The solved program still selects 0.0~per cent retrofit in 2050, and it does so because district heat, at a 2050 EU-median levelised cost of \euro{}96.5/MWh, has by then displaced the cheapest negawatts, while the ramp limit is what holds the interim shares down. Renovation is not dearer than every supply option everywhere, and the program takes it where the interim caps force early abatement. The zero-retrofit outcome therefore survives as a result of the optimisation. The caveat on the
+zero-retrofit outcome therefore moves from ``perfect-foresight-conditioned''
+to ``cost-and-constraint-conditioned'', and it now carries a country caveat as
+well. Real building owners
+still face genuine uncertainty over future energy and carbon prices, which can
+justify precautionary envelope investment that neither optimiser values, so the
+modelled retrofit share remains a lower bound on real-world behaviour.
+
+Second, the model charges \emph{no switching cost beyond annualised capital}. It
+applies only the stock-turnover constraint of
+Equation~\eqref{eq:costopt_turnover}, which limits the pace of replacement to the
+rate at which boilers reach end of life but does not penalise replacing equipment
+before its useful life is over. The economic cost of premature scrappage, and any
+transaction or disruption cost of switching technology, is not represented, so the
+modelled pace of transition is an upper bound on what an equivalent
+switching-cost-aware optimisation would deliver.
+
+Third, the model holds the \emph{demand path fixed} at the Stated Policies LMDI
+trajectory instead of co-optimising it with supply. This is a deliberate choice,
+made so that the least-cost program answers which heating technology is cost-optimal at
+a given demand level and not how much to invest in renovation; the
+endogenous-retrofit variant above confirms that relaxing it does not change the
+mix. It nonetheless means the reported pathway is the least-cost way to serve a fixed demand, and the deeper demand
+reductions of the Net Zero path are excluded by construction. These limitations do
+not invalidate the cost-optimal result, which is robust across the sweeps reported
+above, but they delimit it. The result is a least-cost \emph{supply} pathway under
+foresight, and is best read as one bound on real-world behaviour.
+
+\begin{figure}[htbp]
+  \centering
+  \caption{The EU least-cost heating pathway under the $-90$~per cent scope-1 cap. Each
+    band is a technology's share of EU useful heat, so the vertical axis runs from 0 to 1
+    and the bands sum to it in every year. Hydrogen carries a band of 0.3~per cent, which
+    is not visible at this scale, and that absence is the figure's point.}
+  \includegraphics[width=0.8\textwidth]{paper/P17_costopt_pathway.pdf}
+  \label{fig:costopt_pathway}
+  \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+\end{figure}
+
+Country-specific outcomes under the $-90$~per cent cap are not uniform, and the
+non-uniformity is where the policy content sits. With ETS2 embedded in levelised
+costs, most countries reach the target with the cap slack and an implied carbon
+price of zero, but 4 of the 29 reach 2050 with the cap binding, at up to
+\euro{}81/tCO$_2$, and 7 have a binding cap at some point on the path. The
+cost-optimal district-heat and heat-pump shares vary with feasibility and climate
+around the EU mix of Figure~\ref{fig:costopt_pathway}. The per-country shares and
+shadow prices are tabulated in the supplementary material.

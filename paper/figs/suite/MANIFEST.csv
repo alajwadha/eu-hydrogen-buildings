@@ -1,0 +1,56 @@
+fig,title,source,file
+S14,Residential heat demand by scenario,mc_summary,S14_residential_heat_demand_by_scenario.png
+S15,Heat-demand reduction by scenario,mc_summary,S15_heat_demand_reduction_by_scenario.png
+S16,2050 heat demand by country (Stated Policies),mc_country,S16_2050_heat_demand_by_country_stated_policies.png
+S17,LMDI decomposition of demand change,lmdi_decomposition,S17_lmdi_decomposition_of_demand_change.png
+S18,Cohort vs LMDI 2050 demand,cohort_forward,S18_cohort_vs_lmdi_2050_demand.png
+S19,Climate-warming HDD demand sensitivity,climate_hdd_sensitivity,S19_climate_warming_hdd_demand_sensitivity.png
+S20,Heating technology mix Current Policies,mc_summary,S20_heating_technology_mix_current_policies.png
+S21,Heating technology mix Stated Policies,mc_summary,S21_heating_technology_mix_stated_policies.png
+S22,Heating technology mix Net Zero,mc_summary,S22_heating_technology_mix_net_zero.png
+S23,Heating technology mix H2 Push,mc_summary,S23_heating_technology_mix_h2_push.png
+S24,2050 heating mix across scenarios,mc_summary,S24_2050_heating_mix_across_scenarios.png
+S25,2050 Air heat-pump share by country (Stated Policies),mc_country,S25_2050_air_heat_pump_share_by_country_stated_pol.png
+S26,2050 District-heat share by country (Stated Policies),mc_country,S26_2050_district_heat_share_by_country_stated_pol.png
+S27,2050 Hydrogen share by country (Stated Policies),mc_country,S27_2050_hydrogen_share_by_country_stated_policies.png
+S28,Heat-pump electrification by scenario,mc_summary,S28_heat_pump_electrification_by_scenario.png
+S29,Heat-pump share heatmap country x scenario,mc_country,S29_heat_pump_share_heatmap_country_x_scenario.png
+S30,Fossil share heatmap country x scenario,mc_country,S30_fossil_share_heatmap_country_x_scenario.png
+S31,Residential heating CO2 by scenario,mc_emissions,S31_residential_heating_co2_by_scenario.png
+S32,Carbon intensity of useful heat,mc_emissions,S32_carbon_intensity_of_useful_heat.png
+S33,2050 CO2 by carrier across scenarios,mc_emissions,S33_2050_co2_by_carrier_across_scenarios.png
+S34,2050 buildings CO₂ by country (Stated Policies),mc_emissions,S34_2050_buildings_co_by_country_stated_policies.png
+S35,Grid decarbonisation contribution,grid_sensitivity,S35_grid_decarbonisation_contribution.png
+S36,Cumulative heating CO2 by scenario,mc_emissions,S36_cumulative_heating_co2_by_scenario.png
+S37,LCOH by technology EU median,Economics,S37_lcoh_by_technology_eu_median.png
+S38,LCOH by country 2050,country_econ_table,S38_lcoh_by_country_2050.png
+S39,Hydrogen-boiler minus heat-pump cost by country (2050),country_econ_table,S39_hydrogen_boiler_minus_heat_pump_cost_by_countr.png
+S40,Cost of capital (WACC) by country,country_econ_table,S40_cost_of_capital_wacc_by_country.png
+S41,Installation-labour cost multiplier by country,country_econ_table,S41_installation_labour_cost_multiplier_by_country.png
+S42,Delivered hydrogen price by country,country_econ_table,S42_delivered_hydrogen_price_by_country.png
+S43,Gas vs electricity prices 2025,country_econ_table,S43_gas_vs_electricity_prices_2025.png
+S44,Where hydrogen wins the peak,merit_order_heat,S44_where_hydrogen_wins_the_peak.png
+S45,Peaking heat marginal cost Stated Policies,merit_order_heat,S45_peaking_heat_marginal_cost_stated_policies.png
+S46,Peaking heat marginal cost Net Zero,merit_order_heat,S46_peaking_heat_marginal_cost_net_zero.png
+S47,Peaking heat marginal cost H2 Push,merit_order_heat,S47_peaking_heat_marginal_cost_h2_push.png
+S48,H2 peaker capital recovery,merit_order_profit,S48_h2_peaker_capital_recovery.png
+S49,Seasonal hydrogen-storage cost adder by country,merit_order_heat,S49_seasonal_hydrogen_storage_cost_adder_by_countr.png
+S50,Peak-to-average heat demand ratio by country,heat_load_profile,S50_peak_to_average_heat_demand_ratio_by_country.png
+S51,DH supply merit order Net Zero,merit_order_dh,S51_dh_supply_merit_order_net_zero.png
+S52,DH supply merit order H2 Push,merit_order_dh,S52_dh_supply_merit_order_h2_push.png
+S53,Delivered hydrogen cost by route,h2_delivered_cost,S53_delivered_hydrogen_cost_by_route.png
+S54,Hydrogen cost by route,h2_delivered_cost,S54_hydrogen_cost_by_route.png
+S55,H2 cost gap by infrastructure scenario,h2_infra_scenario,S55_h2_cost_gap_by_infrastructure_scenario.png
+S56,Hydrogen cost-gap range by country,h2_supply_scenario,S56_hydrogen_cost_gap_range_by_country.png
+S57,Gas grid vs H2 infra readiness,country_econ_table,S57_gas_grid_vs_h2_infra_readiness.png
+S58,Heat-demand validation: model vs Hotmaps by country,benchmark_multi,S58_heat_demand_validation_model_vs_hotmaps_by_cou.png
+S59,Bottom-up vs Hotmaps scatter,benchmark_multi,S59_bottom_up_vs_hotmaps_scatter.png
+S60,Validation deviation across benchmarks,benchmark_multi,S60_validation_deviation_across_benchmarks.png
+S61,LMDI backcast vs Hotmaps 2015,lmdi_backcast,S61_lmdi_backcast_vs_hotmaps_2015.png
+S62,Cost-optimal 2050 heating mix,mc_summary_COST_OPT_90,S62_cost_optimal_2050_heating_mix.png
+S63,Cost-optimal heating pathway,cost_opt_pathway,S63_cost_optimal_heating_pathway.png
+S64,Cost-optimal implied carbon price,cost_opt_shadow_prices,S64_cost_optimal_implied_carbon_price.png
+S65,Cost-optimal system cost sweep,cost_opt_sensitivity,S65_cost_optimal_system_cost_sweep.png
+S66,Uncertainty vs price correlation,rho_sensitivity,S66_uncertainty_vs_price_correlation.png
+S67,Global Sobol sensitivity,global_sensitivity,S67_global_sobol_sensitivity.png
+S68,Climate warming effect on 2050 demand,climate_hdd_sensitivity,S68_climate_warming_effect_on_2050_demand.png

@@ -1,0 +1,13 @@
+Scenario,Year,CO₂ median (MtCO₂),CO₂ q10 (MtCO₂),CO₂ q90 (MtCO₂),Reduction vs 2025 (%)
+CURRENT_POLICIES,2030,547.7,539.2,553.4,14.3
+CURRENT_POLICIES,2040,445.2,423.1,466.2,30.3
+CURRENT_POLICIES,2050,351.9,305.9,391.9,44.9
+Reference,2030,532.4,517.0,540.4,16.7
+Reference,2040,391.4,364.0,415.7,38.8
+Reference,2050,230.9,186.3,271.5,63.9
+High electrification,2030,339.4,320.9,490.9,46.9
+High electrification,2040,48.3,44.5,286.9,92.4
+High electrification,2050,10.3,8.9,72.3,98.4
+Hydrogen hybrid,2030,513.0,486.8,524.7,19.7
+Hydrogen hybrid,2040,325.8,285.7,354.6,49.0
+Hydrogen hybrid,2050,123.0,83.9,160.5,80.8

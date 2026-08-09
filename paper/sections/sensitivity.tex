@@ -1,0 +1,429 @@
+% ─── Sensitivity Analysis ────────────────────────────────────────────────────
+\label{sec:sensitivity}
+
+The central findings rest on a set of uncertain parameters and structural assumptions,
+and it is necessary to establish which of them the conclusions actually turn on. This
+section examines that sensitivity through six methods, hierarchically organised and
+grouped by the side of the model they probe. The first four address the demand side: a
+one-at-a-time tornado on the three economic axes that govern the technology mix, the
+ETS2 carbon-price trajectory, the green-hydrogen import price and the discount rate,
+reported for 2030 buildings-sector emissions under Stated Policies
+(Appendix~\ref{sec:sensitivity:tornado}); a parametric band on the cross-country
+renovation correlation $\rho$, which sets the width of the demand distribution
+(Appendix~\ref{sec:sensitivity:rho}); a variance-based (Sobol) global decomposition that
+apportions the variance of 2050 useful heat across its four demand-side drivers
+(Appendix~\ref{sec:sensitivity:sobol}); and a one-sided climate-warming bound on demand
+(Appendix~\ref{sec:sensitivity:climate}).
+
+The remaining two are targeted stress tests on the supply side: on the per-country
+hydrogen-supply cost (Appendix~\ref{sec:sensitivity:h2supply}) and on the electricity
+network reinforcement and scarcity premium (Appendix~\ref{sec:sensitivity:reinforce}).
+The methods are complementary. The tornado and the parametric band probe individual
+axes, the Sobol decomposition then apportions the demand variance across all four
+drivers at once, and the supply-side tests bound the cost axes the demand methods do not
+reach. The conclusions below rest on all four methods together. The
+reported bands rest on a 200-draw Monte Carlo per scenario. The convergence diagnostic
+of Appendix~\ref{sec:method:uncertainty} finds the medians settled well inside that
+sample and the deciles not converged at it, so the medians carry the results and the
+80~per cent bands should be read as indicative of spread rather than as precise
+intervals.
+
+Two caveats bound the applicability of these methods and should be borne in mind
+before the results are read. First, the per-NUTS3 building-stock feasibility
+constraints on heat-pump and district-heat deployment are held deterministic;
+probabilistic feasibility is reserved for future work. Second, the tornado is
+one-at-a-time and does not capture covariation, so that, for example, a
+simultaneous high carbon price and stranded hydrogen trajectory would reinforce and not offset one another. The Sobol screen apportions demand variance and
+the tornado covers the three economic axes, but a full Morris screen of the
+cost-side interactions is the identified next step.
+
+\subsection{Tornado on the Three Economic Axes}
+\label{sec:sensitivity:tornado}
+
+Each of the three principal economic axes of the model, the ETS2 carbon-price
+trajectory, the green-hydrogen import price and the discount rate, is moved between its
+low and high bound while the other two are held at their central values. The screen is
+deterministic. One central draw is used for every arm, with the same seed throughout, so
+the only thing that differs between arms is the axis under test and the result is not
+measuring sampling noise. The metric is buildings-sector carbon dioxide emissions in
+2030 (MtCO$_2$ per year) under Stated Policies (Table~\ref{tab:tornado}). The near-term
+horizon is deliberate, because by 2050 the cross-scenario spread is dominated by the
+policy levers themselves.
+
+The discount rate is the widest axis, at $-0.1$ to $+0.4$~MtCO$_2$, the ETS2 carbon
+price next at $-0.3$ to $+0.1$, and the hydrogen price the narrowest at $-0.0$ to
+$+0.3$. All three act through the levelised-cost layer and therefore only through the
+cost-responsive part of the technology mix, which is what bounds them. The
+variance-based global sensitivity of the demand side, which the tornado does not reach,
+is set out in Appendix~\ref{sec:sensitivity:sobol} and
+Figure~\ref{fig:sensitivity_panel}a.
+
+\begin{table}[H]
+    \centering
+    \caption{Tornado on 2030 buildings-sector emissions (Stated~Policies), against a
+    central-draw baseline of 539~MtCO$_2$. Each axis moves alone; every other lever is
+    held and the model is re-run end to end. The screen is deterministic and is one draw,
+    not a distribution.}
+    \label{tab:tornado}
+    \begin{tabular}{lcc}
+        \toprule
+        Axis & Emissions-lowering bound & Emissions-raising bound \\
+        & (MtCO$_2$/yr) & (MtCO$_2$/yr) \\
+        \midrule
+        Discount rate     & $-0.1$ (low)        & $+0.4$ (high) \\
+        ETS2 carbon price & $-0.3$ (high price) & $+0.1$ (low price) \\
+        Hydrogen price    & $-0.0$ (rapid)      & $+0.3$ (stranded) \\
+        \bottomrule
+    \end{tabular}
+    \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+\end{table}
+
+These magnitudes are small, and the reason is structural rather than a sign that the
+price levers do not matter. The share allocation blends a scenario interpolation with a
+cost-responsive term whose weight ramps linearly from zero in 2025 to 0.50 by 2050
+(Appendix~\ref{sec:method:techshares}), so at 2030 only a tenth of the non-fossil
+allocation responds to cost at all. A price axis moved alone at that date therefore
+reaches very little of the mix, and the 2030 spread across the four scenarios, from 512
+to 548~MtCO$_2$, is set by their share and demand levers rather than by the prices those
+levers are paired with. An earlier version of this table reported bounds of about
+$\pm 5$~MtCO$_2$ on each axis; those figures were never produced by a committed run and
+do not reproduce. The ordering the screen returns, with the discount rate widest and
+hydrogen price narrowest, is itself informative. At 2030 the levelised comparison is
+more sensitive to the cost of capital on equipment than to either fuel price, because
+the capital charge is annualised over the whole equipment life while a fuel price moves
+only the running cost of the small cost-responsive fraction.
+
+The cost leadership behind these magnitudes is not uniform across countries, and it does
+reverse in a few of them, so the tornado should be read as moving the size of a margin
+that mostly runs one way, not as flipping the leader. The heat pump's advantage widens
+in central and eastern Europe, where lower construction labour costs reduce heat-pump
+capital expenditure and where cheaper retail electricity lowers its running cost, and
+narrows in the cold, high-tariff north-west, where lower seasonal performance and dearer
+electricity erode it. Against the incumbent gas boiler the best available heat pump is
+cheaper in 24 of the 29 countries by 2050 on the central carbon path, losing only in
+Cyprus, Croatia, Malta, Poland and the United Kingdom, and in 16 of 29 in 2025, so cost
+leadership over fossil heating is broad but not universal at either date. That
+comparison is the carbon-sensitive one, since the gas boiler pays ETS2 and the heat pump
+does not, and its 2050 count runs from 19 of 29 on the low carbon path through 24 on the
+central path to all 29 on the high path.
+
+Against the hydrogen boiler the margin is narrower, and the 2050 levelised-cost ordering
+of the heat pump, the hydrogen boiler and the gas boiler across all 29 countries is
+reported in the Results section (Figure~\ref{fig:fig5}b). Which side of that ordering a
+country falls on is governed by its storage geology first and by the hydrogen price path
+second. Heat pumps are the cheaper base-load option in 13 of 29 countries on a rapid
+hydrogen price decline, 22 on the central path, 26 on the slow path and all 29 if
+hydrogen costs stall.
+
+\subsection{Sweeping the Seasonal-Storage Adder}
+\label{sec:sensitivity:sigma}
+
+The same
+storage adder decides the power arena's seven-market concentration, and it is
+set by hand at \euro{}50/MWh-heat where salt caverns exist and \euro{}100 where they do
+not, so an explanation of that concentration which appeals to the adder is circular
+until the adder is itself varied. We vary it. Scaling the pair from 0.5 to 2.0 times
+their central values, holding the cavern-to-non-cavern ratio at 2.0, moves the
+power-arena win count as Table~\ref{tab:sigma_sweep} shows. The base-load count above is
+not swept on this axis, so the base-load concentration is bounded here by the hydrogen
+price paths alone.
+
+\begin{table}[H]
+\centering
+\caption{Power-arena hydrogen wins under a swept seasonal-storage adder, H2~Push 2050.
+The cavern and non-cavern adders are scaled together at a fixed ratio of 2.0. The count is invariant to the scarcity premium across \euro{}30 to 120/MWh-e, so one
+column is shown. That invariance is an algebraic identity in the power arena, where the
+premium enters both turbines' clearing price and cancels, rather than an empirical
+result.}
+\label{tab:sigma_sweep}
+\small
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Cavern adder (\euro{}/MWh-heat) & 25 & 38 & 45 & \textbf{50} & 55 & 62 & 75 & 88 & 100 \\
+\midrule
+Markets won, of 29              & 29 & 29 &  8 & \textbf{7}  &  7 &  7 &  7 &  2 &  0 \\
+All winners cavern-endowed      & no & no & no & yes         & yes& yes& yes& yes& n/a \\
+\bottomrule
+\end{tabular}
+\\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+\end{table}
+
+The seven-market result is not an artefact of one point estimate, since it holds across
+\euro{}50 to 75/MWh-heat, about a third of the \euro{}25 to 100 swept range. It is also
+confined to that band. Below
+\euro{}45 the count jumps to every market and the cavern confinement dissolves, and
+above \euro{}75 it collapses towards zero. The concentration is a real property of the
+model over a band; it is not a structural feature of the problem. One caveat bounds even that. The sweep scales the cavern
+and non-cavern adders together at a fixed ratio, so the geological \emph{spread} that
+actually drives the concentration is held constant throughout and is not tested here at all.
+
+A second caveat bears on how the seven should be read. The classification is a two-value
+national binary, and over the whole \euro{}50 to 75 band the winning set is that binary
+exactly, so the seven is conditional on the classification rather than emerging
+independently of it. Alternative readings of the same geological source move it. Adding
+Iberia, which the source also maps, gives nine wins; restricting France to its northern
+basins gives six. The defensible statement is therefore that, given a two-value national
+classification of seven markets, the power-arena winners are exactly those seven, with a
+range of six to nine under alternative readings. The ratio itself is corroborated
+independently: a European techno-economic assessment of the same stores puts levelised
+salt-cavern storage at about \$0.8/kg against \$1.5/kg for porous media
+\citep{Talukdar2024UHSEurope}, a ratio near 1.9 against the 2.0 assumed here.
+
+The carbon-price axis, by contrast, does not enter this particular
+comparison at all, since neither a heat pump nor a hydrogen boiler pays a carbon price
+on its own fuel, so the count is identical under low, central and high carbon
+assumptions and the tornado's carbon axis acts only through the fossil technologies it
+displaces. Regional labour-cost variation moves the size of the margin without setting
+the ordering.
+
+\subsection{Parametric Band on the Cross-Country Renovation Correlation ($\rho$)}
+\label{sec:sensitivity:rho}
+
+The Monte Carlo samples each country's envelope-renovation rate through a shared
+EU-policy factor plus idiosyncratic national noise, with correlation $\rho$
+(Appendix~\ref{sec:method:uncertainty}). The central 2050 demand trajectory is
+invariant to $\rho$, because the shared factor preserves every country's marginal
+distribution, so only the width of the band moves. At the central value
+$\rho=0.5$, the EU 2050 figure is 3,651~TWh under Current Policies,
+3,483~TWh under Stated Policies, 2,660~TWh under Net Zero and 3,154~TWh under H2
+Push, essentially unchanged across $\rho$. The uncertainty band, by contrast,
+widens
+from 1.0$\times$ (independent, $\rho=0$) to 2.2$\times$ (shared, $\rho=0.5$) to
+3.0$\times$ (fully correlated, $\rho=1$), by the same factor across all four
+scenarios (Figure~\ref{fig:sensitivity_panel}b; the per-scenario bands are
+collected in Table~\ref{tab:rho}). At $\rho=0$, independent national renovation
+pace, the EU band is artificially narrow because national errors diversify away;
+$\rho=0.5$, the shared central value, reflects a common policy environment under
+the EPBD and the Renovation Wave. The demand bands should therefore be read as
+conditional on $\rho=0.5$, while the headline scenario \emph{medians} are
+unaffected.
+
+\begin{table}[H]
+    \centering
+    \caption{2050 useful-heat demand band (TWh/yr, 10th to 90th percentile) against the
+    cross-country renovation correlation $\rho$.}
+    \label{tab:rho}
+    \begin{tabular}{lccc}
+        \toprule
+        Scenario & $\rho=0$ (indep.) & $\rho=0.5$ (central) & $\rho=1$ (full) \\
+        & (TWh/yr) & (TWh/yr) & (TWh/yr) \\
+        \midrule
+        Current Policies & 3,612 to 3,687 & 3,566 to 3,731 & 3,536 to 3,758 \\
+        Stated Policies  & 3,432 to 3,533 & 3,369 to 3,593 & 3,328 to 3,630 \\
+        Net Zero         & 2,563 to 2,770 & 2,435 to 2,900 & 2,353 to 2,977 \\
+        H2 Push          & 3,080 to 3,229 & 2,987 to 3,319 & 2,928 to 3,375 \\
+        \midrule
+        Band-width vs $\rho=0$ & 1.0$\times$ & 2.2$\times$ & 3.0$\times$ \\
+        \bottomrule
+    \end{tabular}
+    \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \caption{Demand-side uncertainty structure. Panel (a) gives total-order ($S_T$, bars)
+    and first-order ($S_1$, points) Sobol indices for 2050 useful heat; panel (b) gives the demand band width against the cross-country renovation correlation $\rho$, labelled at $\rho=1$.}
+    \includegraphics[width=\textwidth]{paper/P15_sensitivity.pdf}
+    \label{fig:sensitivity_panel}
+    \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+\end{figure}
+
+\subsection{Global (Variance-Based) Sensitivity of 2050 Demand}
+\label{sec:sensitivity:sobol}
+
+The tornado and the parametric band above each move one axis at a time and so, by
+construction, cannot apportion variance among the demand drivers or detect interactions
+between them. The variance-based (Sobol) global sensitivity introduced here complements
+them by decomposing the variance of EU useful heat in 2050 across all four uncertain
+demand drivers at once: the envelope-renovation rate, the scenario lever, sampled over a
+$\pm$35~per~cent band; population; occupancy, expressed as household size; and dwelling
+size. The decomposition uses a Saltelli design with $N=2{,}048$. Because useful demand
+in 2050 depends only on these drivers, it is evaluated analytically per country, so a
+full Sobol design is both exact and immediate.
+
+The total-order indices are an envelope rate of $S_T=0.40$, occupancy of $0.33$,
+dwelling size of $0.16$ and population of $0.12$; the first-order indices approximately
+equal the total-order indices, indicating a near-additive response with negligible
+interactions. Two readings follow. First, the scenario lever, the renovation rate,
+governs the largest single share of demand uncertainty, as intended. Second, occupancy,
+the household-size trend that sets dwellings per capita, is almost as influential, which
+is why the LMDI decomposition treats it as a first-class driver instead of folding it
+into population. The cost and emissions axes, namely the carbon price, the hydrogen
+trajectory, the discount rate, ETS2 pass-through and fuel-price correlation, act through
+the levelised-cost layer, whose global screen is compute-bound on the full NUTS3 Monte
+Carlo; the tornado above covers them, and a full Morris screen is the documented next
+step.
+
+\paragraph{Cost-side propagation.} The two caveats that bound this exercise, the
+one-at-a-time tornado and the deterministic feasibility scores, are stated at the
+head of the section. The cost-side axes are themselves
+fully propagated. The hydrogen-price scenario, the discount rate, the carbon price,
+ETS2 pass-through and the per-carrier log-normal fuel-price multipliers, covering
+gas, electricity, oil and biomass, all enter the levelised-cost routine, which is
+recomputed for each Monte Carlo sample, so the cost-side
+uncertainty is active throughout even though its global variance decomposition,
+which would require a screen of the full NUTS3 Monte Carlo, is left to the
+identified Morris next step.
+
+\subsection{Climate-Warming Demand Sensitivity}
+\label{sec:sensitivity:climate}
+
+The last of the demand-side methods bounds a structural assumption, not a sampled
+parameter. The central demand trajectory holds heating degree days at the 1991 to 2020
+climate normal, so it excludes the demand-reducing effect of a warming climate. Because space heating scales approximately linearly with heating degree days and domestic hot water does not, we overlay a warming factor on the space-heating share,
+approximately 85 per cent of useful heat, using EU population-weighted degree-day
+decline rates from \citet{Spinoni2018degreedays}: a central rate of $-0.35\%$ per year, which is that study's RCP4.5 result, swept over a $-0.20$ to $-0.55\%$ per year band. The upper end follows its RCP8.5 result; the study runs only those two pathways, so the lower end is our own conservative bound and not a reading of a lower-emissions scenario.
+
+This is a one-sided robustness bound, not the central case. Under the central warming
+rate, Stated Policies useful heat in 2050 falls a further 7~per~cent, from 3,483 to
+3,235~TWh, deepening the 2025 to 2050 reduction from $-9\%$ to $-15.5\%$; relative to
+the frozen-climate trajectory the additional 2050 reduction spans $-4.1\%$ at our own low
+bound to $-10.9\%$ under RCP8.5. In the announced-policy pathway, a warming climate thus
+delivers roughly half of the demand reduction that deep renovation delivers under Net
+Zero ($-31\%$). The frozen-climate central trajectory is therefore conservative on
+demand. The technology-mix and the RQ1 and RQ2 conclusions are unaffected, because
+warming scales demand without altering relative levelised costs.
+
+\subsection{Per-Country Hydrogen-Supply Cost and Import Connectivity}
+\label{sec:sensitivity:h2supply}
+
+The headline hydrogen prices apply a per-country multiplier to a single
+north-west-European hub trajectory, which falls from \euro{}200/MWh in 2025 to
+\euro{}50/MWh in 2050. This multiplier was originally a crude $\pm$10~per~cent
+heuristic, under which a landlocked or import-dependent country was simply assumed
+dearer, and it was the least-grounded parameter in the cost layer. It is replaced by
+the bottom-up delivered-cost model of Appendix~\ref{sec:method:h2}, which costs out
+five supply routes for each country and takes the cheapest, and normalises the result
+so that the median country pays the hub price. This subsection reports what that model
+finds.
+
+Three findings emerge. First, pink and blue hydrogen are not the cheapest route in
+2050. Nuclear electrolysis, at about \euro{}116 to 117/MWh and set by the cost of firm
+nuclear power, and gas with carbon capture, at about \euro{}81/MWh
+\citep{IEAGHG2022blue}, are both beaten by cheap green or imported hydrogen, so the
+nuclear and carbon-capture `optionality' often invoked for central Europe does not in
+fact lower its delivered cost. Second, domestic green electrolysis is the cheapest route
+in the majority of the EU, with 23 countries self-supplying green hydrogen in 2050,
+while the remaining six import by pipeline. No country takes the seaborne-ammonia
+route at 2050, and the two non-backbone islands, Cyprus and Malta, self-supply green at
+about \euro{}63 to 64/MWh against \euro{}108 for shipped ammonia
+(Figure~\ref{fig:supplyrobust}a).
+
+Third, capital and labour set the ranking, ahead of sunshine. High-WACC Greece, at
+8~per~cent in the per-country cost-of-capital assumption of the hydrogen-supply
+methodology (Appendix~\ref{sec:method:h2}), sits at a multiplier of 1.04 despite superb
+solar resource, whereas cheap-capital, strong-wind Ireland, Denmark and the Baltic
+states self-supply green hydrogen well below the median, at multipliers of 0.77 to 0.84.
+Pipeline import caps the six connected countries at the hub price plus 9 to 16~per~cent, so
+the dearest supply is found in the landlocked central-European states with mediocre
+resource, namely Slovakia, the Czech Republic, Hungary, Slovenia and Italy at
+multipliers of about 1.14 to 1.16, and in the non-backbone islands, Cyprus and Malta at
+about 1.31 to 1.33, whose isolated-grid, small-scale solar is the costliest
+self-supply of all and still undercuts the shipped-ammonia alternative.
+
+Carrying each multiplier as a low, central and high band, the 2050
+hydrogen-versus-heat-pump gap is negative, meaning hydrogen is cheaper, in a small
+minority of countries. At central supply values, the default network treatment and
+the seasonal store charged on the winter-weighted fraction of the hydrogen heating
+load, 7 of the 29 countries sit at or below heat-pump parity
+(Section~\ref{sec:results}). Cheap supply is not on its own enough to put a country
+in that set. Finland and the Baltic states all sit below the median on the delivered
+multiplier and none of them is in it, because none has the salt-cavern endowment
+that makes seasonal storage cheap, which five of the seven that remain do have. Charging hydrogen
+a fuller share of its distribution cost shrinks the set further
+(Appendix~\ref{sec:results:h2infra}).
+
+\paragraph{The colour of the molecule.} A second, qualitative finding runs with the
+base-load result above, and it deserves more weight than its position in a sensitivity
+section suggests. In nearly every assessed country the national hydrogen strategy
+explicitly \emph{excludes} residential heating. More consequentially, the one dedicated assessment of hydrogen for buildings concludes that any heating hydrogen would in practice be \emph{blue} \citep{Dickel2024ET29}, and our own blue route prices that molecule at about \euro{}81/MWh \citep{IEAGHG2022blue}, against the green or imported molecule at about \euro{}50/MWh that the model prices. The model therefore
+charges hydrogen a delivered commodity cost roughly \euro{}31/MWh below the only
+sourcing the sectoral literature regards as realistic for this end use. That wedge is
+wider than the widest of the seven surviving hydrogen leads, so a commodity price that
+high would move every country further towards the heat pump.
+
+On the storage-inclusive basis this paper uses, that repricing leaves the heat pump
+cheaper in all 29 countries at a flat \euro{}81/MWh, and in 28 with Denmark
+alone still holding if the German figure is read as a green-to-blue ratio rather than a
+European price. The model's
+delivered residential-hydrogen price is thus a counterfactual that it prices, not a
+planned supply chain, and the counterfactual is generous to hydrogen. The base-load
+result should be read in that light, as a statement about what a cheap green molecule
+would do to the household economics of heating, not as a forecast that such a molecule
+will be the one delivered to households.
+
+\subsection{Electricity Distribution Reinforcement and the Scarcity Premium}
+\label{sec:sensitivity:reinforce}
+
+Two network-side assumptions deserve explicit stress tests. First, earlier drafts
+charged hydrogen for its distribution network only inside a dedicated
+infrastructure scenario and never charged heat pumps for the low- and
+medium-voltage grid \emph{reinforcement} that their added coincident winter peak
+requires. That asymmetry has been removed. Both adders are now active by default in
+every levelised cost this paper reports, so each carrier pays for its own last mile
+(Appendix~\ref{sec:method:h2}). The reinforcement adder is no longer opt-in, and it
+is no longer optional; it is part of the headline number. The added
+electric peak per dwelling, computed as annual heat over climate-scaled full-load
+hours, divided by the cold-snap coefficient of performance, with a coincidence
+factor of 0.5, is charged at \euro{}400, 800 and 1{,}600 per kW (low, central and
+high), annualised at the country WACC over a 40-year network life. Across that band
+the adder amounts to \euro{}1.1 to 38.2/MWh, and it is highest in peaky
+mild-climate systems where a modest annual heat demand arrives through a short,
+sharp season.
+
+The stress test that follows is the conservative-for-heat-pump case, and it has two arms
+that must be kept apart, because they charge hydrogen differently and return different
+counts. Both charge the heat pump the \emph{high} reinforcement bound. In the first arm
+hydrogen pays \emph{nothing} at all for its network, and heat pumps then remain cheaper
+than hydrogen in 10 of 29 countries, namely Bulgaria, Estonia, Croatia, Hungary,
+Lithuania, Latvia, Romania, Sweden, Slovenia and Slovakia, and cheaper than gas in 21 of
+29, with a mean heat-pump-to-hydrogen margin of $-$\euro{}6.2/MWh and a median of
+$-$\euro{}3.1/MWh, which is to say that hydrogen leads on average by those amounts. In
+the second arm hydrogen pays the blended distribution network it is charged by default,
+and heat pumps remain cheaper than hydrogen in 22 of 29 at a mean of $+$\euro{}13.6/MWh,
+which reproduces the headline count at the top of the reinforcement band
+(Figure~\ref{fig:supplyrobust}b).
+
+The two arms should never be combined, since quoting the second count against the first
+arm's network treatment would overstate the heat-pump case. The reading is the
+same in either arm. The base-load ranking \emph{does} depend on how the two last-mile
+networks are charged, and a reinforcement assumption at the top of its plausible band is
+enough to move a majority of countries from one side of the comparison to the other.
+This is one of the three most load-bearing assumptions in the levelised-cost layer,
+alongside the seasonal-storage charge and the levy treatment of the two carriers, and
+all three are carried explicitly in Appendix~\ref{sec:limitations}.
+
+\begin{figure}[H]
+    \centering
+    \caption{Supply-side robustness in the hydrogen supply route and in the network
+    charge. Panel~(a) gives each country's cheapest delivered hydrogen cost in 2050,
+    coloured by which route wins, with the tick marking the next-best route so the margin
+    between them is visible. Panel~(b) asks the question most favourable to hydrogen:
+    hydrogen charged no last-mile network at all against the heat pump charged its high
+    reinforcement band, per country, where a positive value still leaves the heat pump
+    cheaper.}
+    \includegraphics[width=\textwidth]{paper/P16_supply_robustness.pdf}
+    \label{fig:supplyrobust}
+    \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+\end{figure}
+
+Second, the merit-order results of Section~\ref{sec:results:meritorder} use an
+endogenous scarcity electricity price, the marginal-peaker short-run marginal cost
+plus a scarcity premium of \euro{}30, 60 and 120 per MWh (low, central and high).
+The premium band spans the displacement of the thermal peaker by storage and
+demand response across a varying number of hours. At the low premium the cold-snap heat pump becomes cheaper and hydrogen's
+winning-country count at the building peak falls, while at the high premium it rises. The
+counts are 0, 1, 8 and 15 of 29 across the four scenarios at \euro{}30/MWh-e, 0, 4, 9 and
+16 at the central \euro{}60 and 0, 5, 10 and 18 at \euro{}120. Each sweep in this section
+moves one lever and holds the rest at their published settings, so the baseline here is
+the asymmetric accounting and the central column is its 0, 4, 9 and 16 rather than the
+symmetric 0, 2, 7 and 14 the results section headlines; the last-mile charge is swept
+separately. The demand-weighted
+derived ceiling under Stated Policies runs from 0.2~per cent at the low premium to
+5.3 at the high one against 5.1 at the central. That is the widest of the three
+independent reasons the Stated Policies ceiling is a range rather than a point, and it is
+the scenario in which the ceiling actually binds.
+The power arena does not move at all, because there the premium enters both turbines'
+clearing price and cancels. The missing-money conclusion is invariant across the band,
+because it is the peaker's running hours, not the price level, that fail the
+investment test.

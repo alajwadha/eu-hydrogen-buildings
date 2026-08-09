@@ -1,0 +1,470 @@
+% ─── Literature Review ───────────────────────────────────────────────────────
+% Seven-theme thematic synthesis ending in a three-gap statement.
+% Themes: (1) buildings decarbonisation and the policy frame; (2) heat pumps,
+% electrification and district heating; (3) hydrogen in buildings; (4) hydrogen
+% production, supply, storage and transport; (5) merit order, capacity value and
+% missing money; (6) spatial and bottom-up methods; (7) policy, carbon pricing
+% and the Switzerland context. Cross-reference to \ref{sec:method} preserved.
+
+This review is organised by theme. It moves from the scale
+and policy framing of buildings decarbonisation (Section~\ref{sec:lit:buildings}),
+through the two rival heating pathways of electrification (Section~\ref{sec:lit:hp}) and
+hydrogen (Section~\ref{sec:lit:h2}) and the hydrogen supply chain that any heating role
+would draw on (Section~\ref{sec:lit:supply}), to the merit-order and system-value
+literature that this paper extends (Section~\ref{sec:lit:meritorder}), the spatial and
+bottom-up methods on which its demand reconstruction rests
+(Section~\ref{sec:lit:spatial}), and finally the policy and Switzerland context
+(Section~\ref{sec:lit:switzerland}). Each theme closes by feeding the gap statement in
+Section~\ref{sec:lit:gap}.
+
+Together, these themes establish the urgency of heating decarbonisation and set out the
+technical and economic evidence that hydrogen's competitive role, if any, is severely
+constrained. This paper puts that evidence to the test across 29 countries and three merit-order arenas, and the test does not return a uniform confirmation. Once each carrier
+is charged its own equipment capital and its own last-mile network, the base-load cost
+comparison divides geographically instead of running one way across Europe
+(Section~\ref{sec:results}), and the case against a spontaneous hydrogen heating market
+rests instead on capital recovery in dispatch and on the asymmetric fiscal treatment of
+the two carriers.
+
+Three policy instruments recur throughout the themes below and are defined here
+before first use. The extension of the European Union Emissions Trading System to
+buildings and road transport (ETS2) prices the fossil incumbent directly from
+2027; the REPowerEU framework, the European Union's response to the 2022 energy
+crisis, reframed efficiency and electrification as instruments of security of
+supply; and the Nomenclature of Territorial Units for Statistics at its third tier
+(NUTS3), the sub-national grain at which this paper reconstructs demand, is the
+resolution at which heating need and stock heterogeneity become visible. Together
+these form the policy and spatial scaffold on which the review and the analysis
+rest.
+
+\subsection{Buildings-Sector Decarbonisation: Scale, Drivers and the Policy Frame}
+\label{sec:lit:buildings}
+
+The buildings sector accounts for over one-third of European energy-related
+emissions and is therefore the decisive test of mid-century climate feasibility;
+its decarbonisation must address three interconnected challenges, namely the
+structural constraint of slow stock turnover, the heterogeneity of building types
+and climates across Europe, and the policy instruments (ETS2, the Energy
+Performance of Buildings Directive (EPBD), and REPowerEU) designed to drive the
+transition. It is a first-order contributor to global and European energy use and
+greenhouse gas emissions, and space heating is its largest single end use
+\citep{IPCC2018,Smith2018}. In the European
+Union, buildings account for approximately 36\% of energy-related CO$_2$ emissions
+\citep{EuropeanCommission2020GreenDeal}, a share large enough that the recent
+synthesis literature treats the sector as decisive for whether mid-century climate
+targets are attainable at all \citep{Azevedo2022,Calvin2023Ipcc}.
+
+The challenge is structural and not merely technical, which reframes
+decarbonisation as a problem of allocation, not of selecting a single
+winner. The stock turns over slowly, most of the 2050 building stock already
+stands, and embodied as well as operational emissions bind the achievable
+trajectory \citep{Rck2019Embodied,Pomponi2020Buildings}. A
+planetary-boundaries assessment of European heating options finds that no single
+carrier is unambiguously dominant across every environmental dimension, which
+frames decarbonisation as a problem of allocating the right technology to the
+right context instead of selecting a universal winner \citep{Weidner2023Planetary}.
+
+Decarbonisation strategies for the sector fall into three broad categories that
+the literature treats as complementary and not substitutable: demand
+reduction through envelope efficiency, fuel switching to low-carbon carriers, and
+structural change in district energy systems \citep{Azevedo2022,Mathiesen2019Towards}. The pace required is steep. Comparative scenario
+work for Europe shows that the speed of envelope renovation and heating
+electrification needed to reach successive climate goals rises sharply with
+ambition, and that delay raises the eventual cost \citep{Victoria2022Speed,
+Mdua2023Towards}.
+
+The critical barrier to scaling these strategies is the slow rate of deep
+renovation, and it is as much economic and behavioural as technical. The European
+stock renovates at roughly 1\% per year, far below the pace implied by net-zero
+pathways, and deep retrofits remain a small fraction of that flow
+\citep{Esser2019renovation,Filippidou2019}. Split
+incentives between landlords and tenants, household budget constraints that push
+retrofits into partial and staged sequences, and weak information all slow uptake
+\citep{Arbulu2022Barriers,Maia2024Household}.
+Decision-support and household-choice studies emphasise that the renovation
+decision and the heating-technology decision are coupled, because envelope
+quality conditions the performance of a heat pump and therefore its economics
+\citep{Mel2023Decisionsupport,Lingard2020Residential}.
+
+The European policy frame has tightened around this diagnosis. The European Green
+Deal, the 2018 long-term strategy, and the climate-neutrality objective set the
+direction \citep{EuropeanCommission2020GreenDeal,EuropeanCommission2018LTS}; the recast EPBD of 2024 then
+converted it into binding instruments, including minimum energy performance
+standards and a trajectory towards zero-emission buildings
+\citep{EPBD2024,Mdua2023Towards}. The 2022 energy crisis and the
+REPowerEU response accelerated the agenda, reframing efficiency and
+electrification as instruments of security of supply as well as decarbonisation
+\citep{REpowerEU2022,EUCommissionSWD2022}.
+The official reference projections now carry these policies through to mid-century
+\citep{EC2024RefScenario}. The empirical literature on implementation, however,
+is cautious. It documents wide divergence in transposition and renovation outcomes
+across member states, and historical analyses of EU-28 residential heat confirm
+that fuel mixes and consumption levels differ markedly between countries and over
+time \citep{Mdua2023Towards,Cyx2020EU28Heat}. This
+heterogeneity, recurring across drivers, stock, and policy, is the first reason a
+spatially explicit treatment is warranted.
+
+\subsection{Heat Pumps, Electrification and District Heating}
+\label{sec:lit:hp}
+
+Heat pumps are the leading near-term pathway for decarbonising building heat, combining
+high thermodynamic efficiency with a carbon intensity that falls automatically as the
+grid decarbonises \citep{IEA2022heatpumps,HPTEC2026WEO2025}. The reported coefficient of
+performance places a well-installed unit several times ahead of any combustion boiler in
+delivered-heat terms, and life-cycle comparisons confirm that the advantage holds in
+present and projected grids \citep{Famiglietti2022Heat,Dong2023}. Air-source systems are
+increasingly cost-competitive with gas boilers in new build and moderate-renovation
+contexts, while ground-source systems offer superior seasonal performance at higher
+capital cost \citep{Kim2023,Hoseinpoori2022}.
+
+The central qualification in the literature concerns cold-climate and poorly insulated
+stock, where the coefficient of performance falls as outdoor temperature drops and the
+design heat load rises; field and review evidence nonetheless shows that modern units
+retain workable performance at low temperatures, and that the binding constraint is more
+often envelope quality and emitter sizing than the device itself
+\citep{Gibb2023Coming,Lingard2020Residential}. Whole-system and optimal-control studies
+add that smart and hybrid operation can materially raise the value of electrified heat
+and ease its peak demand \citep{Hoseinpoori2022,Vivian2019Algorithm}. Adoption, however,
+is mediated by policy and consumer preference as much as by economics, and several
+studies show that awareness, trust, and the perceived disruption of installation shape
+willingness to switch \citep{Kokoni2021Policy,Corbett2023Pumping}.
+
+District heating is the complementary structural pathway, and the literature treats it
+as the natural home for waste and ambient heat that individual systems cannot capture
+\citep{Mathiesen2019Towards,Lund2018Status}. The fourth-generation paradigm lowers
+network temperatures so that large heat pumps, industrial excess heat, and other
+low-grade sources can supply the stack economically, displacing combustion at the margin
+\citep{Lund2018Status,Mller2019Heat}. The Heat Roadmap Europe (HRE) programme mapped the
+spatial economics of distribution and showed that dense urban areas can be served at
+competitive cost by networks fed from such sources
+\citep{Persson2019Heat,Mller2019Heat}. Cost-allocation and carbon-accounting studies of
+cogeneration emphasise that the merit order inside a district system, and the emissions
+credited to it, depend sensitively on how heat and power are jointly priced, a point
+this paper inherits when it ranks the district-heat stack
+\citep{Doroti2021Evaluation,Javanshir2022Abandoning}.
+
+Thermal storage and sector coupling further raise the value of electrified district heat
+by allowing it to absorb cheap off-peak power
+\citep{Enescu2020Thermal,Vecchi2022Carnot}. Across both the individual and networked
+routes, the recurring finding is that electrification, suitably staged and stored, is
+the cost-effective backbone of decarbonised heat; the open question the present paper
+addresses is what, if anything, is left for a combustible carrier, both at the cold-snap
+peak that electrified supply finds hardest to serve and on the annual cost of delivered
+heat once each carrier is charged its own capital and its own network.
+
+\subsection{Hydrogen in the Buildings Sector: The Case, the Critique and the Costs}
+\label{sec:lit:h2}
+
+Hydrogen's potential role in building heat is among the more contested questions
+in the energy-transition literature, and the disagreement runs deeper than terminology. Proponents emphasise infrastructure compatibility, fuel
+flexibility and the avoidance of deep electrical reinforcement, arguing that
+repurposed gas networks could deliver hydrogen to existing boiler stock with
+limited disruption \citep{Dodds2015,Bothe2021}. Technically, hydrogen boilers operate on
+principles close to those of natural-gas boilers and can in principle use
+retrofitted distribution pipework, subject to material compatibility and safety
+limits, while fuel cells offer a higher-efficiency route that supplies heat and
+power together where simultaneous demand is high \citep{IEAHydrogenReview2022,Scita2020}. Blending studies
+map the intermediate option of admixing hydrogen into the gas grid, but identify
+binding technical and regulatory ceilings well below full substitution
+\citep{Erdener2022Review,Giehl2023}. Public-perception research
+finds that the lower behavioural disruption of a like-for-like boiler swap is part
+of the appeal, even as it cautions that acceptance is conditional on cost and
+safety assurances \citep{Thomas2023Hydrogen, Gordon2023Divergent}.
+
+Yet a larger and increasingly convergent critical literature disputes this claim on
+thermodynamic and cost grounds, and its strands form a single causal chain from which it
+concludes that hydrogen is implausible for mass-market space heating. The root cause is
+thermodynamic. Hydrogen produced by electrolysis and burned in a boiler delivers only a
+small fraction of the useful heat that the same electricity would provide through a heat
+pump, so hydrogen heating multiplies the renewable generation and electrolyser capacity
+required \citep{Cebon2022,Rosenow2022PipeDream}. The first consequence of that
+efficiency multiplier is cost; evidence reviews and independent assessments consistently
+show that, across the large majority of analysed cases, hydrogen is more expensive than heat pumps or district heating, and its plausible niche is narrow. A meta-review of 54 independent studies finds none supporting a widespread role for hydrogen in heating \citep{Rosenow2024MetaReview,Rosenow2022PipeDream,Rosenow2020Pathway}.
+
+The International Council on Clean Transportation (ICCT) assessment of EU households in
+2050 and the Oxford Institute for Energy Studies (OIES) analysis of the German heating
+sector both reach this conclusion, the former across the climates it examines and the
+latter about a wholesale hydrogen conversion \citep{ICCT2023h2heating, Dickel2024ET29}.
+The second consequence is that the result, while consistent in direction, is brittle in
+magnitude. Scenario and sensitivity studies show that hydrogen's apparent role is
+acutely sensitive to input assumptions on green-hydrogen cost, carbon pricing, and
+infrastructure, so that small parameter changes swing it between marginal and material
+\citep{Quarton2019Curious,Marzouk2024Expectations}. The third consequence follows from
+the first two; once cost and brittleness are imposed within an explicit system model,
+hydrogen is confined to a residual role, as the model-based race between hydrogen and
+heat pumps for space and water heating finds, with heat pumps dominating the
+cost-effective frontier under central assumptions and hydrogen relegated to residual and
+peaking duty \citep{Billerbeck2023Race}.
+
+The dedicated modelling literature on hydrogen in buildings remains limited in
+scope and scale, covering mostly single countries or technologies, and it divides
+into two strands that share a common boundary: single-country techno-economic
+studies, and dispatch- and system-focused work. The first strand, the
+single-country techno-economic studies, of Spain \citep{Maestre2021, Maestre2022},
+Italy \citep{Masi2024State}, Germany \citep{Huckebrink2022}, Ireland
+\citep{Genovese2023} and a sub-Saharan context \citep{Modu2023}, together with
+national planning assessments \citep{Jung2023Plan}, each confirm that hydrogen's
+economic case depends on green-hydrogen cost trajectories, carbon pricing, and
+infrastructure availability, but none extends the comparison to the full European
+context. The second strand, the dispatch- and system-focused work, reaches the same
+conclusion from the other direction. \citet{Berger2020} conducted a
+linear-programming assessment of power-to-gas in cross-sector decarbonisation at
+coarse spatial resolution, and \citet{Slorach2021Net} assessed
+net-zero heating for the United Kingdom to 2050; both evaluate hydrogen within wider
+systems but do not isolate its merit-order position against heat pumps in the
+heating stack across diverse climates. Each strand is thus confined to one country,
+one technology, or one building, and the two together leave the comparative European
+question open.
+
+The analytical gap the present paper addresses is the absence of a study that
+prices hydrogen on short-run marginal cost in a full merit-order dispatch across
+the entire diversity of European climate and building stock, deriving its heating
+share endogenously from where it wins the peak instead of imposing it as a
+scenario target. This is the contribution that distinguishes the present analysis
+from the literature reviewed above, and it motivates the supply, merit-order and
+spatial literatures reviewed next. Because the analysis also charges each carrier the
+equipment capital implied by the peak load it must serve, and the last-mile network
+its own delivery requires, its base-load comparison departs from the convergent
+finding above in a defined group of countries, a divergence taken up in
+Section~\ref{sec:results} and traced there to the fiscal treatment of retail
+electricity, not to the cost of hydrogen. Figure~\ref{fig:lit_landscape} positions the
+comparative studies cited here on these two axes and shows the resulting gap
+directly. The cell combining sub-national resolution with a merit-order derived
+heating share is empty, and it is the cell this paper fills.
+
+\begin{figure}[H]
+    \centering
+    \caption{\textbf{The comparative hydrogen-versus-heat-pump literature.} Placed by
+    spatial resolution and by whether the hydrogen heating share is imposed or derived.}
+    \includegraphics[width=\textwidth]{paper/P_LIT_landscape.pdf}
+    \label{fig:lit_landscape}
+    \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+\end{figure}
+
+\subsection{Production, Supply, Storage and Transport of Hydrogen}
+\label{sec:lit:supply}
+
+The production cost of green hydrogen is the foundation of any heating claim,
+because any heating role for the carrier draws on its cost and availability, so
+the production and supply literature bounds the question. The global
+reviews establish the baseline. Electrolytic (green) hydrogen is presently more
+expensive than the unabated fossil routes it must displace, but its cost is
+projected to fall steeply with electrolyser learning and cheap renewable
+electricity \citep{IEAHydrogenReview2022,IEA2025hydrogenreview}. Observatory and
+calculator data for Europe place the levelised cost of production and its
+sensitivity to electricity price, utilisation, and capital cost on a common
+footing \citep{EHO2024hydrogencosts,EHO2024lcohcalculator}.
+Techno-economic studies of European and national supply, several using explicit
+optimisation or Monte Carlo treatment of uncertainty, broadly agree that green
+hydrogen reaches the range of tens of euros per megawatt-hour by mid-century in
+favourable locations, while remaining costlier where renewable resources are poor
+\citep{Sens2022Cost,Zun2023Cost}. Blue hydrogen from natural gas
+with carbon capture and pink hydrogen from nuclear power are characterised as
+transitional or niche options whose competitiveness depends on gas prices and
+capture performance, and which the European cost literature does not find cheapest
+at mid-century \citep{IEAGHG2022blue,Staffell2018Hydrogen}.
+
+The delivered cost of hydrogen is dominated by seasonal storage and transport,
+both geographically concentrated. Production cost is only a busbar figure (the cost
+at the production gate, before storage and transport). What a heating comparison turns on is the delivered, stored cost at the point of combustion.
+Heating demand is acutely seasonal and the cold-snap peak is precisely when a
+dispatchable hydrogen unit would run, so the cost of holding hydrogen from summer
+production to winter use, and of moving it to where the stock sits, can exceed the
+production cost itself; both layers are therefore as spatially variable as
+production, and both must be resolved at the same country grain. The
+technical-potential mapping of salt caverns shows that low-cost seasonal storage is
+geographically concentrated in a minority of European countries, which the present
+paper translates into a country-specific storage adder \citep{Caglayan2020caverns}.
+
+Network repurposing and import costs vary by country and by delivery method.
+Network studies of the European Hydrogen Backbone and gas-for-climate pathways
+quantify the cost of repurposing gas pipelines and building dedicated hydrogen
+corridors, and of per-property conversion at the distribution edge
+\citep{GasForClimate2020backbone,EHB2023countries}. Trade and import analyses, including the OIES
+import-route assessments and the IRENA trade work, characterise the delivered cost
+of hydrogen reaching European markets by pipeline and as ammonia, and the
+diseconomies of small-scale shipping \citep{OIES2022hydrogenimports,OIES2024hydrogenimportsET32}. Optimisation studies of national supply chains and
+seasonal power-to-hydrogen storage show that transport technology choice and the
+value of inter-seasonal storage are themselves model outputs sensitive to geography
+\citep{Lahnaoui2021Optimization,Petkov2020Powertohydrogen}. The implication
+this paper carries forward is that the delivered, stored cost of hydrogen at the
+point of combustion, not the busbar production cost, is what a heating or peaking
+comparison must use, and that this cost is irreducibly spatial.
+The further implication is that hydrogen's heating role can only be assessed
+through the merit-order dispatch framework that allocates resources to the unit
+running at short-run marginal cost. This framework, reviewed next, is the paper's
+analytical core.
+
+\subsection{Merit Order, Capacity Value and the Missing-Money Problem}
+\label{sec:lit:meritorder}
+
+The analytical core of this paper is drawn from the electricity-market literature on
+short-run marginal cost, capacity value, and missing money, which it applies to heat.
+The foundational result is that competitive dispatch prices energy at the short-run
+marginal cost of the marginal unit, so that capital, being sunk, does not set the spot
+price; a peaking plant that runs few hours must therefore recover its fixed costs from
+scarcity rent and not from energy margin \citep{Joskow2008capacity}. When that rent is
+insufficient, the plant faces the classic missing-money problem
+\citep{Joskow2008capacity} and will not be built without a capacity mechanism
+\citep{Competition2021}.
+
+The carbon-pass-through literature \citep{Fabra2009etspassthrough} establishes the
+complementary mechanism that this paper finds recurring. An emissions price is passed
+into the marginal cost of fossil generation and thereby into the market price, so that
+it is the carbon charge on the fossil competitor, more than any fall in the price of the
+clean alternative, that reorders the stack. Studies of technology value in decarbonising
+power systems show that the system worth of a firm, dispatchable resource lies in the
+scarce hours it covers, not in the energy it supplies, which motivates separating a
+capacity role from an energy role
+\citep{Bistline2020ValueOfTechnology,Brown2018Synergies}.
+
+A direct line of work asks where hydrogen and related power-to-X options sit in this
+picture, and its findings frame the present analysis. The same conclusion, that hydrogen
+turbines and electrolytic flexibility are valuable chiefly for covering rare
+residual-load peaks and bridging low-renewable spells, a capacity rather than an energy
+contribution, recurs across model scopes. For highly renewable Europe, the
+sector-coupled optimisation of \citet{Brown2018Synergies} and the heat-demand-peak study
+of \citet{Zeyen2021Mitigating} both place hydrogen in this residual role; for Great
+Britain, the integrated value-chain optimisation of \citet{Quarton2019Value} reaches the
+same finding at the national scale; and at the global scale, the fully renewable
+transition pathways of \citet{Bogdanov2019Radical} and \citet{Victoria2021Solar}
+likewise confine dispatchable hydrogen to bridging the residual peak. That the result
+holds from the national through the continental to the global scope is what makes it
+robust to local conditions. The complementary peak-mitigation and
+climatological-adequacy literature shows that the depth of the cold, low-wind event (the
+Dunkelflaute) governs how much firm capacity the system needs, and that this need is
+robust but bounded \citep{Zeyen2021Mitigating,Mellot2024Mitigating}.
+
+Heat-specific applications of the same logic, including studies of peat displacement and
+thermal storage in district systems, confirm that dispatchable units at the top of a
+heat stack run for limited hours and so face the same recovery problem
+\citep{Javanshir2022Abandoning,Enescu2020Thermal}. To operationalise this framework, the
+paper draws its cost and performance parameters from standard technology databases,
+European electricity-market reviews and grid-intensity indicators, and carbon-price
+trajectories from ETS2 modelling, with the sources and assumptions detailed in
+Section~\ref{sec:method}. The European market reviews and grid-intensity indicators that
+anchor present-day electricity prices and carbon intensities are by now a settled
+empirical base for such comparisons \citep{EMBER2024electricity, EEA2024gridintensity}.
+This paper's contribution is to carry the merit-order, capacity-value and missing-money
+triad, established for power, into the heating peak and the district-heat stack, and
+then back into the power sector that electrified heat runs on, applying one consistent
+operating-cost test across all three arenas.
+
+\subsection{Spatial and Bottom-Up Methods for Building-Stock Modelling}
+\label{sec:lit:spatial}
+
+Regional heterogeneity is a first-order determinant of both heating demand and
+technology feasibility, so the method by which demand is built matters as much as
+the technologies compared. Climate zones, vintage distributions, urbanisation and
+national regulation all vary substantially across Europe, and aggregate national
+models can obscure the spatial targeting that effective policy requires
+\citep{Hotmaps2020,Mller2019Heat}. The
+bottom-up tradition reconstructs demand from physical stock characteristics, where the top-down tradition infers it from national totals, and reviews of the approach set out its
+strengths and its data demands \citep{SueWing2008Synthesis,Prina2020Classification}. Three data infrastructures underpin the present reconstruction.
+The Hotmaps project provides an open NUTS3 heat-demand dataset and toolbox derived
+from stock and climate data, which this paper uses as an independent validation
+reference \citep{Hotmaps2020,Hotmaps2019}.
+The EUBUCCO database assembles harmonised footprints and attributes for more than
+200 million individual European buildings, supplying the geometric basis for a
+footprint-up demand estimate, and is complemented by emerging global building
+datasets \citep{MilojevicDupont2023Eubucco, Zhu2025GlobalBuildingAtlas}. The
+TABULA typologies translate stock into energy by attaching per-class, per-cohort
+space-heating and hot-water intensities across European countries, with national
+brochures providing the country detail \citep{Loga2016Tabula,Cyx2011TabulaBelgium}.
+
+Census, geographic, and observatory sources complete the reconstruction and its
+benchmarking. Dwelling counts and building-type splits come from the European census and
+national equivalents, with the NUTS reference geographies aligning the spatial units
+\citep{Eurostat2021census,ONS2021TS044}. The EU Building Stock Observatory and the
+Odyssee-MURE profiles provide independent national totals and intensities for
+multi-source reconciliation, alongside the peer-reviewed historical series for EU-28
+residential heat \citep{BSO2025}. Heating demand is driven by climate through
+heating degree days, whose European datasets and projected changes the present analysis
+uses for the climate multiplier and warming sensitivity
+\citep{EurostatHDD2025}. Recent work disaggregating energy consumption and
+emissions to municipal and sub-national resolution for individual countries demonstrates
+both the feasibility and the value of high-resolution stock modelling, while remaining national in coverage \citep{Patil2025Disaggregated}. On the network side, sub-national European hydrogen work does exist and is continental in scope \citep{Neumann2023H2Network,Kountouris2024Unified}; what it returns is a network plan rather than a per-market balance sheet for a single plant.
+
+On the choice and dispatch side, the technology-share step in this paper draws on
+discrete-choice theory \citep{McFadden1974ConditionalLogit, Train2009DiscreteChoice},
+the least-cost layer on linear-optimisation generators and reviews of bottom-up
+energy-system models \citep{Krien2020Oemofsolpha,Juan2021Review}, the multi-criteria
+reconciliation on compromise-programming methods \citep{Yu1973GroupDecision,
+Zeleny1973CompromiseProgramming}, the demand decomposition on the LMDI index method
+\citep{Ang2005}, and the uncertainty treatment on reviews of uncertainty assessment and
+time-series aggregation in energy-system optimisation \citep{Yue2018Uncertainty,
+Hoffmann2020Review}. What is missing from this otherwise rich methodological literature
+is a study that combines a footprint-up demand reconstruction at NUTS3 resolution with
+an explicit merit-order test of hydrogen across the full European country set; the
+methods exist in parts but have not been assembled for this question.
+
+\subsection{Policy, Carbon Pricing and the Switzerland Context}
+\label{sec:lit:switzerland}
+
+The policy and carbon-pricing literature supplies the levers that drive this
+paper's scenarios, and the recurring mechanism it documents is that pricing the
+fossil incumbent, more than subsidising the alternative, reorders the heating
+stack. ETS2 is the central instrument. Modelling of its price trajectory spans a
+wide range depending on complementary policies, and the official framework and
+independent projections place it at the heart of buildings decarbonisation after
+2027 \citep{EuropeanCommission2024ETS2,Gunther2025ets2}. National measures increasingly act on the same margin. Boiler
+phase-out schedules, building-energy acts, and future-homes standards remove the
+fossil option directly, complementing the price signal
+\citep{EHPA2025boilerbans,GER2024GEG}.
+The security-of-supply literature shows how the 2022 crisis recast gas demand
+reduction and electrification as strategic as well as climate objectives, and how
+gas-network access and household exposure vary across Europe
+\citep{Goldthau2023Eu,Helwig2023Eu}. The price and consumption series that
+calibrate the scenarios are drawn from Eurostat and the national regulators
+\citep{EurostatNRG2025,Eurostat2025prices}.
+
+Switzerland occupies a distinctive position that the limited literature treats as a case
+apart: a non-EU member deeply integrated with EU energy markets, surrounded by countries
+with ambitious hydrogen strategies, and with substantial hydropower and nuclear
+generation that could support domestic low-carbon hydrogen
+\citep{Gabrielli2020,BfE2023}. The Energy Perspectives 2050+ and the national and
+cantonal strategies set the decarbonisation pathway, and the 2024 national hydrogen
+strategy and climate legislation frame the hydrogen question specifically
+\citep{SFOE2023perspectives,EnDK2022plus}. Country-specific studies of Swiss heat
+decarbonisation, building-stock thermal performance and the energy-performance gap
+establish that the Swiss stock is comparatively well insulated but heavily reliant on
+fossil heating, and that electrification and district heating dominate the
+cost-effective options \citep{Narula2018Strategies,Streicher2018Assessment}.
+
+The winter-electricity-deficit literature is particularly relevant, since it identifies
+the cold-season adequacy gap that any Swiss firm-capacity or hydrogen-peaking role would
+have to address, and the domestic tariff data bound the comparison
+\citep{Mellot2024Mitigating, ElCom2025tariffs}. The Swiss case in this literature,
+however, is examined largely on its own terms. The lacuna is specific. No prior study
+has examined whether Switzerland, positioned at the intersection of EU hydrogen
+ambitions and its own net-zero commitment, can justify hydrogen imports for residential
+heating given its existing low-carbon grid and competing district-heat expansion. The
+question of how imported decarbonised hydrogen, priced and stored, would compete in
+Swiss building heat under a net-zero-by-2050 constraint, which motivates Research
+Question~2, has not been addressed.
+
+\subsection{Research Gap}
+\label{sec:lit:gap}
+
+The foregoing review reveals three gaps that this paper addresses, each emerging
+from a theme above. First, the buildings, hydrogen, and spatial literatures
+together establish that heating demand and technology feasibility are
+irreducibly heterogeneous across Europe, yet no continental,
+quantitative assessment of hydrogen's role in EU buildings
+decarbonisation has been built on a bottom-up heat-demand reconstruction resolved to
+NUTS3, in the updated REPowerEU policy
+context. Second, the hydrogen-in-buildings and merit-order literatures show that
+hydrogen's apparent role is highly sensitive to how it is priced and to local
+conditions, yet no prior study has systematically evaluated the
+hydrogen-versus-heat-pump trade-off on a consistent operating-cost basis across the
+full diversity of European building stock and climate, deriving hydrogen's share
+from where it can win the peak instead of imposing it.
+
+Third, Switzerland's specific strategic position, surrounded by
+hydrogen-ambitious EU members, with substantial hydroelectric and nuclear
+capacity, has not been modelled in a comparative context. Specifically, whether
+imported decarbonised hydrogen can compete with electrification in Swiss
+residential heating under net-zero constraints remains unaddressed, and it is this
+that motivates Research Question~2. This paper
+addresses all three gaps through the integrated modelling framework described in
+Section~\ref{sec:method}.

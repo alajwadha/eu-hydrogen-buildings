@@ -1,0 +1,644 @@
+% ─── Results ──────────────────────────────────────────────────────────────────
+\label{sec:results}
+
+One finding orders this section. Cost and policy set the decarbonisation pathway, and
+technology availability does not constrain it. Demand is sticky, so the
+transition is supply-side; the base-load cost ordering settles in the heat
+pump's favour once each carrier is charged the storage its own load shape
+requires; and policy ambition separates the scenario outcomes. Hydrogen is the
+test case for that claim. It is the cheaper base-load option in only seven
+markets, five of them with the geology that makes seasonal storage cheap; it fails the
+investment test wherever it wins the peaking dispatch; and the niche that survives needs
+policy support, so it does not drive a spontaneous transition at any scale. The 200-sample Monte Carlo simulations across the four multi-lever
+scenarios (Current Policies, Stated Policies, Net Zero and H2 Push;
+Section~\ref{sec:method}) are reported in that logical order.
+
+The first four subsections establish the spine of demand, technology mix, cost
+ordering and emissions. The remaining subsections then put hydrogen through three
+explicit tests that together answer the first research question (RQ1;
+Section~\ref{sec:rq}), whose two facets, base-load competitiveness and peaking
+competitiveness, are distinguished below.
+
+\emph{Test~1}, the building-level base-load levelised cost of heat
+(Section~\ref{sec:results:h2conditions}), asks in how many countries a hydrogen boiler
+undercuts the best heat pump in 2050. \emph{Test~2}, the peaking dispatch
+(Section~\ref{sec:results:meritorder}), reprices hydrogen as the dispatchable source
+that serves only the cold-snap peak, at the building, grid and district-heating scales.
+\emph{Test~3}, the investment-feasibility check nested within it
+(Section~\ref{sec:results:missingmoney} and Appendix~\ref{sec:results:dispatch}), asks whether a
+peaker that wins the dispatch can also recover its capital from market rents.
+Appendix~\ref{sec:results:infrabill} then compares the network-infrastructure bill of
+each pathway, and Appendix~\ref{sec:results:switzerland} applies the cost model to
+Switzerland as a standalone case bearing on the second research question (RQ2).
+
+The buildings-to-power coupling named by RQ3 is carried in the dedicated
+power-sector treatment (Section~\ref{sec:power}) and enters here only through the
+peaking tests.
+
+%── 4.1 Heat Demand ────────────────────────────────────────────────────────────
+\subsection{Useful Heat Demand Trajectory across the 29 Markets}
+\label{sec:results:demand}
+
+Useful heat demand across the 29-country study area barely falls to 2050, because
+envelope renovation only just outpaces the growth of the building stock. Demand
+therefore falls far less than emissions do over the period, and far less than the policy
+ambition of the deeper scenarios might suggest. In the 2025 base year it is estimated at
+approximately 3,827~TWh per year, consistent with the Hotmaps regional baseline
+\citep{Hotmaps2019}. The three closely-spaced baseline totals that appear in this paper
+are on different bases. The 3,827~TWh here is our bottom-up 2025
+reconstruction, the 3,858~TWh in the validation table (Table~\ref{tab:bottomup}) is the
+Hotmaps 2015 all-class benchmark we validate against, and the 3,863~TWh quoted in the
+methodology is the raw Hotmaps total before the all-class alignment.
+
+The forward trajectory is a per-country LMDI multi-driver projection over population,
+occupancy and envelope-design intensity (Section~\ref{sec:method}). Under the Stated
+Policies scenario, in which announced renovation policy is delivered and envelope
+renovation proceeds near its current EU pace (approximately 0.7 per cent per year;
+\citep{BPIE2024Tracker}), median demand declines only modestly, to 3,762~TWh by 2030,
+3,626~TWh by 2040 and 3,483~TWh by 2050, a cumulative reduction of 9 per cent relative
+to 2025 (Figure~\ref{fig:fig3}). The 80 per cent Monte Carlo interval at 2050 spans
+3,367 to 3,589~TWh. Because the per-country envelope-renovation rates are sampled with a
+shared EU-policy correlation ($\rho=0.5$; Appendix~\ref{sec:method:uncertainty}) rather
+than independently, this 29-country aggregate band reflects the limited cross-country
+diversification of a common policy environment, and is about 2.2 times wider than a
+naive independent-draw band (Appendix~\ref{sec:sensitivity}, Table~\ref{tab:rho}).
+
+The four scenarios span a wide demand range by 2050, but a narrow one relative to
+their emissions spread. Current Policies, with renovation slowed to its
+current-measures-only pace, reduces demand by just 5 per cent, to 3,651~TWh. Net
+Zero achieves the deepest reduction, to 2,660~TWh (a fall of 31 per cent),
+through Renovation-Wave-pace envelope upgrades, with envelope intensity falling
+approximately 1.9 per cent per year in the central draw. H2 Push reaches
+3,154~TWh (a fall of 18 per cent). Hydrogen substitution changes the supply mix while leaving the
+building envelope alone, so its useful-demand reduction is intermediate.
+Only the Net Zero pathway reaches the IEA Net Zero Emissions range for European
+building heat demand (a fall of 30 to 55 per cent by 2050;
+\citep{IEA2023NZE}); the others sit below it, reflecting the deliberate
+assumption that the Renovation Wave is not realised in full.
+
+\begin{figure}[H]
+    \centering
+    \caption{Sticky useful heat demand and the supply-side decarbonisation. Panel~(a)
+    carries all four scenarios, with the shaded band the 10th to 90th Monte Carlo
+    percentiles. Panel~(b) is Stated Policies alone. It indexes 2050 useful heat,
+    delivered energy and emissions to their 2025 levels in that one scenario, so its three
+    bars are not study-wide figures and the numbers on them do not apply to the other
+    three pathways.}
+    \includegraphics[width=\textwidth]{paper/P04_demand_three_layer.pdf}
+    \label{fig:fig3}
+    \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+\end{figure}
+
+%── 4.2 Technology Transition Pathways ─────────────────────────────────────────
+\subsection{Technology Transition Pathways}
+\label{sec:results:techshares}
+
+The scenario lever, more than cross-country variation in the building stock, is
+what moves the technology mix. Every scenario starts from the same observed 2025
+mix (heat pumps 8 per cent of useful heat, gas 44 per cent, oil 14 per cent,
+biomass 17 per cent, district heat 11 per cent and resistance heating 6 per cent,
+taken per country from Eurostat and national statistics on a per-country
+useful-heat basis) and interpolates towards
+scenario-specific 2050 targets, with a cost-responsive reallocation among the
+non-fossil options and policy constraints (boiler bans and heat-pump mandates)
+overlaid. The fossil share is governed by the scenario's policy-ambition lever, not by cost alone, and the hydrogen share is targeted on the
+exogenous adoption setting tested against the dispatch screen of
+Section~\ref{sec:results:meritorder}. All 2050 mixes reported below are Monte
+Carlo medians, renormalised.
+
+\subsubsection{Current Policies}
+With policy frozen at today's measures, heat pumps reach 29 per cent of useful
+heat by 2050 and fossil boilers retain 40 per cent, the largest residual fossil
+share of any scenario. District heat stays near 18 per cent, biomass near 11 per
+cent, and hydrogen is negligible at half a per cent. Under a low carbon price and a
+stranded hydrogen market, neither the carbon penalty on gas nor the hydrogen price
+opens any niche.
+
+\subsubsection{Stated Policies}
+Delivering announced policies lifts heat pumps to 37 per cent by 2050, of which
+18 per cent is reached already by 2030, and pushes fossil down to 27 per cent. Gas falls from 44 per cent of useful heat in 2025 to 38 per cent by 2030 and continues
+to decline as replacement bans (effective 2028 to 2035 across most member states
+under the EPBD 2024 recast; \citep{EPBD2024}) and ETS2 carbon costs bite.
+District heat reaches 19 per cent, biomass 11 per cent, and hydrogen 5 per cent,
+close to its merit-order ceiling.
+
+\subsubsection{Net Zero}
+The climate-neutrality pathway combines deep renovation, a high carbon price and a
+fast-decarbonising grid. Heat pumps reach 49 per cent, district heat expands
+markedly to 31 per cent, fossil is squeezed to zero at the median, biomass holds 15 per
+cent, and hydrogen stays a peaking sliver, 3 per cent at the scenario ceiling and 3.6 at the
+realised median. The expansion of district
+heating, and not individual electrification alone, is a defining feature of the
+deep pathway, with direct infrastructure consequences
+(Appendix~\ref{sec:results:infrabill}).
+
+\subsubsection{H2 Push}
+Even in a deliberately hydrogen-favourable world, in which the rapid price decline
+brings delivered hydrogen to a 2050 range of about \euro{}22 to 39/MWh across the 29
+markets, against \euro{}39 to 66 on the central path, hydrogen reaches only 8 per cent of useful heat at the scenario ceiling and 8.5 at the
+realised median. That ceiling is one we set, and it sits below the 9.3 per cent the
+merit order of Section~\ref{sec:results:meritorder} would support. Heat pumps still lead at 39 per cent, district heat at 23 per cent and
+fossil at 15 per cent. The scenario shows what cheap hydrogen \emph{can} do for
+buildings. It grows the niche from the half to 5 per cent of the other scenarios to
+8 per cent, and it does not change the architecture of the transition.
+
+\begin{figure}[H]
+    \centering
+    \caption{2050 heating technology mix across the four scenarios (EU-27+UK+CH).}
+    \includegraphics[width=0.8\textwidth]{paper/P05_mix_2050.pdf}
+    \label{fig:fig6}
+    \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+\end{figure}
+
+Figure~\ref{fig:fig6} sets the four 2050 mixes side by side. Cross-country
+heterogeneity within any one of them is material but secondary to the scenario lever.
+Within a scenario, national 2050 heat-pump shares vary by approximately 4 to 8 points between the tenth and ninetieth percentiles, and by up to 10
+percentage points. They are highest in the
+northern markets with detached stock and clean grids, led by the Netherlands, Denmark,
+Finland, Poland and the United Kingdom, and lowest in the warm south, where Malta,
+Cyprus and Greece trail the field because the heating load itself is small. The scenario lever, by
+contrast, moves the 29-country share by 20 points, from 29 to 49 per cent. Eastern European
+countries with delayed boiler-ban timelines retain higher residual gas and biomass
+shares in 2030.
+
+\subsubsection{What the Cost-Optimal Mix Says About These Shares}
+\label{sec:results:costoptcompare}
+
+The four scenarios above set technology shares by policy lever. A least-cost linear
+program run over the same demand and the same technology portfolio sets them by
+minimising system cost, and is reported in full in Appendix~\ref{sec:costopt}. Read
+against the scenario pathways it is informative on one comparison and silent on another.
+
+It is silent on hydrogen, and the silence has to be stated plainly because the
+comparison would otherwise look like corroboration. The cost-optimal 2050 mix carries
+hydrogen at about a third of one per cent, against 3.6~per cent in the Net Zero
+pathway. But the program is bounded by a per-country hydrogen ceiling that is zero in
+27 of the 29 markets, so in most of the study area it is not permitted to select any
+hydrogen whatever the cost. Its near-zero share is therefore a property of that bound
+and carries no independent evidence on the direct-heating verdict, which rests on the
+base-load, dispatch and investment tests of this section alone.
+
+It disagrees on which clean option carries the residual. The cost-optimal mix reaches
+about 53~per cent district heat and 45~per cent heat pumps and retires biomass
+altogether, where the Net Zero pathway holds district heat at 31~per cent, heat pumps at
+49 and biomass at 15. The gap is the biomass share. Biomass is available to the
+optimisation, at 17~per cent of the 2025 base mix, and the optimisation drops it to zero
+because district heat delivers the same heat more cheaply wherever the network reaches,
+while the scenario pathways carry a biomass share forward as a policy assumption. The
+divergence therefore sits between district heat and biomass and not between the
+molecules and the machines, which is the comparison RQ1 turns on.
+
+
+%── 4.3 Levelised Cost of Heat ─────────────────────────────────────────────────
+\subsection{Levelised Cost of Heat Comparison}
+\label{sec:results:lcoh}
+
+The cost ordering among heating technologies resolves by 2050, and it resolves
+against combustion. Throughout this paper the \emph{best available heat pump} means,
+for each country, whichever of the air-source and ground-source units is the cheaper
+there, so the comparison is against the better of the two rather than an average of
+them. At the 29-country median the order runs district heat at
+\euro{}96.5/MWh, the best available heat pump at \euro{}118.5/MWh, the hydrogen
+boiler at \euro{}122.8/MWh and the gas boiler at \euro{}132.7/MWh, which places
+the individual heat pump second of the four and ahead of both molecules, and the
+country-level picture behind that median runs the same way outside a small group
+(Section~\ref{sec:results:h2conditions}). We establish that ordering here from the
+aggregate levelised costs and the fuel prices that drive them
+(Figure~\ref{fig:fig5}); the decomposition of those costs into their components,
+which shows what sets the ordering, is carried in
+Appendix~\ref{sec:results:lcohanatomy} (Figure~\ref{fig:fig7}). Figure~\ref{fig:fig5} sets
+out the aggregate picture. Panel~a gives the input-price trajectories that drive
+most of the inter-country variation in heating costs (residential gas, electricity
+and delivered-hydrogen paths, as the 29-country median with an interquartile band; sources
+are the Eurostat household energy price series for H1~2025 and the OIES
+ET32 central hydrogen path), and panel~b the resulting cost ordering (the 2050
+levelised cost of the best available heat pump, the hydrogen boiler and the gas
+boiler in every country).
+
+\begin{figure}[H]
+    \centering
+    \caption{Residential fuel-price trajectories and the 2050 cost ordering.
+    Panel~(a) is the three small panels along the top: median residential gas, electricity
+    and delivered hydrogen prices across the 29 countries from 2025 to 2050, with the band
+    the interquartile range across countries and the hydrogen path the OIES~ET32 central
+    trajectory. Panel~(b) is the strip below: the 2050 levelised cost of the best available
+    heat pump, the hydrogen boiler and the gas boiler in each country, one row per country
+    and ordered by the heat-pump cost.}
+    \includegraphics[width=\textwidth]{paper/P06_prices_lcoh.pdf}
+    \label{fig:fig5}
+    \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+\end{figure}
+
+In 2025 the air-source heat pump and the gas boiler stand at parity across the study
+area, at \euro{}155.8/MWh against \euro{}156.0/MWh at the median, with the heat pump
+ahead outright in 16 of the 29 countries. Two forces offset each other here. The high
+residential gas prices of the post-2022 period (the Eurostat H1~2025
+consumption-weighted EU aggregate is \euro{}114.3/MWh including taxes, against a
+29-country median of \euro{}100/MWh in the per-country series the model actually
+charges), combined with heat-pump seasonal coefficients of
+performance of 2.8 to 4.5, favour the heat pump; the equipment capital it must recover,
+charged against a machine sized to peak heat demand and so not reduced by that seasonal
+efficiency, works the other way. The coefficient band sits at the modern variable-speed
+end of the field evidence, not the older two-to-three fleet average, so a more
+conservative fleet-average coefficient would move the 2025 comparison against the heat
+pump (Appendix~\ref{sec:method:techassumptions}).
+
+By 2050 the heat pump pulls clear of gas in 24 of the 29 countries, at a median
+\euro{}118.5/MWh for the best available heat pump per country and the same figure for
+the air-source unit alone, against \euro{}132.7/MWh for gas; the five exceptions are
+Cyprus, Croatia, Malta, Poland and the United Kingdom. That particular count is
+carbon-sensitive, because the gas boiler pays ETS2 and the heat pump does not. The heat
+pump leads gas in 19 of 29 countries on the low carbon path, 24 on the central path and
+all 29 on the high path. The policy implication has moved with the accounting. Equipment
+capital is a first-order term in the heat-pump cost, at 27.7~per cent of its 2050 stack
+and the largest capital share of the three technologies
+(Appendix~\ref{sec:results:lcohanatomy}), so upfront cost is a genuine cost disadvantage
+to be closed and not a financing friction, and it stands alongside
+installation capacity and regulatory inertia as a barrier to adoption.
+
+ETS2 widens the gas-versus-heat-pump gap further from 2027. Each \euro{}50/tCO$_2$ of
+carbon price adds about \euro{}11/MWh to the gas-boiler levelised cost of heat (LCOH),
+so the central \euro{}122/tCO$_2$ path adds about \euro{}27/MWh, against a median
+\euro{}0.7/MWh across the 29 countries on the heat-pump LCOH at 2030. That charge is the increment of electricity's carbon cost above its 2025 level, and it
+falls to zero at the median from 2040 and to zero in every market by 2050 as the grid
+decarbonises. The carbon price therefore leaves
+the 2050 hydrogen-versus-heat-pump comparison unmoved, not because neither technology
+pays it but because by then neither pays any increment, so the country counts reported
+below are identical under the low, central and high carbon paths and it is the hydrogen
+price path that moves them. Under the central
+trajectory the hydrogen boiler shows an LCOH of \euro{}299.3/MWh in 2025, falling
+to \euro{}122.8/MWh by 2050. On that same central path the best available heat
+pump undercuts it in 22 of the 29 countries by 2050, a key finding for RQ1 that
+Section~\ref{sec:results:h2conditions} takes up in full.
+
+\noindent The detailed treatment of the anatomy of the cost ordering is given in Appendix~\ref{sec:results:lcohanatomy}.
+
+\subsection{CO$_2$ Emissions Trajectory} \label{sec:results:emissions} The inventory
+behind this subsection, its emission factors and the country grid-intensity paths it
+applies, is set out in Appendix~\ref{sec:method:emissions}.
+
+\begin{figure}[H]
+    \centering
+    \caption{The buildings emissions fan and its Stated Policies attribution. Panel~(a)
+    carries all four scenarios from 2025 to 2050, with the shaded band the 10th to 90th
+    Monte Carlo percentiles and the 2050 median labelled on each. Panel~(b) decomposes the Stated Policies fall alone into the part the technology switch delivers and the part grid and district-heat decarbonisation deliver. Both panels report the same quantity but on different bases, so their endpoints differ. Panel~(a) plots the Monte Carlo median, while panel~(b) runs on a single central draw, which shares the 644~MtCO$_2$ 2025 level but reaches 264~MtCO$_2$ in 2050 against the ensemble median's 231. The decomposition is taken entirely on that second basis, so the two bars sum to its own fall and not to the ensemble median's.}
+    \includegraphics[width=\textwidth]{paper/P08_emissions_attribution.pdf}
+    \label{fig:emissions_fan}
+    \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+\end{figure}
+
+Where demand is sticky, emissions are not. The outcomes diverge sharply across
+scenarios (Figure~\ref{fig:emissions_fan}, Table~\ref{tab:co2}). The four pathways fan out from a common baseline
+of approximately 644~MtCO$_2$ in 2025 to 352 (Current Policies), 231 (Stated Policies), 123 (H2 Push) and 10 (Net Zero)~MtCO$_2$ by 2050,
+reductions of 45, 64, 81 and 98 per cent respectively. The 10th to 90th
+percentile Monte Carlo ranges at 2050 are 306 to 392 (Current Policies), 186 to 272
+(Stated Policies), 84 to 160 (H2 Push) and 9 to 72~MtCO$_2$ (Net Zero). The medians are
+separated by 121, 108 and 113~MtCO$_2$, each of them larger than any single band is
+wide, so the scenario ranking is robust to parameter uncertainty
+(Table~\ref{tab:co2}). The ranking claim rests on that median separation and not on the
+bands themselves, which are indicative at this sample size because the deciles have not
+converged at $N=200$ (Appendix~\ref{sec:method:uncertainty}). \emph{Ambition, not
+technology availability, separates the outcomes}. The same technology set is
+available in every scenario, and the spread is driven by the policy levers, namely
+fossil-phaseout ambition, renovation depth, the carbon price, and
+grid-decarbonisation speed. The 2050 gap between Current Policies and Net Zero, of
+roughly 342~MtCO$_2$ per year, is the emissions value of closing the implementation
+gap in residential heat.
+
+\begin{table}[H]
+    \centering
+    \caption{Buildings-sector CO$_2$ emissions by scenario and year.}
+    \label{tab:co2}
+    \footnotesize
+    \setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrrr}
+        \toprule
+        Scenario & \multicolumn{2}{c}{2030} & \multicolumn{2}{c}{2040} & \multicolumn{2}{c}{2050} & 2050 range \\
+         & MtCO$_2$ & Reduction & MtCO$_2$ & Reduction & MtCO$_2$ & Reduction & [10th to 90th] \\
+        \midrule
+        Current Policies & 548 & $-15\%$ & 445 & $-31\%$ & 352 & $-45\%$ & [306 to 392] \\
+        Stated Policies  & 532 & $-17\%$ & 391 & $-39\%$ & 231 & $-64\%$ & [186 to 272] \\
+        H2 Push          & 513 & $-20\%$ & 326 & $-49\%$ & 123 & $-81\%$ & [84 to 160] \\
+        Net Zero         & 339 & $-47\%$ & ~48 & $-93\%$ & ~10 & $-98\%$ & [9 to 72] \\
+        \bottomrule
+    \end{tabular}\\[4pt]
+    \footnotesize{\textit{Emission factors: IPCC AR6 (combustion); EMBER 2024
+    (electricity actuals); declining paths to 2050 calibrated to European decarbonisation
+targets \citep{EEA2023fit55}, which are scenario-consistent trajectories rather than
+published country projections (Appendix~\ref{sec:method:emissions}). All four scenarios
+    share the common observed 2025 baseline of approximately 644~MtCO$_2$, and every
+    reduction in the table is computed against it. The figure is not scenario-specific, since each scenario starts from the same observed 2025 mix, and every aggregation order returns it. The Net Zero ensemble median, the sum of its per-country medians and the median of its per-draw sums all give 644.2~Mt, within a 200-draw spread of less than one megatonne.}}
+    \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+\end{table}
+
+\noindent The detailed treatment of decomposition is given in Appendix~\ref{sec:results:decomp}.
+
+\subsection{Test 1: Base-Load Competitiveness in EU Buildings (RQ1)}
+\label{sec:results:h2conditions}
+
+This is \emph{Test~1}, the base-load facet of RQ1: whether hydrogen can compete at the
+building level across the 29 countries, priced as a base-load supplier of annual heat in
+the levelised-cost framework of Section~\ref{sec:results:lcoh}. The operational question
+is specific: in which countries, if any, does a hydrogen boiler undercut the best
+available heat pump in 2050, and by what margin elsewhere? We answer it by ranking every
+country by hydrogen's 2050 cost gap to the best heat pump, and that ranking is the base-load answer to RQ1; the complementary peaking facet (Test~2) follows in
+Section~\ref{sec:results:meritorder}.
+
+Figure~\ref{fig:h2gap} presents the ranking under the model's reference assumptions,
+namely the central hydrogen trajectory with each carrier charged for its own last-mile
+network, a partially converted distribution system for hydrogen and low-voltage
+reinforcement for the heat-pump winter peak, and with hydrogen charged the seasonal
+store that its own winter-weighted load shape requires (Appendix~\ref{sec:method:h2});
+the sensitivity of the ranking to the network treatment is taken up in
+Appendix~\ref{sec:results:h2infra}. Its headline is that the best available heat pump
+is cheaper in 22 of the 29 countries and the hydrogen boiler in the remaining seven,
+five of which are salt-cavern markets. How much of that concentration the storage
+rate itself carries is set out below, and the answer is less than half of it.
+
+Two features of the network treatment move that count and belong beside it. The first
+is an asymmetry running against the heat pump. The reference case charges electric
+heating for distribution reinforcement but not for the firm generating capacity the same
+winter evenings call on. Charged pro rata to heating's share of power demand that
+capacity adds about \euro{}1/MWh and leaves the count at 22; charged in full to the
+heat-pump load, which is an upper bound no one would defend, it adds \euro{}11 to
+14/MWh and the count falls to 17 and then 15 of 29
+(Appendix~\ref{sec:limitations}). The second is the reinforcement level itself. At the
+top of its plausible band, with hydrogen paying nothing for its own network, the heat
+pump leads in only 10 of 29; charging hydrogen the network it is charged by default
+reproduces the headline 22 at that same bound
+(Appendix~\ref{sec:sensitivity:reinforce}). The count is therefore robust to the
+reinforcement level and sensitive to whether both carriers are charged for their own
+last mile, which is the symmetry this paper is built on.
+
+\begin{figure}[H]
+    \centering
+    \caption{The per-country hydrogen-boiler gap, and who pays for delivery. Seven of the 29
+    countries sit at or below the line in panel (a), Denmark widest. Panel (a) is drawn on the
+    coverage-weighted blending assumption, the third point in panel (b) and the central case
+    throughout this paper; the count below the line moves from 12 of 29 under free gas-grid
+    reuse to 3 of 29 if every hydrogen customer needs new-build distribution
+    (Appendix~\ref{sec:results:h2infra}).}
+    \includegraphics[width=\textwidth]{paper/P09_h2_gap_delivery.pdf}
+    \label{fig:h2gap}
+    \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+\end{figure}
+
+The ranking in Figure~\ref{fig:h2gap}a resolves RQ1 at country level, and it is a
+ranking, not a single threshold. Under the central hydrogen trajectory, with the
+per-country delivered-hydrogen cost set by the bottom-up supply model of
+Appendix~\ref{sec:method:h2} and with the seasonal store charged on the winter-weighted
+fraction of the hydrogen heating load, the best heat pump is cheaper than the hydrogen
+boiler in 22 of the 29 countries in 2050 and dearer in the other 7. The 29-country
+median gap, hydrogen minus the best heat pump, is $+$\euro{}15.4/MWh and the mean
+$+$\euro{}19.7/MWh; weighted by heat demand it narrows to $+$\euro{}1.4/MWh, because the
+large north-western markets are the ones that sit on hydrogen's side of the line.
+
+The distribution is right-skewed (skewness $+0.86$), so the mean is pulled upward by a
+tail of countries in which hydrogen loses heavily. The heat pump's margin is widest in
+Malta ($+$\euro{}99/MWh), Cyprus ($+$\euro{}88), Hungary ($+$\euro{}61), Greece
+($+$\euro{}48) and Bulgaria ($+$\euro{}41). Hydrogen retains a lead in seven markets,
+Denmark ($-$\euro{}30/MWh), Germany ($-$\euro{}25), the United Kingdom ($-$\euro{}20),
+the Netherlands ($-$\euro{}9), Belgium ($-$\euro{}8), Ireland ($-$\euro{}6) and Poland
+($-$\euro{}2). Five of them, including the four widest, are salt-cavern markets; Belgium
+and Ireland survive on very high retail electricity prices while paying the higher
+non-cavern storage rate, and only Poland's margin is narrower.
+
+That concentration is the structural finding of Test~1. Space heating draws about three-quarters of its annual energy between October and March, and electrolytic production is far flatter, so a hydrogen
+heating load creates a seasonal imbalance that has to be stored. Storing it costs
+about \euro{}1.5/kg where salt caverns are available and about \euro{}3.0/kg where
+they are not (Appendix~\ref{sec:method:h2}), which is worth \euro{}12.1/MWh of
+useful heat in cavern-endowed Germany against \euro{}28.4/MWh in cavern-free Spain.
+Hydrogen's base-load case therefore concentrates where the geology makes seasonal
+storage cheap, which is the same condition that decides the peaking arena outright.
+
+How much of that concentration the geology actually carries needs stating
+separately, because the storage charge sets how wide each margin is without selecting
+the set. Priced at the punitive non-cavern rate everywhere, Denmark still leads by
+\euro{}17.6/MWh, Germany by \euro{}13.0 and the United Kingdom by \euro{}7.8, while
+Belgium and Ireland pay that rate already and hold on \euro{}7.5 and \euro{}5.8. Only
+the Netherlands and Poland change hands. Running the counterfactual the other way,
+charging the cheap cavern rate to all
+29, moves the heat-pump count to 19 of 29 against 22 in the baseline and 24 with no
+cavern anywhere, so the whole geological binary is worth three markets below the
+baseline 22 and two above it. Cavern endowment decides two of the seven holds. What decides the other
+five is the retail electricity tariff on the rival carrier, which is a fiscal choice and not a physical endowment, and that is the larger cause of the exception.
+The two
+country-specific prices that earlier drafts read as the drivers of the ordering now
+act as modifiers within it:
+\begin{enumerate}
+    \item \textbf{Cheap domestic green hydrogen.} Countries with strong wind and
+    low capital costs (Ireland, Denmark, the Baltics and Finland) produce green
+    hydrogen below the 29-country median (a supply multiplier of 0.77 to 0.87;
+    Appendix~\ref{sec:sensitivity:h2supply}), which narrows the gap against the heat
+    pump; warm, high-WACC and island economies (Greece, Iberia, Cyprus and Malta)
+    cannot, and sit at the far end of the heat-pump side.
+    \item \textbf{Expensive heat pumps.} A cold climate and high residential
+    electricity prices raise heat-pump operating cost, narrowing the gap from the
+    other side. This is why Germany and Belgium, despite only median-cost hydrogen,
+    are among the seven, and why the warm islands, with very cheap heat-pump heat,
+    sit at the opposite extreme.
+\end{enumerate}
+Neither price condition is on its own decisive, and neither is the geology. Ireland has the cheapest
+delivered hydrogen in the study area and still holds a lead of only
+\euro{}6/MWh, while the widest leads belong to the countries in which cheap
+molecules, dear taxed electricity and cavern storage coincide.
+
+One qualification governs how much weight the seven remaining hydrogen leads can
+bear. The comparison sets an untaxed molecule against taxed retail electricity.
+By 2050 the median study-area household pays roughly \euro{}209/MWh for delivered
+electricity inclusive of levies, taxes and network charges, against roughly
+\euro{}50/MWh for hydrogen delivered and untaxed, so what survives of hydrogen's
+base-load lead is a difference in fiscal treatment as much as a difference in
+technology. Equalising the levy treatment of the two carriers would remove most of
+it, and would therefore widen the heat pump's margin, not narrow it. The asymmetry now runs with the headline result, and its bearing has moved accordingly. It no longer qualifies a hydrogen lead across half the study
+area; it explains why any hydrogen lead remains at all.
+
+A second objection bears on the molecule's assumed provenance, and it points the
+same way. Our central trajectory prices green hydrogen at about \euro{}50/MWh
+delivered to the gate. The one dedicated assessment of hydrogen for buildings
+concludes that any hydrogen actually serving heat would be blue, not green,
+at approximately \euro{}81/MWh, because the volumes heating requires at the times it
+requires them are not the volumes a green electrolysis fleet is being built to
+supply \citep{Dickel2024ET29}. That is a wedge of \euro{}31/MWh of fuel, wider than
+the widest of the seven surviving hydrogen leads, set against a median country gap
+of \euro{}15.4/MWh that already runs against hydrogen. Repricing the molecule on
+that basis moves every country further towards the heat pump, and how far depends on
+how a single German estimate is read. Read as a European price, a flat \euro{}81/MWh at
+every gate leaves the heat pump cheaper in all 29 and closes every one of the seven
+leads. Read as a green-to-blue ratio, so that each country keeps its relative position,
+it leaves the heat pump cheaper in 28 and Denmark alone still holding. The base-load
+verdict against hydrogen therefore survives the provenance objection on either reading,
+and the flat reading is the one both this paper and the submission quote.
+
+The two objections are independent and both run with the headline and not against it.
+The base-load ranking of Figure~\ref{fig:h2gap}a is therefore a conservative statement
+of the heat pump's advantage, since the two assumptions that remain most generous to
+hydrogen, its fiscal treatment and its assumed provenance, would each widen that
+advantage if they were corrected. The two objections do not carry equally to the peaking
+result, and the difference matters. The fiscal one does not touch it, since both
+turbines price at wholesale and neither pays a household levy. The provenance one does.
+
+Priced flat at the \euro{}81/MWh of the model's own blue route
+\citep{IEAGHG2022blue}, which is the provenance the one dedicated assessment of heating
+hydrogen concludes it would have \citep{Dickel2024ET29}, the hydrogen turbine reaches
+about \euro{}289/MWh-e against the gas peaker's
+\euro{}256, and the cavern win reverses in all seven markets; read instead as a
+green-to-blue ratio the seven hold, with the advantage falling from \euro{}72 to 89 down
+to \euro{}30 to 57/MWh-e. The capital-recovery result is invariant either way, because a
+winner's rent is the scarcity premium times its run hours and carries no fuel term. So
+the peaking win is materially exposed to hydrogen's provenance and may not survive it.
+The missing-money finding survives it. Hydrogen deployment in buildings before 2050
+therefore turns on targeted support justified by co-benefits beyond delivered cost,
+namely gas-grid asset utilisation, energy-security diversification, and the avoidance of
+costly retrofit in hard-to-treat building segments.
+
+\noindent The detailed treatment of hydrogen distribution-infrastructure cost is given in Appendix~\ref{sec:results:h2infra}.
+
+\subsection{Test 2: Peaking Dispatch (Building and Grid Scale), the Merit-Order Niche}
+\label{sec:results:meritorder}
+
+Test~1 priced hydrogen as a base-load supplier and found the best heat pump ahead in 22
+markets and hydrogen ahead in seven, five of them cavern-endowed. The base-load frame
+is, however, only one facet of RQ1. Hydrogen's advocates implicitly price it as a
+\emph{peaking} producer, the dispatchable source that serves only the cold-snap peak,
+when air-source heat-pump coefficients of performance collapse and the power system is
+stressed. This is \emph{Test~2}, the peaking facet of RQ1. We reprice hydrogen as a peaker and ask where its marginal operating cost wins. Test~2 identifies which
+countries' hydrogen wins the peaking dispatch; but Test~3, nested within it
+(Section~\ref{sec:results:missingmoney} and Appendix~\ref{sec:results:dispatch}), asks whether
+that peaker can then recover its capital from market rents, so the two tests are not
+independent and must be read together to bound hydrogen's role.
+
+The peaking frame does not replace the base-load answer; it is the
+second of the two facets the opening distinguished, and the integrated answer combines
+them at the end of this section. We run the peaking test as a single nested argument in
+three parts: the peak at the building and grid scale (immediately below), the peak
+inside district heating (Appendix~\ref{sec:results:dhmerit}), and the
+investment-feasibility check (Test~3, Section~\ref{sec:results:missingmoney} and Appendix~\ref{sec:results:dispatch}), into which the hour-resolved verification of the cold snap
+is folded. That last part asks whether a peaker that wins the dispatch can also be
+financed, and its negative answer bounds the peaking niche on its own terms,
+independently of what the base-load comparison found.
+
+We therefore model the winter peak explicitly. The top slice of each country's
+heat load-duration curve, the energy above the 2,000-hour demand level and
+approximately 12 to 18 per cent of annual heat, must be met by a quick-start
+dispatchable source. Three candidates compete on marginal operating cost: a gas
+peaker (fuel plus ETS2 carbon), a hydrogen peaker (delivered fuel plus a
+seasonal-storage adder of approximately \euro{}50/MWh-heat where salt caverns exist
+and approximately \euro{}100/MWh where they do not, our own assumptions, consistent in
+order with the bulk-storage rates of \citet{Lord2014GeologicStorage},
+\citet{Papadias2021BulkStorage} and \citet{Talukdar2024UHSEurope}, applied to the
+cavern geology of \citet{Caglayan2020caverns}),
+and the cold-snap heat pump (running at approximately 0.6 of its seasonal
+coefficient of performance against a scarcity electricity price).
+
+The scarcity electricity price is \emph{derived} from the power
+sector's own merit order through Eq.~\eqref{eq:peakprice}
+(Appendix~\ref{sec:method:merit}). The
+marginal winter unit, a gas OCGT or an H$_2$-ready turbine at wholesale fuel
+prices, carbon-priced, plus a scarcity premium $\pi^{\mathrm{s}}$, sets it per
+country and scenario. This endogenous price averages
+\euro{}215/MWh under Current Policies, \euro{}240 under Stated Policies and
+\euro{}307 under Net Zero. The high carbon price loads the marginal gas unit and
+makes the cold snap \emph{dearer} in high-ambition worlds. Under H2
+Push, hydrogen turbines become the price-setting unit in cavern-endowed countries,
+so cheap hydrogen partially cannibalises its own heating niche by lowering the very
+peak price that hydrogen-for-heat must beat, to an average of \euro{}237 across the
+units it sets.
+
+\begin{figure}[H]
+    \centering
+    \caption{The winter heat peak, in load, price and dispatch. Panel~(a) is the heat
+    load duration curve for three representative countries, as a multiple of each one's
+    annual mean, with the shaded band the peak slice the peaker is sized against.
+    Panel~(b) gives the modelled cold-snap electricity price by scenario, the vertical bar spanning the 29 countries and the dot their mean. The open diamond on H2~Push is the mean over the seven countries in which the hydrogen turbine is the marginal unit at the winter peak, which is the \euro{}237 the text quotes. Panel~(c) is a grid of which countries hydrogen wins on the building winter peak in each scenario, one row per country and shaded where it wins, with the win count out of 29 under each column, on the symmetric accounting basis that charges hydrogen its last-mile network.}
+    \includegraphics[width=\textwidth]{paper/P10_winter_peak.pdf}
+    \label{fig:meritorder}
+    \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+\end{figure}
+
+Hydrogen's derived heating share is then the peak slice it actually wins, and the
+result bounds hydrogen tightly. Panel~c of Figure~\ref{fig:meritorder} carries the
+country grid behind the counts that follow, on the symmetric basis that charges hydrogen
+the same last-mile adder its base-load comparison uses. Hydrogen is the cheapest peaking
+option in
+\textbf{0 of 29} countries under Current Policies, \textbf{2} under Stated Policies (NL
+and DK), \textbf{7} under Net Zero, and \textbf{14} under H2 Push, led in each case
+by the cavern-endowed north-west European cluster. Leaving that adder off, as an earlier
+draft did, gives 0, 4, 9 and 16. The ordering is instructive. It
+is the carbon price on the competing gas peaker that opens the niche, since the
+low-carbon Current and Stated worlds admit few or none, and cheap hydrogen layered
+on a high carbon price then widens it, so H2 Push, carrying both levers, wins the
+most. Weighted by demand, the winning peak slices correspond to a 29-country hydrogen share
+of 0, 0.6, 7.5 and 9.0 per cent of useful heat across the four scenarios, against
+0, 5.1, 7.9 and 9.3 on the earlier draft's basis. Those are the
+merit order's own derived shares, and the scenario ceilings of
+Section~\ref{sec:results:techshares} sit at or below them, so the ceiling is bounded by
+the dispatch and is not the same quantity.
+
+The two facets of RQ1 can now be read together, and they agree because they measure the
+same thing, the cost of holding a molecule from the season in which it is cheap to make
+to the season in which it is wanted. Geology sets that cost in both, which is why the
+base-load exceptions and the widest peaking margins fall in the same cavern-endowed
+north-west.
+
+The integrated answer to RQ1 is that hydrogen does not drive a spontaneous building-heat
+transition, and the reason is now single, not compound. In most of the study area
+hydrogen loses the base-load comparison because it must pay for the seasonal store that
+its own load shape creates, and cheap storage is what most of its exceptions have in
+common; inside the cavern endowment it can also win the cold-snap dispatch, yet the
+peaker that would serve that dispatch cannot recover its capital from market rents, as
+Test~3 now shows. Hydrogen's role in heat remains conditional on storage geology and on
+policy support, not on delivered cost alone.
+
+\subsection{Test 3: Investment Feasibility, the Missing-Money Caveat}
+\label{sec:results:missingmoney}
+
+Winning the dispatch is necessary but not sufficient. A private investor must also recover the
+peaker's capital from the few hours it runs. Reinterpreting the Test~2 peakers through a
+capital-recovery lens, \emph{no hydrogen peaker is privately financeable from market rents, in any
+country and in any scenario}, even where its operating cost wins the cold-snap dispatch. Over its
+roughly 500 running hours of the heat-side peak slice, the inframarginal rent it earns (the clearing
+price minus its own marginal cost) falls far short of its annualised capital requirement of about
+\euro{}52 to 73/kW-yr.
+
+In the power arena, whose fleet, running hours and cumulative ledger are derived in
+Section~\ref{sec:power} and quoted here only for the comparison, the capital-recovery
+condition of Eq.~\eqref{eq:powerrecovery} (Appendix~\ref{sec:method:merit}) gives
+Denmark as
+the best case at about 40~per cent, most
+winners recover well under 20, and the capacity-weighted average across the five cavern markets that build one is about 9~per cent. The heat-side peaker recovers about 20~per cent, aggregated across the 29
+winning country-scenario combinations, which 16 countries generate across three scenarios. It
+recovers the more of the two for a reason that is arithmetic and not economic. The
+heat-side slice runs about 519 hours against the power fleet's 139, so the same scarcity
+margin is earned over nearly four times as many hours. Neither recovers its capital.
+Figure~\ref{fig:missingmoney} ranks all 29 heat-side winners on the share of capital their rent returns, and the full per-country and per-scenario table is reported in the supplementary material. Not one reaches half of break-even. The best pair, Sweden and Denmark under H2~Push,
+stops just under 40~per~cent, and 12 of the 29 sit below 20.
+
+This is the classic
+\emph{missing-money} problem of low-utilisation peaking plant \citep{Joskow2008capacity}, and it is
+reported here as a caveat to the operating-cost result. It does
+not stop hydrogen setting the price and taking the role, but it means a deliberate hydrogen-peaker
+build implies a standing capacity payment. It is this investment-side shortfall that bounds the
+peaking niche of Test~2, and it does so independently of the base-load comparison, since a niche
+that cannot be financed from market rent does not widen on delivered cost alone. Crediting the same power peaker with
+a district-heating heat offtake (a combined power-and-heat mode) lifts its cumulative position by
+only about \euro{}8 to 16~billion, 2 to 4~per cent of the roughly \euro{}357~billion
+shortfall.
+Running only about 139 hours a year, it has little heat to sell, so a
+fast-start power peaker is a poor heat-led cogeneration plant. Hydrogen's genuine cogeneration value lies in the separate, heat-led
+district-heating case (Appendix~\ref{sec:results:dhmerit}), where the unit runs an order of magnitude more hours.
+
+\begin{figure}[H]
+    \centering
+    \caption{\textbf{Capital recovery of the heat-side hydrogen peaker.} Every
+    country-scenario combination that wins the cold-snap dispatch. Recovery is the inframarginal rent over the annualised capital requirement, so full recovery is 100~per cent. The axis is scaled to the values the model produces, whose maximum is 39.9, and break-even therefore sits off it to the right.}
+    \includegraphics[width=0.80\textwidth]{paper/P11_missing_money.pdf}
+    \label{fig:missingmoney}
+    \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+\end{figure}
+
+\noindent The hour-resolved dispatch (Appendix~\ref{sec:results:dispatch}), the heat-led
+district-heating merit order (Appendix~\ref{sec:results:dhmerit}), the
+network-infrastructure bill of each pathway (Appendix~\ref{sec:results:infrabill}) and the
+Switzerland import case for RQ2 (Appendix~\ref{sec:results:switzerland}) are
+treated in full in the supplementary methodology.
