@@ -1,0 +1,23 @@
+# EU Building Stock Observatory (BSO) -- Portugal residential indicators
+#
+# Used by 03_heat_intensity.py for (1) the unknown-cohort stock-weighted
+# fallback intensity and (2) the BSO reconciliation row.
+#
+# stock_pct_pt: share of the Portuguese residential stock by construction
+#   cohort. Censos 2021 reports 53.5% of buildings built before 1980;
+#   substantial 1990s-2000s growth. Sums to 100.
+#
+# bso_intensity_kwh_m2_yr: BSO-style per-cohort national-average residential
+#   heat intensity (delivered). DERIVED from the Spanish-proxy TABULA per-cohort
+#   class-average space-heating need x climate multiplier (0.6000) x retrofit
+#   blend (0.935) + DHW. Portugal's mild climate produces low intensities.
+#
+# Source: INE Portugal Censos 2021; Spanish-proxy TABULA (es_intensities.csv).
+#
+cohort,stock_pct_pt,bso_intensity_kwh_m2_yr,note
+pre-1945,10,95,Pre-WWII masonry stock
+1946-1970,20,86,Post-war reconstruction era
+1971-1990,30,72,1970s-80s expansion era
+1991-2010,30,57,1990s-2000s construction boom
+2011-2020,9,40,Recent high-efficiency new-build
+post-2020,1,29,nZEB new-build

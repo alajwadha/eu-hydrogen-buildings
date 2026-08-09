@@ -1,0 +1,27 @@
+{
+  "skill_name": "manuscript-integrity",
+  "fixture": "/home/user/manuscript-integrity-workspace/fixture",
+  "evals": [
+    {
+      "id": 0,
+      "name": "find-stale-numbers-against-artefacts",
+      "prompt": "I re-ran the analysis in code/analysis.py and I think the write-up has drifted. Can you check the numbers in paper/main.tex, paper/supplement.tex and paper/cover_letter.md against what results/summary.csv and results/recovery_path.csv actually say? Tell me exactly what's wrong and where.",
+      "expected_output": "Identifies the scope error (39 to 74 payment range whose 74 comes from a non-building site; correct 39 to 54), the count contradiction (three vs four building sites), the shape claim contradicted by the monotone recovery path, and the unsourced connection-charge figures. Reports file:line.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "name": "build-a-reusable-gate",
+      "prompt": "This manuscript keeps going stale every time I re-run the model. I want a check I can run before every submission that fails loudly if a number in the prose stops matching the CSVs. Set it up for this project.",
+      "expected_output": "Builds a runnable checker over all three documents, wired to recompute values from the CSVs rather than hard-coding them, with patterns that catch new wrong values rather than only known-bad strings, and verifies it fires by breaking a value deliberately.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "referee-with-artefact-access",
+      "prompt": "Referee this paper for me the way a hard journal reviewer would. Score it out of 10 and give me major and minor points I can act on.",
+      "expected_output": "Runs a referee pass that checks claims against the committed CSVs rather than reading the prose alone, scores with a stated band meaning, gives file:line for findings, and flags the untraceable connection-charge figures as the most serious category.",
+      "files": []
+    }
+  ]
+}

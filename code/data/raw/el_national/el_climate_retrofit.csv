@@ -1,0 +1,26 @@
+# Greece climate + retrofit-state national assumptions
+#
+# Legacy national-parameters file consumed by 03_heat_intensity.py. The
+# authoritative source is el.yaml; this file mirrors the values for
+# documentation. All values are numeric.
+#
+# Greece is a DIRECT TABULA country: no proxy, climate_multiplier = 1.0.
+# Note (2026-05-19): an Option B reference-HDD correction (tabula_reference_hdd
+# = 1100, mult = 1.4545) was briefly applied and then REVERTED after the
+# Group 3 Colab run; the correction moved bottom-up further from Hotmaps, not
+# closer. See literature/climate_reference_hdd_audit.md.
+# Sources: Eurostat nrg_chdd_a (HDD); Greek TABULA / NOA / NTUA / CRES
+# (retrofit factors, DHW); Exoikonomo programme reporting (retrofit shares).
+#
+parameter,value,unit,source
+hdd_el_2018_2022_avg,1600.0,degree-days/yr,"Eurostat nrg_chdd_a (estimate; 2022 confirmed 1538)"
+hdd_proxy_2018_2022_avg,1600.0,degree-days/yr,direct TABULA country (proxy = self)
+climate_multiplier,1.0,dimensionless,direct Greek TABULA
+retrofit_share_original,0.85,fraction,modelling assumption (Exoikonomo ~1 pct deep-renovated)
+retrofit_share_standard,0.10,fraction,modelling assumption
+retrofit_share_advanced,0.05,fraction,modelling assumption -- Exoikonomo deep retrofits
+retrofit_factor_standard,0.65,multiplier,Greek TABULA standard refurbishment (provisional)
+retrofit_factor_advanced,0.35,multiplier,Greek TABULA advanced refurbishment (provisional)
+dhw_intensity_sfh,18.0,kWh/m2/yr,Greek TABULA (provisional)
+dhw_intensity_mfh,16.0,kWh/m2/yr,Greek TABULA (provisional)
+non_residential_intensity,80,kWh/m2/yr,estimate (Greek non-residential space heating)

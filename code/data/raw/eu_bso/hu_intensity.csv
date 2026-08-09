@@ -1,0 +1,29 @@
+# EU Building Stock Observatory (BSO) -- Hungary residential indicators
+#
+# Used by 03_heat_intensity.py for (1) the unknown-cohort stock-weighted
+# fallback intensity (stock_pct_hu column) and (2) the BSO reconciliation row.
+#
+# stock_pct_hu: share of the Hungarian residential stock by construction
+#   cohort. Hungary has a pre-1945 villa / kispolgari stock, a substantial
+#   1949-1989 panelhaz large-panel era and Kadar-kocka (Kadar-cube SFH), and
+#   post-1990 detached-SFH plus apartment construction. Distribution
+#   approximated from KSH 2022 census (lakasallomany epitesi ev szerint).
+#   Sums to 100. NEEDS_VERIFY exact KSH 2022 figures.
+#
+# bso_intensity_kwh_m2_yr: BSO-style per-cohort national-average residential
+#   heat intensity (delivered). DERIVED from the Germany-proxy TABULA
+#   per-cohort class-average space-heating need x climate multiplier (0.7394)
+#   x retrofit blend (0.9029) + DHW. The EU Building Stock Observatory portal
+#   could not be queried directly; flagged as derived, not an independent BSO
+#   query.
+#
+# Source: KSH 2022 census; de_intensities.csv (German TABULA proxy);
+#   Otthon Felujitasi / Panel Plus retrofit shares.
+#
+cohort,stock_pct_hu,bso_intensity_kwh_m2_yr,note
+pre-1945,12,191,"Pre-WWII masonry villa + kispolgari (BME; provisional)"
+1946-1970,22,187,"Early socialist + first panelhaz cohort"
+1971-1990,35,122,"Peak panelhaz era + Kadar-kocka SFH; aggressive Panel Plus retrofit 2014-2020"
+1991-2010,19,80,"Post-transition new-build; EPBD-aligned"
+2011-2020,9,66,"7/2006 TNM and 2017 EPBD recast"
+post-2020,3,60,"nZEB per EPBD recast"

@@ -1,0 +1,194 @@
+# Country configuration: Switzerland (CH)
+# ======================================
+# All Switzerland-specific parameters for the building-stock pipeline.
+# Methodology: literature/switzerland/classification_methodology.md.
+#
+# Schema version: 1.
+# STATUS: DRAFT -- non-EU. Switzerland is NOT a TABULA-12 country; Austria (AT)
+# is the climate-corrected proxy (shared SIA/OIB Alpine-continental tradition).
+# Build group 7 (UK + CH).
+
+country_code: CH
+country_name: Switzerland
+
+# -- EUBUCCO data source -----------------------------------------------------
+# COVERAGE: EUBUCCO includes CH (v0.1 + v0.2). CH footprints are GOVERNMENT-
+# sourced (swisstopo), so geometry is excellent -- BUT per Milojevic-Dupont
+# 2023 Table 1 the CH source has ~100pct height, ~0pct construction_year,
+# ~0pct type. CONSEQUENCE: cohorts + SFH/MFH split CANNOT be read from EUBUCCO;
+# nearly every building is 'unknown' cohort -> result driven entirely by the
+# ch_intensity.csv BSO stock weights (RegBL/GWR). Most fallback-dependent
+# country in the build.
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - CH01
+    - CH02
+    - CH03
+    - CH04
+    - CH05
+    - CH06
+    - CH07
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  license: ODbL v1.0
+  # NO area_correction in this initial build. CH vacancy is very low (~1pct);
+  # the larger consideration is alpine Zweitwohnungen (~10pct of stock, PARTIALLY
+  # heated -- frost protection + ski-season use, so not excluded, possibly a
+  # partial derate in high-second-home NUTS3). Sized only after first build.
+
+# -- NUTS3 regions (NUTS CH0xx; 26 cantons-grouped) -----------------------------
+nuts3_regions:
+    - CH011
+    - CH012
+    - CH013
+    - CH021
+    - CH022
+    - CH023
+    - CH024
+    - CH025
+    - CH031
+    - CH032
+    - CH033
+    - CH040
+    - CH051
+    - CH052
+    - CH053
+    - CH054
+    - CH055
+    - CH056
+    - CH057
+    - CH061
+    - CH062
+    - CH063
+    - CH064
+    - CH065
+    - CH066
+    - CH070
+
+# -- Geographic bounding box (WGS84) -----------------------------------------
+bbox_wgs84:
+  lon_min: 5.96
+  lat_min: 45.82
+  lon_max: 10.49
+  lat_max: 47.81
+
+# -- TABULA building typology source -----------------------------------------
+tabula:
+  source_country: AT
+  source_country_name: Austria
+  intensities_file: code/data/raw/tabula/at_intensities.csv
+  reason_for_proxy: |
+    Switzerland has no TABULA-12 typology. Austria is the closest TABULA
+    country: shared SIA/OIB-aligned Alpine-continental construction code, same
+    construction-period bands, similar cold climate. CH heat intensities are
+    AT-derived, climate-corrected by HDD_CH/HDD_AT (1.0328). Swiss-direct
+    SwissRes (Streicher 2019 EPFL) + BFE Gebaeudeparkmodell anchor the national
+    total as a cross-check.
+
+# -- Climate correction ------------------------------------------------------
+# CH cold/alpine, strong altitude variation. Eurostat nrg_chdd_a reports CH;
+# 2018-2022 mean at base 15 C ~3150 HDD (NEEDS_VERIFY; ~3000-3300). AT proxy
+# national-mean calibration (tabula_reference_hdd = AT 3050) ->
+# climate_multiplier = 3150 / 3050 = 1.0328.
+climate:
+  hdd_country: 3150
+  hdd_proxy: 3050
+  tabula_reference_hdd: 3050
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  climate_multiplier: 1.0328
+  source: Eurostat nrg_chdd_a 2018-2022 mean estimate NEEDS_VERIFY; tabula_reference_hdd from AT calibration
+
+# -- Retrofit-state distribution ---------------------------------------------
+# Low (~1pct/yr) renovation rate; pre-1980-dominated stock (~70pct). Das
+# Gebaeudeprogramm + cantonal funding + GEAK Plus drive retrofit; ~64pct still
+# oil/gas heated.
+retrofit:
+  share:
+    original: 0.58
+    standard: 0.32
+    advanced: 0.10
+  factor:
+    standard: 0.65
+    advanced: 0.40
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # 0.58 + 0.32x0.65 + 0.10x0.40 = 0.828
+  blend_value: 0.828
+  share_source: |
+    Modelling assumption grounded in Das Gebaeudeprogramm reporting, the
+    ~1pct/yr Swiss renovation rate, GEAK EPC distribution (D-F dominant), and
+    pre-1980 stock share (~70pct, Streicher 2019). Retrofit factors PROVISIONAL
+    (AT proxy).
+
+# -- Domestic Hot Water (DHW) intensity --------------------------------------
+dhw:
+  sfh: 18.0
+  mfh: 20.0
+  unit: kWh/m2/yr
+  source: SIA 380/1 ~14 kWh/m2 nominal, ~20-25 realised; AT-proxy adjusted (provisional)
+
+# -- Non-residential intensity (placeholder) ---------------------------------
+non_residential_intensity:
+  value: 120.0
+  unit: kWh/m2/yr
+  source: estimate -- Swiss non-residential (tertiary) space heating; Alpine-continental
+  status: rough placeholder; contributes 0 TWh; flagged in methodology
+
+# -- External reconciliation benchmarks --------------------------------------
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 77.90            # sum of heat_2015_MWh across all 26 CH NUTS3 rows
+    year: 2015                  #   in building_stock_nuts3.csv. Public Hotmaps was EU28
+                                #   only, but the repo file carries CH. Verified 2026-05-21.
+    source: building_stock_nuts3.csv; sum across all 26 CH NUTS3 rows (CH-extended Hotmaps)
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 480
+    eubucco_mm2: null
+    census_eubucco_ratio: null
+    source: BFS -- ~4.8 M dwellings x ~100 m2 ~ 480 Mm2 (vacancy ~1pct so occupied ~ total)
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). eubucco_mm2 +
+      ratio PENDING first Colab build. See literature/eubucco_census_area_audit.md.
+  eu_bso:
+    total_twh: 56.0
+    year: 2022
+    source: anchored estimate (BFE residential space-heating final energy ~200 PJ ~ 56 TWh)
+  odyssee_mure:
+    total_twh: 56.0
+    year: 2022
+    source: BFE Gesamtenergiestatistik 2022 (Raumwaerme, Haushalte) ~200 PJ
+    note: National total only; final-energy basis -- definitional gap vs Hotmaps useful demand.
+
+# -- Hotmaps NUTS3 ID for model comparison -----------------------------------
+hotmaps_nuts3_id: CH040   # Zurich region (representative)
+
+# -- Building classification rules -------------------------------------------
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+
+# -- Provenance + change log -------------------------------------------------
+_meta:
+  created: 2026-05-21
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 7)
+  last_verified: 2026-05-21
+  schema_version: 1
+  status: DRAFT -- AT-proxy build; non-EU. CRITICAL -- EUBUCCO CH has ~0pct
+    construction_year/type, so result is fallback-dominated (driven by ch_intensity.csv
+    BSO stock weights). Area/occupancy correction pending first reconciliation.
+  references_doc: literature/switzerland/classification_methodology.md
+  verified_2026_05_21:
+    - eubucco.nuts2_partitions (7 CH NUTS2; CH01-CH07 Grossregionen)
+    - nuts3_regions (26 CH NUTS3; CH0xx cantons-grouped)
+    - reconciliation_benchmarks.hotmaps = 77.90 TWh (26 CH rows)
+    - EUBUCCO CH source = government/swisstopo (Milojevic-Dupont 2023 Table 1)
+  needs_verify_summary:
+    - HDD 2018-2022 mean (CH 3150) -- estimate; pull CH from Eurostat nrg_chdd_a.
+    - tabula proxy = AT; verify AT-proxy band shape vs Streicher 2019 SwissRes.
+    - retrofit shares (0.58/0.32/0.10) and factors (0.65/0.40) -- PROVISIONAL.
+    - EUBUCCO CH construction_year ~0pct -> result fallback-dominated; bind RegBL/GWR age+type.
+    - census_floor_area.eubucco_mm2 + ratio -- pending first build.

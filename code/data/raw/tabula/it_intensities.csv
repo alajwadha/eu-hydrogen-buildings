@@ -1,0 +1,78 @@
+# TABULA Italy synthetical-average residential building intensities
+#
+# Source: TABULA / EPISCOPE project. The Italian national residential typology
+#   was produced by the TEBE research group at Politecnico di Torino (POLITO).
+#   - Country page: episcope.eu/building-typology/country/it
+#   - Loga, Stein, Diefenbach (2016). TABULA building typologies in 20 European
+#     countries. Energy & Buildings 132:4-12. DOI 10.1016/j.enbuild.2016.06.094
+#   - Ballarini, Corrado, Citterio et al. (POLITO) papers on the Italian
+#     residential building typology and the TABULA Italian archetypes.
+#
+# Italy IS a TABULA country -- this is the DIRECT national typology, used
+# without a proxy (tabula.source_country = IT in it.yaml). No climate
+# correction (climate_multiplier = 1.0).
+#
+# CLIMATE ZONE: the Italian TABULA defines three climate zones (Alpine
+# >3000 HDD, Middle 2100-3000 HDD, Mediterranean <2100 HDD). The values below
+# are for the MIDDLE reference zone, the headline Italian TABULA zone.
+#
+# IMPORTANT -- VALUES ARE RESEARCH-SYNTHESISED BEST ESTIMATES, NEEDS_VERIFY
+# ------------------------------------------------------------------------
+# The full per-class per-period numeric matrix of the Italian TABULA is held
+# in the TABULA WebTool (interactive) and the POLITO Building Typology
+# Brochure, which are not machine-extractable. The sh_intensity values below
+# are best estimates synthesised from the published Italian TABULA span of
+# space-heating energy demand (~50-300 kWh/m2/yr across types and ages; oldest
+# detached pre-1945 at the high end, newest post-2005 at the low end; REHVA
+# Journal and Emerald comparative-typology papers) and the POLITO archetype
+# literature. They should be verified against the TABULA WebTool (country IT,
+# Middle zone) before results are reported. Treat as +/-20% uncertainty.
+#
+# Building class mapping (Italian TABULA -> our 4-class scheme):
+#   SFH       <- TABULA SFH  (single-family detached)
+#   MFH_LOW   <- TABULA TH   (terraced house)
+#   MFH_HIGH  <- TABULA MFH + AB (multi-family house + apartment block)
+#   NON_RES   <- not in TABULA; handled separately in 03_heat_intensity.py
+#
+# Cohort mapping (Italian TABULA periods -> our 6 cohorts):
+#   Italian TABULA periods: ...1900, 1901-1920, 1921-1945, 1946-1960,
+#     1961-1975, 1976-1990, 1991-2005, post-2005.
+#   pre-1945    <- ...1900 + 1901-1920 + 1921-1945
+#   1946-1970   <- 1946-1960 + part of 1961-1975
+#   1971-1990   <- 1976-1990 + part of 1961-1975
+#   1991-2010   <- 1991-2005 + post-2005 portion
+#   2011-2020   <- EXTRAPOLATED using the Italian nZEB standard (DM 26/06/2015)
+#   post-2020   <- EXTRAPOLATED (nZEB / post-2021 EPBD)
+#
+# Refurbishment reduction factors (Italian TABULA, typology-averaged): standard
+# refurbishment ~0.62 of existing-state space-heating need; advanced ~0.30.
+# These inform the retrofit blend in it.yaml.
+#
+# DHW: Italian TABULA treats DHW as roughly period-independent, ~18 kWh/m2/yr.
+#
+# Citations:
+#   Ballarini I., Corgnati S.P., Corrado V. (2014). Use of reference buildings
+#     to assess the energy saving potentials of the residential building stock:
+#     the experience of TABULA. Energy Policy 68:273-284.
+#   Loga T., Stein B., Diefenbach N. (2016). Energy & Buildings 132:4-12.
+#
+#
+building_class,cohort,sh_intensity_kwh_m2_yr,dhw_intensity_kwh_m2_yr,source_note
+SFH,pre-1945,260,18,"IT TABULA Middle zone, SFH ...1945 archetypes; ESTIMATE pending WebTool"
+SFH,1946-1970,220,18,"IT TABULA Middle zone, SFH 1946-1960/1961-1975; ESTIMATE"
+SFH,1971-1990,170,18,"IT TABULA Middle zone, SFH 1976-1990; ESTIMATE"
+SFH,1991-2010,115,18,"IT TABULA Middle zone, SFH 1991-2005; ESTIMATE"
+SFH,2011-2020,60,18,"EXTRAPOLATED -- Italian nZEB new-build (DM 26/06/2015); FLAGGED"
+SFH,post-2020,40,18,"EXTRAPOLATED -- post-2021 EPBD nZEB; FLAGGED"
+MFH_LOW,pre-1945,180,18,"IT TABULA Middle zone, TH ...1945; ESTIMATE pending WebTool"
+MFH_LOW,1946-1970,155,18,"IT TABULA Middle zone, TH 1946-1975; ESTIMATE"
+MFH_LOW,1971-1990,125,18,"IT TABULA Middle zone, TH 1976-1990; ESTIMATE"
+MFH_LOW,1991-2010,90,18,"IT TABULA Middle zone, TH 1991-2005; ESTIMATE"
+MFH_LOW,2011-2020,50,18,"EXTRAPOLATED -- Italian nZEB new-build; FLAGGED"
+MFH_LOW,post-2020,32,18,"EXTRAPOLATED -- post-2021 EPBD nZEB; FLAGGED"
+MFH_HIGH,pre-1945,150,18,"IT TABULA Middle zone, MFH/AB ...1945; ESTIMATE pending WebTool"
+MFH_HIGH,1946-1970,125,18,"IT TABULA Middle zone, MFH/AB 1946-1975; ESTIMATE"
+MFH_HIGH,1971-1990,105,18,"IT TABULA Middle zone, MFH/AB 1976-1990; ESTIMATE"
+MFH_HIGH,1991-2010,80,18,"IT TABULA Middle zone, MFH/AB 1991-2005; ESTIMATE"
+MFH_HIGH,2011-2020,45,18,"EXTRAPOLATED -- Italian nZEB new-build; FLAGGED"
+MFH_HIGH,post-2020,28,18,"EXTRAPOLATED -- post-2021 EPBD nZEB; FLAGGED"

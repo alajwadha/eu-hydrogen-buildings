@@ -1,0 +1,30 @@
+country,design_intensity_decline_pct_yr,formula,confidence,source
+AT,0.69,deep0.2*0.5 + medium1.7*0.25 + light3.3*0.05,MED,JRC 2019 depth bands envelope-weighted
+BE,0.68,deep0.2*0.5 + medium1.0*0.25 + light6.5*0.05; capped vs JRC weighted 3.3,MED,JRC 2019 envelope-weighted; JRC weighted (3.3) overstates
+BG,0.81,deep0.1*0.5 + medium1.3*0.25 + light8.6*0.05,MED,JRC 2019 depth bands envelope-weighted
+CY,0.86,deep0.4*0.5 + medium2.0*0.25 + light3.2*0.05,MED,JRC 2019 depth bands envelope-weighted
+CZ,0.71,deep0.1*0.5 + medium1.6*0.25 + light5.2*0.05,MED,JRC 2019 depth bands envelope-weighted
+DE,0.55,deep0.1*0.5 + medium0.9*0.25 + light3.5*0.05; +KfW BEG 2022 lift,HIGH,JRC 2019 + Galvin 2024 supplement
+DK,0.34,deep0.0*0.5 + medium0.6*0.25 + light3.2*0.05,MED,JRC 2019 depth bands envelope-weighted
+EE,0.41,deep0.1*0.5 + medium0.7*0.25 + light3.6*0.05,MED,JRC 2019 depth bands envelope-weighted
+EL,0.49,deep0.2*0.5 + medium1.1*0.25 + light2.3*0.05,MED,JRC 2019 depth bands envelope-weighted
+ES,0.68,deep0.3*0.5 + medium1.7*0.25 + light2.1*0.05,MED,JRC 2019 envelope-weighted
+FI,0.26,deep0.0*0.5 + medium0.3*0.25 + light3.2*0.05,MED,JRC 2019 depth bands envelope-weighted
+FR,0.65,deep0.2*0.5 + medium1.0*0.25 + light4.7*0.05; +ADEME MaPrimeRenov 2021-2023 lift,HIGH,JRC 2019 + ADEME supplement
+HR,0.76,deep0.1*0.5 + medium1.5*0.25 + light6.7*0.05,MED,JRC 2019 envelope-weighted
+HU,0.42,deep0.1*0.5 + medium0.9*0.25 + light2.9*0.05,MED,JRC 2019 envelope-weighted
+IE,0.55,deep0.1*0.5 + medium0.6*0.25 + light3.4*0.05; +SEAI NRP 2022 lift (0.4 deep),HIGH,JRC 2019 + SEAI supplement
+IT,0.85,deep0.3*0.5 + medium1.5*0.25 + light4.0*0.05; +ENEA Superbonus 2022-2023 lift,HIGH,JRC 2019 + ENEA Superbonus
+LT,0.42,deep0.2*0.5 + medium0.7*0.25 + light2.9*0.05,MED,JRC 2019 envelope-weighted
+LU,0.27,deep0.1*0.5 + medium0.4*0.25 + light2.3*0.05,MED,JRC 2019 envelope-weighted (lowest EU)
+LV,0.42,deep0.0*0.5 + medium0.9*0.25 + light3.4*0.05,MED,JRC 2019 envelope-weighted
+MT,0.32,deep0.1*0.5 + medium0.6*0.25 + light2.4*0.05,LOW,JRC 2019 envelope-weighted
+NL,0.47,deep0.1*0.5 + medium0.8*0.25 + light4.3*0.05,HIGH,JRC 2019 + CBS verification
+PL,0.75,deep0.0*0.5 + medium1.5*0.25 + light7.0*0.05,MED,JRC 2019 envelope-weighted
+PT,0.68,deep0.1*0.5 + medium1.3*0.25 + light6.0*0.05,MED,JRC 2019 envelope-weighted
+RO,0.84,deep0.1*0.5 + medium1.3*0.25 + light9.3*0.05,MED,JRC 2019 envelope-weighted
+SE,0.44,deep0.1*0.5 + medium0.7*0.25 + light4.3*0.05,MED,JRC 2019 envelope-weighted
+SI,0.53,deep0.1*0.5 + medium1.3*0.25 + light3.1*0.05,MED,JRC 2019 envelope-weighted
+SK,0.48,deep0.1*0.5 + medium1.0*0.25 + light3.5*0.05,MED,JRC 2019 envelope-weighted
+CH,1.00,BFE Gebaeudeprogramm weighted (Streicher et al 2024); higher than EU avg,HIGH,BFE post-2020 + Nature Comms 2024
+UK,0.46,deep0.1*0.5 + medium1.1*0.25 + light2.7*0.05,MED,JRC 2019 envelope-weighted + EHS cross-check

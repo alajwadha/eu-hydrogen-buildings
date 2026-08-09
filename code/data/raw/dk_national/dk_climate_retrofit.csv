@@ -1,0 +1,16 @@
+# Denmark climate + retrofit-state national assumptions
+# Mirror of dk.yaml.
+#
+parameter,value,unit,source
+hdd_dk_2018_2022_avg,2769,degree-days/yr,Eurostat nrg_chdd_a (JRC AGRI4CAST) 5-year mean
+hdd_proxy_2018_2022_avg,2769,degree-days/yr,direct TABULA country (proxy = self)
+tabula_reference_hdd,2900,degree-days/yr,"DRY 2010 København reference (DK TABULA / SBi 2012:01)"
+climate_multiplier,0.9548,dimensionless,"2769 / 2900 (near-identity)"
+retrofit_share_original,0.65,fraction,"modelling assumption (Energistyrelsen Bygningspuljen + Bolius monitoring)"
+retrofit_share_standard,0.25,fraction,"modelling assumption (Bygningsfornyelse + Boligjobordningen)"
+retrofit_share_advanced,0.10,fraction,"modelling assumption (deep BR18-equivalent renovations ~1pct/yr)"
+retrofit_factor_standard,0.50,multiplier,"DK TABULA standard refurbishment (SBi 2012:01, provisional)"
+retrofit_factor_advanced,0.30,multiplier,"DK TABULA advanced refurbishment (BR18-equiv, provisional)"
+dhw_intensity_sfh,15.0,kWh/m2/yr,"DK TABULA stock-uniform ~15 useful"
+dhw_intensity_mfh,15.0,kWh/m2/yr,"DK TABULA stock-uniform ~15 useful"
+non_residential_intensity,100,kWh/m2/yr,"estimate (Odyssee tertiary 170-185 all uses; SH ~85-100)"

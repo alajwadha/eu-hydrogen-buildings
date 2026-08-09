@@ -1,0 +1,10 @@
+# EU Building Stock Observatory (BSO) -- Bulgaria residential indicators
+# Distribution approximated from NSI Census 2021 dwelling histogram.
+#
+cohort,stock_pct_bg,bso_intensity_kwh_m2_yr,note
+pre-1945,9,180,"Pre-WWII urban masonry + rural fachwerk (Plovdiv, Sofia, Veliko Tarnovo)"
+1946-1970,28,170,"Early socialist masonry + first panelki cohort (BS-2-63 etc.)"
+1971-1990,42,155,"Peak panelki era (Bs-IV-Bl; Bs-69-Sf series); uninsulated large-panel"
+1991-2010,15,90,"Post-1989 transition new-build; first thermal regs 1999"
+2011-2020,5,70,"BG nZEB-track new-build (Naredba 7); NPEEMRB renovations starting"
+post-2020,1,55,"NRRP-funded renovations + nZEB enforcement"

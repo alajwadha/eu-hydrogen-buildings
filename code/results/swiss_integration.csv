@@ -1,0 +1,17 @@
+mode,year,scenario,h2_price,h2_boiler_lcoh,hp_air_lcoh,hp_ground_lcoh,gas_lcoh,winter_elec_price,fp_converged,inc_import_gw,fp_iters,h2_peaker_eur_mwh,hp_peak_eur_mwh,ch_storage_adder,h2_wins_peak
+limit,2025,STATED_POLICIES,200.0,298.28,160.48,175.83,216.0,300.0,True,,,,,,
+limit,2030,STATED_POLICIES,90.0,175.14,152.0,165.85,212.3,285.0,True,,,,,,
+limit,2040,STATED_POLICIES,55.0,134.94,134.59,146.03,188.7,255.0,True,,,,,,
+limit,2050,STATED_POLICIES,50.0,128.03,122.39,131.1,165.9,240.0,True,,,,,,
+eu_feedback_only,2025,STATED_POLICIES,202.3,300.88,160.58,175.92,,306.6,True,7.0,"[300.0, 306.57, 306.57, 306.57]",,,,
+eu_feedback_only,2030,STATED_POLICIES,92.3,177.73,152.1,165.94,,291.5,True,7.0,"[285.0, 291.54, 291.54, 291.54]",,,,
+eu_feedback_only,2040,STATED_POLICIES,57.3,137.51,134.69,146.11,,261.5,True,7.0,"[255.0, 261.47, 261.47, 261.47]",,,,
+eu_feedback_only,2050,STATED_POLICIES,52.3,130.57,122.48,131.18,,246.4,True,7.0,"[240.0, 246.44, 246.44, 246.44]",,,,
+endogenous,2025,STATED_POLICIES,202.3,300.88,158.65,174.24,216.0,182.7,True,,"[300.0, 182.68, 182.68, 182.68]",,,,
+endogenous,2030,STATED_POLICIES,92.3,177.73,150.26,164.36,212.3,172.4,True,,"[285.0, 172.39, 172.39, 172.39]",,,,
+endogenous,2040,STATED_POLICIES,57.3,137.51,133.04,144.74,188.7,152.3,True,,"[255.0, 152.28, 152.28, 152.28]",,,,
+endogenous,2050,STATED_POLICIES,52.3,130.57,120.94,129.92,165.9,141.2,True,,"[240.0, 141.24, 141.24, 141.24]",,,,
+verdict_peak,2050,CURRENT_POLICIES,,,,,,,,,,235.9,62.3,100.0,False
+verdict_peak,2050,STATED_POLICIES,,,,,,,,,,158.2,69.3,100.0,False
+verdict_peak,2050,NET_ZERO,,,,,,,,,,158.2,90.3,100.0,False
+verdict_peak,2050,H2_PUSH,,,,,,,,,,134.8,90.3,100.0,False

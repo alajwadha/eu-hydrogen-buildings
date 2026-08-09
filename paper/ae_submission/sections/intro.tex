@@ -1,0 +1,101 @@
+\section{Introduction}
+\label{sec:intro}
+
+Buildings take roughly 40~per~cent of final energy in the European Union, most of it
+burned for space heating and hot water, which places them at the centre of European
+climate policy \citep{IEA2022buildings,EuropeanCommission2020GreenDeal}. Hundreds of
+billions of euros of that heating plant will be replaced by 2050, and whether that capital
+electrifies the heat or reuses the gas network for hydrogen is a choice slow to unwind. A
+clean option exists, but the difficulty lies in delivery, because heat reaches
+hundreds of millions of dwellings of differing vintage and fabric whose appliances are
+replaced only as they fail \citep{Azevedo2022,Chatterjee2024Navigating}.
+
+European policy has converged on heat pumps as the principal route, and the case is strong.
+A coefficient of performance of two to four draws less final energy than any combustion
+appliance, and the machine decarbonises as the grid does
+\citep{IEA2022heatpumps,Abbasi2021}. However, deployment is slowed by frictions that fall
+unevenly across the stock, among them retrofitting poorly insulated dwellings,
+distribution-grid reinforcement in dense areas, and performance that degrades in the
+coldest weather \citep{Lingard2020Residential,Gibb2023Coming}. We price that reinforcement
+inside the levelised cost of delivered heat, and the same frictions open pockets for a
+gas-based alternative.
+
+Hydrogen is the alternative most often advanced, and the most contested, because a
+low-carbon gas could in principle reuse the existing distribution network and the
+appliance habit of a gas-heated home \citep{Dodds2015,Bothe2021}. REPowerEU raised the EU's 2030 ambition to 20~Mt of renewable and imported supply, with
+buildings among the candidate demand centres
+\citep{REpowerEU2022,EUCommissionSWD2022}, and the 2022 gas crisis sharpened the
+appetite for a storable domestic fuel \citep{Goldthau2023Eu}. However, a substantial
+sceptical literature answers that hydrogen for space heating wastes primary energy,
+competes for scarce electrolytic supply, and understates the cost of network conversion
+\citep{Rosenow2022PipeDream,Rosenow2024MetaReview,Cebon2022,Badakhsh2023Caveats,ICCT2023h2heating}.
+
+The quantitative basis for settling the dispute is thinner than the debate implies, and
+the gaps fall into three groups. The first is spatial resolution. The continental
+assessments resolve the building stock in detail but at national resolution, so they
+cannot see the within-country demand gradient or the storage geology that decide where
+hydrogen might compete \citep{Billerbeck2023Race,Brown2018Synergies}. Sub-national
+European work exists for the hydrogen network itself
+\citep{Neumann2023H2Network,Kountouris2024Unified}, spatially explicit studies are mostly
+single-country \citep{Maestre2022,Huckebrink2022,Hoseinpoori2022}, and the pan-European
+mapping resolves heat demand without a dispatch test
+\citep{Mller2019Heat,Persson2019Heat}. The second is the share itself, which studies
+commonly fix by assumption \citep{Weidner2023Planetary,Quarton2019Curious} and price on
+annual levelised cost, which misstates how a dispatchable fuel competes
+\citep{Joskow2008capacity,Quarton2019Value}. The third is a severed link between heat and
+power, and coupled system studies do model it
+\citep{Zeyen2021Mitigating,Mellot2024Mitigating}. However, they report a system optimum
+rather than the standalone capital-recovery position of a hydrogen peaker market by
+market, which is the quantity a private investor and a capacity mechanism both need.
+
+Against those strands, this paper adds a quantity each leaves out. The review literature
+concludes against hydrogen for domestic heat
+\citep{Rosenow2022PipeDream,Rosenow2024MetaReview} without reporting where the conclusion
+is close, so we reproduce the ordering in 22 of 29 markets, at an all-29 median of
+\euro{}15.4/MWh in the heat pump's favour, and price the seven exceptions individually.
+The sub-national work returns a network plan rather than a plant's balance sheet
+\citep{Neumann2023H2Network,Kountouris2024Unified}, so we return a peaker's standalone
+capital recovery market by market. The firm-capacity literature establishes that
+low-carbon systems need clean firm capacity
+\citep{Sepulveda2018Firm,Bistline2020ValueOfTechnology} without pricing it when the load
+is building heat, so we put that at \euro{}31 to 63/kW-yr.
+
+The advance behind those three is twofold. First, where other work imposes a hydrogen
+share and stops, we impose transparent adoption pathways and then test them against an
+independent dispatch screen, market by market, exposing the cost
+and geology regimes a continental average would bury. Second, we recast the question from
+an energy-share contest into one about capacity and capital, screening the linked arenas
+on one dispatch basis and testing capital recovery on the plant that wins the power
+peak. To deliver both we assemble a bottom-up
+techno-economic model of residential heating across the EU-27, the United Kingdom and
+Switzerland from 2025 to 2050, reconstructing useful heat demand from NUTS3 building
+stock and aggregating it to the country before any cost test, benchmarking it to within $-0.8$~per~cent against an independent regional database,
+and propagating it through eight technologies and four scenarios in a 200-draw Monte Carlo
+\citep{MilojevicDupont2023Eubucco,Loga2016Tabula}.
+
+The accounting is where our numbers part company with published comparisons. On the
+levelised comparison we price the two carriers on a symmetric distribution basis, charging
+the heat pump for the low- and medium-voltage reinforcement its winter peak requires and
+the hydrogen boiler for its own last-mile network and seasonal store, and we size
+equipment capital to peak heat demand, which does not shrink because a machine is
+efficient. Published comparisons differ in which of these they charge, so we sweep each;
+adopting them narrows the heat pump's margin without reversing the median ordering, and
+corners of the sweep do turn it.
+
+On that accounting the best 2050 heat pump undercuts the gas boiler in 24 of 29 countries
+and the hydrogen boiler in 22. Cheap storage sets how wide the remaining seven are, about
+\euro{}12/MWh with salt caverns against a median \euro{}24 without
+\citep{Caglayan2020caverns}, but does not select them, since repriced at the non-cavern
+rate five still hold on retail electricity taxation alone. Repriced on the short-run marginal cost a system operator
+uses, hydrogen wins the cold-snap peak in a minority of markets that grows with policy
+ambition, and no market recovers that peaker's capital, about 9~per~cent in the central case, the classic
+missing-money problem.
+
+These findings answer one research question: under what conditions, and where, is
+decarbonised hydrogen competitive against heat-pump electrification in the buildings of the
+EU-27, the United Kingdom and Switzerland by 2050? Switzerland, a high-cost, hydro-rich and cavern-poor system reliant on imports,
+provides a compact standalone case \citep{Gabrielli2020,IEA2023switzerland}.
+
+The remainder is organised as follows. Section~\ref{sec:method} sets out the model and its
+weather series, Section~\ref{sec:results} the three tests and two cross-checks, and
+Section~\ref{sec:conclusions} the conclusions and policy implications.

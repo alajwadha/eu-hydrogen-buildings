@@ -1,0 +1,20 @@
+EUBUCCO download — Lithuania
+Run at: 2026-05-20 19:46:13 UTC
+============================================================
+
+  dataset: EUBUCCO v0.2 NUTS2=LT01
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=LT01/LT01.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/LT01.parquet
+  status: OK
+  md5: 6b5a9f5c489b9d1fff45389078eafac4
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+
+  dataset: EUBUCCO v0.2 NUTS2=LT02
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=LT02/LT02.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/LT02.parquet
+  status: OK
+  md5: cd22d968e17be6e53418dd8587680121
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+

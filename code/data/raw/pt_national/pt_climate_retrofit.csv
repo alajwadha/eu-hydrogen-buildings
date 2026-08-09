@@ -1,0 +1,22 @@
+# Portugal climate + retrofit-state national assumptions
+#
+# Legacy national-parameters file consumed by 03_heat_intensity.py. The
+# authoritative source is pt.yaml; this file mirrors the values for
+# documentation. All values are numeric.
+#
+# Portugal is a TABULA PROXY country: Spanish TABULA, climate-corrected by the
+# HDD_PT/HDD_ES ratio. Sources: Eurostat nrg_chdd_a; Spanish TABULA / CIEMAT
+# (proxy); Casa Eficiente 2020 / E-Lar.
+#
+parameter,value,unit,source
+hdd_pt_2018_2022_avg,1050.0,degree-days/yr,"Eurostat nrg_chdd_a (estimate; 2020 confirmed 1008, 2022 confirmed 968)"
+hdd_proxy_es_2018_2022_avg,1750.0,degree-days/yr,Eurostat nrg_chdd_a (Spain TABULA reference)
+climate_multiplier,0.6000,dimensionless,1050.0 / 1750.0 (PT/ES HDD ratio)
+retrofit_share_original,0.85,fraction,modelling assumption (low historic renovation base)
+retrofit_share_standard,0.10,fraction,modelling assumption
+retrofit_share_advanced,0.05,fraction,modelling assumption (Casa Eficiente 2020 + E-Lar)
+retrofit_factor_standard,0.65,multiplier,"Spanish TABULA standard refurbishment (proxy, provisional)"
+retrofit_factor_advanced,0.40,multiplier,"Spanish TABULA advanced refurbishment (proxy, provisional)"
+dhw_intensity_sfh,16.0,kWh/m2/yr,Spanish TABULA proxy (provisional)
+dhw_intensity_mfh,14.0,kWh/m2/yr,Spanish TABULA proxy (provisional)
+non_residential_intensity,65,kWh/m2/yr,"estimate (Portuguese non-residential space heating, mild climate)"

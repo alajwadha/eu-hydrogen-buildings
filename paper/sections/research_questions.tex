@@ -1,0 +1,111 @@
+% ─── Research Questions and Scope ────────────────────────────────────────────
+% Target: 1 to 2 pages.
+
+\label{sec:rq}
+
+% ─── Merged Research Questions ───────────────────────────────────────────────
+% Single reconciled RQ set. The introduction (introduction.tex) and this section
+% (research_questions.tex) pose the SAME numbered RQ1/RQ2/RQ3; the literature
+% review (literature_review.tex, sec:lit:gap) states the same content as THREE
+% GAPS, not a second numbered set, and maps gap-for-gap onto these questions
+% ("...it is this that motivates Research Question 2"). The three gaps and the
+% three RQs are therefore one set, restated here with each gap folded into the
+% question that closes it.
+
+This study is organised around three research questions, each posed as the answer to one
+of the three gaps identified in Section~\ref{sec:lit:gap}: the missing NUTS3-resolved
+demand basis for a continental assessment in the updated REPowerEU context (gap one),
+the absence of a hydrogen-versus-heat-pump comparison on a consistent operating-cost
+basis that bounds hydrogen's share by where it can win and caps each scenario at or
+below that bound (gap two),
+and the severed link between the heating choice and the power sector that electrified
+heat runs on, of which the import-reliant Swiss case is the sharpest instance (gap
+three).
+
+RQ1 closes gaps one and two together at the EU scale; RQ2 takes up gap three for
+Switzerland as a full national case in its own right; and RQ3 names the
+buildings-to-power coupling that the severed link implies. Each question is carried in
+full so that the reader can hold the analysis against the question it sets out to
+settle. RQ1 and RQ2 are answered in full by the analysis that follows; RQ3 is scoped to
+the buildings-to-power synergy, which this paper prices on the same operating-cost basis
+as the rest of the analysis, while the cross-sector synergies with industry and
+transport are treated qualitatively and deferred to future work, the precise boundary
+being set out in the RQ3 statement and the scope subsection below.
+
+\begin{description}
+  \item[RQ1 (EU, UK and Switzerland, country-level).] Under what conditions is
+  decarbonised hydrogen cost-competitive for building heat by 2050 under a net-zero
+  2050 requirement, where do those conditions hold, and how do the resulting pathways
+  compare on economic and environmental cost bases? RQ1 takes up the first two gaps together. It addresses hydrogen's heating role at NUTS3 resolution across the EU-27, the United Kingdom
+  and Switzerland, and tests the hydrogen-versus-heat-pump trade-off on a
+  consistent operating-cost basis, the trade-off the critical literature finds
+  decisive but parameter-sensitive \citep{Rosenow2022PipeDream,ICCT2023h2heating}. It asks where hydrogen is deployed, on what cost basis, and in competition with which alternative, and it answers by
+  deriving hydrogen's heating share from where the fuel can win the cold-snap peak
+  in a merit-order dispatch instead of imposing it as an exogenous target, reading
+  levelised cost of heat, carbon abatement and infrastructure cost off the same
+  modelled pathway.
+
+  \item[RQ2 (Switzerland, national case).] How can Switzerland make use of the EU's
+  adoption of hydrogen-based technologies to contribute to its own net-zero 2050
+  aim? RQ2 closes the third gap for Switzerland, a high-cost, hydro-rich, cavern-poor system
+reliant on imported hydrogen \citep{Gabrielli2020,IEA2023switzerland}, carried through the same framework as a
+  full national case, neither subordinate to the EU-wide assessment nor split off
+  into a separate study, because its distinctive position, a near-decarbonised
+  grid, no domestic salt-cavern storage \citep{Caglayan2020caverns}, a reliance on
+  imported hydrogen whose delivered price is the principal lever, and a
+  winter-electricity adequacy gap that any firm-capacity role would have to address
+  \citep{Mellot2024Mitigating}, warrants investigation on its own terms and on the
+  same operating-cost basis as the rest of the analysis. We examine the sensitivity
+  of the optimal Swiss buildings pathway to the import price across the central,
+  rapid and stranded supply trajectories, and ask under what conditions, if any,
+  hydrogen earns a place in Swiss residential heat.
+
+  \item[RQ3 (cross-sector synergy, scoped to the power sector).] What synergies can
+  be established between hydrogen in the buildings sector and other sectors? RQ3
+  names the buildings-to-power coupling that the severed link of the third gap
+  implies. Buildings do not decarbonise in isolation. The electrified heat load
+  reshapes power demand, and any hydrogen used for heat draws on the same
+  production, storage and transport system that serves industry and transport. This
+  paper answers in full the one synergy that follows most directly from its own
+  results, the coupling between buildings-sector hydrogen and the power sector,
+  carrying the electrified heat load into the electricity merit order and assessing
+  hydrogen's role in the firm-capacity stack on the same operating-cost basis
+  (Section~\ref{sec:power}), the role the system-value literature locates in scarce
+  peak hours, not in annual energy \citep{Brown2018Synergies,Zeyen2021Mitigating}. The wider synergies with industry and
+  transport are treated qualitatively in the Discussion
+  (Section~\ref{sec:discussion}); a full cross-sector optimisation lies beyond the
+  present scope and is left to subsequent work.
+\end{description}
+
+\subsection{Research Scope and Methodological Boundaries}
+
+The following scope statement defines the geographic, temporal, and technological
+boundaries within which RQ1, RQ2, and RQ3 are addressed. The analysis covers
+residential space heating and hot water demand across 29 countries (the EU-27,
+the United Kingdom, and Switzerland) at NUTS3 regional resolution. The modelling
+period spans 2025 to 2050 at milestone years (2025, 2030, 2040, 2050). Three
+building types are distinguished, single-family homes, multi-family dwellings
+(including apartment blocks), and other residential buildings, reflecting
+differences in technology feasibility and retrofit economics. Eight heating
+technologies compete in each region: gas boiler, oil boiler, biomass boiler,
+resistance heater, air-source heat pump, ground-source heat pump, district
+heating, and hydrogen boiler. To this building-level competition the study adds
+two further layers that test hydrogen beyond the boiler comparison: the
+district-heating supply stack and the power sector on which electrified heat
+depends. The power layer commits the firm fleet with an explicit unit-commitment
+optimisation (ramp, minimum stable output, reserve and start-up constraints).
+
+Three boundaries delimit the study. First, it treats the residential sub-sector
+only. Commercial and public buildings, industrial process heat, and end uses
+other than space heating and hot water are excluded. Second, it stops at the
+meter and the wholesale market for the buildings question itself, with network
+reinforcement entering through an explicit infrastructure-cost account, short of a nodal grid model. Third, and following directly from RQ3 above, sector
+coupling beyond the buildings-to-power link is not modelled endogenously.
+Synergies between hydrogen in buildings and its use in industry or transport are
+discussed but not co-optimised, and are flagged throughout as a direction for
+future work. This last boundary is a deliberate design choice, not an omission.
+The buildings-to-power link is the synergy that follows directly from the
+paper's own dispatch results and can be priced on the same operating-cost basis. A full industry-and-transport co-optimisation would require a separate
+model and is held over and not treated superficially here. Within these bounds the paper aims to price hydrogen for heat the
+way a system operator actually would, and to let its role be decided by that
+test, not assumed.

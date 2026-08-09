@@ -1,0 +1,29 @@
+# Germany climate + retrofit-state national assumptions
+#
+# Legacy national-parameters file consumed by 03_heat_intensity.py
+# (load_national_params). The authoritative source of these values is now
+# code/data/country_config/de.yaml; this file mirrors them for documentation
+# and backward compatibility. All values are numeric (the loader casts to float).
+#
+# Germany is a DIRECT TABULA country: no proxy, climate_multiplier = 1.0.
+# Note (2026-05-19): an Option B reference-HDD correction (tabula_reference_hdd
+# = 3300, mult = 0.8624) was briefly applied and then REVERTED after checking
+# the G1 reconciliation -- DE was already at -3.5 % vs Hotmaps (consistent),
+# and the correction would have broken that. See
+# literature/climate_reference_hdd_audit.md.
+# Sources: Eurostat nrg_chdd_a (HDD); German TABULA / IWU 2015 (retrofit
+# factors, DHW); dena Gebaeudereport 2024 (retrofit shares). See de.yaml and
+# literature/germany/classification_methodology.md for full citations.
+#
+parameter,value,unit,source
+hdd_de_2018_2022_avg,2845.85,degree-days/yr,Eurostat nrg_chdd_a (JRC AGRI4CAST)
+hdd_proxy_2018_2022_avg,2845.85,degree-days/yr,direct TABULA country (proxy = self)
+climate_multiplier,1.0,dimensionless,direct German TABULA
+retrofit_share_original,0.60,fraction,modelling assumption (Germany ~1 pct/yr renovation rate)
+retrofit_share_standard,0.30,fraction,modelling assumption
+retrofit_share_advanced,0.10,fraction,modelling assumption
+retrofit_factor_standard,0.55,multiplier,German TABULA standard refurbishment (IWU 2015)
+retrofit_factor_advanced,0.18,multiplier,German TABULA advanced refurbishment (IWU 2015)
+dhw_intensity_sfh,11.0,kWh/m2/yr,German TABULA brochure (IWU 2015)
+dhw_intensity_mfh,16.5,kWh/m2/yr,German TABULA brochure (IWU 2015)
+non_residential_intensity,120,kWh/m2/yr,estimate (German non-residential space heating)

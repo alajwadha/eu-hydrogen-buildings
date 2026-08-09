@@ -1,0 +1,4 @@
+nuts_id,nuts_name,nuts_level,country,dwelling_share_basis,heat_MWh,heat_TWh
+LU0,Luxembourg,1,LU,1824237.0,8272999.999999999,8.273
+LU00,Luxembourg,2,LU,1824237.0,8272999.999999999,8.273
+LU000,Luxembourg,3,LU,1824237.0,8272999.999999999,8.273

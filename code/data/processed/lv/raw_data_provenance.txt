@@ -1,0 +1,12 @@
+EUBUCCO download — Latvia
+Run at: 2026-05-19 22:20:07 UTC
+============================================================
+
+  dataset: EUBUCCO v0.2 NUTS2=LV00
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=LV00/LV00.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/LV00.parquet
+  status: OK
+  md5: 4f2a487b804b78c72a81fefa23f18ddc
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+

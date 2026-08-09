@@ -1,0 +1,23 @@
+# Lithuania climate + retrofit-state national assumptions
+#
+# Legacy national-parameters file consumed by 03_heat_intensity.py
+# (load_national_params). The authoritative source is lt.yaml; this file
+# mirrors the values for documentation. All values are numeric.
+#
+# Lithuania is a TABULA PROXY country: Poland TABULA, climate-corrected by the
+# HDD_LT/HDD_PL ratio. Sources: Eurostat nrg_chdd_a; Poland TABULA
+# (pl_intensities.csv); Lithuanian LTRS 2020 / APVA reporting. See lt.yaml and
+# literature/lithuania/classification_methodology.md for full citations.
+#
+parameter,value,unit,source
+hdd_lt_2018_2022_avg,3639.5,degree-days/yr,Eurostat nrg_chdd_a (JRC AGRI4CAST)
+hdd_proxy_pl_2018_2022_avg,3158.7,degree-days/yr,Eurostat nrg_chdd_a (Poland TABULA reference)
+climate_multiplier,1.1522,dimensionless,3639.5 / 3158.7 (LT/PL HDD ratio)
+retrofit_share_original,0.88,fraction,modelling assumption (Lithuanian LTRS 2020; APVA renovation reporting)
+retrofit_share_standard,0.08,fraction,modelling assumption
+retrofit_share_advanced,0.04,fraction,modelling assumption
+retrofit_factor_standard,0.63,multiplier,Poland TABULA standard refurbishment
+retrofit_factor_advanced,0.50,multiplier,Poland TABULA advanced refurbishment
+dhw_intensity_sfh,28.0,kWh/m2/yr,Poland TABULA proxy
+dhw_intensity_mfh,23.0,kWh/m2/yr,Poland TABULA proxy
+non_residential_intensity,150,kWh/m2/yr,estimate (Lithuanian non-residential space heating)

@@ -1,0 +1,16 @@
+# Sweden climate + retrofit-state national assumptions
+# Mirror of se.yaml.
+#
+parameter,value,unit,source
+hdd_se_2018_2022_avg,5043,degree-days/yr,Eurostat nrg_chdd_a (per fi.yaml verification)
+hdd_proxy_2018_2022_avg,5043,degree-days/yr,direct TABULA country (proxy = self)
+tabula_reference_hdd,3500,degree-days/yr,"SE TABULA brochure zone 3 (southern Sweden) reference"
+climate_multiplier,1.4409,dimensionless,"5043 / 3500 (Option B zone-3 ref to national mean)"
+retrofit_share_original,0.55,fraction,"modelling assumption (Boverket BBR + Odyssee SE)"
+retrofit_share_standard,0.35,fraction,"modelling assumption (Forbattrad SE TABULA refurb)"
+retrofit_share_advanced,0.10,fraction,"modelling assumption (Lagenergi deep-renovation rate ~1pct/yr)"
+retrofit_factor_standard,0.74,multiplier,"SE TABULA brochure Forbattrad/Nuvarande mean"
+retrofit_factor_advanced,0.49,multiplier,"SE TABULA brochure Lagenergi/Nuvarande mean"
+dhw_intensity_sfh,16.0,kWh/m2/yr,"SE TABULA brochure (Tappvarmvatten electric-resistance row)"
+dhw_intensity_mfh,17.0,kWh/m2/yr,"SE TABULA brochure"
+non_residential_intensity,140,kWh/m2/yr,"estimate (Energimyndigheten EN0103 Lokaler)"

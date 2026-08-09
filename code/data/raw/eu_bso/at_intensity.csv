@@ -1,0 +1,30 @@
+# EU Building Stock Observatory (BSO) -- Austria residential indicators
+#
+# Used by 03_heat_intensity.py for (1) the unknown-cohort stock-weighted
+# fallback intensity (stock_pct_at column) and (2) the BSO reconciliation row.
+#
+# stock_pct_at: share of the Austrian residential stock by construction cohort.
+#   Austria has a mature pre-WWI Gründerzeit urban masonry stock (Vienna,
+#   Salzburg, Graz inner cities), large 1946-1990 Wiederaufbau/Hochbau era
+#   (Gemeindebau apartment blocks plus suburban SFH), and a high rate of
+#   post-1991 Niedrigenergiehaus new-build. Distribution approximated from
+#   Statistik Austria Mikrozensus Wohnen 2021 / Gebäude- und Wohnungszählung
+#   2011 extrapolated to 2021. Sums to 100. NEEDS_VERIFY against latest GWZ.
+#
+# bso_intensity_kwh_m2_yr: BSO-style per-cohort national-average residential
+#   heat intensity (delivered). DERIVED from the Austrian TABULA per-cohort
+#   class-average space-heating need x climate multiplier (1.000) x retrofit
+#   blend (0.911) + DHW. The EU Building Stock Observatory portal could not
+#   be queried directly; flagged as derived, not an independent BSO query.
+#
+# Source: Statistik Austria GWZ 2011 / Mikrozensus Wohnen 2021;
+#   at_intensities.csv (Austrian TABULA, research-synthesised); AEA / IIBW
+#   Sanierungsoffensive cumulative renovation reports.
+#
+cohort,stock_pct_at,bso_intensity_kwh_m2_yr,note
+pre-1945,18,225,"Pre-WWI Gründerzeit Vienna/Salzburg/Graz + rural masonry; Zinshaus typology"
+1946-1970,28,205,"Wiederaufbau era; Gemeindebau apartment blocks + early suburban SFH; pre-OIB-Wv"
+1971-1990,25,150,"Hochbau era; OIB Wv 1979/1990 thermal codes; first insulation generation"
+1991-2010,18,95,"Niedrigenergiehaus era; OIB 2007; thermal upgrades widespread"
+2011-2020,8,78,"OIB 2014 NZEB-track new-build; aggressive Sanierungsoffensive era"
+post-2020,3,65,"OIB 2023 NZEB enforcement; Passivhaus-track new-build"

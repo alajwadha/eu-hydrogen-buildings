@@ -1,0 +1,5 @@
+driver,S1,S1_conf,ST,ST_conf
+envelope_rate_mult,0.397,0.036,0.398,0.024
+occupancy_mult,0.328,0.025,0.328,0.02
+dwelling_size_mult,0.156,0.022,0.156,0.009
+population_mult,0.118,0.018,0.118,0.007

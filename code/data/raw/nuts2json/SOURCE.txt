@@ -1,0 +1,12 @@
+NUTS3 boundary geometries, cached for offline reproducibility.
+
+Source : Eurostat Nuts2json (https://github.com/eurostat/Nuts2json), which republishes
+         the official Eurostat/GISCO NUTS geometries in web formats.
+Files  : pub/v2/{2016,2021}/4326/20M/nutsrg_3.json
+URL    : https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/<year>/4326/20M/nutsrg_3.json
+CRS    : EPSG:4326, generalised to 1:20 million.
+Licence: as per Eurostat/GISCO, free reuse with acknowledgement.
+
+Why two vintages: the bottom-up demand build carries NUTS 2016 codes, while the map is
+drawn on the NUTS 2021 layer. The 2016 file is used only to derive the 2016 -> 2021
+correspondence in scripts/nuts_crosswalk.py; the 2021 file is what the map is drawn on.

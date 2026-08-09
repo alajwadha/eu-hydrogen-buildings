@@ -1,0 +1,226 @@
+# Country configuration: Romania (RO)
+# =====================================
+# Build group 6 (SE + DK, BG, RO). CZ-proxy with HU overlay candidate for
+# Pannonian RO11+RO42. Methodology: literature/romania/classification_methodology.md.
+
+country_code: RO
+country_name: Romania
+
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - RO11   # Nord-Vest
+    - RO12   # Centru
+    - RO21   # Nord-Est
+    - RO22   # Sud-Est
+    - RO31   # Sud-Muntenia
+    - RO32   # Bucuresti-Ilfov
+    - RO41   # Sud-Vest Oltenia
+    - RO42   # Vest
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  license: ODbL v1.0
+
+nuts3_regions:
+  - RO111
+  - RO112
+  - RO113
+  - RO114
+  - RO115
+  - RO116
+  - RO121
+  - RO122
+  - RO123
+  - RO124
+  - RO125
+  - RO126
+  - RO211
+  - RO212
+  - RO213
+  - RO214
+  - RO215
+  - RO216
+  - RO221
+  - RO222
+  - RO223
+  - RO224
+  - RO225
+  - RO226
+  - RO311
+  - RO312
+  - RO313
+  - RO314
+  - RO315
+  - RO316
+  - RO317
+  - RO321
+  - RO322
+  - RO411
+  - RO412
+  - RO413
+  - RO414
+  - RO415
+  - RO421
+  - RO422
+  - RO423
+  - RO424
+
+bbox_wgs84:
+  lon_min: 20.26
+  lat_min: 43.62
+  lon_max: 29.71
+  lat_max: 48.27
+
+tabula:
+  source_country: CZ
+  source_country_name: Czechia
+  intensities_file: code/data/raw/tabula/cz_intensities.csv
+  reason_for_proxy: |
+    Romania has no national TABULA. URBAN-INCERC has published Romanian
+    residential typology research but not a TABULA brochure. CZ chosen as
+    primary proxy because Romanian blocuri (Soviet-era industrialised MFH)
+    share Comecon construction lineage with Czech paneláks; thermal envelope
+    U-values, slab geometries and DHW riser configurations are highly
+    comparable. CZ HDD is the closer continental analogue than PL (too cold)
+    or HU (HU itself is DE-proxy in our build, chaining proxies adds noise).
+    A future refinement: HU overlay weight ~0.20 on RO11+RO42 (Pannonian
+    Banat counties: Timisoara, Arad, Oradea, Cluj where Habsburg-era brick
+    MFH dominates) using a per-NUTS3 climate_multiplier; deferred.
+
+climate:
+  hdd_country: 2805.0
+  hdd_proxy: 3260.0
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  tabula_reference_hdd: 3400.0   # CZ CSN 73 0540 reference, same as cz.yaml
+  climate_multiplier: 0.8250     # 2805 / 3400 (to CZ TABULA reference)
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST); RO 5-year mean 2018-2022 ~2805 (NEEDS_VERIFY)
+
+# Cumulative retrofit penetration ~18-22pct of dwellings by 2024 (PNRT facade
+# + windows since 2002; OUG 18/2009 expansion; PNRR Component C5 EUR1.39B for
+# 2021-2026 energy renovations). Renovation rate ~0.3pct/yr (Renovate Europe,
+# among EU's lowest deep-renovation rates).
+retrofit:
+  share:
+    original: 0.80
+    standard: 0.15
+    advanced: 0.05
+  factor:
+    standard: 0.60      # CZ TABULA standard (proxy)
+    advanced: 0.32      # CZ TABULA advanced (proxy)
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # 0.80 + 0.15x0.60 + 0.05x0.32 = 0.9060
+  blend_value: 0.9060
+  share_source: |
+    Modelling assumption grounded in PNRT (Programul National de Reabilitare
+    Termica, since 2002, ~3500-4500 apartment blocks by 2020) + PNRR C5
+    (EUR1.39B for 2021-2026, target ~4.3 Mm2 residential). Renovation rate
+    ~0.3pct/yr (Renovate Europe; Hotmaps). Retrofit factors from Czech proxy.
+
+dhw:
+  sfh: 12.0
+  mfh: 15.0
+  unit: kWh/m2/yr
+  source: CZ TABULA proxy DHW values (RO household sizes slightly larger; ~0.95 scaling assumed)
+
+non_residential_intensity:
+  value: 100.0
+  unit: kWh/m2/yr
+  source: estimate -- RO tertiary (Hotmaps + Heat Roadmap Europe RO; ~CZ tertiary x 0.85 for mild climate)
+  status: rough placeholder
+
+# Applied this session after the first G6 Colab run landed RO at +89.2pct over
+# Hotmaps (BU 155.1 vs Hotmaps 82.0), confirming that the CZ-proxy TABULA values
+# applied without an operational-regime correction substantially over-state
+# realised Romanian heating demand. The under-heating + rural-wood-stove-low-
+# efficiency pattern documented across INCERC/UTCB/World Bank literature is the
+# structural cause.
+#
+# Coefficient: 0.60 (weighted national average; see derivation below).
+#   - Urban MFH (DH/gas), ~25-30pct of stock: ~0.90 coefficient (mild prebound)
+#   - Rural SFH wood-heated, ~50pct of stock: ~0.45 coefficient (severe under-
+#     heating; single-room stove regime; World Bank RO Energy Poverty 2024
+#     documents ~15pct delivered efficiency of rural wood stoves)
+#   - Post-2010 renovated/new build, ~20pct: ~1.00 (no prebound)
+#   - Stock-weighted: 0.25 x 0.90 + 0.50 x 0.45 + 0.20 x 1.00 = 0.65; INCERC/UTCB
+#     measured-vs-calculated literature reports 25-40pct prebound on the older
+#     unrenovated MFH which dominates the energy weighting, so the central
+#     estimate lands at 0.60.
+#
+# Sources:
+#   - Eurostat EU-SILC 2022: 24-26pct of RO HH cannot keep home adequately warm.
+#   - World Bank (2024), Romania Energy Poverty Assessment -- ~15pct delivered
+#     efficiency of rural wood stoves; 21.1pct HH below energy poverty line.
+#   - INCERC/UTCB Bucharest measured-vs-calculated research (Cherecheș,
+#     Pătrașcu et al.) -- 25-40pct prebound in unrenovated MFH and SFH.
+#   - OECD WP 1812 (2024), Decarbonising Romania's Economy.
+comfort_regime:
+  deflator: 0.60
+  source: |
+    Romanian stock-weighted operational coefficient (0.60) reflecting
+    documented under-heating (EU-SILC 2022: 24-26pct cannot afford adequate
+    warmth, EU's 2nd-highest), severe rural Carpathian wood-stove inefficiency
+    (~15pct delivered, World Bank RO Energy Poverty 2024), and INCERC/UTCB
+    measured-vs-calculated 25-40pct prebound. Derivation: 0.25 urban-MFH x
+    0.90 + 0.50 rural-SFH x 0.45 + 0.20 post-2010 x 1.00 = 0.65; central
+    estimate 0.60 after weighting toward the unrenovated MFH energy share.
+
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 82.0
+    year: 2015
+    source: Hotmaps + Heat Roadmap Europe (STRATEGO WP2 RO); residential SH+DHW useful ~78-85 TWh
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 730
+    eubucco_mm2: 1179
+    census_eubucco_ratio: 0.62
+    source: INS RPL 2021 (useful area; census livable area x ~1.55 kitchen/bath/hall)
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 75.0
+    year: 2022
+    source: anchored estimate
+  odyssee_mure:
+    total_twh: 70.0
+    year: 2022
+    source: Odyssee-Mure Romania; residential heating ~57pct of HH FE
+    note: National total only; final-energy basis. Biomass ~46-50pct, gas ~22-25pct, DH ~12-14pct.
+
+hotmaps_nuts3_id: RO321   # Bucuresti (representative)
+
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+
+_meta:
+  created: 2026-05-20
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 6)
+  last_verified: 2026-05-20
+  schema_version: 1
+  status: DRAFT -- CZ-proxy TABULA build. RO has no national TABULA; URBAN-
+    INCERC research is descriptive not harmonised. CZ chosen for panelák ~
+    blocuri MFH-lineage match. EU's 2nd-highest under-heating prevalence
+    (24-26pct EU-SILC 2022) -- comfort regime deflator is a strong follow-up
+    candidate.
+  references_doc: literature/romania/classification_methodology.md
+  verified_2026_05_20:
+    - eubucco.nuts2_partitions (8 RO NUTS2, stable across NUTS vintages)
+    - nuts3_regions (42 RO NUTS3 judete + Bucuresti, stable)
+    - tabula source = CZ proxy
+    - tabula_reference_hdd = 3400 (CZ CSN 73 0540 reference)
+    - climate_multiplier = 0.8250 (2805 / 3400)
+  needs_verify_summary:
+    - HDD 2018-2022 mean ~2805 -- estimated; pull exact Eurostat nrg_chdd_a.
+    - HU overlay for RO11+RO42 Pannonian Banat counties -- deferred to NUTS3
+      region_split_proxy schema extension (also needed for HR).
+    - retrofit shares (0.80/0.15/0.05) -- modelling assumption.
+    - comfort_regime deflator -- candidate follow-up; EU-SILC 24-26pct under-
+      heating documented; INCERC/UTCB prebound 25-40pct (Cherecheș, Pătrașcu).
+    - Hotmaps total (82) -- estimate; sum building_stock_nuts3.csv exactly.

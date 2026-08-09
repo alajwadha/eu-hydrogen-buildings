@@ -1,0 +1,12 @@
+EUBUCCO download — Estonia
+Run at: 2026-05-21 03:17:08 UTC
+============================================================
+
+  dataset: EUBUCCO v0.2 NUTS2=EE00
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=EE00/EE00.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/EE00.parquet
+  status: OK
+  md5: 5da08f633efde618fa2fe0ddf9c48aec
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+

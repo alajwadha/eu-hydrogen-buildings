@@ -1,0 +1,20 @@
+EUBUCCO download — Slovenia
+Run at: 2026-05-19 21:46:44 UTC
+============================================================
+
+  dataset: EUBUCCO v0.2 NUTS2=SI03
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=SI03/SI03.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/SI03.parquet
+  status: OK
+  md5: 12eef03d199f344b30a5e354dc5d5f8f
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+
+  dataset: EUBUCCO v0.2 NUTS2=SI04
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=SI04/SI04.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/SI04.parquet
+  status: OK
+  md5: 4938e49ed80d16de2d47e69b8e679e23
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+

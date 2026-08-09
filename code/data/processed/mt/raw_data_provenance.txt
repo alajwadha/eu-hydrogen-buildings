@@ -1,0 +1,12 @@
+EUBUCCO download — Malta
+Run at: 2026-05-21 03:16:10 UTC
+============================================================
+
+  dataset: EUBUCCO v0.2 NUTS2=MT00
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=MT00/MT00.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/MT00.parquet
+  status: OK
+  md5: 5757b74b6606026c9c31b650e9711c72
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+

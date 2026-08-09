@@ -1,0 +1,11 @@
+# EU Building Stock Observatory (BSO) -- Denmark residential indicators
+# Distribution approximated from Danmarks Statistik BOL101 dwelling by build period.
+# Sums to 100. NEEDS_VERIFY.
+#
+cohort,stock_pct_dk,bso_intensity_kwh_m2_yr,note
+pre-1945,21,200,"Pre-WWII parcelhuse + Copenhagen karreer; brick masonry"
+1946-1970,32,175,"Postwar suburbanisation parcelhuse + first DH-connected blocks"
+1971-1990,21,135,"Post-oil-crisis BR-S Wechselberg 1985 thermal regs"
+1991-2010,16,90,"BR06 thermal tightening; DH-dominant heat market"
+2011-2020,8,55,"BR10/BR15/BR18 NZEB-track new-build"
+post-2020,2,40,"BR18 / BR23 NZEB 30 kWh/m2 frame"

@@ -1,0 +1,33 @@
+# Luxembourg climate + retrofit-state national assumptions
+#
+# Used by 03_heat_intensity.py to:
+#   1. Climate-correct BE TABULA intensities to LU conditions (HDD ratio)
+#   2. Apply retrofit-state blending (original / standard refurb / advanced)
+#   3. Add DHW component to space-heating intensity (TABULA convention)
+#
+# Sources:
+#   - Eurostat nrg_chdd_a: Cooling and heating degree days by country, annual
+#     data (base temperature 15°C; source: JRC AGRI4CAST gridded meteorological
+#     data). 5-year average 2018-2022.
+#     URL: ec.europa.eu/eurostat/databrowser/view/nrg_chdd_a/default/table
+#     - BE: 2,894 HDD/yr (reference for TABULA Belgium)
+#     - LU: 3,217 HDD/yr (cold-temperate, slightly colder than BE)
+#     - Climate multiplier LU / BE = 3217 / 2894 = 1.112
+#   - LU national renovation rate: ~1.0%/yr average 2015-2021 (Odyssee-Mure
+#     LU country profile, 2024 release; Klima-Agence annual reports).
+#   - LU retrofit-state distribution: derived from Odyssee-Mure cumulative
+#     renovation series + STATEC building age structure
+#   - DHW intensity: TABULA convention, ~22 kWh/m²·a SFH, ~19 kWh/m²·a MFH
+#
+parameter,value,unit,source
+hdd_lu_2018_2022_avg,3217,degree-days/yr,Eurostat nrg_chdd_a (JRC AGRI4CAST)
+hdd_be_2018_2022_avg,2894,degree-days/yr,Eurostat nrg_chdd_a (TABULA BE reference)
+climate_multiplier_lu_vs_be,1.112,dimensionless,3217 / 2894
+retrofit_share_original,0.55,fraction,Odyssee-Mure LU 2024 + STATEC building stock 2021
+retrofit_share_standard,0.35,fraction,Standard envelope refurb (single insulation pass)
+retrofit_share_advanced,0.10,fraction,Deep retrofit / passive-house standard
+retrofit_factor_standard,0.65,multiplier on original SH intensity,TABULA Belgium published refurb scenarios
+retrofit_factor_advanced,0.35,multiplier on original SH intensity,TABULA Belgium published advanced scenarios
+dhw_intensity_sfh,22,kWh/m2/yr,TABULA Belgium (occupant density ~33 m²/person)
+dhw_intensity_mfh,19,kWh/m2/yr,TABULA Belgium (occupant density ~28 m²/person)
+non_residential_intensity,140,kWh/m2/yr,EU BSO 2025 LU non-res average (rough — flagged in script)

@@ -1,0 +1,14 @@
+quantity,model_anchor,eurostat_anchor,kind,ranking_changed
+base-year useful-heat demand (TWh),3828,~2075,extensive,-
+markets heat pump cheapest (of 29),22,22,ranking,NO
+base-load parity market,"BE,DE,DK,IE,NL,PL,UK","BE,DE,DK,IE,NL,PL,UK",ranking,NO
+salt-cavern power-peak wins,7,7,ranking,NO
+peaker capital recovery (%),9,9,intensive,NO
+2050 emissions Current (MtCO2),352,192,ranking+level,NO
+2050 emissions Stated (MtCO2),231,126,ranking+level,NO
+2050 emissions H2 Push (MtCO2),123,67,ranking+level,NO
+2050 emissions Net Zero (MtCO2),10,5,ranking+level,NO
+per-country emissions monotone in ambition,yes,yes,ranking,NO
+2025 baseline emissions (MtCO2),644,~349,extensive,no
+firm peaker fleet (GW),278,<= 151,extensive,no
+cumulative peaker shortfall (bn EUR),357,<= 194,extensive,no

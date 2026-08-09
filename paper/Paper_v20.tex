@@ -1,0 +1,152 @@
+\documentclass[12pt,a4paper]{article}
+%% Reproducible output: without these, every rebuild rewrites /CreationDate and
+%% /ID, so an unchanged document still shows as modified in git.
+\ifdefined\pdfinfoomitdate \pdfinfoomitdate=1 \fi
+\ifdefined\pdftrailerid \pdftrailerid{} \fi
+
+% ─── Packages ────────────────────────────────────────────────────────────────
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xurl}                  % break long DOI/URL strings anywhere, so the
+                                   % bibliography does not run past the margin
+\usepackage[hidelinks]{hyperref}   % black link text (no coloured/boxed links) in the PDF
+\usepackage[numbers,sort]{natbib}   % IEEE-style numbered citations [1], [1,2,3]
+\usepackage{setspace}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xcolor}
+% lineno removed: no margin line numbers in any build
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{eurosym}
+\usepackage[version=4]{mhchem}
+
+% ─── Formatting ──────────────────────────────────────────────────────────────
+\onehalfspacing
+\setcitestyle{citesep={,}}   % IEEE numbered, tight: [1], [1,2,3]
+\graphicspath{{figs/}}
+
+% ─── Metadata ────────────────────────────────────────────────────────────────
+\title{%
+    \textbf{Hydrogen in Residential Heating: A Merit-Order Assessment\\
+    for the EU, the United Kingdom and Switzerland under Net-Zero by 2050}
+}
+
+\author{%
+    Abdurahman Alsulaiman$^{1,*}$ \and
+    Ali Alajwad$^{2,3}$
+}
+
+\date{%
+    \small
+    $^{1}$Oxford Institute for Energy Studies, Oxford, UK\\
+    $^{2}$RENEW Lab, Johns Hopkins University, Baltimore, MD, USA\\
+    $^{3}$Cornell University, Ithaca, NY, USA\\[0.5em]
+    \textit{$^{*}$Corresponding author.}\\[0.5em]
+    \textit{Draft v20, June 2026}
+}
+
+% ─── Document ────────────────────────────────────────────────────────────────
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+% ─── Abstract ────────────────────────────────────────────────────────────────
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+
+\newpage
+\tableofcontents
+
+% Lists of floats. Appendix figures and tables are lettered by their appendix
+% section (A.1, B.1, ...) so that a reader scanning either list can tell at a
+% glance which floats sit in the appendices and which in the main body; the
+% article class would otherwise continue one arabic sequence across both.
+\newpage
+\listoffigures
+\addtocontents{lof}{\protect\vspace{6pt}\protect\noindent
+  \protect\footnotesize\protect\textit{Figures numbered A.1, B.1, C.1 and so on
+  are in the appendices; plain numbers are in the main body.}\protect\par}
+
+\newpage
+\listoftables
+\addtocontents{lot}{\protect\vspace{6pt}\protect\noindent
+  \protect\footnotesize\protect\textit{Tables numbered A.1, B.1, C.1 and so on
+  are in the appendices; plain numbers are in the main body.}\protect\par}
+\newpage
+
+% ─── Sections ────────────────────────────────────────────────────────────────
+\section{Introduction}
+\input{sections/introduction}
+
+\subsection{Research Questions and Scope}
+\input{sections/research_questions}
+
+\section{Literature Review}
+\label{sec:lit}
+\input{sections/literature_review}
+
+\section{Data and Methodology}
+\input{sections/methodology}
+
+\section{Results}
+\input{sections/results}
+
+\input{sections/power_bridge}
+
+\section{Discussion}
+\input{sections/discussion}
+
+\section{Conclusion}
+\input{sections/conclusion}
+
+% ─── References ──────────────────────────────────────────────────────────────
+\newpage
+\bibliographystyle{IEEEtranN}
+\bibliography{References_v1}
+
+% ─── Appendices ──────────────────────────────────────────────────────────────
+\newpage
+\appendix
+
+% Number appendix floats by their appendix section, so the lists of figures and
+% tables distinguish them from main-body floats without renumbering anything by
+% hand. Every cross-reference goes through \ref, so all resolve automatically.
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+\input{sections/appendix_detail}
+
+\section{Cost-Optimal Pathway and Country-Specific Heating Mixes}
+\label{sec:costopt}
+\input{sections/cost_optimal}
+
+\section{Sensitivity Analysis}
+\input{sections/sensitivity}
+
+\section{Limitations}
+\input{sections/limitations}
+
+\section*{Data Availability}
+\addcontentsline{toc}{section}{Data Availability}
+The model and the underlying data are available from the authors on reasonable request.
+Enquiries should be directed to the corresponding author.
+
+The supplementary material referred to in the text comprises the scenario parameter
+register of per-country envelope rates and scenario levers; the derivation of the
+renovation depth-band weights; the full per-country and per-scenario missing-money table;
+the capacity-stack data note; the Swiss fixed-point iteration history; the per-country
+delivered hydrogen supply costs; the source audit behind the techno-economic inputs; the
+per-country energy against dwelling-share diagnostic; the ground-source per-ceiling
+sweep; the scope-2-inclusive emissions accounting; and the per-country cost-optimal
+shares and shadow prices. These are available on the same basis.
+
+\end{document}

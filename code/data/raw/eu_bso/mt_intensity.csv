@@ -1,0 +1,25 @@
+# EU Building Stock Observatory (BSO) -- Malta residential indicators
+#
+# Used by 03_heat_intensity.py for (1) the unknown-cohort stock-weighted
+# fallback intensity (stock_pct_mt column) and (2) the BSO reconciliation row.
+#
+# stock_pct_mt: share of the Maltese residential stock by construction cohort.
+#   Malta's dwelling stock has grown rapidly since 1990, so the post-1990
+#   cohorts carry a large share. Distribution approximated from NSO Malta
+#   census data. Sums to 100.
+#
+# bso_intensity_kwh_m2_yr: BSO-style per-cohort national-average residential
+#   heat intensity (delivered). DERIVED from the Cyprus-proxy TABULA per-cohort
+#   class-average space-heating need x climate multiplier (0.7210) x retrofit
+#   blend (0.972) + DHW. Malta's residential heating demand is negligible, so
+#   these values have minimal effect on study results.
+#
+# Source: NSO Malta census; Cyprus-proxy TABULA (cy_intensities.csv).
+#
+cohort,stock_pct_mt,bso_intensity_kwh_m2_yr,note
+pre-1945,12,73,Pre-WWII limestone-masonry stock
+1946-1970,18,73,Post-war masonry construction
+1971-1990,25,73,1970s-80s expansion
+1991-2010,30,54,Post-1990 rapid dwelling-stock growth
+2011-2020,13,41,Recent apartment construction
+post-2020,2,37,Newest construction

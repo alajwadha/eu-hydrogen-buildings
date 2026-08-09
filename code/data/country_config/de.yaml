@@ -1,0 +1,650 @@
+# Country configuration: Germany (DE)
+# ======================================
+# All Germany-specific parameters for the building-stock pipeline
+# (scripts 01-04 in code/scripts/country_build/). Sourced and cited inline;
+# methodology in literature/germany/classification_methodology.md.
+#
+# Schema version: 1 (matches code/src/CountryConfig.py SCHEMA_VERSION).
+#
+# Germany is a DIRECT TABULA country -- the German residential typology was
+# produced by IWU Darmstadt. No proxy and no climate correction are used
+# (climate_multiplier = 1.0), the same methodological branch as France.
+# Germany is the heavyweight of build group 1 (DE + EE, LV, LT).
+
+country_code: DE
+country_name: Germany
+
+# -- EUBUCCO data source -----------------------------------------------------
+# EUBUCCO v0.2 partitions buildings by NUTS2 region (NUTS 2016 vintage).
+# Germany has 38 NUTS2 regions (Regierungsbezirk level). The 38 codes below
+# are NUTS 2016, which is also the EUBUCCO v0.2 partition basis; they are
+# unchanged in NUTS 2021 for Germany.
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - DE11   # Stuttgart
+    - DE12   # Karlsruhe
+    - DE13   # Freiburg
+    - DE14   # Tuebingen
+    - DE21   # Oberbayern
+    - DE22   # Niederbayern
+    - DE23   # Oberpfalz
+    - DE24   # Oberfranken
+    - DE25   # Mittelfranken
+    - DE26   # Unterfranken
+    - DE27   # Schwaben
+    - DE30   # Berlin
+    - DE40   # Brandenburg
+    - DE50   # Bremen
+    - DE60   # Hamburg
+    - DE71   # Darmstadt
+    - DE72   # Giessen
+    - DE73   # Kassel
+    - DE80   # Mecklenburg-Vorpommern
+    - DE91   # Braunschweig
+    - DE92   # Hannover
+    - DE93   # Lueneburg
+    - DE94   # Weser-Ems
+    - DEA1   # Duesseldorf
+    - DEA2   # Koeln
+    - DEA3   # Muenster
+    - DEA4   # Detmold
+    - DEA5   # Arnsberg
+    - DEB1   # Koblenz
+    - DEB2   # Trier
+    - DEB3   # Rheinhessen-Pfalz
+    - DEC0   # Saarland
+    - DED2   # Dresden
+    - DED4   # Chemnitz
+    - DED5   # Leipzig
+    - DEE0   # Sachsen-Anhalt
+    - DEF0   # Schleswig-Holstein
+    - DEG0   # Thueringen
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  # Citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1.
+  # Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2.
+  # v0.2 data: https://eubucco.com/files/v0.2
+  license: ODbL v1.0
+
+# -- NUTS3 regions -----------------------------------------------------------
+# Germany has 401 NUTS3 regions (294 Landkreise + 107 kreisfreie Staedte),
+# NUTS 2021 vintage. Codes are stable between NUTS 2016 and 2021 for Germany.
+# Extracted from the repo GISCO file (NUTS_RG_01M_2021_4326_clean.csv).
+nuts3_regions:
+  - DE111
+  - DE112
+  - DE113
+  - DE114
+  - DE115
+  - DE116
+  - DE117
+  - DE118
+  - DE119
+  - DE11A
+  - DE11B
+  - DE11C
+  - DE11D
+  - DE121
+  - DE122
+  - DE123
+  - DE124
+  - DE125
+  - DE126
+  - DE127
+  - DE128
+  - DE129
+  - DE12A
+  - DE12B
+  - DE12C
+  - DE131
+  - DE132
+  - DE133
+  - DE134
+  - DE135
+  - DE136
+  - DE137
+  - DE138
+  - DE139
+  - DE13A
+  - DE141
+  - DE142
+  - DE143
+  - DE144
+  - DE145
+  - DE146
+  - DE147
+  - DE148
+  - DE149
+  - DE211
+  - DE212
+  - DE213
+  - DE214
+  - DE215
+  - DE216
+  - DE217
+  - DE218
+  - DE219
+  - DE21A
+  - DE21B
+  - DE21C
+  - DE21D
+  - DE21E
+  - DE21F
+  - DE21G
+  - DE21H
+  - DE21I
+  - DE21J
+  - DE21K
+  - DE21L
+  - DE21M
+  - DE21N
+  - DE221
+  - DE222
+  - DE223
+  - DE224
+  - DE225
+  - DE226
+  - DE227
+  - DE228
+  - DE229
+  - DE22A
+  - DE22B
+  - DE22C
+  - DE231
+  - DE232
+  - DE233
+  - DE234
+  - DE235
+  - DE236
+  - DE237
+  - DE238
+  - DE239
+  - DE23A
+  - DE241
+  - DE242
+  - DE243
+  - DE244
+  - DE245
+  - DE246
+  - DE247
+  - DE248
+  - DE249
+  - DE24A
+  - DE24B
+  - DE24C
+  - DE24D
+  - DE251
+  - DE252
+  - DE253
+  - DE254
+  - DE255
+  - DE256
+  - DE257
+  - DE258
+  - DE259
+  - DE25A
+  - DE25B
+  - DE25C
+  - DE261
+  - DE262
+  - DE263
+  - DE264
+  - DE265
+  - DE266
+  - DE267
+  - DE268
+  - DE269
+  - DE26A
+  - DE26B
+  - DE26C
+  - DE271
+  - DE272
+  - DE273
+  - DE274
+  - DE275
+  - DE276
+  - DE277
+  - DE278
+  - DE279
+  - DE27A
+  - DE27B
+  - DE27C
+  - DE27D
+  - DE27E
+  - DE300
+  - DE401
+  - DE402
+  - DE403
+  - DE404
+  - DE405
+  - DE406
+  - DE407
+  - DE408
+  - DE409
+  - DE40A
+  - DE40B
+  - DE40C
+  - DE40D
+  - DE40E
+  - DE40F
+  - DE40G
+  - DE40H
+  - DE40I
+  - DE501
+  - DE502
+  - DE600
+  - DE711
+  - DE712
+  - DE713
+  - DE714
+  - DE715
+  - DE716
+  - DE717
+  - DE718
+  - DE719
+  - DE71A
+  - DE71B
+  - DE71C
+  - DE71D
+  - DE71E
+  - DE721
+  - DE722
+  - DE723
+  - DE724
+  - DE725
+  - DE731
+  - DE732
+  - DE733
+  - DE734
+  - DE735
+  - DE736
+  - DE737
+  - DE803
+  - DE804
+  - DE80J
+  - DE80K
+  - DE80L
+  - DE80M
+  - DE80N
+  - DE80O
+  - DE911
+  - DE912
+  - DE913
+  - DE914
+  - DE916
+  - DE917
+  - DE918
+  - DE91A
+  - DE91B
+  - DE91C
+  - DE922
+  - DE923
+  - DE925
+  - DE926
+  - DE927
+  - DE928
+  - DE929
+  - DE931
+  - DE932
+  - DE933
+  - DE934
+  - DE935
+  - DE936
+  - DE937
+  - DE938
+  - DE939
+  - DE93A
+  - DE93B
+  - DE941
+  - DE942
+  - DE943
+  - DE944
+  - DE945
+  - DE946
+  - DE947
+  - DE948
+  - DE949
+  - DE94A
+  - DE94B
+  - DE94C
+  - DE94D
+  - DE94E
+  - DE94F
+  - DE94G
+  - DE94H
+  - DEA11
+  - DEA12
+  - DEA13
+  - DEA14
+  - DEA15
+  - DEA16
+  - DEA17
+  - DEA18
+  - DEA19
+  - DEA1A
+  - DEA1B
+  - DEA1C
+  - DEA1D
+  - DEA1E
+  - DEA1F
+  - DEA22
+  - DEA23
+  - DEA24
+  - DEA26
+  - DEA27
+  - DEA28
+  - DEA29
+  - DEA2A
+  - DEA2B
+  - DEA2C
+  - DEA2D
+  - DEA31
+  - DEA32
+  - DEA33
+  - DEA34
+  - DEA35
+  - DEA36
+  - DEA37
+  - DEA38
+  - DEA41
+  - DEA42
+  - DEA43
+  - DEA44
+  - DEA45
+  - DEA46
+  - DEA47
+  - DEA51
+  - DEA52
+  - DEA53
+  - DEA54
+  - DEA55
+  - DEA56
+  - DEA57
+  - DEA58
+  - DEA59
+  - DEA5A
+  - DEA5B
+  - DEA5C
+  - DEB11
+  - DEB12
+  - DEB13
+  - DEB14
+  - DEB15
+  - DEB17
+  - DEB18
+  - DEB1A
+  - DEB1B
+  - DEB1C
+  - DEB1D
+  - DEB21
+  - DEB22
+  - DEB23
+  - DEB24
+  - DEB25
+  - DEB31
+  - DEB32
+  - DEB33
+  - DEB34
+  - DEB35
+  - DEB36
+  - DEB37
+  - DEB38
+  - DEB39
+  - DEB3A
+  - DEB3B
+  - DEB3C
+  - DEB3D
+  - DEB3E
+  - DEB3F
+  - DEB3G
+  - DEB3H
+  - DEB3I
+  - DEB3J
+  - DEB3K
+  - DEC01
+  - DEC02
+  - DEC03
+  - DEC04
+  - DEC05
+  - DEC06
+  - DED21
+  - DED2C
+  - DED2D
+  - DED2E
+  - DED2F
+  - DED41
+  - DED42
+  - DED43
+  - DED44
+  - DED45
+  - DED51
+  - DED52
+  - DED53
+  - DEE01
+  - DEE02
+  - DEE03
+  - DEE04
+  - DEE05
+  - DEE06
+  - DEE07
+  - DEE08
+  - DEE09
+  - DEE0A
+  - DEE0B
+  - DEE0C
+  - DEE0D
+  - DEE0E
+  - DEF01
+  - DEF02
+  - DEF03
+  - DEF04
+  - DEF05
+  - DEF06
+  - DEF07
+  - DEF08
+  - DEF09
+  - DEF0A
+  - DEF0B
+  - DEF0C
+  - DEF0D
+  - DEF0E
+  - DEF0F
+  - DEG01
+  - DEG02
+  - DEG03
+  - DEG04
+  - DEG05
+  - DEG06
+  - DEG07
+  - DEG09
+  - DEG0A
+  - DEG0B
+  - DEG0C
+  - DEG0D
+  - DEG0E
+  - DEG0F
+  - DEG0G
+  - DEG0H
+  - DEG0I
+  - DEG0J
+  - DEG0K
+  - DEG0L
+  - DEG0M
+  - DEG0N
+  - DEG0P
+
+# -- Geographic bounding box (WGS84) -----------------------------------------
+bbox_wgs84:
+  lon_min: 5.87
+  lat_min: 47.27
+  lon_max: 15.04
+  lat_max: 55.06
+
+# -- TABULA building typology source -----------------------------------------
+# Germany IS a TABULA country -- the German residential typology was produced
+# by IWU Darmstadt. The DIRECT German typology is used (no proxy, no climate
+# correction), the same methodological branch as France.
+# Extraction: code/data/raw/tabula/de_intensities.csv (header documents the
+# IWU 2015 brochure source, the class mapping and the period->cohort mapping).
+tabula:
+  source_country: DE
+  source_country_name: Germany
+  intensities_file: code/data/raw/tabula/de_intensities.csv
+  reason_for_proxy: |
+    None -- Germany is a TABULA country. The German national residential
+    typology (IWU Darmstadt, 2015) is used directly, with no proxy and no
+    climate correction (climate_multiplier = 1.0).
+
+# -- Climate correction ------------------------------------------------------
+# Germany is a direct TABULA country: climate_multiplier = 1.0.
+#
+# Note (2026-05-19): an Option B reference-HDD correction was briefly applied
+# (tabula_reference_hdd = 3300 per the DIN V 18599-10 reference climate cited
+# in de_intensities.csv; mult = 0.8624). It was REVERTED after checking the
+# Group 1 reconciliation: DE bottom-up was already at 765.82 vs Hotmaps 793.7
+# = -3.5 % (OK consistent within +/-15 %). Applying the correction would have
+# shifted bottom-up to ~660 TWh = -16.8 %, BREAKING the existing consistency.
+# Whatever residual climate-zone bias the DIN reference introduces is already
+# offset by other factors (likely EUBUCCO area calibration). See
+# literature/climate_reference_hdd_audit.md for the audit lesson.
+#
+# Source: Eurostat nrg_chdd_a (base 15 C, JRC AGRI4CAST), 5-year mean 2018-2022:
+#   DE annual HDD 2018-2022: 2784.88, 2812.97, 2754.54, 3128.38, 2748.46
+#   -> mean 2845.85
+climate:
+  hdd_country: 2845.85       # DE -- Eurostat nrg_chdd_a 2018-2022 mean
+  hdd_proxy: 2845.85         # DE direct typology -> proxy = self
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  climate_multiplier: 1.0    # direct TABULA country, no climate correction
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST), 5-year mean 2018-2022
+
+# -- Retrofit-state distribution ---------------------------------------------
+# Blends the German TABULA refurbishment scenarios (original / standard
+# "konventionell" / advanced "zukunftsweisend"). Final blend multiplier:
+#   original_share + std_share*std_factor + adv_share*adv_factor.
+#
+# Retrofit FACTORS are the German TABULA typology-averaged refurbishment
+# ratios: standard 0.55, advanced 0.18 of existing-state space-heating need
+# (IWU 2015 brochure master table, variants 001/002/003).
+#
+# Retrofit SHARES are a modelling assumption grounded in Germany's low
+# energy-renovation rate of ~1.0%/yr (dena Gebaeudereport 2024; Odyssee-Mure
+# Germany). Sustained over ~1990-2024 a ~1%/yr rate implies roughly 40% of the
+# stock has had at least one envelope refurbishment; the 0.60/0.30/0.10 split
+# reflects that, with most refurbishment being standard rather than deep.
+retrofit:
+  share:
+    original: 0.60          # modelling assumption -- see share_source
+    standard: 0.30          # modelling assumption
+    advanced: 0.10          # modelling assumption
+  factor:
+    standard: 0.55          # DE TABULA: standard refurb -> 55% of original SH
+    advanced: 0.18          # DE TABULA: advanced refurb -> 18% of original SH
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # Computed blend for DE: 0.60 + 0.30x0.55 + 0.10x0.18 = 0.783
+  blend_value: 0.783
+  share_source: |
+    Modelling assumption consistent with Germany's ~1.0%/yr energy-renovation
+    rate (dena Gebaeudereport 2024; Odyssee-Mure Germany country profile). The
+    standard/advanced sub-split is an assumption pending an IWU "Datenbasis
+    Gebaeudebestand" three-state distribution -- flagged in _meta.
+
+# -- Domestic Hot Water (DHW) intensity --------------------------------------
+# DHW is added per building from the TABULA file's dhw column (per class x
+# cohort). The values below are the German TABULA area-specific DHW energy
+# need, retained for documentation and cross-country reference.
+# Source: IWU 2015 German TABULA brochure (Nutzwaerme Warmwasser).
+dhw:
+  sfh: 11.0
+  mfh: 16.5
+  unit: kWh/m2/yr
+  source: German TABULA brochure (IWU 2015), area-specific DHW energy need
+
+# -- Non-residential intensity (placeholder) ---------------------------------
+# Flat country-average applied to the NON_RESIDENTIAL class. The heat-demand
+# calculation excludes it from the residential-only reconciliation (zero
+# heated area), so the exact value does not affect the bottom-up total.
+non_residential_intensity:
+  value: 120.0
+  unit: kWh/m2/yr
+  source: estimate -- German non-residential stock space heating (~100-130 kWh/m2)
+  status: rough placeholder; contributes 0 TWh (zero heated area); flagged in methodology
+
+# -- External reconciliation benchmarks --------------------------------------
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 793.70           # sum of heat_2015_MWh across all 1201 DE NUTS3
+                                #   rows in code/data/processed/building_stock_nuts3.csv.
+                                #   All-classes total, used as the reconciliation
+                                #   target per the LU/FR/FI methodology.
+    year: 2015
+    source: Hotmaps Toolbox via building_stock_nuts3.csv; sum across all DE NUTS3 rows
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 4070
+    eubucco_mm2: 4502
+    census_eubucco_ratio: 0.90
+    source: Zensus 2022 dwelling floor area
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 650.0            # Order-of-magnitude anchor for the diagnostic
+                                #   panel-7 bars; the reconciliation BSO row is
+                                #   computed from de_intensity.csv, not this value.
+    year: 2022
+    source: anchored estimate; EU Building Stock Observatory portal not directly retrievable
+  odyssee_mure:
+    total_twh: 540.0            # German household space-heating final energy,
+                                #   recent (mild) years ~500-550 TWh (AGEB end-use
+                                #   shares; Odyssee-Mure Germany). Final-energy
+                                #   basis, below the Hotmaps 2015 useful-demand,
+                                #   cold-reference-year figure.
+    year: 2022
+    source: Odyssee-Mure Germany / AGEB household end-use; residential space heating
+    note: National total only; final-energy basis -- definitional gap vs Hotmaps useful demand.
+
+# -- Hotmaps NUTS3 ID for model comparison -----------------------------------
+hotmaps_nuts3_id: DE300   # Berlin (representative reference)
+
+# -- Building classification rules -------------------------------------------
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+  # Rules (sequential, first match wins):
+  # 1. EUBUCCO.type starts with "non-" -> NON_RESIDENTIAL
+  # 2. floors >= 6 AND footprint >= 800 -> MFH_HIGH
+  # 3. floors <= 2 AND footprint < 250  -> SFH
+  # 4. 3 <= floors <= 5                  -> MFH_LOW
+  # 5. default (ambiguous large)         -> MFH_HIGH
+
+# -- Provenance + change log -------------------------------------------------
+_meta:
+  created: 2026-05-19
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 1)
+  last_verified: 2026-05-19
+  schema_version: 1
+  status: DRAFT -- direct German TABULA build; values flagged below need
+    verification before results are reported. Architecture and citations sound.
+  references_doc: literature/germany/classification_methodology.md
+  verified_2026_05_19:
+    - eubucco.nuts2_partitions (38 DE NUTS2 codes, NUTS 2016/2021)
+    - nuts3_regions (401 DE NUTS3 codes, from repo GISCO NUTS 2021 file)
+    - climate.hdd_country = 2845.85 (Eurostat nrg_chdd_a DE 2018-2022 mean)
+    - tabula source = DE direct; code/data/raw/tabula/de_intensities.csv
+      created from the IWU 2015 German TABULA brochure (18 cells)
+    - retrofit factors 0.55 / 0.18 -- German TABULA typology-averaged
+      refurbishment ratios (IWU 2015 brochure)
+  needs_verify_summary:
+    - retrofit shares (0.60/0.30/0.10) -- modelling assumption from Germany's
+      ~1%/yr renovation rate; no published three-state envelope distribution.
+    - de_intensities.csv MFH_HIGH cohorts 1991-2010 onward -- the German TABULA
+      defines no large apartment block after 1978; those cells are estimated.
+    - non_residential_intensity (120) -- estimate; contributes 0 TWh.
+    - reconciliation_benchmarks.eu_bso -- anchored estimate, BSO portal not retrievable.

@@ -1,0 +1,24 @@
+# EU Building Stock Observatory (BSO) -- Slovenia residential indicators
+#
+# Used by 03_heat_intensity.py for (1) the unknown-cohort stock-weighted
+# fallback intensity (stock_pct_si column) and (2) the BSO reconciliation row.
+#
+# stock_pct_si: share of the Slovenian residential stock by construction
+#   cohort. The Slovenian TABULA (ZRMK) reports the pre-1971 class at roughly
+#   half the stock. Distribution approximated from ZRMK and SURS. Sums to 100.
+#
+# bso_intensity_kwh_m2_yr: BSO-style per-cohort national-average residential
+#   heat intensity (delivered). DERIVED from the Slovenian TABULA per-cohort
+#   class-average space-heating need x retrofit blend (0.810) + DHW. The EU
+#   Building Stock Observatory portal could not be queried directly; flagged as
+#   derived, not an independent BSO query.
+#
+# Source: Slovenian TABULA scientific report (ZRMK); SURS; si_intensities.csv.
+#
+cohort,stock_pct_si,bso_intensity_kwh_m2_yr,note
+pre-1945,15,127,Pre-WWII masonry stock
+1946-1970,34,115,Post-war reconstruction; large pre-1971 ZRMK class
+1971-1990,28,97,1970s-80s expansion era
+1991-2010,17,80,Post-independence construction
+2011-2020,5,48,Post-2009 high-efficiency new-build
+post-2020,1,44,nZEB new-build

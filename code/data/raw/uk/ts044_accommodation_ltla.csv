@@ -1,0 +1,2649 @@
+Lower tier local authorities Code,Lower tier local authorities,Accommodation type (8 categories) Code,Accommodation type (8 categories),Observation
+E06000001,Hartlepool,1,Detached,8086
+E06000001,Hartlepool,2,Semi-detached,14537
+E06000001,Hartlepool,3,Terraced,13469
+E06000001,Hartlepool,4,In a purpose-built block of flats or tenement,3995
+E06000001,Hartlepool,5,"Part of a converted or shared house, including bedsits",314
+E06000001,Hartlepool,6,"Part of another converted building, for example, former school, church or warehouse",156
+E06000001,Hartlepool,7,"In a commercial building, for example, in an office building, hotel or over a shop",260
+E06000001,Hartlepool,8,A caravan or other mobile or temporary structure,115
+E06000002,Middlesbrough,1,Detached,10389
+E06000002,Middlesbrough,2,Semi-detached,25485
+E06000002,Middlesbrough,3,Terraced,16768
+E06000002,Middlesbrough,4,In a purpose-built block of flats or tenement,6457
+E06000002,Middlesbrough,5,"Part of a converted or shared house, including bedsits",647
+E06000002,Middlesbrough,6,"Part of another converted building, for example, former school, church or warehouse",157
+E06000002,Middlesbrough,7,"In a commercial building, for example, in an office building, hotel or over a shop",308
+E06000002,Middlesbrough,8,A caravan or other mobile or temporary structure,51
+E06000003,Redcar and Cleveland,1,Detached,12449
+E06000003,Redcar and Cleveland,2,Semi-detached,27942
+E06000003,Redcar and Cleveland,3,Terraced,15666
+E06000003,Redcar and Cleveland,4,In a purpose-built block of flats or tenement,4005
+E06000003,Redcar and Cleveland,5,"Part of a converted or shared house, including bedsits",791
+E06000003,Redcar and Cleveland,6,"Part of another converted building, for example, former school, church or warehouse",312
+E06000003,Redcar and Cleveland,7,"In a commercial building, for example, in an office building, hotel or over a shop",388
+E06000003,Redcar and Cleveland,8,A caravan or other mobile or temporary structure,84
+E06000004,Stockton-on-Tees,1,Detached,22209
+E06000004,Stockton-on-Tees,2,Semi-detached,35494
+E06000004,Stockton-on-Tees,3,Terraced,18298
+E06000004,Stockton-on-Tees,4,In a purpose-built block of flats or tenement,6444
+E06000004,Stockton-on-Tees,5,"Part of a converted or shared house, including bedsits",723
+E06000004,Stockton-on-Tees,6,"Part of another converted building, for example, former school, church or warehouse",175
+E06000004,Stockton-on-Tees,7,"In a commercial building, for example, in an office building, hotel or over a shop",334
+E06000004,Stockton-on-Tees,8,A caravan or other mobile or temporary structure,79
+E06000005,Darlington,1,Detached,9331
+E06000005,Darlington,2,Semi-detached,19148
+E06000005,Darlington,3,Terraced,13937
+E06000005,Darlington,4,In a purpose-built block of flats or tenement,5271
+E06000005,Darlington,5,"Part of a converted or shared house, including bedsits",743
+E06000005,Darlington,6,"Part of another converted building, for example, former school, church or warehouse",172
+E06000005,Darlington,7,"In a commercial building, for example, in an office building, hotel or over a shop",240
+E06000005,Darlington,8,A caravan or other mobile or temporary structure,78
+E06000006,Halton,1,Detached,11746
+E06000006,Halton,2,Semi-detached,19285
+E06000006,Halton,3,Terraced,18675
+E06000006,Halton,4,In a purpose-built block of flats or tenement,5317
+E06000006,Halton,5,"Part of a converted or shared house, including bedsits",380
+E06000006,Halton,6,"Part of another converted building, for example, former school, church or warehouse",161
+E06000006,Halton,7,"In a commercial building, for example, in an office building, hotel or over a shop",260
+E06000006,Halton,8,A caravan or other mobile or temporary structure,127
+E06000007,Warrington,1,Detached,22273
+E06000007,Warrington,2,Semi-detached,36508
+E06000007,Warrington,3,Terraced,20642
+E06000007,Warrington,4,In a purpose-built block of flats or tenement,9294
+E06000007,Warrington,5,"Part of a converted or shared house, including bedsits",1135
+E06000007,Warrington,6,"Part of another converted building, for example, former school, church or warehouse",237
+E06000007,Warrington,7,"In a commercial building, for example, in an office building, hotel or over a shop",368
+E06000007,Warrington,8,A caravan or other mobile or temporary structure,82
+E06000008,Blackburn with Darwen,1,Detached,8945
+E06000008,Blackburn with Darwen,2,Semi-detached,17343
+E06000008,Blackburn with Darwen,3,Terraced,25507
+E06000008,Blackburn with Darwen,4,In a purpose-built block of flats or tenement,5550
+E06000008,Blackburn with Darwen,5,"Part of a converted or shared house, including bedsits",727
+E06000008,Blackburn with Darwen,6,"Part of another converted building, for example, former school, church or warehouse",205
+E06000008,Blackburn with Darwen,7,"In a commercial building, for example, in an office building, hotel or over a shop",445
+E06000008,Blackburn with Darwen,8,A caravan or other mobile or temporary structure,44
+E06000009,Blackpool,1,Detached,6207
+E06000009,Blackpool,2,Semi-detached,25548
+E06000009,Blackpool,3,Terraced,19105
+E06000009,Blackpool,4,In a purpose-built block of flats or tenement,8771
+E06000009,Blackpool,5,"Part of a converted or shared house, including bedsits",3622
+E06000009,Blackpool,6,"Part of another converted building, for example, former school, church or warehouse",332
+E06000009,Blackpool,7,"In a commercial building, for example, in an office building, hotel or over a shop",1052
+E06000009,Blackpool,8,A caravan or other mobile or temporary structure,154
+E06000010,Kingston upon Hull,1,Detached,9676
+E06000010,Kingston upon Hull,2,Semi-detached,33932
+E06000010,Kingston upon Hull,3,Terraced,53953
+E06000010,Kingston upon Hull,4,In a purpose-built block of flats or tenement,13165
+E06000010,Kingston upon Hull,5,"Part of a converted or shared house, including bedsits",2681
+E06000010,Kingston upon Hull,6,"Part of another converted building, for example, former school, church or warehouse",831
+E06000010,Kingston upon Hull,7,"In a commercial building, for example, in an office building, hotel or over a shop",1071
+E06000010,Kingston upon Hull,8,A caravan or other mobile or temporary structure,162
+E06000011,East Riding of Yorkshire,1,Detached,53673
+E06000011,East Riding of Yorkshire,2,Semi-detached,55372
+E06000011,East Riding of Yorkshire,3,Terraced,28943
+E06000011,East Riding of Yorkshire,4,In a purpose-built block of flats or tenement,9684
+E06000011,East Riding of Yorkshire,5,"Part of a converted or shared house, including bedsits",2025
+E06000011,East Riding of Yorkshire,6,"Part of another converted building, for example, former school, church or warehouse",681
+E06000011,East Riding of Yorkshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",1145
+E06000011,East Riding of Yorkshire,8,A caravan or other mobile or temporary structure,542
+E06000012,North East Lincolnshire,1,Detached,15597
+E06000012,North East Lincolnshire,2,Semi-detached,24186
+E06000012,North East Lincolnshire,3,Terraced,22044
+E06000012,North East Lincolnshire,4,In a purpose-built block of flats or tenement,5517
+E06000012,North East Lincolnshire,5,"Part of a converted or shared house, including bedsits",1487
+E06000012,North East Lincolnshire,6,"Part of another converted building, for example, former school, church or warehouse",287
+E06000012,North East Lincolnshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",628
+E06000012,North East Lincolnshire,8,A caravan or other mobile or temporary structure,78
+E06000013,North Lincolnshire,1,Detached,25763
+E06000013,North Lincolnshire,2,Semi-detached,30620
+E06000013,North Lincolnshire,3,Terraced,9819
+E06000013,North Lincolnshire,4,In a purpose-built block of flats or tenement,5076
+E06000013,North Lincolnshire,5,"Part of a converted or shared house, including bedsits",696
+E06000013,North Lincolnshire,6,"Part of another converted building, for example, former school, church or warehouse",183
+E06000013,North Lincolnshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",456
+E06000013,North Lincolnshire,8,A caravan or other mobile or temporary structure,559
+E06000014,York,1,Detached,19192
+E06000014,York,2,Semi-detached,30614
+E06000014,York,3,Terraced,20365
+E06000014,York,4,In a purpose-built block of flats or tenement,11800
+E06000014,York,5,"Part of a converted or shared house, including bedsits",1663
+E06000014,York,6,"Part of another converted building, for example, former school, church or warehouse",915
+E06000014,York,7,"In a commercial building, for example, in an office building, hotel or over a shop",624
+E06000014,York,8,A caravan or other mobile or temporary structure,289
+E06000015,Derby,1,Detached,25428
+E06000015,Derby,2,Semi-detached,41273
+E06000015,Derby,3,Terraced,23082
+E06000015,Derby,4,In a purpose-built block of flats or tenement,12936
+E06000015,Derby,5,"Part of a converted or shared house, including bedsits",1541
+E06000015,Derby,6,"Part of another converted building, for example, former school, church or warehouse",442
+E06000015,Derby,7,"In a commercial building, for example, in an office building, hotel or over a shop",656
+E06000015,Derby,8,A caravan or other mobile or temporary structure,295
+E06000016,Leicester,1,Detached,14467
+E06000016,Leicester,2,Semi-detached,46365
+E06000016,Leicester,3,Terraced,37181
+E06000016,Leicester,4,In a purpose-built block of flats or tenement,22678
+E06000016,Leicester,5,"Part of a converted or shared house, including bedsits",3817
+E06000016,Leicester,6,"Part of another converted building, for example, former school, church or warehouse",1446
+E06000016,Leicester,7,"In a commercial building, for example, in an office building, hotel or over a shop",1365
+E06000016,Leicester,8,A caravan or other mobile or temporary structure,69
+E06000017,Rutland,1,Detached,7753
+E06000017,Rutland,2,Semi-detached,4710
+E06000017,Rutland,3,Terraced,2826
+E06000017,Rutland,4,In a purpose-built block of flats or tenement,952
+E06000017,Rutland,5,"Part of a converted or shared house, including bedsits",117
+E06000017,Rutland,6,"Part of another converted building, for example, former school, church or warehouse",97
+E06000017,Rutland,7,"In a commercial building, for example, in an office building, hotel or over a shop",104
+E06000017,Rutland,8,A caravan or other mobile or temporary structure,135
+E06000018,Nottingham,1,Detached,19464
+E06000018,Nottingham,2,Semi-detached,41519
+E06000018,Nottingham,3,Terraced,34147
+E06000018,Nottingham,4,In a purpose-built block of flats or tenement,23009
+E06000018,Nottingham,5,"Part of a converted or shared house, including bedsits",3772
+E06000018,Nottingham,6,"Part of another converted building, for example, former school, church or warehouse",1543
+E06000018,Nottingham,7,"In a commercial building, for example, in an office building, hotel or over a shop",1137
+E06000018,Nottingham,8,A caravan or other mobile or temporary structure,154
+E06000019,Herefordshire,1,Detached,35100
+E06000019,Herefordshire,2,Semi-detached,23379
+E06000019,Herefordshire,3,Terraced,13535
+E06000019,Herefordshire,4,In a purpose-built block of flats or tenement,6949
+E06000019,Herefordshire,5,"Part of a converted or shared house, including bedsits",1431
+E06000019,Herefordshire,6,"Part of another converted building, for example, former school, church or warehouse",823
+E06000019,Herefordshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",774
+E06000019,Herefordshire,8,A caravan or other mobile or temporary structure,836
+E06000020,Telford and Wrekin,1,Detached,23899
+E06000020,Telford and Wrekin,2,Semi-detached,29065
+E06000020,Telford and Wrekin,3,Terraced,15539
+E06000020,Telford and Wrekin,4,In a purpose-built block of flats or tenement,6492
+E06000020,Telford and Wrekin,5,"Part of a converted or shared house, including bedsits",505
+E06000020,Telford and Wrekin,6,"Part of another converted building, for example, former school, church or warehouse",383
+E06000020,Telford and Wrekin,7,"In a commercial building, for example, in an office building, hotel or over a shop",343
+E06000020,Telford and Wrekin,8,A caravan or other mobile or temporary structure,283
+E06000021,Stoke-on-Trent,1,Detached,16542
+E06000021,Stoke-on-Trent,2,Semi-detached,50860
+E06000021,Stoke-on-Trent,3,Terraced,30437
+E06000021,Stoke-on-Trent,4,In a purpose-built block of flats or tenement,10166
+E06000021,Stoke-on-Trent,5,"Part of a converted or shared house, including bedsits",1304
+E06000021,Stoke-on-Trent,6,"Part of another converted building, for example, former school, church or warehouse",323
+E06000021,Stoke-on-Trent,7,"In a commercial building, for example, in an office building, hotel or over a shop",720
+E06000021,Stoke-on-Trent,8,A caravan or other mobile or temporary structure,48
+E06000022,Bath and North East Somerset,1,Detached,17678
+E06000022,Bath and North East Somerset,2,Semi-detached,22713
+E06000022,Bath and North East Somerset,3,Terraced,21579
+E06000022,Bath and North East Somerset,4,In a purpose-built block of flats or tenement,10672
+E06000022,Bath and North East Somerset,5,"Part of a converted or shared house, including bedsits",4646
+E06000022,Bath and North East Somerset,6,"Part of another converted building, for example, former school, church or warehouse",985
+E06000022,Bath and North East Somerset,7,"In a commercial building, for example, in an office building, hotel or over a shop",666
+E06000022,Bath and North East Somerset,8,A caravan or other mobile or temporary structure,311
+E06000023,Bristol,1,Detached,11550
+E06000023,Bristol,2,Semi-detached,51061
+E06000023,Bristol,3,Terraced,61440
+E06000023,Bristol,4,In a purpose-built block of flats or tenement,42039
+E06000023,Bristol,5,"Part of a converted or shared house, including bedsits",19494
+E06000023,Bristol,6,"Part of another converted building, for example, former school, church or warehouse",3490
+E06000023,Bristol,7,"In a commercial building, for example, in an office building, hotel or over a shop",2380
+E06000023,Bristol,8,A caravan or other mobile or temporary structure,184
+E06000024,North Somerset,1,Detached,31344
+E06000024,North Somerset,2,Semi-detached,28469
+E06000024,North Somerset,3,Terraced,14314
+E06000024,North Somerset,4,In a purpose-built block of flats or tenement,12303
+E06000024,North Somerset,5,"Part of a converted or shared house, including bedsits",5393
+E06000024,North Somerset,6,"Part of another converted building, for example, former school, church or warehouse",1023
+E06000024,North Somerset,7,"In a commercial building, for example, in an office building, hotel or over a shop",682
+E06000024,North Somerset,8,A caravan or other mobile or temporary structure,1119
+E06000025,South Gloucestershire,1,Detached,31401
+E06000025,South Gloucestershire,2,Semi-detached,40784
+E06000025,South Gloucestershire,3,Terraced,30133
+E06000025,South Gloucestershire,4,In a purpose-built block of flats or tenement,12339
+E06000025,South Gloucestershire,5,"Part of a converted or shared house, including bedsits",1515
+E06000025,South Gloucestershire,6,"Part of another converted building, for example, former school, church or warehouse",472
+E06000025,South Gloucestershire,7,"In a commercial building, for example, in an office building, hotel or over a shop",672
+E06000025,South Gloucestershire,8,A caravan or other mobile or temporary structure,785
+E06000026,Plymouth,1,Detached,13017
+E06000026,Plymouth,2,Semi-detached,34537
+E06000026,Plymouth,3,Terraced,37592
+E06000026,Plymouth,4,In a purpose-built block of flats or tenement,18588
+E06000026,Plymouth,5,"Part of a converted or shared house, including bedsits",8629
+E06000026,Plymouth,6,"Part of another converted building, for example, former school, church or warehouse",1092
+E06000026,Plymouth,7,"In a commercial building, for example, in an office building, hotel or over a shop",773
+E06000026,Plymouth,8,A caravan or other mobile or temporary structure,330
+E06000027,Torbay,1,Detached,14125
+E06000027,Torbay,2,Semi-detached,15617
+E06000027,Torbay,3,Terraced,14226
+E06000027,Torbay,4,In a purpose-built block of flats or tenement,10818
+E06000027,Torbay,5,"Part of a converted or shared house, including bedsits",5877
+E06000027,Torbay,6,"Part of another converted building, for example, former school, church or warehouse",1098
+E06000027,Torbay,7,"In a commercial building, for example, in an office building, hotel or over a shop",1004
+E06000027,Torbay,8,A caravan or other mobile or temporary structure,230
+E06000030,Swindon,1,Detached,21354
+E06000030,Swindon,2,Semi-detached,29458
+E06000030,Swindon,3,Terraced,27788
+E06000030,Swindon,4,In a purpose-built block of flats or tenement,14584
+E06000030,Swindon,5,"Part of a converted or shared house, including bedsits",1458
+E06000030,Swindon,6,"Part of another converted building, for example, former school, church or warehouse",448
+E06000030,Swindon,7,"In a commercial building, for example, in an office building, hotel or over a shop",555
+E06000030,Swindon,8,A caravan or other mobile or temporary structure,217
+E06000031,Peterborough,1,Detached,23554
+E06000031,Peterborough,2,Semi-detached,27721
+E06000031,Peterborough,3,Terraced,18495
+E06000031,Peterborough,4,In a purpose-built block of flats or tenement,12436
+E06000031,Peterborough,5,"Part of a converted or shared house, including bedsits",1106
+E06000031,Peterborough,6,"Part of another converted building, for example, former school, church or warehouse",299
+E06000031,Peterborough,7,"In a commercial building, for example, in an office building, hotel or over a shop",386
+E06000031,Peterborough,8,A caravan or other mobile or temporary structure,536
+E06000032,Luton,1,Detached,10158
+E06000032,Luton,2,Semi-detached,31781
+E06000032,Luton,3,Terraced,17356
+E06000032,Luton,4,In a purpose-built block of flats or tenement,16209
+E06000032,Luton,5,"Part of a converted or shared house, including bedsits",2292
+E06000032,Luton,6,"Part of another converted building, for example, former school, church or warehouse",352
+E06000032,Luton,7,"In a commercial building, for example, in an office building, hotel or over a shop",667
+E06000032,Luton,8,A caravan or other mobile or temporary structure,127
+E06000033,Southend-on-Sea,1,Detached,12347
+E06000033,Southend-on-Sea,2,Semi-detached,24276
+E06000033,Southend-on-Sea,3,Terraced,13335
+E06000033,Southend-on-Sea,4,In a purpose-built block of flats or tenement,15982
+E06000033,Southend-on-Sea,5,"Part of a converted or shared house, including bedsits",10249
+E06000033,Southend-on-Sea,6,"Part of another converted building, for example, former school, church or warehouse",685
+E06000033,Southend-on-Sea,7,"In a commercial building, for example, in an office building, hotel or over a shop",1378
+E06000033,Southend-on-Sea,8,A caravan or other mobile or temporary structure,91
+E06000034,Thurrock,1,Detached,8295
+E06000034,Thurrock,2,Semi-detached,22883
+E06000034,Thurrock,3,Terraced,19405
+E06000034,Thurrock,4,In a purpose-built block of flats or tenement,14411
+E06000034,Thurrock,5,"Part of a converted or shared house, including bedsits",588
+E06000034,Thurrock,6,"Part of another converted building, for example, former school, church or warehouse",121
+E06000034,Thurrock,7,"In a commercial building, for example, in an office building, hotel or over a shop",463
+E06000034,Thurrock,8,A caravan or other mobile or temporary structure,212
+E06000035,Medway,1,Detached,16046
+E06000035,Medway,2,Semi-detached,34408
+E06000035,Medway,3,Terraced,41983
+E06000035,Medway,4,In a purpose-built block of flats or tenement,14768
+E06000035,Medway,5,"Part of a converted or shared house, including bedsits",2165
+E06000035,Medway,6,"Part of another converted building, for example, former school, church or warehouse",497
+E06000035,Medway,7,"In a commercial building, for example, in an office building, hotel or over a shop",917
+E06000035,Medway,8,A caravan or other mobile or temporary structure,674
+E06000036,Bracknell Forest,1,Detached,13532
+E06000036,Bracknell Forest,2,Semi-detached,10917
+E06000036,Bracknell Forest,3,Terraced,14477
+E06000036,Bracknell Forest,4,In a purpose-built block of flats or tenement,9602
+E06000036,Bracknell Forest,5,"Part of a converted or shared house, including bedsits",311
+E06000036,Bracknell Forest,6,"Part of another converted building, for example, former school, church or warehouse",272
+E06000036,Bracknell Forest,7,"In a commercial building, for example, in an office building, hotel or over a shop",295
+E06000036,Bracknell Forest,8,A caravan or other mobile or temporary structure,842
+E06000037,West Berkshire,1,Detached,22031
+E06000037,West Berkshire,2,Semi-detached,21690
+E06000037,West Berkshire,3,Terraced,11369
+E06000037,West Berkshire,4,In a purpose-built block of flats or tenement,8882
+E06000037,West Berkshire,5,"Part of a converted or shared house, including bedsits",965
+E06000037,West Berkshire,6,"Part of another converted building, for example, former school, church or warehouse",607
+E06000037,West Berkshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",398
+E06000037,West Berkshire,8,A caravan or other mobile or temporary structure,717
+E06000038,Reading,1,Detached,8291
+E06000038,Reading,2,Semi-detached,17548
+E06000038,Reading,3,Terraced,19083
+E06000038,Reading,4,In a purpose-built block of flats or tenement,18210
+E06000038,Reading,5,"Part of a converted or shared house, including bedsits",3250
+E06000038,Reading,6,"Part of another converted building, for example, former school, church or warehouse",561
+E06000038,Reading,7,"In a commercial building, for example, in an office building, hotel or over a shop",604
+E06000038,Reading,8,A caravan or other mobile or temporary structure,135
+E06000039,Slough,1,Detached,5453
+E06000039,Slough,2,Semi-detached,15513
+E06000039,Slough,3,Terraced,13775
+E06000039,Slough,4,In a purpose-built block of flats or tenement,15533
+E06000039,Slough,5,"Part of a converted or shared house, including bedsits",1422
+E06000039,Slough,6,"Part of another converted building, for example, former school, church or warehouse",220
+E06000039,Slough,7,"In a commercial building, for example, in an office building, hotel or over a shop",434
+E06000039,Slough,8,A caravan or other mobile or temporary structure,72
+E06000040,Windsor and Maidenhead,1,Detached,18704
+E06000040,Windsor and Maidenhead,2,Semi-detached,15929
+E06000040,Windsor and Maidenhead,3,Terraced,10908
+E06000040,Windsor and Maidenhead,4,In a purpose-built block of flats or tenement,12168
+E06000040,Windsor and Maidenhead,5,"Part of a converted or shared house, including bedsits",1525
+E06000040,Windsor and Maidenhead,6,"Part of another converted building, for example, former school, church or warehouse",502
+E06000040,Windsor and Maidenhead,7,"In a commercial building, for example, in an office building, hotel or over a shop",575
+E06000040,Windsor and Maidenhead,8,A caravan or other mobile or temporary structure,623
+E06000041,Wokingham,1,Detached,29512
+E06000041,Wokingham,2,Semi-detached,20178
+E06000041,Wokingham,3,Terraced,9938
+E06000041,Wokingham,4,In a purpose-built block of flats or tenement,7625
+E06000041,Wokingham,5,"Part of a converted or shared house, including bedsits",646
+E06000041,Wokingham,6,"Part of another converted building, for example, former school, church or warehouse",275
+E06000041,Wokingham,7,"In a commercial building, for example, in an office building, hotel or over a shop",317
+E06000041,Wokingham,8,A caravan or other mobile or temporary structure,674
+E06000042,Milton Keynes,1,Detached,31671
+E06000042,Milton Keynes,2,Semi-detached,33130
+E06000042,Milton Keynes,3,Terraced,27738
+E06000042,Milton Keynes,4,In a purpose-built block of flats or tenement,18825
+E06000042,Milton Keynes,5,"Part of a converted or shared house, including bedsits",844
+E06000042,Milton Keynes,6,"Part of another converted building, for example, former school, church or warehouse",348
+E06000042,Milton Keynes,7,"In a commercial building, for example, in an office building, hotel or over a shop",468
+E06000042,Milton Keynes,8,A caravan or other mobile or temporary structure,78
+E06000043,Brighton and Hove,1,Detached,12541
+E06000043,Brighton and Hove,2,Semi-detached,23918
+E06000043,Brighton and Hove,3,Terraced,24095
+E06000043,Brighton and Hove,4,In a purpose-built block of flats or tenement,33449
+E06000043,Brighton and Hove,5,"Part of a converted or shared house, including bedsits",23803
+E06000043,Brighton and Hove,6,"Part of another converted building, for example, former school, church or warehouse",1775
+E06000043,Brighton and Hove,7,"In a commercial building, for example, in an office building, hotel or over a shop",1727
+E06000043,Brighton and Hove,8,A caravan or other mobile or temporary structure,94
+E06000044,Portsmouth,1,Detached,3864
+E06000044,Portsmouth,2,Semi-detached,14218
+E06000044,Portsmouth,3,Terraced,37361
+E06000044,Portsmouth,4,In a purpose-built block of flats or tenement,22794
+E06000044,Portsmouth,5,"Part of a converted or shared house, including bedsits",5448
+E06000044,Portsmouth,6,"Part of another converted building, for example, former school, church or warehouse",1202
+E06000044,Portsmouth,7,"In a commercial building, for example, in an office building, hotel or over a shop",1121
+E06000044,Portsmouth,8,A caravan or other mobile or temporary structure,147
+E06000045,Southampton,1,Detached,13291
+E06000045,Southampton,2,Semi-detached,26344
+E06000045,Southampton,3,Terraced,20089
+E06000045,Southampton,4,In a purpose-built block of flats or tenement,35540
+E06000045,Southampton,5,"Part of a converted or shared house, including bedsits",5177
+E06000045,Southampton,6,"Part of another converted building, for example, former school, church or warehouse",849
+E06000045,Southampton,7,"In a commercial building, for example, in an office building, hotel or over a shop",910
+E06000045,Southampton,8,A caravan or other mobile or temporary structure,93
+E06000046,Isle of Wight,1,Detached,22024
+E06000046,Isle of Wight,2,Semi-detached,19076
+E06000046,Isle of Wight,3,Terraced,9877
+E06000046,Isle of Wight,4,In a purpose-built block of flats or tenement,8572
+E06000046,Isle of Wight,5,"Part of a converted or shared house, including bedsits",3075
+E06000046,Isle of Wight,6,"Part of another converted building, for example, former school, church or warehouse",909
+E06000046,Isle of Wight,7,"In a commercial building, for example, in an office building, hotel or over a shop",793
+E06000046,Isle of Wight,8,A caravan or other mobile or temporary structure,449
+E06000047,County Durham,1,Detached,48799
+E06000047,County Durham,2,Semi-detached,89775
+E06000047,County Durham,3,Terraced,83017
+E06000047,County Durham,4,In a purpose-built block of flats or tenement,9623
+E06000047,County Durham,5,"Part of a converted or shared house, including bedsits",1373
+E06000047,County Durham,6,"Part of another converted building, for example, former school, church or warehouse",684
+E06000047,County Durham,7,"In a commercial building, for example, in an office building, hotel or over a shop",1104
+E06000047,County Durham,8,A caravan or other mobile or temporary structure,386
+E06000049,Cheshire East,1,Detached,63928
+E06000049,Cheshire East,2,Semi-detached,56799
+E06000049,Cheshire East,3,Terraced,34980
+E06000049,Cheshire East,4,In a purpose-built block of flats or tenement,14284
+E06000049,Cheshire East,5,"Part of a converted or shared house, including bedsits",1878
+E06000049,Cheshire East,6,"Part of another converted building, for example, former school, church or warehouse",1267
+E06000049,Cheshire East,7,"In a commercial building, for example, in an office building, hotel or over a shop",940
+E06000049,Cheshire East,8,A caravan or other mobile or temporary structure,780
+E06000050,Cheshire West and Chester,1,Detached,47457
+E06000050,Cheshire West and Chester,2,Semi-detached,56297
+E06000050,Cheshire West and Chester,3,Terraced,31924
+E06000050,Cheshire West and Chester,4,In a purpose-built block of flats or tenement,15140
+E06000050,Cheshire West and Chester,5,"Part of a converted or shared house, including bedsits",1595
+E06000050,Cheshire West and Chester,6,"Part of another converted building, for example, former school, church or warehouse",857
+E06000050,Cheshire West and Chester,7,"In a commercial building, for example, in an office building, hotel or over a shop",817
+E06000050,Cheshire West and Chester,8,A caravan or other mobile or temporary structure,1069
+E06000051,Shropshire,1,Detached,57267
+E06000051,Shropshire,2,Semi-detached,46762
+E06000051,Shropshire,3,Terraced,21998
+E06000051,Shropshire,4,In a purpose-built block of flats or tenement,8467
+E06000051,Shropshire,5,"Part of a converted or shared house, including bedsits",1439
+E06000051,Shropshire,6,"Part of another converted building, for example, former school, church or warehouse",1390
+E06000051,Shropshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",1094
+E06000051,Shropshire,8,A caravan or other mobile or temporary structure,1166
+E06000052,Cornwall,1,Detached,93105
+E06000052,Cornwall,2,Semi-detached,66437
+E06000052,Cornwall,3,Terraced,54967
+E06000052,Cornwall,4,In a purpose-built block of flats or tenement,20842
+E06000052,Cornwall,5,"Part of a converted or shared house, including bedsits",6185
+E06000052,Cornwall,6,"Part of another converted building, for example, former school, church or warehouse",2794
+E06000052,Cornwall,7,"In a commercial building, for example, in an office building, hotel or over a shop",2319
+E06000052,Cornwall,8,A caravan or other mobile or temporary structure,3886
+E06000053,Isles of Scilly,1,Detached,321
+E06000053,Isles of Scilly,2,Semi-detached,220
+E06000053,Isles of Scilly,3,Terraced,166
+E06000053,Isles of Scilly,4,In a purpose-built block of flats or tenement,77
+E06000053,Isles of Scilly,5,"Part of a converted or shared house, including bedsits",88
+E06000053,Isles of Scilly,6,"Part of another converted building, for example, former school, church or warehouse",28
+E06000053,Isles of Scilly,7,"In a commercial building, for example, in an office building, hotel or over a shop",38
+E06000053,Isles of Scilly,8,A caravan or other mobile or temporary structure,1
+E06000054,Wiltshire,1,Detached,75628
+E06000054,Wiltshire,2,Semi-detached,68361
+E06000054,Wiltshire,3,Terraced,44590
+E06000054,Wiltshire,4,In a purpose-built block of flats or tenement,19107
+E06000054,Wiltshire,5,"Part of a converted or shared house, including bedsits",2681
+E06000054,Wiltshire,6,"Part of another converted building, for example, former school, church or warehouse",1818
+E06000054,Wiltshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",1371
+E06000054,Wiltshire,8,A caravan or other mobile or temporary structure,1525
+E06000055,Bedford,1,Detached,20813
+E06000055,Bedford,2,Semi-detached,24743
+E06000055,Bedford,3,Terraced,14941
+E06000055,Bedford,4,In a purpose-built block of flats or tenement,10679
+E06000055,Bedford,5,"Part of a converted or shared house, including bedsits",2127
+E06000055,Bedford,6,"Part of another converted building, for example, former school, church or warehouse",460
+E06000055,Bedford,7,"In a commercial building, for example, in an office building, hotel or over a shop",530
+E06000055,Bedford,8,A caravan or other mobile or temporary structure,657
+E06000056,Central Bedfordshire,1,Detached,35355
+E06000056,Central Bedfordshire,2,Semi-detached,41573
+E06000056,Central Bedfordshire,3,Terraced,28303
+E06000056,Central Bedfordshire,4,In a purpose-built block of flats or tenement,12296
+E06000056,Central Bedfordshire,5,"Part of a converted or shared house, including bedsits",894
+E06000056,Central Bedfordshire,6,"Part of another converted building, for example, former school, church or warehouse",739
+E06000056,Central Bedfordshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",666
+E06000056,Central Bedfordshire,8,A caravan or other mobile or temporary structure,929
+E06000057,Northumberland,1,Detached,39981
+E06000057,Northumberland,2,Semi-detached,53097
+E06000057,Northumberland,3,Terraced,37801
+E06000057,Northumberland,4,In a purpose-built block of flats or tenement,12097
+E06000057,Northumberland,5,"Part of a converted or shared house, including bedsits",1933
+E06000057,Northumberland,6,"Part of another converted building, for example, former school, church or warehouse",809
+E06000057,Northumberland,7,"In a commercial building, for example, in an office building, hotel or over a shop",870
+E06000057,Northumberland,8,A caravan or other mobile or temporary structure,334
+E06000058,"Bournemouth, Christchurch and Poole",1,Detached,61946
+E06000058,"Bournemouth, Christchurch and Poole",2,Semi-detached,30018
+E06000058,"Bournemouth, Christchurch and Poole",3,Terraced,17150
+E06000058,"Bournemouth, Christchurch and Poole",4,In a purpose-built block of flats or tenement,46587
+E06000058,"Bournemouth, Christchurch and Poole",5,"Part of a converted or shared house, including bedsits",13187
+E06000058,"Bournemouth, Christchurch and Poole",6,"Part of another converted building, for example, former school, church or warehouse",1819
+E06000058,"Bournemouth, Christchurch and Poole",7,"In a commercial building, for example, in an office building, hotel or over a shop",2478
+E06000058,"Bournemouth, Christchurch and Poole",8,A caravan or other mobile or temporary structure,657
+E06000059,Dorset,1,Detached,68763
+E06000059,Dorset,2,Semi-detached,39588
+E06000059,Dorset,3,Terraced,32748
+E06000059,Dorset,4,In a purpose-built block of flats or tenement,19578
+E06000059,Dorset,5,"Part of a converted or shared house, including bedsits",3316
+E06000059,Dorset,6,"Part of another converted building, for example, former school, church or warehouse",1669
+E06000059,Dorset,7,"In a commercial building, for example, in an office building, hotel or over a shop",1563
+E06000059,Dorset,8,A caravan or other mobile or temporary structure,2036
+E06000060,Buckinghamshire,1,Detached,75661
+E06000060,Buckinghamshire,2,Semi-detached,66450
+E06000060,Buckinghamshire,3,Terraced,39127
+E06000060,Buckinghamshire,4,In a purpose-built block of flats or tenement,31682
+E06000060,Buckinghamshire,5,"Part of a converted or shared house, including bedsits",3220
+E06000060,Buckinghamshire,6,"Part of another converted building, for example, former school, church or warehouse",1387
+E06000060,Buckinghamshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",1646
+E06000060,Buckinghamshire,8,A caravan or other mobile or temporary structure,1155
+E06000061,North Northamptonshire,1,Detached,44461
+E06000061,North Northamptonshire,2,Semi-detached,52529
+E06000061,North Northamptonshire,3,Terraced,34629
+E06000061,North Northamptonshire,4,In a purpose-built block of flats or tenement,13574
+E06000061,North Northamptonshire,5,"Part of a converted or shared house, including bedsits",1324
+E06000061,North Northamptonshire,6,"Part of another converted building, for example, former school, church or warehouse",1019
+E06000061,North Northamptonshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",714
+E06000061,North Northamptonshire,8,A caravan or other mobile or temporary structure,668
+E06000062,West Northamptonshire,1,Detached,54696
+E06000062,West Northamptonshire,2,Semi-detached,54581
+E06000062,West Northamptonshire,3,Terraced,39859
+E06000062,West Northamptonshire,4,In a purpose-built block of flats or tenement,18663
+E06000062,West Northamptonshire,5,"Part of a converted or shared house, including bedsits",2077
+E06000062,West Northamptonshire,6,"Part of another converted building, for example, former school, church or warehouse",1109
+E06000062,West Northamptonshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",941
+E06000062,West Northamptonshire,8,A caravan or other mobile or temporary structure,712
+E07000008,Cambridge,1,Detached,5700
+E07000008,Cambridge,2,Semi-detached,13843
+E07000008,Cambridge,3,Terraced,14478
+E07000008,Cambridge,4,In a purpose-built block of flats or tenement,16107
+E07000008,Cambridge,5,"Part of a converted or shared house, including bedsits",1638
+E07000008,Cambridge,6,"Part of another converted building, for example, former school, church or warehouse",227
+E07000008,Cambridge,7,"In a commercial building, for example, in an office building, hotel or over a shop",400
+E07000008,Cambridge,8,A caravan or other mobile or temporary structure,79
+E07000009,East Cambridgeshire,1,Detached,15623
+E07000009,East Cambridgeshire,2,Semi-detached,11946
+E07000009,East Cambridgeshire,3,Terraced,6302
+E07000009,East Cambridgeshire,4,In a purpose-built block of flats or tenement,2232
+E07000009,East Cambridgeshire,5,"Part of a converted or shared house, including bedsits",313
+E07000009,East Cambridgeshire,6,"Part of another converted building, for example, former school, church or warehouse",195
+E07000009,East Cambridgeshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",154
+E07000009,East Cambridgeshire,8,A caravan or other mobile or temporary structure,439
+E07000010,Fenland,1,Detached,20154
+E07000010,Fenland,2,Semi-detached,13187
+E07000010,Fenland,3,Terraced,6316
+E07000010,Fenland,4,In a purpose-built block of flats or tenement,3126
+E07000010,Fenland,5,"Part of a converted or shared house, including bedsits",365
+E07000010,Fenland,6,"Part of another converted building, for example, former school, church or warehouse",194
+E07000010,Fenland,7,"In a commercial building, for example, in an office building, hotel or over a shop",263
+E07000010,Fenland,8,A caravan or other mobile or temporary structure,476
+E07000011,Huntingdonshire,1,Detached,30548
+E07000011,Huntingdonshire,2,Semi-detached,23248
+E07000011,Huntingdonshire,3,Terraced,13860
+E07000011,Huntingdonshire,4,In a purpose-built block of flats or tenement,7027
+E07000011,Huntingdonshire,5,"Part of a converted or shared house, including bedsits",650
+E07000011,Huntingdonshire,6,"Part of another converted building, for example, former school, church or warehouse",553
+E07000011,Huntingdonshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",397
+E07000011,Huntingdonshire,8,A caravan or other mobile or temporary structure,595
+E07000012,South Cambridgeshire,1,Detached,27602
+E07000012,South Cambridgeshire,2,Semi-detached,22639
+E07000012,South Cambridgeshire,3,Terraced,11247
+E07000012,South Cambridgeshire,4,In a purpose-built block of flats or tenement,4033
+E07000012,South Cambridgeshire,5,"Part of a converted or shared house, including bedsits",431
+E07000012,South Cambridgeshire,6,"Part of another converted building, for example, former school, church or warehouse",138
+E07000012,South Cambridgeshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",196
+E07000012,South Cambridgeshire,8,A caravan or other mobile or temporary structure,709
+E07000026,Allerdale,1,Detached,12474
+E07000026,Allerdale,2,Semi-detached,14914
+E07000026,Allerdale,3,Terraced,12808
+E07000026,Allerdale,4,In a purpose-built block of flats or tenement,2519
+E07000026,Allerdale,5,"Part of a converted or shared house, including bedsits",397
+E07000026,Allerdale,6,"Part of another converted building, for example, former school, church or warehouse",310
+E07000026,Allerdale,7,"In a commercial building, for example, in an office building, hotel or over a shop",358
+E07000026,Allerdale,8,A caravan or other mobile or temporary structure,193
+E07000027,Barrow-in-Furness,1,Detached,4015
+E07000027,Barrow-in-Furness,2,Semi-detached,9721
+E07000027,Barrow-in-Furness,3,Terraced,14187
+E07000027,Barrow-in-Furness,4,In a purpose-built block of flats or tenement,2479
+E07000027,Barrow-in-Furness,5,"Part of a converted or shared house, including bedsits",275
+E07000027,Barrow-in-Furness,6,"Part of another converted building, for example, former school, church or warehouse",134
+E07000027,Barrow-in-Furness,7,"In a commercial building, for example, in an office building, hotel or over a shop",164
+E07000027,Barrow-in-Furness,8,A caravan or other mobile or temporary structure,284
+E07000028,Carlisle,1,Detached,12643
+E07000028,Carlisle,2,Semi-detached,18558
+E07000028,Carlisle,3,Terraced,13638
+E07000028,Carlisle,4,In a purpose-built block of flats or tenement,4268
+E07000028,Carlisle,5,"Part of a converted or shared house, including bedsits",718
+E07000028,Carlisle,6,"Part of another converted building, for example, former school, church or warehouse",452
+E07000028,Carlisle,7,"In a commercial building, for example, in an office building, hotel or over a shop",284
+E07000028,Carlisle,8,A caravan or other mobile or temporary structure,101
+E07000029,Copeland,1,Detached,7572
+E07000029,Copeland,2,Semi-detached,11829
+E07000029,Copeland,3,Terraced,9096
+E07000029,Copeland,4,In a purpose-built block of flats or tenement,1413
+E07000029,Copeland,5,"Part of a converted or shared house, including bedsits",240
+E07000029,Copeland,6,"Part of another converted building, for example, former school, church or warehouse",228
+E07000029,Copeland,7,"In a commercial building, for example, in an office building, hotel or over a shop",170
+E07000029,Copeland,8,A caravan or other mobile or temporary structure,244
+E07000030,Eden,1,Detached,9642
+E07000030,Eden,2,Semi-detached,7623
+E07000030,Eden,3,Terraced,4845
+E07000030,Eden,4,In a purpose-built block of flats or tenement,1589
+E07000030,Eden,5,"Part of a converted or shared house, including bedsits",275
+E07000030,Eden,6,"Part of another converted building, for example, former school, church or warehouse",282
+E07000030,Eden,7,"In a commercial building, for example, in an office building, hotel or over a shop",222
+E07000030,Eden,8,A caravan or other mobile or temporary structure,135
+E07000031,South Lakeland,1,Detached,15108
+E07000031,South Lakeland,2,Semi-detached,14655
+E07000031,South Lakeland,3,Terraced,11042
+E07000031,South Lakeland,4,In a purpose-built block of flats or tenement,4149
+E07000031,South Lakeland,5,"Part of a converted or shared house, including bedsits",1113
+E07000031,South Lakeland,6,"Part of another converted building, for example, former school, church or warehouse",826
+E07000031,South Lakeland,7,"In a commercial building, for example, in an office building, hotel or over a shop",572
+E07000031,South Lakeland,8,A caravan or other mobile or temporary structure,192
+E07000032,Amber Valley,1,Detached,20624
+E07000032,Amber Valley,2,Semi-detached,20632
+E07000032,Amber Valley,3,Terraced,11157
+E07000032,Amber Valley,4,In a purpose-built block of flats or tenement,2631
+E07000032,Amber Valley,5,"Part of a converted or shared house, including bedsits",411
+E07000032,Amber Valley,6,"Part of another converted building, for example, former school, church or warehouse",295
+E07000032,Amber Valley,7,"In a commercial building, for example, in an office building, hotel or over a shop",432
+E07000032,Amber Valley,8,A caravan or other mobile or temporary structure,95
+E07000033,Bolsover,1,Detached,10298
+E07000033,Bolsover,2,Semi-detached,15809
+E07000033,Bolsover,3,Terraced,7091
+E07000033,Bolsover,4,In a purpose-built block of flats or tenement,1542
+E07000033,Bolsover,5,"Part of a converted or shared house, including bedsits",161
+E07000033,Bolsover,6,"Part of another converted building, for example, former school, church or warehouse",139
+E07000033,Bolsover,7,"In a commercial building, for example, in an office building, hotel or over a shop",180
+E07000033,Bolsover,8,A caravan or other mobile or temporary structure,45
+E07000034,Chesterfield,1,Detached,11874
+E07000034,Chesterfield,2,Semi-detached,21594
+E07000034,Chesterfield,3,Terraced,8564
+E07000034,Chesterfield,4,In a purpose-built block of flats or tenement,4885
+E07000034,Chesterfield,5,"Part of a converted or shared house, including bedsits",549
+E07000034,Chesterfield,6,"Part of another converted building, for example, former school, church or warehouse",212
+E07000034,Chesterfield,7,"In a commercial building, for example, in an office building, hotel or over a shop",284
+E07000034,Chesterfield,8,A caravan or other mobile or temporary structure,95
+E07000035,Derbyshire Dales,1,Detached,13376
+E07000035,Derbyshire Dales,2,Semi-detached,10185
+E07000035,Derbyshire Dales,3,Terraced,5689
+E07000035,Derbyshire Dales,4,In a purpose-built block of flats or tenement,1988
+E07000035,Derbyshire Dales,5,"Part of a converted or shared house, including bedsits",295
+E07000035,Derbyshire Dales,6,"Part of another converted building, for example, former school, church or warehouse",378
+E07000035,Derbyshire Dales,7,"In a commercial building, for example, in an office building, hotel or over a shop",322
+E07000035,Derbyshire Dales,8,A caravan or other mobile or temporary structure,46
+E07000036,Erewash,1,Detached,14528
+E07000036,Erewash,2,Semi-detached,22457
+E07000036,Erewash,3,Terraced,9087
+E07000036,Erewash,4,In a purpose-built block of flats or tenement,2970
+E07000036,Erewash,5,"Part of a converted or shared house, including bedsits",450
+E07000036,Erewash,6,"Part of another converted building, for example, former school, church or warehouse",385
+E07000036,Erewash,7,"In a commercial building, for example, in an office building, hotel or over a shop",381
+E07000036,Erewash,8,A caravan or other mobile or temporary structure,75
+E07000037,High Peak,1,Detached,9765
+E07000037,High Peak,2,Semi-detached,12469
+E07000037,High Peak,3,Terraced,13482
+E07000037,High Peak,4,In a purpose-built block of flats or tenement,2993
+E07000037,High Peak,5,"Part of a converted or shared house, including bedsits",889
+E07000037,High Peak,6,"Part of another converted building, for example, former school, church or warehouse",658
+E07000037,High Peak,7,"In a commercial building, for example, in an office building, hotel or over a shop",380
+E07000037,High Peak,8,A caravan or other mobile or temporary structure,136
+E07000038,North East Derbyshire,1,Detached,16871
+E07000038,North East Derbyshire,2,Semi-detached,19949
+E07000038,North East Derbyshire,3,Terraced,5896
+E07000038,North East Derbyshire,4,In a purpose-built block of flats or tenement,2392
+E07000038,North East Derbyshire,5,"Part of a converted or shared house, including bedsits",268
+E07000038,North East Derbyshire,6,"Part of another converted building, for example, former school, church or warehouse",141
+E07000038,North East Derbyshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",277
+E07000038,North East Derbyshire,8,A caravan or other mobile or temporary structure,193
+E07000039,South Derbyshire,1,Detached,18672
+E07000039,South Derbyshire,2,Semi-detached,15770
+E07000039,South Derbyshire,3,Terraced,7743
+E07000039,South Derbyshire,4,In a purpose-built block of flats or tenement,2123
+E07000039,South Derbyshire,5,"Part of a converted or shared house, including bedsits",216
+E07000039,South Derbyshire,6,"Part of another converted building, for example, former school, church or warehouse",184
+E07000039,South Derbyshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",163
+E07000039,South Derbyshire,8,A caravan or other mobile or temporary structure,369
+E07000040,East Devon,1,Detached,25712
+E07000040,East Devon,2,Semi-detached,18114
+E07000040,East Devon,3,Terraced,12997
+E07000040,East Devon,4,In a purpose-built block of flats or tenement,6069
+E07000040,East Devon,5,"Part of a converted or shared house, including bedsits",2207
+E07000040,East Devon,6,"Part of another converted building, for example, former school, church or warehouse",559
+E07000040,East Devon,7,"In a commercial building, for example, in an office building, hotel or over a shop",708
+E07000040,East Devon,8,A caravan or other mobile or temporary structure,420
+E07000041,Exeter,1,Detached,7943
+E07000041,Exeter,2,Semi-detached,14140
+E07000041,Exeter,3,Terraced,16458
+E07000041,Exeter,4,In a purpose-built block of flats or tenement,10306
+E07000041,Exeter,5,"Part of a converted or shared house, including bedsits",2374
+E07000041,Exeter,6,"Part of another converted building, for example, former school, church or warehouse",555
+E07000041,Exeter,7,"In a commercial building, for example, in an office building, hotel or over a shop",440
+E07000041,Exeter,8,A caravan or other mobile or temporary structure,335
+E07000042,Mid Devon,1,Detached,13703
+E07000042,Mid Devon,2,Semi-detached,10433
+E07000042,Mid Devon,3,Terraced,7870
+E07000042,Mid Devon,4,In a purpose-built block of flats or tenement,2321
+E07000042,Mid Devon,5,"Part of a converted or shared house, including bedsits",512
+E07000042,Mid Devon,6,"Part of another converted building, for example, former school, church or warehouse",297
+E07000042,Mid Devon,7,"In a commercial building, for example, in an office building, hotel or over a shop",254
+E07000042,Mid Devon,8,A caravan or other mobile or temporary structure,243
+E07000043,North Devon,1,Detached,17051
+E07000043,North Devon,2,Semi-detached,10177
+E07000043,North Devon,3,Terraced,9471
+E07000043,North Devon,4,In a purpose-built block of flats or tenement,3617
+E07000043,North Devon,5,"Part of a converted or shared house, including bedsits",1422
+E07000043,North Devon,6,"Part of another converted building, for example, former school, church or warehouse",505
+E07000043,North Devon,7,"In a commercial building, for example, in an office building, hotel or over a shop",540
+E07000043,North Devon,8,A caravan or other mobile or temporary structure,414
+E07000044,South Hams,1,Detached,15663
+E07000044,South Hams,2,Semi-detached,11029
+E07000044,South Hams,3,Terraced,8215
+E07000044,South Hams,4,In a purpose-built block of flats or tenement,2414
+E07000044,South Hams,5,"Part of a converted or shared house, including bedsits",828
+E07000044,South Hams,6,"Part of another converted building, for example, former school, church or warehouse",520
+E07000044,South Hams,7,"In a commercial building, for example, in an office building, hotel or over a shop",370
+E07000044,South Hams,8,A caravan or other mobile or temporary structure,296
+E07000045,Teignbridge,1,Detached,22214
+E07000045,Teignbridge,2,Semi-detached,15003
+E07000045,Teignbridge,3,Terraced,13183
+E07000045,Teignbridge,4,In a purpose-built block of flats or tenement,4916
+E07000045,Teignbridge,5,"Part of a converted or shared house, including bedsits",2089
+E07000045,Teignbridge,6,"Part of another converted building, for example, former school, church or warehouse",769
+E07000045,Teignbridge,7,"In a commercial building, for example, in an office building, hotel or over a shop",572
+E07000045,Teignbridge,8,A caravan or other mobile or temporary structure,1091
+E07000046,Torridge,1,Detached,13191
+E07000046,Torridge,2,Semi-detached,6974
+E07000046,Torridge,3,Terraced,7037
+E07000046,Torridge,4,In a purpose-built block of flats or tenement,1816
+E07000046,Torridge,5,"Part of a converted or shared house, including bedsits",590
+E07000046,Torridge,6,"Part of another converted building, for example, former school, church or warehouse",332
+E07000046,Torridge,7,"In a commercial building, for example, in an office building, hotel or over a shop",294
+E07000046,Torridge,8,A caravan or other mobile or temporary structure,221
+E07000047,West Devon,1,Detached,10702
+E07000047,West Devon,2,Semi-detached,6570
+E07000047,West Devon,3,Terraced,4948
+E07000047,West Devon,4,In a purpose-built block of flats or tenement,1552
+E07000047,West Devon,5,"Part of a converted or shared house, including bedsits",422
+E07000047,West Devon,6,"Part of another converted building, for example, former school, church or warehouse",261
+E07000047,West Devon,7,"In a commercial building, for example, in an office building, hotel or over a shop",206
+E07000047,West Devon,8,A caravan or other mobile or temporary structure,156
+E07000061,Eastbourne,1,Detached,7630
+E07000061,Eastbourne,2,Semi-detached,9908
+E07000061,Eastbourne,3,Terraced,10879
+E07000061,Eastbourne,4,In a purpose-built block of flats or tenement,12395
+E07000061,Eastbourne,5,"Part of a converted or shared house, including bedsits",3564
+E07000061,Eastbourne,6,"Part of another converted building, for example, former school, church or warehouse",608
+E07000061,Eastbourne,7,"In a commercial building, for example, in an office building, hotel or over a shop",593
+E07000061,Eastbourne,8,A caravan or other mobile or temporary structure,32
+E07000062,Hastings,1,Detached,7732
+E07000062,Hastings,2,Semi-detached,8836
+E07000062,Hastings,3,Terraced,9155
+E07000062,Hastings,4,In a purpose-built block of flats or tenement,8074
+E07000062,Hastings,5,"Part of a converted or shared house, including bedsits",5531
+E07000062,Hastings,6,"Part of another converted building, for example, former school, church or warehouse",568
+E07000062,Hastings,7,"In a commercial building, for example, in an office building, hotel or over a shop",475
+E07000062,Hastings,8,A caravan or other mobile or temporary structure,83
+E07000063,Lewes,1,Detached,15290
+E07000063,Lewes,2,Semi-detached,11924
+E07000063,Lewes,3,Terraced,7923
+E07000063,Lewes,4,In a purpose-built block of flats or tenement,6161
+E07000063,Lewes,5,"Part of a converted or shared house, including bedsits",1122
+E07000063,Lewes,6,"Part of another converted building, for example, former school, church or warehouse",469
+E07000063,Lewes,7,"In a commercial building, for example, in an office building, hotel or over a shop",457
+E07000063,Lewes,8,A caravan or other mobile or temporary structure,343
+E07000064,Rother,1,Detached,17719
+E07000064,Rother,2,Semi-detached,9620
+E07000064,Rother,3,Terraced,5452
+E07000064,Rother,4,In a purpose-built block of flats or tenement,5973
+E07000064,Rother,5,"Part of a converted or shared house, including bedsits",2181
+E07000064,Rother,6,"Part of another converted building, for example, former school, church or warehouse",455
+E07000064,Rother,7,"In a commercial building, for example, in an office building, hotel or over a shop",478
+E07000064,Rother,8,A caravan or other mobile or temporary structure,224
+E07000065,Wealden,1,Detached,29838
+E07000065,Wealden,2,Semi-detached,21164
+E07000065,Wealden,3,Terraced,8554
+E07000065,Wealden,4,In a purpose-built block of flats or tenement,5909
+E07000065,Wealden,5,"Part of a converted or shared house, including bedsits",1001
+E07000065,Wealden,6,"Part of another converted building, for example, former school, church or warehouse",422
+E07000065,Wealden,7,"In a commercial building, for example, in an office building, hotel or over a shop",538
+E07000065,Wealden,8,A caravan or other mobile or temporary structure,838
+E07000066,Basildon,1,Detached,16660
+E07000066,Basildon,2,Semi-detached,20264
+E07000066,Basildon,3,Terraced,24924
+E07000066,Basildon,4,In a purpose-built block of flats or tenement,13183
+E07000066,Basildon,5,"Part of a converted or shared house, including bedsits",489
+E07000066,Basildon,6,"Part of another converted building, for example, former school, church or warehouse",208
+E07000066,Basildon,7,"In a commercial building, for example, in an office building, hotel or over a shop",308
+E07000066,Basildon,8,A caravan or other mobile or temporary structure,326
+E07000067,Braintree,1,Detached,19060
+E07000067,Braintree,2,Semi-detached,22537
+E07000067,Braintree,3,Terraced,14498
+E07000067,Braintree,4,In a purpose-built block of flats or tenement,7317
+E07000067,Braintree,5,"Part of a converted or shared house, including bedsits",535
+E07000067,Braintree,6,"Part of another converted building, for example, former school, church or warehouse",531
+E07000067,Braintree,7,"In a commercial building, for example, in an office building, hotel or over a shop",307
+E07000067,Braintree,8,A caravan or other mobile or temporary structure,201
+E07000068,Brentwood,1,Detached,9815
+E07000068,Brentwood,2,Semi-detached,10320
+E07000068,Brentwood,3,Terraced,4823
+E07000068,Brentwood,4,In a purpose-built block of flats or tenement,6006
+E07000068,Brentwood,5,"Part of a converted or shared house, including bedsits",556
+E07000068,Brentwood,6,"Part of another converted building, for example, former school, church or warehouse",432
+E07000068,Brentwood,7,"In a commercial building, for example, in an office building, hotel or over a shop",298
+E07000068,Brentwood,8,A caravan or other mobile or temporary structure,92
+E07000069,Castle Point,1,Detached,15580
+E07000069,Castle Point,2,Semi-detached,14257
+E07000069,Castle Point,3,Terraced,2842
+E07000069,Castle Point,4,In a purpose-built block of flats or tenement,2866
+E07000069,Castle Point,5,"Part of a converted or shared house, including bedsits",300
+E07000069,Castle Point,6,"Part of another converted building, for example, former school, church or warehouse",47
+E07000069,Castle Point,7,"In a commercial building, for example, in an office building, hotel or over a shop",311
+E07000069,Castle Point,8,A caravan or other mobile or temporary structure,1186
+E07000070,Chelmsford,1,Detached,22310
+E07000070,Chelmsford,2,Semi-detached,23467
+E07000070,Chelmsford,3,Terraced,14117
+E07000070,Chelmsford,4,In a purpose-built block of flats or tenement,13380
+E07000070,Chelmsford,5,"Part of a converted or shared house, including bedsits",664
+E07000070,Chelmsford,6,"Part of another converted building, for example, former school, church or warehouse",414
+E07000070,Chelmsford,7,"In a commercial building, for example, in an office building, hotel or over a shop",437
+E07000070,Chelmsford,8,A caravan or other mobile or temporary structure,614
+E07000071,Colchester,1,Detached,24439
+E07000071,Colchester,2,Semi-detached,24512
+E07000071,Colchester,3,Terraced,14398
+E07000071,Colchester,4,In a purpose-built block of flats or tenement,14157
+E07000071,Colchester,5,"Part of a converted or shared house, including bedsits",1038
+E07000071,Colchester,6,"Part of another converted building, for example, former school, church or warehouse",627
+E07000071,Colchester,7,"In a commercial building, for example, in an office building, hotel or over a shop",395
+E07000071,Colchester,8,A caravan or other mobile or temporary structure,143
+E07000072,Epping Forest,1,Detached,12611
+E07000072,Epping Forest,2,Semi-detached,17711
+E07000072,Epping Forest,3,Terraced,11716
+E07000072,Epping Forest,4,In a purpose-built block of flats or tenement,10448
+E07000072,Epping Forest,5,"Part of a converted or shared house, including bedsits",584
+E07000072,Epping Forest,6,"Part of another converted building, for example, former school, church or warehouse",294
+E07000072,Epping Forest,7,"In a commercial building, for example, in an office building, hotel or over a shop",452
+E07000072,Epping Forest,8,A caravan or other mobile or temporary structure,742
+E07000073,Harlow,1,Detached,3863
+E07000073,Harlow,2,Semi-detached,6551
+E07000073,Harlow,3,Terraced,17166
+E07000073,Harlow,4,In a purpose-built block of flats or tenement,9466
+E07000073,Harlow,5,"Part of a converted or shared house, including bedsits",268
+E07000073,Harlow,6,"Part of another converted building, for example, former school, church or warehouse",241
+E07000073,Harlow,7,"In a commercial building, for example, in an office building, hotel or over a shop",258
+E07000073,Harlow,8,A caravan or other mobile or temporary structure,43
+E07000074,Maldon,1,Detached,12543
+E07000074,Maldon,2,Semi-detached,8492
+E07000074,Maldon,3,Terraced,4065
+E07000074,Maldon,4,In a purpose-built block of flats or tenement,1954
+E07000074,Maldon,5,"Part of a converted or shared house, including bedsits",236
+E07000074,Maldon,6,"Part of another converted building, for example, former school, church or warehouse",109
+E07000074,Maldon,7,"In a commercial building, for example, in an office building, hotel or over a shop",208
+E07000074,Maldon,8,A caravan or other mobile or temporary structure,294
+E07000075,Rochford,1,Detached,11951
+E07000075,Rochford,2,Semi-detached,16310
+E07000075,Rochford,3,Terraced,2811
+E07000075,Rochford,4,In a purpose-built block of flats or tenement,3315
+E07000075,Rochford,5,"Part of a converted or shared house, including bedsits",242
+E07000075,Rochford,6,"Part of another converted building, for example, former school, church or warehouse",122
+E07000075,Rochford,7,"In a commercial building, for example, in an office building, hotel or over a shop",229
+E07000075,Rochford,8,A caravan or other mobile or temporary structure,577
+E07000076,Tendring,1,Detached,26999
+E07000076,Tendring,2,Semi-detached,21191
+E07000076,Tendring,3,Terraced,7435
+E07000076,Tendring,4,In a purpose-built block of flats or tenement,8387
+E07000076,Tendring,5,"Part of a converted or shared house, including bedsits",1382
+E07000076,Tendring,6,"Part of another converted building, for example, former school, church or warehouse",609
+E07000076,Tendring,7,"In a commercial building, for example, in an office building, hotel or over a shop",655
+E07000076,Tendring,8,A caravan or other mobile or temporary structure,793
+E07000077,Uttlesford,1,Detached,15507
+E07000077,Uttlesford,2,Semi-detached,11427
+E07000077,Uttlesford,3,Terraced,5803
+E07000077,Uttlesford,4,In a purpose-built block of flats or tenement,3159
+E07000077,Uttlesford,5,"Part of a converted or shared house, including bedsits",331
+E07000077,Uttlesford,6,"Part of another converted building, for example, former school, church or warehouse",325
+E07000077,Uttlesford,7,"In a commercial building, for example, in an office building, hotel or over a shop",178
+E07000077,Uttlesford,8,A caravan or other mobile or temporary structure,229
+E07000078,Cheltenham,1,Detached,9690
+E07000078,Cheltenham,2,Semi-detached,17599
+E07000078,Cheltenham,3,Terraced,11108
+E07000078,Cheltenham,4,In a purpose-built block of flats or tenement,10148
+E07000078,Cheltenham,5,"Part of a converted or shared house, including bedsits",3014
+E07000078,Cheltenham,6,"Part of another converted building, for example, former school, church or warehouse",588
+E07000078,Cheltenham,7,"In a commercial building, for example, in an office building, hotel or over a shop",424
+E07000078,Cheltenham,8,A caravan or other mobile or temporary structure,327
+E07000079,Cotswold,1,Detached,15135
+E07000079,Cotswold,2,Semi-detached,12523
+E07000079,Cotswold,3,Terraced,8099
+E07000079,Cotswold,4,In a purpose-built block of flats or tenement,3365
+E07000079,Cotswold,5,"Part of a converted or shared house, including bedsits",433
+E07000079,Cotswold,6,"Part of another converted building, for example, former school, church or warehouse",435
+E07000079,Cotswold,7,"In a commercial building, for example, in an office building, hotel or over a shop",266
+E07000079,Cotswold,8,A caravan or other mobile or temporary structure,341
+E07000080,Forest of Dean,1,Detached,16649
+E07000080,Forest of Dean,2,Semi-detached,12702
+E07000080,Forest of Dean,3,Terraced,4983
+E07000080,Forest of Dean,4,In a purpose-built block of flats or tenement,1654
+E07000080,Forest of Dean,5,"Part of a converted or shared house, including bedsits",414
+E07000080,Forest of Dean,6,"Part of another converted building, for example, former school, church or warehouse",240
+E07000080,Forest of Dean,7,"In a commercial building, for example, in an office building, hotel or over a shop",246
+E07000080,Forest of Dean,8,A caravan or other mobile or temporary structure,328
+E07000081,Gloucester,1,Detached,11646
+E07000081,Gloucester,2,Semi-detached,21950
+E07000081,Gloucester,3,Terraced,11475
+E07000081,Gloucester,4,In a purpose-built block of flats or tenement,8118
+E07000081,Gloucester,5,"Part of a converted or shared house, including bedsits",1147
+E07000081,Gloucester,6,"Part of another converted building, for example, former school, church or warehouse",500
+E07000081,Gloucester,7,"In a commercial building, for example, in an office building, hotel or over a shop",345
+E07000081,Gloucester,8,A caravan or other mobile or temporary structure,225
+E07000082,Stroud,1,Detached,19286
+E07000082,Stroud,2,Semi-detached,17216
+E07000082,Stroud,3,Terraced,9833
+E07000082,Stroud,4,In a purpose-built block of flats or tenement,4021
+E07000082,Stroud,5,"Part of a converted or shared house, including bedsits",658
+E07000082,Stroud,6,"Part of another converted building, for example, former school, church or warehouse",642
+E07000082,Stroud,7,"In a commercial building, for example, in an office building, hotel or over a shop",395
+E07000082,Stroud,8,A caravan or other mobile or temporary structure,327
+E07000083,Tewkesbury,1,Detached,14625
+E07000083,Tewkesbury,2,Semi-detached,14240
+E07000083,Tewkesbury,3,Terraced,7458
+E07000083,Tewkesbury,4,In a purpose-built block of flats or tenement,3346
+E07000083,Tewkesbury,5,"Part of a converted or shared house, including bedsits",239
+E07000083,Tewkesbury,6,"Part of another converted building, for example, former school, church or warehouse",162
+E07000083,Tewkesbury,7,"In a commercial building, for example, in an office building, hotel or over a shop",213
+E07000083,Tewkesbury,8,A caravan or other mobile or temporary structure,648
+E07000084,Basingstoke and Deane,1,Detached,23193
+E07000084,Basingstoke and Deane,2,Semi-detached,19880
+E07000084,Basingstoke and Deane,3,Terraced,20736
+E07000084,Basingstoke and Deane,4,In a purpose-built block of flats or tenement,10893
+E07000084,Basingstoke and Deane,5,"Part of a converted or shared house, including bedsits",768
+E07000084,Basingstoke and Deane,6,"Part of another converted building, for example, former school, church or warehouse",535
+E07000084,Basingstoke and Deane,7,"In a commercial building, for example, in an office building, hotel or over a shop",369
+E07000084,Basingstoke and Deane,8,A caravan or other mobile or temporary structure,271
+E07000085,East Hampshire,1,Detached,22023
+E07000085,East Hampshire,2,Semi-detached,13606
+E07000085,East Hampshire,3,Terraced,9185
+E07000085,East Hampshire,4,In a purpose-built block of flats or tenement,6205
+E07000085,East Hampshire,5,"Part of a converted or shared house, including bedsits",666
+E07000085,East Hampshire,6,"Part of another converted building, for example, former school, church or warehouse",331
+E07000085,East Hampshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",353
+E07000085,East Hampshire,8,A caravan or other mobile or temporary structure,353
+E07000086,Eastleigh,1,Detached,18973
+E07000086,Eastleigh,2,Semi-detached,16190
+E07000086,Eastleigh,3,Terraced,12123
+E07000086,Eastleigh,4,In a purpose-built block of flats or tenement,8044
+E07000086,Eastleigh,5,"Part of a converted or shared house, including bedsits",705
+E07000086,Eastleigh,6,"Part of another converted building, for example, former school, church or warehouse",213
+E07000086,Eastleigh,7,"In a commercial building, for example, in an office building, hotel or over a shop",283
+E07000086,Eastleigh,8,A caravan or other mobile or temporary structure,391
+E07000087,Fareham,1,Detached,17497
+E07000087,Fareham,2,Semi-detached,15670
+E07000087,Fareham,3,Terraced,8909
+E07000087,Fareham,4,In a purpose-built block of flats or tenement,5547
+E07000087,Fareham,5,"Part of a converted or shared house, including bedsits",366
+E07000087,Fareham,6,"Part of another converted building, for example, former school, church or warehouse",164
+E07000087,Fareham,7,"In a commercial building, for example, in an office building, hotel or over a shop",278
+E07000087,Fareham,8,A caravan or other mobile or temporary structure,208
+E07000088,Gosport,1,Detached,4824
+E07000088,Gosport,2,Semi-detached,9877
+E07000088,Gosport,3,Terraced,12601
+E07000088,Gosport,4,In a purpose-built block of flats or tenement,7317
+E07000088,Gosport,5,"Part of a converted or shared house, including bedsits",447
+E07000088,Gosport,6,"Part of another converted building, for example, former school, church or warehouse",327
+E07000088,Gosport,7,"In a commercial building, for example, in an office building, hotel or over a shop",371
+E07000088,Gosport,8,A caravan or other mobile or temporary structure,158
+E07000089,Hart,1,Detached,16982
+E07000089,Hart,2,Semi-detached,10238
+E07000089,Hart,3,Terraced,7273
+E07000089,Hart,4,In a purpose-built block of flats or tenement,4496
+E07000089,Hart,5,"Part of a converted or shared house, including bedsits",249
+E07000089,Hart,6,"Part of another converted building, for example, former school, church or warehouse",218
+E07000089,Hart,7,"In a commercial building, for example, in an office building, hotel or over a shop",300
+E07000089,Hart,8,A caravan or other mobile or temporary structure,210
+E07000090,Havant,1,Detached,15181
+E07000090,Havant,2,Semi-detached,15840
+E07000090,Havant,3,Terraced,12241
+E07000090,Havant,4,In a purpose-built block of flats or tenement,8806
+E07000090,Havant,5,"Part of a converted or shared house, including bedsits",525
+E07000090,Havant,6,"Part of another converted building, for example, former school, church or warehouse",278
+E07000090,Havant,7,"In a commercial building, for example, in an office building, hotel or over a shop",531
+E07000090,Havant,8,A caravan or other mobile or temporary structure,190
+E07000091,New Forest,1,Detached,35214
+E07000091,New Forest,2,Semi-detached,18667
+E07000091,New Forest,3,Terraced,11841
+E07000091,New Forest,4,In a purpose-built block of flats or tenement,8522
+E07000091,New Forest,5,"Part of a converted or shared house, including bedsits",896
+E07000091,New Forest,6,"Part of another converted building, for example, former school, church or warehouse",420
+E07000091,New Forest,7,"In a commercial building, for example, in an office building, hotel or over a shop",752
+E07000091,New Forest,8,A caravan or other mobile or temporary structure,1254
+E07000092,Rushmoor,1,Detached,6491
+E07000092,Rushmoor,2,Semi-detached,12597
+E07000092,Rushmoor,3,Terraced,9238
+E07000092,Rushmoor,4,In a purpose-built block of flats or tenement,9121
+E07000092,Rushmoor,5,"Part of a converted or shared house, including bedsits",974
+E07000092,Rushmoor,6,"Part of another converted building, for example, former school, church or warehouse",360
+E07000092,Rushmoor,7,"In a commercial building, for example, in an office building, hotel or over a shop",346
+E07000092,Rushmoor,8,A caravan or other mobile or temporary structure,176
+E07000093,Test Valley,1,Detached,20554
+E07000093,Test Valley,2,Semi-detached,14714
+E07000093,Test Valley,3,Terraced,11883
+E07000093,Test Valley,4,In a purpose-built block of flats or tenement,6042
+E07000093,Test Valley,5,"Part of a converted or shared house, including bedsits",516
+E07000093,Test Valley,6,"Part of another converted building, for example, former school, church or warehouse",304
+E07000093,Test Valley,7,"In a commercial building, for example, in an office building, hotel or over a shop",302
+E07000093,Test Valley,8,A caravan or other mobile or temporary structure,393
+E07000094,Winchester,1,Detached,18714
+E07000094,Winchester,2,Semi-detached,13334
+E07000094,Winchester,3,Terraced,10372
+E07000094,Winchester,4,In a purpose-built block of flats or tenement,6743
+E07000094,Winchester,5,"Part of a converted or shared house, including bedsits",898
+E07000094,Winchester,6,"Part of another converted building, for example, former school, church or warehouse",632
+E07000094,Winchester,7,"In a commercial building, for example, in an office building, hotel or over a shop",339
+E07000094,Winchester,8,A caravan or other mobile or temporary structure,683
+E07000095,Broxbourne,1,Detached,6102
+E07000095,Broxbourne,2,Semi-detached,11538
+E07000095,Broxbourne,3,Terraced,11710
+E07000095,Broxbourne,4,In a purpose-built block of flats or tenement,9189
+E07000095,Broxbourne,5,"Part of a converted or shared house, including bedsits",531
+E07000095,Broxbourne,6,"Part of another converted building, for example, former school, church or warehouse",173
+E07000095,Broxbourne,7,"In a commercial building, for example, in an office building, hotel or over a shop",438
+E07000095,Broxbourne,8,A caravan or other mobile or temporary structure,169
+E07000096,Dacorum,1,Detached,13526
+E07000096,Dacorum,2,Semi-detached,15876
+E07000096,Dacorum,3,Terraced,18918
+E07000096,Dacorum,4,In a purpose-built block of flats or tenement,13086
+E07000096,Dacorum,5,"Part of a converted or shared house, including bedsits",867
+E07000096,Dacorum,6,"Part of another converted building, for example, former school, church or warehouse",345
+E07000096,Dacorum,7,"In a commercial building, for example, in an office building, hotel or over a shop",502
+E07000096,Dacorum,8,A caravan or other mobile or temporary structure,293
+E07000098,Hertsmere,1,Detached,7985
+E07000098,Hertsmere,2,Semi-detached,13839
+E07000098,Hertsmere,3,Terraced,8700
+E07000098,Hertsmere,4,In a purpose-built block of flats or tenement,10576
+E07000098,Hertsmere,5,"Part of a converted or shared house, including bedsits",630
+E07000098,Hertsmere,6,"Part of another converted building, for example, former school, church or warehouse",298
+E07000098,Hertsmere,7,"In a commercial building, for example, in an office building, hotel or over a shop",473
+E07000098,Hertsmere,8,A caravan or other mobile or temporary structure,181
+E07000099,North Hertfordshire,1,Detached,13776
+E07000099,North Hertfordshire,2,Semi-detached,17305
+E07000099,North Hertfordshire,3,Terraced,13939
+E07000099,North Hertfordshire,4,In a purpose-built block of flats or tenement,9686
+E07000099,North Hertfordshire,5,"Part of a converted or shared house, including bedsits",696
+E07000099,North Hertfordshire,6,"Part of another converted building, for example, former school, church or warehouse",507
+E07000099,North Hertfordshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",475
+E07000099,North Hertfordshire,8,A caravan or other mobile or temporary structure,348
+E07000102,Three Rivers,1,Detached,9584
+E07000102,Three Rivers,2,Semi-detached,12976
+E07000102,Three Rivers,3,Terraced,6801
+E07000102,Three Rivers,4,In a purpose-built block of flats or tenement,6308
+E07000102,Three Rivers,5,"Part of a converted or shared house, including bedsits",353
+E07000102,Three Rivers,6,"Part of another converted building, for example, former school, church or warehouse",315
+E07000102,Three Rivers,7,"In a commercial building, for example, in an office building, hotel or over a shop",252
+E07000102,Three Rivers,8,A caravan or other mobile or temporary structure,270
+E07000103,Watford,1,Detached,4152
+E07000103,Watford,2,Semi-detached,11135
+E07000103,Watford,3,Terraced,9839
+E07000103,Watford,4,In a purpose-built block of flats or tenement,11410
+E07000103,Watford,5,"Part of a converted or shared house, including bedsits",2199
+E07000103,Watford,6,"Part of another converted building, for example, former school, church or warehouse",407
+E07000103,Watford,7,"In a commercial building, for example, in an office building, hotel or over a shop",463
+E07000103,Watford,8,A caravan or other mobile or temporary structure,23
+E07000105,Ashford,1,Detached,17509
+E07000105,Ashford,2,Semi-detached,16430
+E07000105,Ashford,3,Terraced,11909
+E07000105,Ashford,4,In a purpose-built block of flats or tenement,5787
+E07000105,Ashford,5,"Part of a converted or shared house, including bedsits",614
+E07000105,Ashford,6,"Part of another converted building, for example, former school, church or warehouse",319
+E07000105,Ashford,7,"In a commercial building, for example, in an office building, hotel or over a shop",299
+E07000105,Ashford,8,A caravan or other mobile or temporary structure,713
+E07000106,Canterbury,1,Detached,20082
+E07000106,Canterbury,2,Semi-detached,19750
+E07000106,Canterbury,3,Terraced,11055
+E07000106,Canterbury,4,In a purpose-built block of flats or tenement,8925
+E07000106,Canterbury,5,"Part of a converted or shared house, including bedsits",2021
+E07000106,Canterbury,6,"Part of another converted building, for example, former school, church or warehouse",578
+E07000106,Canterbury,7,"In a commercial building, for example, in an office building, hotel or over a shop",681
+E07000106,Canterbury,8,A caravan or other mobile or temporary structure,701
+E07000107,Dartford,1,Detached,6025
+E07000107,Dartford,2,Semi-detached,14398
+E07000107,Dartford,3,Terraced,14103
+E07000107,Dartford,4,In a purpose-built block of flats or tenement,9762
+E07000107,Dartford,5,"Part of a converted or shared house, including bedsits",812
+E07000107,Dartford,6,"Part of another converted building, for example, former school, church or warehouse",214
+E07000107,Dartford,7,"In a commercial building, for example, in an office building, hotel or over a shop",243
+E07000107,Dartford,8,A caravan or other mobile or temporary structure,139
+E07000108,Dover,1,Detached,11828
+E07000108,Dover,2,Semi-detached,15695
+E07000108,Dover,3,Terraced,14112
+E07000108,Dover,4,In a purpose-built block of flats or tenement,6180
+E07000108,Dover,5,"Part of a converted or shared house, including bedsits",1388
+E07000108,Dover,6,"Part of another converted building, for example, former school, church or warehouse",502
+E07000108,Dover,7,"In a commercial building, for example, in an office building, hotel or over a shop",502
+E07000108,Dover,8,A caravan or other mobile or temporary structure,341
+E07000109,Gravesham,1,Detached,6837
+E07000109,Gravesham,2,Semi-detached,13799
+E07000109,Gravesham,3,Terraced,12511
+E07000109,Gravesham,4,In a purpose-built block of flats or tenement,6745
+E07000109,Gravesham,5,"Part of a converted or shared house, including bedsits",1020
+E07000109,Gravesham,6,"Part of another converted building, for example, former school, church or warehouse",273
+E07000109,Gravesham,7,"In a commercial building, for example, in an office building, hotel or over a shop",399
+E07000109,Gravesham,8,A caravan or other mobile or temporary structure,140
+E07000110,Maidstone,1,Detached,18444
+E07000110,Maidstone,2,Semi-detached,23687
+E07000110,Maidstone,3,Terraced,15768
+E07000110,Maidstone,4,In a purpose-built block of flats or tenement,10331
+E07000110,Maidstone,5,"Part of a converted or shared house, including bedsits",1245
+E07000110,Maidstone,6,"Part of another converted building, for example, former school, church or warehouse",504
+E07000110,Maidstone,7,"In a commercial building, for example, in an office building, hotel or over a shop",397
+E07000110,Maidstone,8,A caravan or other mobile or temporary structure,831
+E07000111,Sevenoaks,1,Detached,16223
+E07000111,Sevenoaks,2,Semi-detached,14044
+E07000111,Sevenoaks,3,Terraced,10962
+E07000111,Sevenoaks,4,In a purpose-built block of flats or tenement,5745
+E07000111,Sevenoaks,5,"Part of a converted or shared house, including bedsits",780
+E07000111,Sevenoaks,6,"Part of another converted building, for example, former school, church or warehouse",301
+E07000111,Sevenoaks,7,"In a commercial building, for example, in an office building, hotel or over a shop",373
+E07000111,Sevenoaks,8,A caravan or other mobile or temporary structure,585
+E07000112,Folkestone and Hythe,1,Detached,13262
+E07000112,Folkestone and Hythe,2,Semi-detached,12566
+E07000112,Folkestone and Hythe,3,Terraced,10438
+E07000112,Folkestone and Hythe,4,In a purpose-built block of flats or tenement,7268
+E07000112,Folkestone and Hythe,5,"Part of a converted or shared house, including bedsits",3323
+E07000112,Folkestone and Hythe,6,"Part of another converted building, for example, former school, church or warehouse",610
+E07000112,Folkestone and Hythe,7,"In a commercial building, for example, in an office building, hotel or over a shop",637
+E07000112,Folkestone and Hythe,8,A caravan or other mobile or temporary structure,234
+E07000113,Swale,1,Detached,14477
+E07000113,Swale,2,Semi-detached,20406
+E07000113,Swale,3,Terraced,18041
+E07000113,Swale,4,In a purpose-built block of flats or tenement,5224
+E07000113,Swale,5,"Part of a converted or shared house, including bedsits",900
+E07000113,Swale,6,"Part of another converted building, for example, former school, church or warehouse",384
+E07000113,Swale,7,"In a commercial building, for example, in an office building, hotel or over a shop",481
+E07000113,Swale,8,A caravan or other mobile or temporary structure,582
+E07000114,Thanet,1,Detached,12622
+E07000114,Thanet,2,Semi-detached,18441
+E07000114,Thanet,3,Terraced,13778
+E07000114,Thanet,4,In a purpose-built block of flats or tenement,10978
+E07000114,Thanet,5,"Part of a converted or shared house, including bedsits",4058
+E07000114,Thanet,6,"Part of another converted building, for example, former school, church or warehouse",1035
+E07000114,Thanet,7,"In a commercial building, for example, in an office building, hotel or over a shop",816
+E07000114,Thanet,8,A caravan or other mobile or temporary structure,472
+E07000115,Tonbridge and Malling,1,Detached,14478
+E07000115,Tonbridge and Malling,2,Semi-detached,19843
+E07000115,Tonbridge and Malling,3,Terraced,11506
+E07000115,Tonbridge and Malling,4,In a purpose-built block of flats or tenement,6261
+E07000115,Tonbridge and Malling,5,"Part of a converted or shared house, including bedsits",506
+E07000115,Tonbridge and Malling,6,"Part of another converted building, for example, former school, church or warehouse",362
+E07000115,Tonbridge and Malling,7,"In a commercial building, for example, in an office building, hotel or over a shop",373
+E07000115,Tonbridge and Malling,8,A caravan or other mobile or temporary structure,244
+E07000116,Tunbridge Wells,1,Detached,13128
+E07000116,Tunbridge Wells,2,Semi-detached,14606
+E07000116,Tunbridge Wells,3,Terraced,8381
+E07000116,Tunbridge Wells,4,In a purpose-built block of flats or tenement,7919
+E07000116,Tunbridge Wells,5,"Part of a converted or shared house, including bedsits",2840
+E07000116,Tunbridge Wells,6,"Part of another converted building, for example, former school, church or warehouse",684
+E07000116,Tunbridge Wells,7,"In a commercial building, for example, in an office building, hotel or over a shop",497
+E07000116,Tunbridge Wells,8,A caravan or other mobile or temporary structure,169
+E07000117,Burnley,1,Detached,5650
+E07000117,Burnley,2,Semi-detached,11921
+E07000117,Burnley,3,Terraced,18580
+E07000117,Burnley,4,In a purpose-built block of flats or tenement,2788
+E07000117,Burnley,5,"Part of a converted or shared house, including bedsits",314
+E07000117,Burnley,6,"Part of another converted building, for example, former school, church or warehouse",253
+E07000117,Burnley,7,"In a commercial building, for example, in an office building, hotel or over a shop",266
+E07000117,Burnley,8,A caravan or other mobile or temporary structure,101
+E07000118,Chorley,1,Detached,16018
+E07000118,Chorley,2,Semi-detached,16548
+E07000118,Chorley,3,Terraced,12683
+E07000118,Chorley,4,In a purpose-built block of flats or tenement,3931
+E07000118,Chorley,5,"Part of a converted or shared house, including bedsits",365
+E07000118,Chorley,6,"Part of another converted building, for example, former school, church or warehouse",143
+E07000118,Chorley,7,"In a commercial building, for example, in an office building, hotel or over a shop",246
+E07000118,Chorley,8,A caravan or other mobile or temporary structure,196
+E07000119,Fylde,1,Detached,11067
+E07000119,Fylde,2,Semi-detached,12061
+E07000119,Fylde,3,Terraced,6262
+E07000119,Fylde,4,In a purpose-built block of flats or tenement,5231
+E07000119,Fylde,5,"Part of a converted or shared house, including bedsits",1745
+E07000119,Fylde,6,"Part of another converted building, for example, former school, church or warehouse",245
+E07000119,Fylde,7,"In a commercial building, for example, in an office building, hotel or over a shop",362
+E07000119,Fylde,8,A caravan or other mobile or temporary structure,632
+E07000120,Hyndburn,1,Detached,4409
+E07000120,Hyndburn,2,Semi-detached,9518
+E07000120,Hyndburn,3,Terraced,17536
+E07000120,Hyndburn,4,In a purpose-built block of flats or tenement,2563
+E07000120,Hyndburn,5,"Part of a converted or shared house, including bedsits",276
+E07000120,Hyndburn,6,"Part of another converted building, for example, former school, church or warehouse",126
+E07000120,Hyndburn,7,"In a commercial building, for example, in an office building, hotel or over a shop",226
+E07000120,Hyndburn,8,A caravan or other mobile or temporary structure,136
+E07000121,Lancaster,1,Detached,11657
+E07000121,Lancaster,2,Semi-detached,22823
+E07000121,Lancaster,3,Terraced,15302
+E07000121,Lancaster,4,In a purpose-built block of flats or tenement,6549
+E07000121,Lancaster,5,"Part of a converted or shared house, including bedsits",1858
+E07000121,Lancaster,6,"Part of another converted building, for example, former school, church or warehouse",653
+E07000121,Lancaster,7,"In a commercial building, for example, in an office building, hotel or over a shop",489
+E07000121,Lancaster,8,A caravan or other mobile or temporary structure,649
+E07000122,Pendle,1,Detached,5516
+E07000122,Pendle,2,Semi-detached,9318
+E07000122,Pendle,3,Terraced,20064
+E07000122,Pendle,4,In a purpose-built block of flats or tenement,2269
+E07000122,Pendle,5,"Part of a converted or shared house, including bedsits",295
+E07000122,Pendle,6,"Part of another converted building, for example, former school, church or warehouse",218
+E07000122,Pendle,7,"In a commercial building, for example, in an office building, hotel or over a shop",266
+E07000122,Pendle,8,A caravan or other mobile or temporary structure,120
+E07000123,Preston,1,Detached,11348
+E07000123,Preston,2,Semi-detached,20358
+E07000123,Preston,3,Terraced,17431
+E07000123,Preston,4,In a purpose-built block of flats or tenement,8318
+E07000123,Preston,5,"Part of a converted or shared house, including bedsits",1238
+E07000123,Preston,6,"Part of another converted building, for example, former school, church or warehouse",423
+E07000123,Preston,7,"In a commercial building, for example, in an office building, hotel or over a shop",441
+E07000123,Preston,8,A caravan or other mobile or temporary structure,50
+E07000124,Ribble Valley,1,Detached,9217
+E07000124,Ribble Valley,2,Semi-detached,7659
+E07000124,Ribble Valley,3,Terraced,7558
+E07000124,Ribble Valley,4,In a purpose-built block of flats or tenement,1491
+E07000124,Ribble Valley,5,"Part of a converted or shared house, including bedsits",154
+E07000124,Ribble Valley,6,"Part of another converted building, for example, former school, church or warehouse",183
+E07000124,Ribble Valley,7,"In a commercial building, for example, in an office building, hotel or over a shop",193
+E07000124,Ribble Valley,8,A caravan or other mobile or temporary structure,292
+E07000125,Rossendale,1,Detached,6634
+E07000125,Rossendale,2,Semi-detached,8041
+E07000125,Rossendale,3,Terraced,12675
+E07000125,Rossendale,4,In a purpose-built block of flats or tenement,2322
+E07000125,Rossendale,5,"Part of a converted or shared house, including bedsits",264
+E07000125,Rossendale,6,"Part of another converted building, for example, former school, church or warehouse",315
+E07000125,Rossendale,7,"In a commercial building, for example, in an office building, hotel or over a shop",225
+E07000125,Rossendale,8,A caravan or other mobile or temporary structure,85
+E07000126,South Ribble,1,Detached,14458
+E07000126,South Ribble,2,Semi-detached,21651
+E07000126,South Ribble,3,Terraced,8169
+E07000126,South Ribble,4,In a purpose-built block of flats or tenement,3443
+E07000126,South Ribble,5,"Part of a converted or shared house, including bedsits",298
+E07000126,South Ribble,6,"Part of another converted building, for example, former school, church or warehouse",106
+E07000126,South Ribble,7,"In a commercial building, for example, in an office building, hotel or over a shop",274
+E07000126,South Ribble,8,A caravan or other mobile or temporary structure,186
+E07000127,West Lancashire,1,Detached,14794
+E07000127,West Lancashire,2,Semi-detached,18277
+E07000127,West Lancashire,3,Terraced,10184
+E07000127,West Lancashire,4,In a purpose-built block of flats or tenement,4049
+E07000127,West Lancashire,5,"Part of a converted or shared house, including bedsits",336
+E07000127,West Lancashire,6,"Part of another converted building, for example, former school, church or warehouse",156
+E07000127,West Lancashire,7,"In a commercial building, for example, in an office building, hotel or over a shop",181
+E07000127,West Lancashire,8,A caravan or other mobile or temporary structure,554
+E07000128,Wyre,1,Detached,15200
+E07000128,Wyre,2,Semi-detached,20436
+E07000128,Wyre,3,Terraced,8738
+E07000128,Wyre,4,In a purpose-built block of flats or tenement,3717
+E07000128,Wyre,5,"Part of a converted or shared house, including bedsits",946
+E07000128,Wyre,6,"Part of another converted building, for example, former school, church or warehouse",180
+E07000128,Wyre,7,"In a commercial building, for example, in an office building, hotel or over a shop",406
+E07000128,Wyre,8,A caravan or other mobile or temporary structure,1142
+E07000129,Blaby,1,Detached,16122
+E07000129,Blaby,2,Semi-detached,19474
+E07000129,Blaby,3,Terraced,4290
+E07000129,Blaby,4,In a purpose-built block of flats or tenement,2089
+E07000129,Blaby,5,"Part of a converted or shared house, including bedsits",170
+E07000129,Blaby,6,"Part of another converted building, for example, former school, church or warehouse",106
+E07000129,Blaby,7,"In a commercial building, for example, in an office building, hotel or over a shop",201
+E07000129,Blaby,8,A caravan or other mobile or temporary structure,123
+E07000130,Charnwood,1,Detached,23765
+E07000130,Charnwood,2,Semi-detached,28527
+E07000130,Charnwood,3,Terraced,13215
+E07000130,Charnwood,4,In a purpose-built block of flats or tenement,6364
+E07000130,Charnwood,5,"Part of a converted or shared house, including bedsits",721
+E07000130,Charnwood,6,"Part of another converted building, for example, former school, church or warehouse",335
+E07000130,Charnwood,7,"In a commercial building, for example, in an office building, hotel or over a shop",460
+E07000130,Charnwood,8,A caravan or other mobile or temporary structure,398
+E07000131,Harborough,1,Detached,19739
+E07000131,Harborough,2,Semi-detached,11794
+E07000131,Harborough,3,Terraced,5815
+E07000131,Harborough,4,In a purpose-built block of flats or tenement,2237
+E07000131,Harborough,5,"Part of a converted or shared house, including bedsits",221
+E07000131,Harborough,6,"Part of another converted building, for example, former school, church or warehouse",188
+E07000131,Harborough,7,"In a commercial building, for example, in an office building, hotel or over a shop",172
+E07000131,Harborough,8,A caravan or other mobile or temporary structure,248
+E07000132,Hinckley and Bosworth,1,Detached,18712
+E07000132,Hinckley and Bosworth,2,Semi-detached,18659
+E07000132,Hinckley and Bosworth,3,Terraced,7741
+E07000132,Hinckley and Bosworth,4,In a purpose-built block of flats or tenement,3299
+E07000132,Hinckley and Bosworth,5,"Part of a converted or shared house, including bedsits",314
+E07000132,Hinckley and Bosworth,6,"Part of another converted building, for example, former school, church or warehouse",247
+E07000132,Hinckley and Bosworth,7,"In a commercial building, for example, in an office building, hotel or over a shop",307
+E07000132,Hinckley and Bosworth,8,A caravan or other mobile or temporary structure,168
+E07000133,Melton,1,Detached,9346
+E07000133,Melton,2,Semi-detached,8216
+E07000133,Melton,3,Terraced,3349
+E07000133,Melton,4,In a purpose-built block of flats or tenement,1119
+E07000133,Melton,5,"Part of a converted or shared house, including bedsits",226
+E07000133,Melton,6,"Part of another converted building, for example, former school, church or warehouse",144
+E07000133,Melton,7,"In a commercial building, for example, in an office building, hotel or over a shop",128
+E07000133,Melton,8,A caravan or other mobile or temporary structure,69
+E07000134,North West Leicestershire,1,Detached,18472
+E07000134,North West Leicestershire,2,Semi-detached,15690
+E07000134,North West Leicestershire,3,Terraced,7550
+E07000134,North West Leicestershire,4,In a purpose-built block of flats or tenement,2206
+E07000134,North West Leicestershire,5,"Part of a converted or shared house, including bedsits",262
+E07000134,North West Leicestershire,6,"Part of another converted building, for example, former school, church or warehouse",176
+E07000134,North West Leicestershire,7,"In a commercial building, for example, in an office building, hotel or over a shop",245
+E07000134,North West Leicestershire,8,A caravan or other mobile or temporary structure,373
+E07000135,Oadby and Wigston,1,Detached,6776
+E07000135,Oadby and Wigston,2,Semi-detached,10683
+E07000135,Oadby and Wigston,3,Terraced,3253
+E07000135,Oadby and Wigston,4,In a purpose-built block of flats or tenement,1527
+E07000135,Oadby and Wigston,5,"Part of a converted or shared house, including bedsits",159
+E07000135,Oadby and Wigston,6,"Part of another converted building, for example, former school, church or warehouse",80
+E07000135,Oadby and Wigston,7,"In a commercial building, for example, in an office building, hotel or over a shop",128
+E07000135,Oadby and Wigston,8,A caravan or other mobile or temporary structure,8
+E07000136,Boston,1,Detached,12566
+E07000136,Boston,2,Semi-detached,9540
+E07000136,Boston,3,Terraced,3833
+E07000136,Boston,4,In a purpose-built block of flats or tenement,2726
+E07000136,Boston,5,"Part of a converted or shared house, including bedsits",340
+E07000136,Boston,6,"Part of another converted building, for example, former school, church or warehouse",102
+E07000136,Boston,7,"In a commercial building, for example, in an office building, hotel or over a shop",153
+E07000136,Boston,8,A caravan or other mobile or temporary structure,144
+E07000137,East Lindsey,1,Detached,32593
+E07000137,East Lindsey,2,Semi-detached,17833
+E07000137,East Lindsey,3,Terraced,7114
+E07000137,East Lindsey,4,In a purpose-built block of flats or tenement,3673
+E07000137,East Lindsey,5,"Part of a converted or shared house, including bedsits",1024
+E07000137,East Lindsey,6,"Part of another converted building, for example, former school, church or warehouse",393
+E07000137,East Lindsey,7,"In a commercial building, for example, in an office building, hotel or over a shop",757
+E07000137,East Lindsey,8,A caravan or other mobile or temporary structure,1367
+E07000138,Lincoln,1,Detached,8452
+E07000138,Lincoln,2,Semi-detached,13061
+E07000138,Lincoln,3,Terraced,12602
+E07000138,Lincoln,4,In a purpose-built block of flats or tenement,6783
+E07000138,Lincoln,5,"Part of a converted or shared house, including bedsits",994
+E07000138,Lincoln,6,"Part of another converted building, for example, former school, church or warehouse",294
+E07000138,Lincoln,7,"In a commercial building, for example, in an office building, hotel or over a shop",295
+E07000138,Lincoln,8,A caravan or other mobile or temporary structure,28
+E07000139,North Kesteven,1,Detached,27549
+E07000139,North Kesteven,2,Semi-detached,15521
+E07000139,North Kesteven,3,Terraced,5282
+E07000139,North Kesteven,4,In a purpose-built block of flats or tenement,1586
+E07000139,North Kesteven,5,"Part of a converted or shared house, including bedsits",182
+E07000139,North Kesteven,6,"Part of another converted building, for example, former school, church or warehouse",183
+E07000139,North Kesteven,7,"In a commercial building, for example, in an office building, hotel or over a shop",193
+E07000139,North Kesteven,8,A caravan or other mobile or temporary structure,493
+E07000140,South Holland,1,Detached,21870
+E07000140,South Holland,2,Semi-detached,12661
+E07000140,South Holland,3,Terraced,3943
+E07000140,South Holland,4,In a purpose-built block of flats or tenement,1337
+E07000140,South Holland,5,"Part of a converted or shared house, including bedsits",330
+E07000140,South Holland,6,"Part of another converted building, for example, former school, church or warehouse",164
+E07000140,South Holland,7,"In a commercial building, for example, in an office building, hotel or over a shop",178
+E07000140,South Holland,8,A caravan or other mobile or temporary structure,220
+E07000141,South Kesteven,1,Detached,26261
+E07000141,South Kesteven,2,Semi-detached,19391
+E07000141,South Kesteven,3,Terraced,10994
+E07000141,South Kesteven,4,In a purpose-built block of flats or tenement,4265
+E07000141,South Kesteven,5,"Part of a converted or shared house, including bedsits",511
+E07000141,South Kesteven,6,"Part of another converted building, for example, former school, church or warehouse",355
+E07000141,South Kesteven,7,"In a commercial building, for example, in an office building, hotel or over a shop",348
+E07000141,South Kesteven,8,A caravan or other mobile or temporary structure,724
+E07000142,West Lindsey,1,Detached,20995
+E07000142,West Lindsey,2,Semi-detached,11472
+E07000142,West Lindsey,3,Terraced,7014
+E07000142,West Lindsey,4,In a purpose-built block of flats or tenement,1554
+E07000142,West Lindsey,5,"Part of a converted or shared house, including bedsits",188
+E07000142,West Lindsey,6,"Part of another converted building, for example, former school, church or warehouse",238
+E07000142,West Lindsey,7,"In a commercial building, for example, in an office building, hotel or over a shop",212
+E07000142,West Lindsey,8,A caravan or other mobile or temporary structure,672
+E07000143,Breckland,1,Detached,28226
+E07000143,Breckland,2,Semi-detached,17941
+E07000143,Breckland,3,Terraced,9687
+E07000143,Breckland,4,In a purpose-built block of flats or tenement,3244
+E07000143,Breckland,5,"Part of a converted or shared house, including bedsits",407
+E07000143,Breckland,6,"Part of another converted building, for example, former school, church or warehouse",321
+E07000143,Breckland,7,"In a commercial building, for example, in an office building, hotel or over a shop",254
+E07000143,Breckland,8,A caravan or other mobile or temporary structure,278
+E07000144,Broadland,1,Detached,26440
+E07000144,Broadland,2,Semi-detached,21802
+E07000144,Broadland,3,Terraced,6131
+E07000144,Broadland,4,In a purpose-built block of flats or tenement,2320
+E07000144,Broadland,5,"Part of a converted or shared house, including bedsits",284
+E07000144,Broadland,6,"Part of another converted building, for example, former school, church or warehouse",182
+E07000144,Broadland,7,"In a commercial building, for example, in an office building, hotel or over a shop",207
+E07000144,Broadland,8,A caravan or other mobile or temporary structure,398
+E07000145,Great Yarmouth,1,Detached,13479
+E07000145,Great Yarmouth,2,Semi-detached,10908
+E07000145,Great Yarmouth,3,Terraced,12613
+E07000145,Great Yarmouth,4,In a purpose-built block of flats or tenement,5155
+E07000145,Great Yarmouth,5,"Part of a converted or shared house, including bedsits",976
+E07000145,Great Yarmouth,6,"Part of another converted building, for example, former school, church or warehouse",366
+E07000145,Great Yarmouth,7,"In a commercial building, for example, in an office building, hotel or over a shop",438
+E07000145,Great Yarmouth,8,A caravan or other mobile or temporary structure,607
+E07000146,King's Lynn and West Norfolk,1,Detached,29872
+E07000146,King's Lynn and West Norfolk,2,Semi-detached,21161
+E07000146,King's Lynn and West Norfolk,3,Terraced,9652
+E07000146,King's Lynn and West Norfolk,4,In a purpose-built block of flats or tenement,4793
+E07000146,King's Lynn and West Norfolk,5,"Part of a converted or shared house, including bedsits",651
+E07000146,King's Lynn and West Norfolk,6,"Part of another converted building, for example, former school, church or warehouse",419
+E07000146,King's Lynn and West Norfolk,7,"In a commercial building, for example, in an office building, hotel or over a shop",388
+E07000146,King's Lynn and West Norfolk,8,A caravan or other mobile or temporary structure,528
+E07000147,North Norfolk,1,Detached,21614
+E07000147,North Norfolk,2,Semi-detached,14583
+E07000147,North Norfolk,3,Terraced,6963
+E07000147,North Norfolk,4,In a purpose-built block of flats or tenement,3226
+E07000147,North Norfolk,5,"Part of a converted or shared house, including bedsits",841
+E07000147,North Norfolk,6,"Part of another converted building, for example, former school, church or warehouse",428
+E07000147,North Norfolk,7,"In a commercial building, for example, in an office building, hotel or over a shop",401
+E07000147,North Norfolk,8,A caravan or other mobile or temporary structure,318
+E07000148,Norwich,1,Detached,6612
+E07000148,Norwich,2,Semi-detached,14029
+E07000148,Norwich,3,Terraced,20606
+E07000148,Norwich,4,In a purpose-built block of flats or tenement,19471
+E07000148,Norwich,5,"Part of a converted or shared house, including bedsits",2019
+E07000148,Norwich,6,"Part of another converted building, for example, former school, church or warehouse",1067
+E07000148,Norwich,7,"In a commercial building, for example, in an office building, hotel or over a shop",579
+E07000148,Norwich,8,A caravan or other mobile or temporary structure,76
+E07000149,South Norfolk,1,Detached,30430
+E07000149,South Norfolk,2,Semi-detached,19062
+E07000149,South Norfolk,3,Terraced,7674
+E07000149,South Norfolk,4,In a purpose-built block of flats or tenement,3141
+E07000149,South Norfolk,5,"Part of a converted or shared house, including bedsits",359
+E07000149,South Norfolk,6,"Part of another converted building, for example, former school, church or warehouse",313
+E07000149,South Norfolk,7,"In a commercial building, for example, in an office building, hotel or over a shop",211
+E07000149,South Norfolk,8,A caravan or other mobile or temporary structure,192
+E07000163,Craven,1,Detached,6724
+E07000163,Craven,2,Semi-detached,7563
+E07000163,Craven,3,Terraced,8936
+E07000163,Craven,4,In a purpose-built block of flats or tenement,1298
+E07000163,Craven,5,"Part of a converted or shared house, including bedsits",380
+E07000163,Craven,6,"Part of another converted building, for example, former school, church or warehouse",645
+E07000163,Craven,7,"In a commercial building, for example, in an office building, hotel or over a shop",285
+E07000163,Craven,8,A caravan or other mobile or temporary structure,239
+E07000164,Hambleton,1,Detached,17377
+E07000164,Hambleton,2,Semi-detached,12527
+E07000164,Hambleton,3,Terraced,7817
+E07000164,Hambleton,4,In a purpose-built block of flats or tenement,2138
+E07000164,Hambleton,5,"Part of a converted or shared house, including bedsits",247
+E07000164,Hambleton,6,"Part of another converted building, for example, former school, church or warehouse",278
+E07000164,Hambleton,7,"In a commercial building, for example, in an office building, hotel or over a shop",256
+E07000164,Hambleton,8,A caravan or other mobile or temporary structure,162
+E07000165,Harrogate,1,Detached,22880
+E07000165,Harrogate,2,Semi-detached,21976
+E07000165,Harrogate,3,Terraced,13760
+E07000165,Harrogate,4,In a purpose-built block of flats or tenement,7208
+E07000165,Harrogate,5,"Part of a converted or shared house, including bedsits",3062
+E07000165,Harrogate,6,"Part of another converted building, for example, former school, church or warehouse",933
+E07000165,Harrogate,7,"In a commercial building, for example, in an office building, hotel or over a shop",664
+E07000165,Harrogate,8,A caravan or other mobile or temporary structure,686
+E07000166,Richmondshire,1,Detached,7497
+E07000166,Richmondshire,2,Semi-detached,7515
+E07000166,Richmondshire,3,Terraced,4226
+E07000166,Richmondshire,4,In a purpose-built block of flats or tenement,1057
+E07000166,Richmondshire,5,"Part of a converted or shared house, including bedsits",178
+E07000166,Richmondshire,6,"Part of another converted building, for example, former school, church or warehouse",236
+E07000166,Richmondshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",154
+E07000166,Richmondshire,8,A caravan or other mobile or temporary structure,82
+E07000167,Ryedale,1,Detached,10135
+E07000167,Ryedale,2,Semi-detached,8124
+E07000167,Ryedale,3,Terraced,4537
+E07000167,Ryedale,4,In a purpose-built block of flats or tenement,1183
+E07000167,Ryedale,5,"Part of a converted or shared house, including bedsits",205
+E07000167,Ryedale,6,"Part of another converted building, for example, former school, church or warehouse",187
+E07000167,Ryedale,7,"In a commercial building, for example, in an office building, hotel or over a shop",237
+E07000167,Ryedale,8,A caravan or other mobile or temporary structure,107
+E07000168,Scarborough,1,Detached,11922
+E07000168,Scarborough,2,Semi-detached,17274
+E07000168,Scarborough,3,Terraced,10684
+E07000168,Scarborough,4,In a purpose-built block of flats or tenement,6899
+E07000168,Scarborough,5,"Part of a converted or shared house, including bedsits",2855
+E07000168,Scarborough,6,"Part of another converted building, for example, former school, church or warehouse",701
+E07000168,Scarborough,7,"In a commercial building, for example, in an office building, hotel or over a shop",737
+E07000168,Scarborough,8,A caravan or other mobile or temporary structure,51
+E07000169,Selby,1,Detached,16243
+E07000169,Selby,2,Semi-detached,13615
+E07000169,Selby,3,Terraced,6841
+E07000169,Selby,4,In a purpose-built block of flats or tenement,2195
+E07000169,Selby,5,"Part of a converted or shared house, including bedsits",239
+E07000169,Selby,6,"Part of another converted building, for example, former school, church or warehouse",138
+E07000169,Selby,7,"In a commercial building, for example, in an office building, hotel or over a shop",168
+E07000169,Selby,8,A caravan or other mobile or temporary structure,122
+E07000170,Ashfield,1,Detached,16512
+E07000170,Ashfield,2,Semi-detached,22942
+E07000170,Ashfield,3,Terraced,10598
+E07000170,Ashfield,4,In a purpose-built block of flats or tenement,3469
+E07000170,Ashfield,5,"Part of a converted or shared house, including bedsits",419
+E07000170,Ashfield,6,"Part of another converted building, for example, former school, church or warehouse",144
+E07000170,Ashfield,7,"In a commercial building, for example, in an office building, hotel or over a shop",373
+E07000170,Ashfield,8,A caravan or other mobile or temporary structure,51
+E07000171,Bassetlaw,1,Detached,18078
+E07000171,Bassetlaw,2,Semi-detached,21301
+E07000171,Bassetlaw,3,Terraced,8111
+E07000171,Bassetlaw,4,In a purpose-built block of flats or tenement,2824
+E07000171,Bassetlaw,5,"Part of a converted or shared house, including bedsits",414
+E07000171,Bassetlaw,6,"Part of another converted building, for example, former school, church or warehouse",191
+E07000171,Bassetlaw,7,"In a commercial building, for example, in an office building, hotel or over a shop",270
+E07000171,Bassetlaw,8,A caravan or other mobile or temporary structure,269
+E07000172,Broxtowe,1,Detached,17519
+E07000172,Broxtowe,2,Semi-detached,17392
+E07000172,Broxtowe,3,Terraced,7816
+E07000172,Broxtowe,4,In a purpose-built block of flats or tenement,4524
+E07000172,Broxtowe,5,"Part of a converted or shared house, including bedsits",436
+E07000172,Broxtowe,6,"Part of another converted building, for example, former school, church or warehouse",256
+E07000172,Broxtowe,7,"In a commercial building, for example, in an office building, hotel or over a shop",332
+E07000172,Broxtowe,8,A caravan or other mobile or temporary structure,88
+E07000173,Gedling,1,Detached,20119
+E07000173,Gedling,2,Semi-detached,17741
+E07000173,Gedling,3,Terraced,7672
+E07000173,Gedling,4,In a purpose-built block of flats or tenement,4902
+E07000173,Gedling,5,"Part of a converted or shared house, including bedsits",423
+E07000173,Gedling,6,"Part of another converted building, for example, former school, church or warehouse",161
+E07000173,Gedling,7,"In a commercial building, for example, in an office building, hotel or over a shop",312
+E07000173,Gedling,8,A caravan or other mobile or temporary structure,222
+E07000174,Mansfield,1,Detached,14594
+E07000174,Mansfield,2,Semi-detached,20776
+E07000174,Mansfield,3,Terraced,8028
+E07000174,Mansfield,4,In a purpose-built block of flats or tenement,3592
+E07000174,Mansfield,5,"Part of a converted or shared house, including bedsits",472
+E07000174,Mansfield,6,"Part of another converted building, for example, former school, church or warehouse",164
+E07000174,Mansfield,7,"In a commercial building, for example, in an office building, hotel or over a shop",276
+E07000174,Mansfield,8,A caravan or other mobile or temporary structure,129
+E07000175,Newark and Sherwood,1,Detached,20332
+E07000175,Newark and Sherwood,2,Semi-detached,19829
+E07000175,Newark and Sherwood,3,Terraced,8390
+E07000175,Newark and Sherwood,4,In a purpose-built block of flats or tenement,3355
+E07000175,Newark and Sherwood,5,"Part of a converted or shared house, including bedsits",413
+E07000175,Newark and Sherwood,6,"Part of another converted building, for example, former school, church or warehouse",395
+E07000175,Newark and Sherwood,7,"In a commercial building, for example, in an office building, hotel or over a shop",267
+E07000175,Newark and Sherwood,8,A caravan or other mobile or temporary structure,350
+E07000176,Rushcliffe,1,Detached,23373
+E07000176,Rushcliffe,2,Semi-detached,15394
+E07000176,Rushcliffe,3,Terraced,5600
+E07000176,Rushcliffe,4,In a purpose-built block of flats or tenement,3810
+E07000176,Rushcliffe,5,"Part of a converted or shared house, including bedsits",877
+E07000176,Rushcliffe,6,"Part of another converted building, for example, former school, church or warehouse",182
+E07000176,Rushcliffe,7,"In a commercial building, for example, in an office building, hotel or over a shop",262
+E07000176,Rushcliffe,8,A caravan or other mobile or temporary structure,386
+E07000177,Cherwell,1,Detached,20046
+E07000177,Cherwell,2,Semi-detached,23194
+E07000177,Cherwell,3,Terraced,14268
+E07000177,Cherwell,4,In a purpose-built block of flats or tenement,6408
+E07000177,Cherwell,5,"Part of a converted or shared house, including bedsits",889
+E07000177,Cherwell,6,"Part of another converted building, for example, former school, church or warehouse",462
+E07000177,Cherwell,7,"In a commercial building, for example, in an office building, hotel or over a shop",368
+E07000177,Cherwell,8,A caravan or other mobile or temporary structure,262
+E07000178,Oxford,1,Detached,5257
+E07000178,Oxford,2,Semi-detached,17531
+E07000178,Oxford,3,Terraced,15353
+E07000178,Oxford,4,In a purpose-built block of flats or tenement,13310
+E07000178,Oxford,5,"Part of a converted or shared house, including bedsits",2680
+E07000178,Oxford,6,"Part of another converted building, for example, former school, church or warehouse",454
+E07000178,Oxford,7,"In a commercial building, for example, in an office building, hotel or over a shop",525
+E07000178,Oxford,8,A caravan or other mobile or temporary structure,129
+E07000179,South Oxfordshire,1,Detached,21670
+E07000179,South Oxfordshire,2,Semi-detached,20433
+E07000179,South Oxfordshire,3,Terraced,11348
+E07000179,South Oxfordshire,4,In a purpose-built block of flats or tenement,5526
+E07000179,South Oxfordshire,5,"Part of a converted or shared house, including bedsits",677
+E07000179,South Oxfordshire,6,"Part of another converted building, for example, former school, church or warehouse",525
+E07000179,South Oxfordshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",388
+E07000179,South Oxfordshire,8,A caravan or other mobile or temporary structure,930
+E07000180,Vale of White Horse,1,Detached,21151
+E07000180,Vale of White Horse,2,Semi-detached,17558
+E07000180,Vale of White Horse,3,Terraced,10387
+E07000180,Vale of White Horse,4,In a purpose-built block of flats or tenement,6387
+E07000180,Vale of White Horse,5,"Part of a converted or shared house, including bedsits",662
+E07000180,Vale of White Horse,6,"Part of another converted building, for example, former school, church or warehouse",511
+E07000180,Vale of White Horse,7,"In a commercial building, for example, in an office building, hotel or over a shop",306
+E07000180,Vale of White Horse,8,A caravan or other mobile or temporary structure,536
+E07000181,West Oxfordshire,1,Detached,16180
+E07000181,West Oxfordshire,2,Semi-detached,16129
+E07000181,West Oxfordshire,3,Terraced,10215
+E07000181,West Oxfordshire,4,In a purpose-built block of flats or tenement,3995
+E07000181,West Oxfordshire,5,"Part of a converted or shared house, including bedsits",432
+E07000181,West Oxfordshire,6,"Part of another converted building, for example, former school, church or warehouse",367
+E07000181,West Oxfordshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",328
+E07000181,West Oxfordshire,8,A caravan or other mobile or temporary structure,331
+E07000187,Mendip,1,Detached,16137
+E07000187,Mendip,2,Semi-detached,16078
+E07000187,Mendip,3,Terraced,11918
+E07000187,Mendip,4,In a purpose-built block of flats or tenement,4033
+E07000187,Mendip,5,"Part of a converted or shared house, including bedsits",934
+E07000187,Mendip,6,"Part of another converted building, for example, former school, church or warehouse",613
+E07000187,Mendip,7,"In a commercial building, for example, in an office building, hotel or over a shop",362
+E07000187,Mendip,8,A caravan or other mobile or temporary structure,217
+E07000188,Sedgemoor,1,Detached,17703
+E07000188,Sedgemoor,2,Semi-detached,17416
+E07000188,Sedgemoor,3,Terraced,11565
+E07000188,Sedgemoor,4,In a purpose-built block of flats or tenement,4962
+E07000188,Sedgemoor,5,"Part of a converted or shared house, including bedsits",845
+E07000188,Sedgemoor,6,"Part of another converted building, for example, former school, church or warehouse",426
+E07000188,Sedgemoor,7,"In a commercial building, for example, in an office building, hotel or over a shop",349
+E07000188,Sedgemoor,8,A caravan or other mobile or temporary structure,635
+E07000189,South Somerset,1,Detached,25568
+E07000189,South Somerset,2,Semi-detached,23944
+E07000189,South Somerset,3,Terraced,17476
+E07000189,South Somerset,4,In a purpose-built block of flats or tenement,6185
+E07000189,South Somerset,5,"Part of a converted or shared house, including bedsits",1065
+E07000189,South Somerset,6,"Part of another converted building, for example, former school, church or warehouse",665
+E07000189,South Somerset,7,"In a commercial building, for example, in an office building, hotel or over a shop",448
+E07000189,South Somerset,8,A caravan or other mobile or temporary structure,586
+E07000192,Cannock Chase,1,Detached,13006
+E07000192,Cannock Chase,2,Semi-detached,20293
+E07000192,Cannock Chase,3,Terraced,5183
+E07000192,Cannock Chase,4,In a purpose-built block of flats or tenement,4092
+E07000192,Cannock Chase,5,"Part of a converted or shared house, including bedsits",314
+E07000192,Cannock Chase,6,"Part of another converted building, for example, former school, church or warehouse",205
+E07000192,Cannock Chase,7,"In a commercial building, for example, in an office building, hotel or over a shop",312
+E07000192,Cannock Chase,8,A caravan or other mobile or temporary structure,54
+E07000193,East Staffordshire,1,Detached,16885
+E07000193,East Staffordshire,2,Semi-detached,16661
+E07000193,East Staffordshire,3,Terraced,11542
+E07000193,East Staffordshire,4,In a purpose-built block of flats or tenement,4917
+E07000193,East Staffordshire,5,"Part of a converted or shared house, including bedsits",462
+E07000193,East Staffordshire,6,"Part of another converted building, for example, former school, church or warehouse",308
+E07000193,East Staffordshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",358
+E07000193,East Staffordshire,8,A caravan or other mobile or temporary structure,160
+E07000194,Lichfield,1,Detached,17278
+E07000194,Lichfield,2,Semi-detached,16135
+E07000194,Lichfield,3,Terraced,6477
+E07000194,Lichfield,4,In a purpose-built block of flats or tenement,4596
+E07000194,Lichfield,5,"Part of a converted or shared house, including bedsits",386
+E07000194,Lichfield,6,"Part of another converted building, for example, former school, church or warehouse",250
+E07000194,Lichfield,7,"In a commercial building, for example, in an office building, hotel or over a shop",248
+E07000194,Lichfield,8,A caravan or other mobile or temporary structure,260
+E07000195,Newcastle-under-Lyme,1,Detached,13642
+E07000195,Newcastle-under-Lyme,2,Semi-detached,23932
+E07000195,Newcastle-under-Lyme,3,Terraced,10341
+E07000195,Newcastle-under-Lyme,4,In a purpose-built block of flats or tenement,4565
+E07000195,Newcastle-under-Lyme,5,"Part of a converted or shared house, including bedsits",486
+E07000195,Newcastle-under-Lyme,6,"Part of another converted building, for example, former school, church or warehouse",118
+E07000195,Newcastle-under-Lyme,7,"In a commercial building, for example, in an office building, hotel or over a shop",271
+E07000195,Newcastle-under-Lyme,8,A caravan or other mobile or temporary structure,69
+E07000196,South Staffordshire,1,Detached,18240
+E07000196,South Staffordshire,2,Semi-detached,18073
+E07000196,South Staffordshire,3,Terraced,4957
+E07000196,South Staffordshire,4,In a purpose-built block of flats or tenement,3395
+E07000196,South Staffordshire,5,"Part of a converted or shared house, including bedsits",287
+E07000196,South Staffordshire,6,"Part of another converted building, for example, former school, church or warehouse",130
+E07000196,South Staffordshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",264
+E07000196,South Staffordshire,8,A caravan or other mobile or temporary structure,779
+E07000197,Stafford,1,Detached,23097
+E07000197,Stafford,2,Semi-detached,19639
+E07000197,Stafford,3,Terraced,9835
+E07000197,Stafford,4,In a purpose-built block of flats or tenement,5733
+E07000197,Stafford,5,"Part of a converted or shared house, including bedsits",697
+E07000197,Stafford,6,"Part of another converted building, for example, former school, church or warehouse",389
+E07000197,Stafford,7,"In a commercial building, for example, in an office building, hotel or over a shop",315
+E07000197,Stafford,8,A caravan or other mobile or temporary structure,343
+E07000198,Staffordshire Moorlands,1,Detached,17251
+E07000198,Staffordshire Moorlands,2,Semi-detached,16034
+E07000198,Staffordshire Moorlands,3,Terraced,6660
+E07000198,Staffordshire Moorlands,4,In a purpose-built block of flats or tenement,1355
+E07000198,Staffordshire Moorlands,5,"Part of a converted or shared house, including bedsits",242
+E07000198,Staffordshire Moorlands,6,"Part of another converted building, for example, former school, church or warehouse",370
+E07000198,Staffordshire Moorlands,7,"In a commercial building, for example, in an office building, hotel or over a shop",352
+E07000198,Staffordshire Moorlands,8,A caravan or other mobile or temporary structure,91
+E07000199,Tamworth,1,Detached,8763
+E07000199,Tamworth,2,Semi-detached,12665
+E07000199,Tamworth,3,Terraced,7052
+E07000199,Tamworth,4,In a purpose-built block of flats or tenement,3636
+E07000199,Tamworth,5,"Part of a converted or shared house, including bedsits",377
+E07000199,Tamworth,6,"Part of another converted building, for example, former school, church or warehouse",115
+E07000199,Tamworth,7,"In a commercial building, for example, in an office building, hotel or over a shop",145
+E07000199,Tamworth,8,A caravan or other mobile or temporary structure,142
+E07000200,Babergh,1,Detached,16778
+E07000200,Babergh,2,Semi-detached,12119
+E07000200,Babergh,3,Terraced,8293
+E07000200,Babergh,4,In a purpose-built block of flats or tenement,2184
+E07000200,Babergh,5,"Part of a converted or shared house, including bedsits",235
+E07000200,Babergh,6,"Part of another converted building, for example, former school, church or warehouse",279
+E07000200,Babergh,7,"In a commercial building, for example, in an office building, hotel or over a shop",192
+E07000200,Babergh,8,A caravan or other mobile or temporary structure,120
+E07000202,Ipswich,1,Detached,8429
+E07000202,Ipswich,2,Semi-detached,22907
+E07000202,Ipswich,3,Terraced,13267
+E07000202,Ipswich,4,In a purpose-built block of flats or tenement,12311
+E07000202,Ipswich,5,"Part of a converted or shared house, including bedsits",1444
+E07000202,Ipswich,6,"Part of another converted building, for example, former school, church or warehouse",583
+E07000202,Ipswich,7,"In a commercial building, for example, in an office building, hotel or over a shop",493
+E07000202,Ipswich,8,A caravan or other mobile or temporary structure,70
+E07000203,Mid Suffolk,1,Detached,20822
+E07000203,Mid Suffolk,2,Semi-detached,14437
+E07000203,Mid Suffolk,3,Terraced,6041
+E07000203,Mid Suffolk,4,In a purpose-built block of flats or tenement,2099
+E07000203,Mid Suffolk,5,"Part of a converted or shared house, including bedsits",225
+E07000203,Mid Suffolk,6,"Part of another converted building, for example, former school, church or warehouse",211
+E07000203,Mid Suffolk,7,"In a commercial building, for example, in an office building, hotel or over a shop",170
+E07000203,Mid Suffolk,8,A caravan or other mobile or temporary structure,338
+E07000207,Elmbridge,1,Detached,18146
+E07000207,Elmbridge,2,Semi-detached,14384
+E07000207,Elmbridge,3,Terraced,9232
+E07000207,Elmbridge,4,In a purpose-built block of flats or tenement,11500
+E07000207,Elmbridge,5,"Part of a converted or shared house, including bedsits",1256
+E07000207,Elmbridge,6,"Part of another converted building, for example, former school, church or warehouse",296
+E07000207,Elmbridge,7,"In a commercial building, for example, in an office building, hotel or over a shop",725
+E07000207,Elmbridge,8,A caravan or other mobile or temporary structure,49
+E07000208,Epsom and Ewell,1,Detached,8273
+E07000208,Epsom and Ewell,2,Semi-detached,10935
+E07000208,Epsom and Ewell,3,Terraced,4144
+E07000208,Epsom and Ewell,4,In a purpose-built block of flats or tenement,6546
+E07000208,Epsom and Ewell,5,"Part of a converted or shared house, including bedsits",643
+E07000208,Epsom and Ewell,6,"Part of another converted building, for example, former school, church or warehouse",386
+E07000208,Epsom and Ewell,7,"In a commercial building, for example, in an office building, hotel or over a shop",374
+E07000208,Epsom and Ewell,8,A caravan or other mobile or temporary structure,20
+E07000209,Guildford,1,Detached,18664
+E07000209,Guildford,2,Semi-detached,18188
+E07000209,Guildford,3,Terraced,7588
+E07000209,Guildford,4,In a purpose-built block of flats or tenement,8404
+E07000209,Guildford,5,"Part of a converted or shared house, including bedsits",1744
+E07000209,Guildford,6,"Part of another converted building, for example, former school, church or warehouse",336
+E07000209,Guildford,7,"In a commercial building, for example, in an office building, hotel or over a shop",373
+E07000209,Guildford,8,A caravan or other mobile or temporary structure,465
+E07000210,Mole Valley,1,Detached,13978
+E07000210,Mole Valley,2,Semi-detached,10417
+E07000210,Mole Valley,3,Terraced,4445
+E07000210,Mole Valley,4,In a purpose-built block of flats or tenement,5980
+E07000210,Mole Valley,5,"Part of a converted or shared house, including bedsits",805
+E07000210,Mole Valley,6,"Part of another converted building, for example, former school, church or warehouse",410
+E07000210,Mole Valley,7,"In a commercial building, for example, in an office building, hotel or over a shop",383
+E07000210,Mole Valley,8,A caravan or other mobile or temporary structure,719
+E07000211,Reigate and Banstead,1,Detached,16679
+E07000211,Reigate and Banstead,2,Semi-detached,17720
+E07000211,Reigate and Banstead,3,Terraced,9596
+E07000211,Reigate and Banstead,4,In a purpose-built block of flats or tenement,12839
+E07000211,Reigate and Banstead,5,"Part of a converted or shared house, including bedsits",1467
+E07000211,Reigate and Banstead,6,"Part of another converted building, for example, former school, church or warehouse",583
+E07000211,Reigate and Banstead,7,"In a commercial building, for example, in an office building, hotel or over a shop",617
+E07000211,Reigate and Banstead,8,A caravan or other mobile or temporary structure,348
+E07000212,Runnymede,1,Detached,9032
+E07000212,Runnymede,2,Semi-detached,11190
+E07000212,Runnymede,3,Terraced,5369
+E07000212,Runnymede,4,In a purpose-built block of flats or tenement,6922
+E07000212,Runnymede,5,"Part of a converted or shared house, including bedsits",634
+E07000212,Runnymede,6,"Part of another converted building, for example, former school, church or warehouse",318
+E07000212,Runnymede,7,"In a commercial building, for example, in an office building, hotel or over a shop",330
+E07000212,Runnymede,8,A caravan or other mobile or temporary structure,1044
+E07000213,Spelthorne,1,Detached,7958
+E07000213,Spelthorne,2,Semi-detached,14290
+E07000213,Spelthorne,3,Terraced,8235
+E07000213,Spelthorne,4,In a purpose-built block of flats or tenement,9525
+E07000213,Spelthorne,5,"Part of a converted or shared house, including bedsits",815
+E07000213,Spelthorne,6,"Part of another converted building, for example, former school, church or warehouse",249
+E07000213,Spelthorne,7,"In a commercial building, for example, in an office building, hotel or over a shop",454
+E07000213,Spelthorne,8,A caravan or other mobile or temporary structure,278
+E07000214,Surrey Heath,1,Detached,15738
+E07000214,Surrey Heath,2,Semi-detached,9152
+E07000214,Surrey Heath,3,Terraced,4481
+E07000214,Surrey Heath,4,In a purpose-built block of flats or tenement,5300
+E07000214,Surrey Heath,5,"Part of a converted or shared house, including bedsits",619
+E07000214,Surrey Heath,6,"Part of another converted building, for example, former school, church or warehouse",203
+E07000214,Surrey Heath,7,"In a commercial building, for example, in an office building, hotel or over a shop",301
+E07000214,Surrey Heath,8,A caravan or other mobile or temporary structure,211
+E07000215,Tandridge,1,Detached,12692
+E07000215,Tandridge,2,Semi-detached,9916
+E07000215,Tandridge,3,Terraced,4844
+E07000215,Tandridge,4,In a purpose-built block of flats or tenement,6323
+E07000215,Tandridge,5,"Part of a converted or shared house, including bedsits",862
+E07000215,Tandridge,6,"Part of another converted building, for example, former school, church or warehouse",301
+E07000215,Tandridge,7,"In a commercial building, for example, in an office building, hotel or over a shop",370
+E07000215,Tandridge,8,A caravan or other mobile or temporary structure,315
+E07000216,Waverley,1,Detached,21167
+E07000216,Waverley,2,Semi-detached,14422
+E07000216,Waverley,3,Terraced,7463
+E07000216,Waverley,4,In a purpose-built block of flats or tenement,6934
+E07000216,Waverley,5,"Part of a converted or shared house, including bedsits",1164
+E07000216,Waverley,6,"Part of another converted building, for example, former school, church or warehouse",634
+E07000216,Waverley,7,"In a commercial building, for example, in an office building, hotel or over a shop",470
+E07000216,Waverley,8,A caravan or other mobile or temporary structure,193
+E07000217,Woking,1,Detached,12637
+E07000217,Woking,2,Semi-detached,10246
+E07000217,Woking,3,Terraced,7661
+E07000217,Woking,4,In a purpose-built block of flats or tenement,9413
+E07000217,Woking,5,"Part of a converted or shared house, including bedsits",817
+E07000217,Woking,6,"Part of another converted building, for example, former school, church or warehouse",225
+E07000217,Woking,7,"In a commercial building, for example, in an office building, hotel or over a shop",323
+E07000217,Woking,8,A caravan or other mobile or temporary structure,117
+E07000218,North Warwickshire,1,Detached,7965
+E07000218,North Warwickshire,2,Semi-detached,10828
+E07000218,North Warwickshire,3,Terraced,6227
+E07000218,North Warwickshire,4,In a purpose-built block of flats or tenement,1869
+E07000218,North Warwickshire,5,"Part of a converted or shared house, including bedsits",200
+E07000218,North Warwickshire,6,"Part of another converted building, for example, former school, church or warehouse",166
+E07000218,North Warwickshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",194
+E07000218,North Warwickshire,8,A caravan or other mobile or temporary structure,131
+E07000219,Nuneaton and Bedworth,1,Detached,14120
+E07000219,Nuneaton and Bedworth,2,Semi-detached,21569
+E07000219,Nuneaton and Bedworth,3,Terraced,13649
+E07000219,Nuneaton and Bedworth,4,In a purpose-built block of flats or tenement,5968
+E07000219,Nuneaton and Bedworth,5,"Part of a converted or shared house, including bedsits",603
+E07000219,Nuneaton and Bedworth,6,"Part of another converted building, for example, former school, church or warehouse",134
+E07000219,Nuneaton and Bedworth,7,"In a commercial building, for example, in an office building, hotel or over a shop",337
+E07000219,Nuneaton and Bedworth,8,A caravan or other mobile or temporary structure,207
+E07000220,Rugby,1,Detached,14350
+E07000220,Rugby,2,Semi-detached,15938
+E07000220,Rugby,3,Terraced,10615
+E07000220,Rugby,4,In a purpose-built block of flats or tenement,4836
+E07000220,Rugby,5,"Part of a converted or shared house, including bedsits",583
+E07000220,Rugby,6,"Part of another converted building, for example, former school, church or warehouse",232
+E07000220,Rugby,7,"In a commercial building, for example, in an office building, hotel or over a shop",283
+E07000220,Rugby,8,A caravan or other mobile or temporary structure,176
+E07000221,Stratford-on-Avon,1,Detached,22562
+E07000221,Stratford-on-Avon,2,Semi-detached,18740
+E07000221,Stratford-on-Avon,3,Terraced,10693
+E07000221,Stratford-on-Avon,4,In a purpose-built block of flats or tenement,5323
+E07000221,Stratford-on-Avon,5,"Part of a converted or shared house, including bedsits",598
+E07000221,Stratford-on-Avon,6,"Part of another converted building, for example, former school, church or warehouse",352
+E07000221,Stratford-on-Avon,7,"In a commercial building, for example, in an office building, hotel or over a shop",351
+E07000221,Stratford-on-Avon,8,A caravan or other mobile or temporary structure,842
+E07000222,Warwick,1,Detached,16000
+E07000222,Warwick,2,Semi-detached,20010
+E07000222,Warwick,3,Terraced,13086
+E07000222,Warwick,4,In a purpose-built block of flats or tenement,10235
+E07000222,Warwick,5,"Part of a converted or shared house, including bedsits",1941
+E07000222,Warwick,6,"Part of another converted building, for example, former school, church or warehouse",638
+E07000222,Warwick,7,"In a commercial building, for example, in an office building, hotel or over a shop",556
+E07000222,Warwick,8,A caravan or other mobile or temporary structure,151
+E07000223,Adur,1,Detached,5030
+E07000223,Adur,2,Semi-detached,10567
+E07000223,Adur,3,Terraced,5758
+E07000223,Adur,4,In a purpose-built block of flats or tenement,5004
+E07000223,Adur,5,"Part of a converted or shared house, including bedsits",638
+E07000223,Adur,6,"Part of another converted building, for example, former school, church or warehouse",136
+E07000223,Adur,7,"In a commercial building, for example, in an office building, hotel or over a shop",308
+E07000223,Adur,8,A caravan or other mobile or temporary structure,237
+E07000224,Arun,1,Detached,24179
+E07000224,Arun,2,Semi-detached,18174
+E07000224,Arun,3,Terraced,14057
+E07000224,Arun,4,In a purpose-built block of flats or tenement,11583
+E07000224,Arun,5,"Part of a converted or shared house, including bedsits",2605
+E07000224,Arun,6,"Part of another converted building, for example, former school, church or warehouse",464
+E07000224,Arun,7,"In a commercial building, for example, in an office building, hotel or over a shop",637
+E07000224,Arun,8,A caravan or other mobile or temporary structure,963
+E07000225,Chichester,1,Detached,19290
+E07000225,Chichester,2,Semi-detached,15378
+E07000225,Chichester,3,Terraced,9973
+E07000225,Chichester,4,In a purpose-built block of flats or tenement,6993
+E07000225,Chichester,5,"Part of a converted or shared house, including bedsits",807
+E07000225,Chichester,6,"Part of another converted building, for example, former school, church or warehouse",640
+E07000225,Chichester,7,"In a commercial building, for example, in an office building, hotel or over a shop",433
+E07000225,Chichester,8,A caravan or other mobile or temporary structure,604
+E07000226,Crawley,1,Detached,6480
+E07000226,Crawley,2,Semi-detached,10322
+E07000226,Crawley,3,Terraced,17014
+E07000226,Crawley,4,In a purpose-built block of flats or tenement,10807
+E07000226,Crawley,5,"Part of a converted or shared house, including bedsits",398
+E07000226,Crawley,6,"Part of another converted building, for example, former school, church or warehouse",202
+E07000226,Crawley,7,"In a commercial building, for example, in an office building, hotel or over a shop",264
+E07000226,Crawley,8,A caravan or other mobile or temporary structure,13
+E07000227,Horsham,1,Detached,23201
+E07000227,Horsham,2,Semi-detached,16747
+E07000227,Horsham,3,Terraced,10659
+E07000227,Horsham,4,In a purpose-built block of flats or tenement,9723
+E07000227,Horsham,5,"Part of a converted or shared house, including bedsits",720
+E07000227,Horsham,6,"Part of another converted building, for example, former school, church or warehouse",455
+E07000227,Horsham,7,"In a commercial building, for example, in an office building, hotel or over a shop",388
+E07000227,Horsham,8,A caravan or other mobile or temporary structure,478
+E07000228,Mid Sussex,1,Detached,21657
+E07000228,Mid Sussex,2,Semi-detached,18994
+E07000228,Mid Sussex,3,Terraced,9960
+E07000228,Mid Sussex,4,In a purpose-built block of flats or tenement,9829
+E07000228,Mid Sussex,5,"Part of a converted or shared house, including bedsits",1364
+E07000228,Mid Sussex,6,"Part of another converted building, for example, former school, church or warehouse",661
+E07000228,Mid Sussex,7,"In a commercial building, for example, in an office building, hotel or over a shop",607
+E07000228,Mid Sussex,8,A caravan or other mobile or temporary structure,279
+E07000229,Worthing,1,Detached,10539
+E07000229,Worthing,2,Semi-detached,11725
+E07000229,Worthing,3,Terraced,9788
+E07000229,Worthing,4,In a purpose-built block of flats or tenement,11817
+E07000229,Worthing,5,"Part of a converted or shared house, including bedsits",4466
+E07000229,Worthing,6,"Part of another converted building, for example, former school, church or warehouse",442
+E07000229,Worthing,7,"In a commercial building, for example, in an office building, hotel or over a shop",746
+E07000229,Worthing,8,A caravan or other mobile or temporary structure,15
+E07000234,Bromsgrove,1,Detached,15711
+E07000234,Bromsgrove,2,Semi-detached,14902
+E07000234,Bromsgrove,3,Terraced,5878
+E07000234,Bromsgrove,4,In a purpose-built block of flats or tenement,3642
+E07000234,Bromsgrove,5,"Part of a converted or shared house, including bedsits",286
+E07000234,Bromsgrove,6,"Part of another converted building, for example, former school, church or warehouse",207
+E07000234,Bromsgrove,7,"In a commercial building, for example, in an office building, hotel or over a shop",275
+E07000234,Bromsgrove,8,A caravan or other mobile or temporary structure,364
+E07000235,Malvern Hills,1,Detached,15441
+E07000235,Malvern Hills,2,Semi-detached,10869
+E07000235,Malvern Hills,3,Terraced,3891
+E07000235,Malvern Hills,4,In a purpose-built block of flats or tenement,2731
+E07000235,Malvern Hills,5,"Part of a converted or shared house, including bedsits",805
+E07000235,Malvern Hills,6,"Part of another converted building, for example, former school, church or warehouse",452
+E07000235,Malvern Hills,7,"In a commercial building, for example, in an office building, hotel or over a shop",295
+E07000235,Malvern Hills,8,A caravan or other mobile or temporary structure,408
+E07000236,Redditch,1,Detached,10014
+E07000236,Redditch,2,Semi-detached,11419
+E07000236,Redditch,3,Terraced,9393
+E07000236,Redditch,4,In a purpose-built block of flats or tenement,4731
+E07000236,Redditch,5,"Part of a converted or shared house, including bedsits",513
+E07000236,Redditch,6,"Part of another converted building, for example, former school, church or warehouse",135
+E07000236,Redditch,7,"In a commercial building, for example, in an office building, hotel or over a shop",151
+E07000236,Redditch,8,A caravan or other mobile or temporary structure,22
+E07000237,Worcester,1,Detached,9910
+E07000237,Worcester,2,Semi-detached,15668
+E07000237,Worcester,3,Terraced,9659
+E07000237,Worcester,4,In a purpose-built block of flats or tenement,7454
+E07000237,Worcester,5,"Part of a converted or shared house, including bedsits",964
+E07000237,Worcester,6,"Part of another converted building, for example, former school, church or warehouse",566
+E07000237,Worcester,7,"In a commercial building, for example, in an office building, hotel or over a shop",456
+E07000237,Worcester,8,A caravan or other mobile or temporary structure,44
+E07000238,Wychavon,1,Detached,23809
+E07000238,Wychavon,2,Semi-detached,17665
+E07000238,Wychavon,3,Terraced,9138
+E07000238,Wychavon,4,In a purpose-built block of flats or tenement,4518
+E07000238,Wychavon,5,"Part of a converted or shared house, including bedsits",592
+E07000238,Wychavon,6,"Part of another converted building, for example, former school, church or warehouse",435
+E07000238,Wychavon,7,"In a commercial building, for example, in an office building, hotel or over a shop",331
+E07000238,Wychavon,8,A caravan or other mobile or temporary structure,867
+E07000239,Wyre Forest,1,Detached,13347
+E07000239,Wyre Forest,2,Semi-detached,16844
+E07000239,Wyre Forest,3,Terraced,8342
+E07000239,Wyre Forest,4,In a purpose-built block of flats or tenement,4455
+E07000239,Wyre Forest,5,"Part of a converted or shared house, including bedsits",568
+E07000239,Wyre Forest,6,"Part of another converted building, for example, former school, church or warehouse",332
+E07000239,Wyre Forest,7,"In a commercial building, for example, in an office building, hotel or over a shop",363
+E07000239,Wyre Forest,8,A caravan or other mobile or temporary structure,1069
+E07000240,St Albans,1,Detached,15495
+E07000240,St Albans,2,Semi-detached,17838
+E07000240,St Albans,3,Terraced,11819
+E07000240,St Albans,4,In a purpose-built block of flats or tenement,11090
+E07000240,St Albans,5,"Part of a converted or shared house, including bedsits",1284
+E07000240,St Albans,6,"Part of another converted building, for example, former school, church or warehouse",689
+E07000240,St Albans,7,"In a commercial building, for example, in an office building, hotel or over a shop",521
+E07000240,St Albans,8,A caravan or other mobile or temporary structure,254
+E07000241,Welwyn Hatfield,1,Detached,9217
+E07000241,Welwyn Hatfield,2,Semi-detached,11254
+E07000241,Welwyn Hatfield,3,Terraced,14814
+E07000241,Welwyn Hatfield,4,In a purpose-built block of flats or tenement,9820
+E07000241,Welwyn Hatfield,5,"Part of a converted or shared house, including bedsits",355
+E07000241,Welwyn Hatfield,6,"Part of another converted building, for example, former school, church or warehouse",268
+E07000241,Welwyn Hatfield,7,"In a commercial building, for example, in an office building, hotel or over a shop",353
+E07000241,Welwyn Hatfield,8,A caravan or other mobile or temporary structure,128
+E07000242,East Hertfordshire,1,Detached,17112
+E07000242,East Hertfordshire,2,Semi-detached,18799
+E07000242,East Hertfordshire,3,Terraced,13467
+E07000242,East Hertfordshire,4,In a purpose-built block of flats or tenement,10622
+E07000242,East Hertfordshire,5,"Part of a converted or shared house, including bedsits",618
+E07000242,East Hertfordshire,6,"Part of another converted building, for example, former school, church or warehouse",756
+E07000242,East Hertfordshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",470
+E07000242,East Hertfordshire,8,A caravan or other mobile or temporary structure,178
+E07000243,Stevenage,1,Detached,4354
+E07000243,Stevenage,2,Semi-detached,7133
+E07000243,Stevenage,3,Terraced,16848
+E07000243,Stevenage,4,In a purpose-built block of flats or tenement,7356
+E07000243,Stevenage,5,"Part of a converted or shared house, including bedsits",446
+E07000243,Stevenage,6,"Part of another converted building, for example, former school, church or warehouse",148
+E07000243,Stevenage,7,"In a commercial building, for example, in an office building, hotel or over a shop",211
+E07000243,Stevenage,8,A caravan or other mobile or temporary structure,17
+E07000244,East Suffolk,1,Detached,43732
+E07000244,East Suffolk,2,Semi-detached,32076
+E07000244,East Suffolk,3,Terraced,23105
+E07000244,East Suffolk,4,In a purpose-built block of flats or tenement,7704
+E07000244,East Suffolk,5,"Part of a converted or shared house, including bedsits",1792
+E07000244,East Suffolk,6,"Part of another converted building, for example, former school, church or warehouse",709
+E07000244,East Suffolk,7,"In a commercial building, for example, in an office building, hotel or over a shop",828
+E07000244,East Suffolk,8,A caravan or other mobile or temporary structure,799
+E07000245,West Suffolk,1,Detached,27589
+E07000245,West Suffolk,2,Semi-detached,22471
+E07000245,West Suffolk,3,Terraced,18429
+E07000245,West Suffolk,4,In a purpose-built block of flats or tenement,8129
+E07000245,West Suffolk,5,"Part of a converted or shared house, including bedsits",782
+E07000245,West Suffolk,6,"Part of another converted building, for example, former school, church or warehouse",443
+E07000245,West Suffolk,7,"In a commercial building, for example, in an office building, hotel or over a shop",438
+E07000245,West Suffolk,8,A caravan or other mobile or temporary structure,465
+E07000246,Somerset West and Taunton,1,Detached,21926
+E07000246,Somerset West and Taunton,2,Semi-detached,20782
+E07000246,Somerset West and Taunton,3,Terraced,15815
+E07000246,Somerset West and Taunton,4,In a purpose-built block of flats or tenement,8005
+E07000246,Somerset West and Taunton,5,"Part of a converted or shared house, including bedsits",1641
+E07000246,Somerset West and Taunton,6,"Part of another converted building, for example, former school, church or warehouse",729
+E07000246,Somerset West and Taunton,7,"In a commercial building, for example, in an office building, hotel or over a shop",559
+E07000246,Somerset West and Taunton,8,A caravan or other mobile or temporary structure,529
+E08000001,Bolton,1,Detached,20799
+E08000001,Bolton,2,Semi-detached,42656
+E08000001,Bolton,3,Terraced,39464
+E08000001,Bolton,4,In a purpose-built block of flats or tenement,13194
+E08000001,Bolton,5,"Part of a converted or shared house, including bedsits",1046
+E08000001,Bolton,6,"Part of another converted building, for example, former school, church or warehouse",829
+E08000001,Bolton,7,"In a commercial building, for example, in an office building, hotel or over a shop",714
+E08000001,Bolton,8,A caravan or other mobile or temporary structure,89
+E08000002,Bury,1,Detached,15185
+E08000002,Bury,2,Semi-detached,31115
+E08000002,Bury,3,Terraced,22817
+E08000002,Bury,4,In a purpose-built block of flats or tenement,9735
+E08000002,Bury,5,"Part of a converted or shared house, including bedsits",888
+E08000002,Bury,6,"Part of another converted building, for example, former school, church or warehouse",365
+E08000002,Bury,7,"In a commercial building, for example, in an office building, hotel or over a shop",541
+E08000002,Bury,8,A caravan or other mobile or temporary structure,49
+E08000003,Manchester,1,Detached,11603
+E08000003,Manchester,2,Semi-detached,68528
+E08000003,Manchester,3,Terraced,60020
+E08000003,Manchester,4,In a purpose-built block of flats or tenement,60411
+E08000003,Manchester,5,"Part of a converted or shared house, including bedsits",8370
+E08000003,Manchester,6,"Part of another converted building, for example, former school, church or warehouse",3837
+E08000003,Manchester,7,"In a commercial building, for example, in an office building, hotel or over a shop",1771
+E08000003,Manchester,8,A caravan or other mobile or temporary structure,192
+E08000004,Oldham,1,Detached,12356
+E08000004,Oldham,2,Semi-detached,33440
+E08000004,Oldham,3,Terraced,35838
+E08000004,Oldham,4,In a purpose-built block of flats or tenement,9857
+E08000004,Oldham,5,"Part of a converted or shared house, including bedsits",556
+E08000004,Oldham,6,"Part of another converted building, for example, former school, church or warehouse",470
+E08000004,Oldham,7,"In a commercial building, for example, in an office building, hotel or over a shop",549
+E08000004,Oldham,8,A caravan or other mobile or temporary structure,74
+E08000005,Rochdale,1,Detached,15155
+E08000005,Rochdale,2,Semi-detached,32358
+E08000005,Rochdale,3,Terraced,31026
+E08000005,Rochdale,4,In a purpose-built block of flats or tenement,9916
+E08000005,Rochdale,5,"Part of a converted or shared house, including bedsits",771
+E08000005,Rochdale,6,"Part of another converted building, for example, former school, church or warehouse",356
+E08000005,Rochdale,7,"In a commercial building, for example, in an office building, hotel or over a shop",547
+E08000005,Rochdale,8,A caravan or other mobile or temporary structure,94
+E08000006,Salford,1,Detached,10764
+E08000006,Salford,2,Semi-detached,39987
+E08000006,Salford,3,Terraced,29241
+E08000006,Salford,4,In a purpose-built block of flats or tenement,31999
+E08000006,Salford,5,"Part of a converted or shared house, including bedsits",1606
+E08000006,Salford,6,"Part of another converted building, for example, former school, church or warehouse",702
+E08000006,Salford,7,"In a commercial building, for example, in an office building, hotel or over a shop",690
+E08000006,Salford,8,A caravan or other mobile or temporary structure,128
+E08000007,Stockport,1,Detached,27416
+E08000007,Stockport,2,Semi-detached,52145
+E08000007,Stockport,3,Terraced,26512
+E08000007,Stockport,4,In a purpose-built block of flats or tenement,16692
+E08000007,Stockport,5,"Part of a converted or shared house, including bedsits",1730
+E08000007,Stockport,6,"Part of another converted building, for example, former school, church or warehouse",1004
+E08000007,Stockport,7,"In a commercial building, for example, in an office building, hotel or over a shop",1075
+E08000007,Stockport,8,A caravan or other mobile or temporary structure,74
+E08000008,Tameside,1,Detached,11904
+E08000008,Tameside,2,Semi-detached,38449
+E08000008,Tameside,3,Terraced,33953
+E08000008,Tameside,4,In a purpose-built block of flats or tenement,12799
+E08000008,Tameside,5,"Part of a converted or shared house, including bedsits",915
+E08000008,Tameside,6,"Part of another converted building, for example, former school, church or warehouse",680
+E08000008,Tameside,7,"In a commercial building, for example, in an office building, hotel or over a shop",720
+E08000008,Tameside,8,A caravan or other mobile or temporary structure,106
+E08000009,Trafford,1,Detached,14601
+E08000009,Trafford,2,Semi-detached,42193
+E08000009,Trafford,3,Terraced,19976
+E08000009,Trafford,4,In a purpose-built block of flats or tenement,16236
+E08000009,Trafford,5,"Part of a converted or shared house, including bedsits",1839
+E08000009,Trafford,6,"Part of another converted building, for example, former school, church or warehouse",547
+E08000009,Trafford,7,"In a commercial building, for example, in an office building, hotel or over a shop",846
+E08000009,Trafford,8,A caravan or other mobile or temporary structure,31
+E08000010,Wigan,1,Detached,27450
+E08000010,Wigan,2,Semi-detached,65250
+E08000010,Wigan,3,Terraced,37347
+E08000010,Wigan,4,In a purpose-built block of flats or tenement,10604
+E08000010,Wigan,5,"Part of a converted or shared house, including bedsits",1066
+E08000010,Wigan,6,"Part of another converted building, for example, former school, church or warehouse",529
+E08000010,Wigan,7,"In a commercial building, for example, in an office building, hotel or over a shop",771
+E08000010,Wigan,8,A caravan or other mobile or temporary structure,86
+E08000011,Knowsley,1,Detached,9929
+E08000011,Knowsley,2,Semi-detached,28445
+E08000011,Knowsley,3,Terraced,20845
+E08000011,Knowsley,4,In a purpose-built block of flats or tenement,6041
+E08000011,Knowsley,5,"Part of a converted or shared house, including bedsits",271
+E08000011,Knowsley,6,"Part of another converted building, for example, former school, church or warehouse",131
+E08000011,Knowsley,7,"In a commercial building, for example, in an office building, hotel or over a shop",225
+E08000011,Knowsley,8,A caravan or other mobile or temporary structure,186
+E08000012,Liverpool,1,Detached,17047
+E08000012,Liverpool,2,Semi-detached,63639
+E08000012,Liverpool,3,Terraced,78552
+E08000012,Liverpool,4,In a purpose-built block of flats or tenement,35589
+E08000012,Liverpool,5,"Part of a converted or shared house, including bedsits",8162
+E08000012,Liverpool,6,"Part of another converted building, for example, former school, church or warehouse",2653
+E08000012,Liverpool,7,"In a commercial building, for example, in an office building, hotel or over a shop",1785
+E08000012,Liverpool,8,A caravan or other mobile or temporary structure,64
+E08000013,St. Helens,1,Detached,12833
+E08000013,St. Helens,2,Semi-detached,38054
+E08000013,St. Helens,3,Terraced,22929
+E08000013,St. Helens,4,In a purpose-built block of flats or tenement,5824
+E08000013,St. Helens,5,"Part of a converted or shared house, including bedsits",602
+E08000013,St. Helens,6,"Part of another converted building, for example, former school, church or warehouse",278
+E08000013,St. Helens,7,"In a commercial building, for example, in an office building, hotel or over a shop",442
+E08000013,St. Helens,8,A caravan or other mobile or temporary structure,49
+E08000014,Sefton,1,Detached,19926
+E08000014,Sefton,2,Semi-detached,56728
+E08000014,Sefton,3,Terraced,22585
+E08000014,Sefton,4,In a purpose-built block of flats or tenement,16693
+E08000014,Sefton,5,"Part of a converted or shared house, including bedsits",5156
+E08000014,Sefton,6,"Part of another converted building, for example, former school, church or warehouse",685
+E08000014,Sefton,7,"In a commercial building, for example, in an office building, hotel or over a shop",1240
+E08000014,Sefton,8,A caravan or other mobile or temporary structure,60
+E08000015,Wirral,1,Detached,24892
+E08000015,Wirral,2,Semi-detached,59592
+E08000015,Wirral,3,Terraced,33594
+E08000015,Wirral,4,In a purpose-built block of flats or tenement,16980
+E08000015,Wirral,5,"Part of a converted or shared house, including bedsits",5629
+E08000015,Wirral,6,"Part of another converted building, for example, former school, church or warehouse",892
+E08000015,Wirral,7,"In a commercial building, for example, in an office building, hotel or over a shop",1572
+E08000015,Wirral,8,A caravan or other mobile or temporary structure,101
+E08000016,Barnsley,1,Detached,25317
+E08000016,Barnsley,2,Semi-detached,49183
+E08000016,Barnsley,3,Terraced,25178
+E08000016,Barnsley,4,In a purpose-built block of flats or tenement,6745
+E08000016,Barnsley,5,"Part of a converted or shared house, including bedsits",712
+E08000016,Barnsley,6,"Part of another converted building, for example, former school, church or warehouse",334
+E08000016,Barnsley,7,"In a commercial building, for example, in an office building, hotel or over a shop",513
+E08000016,Barnsley,8,A caravan or other mobile or temporary structure,73
+E08000017,Doncaster,1,Detached,32223
+E08000017,Doncaster,2,Semi-detached,60700
+E08000017,Doncaster,3,Terraced,28207
+E08000017,Doncaster,4,In a purpose-built block of flats or tenement,8534
+E08000017,Doncaster,5,"Part of a converted or shared house, including bedsits",1670
+E08000017,Doncaster,6,"Part of another converted building, for example, former school, church or warehouse",455
+E08000017,Doncaster,7,"In a commercial building, for example, in an office building, hotel or over a shop",842
+E08000017,Doncaster,8,A caravan or other mobile or temporary structure,849
+E08000018,Rotherham,1,Detached,25415
+E08000018,Rotherham,2,Semi-detached,56050
+E08000018,Rotherham,3,Terraced,20689
+E08000018,Rotherham,4,In a purpose-built block of flats or tenement,9957
+E08000018,Rotherham,5,"Part of a converted or shared house, including bedsits",723
+E08000018,Rotherham,6,"Part of another converted building, for example, former school, church or warehouse",378
+E08000018,Rotherham,7,"In a commercial building, for example, in an office building, hotel or over a shop",670
+E08000018,Rotherham,8,A caravan or other mobile or temporary structure,42
+E08000019,Sheffield,1,Detached,34839
+E08000019,Sheffield,2,Semi-detached,88149
+E08000019,Sheffield,3,Terraced,60285
+E08000019,Sheffield,4,In a purpose-built block of flats or tenement,40731
+E08000019,Sheffield,5,"Part of a converted or shared house, including bedsits",3877
+E08000019,Sheffield,6,"Part of another converted building, for example, former school, church or warehouse",2008
+E08000019,Sheffield,7,"In a commercial building, for example, in an office building, hotel or over a shop",1978
+E08000019,Sheffield,8,A caravan or other mobile or temporary structure,85
+E08000021,Newcastle upon Tyne,1,Detached,11676
+E08000021,Newcastle upon Tyne,2,Semi-detached,42492
+E08000021,Newcastle upon Tyne,3,Terraced,28946
+E08000021,Newcastle upon Tyne,4,In a purpose-built block of flats or tenement,30478
+E08000021,Newcastle upon Tyne,5,"Part of a converted or shared house, including bedsits",7364
+E08000021,Newcastle upon Tyne,6,"Part of another converted building, for example, former school, church or warehouse",1051
+E08000021,Newcastle upon Tyne,7,"In a commercial building, for example, in an office building, hotel or over a shop",759
+E08000021,Newcastle upon Tyne,8,A caravan or other mobile or temporary structure,32
+E08000022,North Tyneside,1,Detached,12051
+E08000022,North Tyneside,2,Semi-detached,40118
+E08000022,North Tyneside,3,Terraced,22090
+E08000022,North Tyneside,4,In a purpose-built block of flats or tenement,17096
+E08000022,North Tyneside,5,"Part of a converted or shared house, including bedsits",3839
+E08000022,North Tyneside,6,"Part of another converted building, for example, former school, church or warehouse",443
+E08000022,North Tyneside,7,"In a commercial building, for example, in an office building, hotel or over a shop",580
+E08000022,North Tyneside,8,A caravan or other mobile or temporary structure,15
+E08000023,South Tyneside,1,Detached,6408
+E08000023,South Tyneside,2,Semi-detached,29261
+E08000023,South Tyneside,3,Terraced,18704
+E08000023,South Tyneside,4,In a purpose-built block of flats or tenement,10952
+E08000023,South Tyneside,5,"Part of a converted or shared house, including bedsits",2290
+E08000023,South Tyneside,6,"Part of another converted building, for example, former school, church or warehouse",256
+E08000023,South Tyneside,7,"In a commercial building, for example, in an office building, hotel or over a shop",377
+E08000023,South Tyneside,8,A caravan or other mobile or temporary structure,38
+E08000024,Sunderland,1,Detached,16201
+E08000024,Sunderland,2,Semi-detached,55039
+E08000024,Sunderland,3,Terraced,35518
+E08000024,Sunderland,4,In a purpose-built block of flats or tenement,12158
+E08000024,Sunderland,5,"Part of a converted or shared house, including bedsits",2076
+E08000024,Sunderland,6,"Part of another converted building, for example, former school, church or warehouse",420
+E08000024,Sunderland,7,"In a commercial building, for example, in an office building, hotel or over a shop",628
+E08000024,Sunderland,8,A caravan or other mobile or temporary structure,137
+E08000025,Birmingham,1,Detached,47332
+E08000025,Birmingham,2,Semi-detached,150608
+E08000025,Birmingham,3,Terraced,117527
+E08000025,Birmingham,4,In a purpose-built block of flats or tenement,88786
+E08000025,Birmingham,5,"Part of a converted or shared house, including bedsits",12083
+E08000025,Birmingham,6,"Part of another converted building, for example, former school, church or warehouse",2554
+E08000025,Birmingham,7,"In a commercial building, for example, in an office building, hotel or over a shop",4268
+E08000025,Birmingham,8,A caravan or other mobile or temporary structure,297
+E08000026,Coventry,1,Detached,15498
+E08000026,Coventry,2,Semi-detached,40312
+E08000026,Coventry,3,Terraced,53515
+E08000026,Coventry,4,In a purpose-built block of flats or tenement,21079
+E08000026,Coventry,5,"Part of a converted or shared house, including bedsits",2301
+E08000026,Coventry,6,"Part of another converted building, for example, former school, church or warehouse",324
+E08000026,Coventry,7,"In a commercial building, for example, in an office building, hotel or over a shop",883
+E08000026,Coventry,8,A caravan or other mobile or temporary structure,228
+E08000027,Dudley,1,Detached,29595
+E08000027,Dudley,2,Semi-detached,66305
+E08000027,Dudley,3,Terraced,21158
+E08000027,Dudley,4,In a purpose-built block of flats or tenement,16425
+E08000027,Dudley,5,"Part of a converted or shared house, including bedsits",1614
+E08000027,Dudley,6,"Part of another converted building, for example, former school, church or warehouse",889
+E08000027,Dudley,7,"In a commercial building, for example, in an office building, hotel or over a shop",990
+E08000027,Dudley,8,A caravan or other mobile or temporary structure,93
+E08000028,Sandwell,1,Detached,15453
+E08000028,Sandwell,2,Semi-detached,57980
+E08000028,Sandwell,3,Terraced,31724
+E08000028,Sandwell,4,In a purpose-built block of flats or tenement,21923
+E08000028,Sandwell,5,"Part of a converted or shared house, including bedsits",1610
+E08000028,Sandwell,6,"Part of another converted building, for example, former school, church or warehouse",383
+E08000028,Sandwell,7,"In a commercial building, for example, in an office building, hotel or over a shop",1083
+E08000028,Sandwell,8,A caravan or other mobile or temporary structure,90
+E08000029,Solihull,1,Detached,25497
+E08000029,Solihull,2,Semi-detached,33536
+E08000029,Solihull,3,Terraced,14102
+E08000029,Solihull,4,In a purpose-built block of flats or tenement,14754
+E08000029,Solihull,5,"Part of a converted or shared house, including bedsits",562
+E08000029,Solihull,6,"Part of another converted building, for example, former school, church or warehouse",259
+E08000029,Solihull,7,"In a commercial building, for example, in an office building, hotel or over a shop",598
+E08000029,Solihull,8,A caravan or other mobile or temporary structure,175
+E08000030,Walsall,1,Detached,20550
+E08000030,Walsall,2,Semi-detached,48092
+E08000030,Walsall,3,Terraced,23982
+E08000030,Walsall,4,In a purpose-built block of flats or tenement,17027
+E08000030,Walsall,5,"Part of a converted or shared house, including bedsits",1008
+E08000030,Walsall,6,"Part of another converted building, for example, former school, church or warehouse",396
+E08000030,Walsall,7,"In a commercial building, for example, in an office building, hotel or over a shop",958
+E08000030,Walsall,8,A caravan or other mobile or temporary structure,213
+E08000031,Wolverhampton,1,Detached,17727
+E08000031,Wolverhampton,2,Semi-detached,48334
+E08000031,Wolverhampton,3,Terraced,17276
+E08000031,Wolverhampton,4,In a purpose-built block of flats or tenement,18296
+E08000031,Wolverhampton,5,"Part of a converted or shared house, including bedsits",2184
+E08000031,Wolverhampton,6,"Part of another converted building, for example, former school, church or warehouse",412
+E08000031,Wolverhampton,7,"In a commercial building, for example, in an office building, hotel or over a shop",797
+E08000031,Wolverhampton,8,A caravan or other mobile or temporary structure,115
+E08000032,Bradford,1,Detached,30851
+E08000032,Bradford,2,Semi-detached,76995
+E08000032,Bradford,3,Terraced,69168
+E08000032,Bradford,4,In a purpose-built block of flats or tenement,24306
+E08000032,Bradford,5,"Part of a converted or shared house, including bedsits",3390
+E08000032,Bradford,6,"Part of another converted building, for example, former school, church or warehouse",2769
+E08000032,Bradford,7,"In a commercial building, for example, in an office building, hotel or over a shop",1802
+E08000032,Bradford,8,A caravan or other mobile or temporary structure,586
+E08000033,Calderdale,1,Detached,13730
+E08000033,Calderdale,2,Semi-detached,25842
+E08000033,Calderdale,3,Terraced,37356
+E08000033,Calderdale,4,In a purpose-built block of flats or tenement,9813
+E08000033,Calderdale,5,"Part of a converted or shared house, including bedsits",1010
+E08000033,Calderdale,6,"Part of another converted building, for example, former school, church or warehouse",1897
+E08000033,Calderdale,7,"In a commercial building, for example, in an office building, hotel or over a shop",639
+E08000033,Calderdale,8,A caravan or other mobile or temporary structure,189
+E08000034,Kirklees,1,Detached,38467
+E08000034,Kirklees,2,Semi-detached,60938
+E08000034,Kirklees,3,Terraced,55986
+E08000034,Kirklees,4,In a purpose-built block of flats or tenement,17060
+E08000034,Kirklees,5,"Part of a converted or shared house, including bedsits",2139
+E08000034,Kirklees,6,"Part of another converted building, for example, former school, church or warehouse",2153
+E08000034,Kirklees,7,"In a commercial building, for example, in an office building, hotel or over a shop",1045
+E08000034,Kirklees,8,A caravan or other mobile or temporary structure,201
+E08000035,Leeds,1,Detached,52788
+E08000035,Leeds,2,Semi-detached,127950
+E08000035,Leeds,3,Terraced,85263
+E08000035,Leeds,4,In a purpose-built block of flats or tenement,59601
+E08000035,Leeds,5,"Part of a converted or shared house, including bedsits",9078
+E08000035,Leeds,6,"Part of another converted building, for example, former school, church or warehouse",4040
+E08000035,Leeds,7,"In a commercial building, for example, in an office building, hotel or over a shop",2315
+E08000035,Leeds,8,A caravan or other mobile or temporary structure,431
+E08000036,Wakefield,1,Detached,34197
+E08000036,Wakefield,2,Semi-detached,68246
+E08000036,Wakefield,3,Terraced,33718
+E08000036,Wakefield,4,In a purpose-built block of flats or tenement,13856
+E08000036,Wakefield,5,"Part of a converted or shared house, including bedsits",1289
+E08000036,Wakefield,6,"Part of another converted building, for example, former school, church or warehouse",679
+E08000036,Wakefield,7,"In a commercial building, for example, in an office building, hotel or over a shop",837
+E08000036,Wakefield,8,A caravan or other mobile or temporary structure,253
+E08000037,Gateshead,1,Detached,10364
+E08000037,Gateshead,2,Semi-detached,38460
+E08000037,Gateshead,3,Terraced,22239
+E08000037,Gateshead,4,In a purpose-built block of flats or tenement,14652
+E08000037,Gateshead,5,"Part of a converted or shared house, including bedsits",2418
+E08000037,Gateshead,6,"Part of another converted building, for example, former school, church or warehouse",349
+E08000037,Gateshead,7,"In a commercial building, for example, in an office building, hotel or over a shop",451
+E08000037,Gateshead,8,A caravan or other mobile or temporary structure,66
+E09000001,City of London,1,Detached,7
+E09000001,City of London,2,Semi-detached,15
+E09000001,City of London,3,Terraced,78
+E09000001,City of London,4,In a purpose-built block of flats or tenement,4273
+E09000001,City of London,5,"Part of a converted or shared house, including bedsits",66
+E09000001,City of London,6,"Part of another converted building, for example, former school, church or warehouse",272
+E09000001,City of London,7,"In a commercial building, for example, in an office building, hotel or over a shop",203
+E09000001,City of London,8,A caravan or other mobile or temporary structure,0
+E09000002,Barking and Dagenham,1,Detached,3751
+E09000002,Barking and Dagenham,2,Semi-detached,16358
+E09000002,Barking and Dagenham,3,Terraced,30754
+E09000002,Barking and Dagenham,4,In a purpose-built block of flats or tenement,20451
+E09000002,Barking and Dagenham,5,"Part of a converted or shared house, including bedsits",1577
+E09000002,Barking and Dagenham,6,"Part of another converted building, for example, former school, church or warehouse",192
+E09000002,Barking and Dagenham,7,"In a commercial building, for example, in an office building, hotel or over a shop",756
+E09000002,Barking and Dagenham,8,A caravan or other mobile or temporary structure,60
+E09000003,Barnet,1,Detached,15046
+E09000003,Barnet,2,Semi-detached,40919
+E09000003,Barnet,3,Terraced,22155
+E09000003,Barnet,4,In a purpose-built block of flats or tenement,54446
+E09000003,Barnet,5,"Part of a converted or shared house, including bedsits",13136
+E09000003,Barnet,6,"Part of another converted building, for example, former school, church or warehouse",1053
+E09000003,Barnet,7,"In a commercial building, for example, in an office building, hotel or over a shop",1982
+E09000003,Barnet,8,A caravan or other mobile or temporary structure,180
+E09000004,Bexley,1,Detached,7054
+E09000004,Bexley,2,Semi-detached,42154
+E09000004,Bexley,3,Terraced,22536
+E09000004,Bexley,4,In a purpose-built block of flats or tenement,20318
+E09000004,Bexley,5,"Part of a converted or shared house, including bedsits",1687
+E09000004,Bexley,6,"Part of another converted building, for example, former school, church or warehouse",342
+E09000004,Bexley,7,"In a commercial building, for example, in an office building, hotel or over a shop",1166
+E09000004,Bexley,8,A caravan or other mobile or temporary structure,41
+E09000005,Brent,1,Detached,7142
+E09000005,Brent,2,Semi-detached,26467
+E09000005,Brent,3,Terraced,17697
+E09000005,Brent,4,In a purpose-built block of flats or tenement,45086
+E09000005,Brent,5,"Part of a converted or shared house, including bedsits",19550
+E09000005,Brent,6,"Part of another converted building, for example, former school, church or warehouse",757
+E09000005,Brent,7,"In a commercial building, for example, in an office building, hotel or over a shop",1817
+E09000005,Brent,8,A caravan or other mobile or temporary structure,96
+E09000006,Bromley,1,Detached,24563
+E09000006,Bromley,2,Semi-detached,40562
+E09000006,Bromley,3,Terraced,27990
+E09000006,Bromley,4,In a purpose-built block of flats or tenement,31895
+E09000006,Bromley,5,"Part of a converted or shared house, including bedsits",7920
+E09000006,Bromley,6,"Part of another converted building, for example, former school, church or warehouse",896
+E09000006,Bromley,7,"In a commercial building, for example, in an office building, hotel or over a shop",1773
+E09000006,Bromley,8,A caravan or other mobile or temporary structure,228
+E09000007,Camden,1,Detached,1584
+E09000007,Camden,2,Semi-detached,3294
+E09000007,Camden,3,Terraced,7504
+E09000007,Camden,4,In a purpose-built block of flats or tenement,52159
+E09000007,Camden,5,"Part of a converted or shared house, including bedsits",24284
+E09000007,Camden,6,"Part of another converted building, for example, former school, church or warehouse",1650
+E09000007,Camden,7,"In a commercial building, for example, in an office building, hotel or over a shop",2213
+E09000007,Camden,8,A caravan or other mobile or temporary structure,71
+E09000008,Croydon,1,Detached,18714
+E09000008,Croydon,2,Semi-detached,37841
+E09000008,Croydon,3,Terraced,35580
+E09000008,Croydon,4,In a purpose-built block of flats or tenement,44285
+E09000008,Croydon,5,"Part of a converted or shared house, including bedsits",12973
+E09000008,Croydon,6,"Part of another converted building, for example, former school, church or warehouse",1178
+E09000008,Croydon,7,"In a commercial building, for example, in an office building, hotel or over a shop",2238
+E09000008,Croydon,8,A caravan or other mobile or temporary structure,137
+E09000009,Ealing,1,Detached,6798
+E09000009,Ealing,2,Semi-detached,29225
+E09000009,Ealing,3,Terraced,31261
+E09000009,Ealing,4,In a purpose-built block of flats or tenement,46120
+E09000009,Ealing,5,"Part of a converted or shared house, including bedsits",16967
+E09000009,Ealing,6,"Part of another converted building, for example, former school, church or warehouse",1206
+E09000009,Ealing,7,"In a commercial building, for example, in an office building, hotel or over a shop",1854
+E09000009,Ealing,8,A caravan or other mobile or temporary structure,228
+E09000010,Enfield,1,Detached,9059
+E09000010,Enfield,2,Semi-detached,29986
+E09000010,Enfield,3,Terraced,34911
+E09000010,Enfield,4,In a purpose-built block of flats or tenement,36776
+E09000010,Enfield,5,"Part of a converted or shared house, including bedsits",7866
+E09000010,Enfield,6,"Part of another converted building, for example, former school, church or warehouse",788
+E09000010,Enfield,7,"In a commercial building, for example, in an office building, hotel or over a shop",1426
+E09000010,Enfield,8,A caravan or other mobile or temporary structure,111
+E09000011,Greenwich,1,Detached,4656
+E09000011,Greenwich,2,Semi-detached,20106
+E09000011,Greenwich,3,Terraced,30419
+E09000011,Greenwich,4,In a purpose-built block of flats or tenement,49157
+E09000011,Greenwich,5,"Part of a converted or shared house, including bedsits",6862
+E09000011,Greenwich,6,"Part of another converted building, for example, former school, church or warehouse",1668
+E09000011,Greenwich,7,"In a commercial building, for example, in an office building, hotel or over a shop",1094
+E09000011,Greenwich,8,A caravan or other mobile or temporary structure,92
+E09000012,Hackney,1,Detached,1433
+E09000012,Hackney,2,Semi-detached,3816
+E09000012,Hackney,3,Terraced,14729
+E09000012,Hackney,4,In a purpose-built block of flats or tenement,64067
+E09000012,Hackney,5,"Part of a converted or shared house, including bedsits",16469
+E09000012,Hackney,6,"Part of another converted building, for example, former school, church or warehouse",3571
+E09000012,Hackney,7,"In a commercial building, for example, in an office building, hotel or over a shop",1743
+E09000012,Hackney,8,A caravan or other mobile or temporary structure,251
+E09000013,Hammersmith and Fulham,1,Detached,933
+E09000013,Hammersmith and Fulham,2,Semi-detached,3790
+E09000013,Hammersmith and Fulham,3,Terraced,15280
+E09000013,Hammersmith and Fulham,4,In a purpose-built block of flats or tenement,39074
+E09000013,Hammersmith and Fulham,5,"Part of a converted or shared house, including bedsits",19940
+E09000013,Hammersmith and Fulham,6,"Part of another converted building, for example, former school, church or warehouse",944
+E09000013,Hammersmith and Fulham,7,"In a commercial building, for example, in an office building, hotel or over a shop",1187
+E09000013,Hammersmith and Fulham,8,A caravan or other mobile or temporary structure,95
+E09000014,Haringey,1,Detached,4057
+E09000014,Haringey,2,Semi-detached,9899
+E09000014,Haringey,3,Terraced,26896
+E09000014,Haringey,4,In a purpose-built block of flats or tenement,37181
+E09000014,Haringey,5,"Part of a converted or shared house, including bedsits",23999
+E09000014,Haringey,6,"Part of another converted building, for example, former school, church or warehouse",1225
+E09000014,Haringey,7,"In a commercial building, for example, in an office building, hotel or over a shop",1684
+E09000014,Haringey,8,A caravan or other mobile or temporary structure,151
+E09000015,Harrow,1,Detached,10174
+E09000015,Harrow,2,Semi-detached,33281
+E09000015,Harrow,3,Terraced,15136
+E09000015,Harrow,4,In a purpose-built block of flats or tenement,23528
+E09000015,Harrow,5,"Part of a converted or shared house, including bedsits",5754
+E09000015,Harrow,6,"Part of another converted building, for example, former school, church or warehouse",525
+E09000015,Harrow,7,"In a commercial building, for example, in an office building, hotel or over a shop",1209
+E09000015,Harrow,8,A caravan or other mobile or temporary structure,35
+E09000016,Havering,1,Detached,11276
+E09000016,Havering,2,Semi-detached,41729
+E09000016,Havering,3,Terraced,24643
+E09000016,Havering,4,In a purpose-built block of flats or tenement,20101
+E09000016,Havering,5,"Part of a converted or shared house, including bedsits",1729
+E09000016,Havering,6,"Part of another converted building, for example, former school, church or warehouse",369
+E09000016,Havering,7,"In a commercial building, for example, in an office building, hotel or over a shop",1156
+E09000016,Havering,8,A caravan or other mobile or temporary structure,274
+E09000017,Hillingdon,1,Detached,15182
+E09000017,Hillingdon,2,Semi-detached,38338
+E09000017,Hillingdon,3,Terraced,21773
+E09000017,Hillingdon,4,In a purpose-built block of flats or tenement,28585
+E09000017,Hillingdon,5,"Part of a converted or shared house, including bedsits",3140
+E09000017,Hillingdon,6,"Part of another converted building, for example, former school, church or warehouse",500
+E09000017,Hillingdon,7,"In a commercial building, for example, in an office building, hotel or over a shop",1425
+E09000017,Hillingdon,8,A caravan or other mobile or temporary structure,282
+E09000018,Hounslow,1,Detached,5022
+E09000018,Hounslow,2,Semi-detached,29477
+E09000018,Hounslow,3,Terraced,21123
+E09000018,Hounslow,4,In a purpose-built block of flats or tenement,38538
+E09000018,Hounslow,5,"Part of a converted or shared house, including bedsits",6540
+E09000018,Hounslow,6,"Part of another converted building, for example, former school, church or warehouse",843
+E09000018,Hounslow,7,"In a commercial building, for example, in an office building, hotel or over a shop",1187
+E09000018,Hounslow,8,A caravan or other mobile or temporary structure,231
+E09000019,Islington,1,Detached,826
+E09000019,Islington,2,Semi-detached,2639
+E09000019,Islington,3,Terraced,12265
+E09000019,Islington,4,In a purpose-built block of flats or tenement,55352
+E09000019,Islington,5,"Part of a converted or shared house, including bedsits",20524
+E09000019,Islington,6,"Part of another converted building, for example, former school, church or warehouse",2985
+E09000019,Islington,7,"In a commercial building, for example, in an office building, hotel or over a shop",1815
+E09000019,Islington,8,A caravan or other mobile or temporary structure,90
+E09000020,Kensington and Chelsea,1,Detached,767
+E09000020,Kensington and Chelsea,2,Semi-detached,2064
+E09000020,Kensington and Chelsea,3,Terraced,8561
+E09000020,Kensington and Chelsea,4,In a purpose-built block of flats or tenement,37911
+E09000020,Kensington and Chelsea,5,"Part of a converted or shared house, including bedsits",15720
+E09000020,Kensington and Chelsea,6,"Part of another converted building, for example, former school, church or warehouse",771
+E09000020,Kensington and Chelsea,7,"In a commercial building, for example, in an office building, hotel or over a shop",1016
+E09000020,Kensington and Chelsea,8,A caravan or other mobile or temporary structure,74
+E09000021,Kingston upon Thames,1,Detached,8284
+E09000021,Kingston upon Thames,2,Semi-detached,20797
+E09000021,Kingston upon Thames,3,Terraced,11300
+E09000021,Kingston upon Thames,4,In a purpose-built block of flats or tenement,19535
+E09000021,Kingston upon Thames,5,"Part of a converted or shared house, including bedsits",4271
+E09000021,Kingston upon Thames,6,"Part of another converted building, for example, former school, church or warehouse",409
+E09000021,Kingston upon Thames,7,"In a commercial building, for example, in an office building, hotel or over a shop",934
+E09000021,Kingston upon Thames,8,A caravan or other mobile or temporary structure,96
+E09000022,Lambeth,1,Detached,2726
+E09000022,Lambeth,2,Semi-detached,10494
+E09000022,Lambeth,3,Terraced,20194
+E09000022,Lambeth,4,In a purpose-built block of flats or tenement,69465
+E09000022,Lambeth,5,"Part of a converted or shared house, including bedsits",27717
+E09000022,Lambeth,6,"Part of another converted building, for example, former school, church or warehouse",2559
+E09000022,Lambeth,7,"In a commercial building, for example, in an office building, hotel or over a shop",1455
+E09000022,Lambeth,8,A caravan or other mobile or temporary structure,78
+E09000023,Lewisham,1,Detached,3682
+E09000023,Lewisham,2,Semi-detached,15884
+E09000023,Lewisham,3,Terraced,32070
+E09000023,Lewisham,4,In a purpose-built block of flats or tenement,47837
+E09000023,Lewisham,5,"Part of a converted or shared house, including bedsits",19953
+E09000023,Lewisham,6,"Part of another converted building, for example, former school, church or warehouse",1270
+E09000023,Lewisham,7,"In a commercial building, for example, in an office building, hotel or over a shop",1570
+E09000023,Lewisham,8,A caravan or other mobile or temporary structure,127
+E09000024,Merton,1,Detached,4659
+E09000024,Merton,2,Semi-detached,15514
+E09000024,Merton,3,Terraced,29176
+E09000024,Merton,4,In a purpose-built block of flats or tenement,23191
+E09000024,Merton,5,"Part of a converted or shared house, including bedsits",7515
+E09000024,Merton,6,"Part of another converted building, for example, former school, church or warehouse",584
+E09000024,Merton,7,"In a commercial building, for example, in an office building, hotel or over a shop",1035
+E09000024,Merton,8,A caravan or other mobile or temporary structure,54
+E09000025,Newham,1,Detached,6337
+E09000025,Newham,2,Semi-detached,11937
+E09000025,Newham,3,Terraced,36118
+E09000025,Newham,4,In a purpose-built block of flats or tenement,50384
+E09000025,Newham,5,"Part of a converted or shared house, including bedsits",8110
+E09000025,Newham,6,"Part of another converted building, for example, former school, church or warehouse",840
+E09000025,Newham,7,"In a commercial building, for example, in an office building, hotel or over a shop",1584
+E09000025,Newham,8,A caravan or other mobile or temporary structure,199
+E09000026,Redbridge,1,Detached,7229
+E09000026,Redbridge,2,Semi-detached,27965
+E09000026,Redbridge,3,Terraced,33469
+E09000026,Redbridge,4,In a purpose-built block of flats or tenement,26303
+E09000026,Redbridge,5,"Part of a converted or shared house, including bedsits",6792
+E09000026,Redbridge,6,"Part of another converted building, for example, former school, church or warehouse",505
+E09000026,Redbridge,7,"In a commercial building, for example, in an office building, hotel or over a shop",1297
+E09000026,Redbridge,8,A caravan or other mobile or temporary structure,153
+E09000027,Richmond upon Thames,1,Detached,6683
+E09000027,Richmond upon Thames,2,Semi-detached,20164
+E09000027,Richmond upon Thames,3,Terraced,21431
+E09000027,Richmond upon Thames,4,In a purpose-built block of flats or tenement,22721
+E09000027,Richmond upon Thames,5,"Part of a converted or shared house, including bedsits",7074
+E09000027,Richmond upon Thames,6,"Part of another converted building, for example, former school, church or warehouse",1001
+E09000027,Richmond upon Thames,7,"In a commercial building, for example, in an office building, hotel or over a shop",1437
+E09000027,Richmond upon Thames,8,A caravan or other mobile or temporary structure,194
+E09000028,Southwark,1,Detached,2377
+E09000028,Southwark,2,Semi-detached,7400
+E09000028,Southwark,3,Terraced,18764
+E09000028,Southwark,4,In a purpose-built block of flats or tenement,84281
+E09000028,Southwark,5,"Part of a converted or shared house, including bedsits",12560
+E09000028,Southwark,6,"Part of another converted building, for example, former school, church or warehouse",3758
+E09000028,Southwark,7,"In a commercial building, for example, in an office building, hotel or over a shop",1462
+E09000028,Southwark,8,A caravan or other mobile or temporary structure,216
+E09000029,Sutton,1,Detached,8611
+E09000029,Sutton,2,Semi-detached,23003
+E09000029,Sutton,3,Terraced,20167
+E09000029,Sutton,4,In a purpose-built block of flats or tenement,25737
+E09000029,Sutton,5,"Part of a converted or shared house, including bedsits",3224
+E09000029,Sutton,6,"Part of another converted building, for example, former school, church or warehouse",469
+E09000029,Sutton,7,"In a commercial building, for example, in an office building, hotel or over a shop",1099
+E09000029,Sutton,8,A caravan or other mobile or temporary structure,38
+E09000030,Tower Hamlets,1,Detached,1127
+E09000030,Tower Hamlets,2,Semi-detached,2744
+E09000030,Tower Hamlets,3,Terraced,10654
+E09000030,Tower Hamlets,4,In a purpose-built block of flats or tenement,97258
+E09000030,Tower Hamlets,5,"Part of a converted or shared house, including bedsits",2757
+E09000030,Tower Hamlets,6,"Part of another converted building, for example, former school, church or warehouse",4210
+E09000030,Tower Hamlets,7,"In a commercial building, for example, in an office building, hotel or over a shop",1601
+E09000030,Tower Hamlets,8,A caravan or other mobile or temporary structure,191
+E09000031,Waltham Forest,1,Detached,4241
+E09000031,Waltham Forest,2,Semi-detached,16840
+E09000031,Waltham Forest,3,Terraced,35667
+E09000031,Waltham Forest,4,In a purpose-built block of flats or tenement,31555
+E09000031,Waltham Forest,5,"Part of a converted or shared house, including bedsits",12324
+E09000031,Waltham Forest,6,"Part of another converted building, for example, former school, church or warehouse",681
+E09000031,Waltham Forest,7,"In a commercial building, for example, in an office building, hotel or over a shop",1492
+E09000031,Waltham Forest,8,A caravan or other mobile or temporary structure,101
+E09000032,Wandsworth,1,Detached,3031
+E09000032,Wandsworth,2,Semi-detached,9640
+E09000032,Wandsworth,3,Terraced,30521
+E09000032,Wandsworth,4,In a purpose-built block of flats or tenement,66056
+E09000032,Wandsworth,5,"Part of a converted or shared house, including bedsits",24263
+E09000032,Wandsworth,6,"Part of another converted building, for example, former school, church or warehouse",1770
+E09000032,Wandsworth,7,"In a commercial building, for example, in an office building, hotel or over a shop",1969
+E09000032,Wandsworth,8,A caravan or other mobile or temporary structure,143
+E09000033,Westminster,1,Detached,1047
+E09000033,Westminster,2,Semi-detached,1735
+E09000033,Westminster,3,Terraced,6849
+E09000033,Westminster,4,In a purpose-built block of flats or tenement,66514
+E09000033,Westminster,5,"Part of a converted or shared house, including bedsits",15302
+E09000033,Westminster,6,"Part of another converted building, for example, former school, church or warehouse",1321
+E09000033,Westminster,7,"In a commercial building, for example, in an office building, hotel or over a shop",1957
+E09000033,Westminster,8,A caravan or other mobile or temporary structure,89
+W06000001,Isle of Anglesey,1,Detached,14623
+W06000001,Isle of Anglesey,2,Semi-detached,7051
+W06000001,Isle of Anglesey,3,Terraced,6827
+W06000001,Isle of Anglesey,4,In a purpose-built block of flats or tenement,1423
+W06000001,Isle of Anglesey,5,"Part of a converted or shared house, including bedsits",312
+W06000001,Isle of Anglesey,6,"Part of another converted building, for example, former school, church or warehouse",158
+W06000001,Isle of Anglesey,7,"In a commercial building, for example, in an office building, hotel or over a shop",254
+W06000001,Isle of Anglesey,8,A caravan or other mobile or temporary structure,177
+W06000002,Gwynedd,1,Detached,17732
+W06000002,Gwynedd,2,Semi-detached,12980
+W06000002,Gwynedd,3,Terraced,15300
+W06000002,Gwynedd,4,In a purpose-built block of flats or tenement,3098
+W06000002,Gwynedd,5,"Part of a converted or shared house, including bedsits",796
+W06000002,Gwynedd,6,"Part of another converted building, for example, former school, church or warehouse",376
+W06000002,Gwynedd,7,"In a commercial building, for example, in an office building, hotel or over a shop",620
+W06000002,Gwynedd,8,A caravan or other mobile or temporary structure,202
+W06000003,Conwy,1,Detached,18928
+W06000003,Conwy,2,Semi-detached,16541
+W06000003,Conwy,3,Terraced,7381
+W06000003,Conwy,4,In a purpose-built block of flats or tenement,5947
+W06000003,Conwy,5,"Part of a converted or shared house, including bedsits",2252
+W06000003,Conwy,6,"Part of another converted building, for example, former school, church or warehouse",373
+W06000003,Conwy,7,"In a commercial building, for example, in an office building, hotel or over a shop",661
+W06000003,Conwy,8,A caravan or other mobile or temporary structure,152
+W06000004,Denbighshire,1,Detached,18520
+W06000004,Denbighshire,2,Semi-detached,13551
+W06000004,Denbighshire,3,Terraced,5433
+W06000004,Denbighshire,4,In a purpose-built block of flats or tenement,3111
+W06000004,Denbighshire,5,"Part of a converted or shared house, including bedsits",872
+W06000004,Denbighshire,6,"Part of another converted building, for example, former school, church or warehouse",272
+W06000004,Denbighshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",496
+W06000004,Denbighshire,8,A caravan or other mobile or temporary structure,129
+W06000005,Flintshire,1,Detached,25985
+W06000005,Flintshire,2,Semi-detached,27073
+W06000005,Flintshire,3,Terraced,9019
+W06000005,Flintshire,4,In a purpose-built block of flats or tenement,3488
+W06000005,Flintshire,5,"Part of a converted or shared house, including bedsits",452
+W06000005,Flintshire,6,"Part of another converted building, for example, former school, church or warehouse",244
+W06000005,Flintshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",349
+W06000005,Flintshire,8,A caravan or other mobile or temporary structure,300
+W06000006,Wrexham,1,Detached,18316
+W06000006,Wrexham,2,Semi-detached,21801
+W06000006,Wrexham,3,Terraced,11087
+W06000006,Wrexham,4,In a purpose-built block of flats or tenement,5647
+W06000006,Wrexham,5,"Part of a converted or shared house, including bedsits",433
+W06000006,Wrexham,6,"Part of another converted building, for example, former school, church or warehouse",246
+W06000006,Wrexham,7,"In a commercial building, for example, in an office building, hotel or over a shop",280
+W06000006,Wrexham,8,A caravan or other mobile or temporary structure,106
+W06000008,Ceredigion,1,Detached,15661
+W06000008,Ceredigion,2,Semi-detached,7146
+W06000008,Ceredigion,3,Terraced,4342
+W06000008,Ceredigion,4,In a purpose-built block of flats or tenement,1986
+W06000008,Ceredigion,5,"Part of a converted or shared house, including bedsits",895
+W06000008,Ceredigion,6,"Part of another converted building, for example, former school, church or warehouse",236
+W06000008,Ceredigion,7,"In a commercial building, for example, in an office building, hotel or over a shop",386
+W06000008,Ceredigion,8,A caravan or other mobile or temporary structure,245
+W06000009,Pembrokeshire,1,Detached,23707
+W06000009,Pembrokeshire,2,Semi-detached,15301
+W06000009,Pembrokeshire,3,Terraced,10121
+W06000009,Pembrokeshire,4,In a purpose-built block of flats or tenement,3928
+W06000009,Pembrokeshire,5,"Part of a converted or shared house, including bedsits",816
+W06000009,Pembrokeshire,6,"Part of another converted building, for example, former school, church or warehouse",466
+W06000009,Pembrokeshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",568
+W06000009,Pembrokeshire,8,A caravan or other mobile or temporary structure,580
+W06000010,Carmarthenshire,1,Detached,32928
+W06000010,Carmarthenshire,2,Semi-detached,27390
+W06000010,Carmarthenshire,3,Terraced,15352
+W06000010,Carmarthenshire,4,In a purpose-built block of flats or tenement,3802
+W06000010,Carmarthenshire,5,"Part of a converted or shared house, including bedsits",912
+W06000010,Carmarthenshire,6,"Part of another converted building, for example, former school, church or warehouse",330
+W06000010,Carmarthenshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",594
+W06000010,Carmarthenshire,8,A caravan or other mobile or temporary structure,454
+W06000011,Swansea,1,Detached,25167
+W06000011,Swansea,2,Semi-detached,36244
+W06000011,Swansea,3,Terraced,26665
+W06000011,Swansea,4,In a purpose-built block of flats or tenement,13199
+W06000011,Swansea,5,"Part of a converted or shared house, including bedsits",2178
+W06000011,Swansea,6,"Part of another converted building, for example, former school, church or warehouse",490
+W06000011,Swansea,7,"In a commercial building, for example, in an office building, hotel or over a shop",775
+W06000011,Swansea,8,A caravan or other mobile or temporary structure,243
+W06000012,Neath Port Talbot,1,Detached,13305
+W06000012,Neath Port Talbot,2,Semi-detached,26897
+W06000012,Neath Port Talbot,3,Terraced,15855
+W06000012,Neath Port Talbot,4,In a purpose-built block of flats or tenement,5139
+W06000012,Neath Port Talbot,5,"Part of a converted or shared house, including bedsits",640
+W06000012,Neath Port Talbot,6,"Part of another converted building, for example, former school, church or warehouse",150
+W06000012,Neath Port Talbot,7,"In a commercial building, for example, in an office building, hotel or over a shop",309
+W06000012,Neath Port Talbot,8,A caravan or other mobile or temporary structure,79
+W06000013,Bridgend,1,Detached,15839
+W06000013,Bridgend,2,Semi-detached,24570
+W06000013,Bridgend,3,Terraced,15556
+W06000013,Bridgend,4,In a purpose-built block of flats or tenement,4899
+W06000013,Bridgend,5,"Part of a converted or shared house, including bedsits",798
+W06000013,Bridgend,6,"Part of another converted building, for example, former school, church or warehouse",212
+W06000013,Bridgend,7,"In a commercial building, for example, in an office building, hotel or over a shop",345
+W06000013,Bridgend,8,A caravan or other mobile or temporary structure,141
+W06000014,Vale of Glamorgan,1,Detached,15949
+W06000014,Vale of Glamorgan,2,Semi-detached,17532
+W06000014,Vale of Glamorgan,3,Terraced,15091
+W06000014,Vale of Glamorgan,4,In a purpose-built block of flats or tenement,6333
+W06000014,Vale of Glamorgan,5,"Part of a converted or shared house, including bedsits",1229
+W06000014,Vale of Glamorgan,6,"Part of another converted building, for example, former school, church or warehouse",488
+W06000014,Vale of Glamorgan,7,"In a commercial building, for example, in an office building, hotel or over a shop",508
+W06000014,Vale of Glamorgan,8,A caravan or other mobile or temporary structure,320
+W06000015,Cardiff,1,Detached,20772
+W06000015,Cardiff,2,Semi-detached,43709
+W06000015,Cardiff,3,Terraced,43617
+W06000015,Cardiff,4,In a purpose-built block of flats or tenement,29755
+W06000015,Cardiff,5,"Part of a converted or shared house, including bedsits",7395
+W06000015,Cardiff,6,"Part of another converted building, for example, former school, church or warehouse",787
+W06000015,Cardiff,7,"In a commercial building, for example, in an office building, hotel or over a shop",1148
+W06000015,Cardiff,8,A caravan or other mobile or temporary structure,151
+W06000016,Rhondda Cynon Taf,1,Detached,17012
+W06000016,Rhondda Cynon Taf,2,Semi-detached,28717
+W06000016,Rhondda Cynon Taf,3,Terraced,48928
+W06000016,Rhondda Cynon Taf,4,In a purpose-built block of flats or tenement,6780
+W06000016,Rhondda Cynon Taf,5,"Part of a converted or shared house, including bedsits",729
+W06000016,Rhondda Cynon Taf,6,"Part of another converted building, for example, former school, church or warehouse",425
+W06000016,Rhondda Cynon Taf,7,"In a commercial building, for example, in an office building, hotel or over a shop",654
+W06000016,Rhondda Cynon Taf,8,A caravan or other mobile or temporary structure,94
+W06000018,Caerphilly,1,Detached,13093
+W06000018,Caerphilly,2,Semi-detached,30283
+W06000018,Caerphilly,3,Terraced,26464
+W06000018,Caerphilly,4,In a purpose-built block of flats or tenement,5090
+W06000018,Caerphilly,5,"Part of a converted or shared house, including bedsits",525
+W06000018,Caerphilly,6,"Part of another converted building, for example, former school, church or warehouse",221
+W06000018,Caerphilly,7,"In a commercial building, for example, in an office building, hotel or over a shop",540
+W06000018,Caerphilly,8,A caravan or other mobile or temporary structure,41
+W06000019,Blaenau Gwent,1,Detached,3610
+W06000019,Blaenau Gwent,2,Semi-detached,8691
+W06000019,Blaenau Gwent,3,Terraced,15157
+W06000019,Blaenau Gwent,4,In a purpose-built block of flats or tenement,2268
+W06000019,Blaenau Gwent,5,"Part of a converted or shared house, including bedsits",263
+W06000019,Blaenau Gwent,6,"Part of another converted building, for example, former school, church or warehouse",95
+W06000019,Blaenau Gwent,7,"In a commercial building, for example, in an office building, hotel or over a shop",225
+W06000019,Blaenau Gwent,8,A caravan or other mobile or temporary structure,29
+W06000020,Torfaen,1,Detached,8061
+W06000020,Torfaen,2,Semi-detached,11220
+W06000020,Torfaen,3,Terraced,16130
+W06000020,Torfaen,4,In a purpose-built block of flats or tenement,4193
+W06000020,Torfaen,5,"Part of a converted or shared house, including bedsits",278
+W06000020,Torfaen,6,"Part of another converted building, for example, former school, church or warehouse",89
+W06000020,Torfaen,7,"In a commercial building, for example, in an office building, hotel or over a shop",187
+W06000020,Torfaen,8,A caravan or other mobile or temporary structure,81
+W06000021,Monmouthshire,1,Detached,18030
+W06000021,Monmouthshire,2,Semi-detached,11747
+W06000021,Monmouthshire,3,Terraced,6829
+W06000021,Monmouthshire,4,In a purpose-built block of flats or tenement,3091
+W06000021,Monmouthshire,5,"Part of a converted or shared house, including bedsits",432
+W06000021,Monmouthshire,6,"Part of another converted building, for example, former school, church or warehouse",350
+W06000021,Monmouthshire,7,"In a commercial building, for example, in an office building, hotel or over a shop",338
+W06000021,Monmouthshire,8,A caravan or other mobile or temporary structure,108
+W06000022,Newport,1,Detached,13654
+W06000022,Newport,2,Semi-detached,20759
+W06000022,Newport,3,Terraced,20549
+W06000022,Newport,4,In a purpose-built block of flats or tenement,8885
+W06000022,Newport,5,"Part of a converted or shared house, including bedsits",1362
+W06000022,Newport,6,"Part of another converted building, for example, former school, church or warehouse",287
+W06000022,Newport,7,"In a commercial building, for example, in an office building, hotel or over a shop",410
+W06000022,Newport,8,A caravan or other mobile or temporary structure,148
+W06000023,Powys,1,Detached,29176
+W06000023,Powys,2,Semi-detached,15351
+W06000023,Powys,3,Terraced,10134
+W06000023,Powys,4,In a purpose-built block of flats or tenement,3187
+W06000023,Powys,5,"Part of a converted or shared house, including bedsits",690
+W06000023,Powys,6,"Part of another converted building, for example, former school, church or warehouse",452
+W06000023,Powys,7,"In a commercial building, for example, in an office building, hotel or over a shop",653
+W06000023,Powys,8,A caravan or other mobile or temporary structure,539
+W06000024,Merthyr Tydfil,1,Detached,4329
+W06000024,Merthyr Tydfil,2,Semi-detached,7317
+W06000024,Merthyr Tydfil,3,Terraced,12197
+W06000024,Merthyr Tydfil,4,In a purpose-built block of flats or tenement,1414
+W06000024,Merthyr Tydfil,5,"Part of a converted or shared house, including bedsits",197
+W06000024,Merthyr Tydfil,6,"Part of another converted building, for example, former school, church or warehouse",90
+W06000024,Merthyr Tydfil,7,"In a commercial building, for example, in an office building, hotel or over a shop",193
+W06000024,Merthyr Tydfil,8,A caravan or other mobile or temporary structure,46

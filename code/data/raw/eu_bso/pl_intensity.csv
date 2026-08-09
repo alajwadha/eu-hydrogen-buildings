@@ -1,0 +1,28 @@
+# EU Building Stock Observatory (BSO) -- Poland residential indicators
+#
+# Used by 03_heat_intensity.py for (1) the unknown-cohort stock-weighted
+# fallback intensity (stock_pct_pl column) and (2) the BSO reconciliation row.
+#
+# stock_pct_pl: share of the Polish residential stock by construction cohort.
+#   Poland has a large socialist-era (1946-1990) multi-family panel-block stock
+#   (wielka plyta) plus extensive pre-1945 masonry. Distribution approximated
+#   from GUS NSP 2021 housing module (Mieszkania zamieszkane wedlug okresu
+#   wybudowania). Sums to 100. NEEDS_VERIFY exact GUS 2021 figures.
+#
+# bso_intensity_kwh_m2_yr: BSO-style per-cohort national-average residential
+#   heat intensity (delivered). DERIVED from the Polish TABULA per-cohort
+#   class-average space-heating need x retrofit blend (0.912) + DHW. The EU
+#   Building Stock Observatory portal could not be queried directly; flagged
+#   as derived, not an independent BSO query. PL is a direct TABULA country
+#   so no climate correction is applied.
+#
+# Source: GUS NSP 2021 housing module; pl_intensities.csv (Polish TABULA NAPE);
+#   Polish LTRS 2022 retrofit shares.
+#
+cohort,stock_pct_pl,bso_intensity_kwh_m2_yr,note
+pre-1945,15,213,"Pre-WWII masonry SFH + urban kamienice (mieszkanie kamienne)"
+1946-1970,22,187,"Early socialist construction; pre-thermal-code"
+1971-1990,30,165,"Peak wielka plyta / blok era (W-70; Wk-70; OWT); large-panel apartments"
+1991-2010,22,120,"Post-1989 detached SFH boom + early thermal-code (WT 1994)"
+2011-2020,9,108,"WT 2008 / WT 2014; EPBD-aligned new-build"
+post-2020,2,72,"nZEB per EPBD; WT 2017 / WT 2021 tightening"

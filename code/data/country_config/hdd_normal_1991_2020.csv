@@ -1,0 +1,30 @@
+country,hdd_1991_2020,hdd_2015_2023,n_years,base_C,source
+AT,3645.6,3394.4,30,15,Eurostat nrg_chdd_a
+BE,2712.0,2562.0,30,15,Eurostat nrg_chdd_a
+BG,2646.5,2394.5,30,15,Eurostat nrg_chdd_a
+CY,802.0,680.4,30,15,Eurostat nrg_chdd_a
+CZ,3409.4,3166.1,30,15,Eurostat nrg_chdd_a
+DE,3103.7,2868.7,30,15,Eurostat nrg_chdd_a
+DK,3292.0,3082.3,30,15,Eurostat nrg_chdd_a
+EE,4254.9,4018.8,30,15,Eurostat nrg_chdd_a
+EL,1706.8,1566.7,30,15,Eurostat nrg_chdd_a
+ES,1834.5,1683.6,30,15,Eurostat nrg_chdd_a
+FI,5557.4,5336.1,30,15,Eurostat nrg_chdd_a
+FR,2417.0,2242.8,30,15,Eurostat nrg_chdd_a
+HR,2400.4,2211.6,30,15,Eurostat nrg_chdd_a
+HU,2781.5,2576.6,30,15,Eurostat nrg_chdd_a
+IE,2785.3,2699.0,30,15,Eurostat nrg_chdd_a
+IT,2029.2,1889.3,30,15,Eurostat nrg_chdd_a
+LT,3897.9,3643.3,30,15,Eurostat nrg_chdd_a
+LU,3019.1,2916.7,30,15,Eurostat nrg_chdd_a
+LV,4080.5,3838.6,30,15,Eurostat nrg_chdd_a
+MT,523.8,474.8,30,15,Eurostat nrg_chdd_a
+NL,2715.3,2523.6,30,15,Eurostat nrg_chdd_a
+PL,3434.5,3162.8,30,15,Eurostat nrg_chdd_a
+PT,1244.8,1139.1,30,15,Eurostat nrg_chdd_a
+RO,3065.3,2793.4,30,15,Eurostat nrg_chdd_a
+SE,5233.2,5052.2,30,15,Eurostat nrg_chdd_a
+SI,2873.5,2692.1,30,15,Eurostat nrg_chdd_a
+SK,3326.9,3116.1,30,15,Eurostat nrg_chdd_a
+CH,3844.2,3604.1,30,15,Eurostat nrg_chdd_a
+UK,2061.0,1923.0,30,15.5,DESNZ Energy Trends 7.1b GB base 15.5C

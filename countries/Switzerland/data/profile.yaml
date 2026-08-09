@@ -1,0 +1,110 @@
+country: Switzerland
+iso2: CH
+data_provenance: 'Model files: code/src/Policy.py, code/src/Economics.py, code/results/mc_country_STATED_POLICIES.csv.
+  External: see ../CH/sources.md'
+economics:
+  gas_price_eur_mwh_2025: 120.0
+  electricity_price_eur_mwh_2025: 220.0
+  hp_air_scop_2025: 2.91
+  hp_ground_scop_2025: 3.69
+  annual_heating_hours: 2285
+  discount_rate_real_pretax: 0.05
+  lcoh_eur_mwh:
+    2025:
+      gas_boiler: 204.8
+      hp_air: 102.7
+      hp_ground: 91.1
+      h2_boiler: 310.3
+      district_heat: 117.9
+      biomass_boiler: 179.1
+    2030:
+      gas_boiler: 205.2
+      hp_air: 94.6
+      hp_ground: 84.8
+      h2_boiler: 228.6
+      district_heat: 118.5
+      biomass_boiler: 179.7
+    2040:
+      gas_boiler: 189.3
+      hp_air: 78.8
+      hp_ground: 72.2
+      h2_boiler: 166.1
+      district_heat: 113.2
+      biomass_boiler: 174.3
+    2050:
+      gas_boiler: 172.0
+      hp_air: 68.2
+      hp_ground: 63.6
+      h2_boiler: 137.2
+      district_heat: 109.0
+      biomass_boiler: 169.1
+  labour_multiplier: 1.7
+  labour_methodology: CAPEX_country = CAPEX_anchor * [(1 - L) + L * M], FOM analogous with FOM_LABOUR_SHARE=0.70.
+    Anchor = EU27 construction (NACE F) mean hourly labour cost 2024, Eurostat lc_lci_lev. L = LABOUR_SHARE_OF_CAPEX[tech]
+    (HP_air 0.40, HP_ground 0.55, gas_boiler 0.30, district_heat 0.50, h2_boiler 0.35, biomass_boiler
+    0.30). M = country labour multiplier (this country = 1.70).
+grid_co2_gCO2_kWh:
+  2025: 50.0
+  2030: 30.0
+  2040: 12.0
+  2050: 5.0
+gas_grid_coverage_fraction: 0.35
+policy:
+  fossil_boiler_subsidies_end: 2025
+  new_build_fossil_ban: 2023
+  replacement_fossil_ban: 2030
+  full_fossil_ban: 2040
+  hp_mandate_year: 2030
+  notes: 'CO2 levy on thermal fossil fuels: CHF 120/tCO2 since 2022. Conference of Cantonal Energy Directors
+    2050+ policy: mandating renewable heating for new buildings and systems, expanding district heating,
+    dismantling gas grids or transitioning to green hydrogen. Energy Strategy 2050: target 1.5M HPs (from
+    0.3M today). Buildings account for ~1/3 of Swiss CO2 emissions.'
+carbon_prices_eur_tco2:
+  LOW:
+    2025: 30.0
+    2027: 45.0
+    2030: 70.0
+    2040: 130.0
+    2050: 150.0
+  CENTRAL:
+    2025: 55.0
+    2027: 75.0
+    2030: 122.0
+    2040: 180.0
+    2050: 200.0
+  HIGH:
+    2025: 70.0
+    2027: 100.0
+    2030: 200.0
+    2040: 300.0
+    2050: 350.0
+model_results_pre_redesign_run:
+  2025:
+    hp_share: 20.6
+    gas_oil_share: 36.2
+    h2_share: 0.0
+    district_heat_share: 12.7
+    biomass_share: 28.8
+  2030:
+    hp_share: 41.3
+    gas_oil_share: 0.0
+    h2_share: 0.4
+    district_heat_share: 17.8
+    biomass_share: 38.4
+  2050:
+    hp_share: 49.8
+    gas_oil_share: 0.0
+    h2_share: 6.5
+    district_heat_share: 16.2
+    biomass_share: 24.9
+building_stock:
+  MFH_HIGH:
+    dwellings_2021: 5782553
+    heat_demand_2015_TWh: 16.57
+  OTHER:
+    dwellings_2021: 18145129
+    heat_demand_2015_TWh: 52.39
+  SFH:
+    dwellings_2021: 3046369
+    heat_demand_2015_TWh: 8.91
+  _caveat: OTHER category over-counts. Cross-reference national statistical offices.

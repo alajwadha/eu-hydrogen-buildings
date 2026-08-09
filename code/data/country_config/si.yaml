@@ -1,0 +1,188 @@
+# Country configuration: Slovenia (SI)
+# =======================================
+# All Slovenia-specific parameters for the building-stock pipeline
+# (scripts 01-04 in code/scripts/country_build/). Sourced and cited inline;
+# methodology in literature/slovenia/classification_methodology.md.
+#
+# Schema version: 1 (matches code/src/CountryConfig.py SCHEMA_VERSION).
+#
+# Slovenia is a DIRECT TABULA country -- the Slovenian residential typology was
+# produced by the Building and Civil Engineering Institute ZRMK (Ljubljana).
+# No proxy, no climate correction. Build group 2 (IT + SI, HR, MT).
+
+country_code: SI
+country_name: Slovenia
+
+# -- EUBUCCO data source -----------------------------------------------------
+# EUBUCCO v0.2 partitions buildings by NUTS2 region (NUTS 2016 vintage).
+# Slovenia has 2 NUTS2 regions: SI03 Vzhodna (East) and SI04 Zahodna (West).
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - SI03   # Vzhodna Slovenija (Eastern Slovenia)
+    - SI04   # Zahodna Slovenija (Western Slovenia)
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  # Citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1.
+  # Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2.
+  license: ODbL v1.0
+
+# -- NUTS3 regions -----------------------------------------------------------
+# Slovenia has 12 NUTS3 regions (statistical regions). Codes are unchanged
+# across NUTS 2016, 2021 and 2024.
+nuts3_regions:
+  - SI031   # Pomurska (Mura)
+  - SI032   # Podravska (Drava)
+  - SI033   # Koroska (Carinthia)
+  - SI034   # Savinjska (Savinja)
+  - SI035   # Zasavska (Central Sava)
+  - SI036   # Posavska (Lower Sava)
+  - SI037   # Jugovzhodna Slovenija (Southeast Slovenia)
+  - SI038   # Primorsko-notranjska (Littoral-Inner Carniola)
+  - SI041   # Osrednjeslovenska (Central Slovenia)
+  - SI042   # Gorenjska (Upper Carniola)
+  - SI043   # Goriska (Gorizia)
+  - SI044   # Obalno-kraska (Coastal-Karst)
+
+# -- Geographic bounding box (WGS84) -----------------------------------------
+bbox_wgs84:
+  lon_min: 13.38
+  lat_min: 45.42
+  lon_max: 16.61
+  lat_max: 46.88
+
+# -- TABULA building typology source -----------------------------------------
+# Slovenia IS a TABULA country -- the Slovenian residential typology was
+# produced by Building and Civil Engineering Institute ZRMK (Ljubljana). The
+# DIRECT Slovenian typology is used (no proxy, no climate correction).
+# Extraction: code/data/raw/tabula/si_intensities.csv.
+tabula:
+  source_country: SI
+  source_country_name: Slovenia
+  intensities_file: code/data/raw/tabula/si_intensities.csv
+  reason_for_proxy: |
+    None -- Slovenia is a TABULA country. The Slovenian national residential
+    typology (ZRMK) is used directly, no proxy, no climate correction
+    (climate_multiplier = 1.0).
+
+# -- Climate correction ------------------------------------------------------
+# Direct TABULA country: climate_multiplier = 1.0.
+# Source: Eurostat nrg_chdd_a (base 15 C, JRC AGRI4CAST), 5-year mean 2018-2022:
+#   SI annual HDD: 2587.40, 2602.14, 2678.32, 2965.26, 2633.38 -> mean 2693.30
+climate:
+  hdd_country: 2693.30       # SI -- Eurostat nrg_chdd_a 2018-2022 mean
+  hdd_proxy: 2693.30         # SI direct typology -> proxy = self
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  climate_multiplier: 1.0    # direct TABULA country, no climate correction
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST), 5-year mean 2018-2022
+
+# -- Retrofit-state distribution ---------------------------------------------
+# Retrofit FACTORS are the Slovenian TABULA typology-averaged refurbishment
+# ratios. PROVISIONAL pending the si_intensities.csv extraction.
+#
+# Retrofit SHARES: the Slovenian TABULA (ZRMK) reports refurbishment-state
+# subtypes -- for the oldest class roughly un-refurbished / medium / full in
+# proportions near 40 / 42 / 17 percent. The whole-stock 0.55/0.32/0.13 split
+# reflects Slovenia's moderate renovation activity (national renovation rate
+# historically ~1.9 percent/yr wall insulation).
+retrofit:
+  share:
+    original: 0.55          # modelling assumption -- see share_source
+    standard: 0.32          # modelling assumption (ZRMK "medium-refurbished")
+    advanced: 0.13          # modelling assumption (ZRMK "full-refurbished")
+  factor:
+    standard: 0.65          # PROVISIONAL -- Slovenian TABULA standard refurb
+    advanced: 0.40          # PROVISIONAL -- Slovenian TABULA advanced refurb
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  # Computed blend for SI: 0.55 + 0.32x0.65 + 0.13x0.40 = 0.810
+  blend_value: 0.810
+  share_source: |
+    Modelling assumption grounded in the Slovenian TABULA (ZRMK) refurbishment-
+    state subtype data and the national Long-Term Renovation Strategy.
+    Retrofit factors PROVISIONAL pending the si_intensities.csv extraction.
+
+# -- Domestic Hot Water (DHW) intensity --------------------------------------
+dhw:
+  sfh: 20.0
+  mfh: 18.0
+  unit: kWh/m2/yr
+  source: Slovenian TABULA (ZRMK); provisional pending extraction
+
+# -- Non-residential intensity (placeholder) ---------------------------------
+non_residential_intensity:
+  value: 110.0
+  unit: kWh/m2/yr
+  source: estimate -- Slovenian non-residential stock space heating
+  status: rough placeholder; contributes 0 TWh (zero heated area); flagged in methodology
+
+# -- External reconciliation benchmarks --------------------------------------
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 13.99            # sum of heat_2015_MWh across all 39 SI NUTS3
+                                #   rows in building_stock_nuts3.csv. All-classes
+                                #   total, per the LU/FR/FI methodology.
+    year: 2015
+    source: Hotmaps Toolbox via building_stock_nuts3.csv; sum across all SI NUTS3 rows
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 72
+    eubucco_mm2: 174
+    census_eubucco_ratio: 0.41
+    source: SURS 2021 census dwelling stock
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 11.0             # Order-of-magnitude anchor; the reconciliation
+                                #   BSO row is computed from si_intensity.csv.
+    year: 2022
+    source: anchored estimate; EU Building Stock Observatory portal not retrievable
+  odyssee_mure:
+    total_twh: 8.6              # Slovenian TABULA (ZRMK) space-heating need
+                                #   ~8.58 TWh; total residential primary ~13.9 TWh.
+    year: 2011
+    source: Slovenian TABULA scientific report (ZRMK); residential space-heating need
+    note: ZRMK gives total residential primary ~13.9 TWh (matches Hotmaps) and space-heating need ~8.58 TWh.
+
+# -- Hotmaps NUTS3 ID for model comparison -----------------------------------
+hotmaps_nuts3_id: SI041   # Central Slovenia / Ljubljana (representative reference)
+
+# -- Building classification rules -------------------------------------------
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  floor_source: eubucco
+  # Rules (sequential, first match wins):
+  # 1. EUBUCCO.type starts with "non-" -> NON_RESIDENTIAL
+  # 2. floors >= 6 AND footprint >= 800 -> MFH_HIGH
+  # 3. floors <= 2 AND footprint < 250  -> SFH
+  # 4. 3 <= floors <= 5                  -> MFH_LOW
+  # 5. default (ambiguous large)         -> MFH_HIGH
+
+# -- Provenance + change log -------------------------------------------------
+_meta:
+  created: 2026-05-19
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, build group 2)
+  last_verified: 2026-05-19
+  schema_version: 1
+  status: DRAFT -- direct Slovenian TABULA build; retrofit factors and DHW
+    PROVISIONAL pending the si_intensities.csv extraction.
+  references_doc: literature/slovenia/classification_methodology.md
+  verified_2026_05_19:
+    - eubucco.nuts2_partitions (SI03, SI04 -- NUTS 2016)
+    - nuts3_regions (12 SI NUTS3 codes, stable NUTS 2016/2021)
+    - climate.hdd_country = 2693.30 (Eurostat nrg_chdd_a SI 2018-2022 mean)
+    - tabula source = SI direct
+  needs_verify_summary:
+    - retrofit factors (0.65/0.40) and DHW (20/18) -- PROVISIONAL; reconcile
+      against the Slovenian TABULA refurbishment scenarios once si_intensities.csv
+      is extracted.
+    - retrofit shares (0.55/0.32/0.13) -- modelling assumption.
+    - Slovenian TABULA cohort boundaries (1971-1980, 1981-2002) do not align
+      with the model's 6 cohorts; intensity mapping interpolates -- see methodology.
+    - non_residential_intensity (110) -- estimate; contributes 0 TWh.
+    - reconciliation_benchmarks.eu_bso -- anchored estimate, BSO portal not retrievable.

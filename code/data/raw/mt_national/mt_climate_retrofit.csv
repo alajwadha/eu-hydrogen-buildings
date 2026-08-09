@@ -1,0 +1,23 @@
+# Malta climate + retrofit-state national assumptions
+#
+# Legacy national-parameters file consumed by 03_heat_intensity.py
+# (load_national_params). The authoritative source is mt.yaml; this file
+# mirrors the values for documentation. All values are numeric.
+#
+# Malta is a TABULA PROXY country: Cyprus TABULA, climate-corrected by the
+# HDD_MT/HDD_CY ratio. Malta's residential heating demand is negligible.
+# Sources: Eurostat nrg_chdd_a; Cyprus TABULA (proxy). See mt.yaml and
+# literature/malta/classification_methodology.md.
+#
+parameter,value,unit,source
+hdd_mt_2018_2022_avg,477.03,degree-days/yr,Eurostat nrg_chdd_a (JRC AGRI4CAST)
+hdd_proxy_cy_2018_2022_avg,661.56,degree-days/yr,Eurostat nrg_chdd_a (Cyprus TABULA reference)
+climate_multiplier,0.7210,dimensionless,477.03 / 661.56 (MT/CY HDD ratio)
+retrofit_share_original,0.92,fraction,modelling assumption (no national heating-retrofit programme)
+retrofit_share_standard,0.06,fraction,modelling assumption
+retrofit_share_advanced,0.02,fraction,modelling assumption
+retrofit_factor_standard,0.70,multiplier,"Cyprus TABULA standard refurbishment (proxy, provisional)"
+retrofit_factor_advanced,0.50,multiplier,"Cyprus TABULA advanced refurbishment (proxy, provisional)"
+dhw_intensity_sfh,18.0,kWh/m2/yr,Cyprus TABULA proxy (provisional)
+dhw_intensity_mfh,16.0,kWh/m2/yr,Cyprus TABULA proxy (provisional)
+non_residential_intensity,120,kWh/m2/yr,estimate (derived from Cyprus proxy)

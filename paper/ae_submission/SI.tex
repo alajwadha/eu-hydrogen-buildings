@@ -1,0 +1,66 @@
+%% Supplementary Information — Applied Energy submission.
+%% Standalone companion to V5.tex. Full methodology and full results detail
+%% deferred from the main paper. Sections, figures, tables and equations carry
+%% an "S" prefix (S1, Fig. S1, Table S1, Eq. (S1)) so they never collide with
+%% the main-paper numbering.
+%% Compile: pdflatex -> bibtex -> pdflatex x2.
+\documentclass[11pt]{article}
+%% Reproducible output: without these, every rebuild rewrites /CreationDate and
+%% /ID, so an unchanged document still shows as modified in git.
+\ifdefined\pdfinfoomitdate \pdfinfoomitdate=1 \fi
+\ifdefined\pdftrailerid \pdftrailerid{} \fi
+
+\usepackage[letterpaper,margin=1in]{geometry}  % matches elsarticle's letter page in V5.tex
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage[version=4]{mhchem}
+\usepackage[official]{eurosym}
+\usepackage{float}
+\usepackage{caption}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xurl}
+\usepackage{hyperref}
+\hypersetup{colorlinks=false, hidelinks}
+\input{glyphtounicode}\pdfgentounicode=1
+\clubpenalty=10000 \widowpenalty=10000 \displaywidowpenalty=10000
+\graphicspath{{../figs/paper/}{../figs/}}
+
+%% "S" numbering for every cross-referenceable object.
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thesubsection}{S\arabic{section}.\arabic{subsection}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\theequation}{S\arabic{equation}}
+
+\title{Supplementary Information for\\[4pt]
+\large Hydrogen in residential heating and the power system: a merit-order and
+capital-recovery assessment for 29 European markets}
+\author{Abdurahman Alsulaiman \and Ali Alajwad}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent This Supplementary Information provides the full methodology, the input
+parameter and scenario tables, the per-country and per-arena results and the
+sensitivity analyses that the main paper summarises at a high level. Section~S1
+gives the complete model formulation; Section~S2 gives the extended results and
+robustness analysis. Symbols follow the nomenclature listed in the main paper.
+
+\tableofcontents
+\bigskip
+
+\input{si_body/methods}
+\clearpage
+\input{si_body/results}
+
+\bibliographystyle{elsarticle-num}
+\bibliography{../References_v1}
+
+\end{document}

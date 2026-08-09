@@ -1,0 +1,5 @@
+basis,fleet_gw,ann_charge_lo_eur_kw_yr,ann_charge_hi_eur_kw_yr,annual_bill_lo_bn,annual_bill_hi_bn,hp_heat_twh,heat_share_of_elec,adder_lo_eur_mwh,adder_hi_eur_mwh,count_lo,count_hi,flips_lo,flips_hi
+fleet,277.7,51.4,66.5,14.3,18.5,1273.0,0.0924,,,,,,
+pro_rata,277.7,51.4,66.5,14.3,18.5,1273.0,0.0924,1.0,1.3,22,22,,
+incremental,277.7,51.4,66.5,14.3,18.5,1273.0,0.7961,8.9,11.5,19,17,"AT,CH,FR","AT,CH,FI,FR,LU"
+full,277.7,51.4,66.5,14.3,18.5,1273.0,0.0924,11.2,14.5,17,15,"AT,CH,FI,FR,LU","AT,CH,CZ,FI,FR,IT,LU"

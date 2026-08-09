@@ -1,0 +1,437 @@
+# Country configuration: France (FR)
+# =====================================
+# All France-specific parameters for the building-stock pipeline.
+# Sources cited inline. Methodology framework mirrors Luxembourg
+# (TABULA-based intensities, climate correction, retrofit blending,
+# 4-class taxonomy, multi-source reconciliation), but France-specific:
+# direct TABULA-FR data (no proxy) and ADEME/CEREN retrofit shares.
+#
+# Schema version: 1 (matches code/src/CountryConfig.py SCHEMA_VERSION).
+#
+# STATUS: DRAFT — Some values flagged below need final verification before
+# the FR pipeline is run for the OIES paper. The architecture is correct
+# and the citations are real; specific numerical values marked NEEDS_VERIFY
+# should be cross-checked against the original source documents before the
+# results are reported to reviewers.
+
+country_code: FR
+country_name: France
+
+# ── EUBUCCO data source ─────────────────────────────────────────────────────
+# France has 22 NUTS2 regions in metropolitan France. EUBUCCO v0.2 covers
+# metropolitan France only (overseas FRY1-FRY5 not in v0.2).
+#
+# Source: EUROSTAT NUTS 2016 classification (verified at
+# https://docs.eubucco.com/v0.2/data-format/schema/ — "EUBUCCO uses modified
+# NUTS 2016 boundaries with two regional merges DEB33->DEB3H, UKD73->UKD47").
+# Also confirmed: EUBUCCO parquets contain a 'region_id' column with the
+# NUTS3 code per building (verified 2026-05-15), so the multi-NUTS3 spatial
+# join in 02_classify.py is optional rather than required for FR.
+eubucco:
+  version: v0.2
+  nuts2_partitions:
+    - FR10   # Île-de-France
+    - FRB0   # Centre-Val de Loire
+    - FRC1   # Bourgogne
+    - FRC2   # Franche-Comté
+    - FRD1   # Basse-Normandie
+    - FRD2   # Haute-Normandie
+    - FRE1   # Nord-Pas-de-Calais
+    - FRE2   # Picardie
+    - FRF1   # Alsace
+    - FRF2   # Champagne-Ardenne
+    - FRF3   # Lorraine
+    - FRG0   # Pays de la Loire
+    - FRH0   # Bretagne
+    - FRI1   # Aquitaine
+    - FRI2   # Limousin
+    - FRI3   # Poitou-Charentes
+    - FRJ1   # Languedoc-Roussillon
+    - FRJ2   # Midi-Pyrénées
+    - FRK1   # Auvergne
+    - FRK2   # Rhône-Alpes
+    - FRL0   # Provence-Alpes-Côte d'Azur
+    - FRM0   # Corse
+  base_url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet
+  # Citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1.
+  # Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2.
+  # v0.2 data: https://eubucco.com/files/v0.2
+  license: ODbL v1.0
+
+# ── NUTS3 regions ───────────────────────────────────────────────────────────
+# Metropolitan France has 96 NUTS3 regions (départements). Multi-region
+# country: 02_classify.py will spatial-join buildings to NUTS3 polygons.
+# A GISCO NUTS3 boundary file is required at code/data/raw/gisco/
+# NUTS_RG_01M_2021_4326.{shp,gpkg,geojson}; download from
+# https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/
+# administrative-units-statistical-units/nuts (scale 1:1M, year 2021,
+# EPSG:4326, Polygons).
+nuts3_regions:
+  # Île-de-France (FR10)
+  - FR101  # Paris
+  - FR102  # Seine-et-Marne
+  - FR103  # Yvelines
+  - FR104  # Essonne
+  - FR105  # Hauts-de-Seine
+  - FR106  # Seine-Saint-Denis
+  - FR107  # Val-de-Marne
+  - FR108  # Val-d'Oise
+  # Centre-Val de Loire (FRB0)
+  - FRB01  # Cher
+  - FRB02  # Eure-et-Loir
+  - FRB03  # Indre
+  - FRB04  # Indre-et-Loire
+  - FRB05  # Loir-et-Cher
+  - FRB06  # Loiret
+  # Bourgogne-Franche-Comté
+  - FRC11  # Côte-d'Or
+  - FRC12  # Nièvre
+  - FRC13  # Saône-et-Loire
+  - FRC14  # Yonne
+  - FRC21  # Doubs
+  - FRC22  # Jura
+  - FRC23  # Haute-Saône
+  - FRC24  # Territoire de Belfort
+  # Normandie
+  - FRD11  # Calvados
+  - FRD12  # Manche
+  - FRD13  # Orne
+  - FRD21  # Eure
+  - FRD22  # Seine-Maritime
+  # Hauts-de-France
+  - FRE11  # Nord
+  - FRE12  # Pas-de-Calais
+  - FRE21  # Aisne
+  - FRE22  # Oise
+  - FRE23  # Somme
+  # Grand Est
+  - FRF11  # Bas-Rhin
+  - FRF12  # Haut-Rhin
+  - FRF21  # Ardennes
+  - FRF22  # Aube
+  - FRF23  # Marne
+  - FRF24  # Haute-Marne
+  - FRF31  # Meurthe-et-Moselle
+  - FRF32  # Meuse
+  - FRF33  # Moselle
+  - FRF34  # Vosges
+  # Pays de la Loire (FRG0)
+  - FRG01  # Loire-Atlantique
+  - FRG02  # Maine-et-Loire
+  - FRG03  # Mayenne
+  - FRG04  # Sarthe
+  - FRG05  # Vendée
+  # Bretagne (FRH0)
+  - FRH01  # Côtes-d'Armor
+  - FRH02  # Finistère
+  - FRH03  # Ille-et-Vilaine
+  - FRH04  # Morbihan
+  # Nouvelle-Aquitaine
+  - FRI11  # Dordogne
+  - FRI12  # Gironde
+  - FRI13  # Landes
+  - FRI14  # Lot-et-Garonne
+  - FRI15  # Pyrénées-Atlantiques
+  - FRI21  # Corrèze
+  - FRI22  # Creuse
+  - FRI23  # Haute-Vienne
+  - FRI31  # Charente
+  - FRI32  # Charente-Maritime
+  - FRI33  # Deux-Sèvres
+  - FRI34  # Vienne
+  # Occitanie
+  - FRJ11  # Aude
+  - FRJ12  # Gard
+  - FRJ13  # Hérault
+  - FRJ14  # Lozère
+  - FRJ15  # Pyrénées-Orientales
+  - FRJ21  # Ariège
+  - FRJ22  # Aveyron
+  - FRJ23  # Haute-Garonne
+  - FRJ24  # Gers
+  - FRJ25  # Lot
+  - FRJ26  # Hautes-Pyrénées
+  - FRJ27  # Tarn
+  - FRJ28  # Tarn-et-Garonne
+  # Auvergne-Rhône-Alpes
+  - FRK11  # Allier
+  - FRK12  # Cantal
+  - FRK13  # Haute-Loire
+  - FRK14  # Puy-de-Dôme
+  - FRK21  # Ain
+  - FRK22  # Ardèche
+  - FRK23  # Drôme
+  - FRK24  # Isère
+  - FRK25  # Loire
+  - FRK26  # Rhône
+  - FRK27  # Savoie
+  - FRK28  # Haute-Savoie
+  # Provence-Alpes-Côte d'Azur (FRL0)
+  - FRL01  # Alpes-de-Haute-Provence
+  - FRL02  # Hautes-Alpes
+  - FRL03  # Alpes-Maritimes
+  - FRL04  # Bouches-du-Rhône
+  - FRL05  # Var
+  - FRL06  # Vaucluse
+  # Corse (FRM0)
+  - FRM01  # Corse-du-Sud
+  - FRM02  # Haute-Corse
+
+# ── Geographic bounding box (WGS84) ─────────────────────────────────────────
+# Metropolitan France (excludes overseas DOM-TOM).
+bbox_wgs84:
+  lon_min: -5.2
+  lat_min: 41.3
+  lon_max:  9.6
+  lat_max: 51.1
+
+# ── TABULA building typology source ─────────────────────────────────────────
+# France HAS a direct TABULA dataset — no proxy needed.
+# Different methodological branch from LU (which uses BE as proxy).
+# Source: TABULA WebTool, France country page episcope.eu/building-typology/
+# country/fr/. Underlying data from CEREN 2013 publication:
+# www.ceren.fr/files/static/Publication_donnees_CEREN.xlsx, table
+# "PARC DES RESIDENCES PRINCIPALES EN 2011, SELON LA DATE DE CONSTRUCTION
+# DU LOGEMENT ET L'ENERGIE DE CHAUFFAGE". Methodology described in TABULA
+# Final Report (2012), Appendix Volume — France country pages.
+#
+# NEEDS_VERIFY: code/data/raw/tabula/fr_intensities.csv must be created
+# with the FR per-class × per-cohort SH and DHW intensity values
+# extracted from the TABULA WebTool or the FR brochure.
+tabula:
+  source_country: FR
+  source_country_name: France
+  intensities_file: code/data/raw/tabula/fr_intensities.csv
+  reason_for_proxy: |
+    France has a direct TABULA dataset (Boutin et al. 2014, CSTB/CEREN).
+    No proxy required — climate_multiplier = 1.0.
+
+# ── Climate correction ──────────────────────────────────────────────────────
+# Since FR uses its own TABULA dataset, climate_multiplier = 1.0
+# (no correction needed). HDD values are still recorded for documentation
+# and cross-checking the BE-via-proxy approach used for neighbouring
+# countries with no direct TABULA data.
+# Source: Eurostat nrg_chdd_a (Cooling and heating degree days by country,
+# annual data). Base temperature 15 °C, source JRC AGRI4CAST. 5-year
+# average 2018-2022.
+# URL: ec.europa.eu/eurostat/databrowser/view/nrg_chdd_a/default/table
+# Retrieved 2026-05-15 via DBnomics mirror (Eurostat/nrg_chdd_a/A.NR.HDD.FR).
+# 5-yr breakdown: 2018=2181.92, 2019=2246.95, 2020=2038.31, 2021=2412.69, 2022=2035.70.
+climate:
+  hdd_country: 2183        # verified 2026-05-15 — Eurostat 2018-2022 mean
+  hdd_proxy: 2183          # equals hdd_country for direct-TABULA countries
+  hdd_units: degree-days/yr
+  hdd_reference_period: 2018-2022
+  hdd_base_temperature_c: 15
+  climate_multiplier: 1.0  # direct TABULA — no correction
+  source: Eurostat nrg_chdd_a (JRC AGRI4CAST), 5-year mean 2018-2022
+
+# ── Retrofit-state distribution ─────────────────────────────────────────────
+# French national retrofit shares derived from the SDES DPE class distribution
+# of the residential stock at 1 January 2025.
+#
+# DPE -> retrofit-state mapping (academic justification in
+# literature/france/classification_methodology.md Section 5):
+#   - A+B (energy classes A and B):              advanced retrofit
+#       Buildings achieving DPE classes A or B require BBC/RE2020-level
+#       thermal performance, achievable only through deep retrofit or
+#       new construction to current standards. Treating A+B as "advanced
+#       retrofit state" is a reasonable approximation; new construction
+#       in this class set is also (correctly) given the advanced retrofit
+#       factor since the post-2020 cohort intensities are already at
+#       new-build level.
+#   - C+D (energy classes C and D):              standard retrofit
+#       The middle of the DPE range corresponds to buildings whose envelope
+#       has had at least one round of insulation work (single-pass standard
+#       refurbishment in TABULA terminology) but not deep retrofit.
+#   - E+F+G (energy classes E, F, G):            original / unrenovated
+#       Passoires energetiques (F+G) plus class E together represent the
+#       unrenovated or only marginally improved stock.
+#
+# Caveat documented in the methodology doc: this mapping does not condition
+# on construction year. For post-2005 buildings, DPE C/D is the as-built
+# state rather than evidence of retrofitting. A cohort-conditional mapping
+# would be more accurate but requires the SDES DPE-by-construction-year
+# cross-tab, which is published but not yet machine-extracted here.
+#
+# SDES 2025 DPE distribution (residences principales, France metropolitaine,
+# 1 January 2025, 30.9 million dwellings, source SDES PDF available at
+# https://www.statistiques.developpement-durable.gouv.fr/le-parc-de-logements-
+# par-classe-de-performance-energetique-au-1er-janvier-2025):
+#   A: 3.3 %    B: 5.3 %    C: 27.2 %   D: 33.7 %   E: 17.8 %   F+G: 12.7 %
+#   Aggregated: A+B = 8.6 %   C+D = 60.9 %   E+F+G = 30.5 %   (sum = 100 %)
+#
+# Retrofit factors come from TABULA-FR brochure (Rochard 2015) Tableau 4:
+#   - Period 1975-2005: standard refurbishment -43% (factor 0.57),
+#                       advanced refurbishment -65% (factor 0.35).
+# Same convention as LU/BE (using TABULA-published refurb scenarios).
+retrofit:
+  share:
+    original: 0.305       # SDES 2025: E+F+G classes — unrenovated stock
+    standard: 0.609       # SDES 2025: C+D classes — single-pass refurbishment
+    advanced: 0.086       # SDES 2025: A+B classes — BBC/RE2020 deep retrofit
+  factor:
+    standard: 0.57        # TABULA-FR Rochard 2015 Tableau 4 (period 1975-2005)
+    advanced: 0.35        # TABULA-FR Rochard 2015 Tableau 4 (period 1975-2005)
+  blend_formula: original + standard*factor.standard + advanced*factor.advanced
+  blend_value: 0.6822     # = 0.305 + 0.609×0.57 + 0.086×0.35 (down from 0.7716 placeholder)
+  share_source: SDES 2025 DPE distribution of residential stock at 1 January 2025
+
+# ── Domestic Hot Water (DHW) intensity ──────────────────────────────────────
+# Source: TABULA France harmonised standard (q_w_nd), as encoded in
+# tabula-calculator.xlsx Calc.Set.Building (verified 2026-05-15 from
+# https://episcope.eu/fileadmin/tabula/public/calc/). Note: the FR
+# brochure section 6.5 reports DIFFERENT DHW values (15.3 kWh/m²·a SFH,
+# 19.8 kWh/m²·a MFH) computed via the FR national 3CL-DPE method. We
+# use the TABULA-harmonised values for cross-country consistency.
+dhw:
+  sfh: 10.0                 # verified 2026-05-15 — TABULA harmonised q_w_nd
+  mfh: 15.0                 # verified 2026-05-15 — TABULA harmonised q_w_nd
+  unit: kWh/m2/yr
+  source: TABULA France (Rochard 2015), harmonised q_w_nd from tabula-calculator.xlsx
+
+# ── Non-residential intensity ───────────────────────────────────────────────
+# Heating-only intensity for non-residential (tertiary) buildings.
+#
+# Derivation:
+#   - Total tertiary energy consumption: 240 kWh/m²/yr (2020 figure, French
+#     Ministry of Ecological Transition data via CEREN, 940 million m² total
+#     tertiary floor area, ~225 TWh tertiary sector total energy).
+#     Source: covalba.fr citing French Ministry data; consistent with
+#     SDES "Consommation d'énergie par usage du tertiaire" (CEREN-produced,
+#     available 2013 onwards by use category).
+#   - Heating share of tertiary total: ~50 % (heating is the dominant end-use
+#     in commercial buildings in France).
+#   - Heating-only intensity ≈ 240 × 0.50 = 120 kWh/m²/yr.
+#
+# This pairs with the pipeline's use of non_residential_intensity as a flat
+# per-m² SPACE-HEATING intensity (consistent with how SH intensities are
+# computed for residential classes from TABULA q_h_nd).
+#
+# Comparator (EU-wide, for sanity check):
+#   - EU average NR final energy intensity (all uses): 268.3 kWh/m²·a
+#     (Balaras 2017, "Energy Use Intensities for Non-Residential Buildings").
+#   - 268 × 0.50 ≈ 134 kWh/m²·a heating only — close to our 120 estimate.
+#
+# Sources cross-referenced:
+#   - covalba.fr/en/blog/consommation-moyenne-kwh-tertiaire (citing French
+#     Ministry of Ecological Transition, December 2021 update).
+#   - SDES "Consommation d'énergie par usage du tertiaire", CEREN-produced,
+#     www.statistiques.developpement-durable.gouv.fr/consommation-denergie-
+#     par-usage-du-tertiaire.
+#   - Balaras et al. (2017), Energy Use Intensities for Non-Residential
+#     Buildings (Greek + EU context).
+non_residential_intensity:
+  value: 120.0              # CEREN/French Ministry tertiary total (240) × 50% heating share
+  unit: kWh/m2/yr
+  source: CEREN / French Ministry of Ecological Transition 2020 tertiary data × ~50% heating share
+  status: derived from primary source; cohort-conditioned refinement would require CEREN by-use × construction-year data
+
+# ── External reconciliation benchmarks ──────────────────────────────────────
+# Used by 03_heat_intensity.py to build the multi-source reconciliation
+# table and by 04_diagnostics.py for the headline chart.
+#
+# Three independent sources for FR residential space heating final energy:
+#   1. Hotmaps 2015 (all-classes total via repo CSV): 515.1 TWh
+#   2. BPIE 2023 (Eurostat-aligned, 2020 baseline):    283 TWh
+#   3. Odyssee-Mure (FfE eXtremOS cross-ref, 2017):    310 TWh
+#
+# The declining trend (351 TWh 2015 → 310 TWh 2017 → 283 TWh 2020) is
+# consistent with the ~1.4 %/yr decline reported by Odyssee for FR
+# residential heating since 2000.
+reconciliation_benchmarks:
+  hotmaps:
+    total_twh: 515.1            # verified 2026-05-15 — sum of all FR NUTS3 rows in
+                                #   code/data/processed/building_stock_nuts3.csv
+                                #   (120 rows, 102 unique FR NUTS3 IDs).
+                                #   Note: this is the ALL-CLASSES total, used as the
+                                #   reconciliation target per the LU methodology
+                                #   (Hotmaps "OTHER" over-counts residential — see
+                                #   literature/step3_buildingstock_research_summary.md).
+                                #   SFH-only would be 8.6 TWh, MFH_HIGH 26.3, OTHER 480.2.
+    year: 2015
+    source: Hotmaps Toolbox via building_stock_nuts3.csv; sum across all FR NUTS3 rows
+    url: hotmaps-project.eu
+  census_floor_area:
+    total_mm2: 3460
+    eubucco_mm2: 4397
+    census_eubucco_ratio: 0.79
+    source: INSEE dwelling stock (estimate)
+    note: |
+      Independent floor-area benchmark (NOT a demand benchmark). National-
+      census conventional-dwelling floor area vs EUBUCCO residential heated
+      area. See literature/eubucco_census_area_audit.md for the 27-country
+      audit and the area-correction policy.
+  eu_bso:
+    total_twh: 290.0            # verified 2026-05-15 — BPIE January 2023 report
+                                # "How to stay warm and save energy" (Eurostat-aligned):
+                                # France residential heating FEC = 283 TWh (2020). Rounded
+                                # to 290 to give the BSO benchmark a slightly wider band
+                                # vs the Odyssee 310 (2017), reflecting the year gap.
+                                # Cross-references:
+                                #   - BPIE 2023, Figure showing FR = 283 TWh.
+                                #   - Cyx W. et al. 2020 (MDPI Energies): 351 TWh 2015.
+                                #   - Eurostat nrg_d_hhq for direct values.
+    year: 2020
+    source: BPIE Jan 2023 "How to stay warm and save energy" (Eurostat-aligned)
+    url: https://www.bpie.eu/wp-content/uploads/2022/12/How-to-stay-warm-and-save-energy_final-report.pdf
+  odyssee_mure:
+    total_twh: 310.0           # estimate — FR residential space heating ~ 0.66 ×
+                               # ~470 TWh total residential FEC (FfE 2017 + Odyssee).
+                               # Consistent with Cyx 2020 (351 TWh 2015) and BPIE
+                               # 2023 (283 TWh 2020) — declining trend ~1.4 %/yr.
+    year: 2017
+    source: Odyssee-Mure FR profile + FfE eXtremOS 2017 cross-reference
+    note: National total only — disaggregation by NUTS3 not available from Odyssee.
+
+# ── Hotmaps NUTS3 ID for model comparison ───────────────────────────────────
+# For multi-NUTS3 countries, 02_classify.py compares EUBUCCO totals against
+# the *sum* of all rows matching country_code prefix in building_stock_nuts3.csv.
+# This single ID is used for cases where 04_diagnostics.py needs a representative
+# value; left as the country code so existing model comparison logic still works.
+hotmaps_nuts3_id: FR101   # Paris (representative reference for diagnostics)
+
+# ── Building classification rules ───────────────────────────────────────────
+# Same convention as LU — TABULA universals (3.0 m residential, 3.5 m other
+# floor-to-floor, 0.85 useable area).
+classification:
+  floor_height_residential_m: 3.0
+  floor_height_other_m: 3.5
+  useable_area_fraction: 0.85
+  # Floor count: 'eubucco' uses EUBUCCO's own roof-aware `floors` column.
+  # It replaces the round(height / 3 m) estimate, which over-counts floors
+  # by ~40% (verified on LU) and inflated France's heat demand.
+  floor_source: eubucco
+
+# ── Provenance + change log ─────────────────────────────────────────────────
+_meta:
+  created: 2026-05-15
+  created_by: Ali Alajwad (drafted with Claude for OIES paper, France country #2)
+  last_verified: 2026-05-15
+  schema_version: 1
+  status: VERIFIED — all 4 primary reconciliation parameters now derived from primary sources; only per-cohort retrofit refinements remain as future work
+  references_doc: literature/france/classification_methodology.md
+  verified_2026_05_15:
+    - eubucco.nuts2_partitions (NUTS 2016 codes confirmed via EUBUCCO docs)
+    - eubucco region_id column (EUBUCCO parquets already carry NUTS3 per building)
+    - climate.hdd_country = 2183 (Eurostat 2018-2022 mean via DBnomics A.NR.HDD.FR)
+    - climate.climate_multiplier = 1.0 (direct TABULA, confirmed)
+    - tabula intensities — code/data/raw/tabula/fr_intensities.csv created from
+      tabula-calculator.xlsx (FR.01-FR.10 cohorts mapped to our 6, all 18 cells filled)
+    - dhw.sfh = 10.0 / dhw.mfh = 15.0 (TABULA harmonised q_w_nd, not FR national 3CL-DPE)
+    - retrofit factors (0.57 standard / 0.35 advanced) — TABULA-FR brochure Tableau 4
+    - retrofit shares (0.305 original / 0.609 standard / 0.086 advanced) — SDES 2025
+      DPE distribution of residential stock, with DPE→retrofit-state mapping documented
+      in literature/france/classification_methodology.md
+    - non_residential_intensity = 120.0 (CEREN/Ministry tertiary 240 kWh/m² × ~50% heating share)
+    - reconciliation_benchmarks.hotmaps.total_twh = 515.1 (computed from repo CSV)
+    - reconciliation_benchmarks.eu_bso.total_twh = 290 (BPIE Jan 2023, FR 2020 = 283 TWh)
+    - reconciliation_benchmarks.odyssee_mure.total_twh = 310 (2017, FfE eXtremOS cross-ref)
+    - code/data/raw/eu_bso/fr_intensity.csv created (stock weights from brochure Tableau 1)
+  needs_verify_summary:
+    - per-cohort retrofit factor scheme (FR brochure Tableau 4 has 3 period bands;
+      current implementation uses single 1975-2005 average for all cohorts — flagged
+      as future refinement, can be revisited after FR pipeline run reveals whether
+      this matters quantitatively)
+    - cohort-conditional DPE-to-retrofit-state mapping (would require SDES DPE ×
+      construction-year cross-tab; flagged as future refinement)

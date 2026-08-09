@@ -1,0 +1,76 @@
+EUBUCCO download — Austria
+Run at: 2026-05-20 21:24:19 UTC
+============================================================
+
+  dataset: EUBUCCO v0.2 NUTS2=AT11
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=AT11/AT11.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/AT11.parquet
+  status: OK
+  md5: 589dba904942bbb3c3811dcd38cfa742
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+
+  dataset: EUBUCCO v0.2 NUTS2=AT12
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=AT12/AT12.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/AT12.parquet
+  status: OK
+  md5: 9b1719fca3d4cdaf6867fde9bb06a947
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+
+  dataset: EUBUCCO v0.2 NUTS2=AT13
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=AT13/AT13.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/AT13.parquet
+  status: OK
+  md5: f3ce59de4f35c7fbab85c0bc6e93a42a
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+
+  dataset: EUBUCCO v0.2 NUTS2=AT21
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=AT21/AT21.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/AT21.parquet
+  status: OK
+  md5: ddd8b0be2db011dec8cac4e206602112
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+
+  dataset: EUBUCCO v0.2 NUTS2=AT22
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=AT22/AT22.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/AT22.parquet
+  status: OK
+  md5: 0d3f09602887198384b3a7f2c59145aa
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+
+  dataset: EUBUCCO v0.2 NUTS2=AT31
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=AT31/AT31.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/AT31.parquet
+  status: OK
+  md5: 466aa79f26cd20ceff209036b767f338
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+
+  dataset: EUBUCCO v0.2 NUTS2=AT32
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=AT32/AT32.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/AT32.parquet
+  status: OK
+  md5: 9ec49388cb1c89151ddf5c5f29d02351
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+
+  dataset: EUBUCCO v0.2 NUTS2=AT33
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=AT33/AT33.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/AT33.parquet
+  status: OK
+  md5: 134d58f8018c3bfc343a4bd4cdcfa972
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+
+  dataset: EUBUCCO v0.2 NUTS2=AT34
+  url: https://s3.eubucco.com/eubucco/v0.2/buildings/parquet/nuts_id=AT34/AT34.parquet
+  dest: /content/drive/MyDrive/eu-hydrogen-raw/eubucco/AT34.parquet
+  status: OK
+  md5: a2f70d044d69e37e9e01516b1d25415e
+  license: ODbL v1.0
+  citation: Milojevic-Dupont N. et al. (2023). EUBUCCO v0.1. Scientific Data 10:147. DOI 10.1038/s41597-023-02040-2. v0.2 data: https://eubucco.com/files/v0.2
+

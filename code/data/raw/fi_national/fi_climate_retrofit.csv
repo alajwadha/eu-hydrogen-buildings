@@ -1,0 +1,44 @@
+# Finland climate + retrofit-state national assumptions
+# ======================================================
+# Used by 03_heat_intensity.py as a legacy fallback CSV. The primary source
+# of these values is now code/data/country_config/fi.yaml, which carries the
+# canonical CountryConfig schema-v1 dataset with per-key citations. This CSV
+# mirrors the YAML for any tool path that still reads the older
+# parameter-name format. (The script loads it but the live values come from
+# fi.yaml via CountryConfig.)
+#
+# STATUS: DRAFT. Finland is a TABULA PROXY country -- it has no national
+# TABULA typology, so its intensities are Sweden-derived and climate-
+# corrected by the HDD_FI/HDD_SE ratio. Some values are NEEDS_VERIFY
+# placeholders; see fi.yaml._meta.needs_verify_summary and
+# literature/finland/classification_methodology.md.
+#
+# Sources:
+#   - HDD: Eurostat nrg_chdd_a (JRC AGRI4CAST), 5-year average 2018-2022,
+#     retrieved 2026-05-17 via the DBnomics mirror (series A.NR.HDD.FI and
+#     A.NR.HDD.SE).
+#   - Retrofit factors: Sweden TABULA National Typology Brochure
+#     (EPISCOPE/TABULA, IEE 2009-2012) refurbishment scenarios -- mean of
+#     Forbattrad/Nuvarande and Lagenergi/Nuvarande over 15 zone-3 examples.
+#   - Retrofit shares: modelling assumption. Finland publishes no envelope-
+#     state (original/standard/advanced) distribution; the 0.55/0.35/0.10
+#     split is set consistent with the ~1.8%/yr renovation rate in Finland's
+#     Long-Term Renovation Strategy (Ministry of the Environment, 2020).
+#   - DHW: Sweden TABULA brochure existing-state "Tappvarmvatten" values.
+#   - Non-residential intensity: estimate; no Finnish service-sector
+#     space-heating-only kWh/m2 figure was found.
+#
+# Methodological framework matches Luxembourg (proxy + climate correction);
+# Finland uses Sweden as the TABULA proxy (climate_multiplier 1.055).
+parameter,value,unit,source
+hdd_fi_2018_2022_avg,5321,degree-days/yr,Eurostat nrg_chdd_a 2018-2022 mean via DBnomics A.NR.HDD.FI
+hdd_proxy_2018_2022_avg,5043,degree-days/yr,Eurostat nrg_chdd_a 2018-2022 mean via DBnomics A.NR.HDD.SE (Sweden proxy)
+climate_multiplier_fi_vs_proxy,1.055,dimensionless,HDD_FI / HDD_SE = 5321 / 5043
+retrofit_share_original,0.55,fraction,assumption consistent with Finland LTRS ~1.8%/yr renovation rate (Ministry of the Environment 2020)
+retrofit_share_standard,0.35,fraction,assumption consistent with Finland LTRS renovation rate; standard/advanced sub-split unverified
+retrofit_share_advanced,0.10,fraction,assumption consistent with Finland LTRS renovation rate; standard/advanced sub-split unverified
+retrofit_factor_standard,0.74,multiplier on original SH intensity,Sweden TABULA brochure (mean Forbattrad/Nuvarande)
+retrofit_factor_advanced,0.49,multiplier on original SH intensity,Sweden TABULA brochure (mean Lagenergi/Nuvarande)
+dhw_intensity_sfh,16,kWh/m2/yr,Sweden TABULA brochure existing-state DHW (SFH)
+dhw_intensity_mfh,17,kWh/m2/yr,Sweden TABULA brochure existing-state DHW (MFH)
+non_residential_intensity,130,kWh/m2/yr,estimate -- NEEDS_VERIFY (no Finnish service-sector heating intensity sourced; contributes 0 TWh)

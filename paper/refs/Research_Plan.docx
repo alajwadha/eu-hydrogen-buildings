@@ -1,0 +1,646 @@
+**Pathways to a hy****drogen economy for the ****buildings**** sector in the EU and Switzerland under a net-zero case by 2050**
+
+Expectation is a fully modular technical model on LEAP or through a standalone modular MILP model on python. The report is expected to be:
+
+- Introduction to be around 3-5 pages
+
+- Literature Review is to be around 10-15 pages
+
+- The research questions to be around 1-2 pages
+
+- Methodology to be around 10-15 pages
+
+- The results and analysis, discussion, sensitivity analysis, calibration, limitations are expected to be at around 40-50 pages long to fully address the provided research questions fully
+
+- Conclusion to be around 2-4 pages
+
+- A total of around 120 pages with graphs, figures, references, and appendices
+
+- Code, input data, and instructions for use to be provided with the research paper deliverable
+
+- Using Zotero, A minimum of 100 references (Peer-reviewed journals and/or from Reputable Energy Research institutes and research centres). No news articles
+
+# **Summary**
+
+This research proposal focuses on analysing the adoption of hydrogen in the buildings sector using the LEAP system to estimate the potential role of hydrogen in the future Swiss and EU buildings sector under NZE conditions by 2050. This proposal is split into state of literature, detailed research plan, and conclusion. The first chapter starts with the state of research, which provides an overview of the current state of hydrogen use and its role in the buildings sector. The review then provides the research questions, which are ‘What are the optimal ‘from an economic and environmental costs perspective’ pathways for the deployment of decarbonized hydrogen in the buildings sector in the EU under a NZE by 2050 case? How can Switzerland leverage the opportunities presented by the EU's adoption of hydrogen-based technologies to contribute to its own NZE by 2050 aim? What synergies can be established between the integration of hydrogen in the buildings sector and other sectors?’ Following that, the 2nd chapter provides the proposed methodology to be used for answering the research questions and the chapter ends with a comparative analysis on the scope of this study when compared with recent publications in the sector. Finally, the last conclusion of this proposal is presented.
+
+# **Introduction**
+
+The transition to a sustainable and low-carbon energy system has become a pressing global priority due to the adverse effects of climate change and the need to mitigate GHG emissions. As nations strive to meet their commitments under the Paris Agreement and achieve long-term sustainability goals, the buildings sector[^1] has emerged as a critical focal point for decarbonization efforts. Buildings are responsible for a significant share of energy consumption and GHG emissions, making their transformation crucial for achieving NZE targets (IPCC, 2018; United Nations, 2019). Indeed, the buildings sector is a significant contributor to GHG emissions (Smith, 2018), and finding viable alternatives to traditional fossil fuel-based energy sources is crucial for achieving long-term decarbonisation goals.
+
+The IPCC emphasizes the urgent need for reducing GHG emissions to limit global warming to 1.5 degrees Celsius above pre-industrial levels (IPCC, 2018). The EU and Switzerland, being committed to the Paris Agreement and sustainable development, have set ambitious targets and aspirations for achieving NZE by 2050 (European Commission, 2020; BAFU, 2023). This necessitates a comprehensive assessment of alternative energy options for the buildings sector.
+
+Hydrogen has emerged as a potential solution due to its high energy density, versatility, and potential for zero-emission use when produced from renewable sources (Kapadia et al., 2021). However, the economic and environmental implications of hydrogen adoption in the buildings sector need to be thoroughly examined to inform policy makers and ensure a smooth transition towards a sustainable future. 
+
+Many possible areas can be researched in the field of hydrogen in the buildings sector (Lund et al., 2019), by investigating the economic viability, and environmental impacts of hydrogen utilization in buildings, this research will contribute to the existing body of knowledge in the field of sustainable energy systems. Within the research field, the thesis research will provide insights into the economic and sustainable aspects of hydrogen production, storage, and distribution, as well as the associated environmental benefits and challenges. Moreover, the research can shed light on job creation potential and equity considerations related to the adoption of hydrogen-based buildings systems (Khatiwada et al., 2020).
+
+Certainly, more recently, hydrogen has garnered increasing attention as a potential solution for decarbonizing the buildings sector (Kapadia et al., 2021; Lund et al., 2019). Hydrogen offers multiple advantages, including high energy density, zero-emission potential when produced from renewable sources, and versatility in meeting various energy demands (Kapadia et al., 2021; Lund et al., 2019). Its use in the buildings sector can enable the replacement of fossil fuels, reduce GHG emissions, and contribute to the transition towards a sustainable and resilient energy system. However, the successful integration of hydrogen into the buildings sector requires a comprehensive understanding of the economic and environmental factors and their implications. This necessitates the use of rigorous research frameworks that encompass the complex interplay of technological and economic factors. This proposal provides the research backbone centred around the notions seen in figure 1. 
+
+**Figure ****1****: Research design ****framework**
+
+Source: Based on the author’s proposal 
+
+In the context of figure 1, this proposal is presents the initial research exploration, conducting a literature review, identifying research gaps, proposing new research methodologies, building and improving the methodology, and generating insights.
+
+The findings of this research aim to provide practical implications for policymakers, energy planners, and stakeholders involved in the energy transition process. The insights of the research will inform on the development of effective strategies, policies, and investment plans for promoting hydrogen use in the buildings sector, thereby assisting decision-makers on taking decisions that facilitate the achievement of NZE targets (Azevedo et al., 2022). This study aims to examine, through research, the extent hydrogen in the buildings sector for the EU and Switzerland under a NZE case by 2050 holds in alleviating the challenges posed by climate change and the transition towards sustainable energy systems. Specifically, the research aims to identify cost-effective pathways, from economic and environmental perspectives, to a hydrogen economy for the buildings sector in the EU and Switzerland under NZE conditions by 2050.
+
+This research proposal will take a closer look at the current state of research, which includes a thorough review of existing literature and the formulation of research questions from the identified gaps. Then, the proposal goes on to explain the planned research approach designed to tackle the identified research questions. Finally, it wraps up with a conclusion.
+
+# **Chapter 1: ****State of r****esearch**
+
+The literature reviewed in this section of the research proposal provides an overview of the current state of hydrogen use in the buildings sector. It explores the existing literature on various aspects related to the current hydrogen landscape and its adoption in the buildings sector. Firstly, the review provides an overview of the current state of hydrogen use, highlighting its existing applications, technologies, and industries. Secondly, the review provides an overview of the state of hydrogen in the decarbonization of the buildings sector. Thirdly, the research questions are presented from the gaps identified in the literature. 
+
+Overall, this section provides a synthesis of the current knowledge on hydrogen and its potential for use in the buildings sector, leading to the identification of the proposed research questions, and sets the foundation for the subsequent aspired analysis and insight anticipated for the anticipated research outcome. 
+
+## **1.1****. Overview on the ****current s****tate of hydrogen**
+
+Hydrogen is the most abundant and lightest element in the universe. The British chemist, Henry Cavendish, discovered it in the late 18th century. During the early 19th century, French and German chemists found out that hydrogen can be used as a fuel. It was used in gas lamps for lighting during the mid-19th century. Hydrogen was then used as a chemical feedstock and as a fuel for rockets and aerospace applications during the 20th century. Beginning from the 1970s, interests arose for hydrogen to be used as a possible energy vector, which was mainly due to concerns over environmental pollution, and energy security (Grochala, 2015; Royal Society of Chemistry, 2023).
+
+Currently, hydrogen is mostly distilled for industrial purposes, specifically as a material input for industry and refineries. However, it has the potential to be utilized in other areas like transportation, buildings, and power generation. To produce hydrogen that is carbon neutral, conventional energy sources can be combined with CCS technologies. Alternatively, hydrogen can be produced from using renewable electricity and water (IEAGHG, 2022).
+
+Recently, hydrogen has gained momentum for its potential use in various end-use applications. These applications range from its current use in fertilizer production to its potential use as a SAF. The interest in using hydrogen for future applications is due to the decarbonized methods it can be produced through, as well as its potential use in hard-to-abate sectors. Hydrogen and other hydrogen-based carriers can be produced and synthesized from an assortment of different feedstocks, such as fossil fuels, biomass, and water, thanks to its simple molecular structure and abundance in organic and inorganic material. 
+
+Furthermore, hydrogen-based fuels can be transported, stored, and used in different configurations. However, like many other decarbonized fuels, the decarbonized hydrogen value chain is still in its early stages, and its growth rate and penetration in the global energy system will heavily depend on policy support, and public and private investments (IEA Hydrogen Review, 2022).
+
+In 2021, the demand for hydrogen was mainly met with fossil-based production, with around 99% of the hydrogen produced in 2021 coming from fossil feedstock, of which the majority originates from natural gas. figure 2 provides a first-glance overview of today’s hydrogen supply and demand balance.
+
+**Figure ****2****: Overview on hydrogen supply sources and demand sinks in 2021**
+
+Source: Based on data from the 2022 IEA hydrogen review
+
+As previously mentioned, and illustrated in the previous figure, hydrogen is primarily utilized in the industrial and refinery sectors. However, its potential value chain extends far beyond its current use as demonstrated by figures 3 and 4. These figures highlight the comparative differences between current and potential hydrogen landscapes, with the latter being achievable by as early as 2030, according to the IEA. 
+
+**Figure ****3****: General overview on today’s hydrogen value-chain**
+
+Source: Based on data from the 2022 IEA hydrogen review and the IEA 2022 hydrogen database
+
+**Figure ****4****: ****General overview on the**** potential hydrogen value-chain**
+
+Source: Based on data from the 2022 IEA hydrogen review and the IEA 2022 hydrogen database
+
+It is important to note that the majority of hydrogen production is concentrated in Asia, Europe, and North America. Together, these regions made up nearly two-thirds of global production and demand in 2021. As can be seen in figure 5.
+
+**Figure ****5****: Hydrogen production by region in 2021 (%)**
+
+Source: Based on data from the IEAGHG, 2022
+
+It is typical for hydrogen production and demand to be linked within the same geographic area, as hydrogen production is mainly used for meeting local needs within the same region, or even within the same industrial complex producing the hydrogen. Currently, 80% of hydrogen comes from captive or by-product production, while the remaining 20% is produced for sale. However, it is not uncommon for production facilities intended for selling hydrogen to be located near consumption sites, with pipeline connections to major consumers, and delivery of cylinders to smaller customers (Connelly et al, 2019; Kumar et al, 2022).
+
+When we attempt to consider what current policy states for hydrogen use in the future, we observe the great emphasis placed by recent EU policy on the molecule. Indeed, the EU has recognized hydrogen as a crucial energy carrier for achieving its carbon neutrality objectives, observed in the EU’s green deal and fit for 55 packages. In early 2022, as a response to the conflict in Ukraine, the EU developed the REpowerEU plan, which raised the target from 5Mt to 20Mt of hydrogen demand by 2030, of which 2Mt are destined for the buildings sector, growing from 0 in the Fit for 55 package (EU Commission Staff Working Document, 2022). As of August 2023, the EU has set the highest target for decarbonized hydrogen, as shown in figure 6. Moreover, the target is also the closest in terms of timeframe, set to be achieved by 2030 (EU Commission REPowerEU, 2022).
+
+**Figure ****6****: ****Identified national ****hydrogen policies by March 2023**
+
+Source: based on the identified national policies seen in appendix A1
+
+Adjacent to the EU, Switzerland stands as one of the first country’s in Europe to have launched a new form of zero-emission mobility, with the acquisition of 1600 hydrogen-powered lorries to operate in Switzerland by 2025, for which companies[^2] operating in Switzerland have contracted Hyundai for supplying the lorries[^3] (Hyundai, 2020; Kastner, 2022; KED, 2020). Switzerland could play a leading role in the production of green and low-carbon hydrogen through renewables, hydropower and nuclear energy (Gabrielli et al., 2020). Nevertheless, hydrogen has played a minor role in Switzerland's energy and climate policy. However, the Energy Perspectives 2050+ published by the SFOE shows that hydrogen, along with other fuel and energy sources based on renewable electricity, can make a significant contribution to achieving the NZE target by 2050. Therefore, the SFOE is currently developing a 'Hydrogen Roadmap 2050' which aims to identify areas where hydrogen use is sensible, where and how it can be produced and stored, and what regulatory framework is necessary to establish a hydrogen market in Switzerland (BfE, 2023).
+
+## **1.2****. Hydrogen**** in the ****buildings**** s****ector**
+
+The global energy transition towards low-carbon and sustainable energy systems is increasingly highlighting the potential of hydrogen as a clean energy carrier, particularly within the buildings sector (Kapadia et al., 2021; Lund et al., 2019). Despite the growing interest, the existing body of research reveals a scarcity of studies specifically investigating the integration of hydrogen technologies in the buildings sector, as opposed to the more extensively studied industry and transport sectors (Huckebrink & Bertsch, 2022; Slorach & Stamford, 2021). The research, therefore, seeks to contribute to this under-researched area, examining the optimal pathways for the deployment of decarbonized hydrogen in the buildings sector in the EU and Switzerland under a NZE by 2050 scenario.
+
+Within the buildings sector, hydrogen holds the potential to play diverse roles, serving for heating, cooling, and electricity generation. Of particular interest are hydrogen-based fuel cells, which efficiently convert hydrogen into electricity and heat, without direct GHG emissions (Maestre et al., 2022). These fuel cells constitute a sustainable power source for buildings, particularly in remote or off-grid areas (Dodds et al., 2015). Moreover, hydrogen can replace fossil fuel-based systems in heating applications. Hydrogen-powered heat pumps or boilers can provide space heating and hot water (Giehl et al., 2023) effectively reducing carbon dioxide emissions and enhancing indoor air quality (Schob et al., 2023). Additionally, the molecule is compatible with certain existing infrastructure, such as retrofitted natural gas pipelines, making transition pathways more feasible (IEA Hydrogen Review, 2022).
+
+Here, it is important to note that from a technical perspective, heat pump technology powered by renewable energies, in comparison with boilers or traditional Combined Heat and Power (CHP) networks being run by fossil fuels, provides a superior answer towards the deacrbonisation of the building sector (Abbasi et al., 2021; Dong et al., 2023; IEA, 2022; Jeong et al., 2018; Kim & Junghans, 2023). Nevertheless, it is clear that heat pumps running on renewable energy are not the only remedy due to costs, grid size, renewable energy intermittency, and space limitations in existing buildings (UK Science and Technology Committee, 2022). Here, the advantage of hydrogen being an decarbonized energy carrier that can be stored and used in a similar fashion to new (heat pumps) and existing heating solutions (boilers, CHP), to generate electricity and heat or to be used as a combustible fuel, allows it to be considered as a complementary and perhaps necessary solution to renewable-energy-coupled-heat-pump technology.
+
+Beyond serving as an energy carrier, hydrogen presents opportunities for energy storage and grid balancing. In large centralized grids as well as remote desterilized grids, excess renewable energy can be converted into hydrogen through electrolysis and stored in storage facilities, for future use during periods of low renewable generation (Maestre et al., 2021). Despite its significant potential, the integration of hydrogen into the buildings sector is still in its early stages and it is presented with various economic, environmental and social barriers to wider adoption. Economically, the integration of hydrogen technologies in the buildings sector faces hurdles such as the high costs of adapting or establishing hydrogen-compatible infrastructure, and the expensive nature of hydrogen production and storage. Environmentally, there are concerns related to the efficiency losses in converting electricity to hydrogen and back to electricity, and the current reliance on grey hydrogen produced from fossil fuels, which compromises the desired carbon reduction objectives (Huckebrink & Bertsch, 2022; Scita et al., 2020). Moreover, these challenges are compounded by the need for new or retrofitted appliances, adjusting regulatory landscapes, and achieving public buy-in (Cubukcu & Tari, 2022). In the mid to long term, these barriers can be overcome by investing in R&D, harmonizing regulations, offering economic incentives, educating the public, fostering collaboration, developing infrastructure, focusing on decarbonised hydrogen production, implementing pilot projects, leveraging green financing, establishing feedback mechanisms, and diversifying supply chains, all of which require political support (Wu et al., 2022). 
+
+A review of the literature concerning the buildings sector reveals that in the realm of building’s decarbonization, a variety of well-established methods have come to the fore. These include measures like enhanced insulation, the deployment of energy-efficient appliances, and the electrification of heating systems through renewables, especially via solar and wind-powered heat pumps (Abbasi et al., 2021; Dong et al., 2023; Hoseinpoori et al., 2022; IEA, 2022; Jeong et al., 2018; Kim & Junghans, 2023; Maaouane et al., 2023). These strategies have been tried, tested, and found effective, making them prime choices for immediate deployment (IEA, 2022). Additionally, their inherent cost-effectiveness and energy efficiency often makes them more appealing to stakeholders compared to the more nascent hydrogen-based systems (Hoseinpoori et al., 2022). The pressing nature of climate change further underscores the preference for these solutions, as the global community seeks swift and scalable responses to reduce carbon emissions (IEA, 2022).
+
+Moreover, while hydrogen holds promise as a clean energy vector, its research and application in the building sector have been somewhat overshadowed. This is in part due to more pressing decarbonization challenges in other sectors, like high-temperature industries or long-distance freight transportation, where straightforward low-carbon solutions are less evident (Berger et al., 2020; Blanco et al., 2022; Bothe & Janssen, 2021; Genovese et al., 2023; Huckebrink & Bertsch, 2022; Maestre et al., 2021; Modu et al., 2023; Wu & Zhong, 2023). In these sectors, hydrogen emerges as a beacon of hope, attracting significant research attention. Meanwhile, the prospect of introducing hydrogen into residential spaces is fraught with concerns over safety, given its flammability, and the uphill task of gaining public acceptance for a relatively new energy paradigm in homes (IEA Hydrogen Review, 2022; Scita et al., 2020). Moreover, the entrenched momentum of existing research and commercial pathways, backed by substantial expertise, funding, and infrastructure, can inadvertently create barriers to exploring and investing in alternative solutions (Alós-Ferrer et al., 2016), such as the potential role of hydrogen in buildings.
+
+Indeed, the literature underscores the benefits of hydrogen adoption, such as its decarbonized nature; ability to used in centralized and decentralized applications; its ability to be stored when there is energy production is surplus and be used when there is surplus in demand; and its ambidextrous ability to used in existing and new technologies (Bukhari et al., 2023; IEA Hydrogen Review, 2022). However, concerns have been raised about the overall cost of hydrogen systems and its competitiveness when compared with other more developed solutions, potentially impeding hydrogen’s rapid commercialization (Kumar, 2022). While some studies have highlighted the technical feasibility of hydrogen use, its economic viability remains a challenge due to the high investment costs (Lubis et al., 2009; Xu et al., 2021).
+
+In sum, although the potential of hydrogen in the buildings sector is garnering more recognition, its widespread adoption remains constrained by economic, and environmental (when produced through fossil fuels) barriers. Crucially, the existing literature has yet to adequately address hydrogen’s potential in the buildings sector, particularly within the context of the EU and Switzerland's aspirations for NZE by 2050. 
+
+## **1.****3****.**** ****Research questions**
+
+While there are various solutions for building’s decarbonization, like electrification through heat pumps, they aren't universally adaptable across different climates or building types. Some structures, especially older ones, might find it challenging to transition without significant retrofits. Hydrogen's limited introduction to buildings can be traced back to infrastructural challenges, higher production costs, and a historical research gap. Thus, the thesis research aims to identify the role of hydrogen, based on objective merits, in an ideal energy system and justify that role in contributing to the development of a hydrogen ecosystem in the context of decarbonizing the buildings sector under NZE by 2050 conditions in the EU and Switzerland. The hydrogen ecosystem in Europe is set to experience rapid growth and shows significant potential for further expansion. However, the development of the ecosystem is occurring gradually and varies across sectors and countries, with the buildings sector being the least researched. Nevertheless, existing literature suggests that hydrogen can play a role in the building sector. Therefore, conducting new research on the role of hydrogen in the buildings sector becomes essential to promote effective policies and create market conditions that efficiently support the growth of not just the hydrogen ecosystem but that of an inclusive decarbonized energy system within the EU and Switzerland. Considering this, the research goals of the expected study will be centered on addressing the following three research questions. Those questions being:
+
+**A****. What are the optimal**** ‘****from an economic and ****environmental costs perspective’**** pathways**** fo****r the deployment of decarbonized hydrogen in the ****buildings**** sector in the EU under a net-zero by 2050 case****?**** (Country-Level-Analysis)**
+
+Given the updated and accelerated role of hydrogen implementation following the REpowerEU plan, there is a gap between the reviewed literature and the updated and accelerated EU plans for the molecule in the buildings sector. Thus, this research question seeks to explore cost effective pathways, from an economic and environmental perspective through multi-objective optimization, for the deployment of decarbonized hydrogen in the buildings sector of the EU. To reach an answer, the analysis will model and optimize for economic and environmental dimensions to identify pathways that are not only feasible but also sustainable and cost-effective. By addressing this question, the research aims to provide insights into the strategies and policies needed to drive the successful integration of hydrogen, where it’s use is objectively advantageous than other technologies available to the sector, in the EU’s context.
+
+**B****. How can Switzerland leverage the opportunities presented by the EU's adoption of hydrogen-based technologies to contribute to its own net-zero by 2050 ****aim****?**** (City-Level-Analysis) **
+
+Another gap is observed in literature when considering the updated Swiss context, within the accelerated hydrogen scopes of all its surrounding neighbors and with the recent developments in Swiss energy policy. This research question focuses on investigating how Switzerland can maximize the opportunities arising from the EU's aim to adopt hydrogen-based technologies for achieving its own NZE aim by 2050. The answer will be sought through the modelling of the Swiss buildings sector and conducting multi-objective optimization of economic and environmental variables, under the updated conditions of hydrogen-rich neighoubers, which could supply decarbonized hydrogen to the federation. By addressing this question, the research aims to provide recommendations and guidelines for the Swiss context to integrate hydrogen technologies into the eligible portion of the buildings sector.
+
+**C****. What synergies can be established between ****the integration of hydrogen in ****the ****buildings**** sector and other sectors?**
+
+Decarbonized hydrogen is expected to initially be utilized in industry and refining sectors to decarbonize existing processes, such as in industrial complexes, which already use hydrogen. Nevertheless, there exists a gap between how the advancements in these sectors could interlink with hydrogen use within the buildings sector. Thus, with many studies looking at sector specific research, including the first two research questions of this proposal. The development of hydrogen will indeed vary across sectors and countries. Therefore, this research question aims to explore the potential synergies that can be fostered between hydrogen in the buildings sector and other sectors such as industry and transport. Once modelling and initial optimization of the sector for the EU and Switzerland is complete, quantitative and qualitative analysis of existing literature will be done to identify how, where and by how much hydrogen integration could occur in the given context of the EU and Switzerland.
+
+By addressing these research questions, this research will provide valuable insights on pathways for deploying decarbonized hydrogen in the EU’s buildings sector, the strategies for Switzerland to leverage hydrogen-based technologies, and the potential synergies between the buildings sector and other sectors. 
+
+# **Chapter ****2****: ****Detailed r****esearch ****plan**
+
+Chapter 2 delves into a step-by-step approach that is proposed for answering the highlighted research questions, leveraging the LEAP system[^4], and buildings a framework that encompasses ten key steps, shown in figure 7. This chapter ends through by providing a comparative analysis on the proposal’s scope when compared with recent peer-reviewed literature that look at the buildings sector.
+
+**Figure ****7****: Proposed research framework**
+
+Source: Based on the author’s proposal
+
+The main research vertical, begins with identifying the crucial data requirements and assumptions needed for creating the baseline and NZE scenarios, refer to appendix 2 for more information. Additionally, values from what if analysis will be injected into the model to analyze the different pathways that could occur under unchanged baseline and NZE conditions. In parallel, the buildings model structure and its various dynamics (supply, transmission, and demand) will be made and generated, within the LEAP environment. With the model complete, A LP/MILP optimization will be done through the utilization of the NEMO optimization tool within LEAP. With that, a first run will be made to generate the results of the model’s objective functions. Following the first run, an iterative process of improvements to the model and optimization frameworks will be sought through literature review.
+
+## **2****.****1.**** ****Suitability of the ****chosen**** ****software package**
+
+LEAP is a widely-used software tool developed at the SEI for energy policy analysis and climate change mitigation assessment. LEAP adopts an integrated, scenario-based modeling approach to monitor energy consumption, production, and resource extraction across various sectors of an economy, as shown in figure 8. Rather than being limited to a particular energy system, LEAP serves as a flexible tool that enables the creation of diverse models, each tailored to specific energy systems with unique data structures (Heaps, 2023).
+
+LEAP encompasses a broad scope, including demand, energy transformation, resource extraction, GHG, and local air pollutant emissions, as well as social cost-benefit analysis and non-energy sector sources and sinks. It supports multiple methodologies, including bottom-up end-use accounting techniques, top-down macroeconomic modeling, transport stock-turnover modeling, electric sector load forecasting, and capacity expansion, as well as econometric and simulation models (Heaps, 2023; SEI, 2023). With an annual time-step and unlimited time horizon, LEAP is particularly suitable for medium- to long-term planning, making it a valuable tool for assessing sustainable energy pathways (Heaps, 2023).
+
+**Figure ****8****: ****The s****tructure of LEAP's system framework**
+
+Source: Based on the SEI LEAP system framework (SEI, 2023)
+
+Key characteristics of LEAP include its ease of use, low initial data requirements, and links to Excel and Python, enhancing data flexibility and adaptability to different scales. The software does not require special setups and runs on most operating systems. The LEAP software is license based. Nevertheless, it offers free licenses for users from developing countries. Nevertheless, the NEMO tool, which can be run standalone to LEAP is open-source (Heaps, 2023; SEI, 2023). 
+
+Despite its strengths, LEAP has certain limitations. Notably, it lacks renewable energy systems as technology options, necessitating the use of supplementary models or data sources, for example, even though hydrogen indigenously exists within industry demand in LEAP, it would need to be redefined for use in the buildings sector (Tozzi & Ho Jo, 2017). Additionally, the complexity of creating accurate bottom up models in LEAP is data-intensive due to the wide array of methodologies and scenario combinations, as is the nature of linear programming models (Heaps, 2023). Further information on the advantages and limitations of the platform can be seen in appendix 3 (Heaps, 2009; Perissi et al., 2021).
+
+LEAP incorporates a vital feature, enabling the automated calculation of least-cost capacity expansion and dispatch of supply-side transformation modules through linear programming-based optimization frameworks (SEI, 2023). The optimization process aims to identify the energy system configuration with the lowest total net present value of costs over the entire calculation period, subject to various constraints such as energy demand fulfillment and emissions limitations (SEI, 2023). During optimization, LEAP considers various costs and benefits, including capital costs for constructing new processes, decommissioning costs, operating and maintenance costs, fuel costs, and environmental externality values (SEI, 2023). Users have the option to impose additional constraints, such as maximum annual emissions levels for specific pollutants or capacity limitations for certain plant types (SEI, 2023). The optimization process assists in identifying least-cost energy system configurations aligned with specific policy objectives. However, it is imperative to acknowledge that optimal economic and environmental pathways generated through optimization may not always represent realistic policy options due to social and environmental acceptability or energy security considerations (SEI, 2023). For example, with regards to this proposal’s context, policy direction, security of supply, price volatility, social acceptance, technological breakthrough and external factors in the energy system could limit the integrity of the generated results. To address this, LEAP provides an alternative approach where expert judgment is used to assess feasible pathways, which may not be least-economic or environmental-cost optimal but are more practical and aligned with realistic policy considerations (SEI, 2023).
+
+LEAP's linear optimization capabilities are supported through integration with two frameworks: OSeMOSYS and NEMO (SEI, 2023). OSeMOSYS, distributed with LEAP, utilizes the GNU Linear Programming Kit (GLPK) to solve linear programming problems (SEI, 2023). Despite being widely used (OSeMOSYS), SEI developed NEMO to overcome certain limitations and enhance optimization capabilities (SEI, 2023). NEMO, built using Julia, a fast and flexible programming language for scientific and numerical computing, excels in solving linear and mixed integer linear programming problems, particularly with large problem sets (SEI, 2023). NEMO offers advantages over OSeMOSYS, including faster computation times for large optimization models and support for a wider range of solvers, both free and commercial (SEI, 2023). Furthermore, NEMO seamlessly integrates with the latest versions of LEAP, enabling efficient modeling of time-slicing features and energy storage (SEI, 2023).
+
+For the current study, LEAP is the preferred choice due to its flexibility, scenario-based modeling approach, user-friendly interface, and seamless integration with Excel and Python. Moreover, LEAP's linear optimization capabilities hold significant value. Utilizing both LEAP and NEMO, will assist in answering the proposed research questions.
+
+## **2****.****2****. ****Working towards a first run**
+
+Initially on a per country level, the integrated optimization of the system mentioned above will be formulated as a LP/MILP problem. It will be modelled and optimised using the LEAP and the LEAP NEMO environment, respectively. Specific steps during the calculations of an error-free first run will be:
+
+(1) Beginning by defining the types of variables and the capacity of the EU and Swiss datasets.
+
+(2) Constructing the .csv data table/s that incorporates input parameters. Configuring the code to indicate the file path, streamlining data reading and storage.
+
+(3) Translating mathematical formulas into code that LEAP and NEMO accept. Inputting the objective functions, energy input and output balance, constraint prerequisites, overall cost, and total carbon emissions calculation, among other factors, into the programming interface of LEAP as a sequence of actions.
+
+(4) Resolving the equations. The LEAP and NEMO system will automatically identify the model optimisation as LP/MILP and will initiate the computation stage.
+
+(5) Once the computation concludes, the outcome interface will be presented, and the results will also be exported to .csv format.
+
+A detailed view of the objective functions of the research can be seen in figure 9. 
+
+**Figure ****9****: Focus on the first step of the proposed research**** **
+
+Source: Based on the author’s proposal
+
+### **2****.2****.1****.**** Economic objective function**
+
+As shown in annual costs equation in figure 9 and below, the total investment cost (fC) involves the following terms: installation cost of energy supply equipment (Cinst); operation & maintenance cost (Com); cost for the consumed fuels (Cfuel); cost for purchasing energy from the utility grid (Cedpur); revenue from selling energy to the grid (Cedsal); energy generation subsidies for distributed energy systems (Csubs); income from selling carbon emission allowances (CCO2). Where:
+
+minfC=minCinst+Com+Cfuel+Cedpur-Cedsal-Csubs-CCO2 (1)
+
+Cinst=CinsttechA*CRFtechA+CinsttechB*CRFtechB+Cinsttechn*CRFtechn+… 2
+
+Cinstn=technτtechn*ctechtechn, inst +… (3)
+
+CRF=r(1+rm)(1+r)m-1 (4)
+
+The total installation cost includes the costs of technology, which are annualized through multiplication with the Capital Recovery Factor (CRF) specific to each technology. In this equation, 'r' signifies the interest rate, while 'm' stands for the lifespan of each component. The binary variable 'τtech' serves to limit the choice of particular technologies, whereas 'ctechtechn,inst' denotes the installation cost of the given technology.
+
+Com=Comtechn+…5
+
+Comtechn=technτtechn*ctechtechn, om +…(6)
+
+Operation & maintenance (O&M) (Com) costs consist of the specific technology costs where (ctechtechn, om ) pertains to the maintenance of the specific technology.
+
+Cfuel=dt(FFd,t*pFF+Hd,t*pH+HP.d,t*pHP+…)∆ (7)
+
+Fueld,t=techk(∝d,t,tech,kOtech,kedηtech,ktech,ed)+… (8)
+
+Fuel cost (Cfuel) originates from Fossil Fuels (FF), Hydrogen (H), and Heat Pump (HP). Also, the (∆) stands for the time interval of (t)[^5]. At time (t) and day (d) the total energy consumed by the buildings sector in country n is equal to the sum of the different fuels used at that instant. (∝d,t,tech,k) is defined as the operating level k of the technology tech at (d) day (t) time, while Otech,ked is explained as the end demand (ed) output of (tech) at operating level (k), and finally (ηtech,ktech,es) represents the efficiency of the (tech) for (ed) at (k). Note that this term takes production and transmission costs into account.
+
+Cedpur=dt(edd,tpur*ped,pur)∆ (9)
+
+Cedsal=dt(edd,tsave*ped,save)∆ =0 (10)
+
+The total cost of purchasing (+ve) the (ed) is defined by the demand at (d,t) and the price (ped,pur). Saving (-ve) the (ed) is initially[^6] defined as equal to (0) as (ped,save) is set to (0).
+
+Csubs=dt(edd,tsubs*psubs)∆ (11)
+
+Subsidies and other financial incentives (Csubs) are split between the incentive for the specific (edd,tsubs) and the appropriate (psubs).
+
+CCO2=EreducepCO2 (12)
+
+Different economic benefits/consequences for environmentally positive/negative fuel switching exist and this is represented in equation (12).
+
+### **2****.2****.2****.**** E****nvironmental**** objective function**
+
+minfE=minEfuel+Eedpur+…-Eednb-… (13)
+
+Efuel=dt(fueld,t*Ffuel)∆ (14)
+
+Eedpur=dt(edd,ted.pur*Fed)∆ (15)
+
+Within the energy system, emissions from energy produced and consumed within the same country and destined to the buildings sector are represented in (Efuel) and associated emissions beyond the country’s borders (EU single market, or energy imports beyond that) are represented in (Eedpur). In addition, emissions from non-buildings sectors in are captured in (Eednb).
+
+### **2****.2****.****3****.**** ****Economic and environmental objective function**
+
+With the total annual costs and annual emissions taken into account together, a multi-objective optimization will be conducted through the use of a compromise programming to convert it to a single-objective. Seen in equation 16. 
+
+minfC&E=∅  (16)
+
+Here the constraint (∅**) **is defined through the following representations. 
+
+∅≥fC-fCminfCmin*ωC (17)
+
+∅≥fE-fEminfEmin*ωE (18)
+
+ωC+ωE=1 (19)
+
+Where fCmin and fEmin correspond to the optimum values of fC and fE when independently optimized. Moreover, ωC and ωE are the analogous weight coefficients, which reflect the preferences of the decision-makers.
+
+### **2****.2****.****4****.**** ****Main constraints**
+
+The two main constraints, currently, considered for the optimization model are those for energy balance and technology selection. For energy balance, represented in equations 20 and 21, the energy demand of the buildings sector must be covered by the sum of the energy nationally generated and the energy purchased, minus any energy sale, which was destined for the sector.
+
+edd,ttotal=edd,t+edd,tpur-edd,tsal- edd,tnb20
+
+edd,t=techkαd,t,tech,k*Otech,ked (21)
+
+Buildings’ energy demand has to be covered by the total energy supplied through the energy input from national generation plus energy import minus both energy sold and energy consumed by other sectors in the country.
+
+With regards to the constraints relating to technology selection, equations 22 and 23 show that only a set of technologies (β) can be selected, based on the set of conditions applied to a country.
+
+techτtech≤β (22)
+
+kτtech≤αd,t,tech,k (23)
+
+Further improvements and iterations are envisioned throughout the duration of the research. Such as expansion into other sectors or through more granular and desegregated analysis equation frameworks and outputs. 
+
+Finally, a symbols nomenclature could be seen in appendix 4 
+
+## **2****.3****. ****Improving and calibrating the model**
+
+After the initial run of the model using the methodology previously outlined, the phase of iterative improvement will be generated. This phase is crucial as the refinement of both the model and the optimization frameworks to enhance their accuracy, realism, and reflection of the complex dynamics within the research area will be pursued. Several key steps are encompassed by the iterative improvement process.
+
+Firstly, the thorough evaluation of the results of the initial model run will be conducted. This will involve the comparison of the generated scenarios and outcomes against real-world data and known trends. Discrepancies, limitations, and areas of improvement will be identified during this analysis. Examples of the methods that will be used to identify and resolve such calibration-related issues can be seen in Appendix 5. This initial step sets the stage for the subsequent stages of improvement. 
+
+The identification of model’s shortcomings is the next step. Based on the evaluation, the research needs to identify specific aspects of the model and the optimization frameworks that require improvement. These shortcomings could range from the need to refine simplifications, address data gaps, or revising assumptions for greater accuracy. The refinement and enhancement phase comes next. The model and optimization frameworks will undergo changes based on the identified shortcomings. These changes might involve the incorporation of more detailed data, accounting for additional factors, improving the equations used for optimization, and enhancing the overall model structure. This step is essential for addressing the identified limitations. Moreover, at the end of the refinement phase, the paper writing phase will be initiated, aligned with using the results to answer the 3 research questions, i.e. the investigation of optimal pathways for the integration of decarbonized hydrogen within the buildings sector of the EU under NZE by 2050; shifting the focus towards the specific context of Switzerland with a heightened level of detail, based the Swiss context; finally the exploration of synergies emanating from the integration of hydrogen within the buildings sector with other sectors, such as industry or transport.
+
+Subsequent to answering the questions, sensitucuty analysis and calibration needs to occur as rigorous testing and validation needs to be shows. The refined model and optimization frameworks will be tested using historical data and results from studies employing similar model structures. This testing aims to ensure that the improvements have led to more accurate and reliable results, serving as a critical checkpoint before proceeding further.
+
+Finally, it's important to emphasize that this iterative improvement process is not a one-time event. As new data becomes available, or technology breakthroughs occur, the model and optimization frameworks will need continuous updating and improvement (i.e. the model needs to be modular by design and easy to operate). This ensures that the research remains adaptable and responsive to evolving circumstances and insights, making it a relevant tool in the pursuit of accurate representation and impactful outcomes of the potential for the hydrogen molecule in the EU and Swiss buildings sector under NZE conditions by 2050. A graphical representation of what is stated earlier can be seen in figure 10.
+
+**Figure ****10****: Focus on the second step of the proposed research**
+
+Source: Based on the author’s proposal
+
+## **2****.4****. ****Comparative analysis of proposed study with existing studies**
+
+Within the buildings sector, a comparative analysis was conducted on 20 studies as part of this research proposal, analyzing the objectives of recent publications with the objectives of this proposed study, to show the severe lack in studies considering hydrogen in the buildings sector. The findings are as follows:
+
+9 studies (Bashir et al., 2019; Cedillos Alvarado et al., 2016; Huang et al., 2019; Huang et al., 2020; Lima and Feijão, 2022; Lu et al., 2021; Mariaud et al., 2017; Mehleri et al., 2013; Yan et al., 2020) employed MILP research methods for single-objective studies where hydrogen was not considered as part of the analysis in the buildings sector. 
+
+2 studies (Huang et al., 2021; Shuai et al., 2019) used NLP as the research method for their studies, but they did not focus on hydrogen as part of their analysis in the sector.
+
+1 study (Berger et al., 2020) utilized LP for a single-objective study on hydrogen integration in the buildings sector, this was the only study that investigated the molecule in its research focus. 
+
+1 study (Qin et al., 2020) employed LP but did not consider the fuel as part of its research scope.
+
+2 studies (Huang et al., 2021; Montoya et al., 2020) conducted MINLP for single-objective studies that did not consider hydrogen in the sector. 
+
+5 studies (Arsalis, 2019; Bartolini et al., 2020; Deymi-Dashtebayaz et al., 2019; Gondal & Sahir, 2012; Ozçelep et al., 2021) employed different methodologies, for each of their research scopes, and focused on the potential role of hydrogen, they considered the role of hydrogen from 1-20% of the sector’s demand.
+
+In contrast, the study at the heart of this proposal aims to explore the topic of hydrogen and its potential penetration in the buildings sector using the LP/MILP method across the entire demand range (0% to 100% range) in the EU and Switzerland.
+
+# **Chapter ****3****: Conclusion**** and timeline**
+
+With the aim of bridging the gap and supporting scientific knowledge on the potential role of hydrogen in the buildings sector for the a 2050 NZE in the EU and Switzerland, this proposal has identified a visible research gap and provides three main research questions that it aims to answer through the methodology proposed in the detailed research plan. The methodology is characterised by two key elements. Firstly, with the intent of not using black box environments, a sufficient portion of the methodology is dedicated to writing, through the LEAP environment, a model and linear optimisation that are fully transparent to any interested stakeholder. Secondly, providing ample time for feedback loop iterations is expected to propel the complexity and usefulness of the model and optimisation framework. The insights generated through this research will shed important insights into the most effective solutions for hydrogen adoption in the sector for the selected regions. The results of the research will to contribute to bridging the research gap and increasing awareness amongst decision-makers and energy experts. 
+
+# **References**
+
+- A. Arsalis, Thermodynamic modeling and parametric study of a small-scale natural gas/hydrogen-fueled gas turbine system for decentralized applications [J], Sustain. Energy Technol. Assessments 36 (2019), 100560.
+
+- A. Bartolini, F. Carducci, C.B. Munoz, et al., Energy storage and multi-energy systems in local energy communities with high renewable energy penetration [J], Renew. Energy 159 (2020) 595–609.
+
+- A. Mariaud, S. Acha, N. Ekins-Daukes, N. Shah, C.N. Markides, Integrated optimization of photovoltaic and battery storage systems for UK commercial buildings, Appl. Energy 199 (2017) 466–478.
+
+- A.A. Bashir, M. Pourakbari-Kasmaei, J. Contreras, M. Lehtonen, A novel energy scheduling framework for reliable and economic operation of islanded and grid-connected microgrids, Electric Power Syst. Res. 171 (2019) 85–96.
+
+- Abbasi, M.H. *et al.* (2021) *Heat transition in the European Building Sector: Overview of the heat decarbonisation practices through heat pump technology*, *Sustainable Energy Technologies and Assessments*. Available at: https://www.sciencedirect.com/science/article/pii/S2213138821006445.
+
+- Alós-Ferrer, C., Hügelschäfer, S. and Li, J. (2016) *Inertia and decision making*, *Frontiers*. Available at: https://www.frontiersin.org/articles/10.3389/fpsyg.2016.00169/full. 
+
+- Alsulaiman, A. (2023) *Renewable hydrogen import routes into the EU*, *Oxford Institute for Energy Studies*. Available at: https://www.oxfordenergy.org/publications/renewable-hydrogen-import-routes-into-the-eu/.
+
+- Azevedo, I. L., Morgan, M. G., & Moura, M. C. (2022). The challenges of deep decarbonization in the buildings sector. Joule, 6(4), 696-708.
+
+- B. Yan, M. Di Somma, G. Graditi, P.B. Luh, Markovian-based stochastic operation optimization of multiple distributed energy systems with renewables in a local energy community, Electr. Power Syst. Res. 186 (2020).
+
+- BAFU (2023) *Loi sur le climat et l’innovation: Votation Populaire le 18 juin 2023*, *Office fédéral de l’environnement OFEV*. Available at: https://www.bafu.admin.ch/bafu/fr/home/themes/climat/dossiers/loi-climat.html.
+
+- Baldino, C. *et al.* (2020) *Hydrogen for heating? Decarbonization options for households in the united kingdom in 2050*. Available at: https://theicct.org/publication/hydrogen-for-heating-decarbonization-options-for-households-in-the-european-union-in-2050/.
+
+- Berger, M. Radu, D. Fonteneau, R. Deschuyteneer, T. Detienne, G. Ernst, D. The role of power-to-gas and carbon capture technologies in cross-sector decarbonization strategies, Electr. Power Syst. Res. (2020) 180.
+
+- BfE (2023) *Thesen zur künftigen Bedeutung von Wasserstoff in der Schweizer Energieversorgung*, *Wasserstoff*. Available at: https://www.bfe.admin.ch/bfe/en/home/research-and-cleantech/research-programmes/hydrogen.html.
+
+- Billcliff, T. (2023, March). 2022-06 blue hydrogen beyond the Plant Gate. IEAGHG. Available at: https://ieaghg.org/publications/technical-reports/reports-list/9-technical-reports/1069-2022-06-blue-hydrogen-beyond-the-plant-gate 
+
+- Billcliff, T. (2023, March). 2022-07 low-carbon hydrogen from natural gas: Global roadmap. IEAGHG. Available at: https://ieaghg.org/publications/technical-reports/reports-list/9-technical-reports/1071-2022-07-low-carbon-hydrogen-from-natural-gas-global-roadmap 
+
+- Blanco, H. *et al.* (2022) *A taxonomy of models for investigating Hydrogen Energy Systems*, *Renewable and Sustainable Energy Reviews*. Available at: https://www.sciencedirect.com/science/article/abs/pii/S1364032122005871.
+
+- Böhringer, C., Rutherford, T. F., & Tarr, D. G. (2014). The Economics of Infrastructure Investment: Beyond Simple Cost Benefit Analysis. Journal of Economic Surveys, 28(3), 518-535.
+
+- Bothe, D. and Janssen, M. (2021) *The value of hydrogen in the heating market - thyssengas.com*, *thyssengas*. Available at: https://thyssengas.com/files/thyssengas/content/aktuell/2021/09/frontier_-_fnb_gas_-_h2_in_heating_market.pdf. 
+
+- Bukhari, M.H. *et al.* (2023) *Techno-economic feasibility analysis of hydrogen production by PTG concept and feeding it into a combined cycle power plant leading to sector coupling in future*, *Energy Conversion and Management*. Available at: https://www.sciencedirect.com/science/article/pii/S0196890423001607#s0270.
+
+- Byun, J. *et al.* (2023) *Reliability, economic, and environmental analysis of fuel-cell-based hybrid renewable energy networks for residential communities*, *Energy Conversion and Management*. Available at: https://www.sciencedirect.com/science/article/pii/S0196890423003102. 
+
+- C. Huang, H. Zhang, Y. Song, L. Wang, T. Ahmad, X Luo, Demand response for industrial micro-grid considering photovoltaic power uncertainty and battery operational cost, IEEE Trans. Smart Grid 12 (4) (2021) 3043–3055.
+
+- Cebon, D. (2022) *Hydrogen for heating: A comparison with Heat Pumps*, *Hydrogen Science Coalition*. Available at: https://h2sciencecoalition.com/blog/hydrogen-for-heating-a-comparison-with-heat-pumps-part-1/.
+
+- Chong, A., Gu, Y. and Jia, H. (2021) *Calibrating building energy simulation models: A review of the basics to guide future work*, *Energy and Buildings*. Available at: https://www.sciencedirect.com/science/article/pii/S0378778821008173#b0065.
+
+- Connelly, Elizabeth, Amgad Elgowainy, and Mark Ruth. "Current Hydrogen Market Size: Domestic and Global." DOE Hydrogen and Fuel Cells Program Record, October 2019. https://www.hydrogen.energy.gov/pdfs/19002-hydrogen-market-domestic-global.pdf.
+
+- Cubukcu, N. and Tari, I. (2022) *Buildings sector from a sustainable carbon constrained energy generation perspective*, *Energy and Buildings*. Available at: https://www.sciencedirect.com/science/article/abs/pii/S0378778822000366.
+
+- D. Cedillos Alvarado, S. Acha, N. Shah, C.N Markides, Optimal technology selection and operation of bio-methane CHP units for commercial buildings, in: ASHRAE annual conference papers, 2016.
+
+- D.A. Lima, V.R Feijão, Stochastic approach for economic viability of photovoltaic systems with battery storage for big electricity consumers in the regulated market in Brazil [J], Electr. Power Syst. Res. 205 (2022), 107744.
+
+- Deymi-Dashtebayaz, M. Ebrahimi-Moghadam, A. Pishbin, S.I. Investigating the effect of hydrogen injection on natural gas thermo-physical properties with various compositions [J], Energy 167 (2019) 235–245.
+
+- Dodds, P.E. *et al.* (2015) *Hydrogen and fuel cell technologies for heating: A Review*, *International Journal of Hydrogen Energy*. Available at: https://www.sciencedirect.com/science/article/pii/S0360319914031383.
+
+- Dong, S. *et al.* (2023) *Carbon reduction analysis of electric heat pumps in carbon neutrality in China*, *Sustainable Cities and Society*. Available at: https://www.sciencedirect.com/science/article/pii/S2210670723003694.
+
+- E.D. Mehleri, H. Sarimveis, N.C. Markatos, L.G. Papageorgiou, Optimal design and operation of distributed energy systems: application to Greek residential sector, Renew. Energy 51 (2013) 331–342.
+
+- EU Commission Staff Working Document (2022) *Implementing the Repower EU Action Plan: Investment Needs, Hydrogen Accelerator and Achieving the Bio-Methane Targets*, *EU Commission *. Available at: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=SWD%3A2022%3A230%3AFIN.
+
+- European Commission. "Proposal for a Regulation of the European Parliament and of the Council on the Governance of the Energy Union, amending Directive 94/22/EC, Directive 98/70/EC, Directive 2009/31/EC, Regulation (EC) No 663/2009, Regulation (EC) No 715/2009, Directive 2009/73/EC, Council Directive 2009/119/EC, Directive 2010/31/EU, Directive (EU) 2012/27/EU, Directive 2013/30/EU and Council Directive (EU) 2015/652 and repealing Regulation (EU) No 525/2013." European Union document COM/2022/230 final.  https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=COM%3A2022%3A230%3AFIN&qid=1653033742483. 
+
+- European Commission. (2020). European Green Deal. https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/european-green-deal_en. 
+
+- Gabrielli, P., Charbonnier, F., Guidolin, A., & Mazzotti, M. (2020, July 8). Enabling low-carbon hydrogen supply chains through use of biomass and carbon capture and storage: A Swiss case study. Applied Energy. Available at: https://www.sciencedirect.com/science/article/abs/pii/S0306261920307571
+
+- Genovese, M. *et al.* (2023) *Power-to-hydrogen and hydrogen-to-X energy systems for the industry of the future in Europe*, *International Journal of Hydrogen Energy*. Available at: https://www.sciencedirect.com/science/article/abs/pii/S0360319923003889. 
+
+- Ghahremani, R., Behrangrad, M., & Ommi, F. (2020). Integrated assessment of environmental, economic, and social indicators for urban energy system planning: A review. Energy Strategy Reviews, 32, 100528.
+
+- Giehl, J., Hollnagel, J. and Müller-Kirchenbauer, J. (2023) *Assessment of using hydrogen in gas distribution grids*, *International Journal of Hydrogen Energy*. Available at: https://www.sciencedirect.com/science/article/abs/pii/S0360319923000617.
+
+- Gondal, I.A. Sahir, M.H. Prospects of natural gas pipeline infrastructure in hydrogen transportation [J], Int. J. Energy Res. 36 (15) (2012) 1338–1345.
+
+- Grochala, W. (2015). Towards sustainable hydrogen storage and production. ChemSusChem, 8(4), 638-643.
+
+- Grochala, W. (2015, February 20). First there was hydrogen. Nature News. Available at: https://www.nature.com/articles/nchem.2186
+
+- H. Qin, Z. Wu, M. Wang, Demand-side management for smart grid networks using stochastic linear programming game, Neural Comput. App. 32 (1) (2020) 139–149.
+
+- H. Shuai, J. Fang, X. Ai, J. Wen, H He, Optimal real-time operation strategy for microgrid: an ADP-based stochastic nonlinear optimization approach, IEEE Trans. Sustain. Energy 10 (2) (2019) 931–942.
+
+- Heaps, C. (2009) *Comparing LEAP with other energy models*, *SEI*. Available at: https://leap.sei.org/default.asp?action=9&fid=22&TID=1784. 
+
+- Heaps, C. (2017) *A tool for Energy Planning and GHG mitigation assessment*, *SEI Leap*. Available at: http://www.eri.chula.ac.th/eri-main/wp-content/uploads/2017/06/D1-22-1-LEAP-introduction.pdf.
+
+- Heaps, C. (2023) *SEI Leap*. Available at: https://leap.sei.org/default.asp?action=introduction. 
+
+- Hoseinpoori, P. *et al.* (2022) *A whole-system approach for quantifying the value of smart electrification for decarbonising heating in buildings*, *Energy Conversion and Management*. Available at: https://www.sciencedirect.com/science/article/pii/S0196890422007488.
+
+- Huang, P. Sun, Y. Lovati, M. Zhang X. Solar-photovoltaic-power-sharing-based design optimization of distributed energy storage systems for performance improvements, Energy 222 (2021), 119931.
+
+- Huang, W. Zhang, N. Kang, C. Capuder, T. Holjevac, N. Kuzle, I. Beijing subsidiary administrative center multi-energy systems: an optimal configuration planning, Electr. Power Syst. Res. 179 (2020).
+
+- Huang, Y. Zhao, Y. Hao, Y. Wei, G. Feng, J. Li, W. A feasibility analysis of distributed power plants from agricultural residues resources gasification in rural China, Biomass Bioenergy 121 (2019) 1–12.
+
+- Huckebrink, D. and Bertsch, V. (2022) *Decarbonising the residential heating sector: A techno-economic assessment of selected technologies*, *Energy*. Available at: https://www.sciencedirect.com/science/article/abs/pii/S0360544222015080.
+
+- Hyundai (2020) *Xcient Fuel Cell and Green Europe: How xcient fuel cell trucks are decarbonising Switzerland*, *Hyundai Trucks Australia*. Available at: https://hyundaitrucks.com.au/news?view=article&id=65%3Axcient-fuel-cell-and-green-europe-how-xcient-fuel-cell-trucks-are-decarbonising-switzerland&catid=8. 
+
+- IEA (2022), The Future of Heat Pumps, IEA, Paris https://www.iea.org/reports/the-future-of-heat-pumps.
+
+- IEA (2023) *Buildings*, *IEA*. Available at: https://www.iea.org/energy-system/buildings.
+
+- IEA. (2022, September). Global Hydrogen Review 2022. IEA. Available at: https://www.iea.org/reports/global-hydrogen-review-2022
+
+- IPCC. (2018). Global warming of 1.5°C. https://www.ipcc.ch/sr15/.
+
+- Jeong, J. *et al.* (2018) *Multi-criteria analysis of a self-consumption strategy for building sectors focused on ground source heat pump systems*, *Journal of Cleaner Production*. Available at: https://www.sciencedirect.com/science/article/pii/S0959652618307820.
+
+- Kapadia, K., Kumbhare, V., & Patel, R. (2021). Hydrogen: A sustainable fuel for buildings. Renewable and Sustainable Energy Reviews, 137, 110577.
+
+- Kapadia, K., Kumbhare, V., & Patel, R. (2021). Transition towards a hydrogen-based economy: Challenges and opportunities. Sustainable Energy Technologies and Assessments, 47, 101315.
+
+- Kastner, J. (2022) *Hyundai hydrogen-fueled trucks making inroads in Europe*, *Nikkei*. Available at: https://asia.nikkei.com/Business/Transportation/Hyundai-hydrogen-fueled-trucks-making-inroads-in-Europe. 
+
+- KED (2020) *Hyundai makes inroads into Europe’s hydrogen commercial vehicle market*, *KED Global*. Available at: https://www.kedglobal.com/hydrogen_truck/newsView/ked202010100002.
+
+- Khatiwada, D., Leduc, S., & Suh, S. (2020). Energy system impacts and environmental policy implications of the Paris Agreement's 1.5 and 2 °C climate targets. Environmental Science & Technology, 54(17), 10530-10540.
+
+- Kim, H. and Junghans, L. (2023) *Economic feasibility of achieving net-zero emission building (NZEB) by applying solar and geothermal energy sources to heat pump systems: A case in the United States Residential Sector*, *Journal of Cleaner Production*. Available at: https://www.sciencedirect.com/science/article/pii/S0959652623019807.
+
+- Kumar, P. (2022) *Current and future perspectives on hydrogen and Fuelcells for its potential application in portable; stationary and transportation sectors*, *Comprehensive Renewable Energy (Second Edition)*. Available at: https://www.sciencedirect.com/science/article/pii/B9780128197271000480#s0070.
+
+- Kumar, Sanjeev. (2022)“Green Hydrogen in the EU, Europe Green Hydrogen Sector. Research Forecast.” Research Forecast. Available at: https://researchforecast.com/europe-green-hydrogen-market-is-expected-to-record-a-positive-cagr-of-40-during-the-forecast-period-2022-2030-ken-research/
+
+- Liu, J. *et al.* (2020) *Energy planning of renewable applications in high-rise residential buildings integrating battery and Hydrogen Vehicle Storage*, *Applied Energy*. Available at: https://www.sciencedirect.com/science/article/pii/S0306261920314756#s0075.
+
+- Lu, Y. Yu, X. Jin, X. Jia, H. Mu, Y. Bi-Level Optimization Framework for Buildings to Heating Grid Integration in Integrated Community Energy Systems, IEEE Trans. Sustain. Energy 12 (2) (2021) 860–873.
+
+- Lubis, L.I. *et al.* (2009) *Utilizing hydrogen energy to reduce greenhouse gas emissions in Canada’s residential sector*, *International Journal of Hydrogen Energy*. Available at: https://www.sciencedirect.com/science/article/pii/S0360319908017345#. 
+
+- Lund, H., Mathiesen, B. V., Connolly, D., Möller, B., Persson, U., Ridjan, I., ... & Østergaard, P. A. (2019). Renewable energy systems: A societal review. Energy, 172, 557-565.
+
+- Lund, H., Werner, S., Wiltshire, R., Svendsen, S., Thellufsen, J. Z., & Lund, M. (2019). Energy systems analysis of hydrogen as an energy carrier in residential buildings. Energy, 168, 938-950.
+
+- Maaouane, M. *et al.* (2023) *Cost-effective design of energy efficiency measures in the building sector in North Africa using building information modeling*, *Energy and Buildings*. Available at: https://www.sciencedirect.com/science/article/pii/S0378778823005133. 
+
+- Maestre, V.M., Ortiz, A. and Ortiz, I. (2021) *Challenges and prospects of renewable hydrogen-based strategies for full decarbonization of stationary power applications*, *Renewable and Sustainable Energy Reviews*. Available at: https://www.sciencedirect.com/science/article/pii/S1364032121009035.
+
+- Maestre, V.M., Ortiz, A. and Ortiz, I. (2022) *Transition to a low-carbon buildings stock. techno-economic and spatial optimization of renewables**hydrogen strategies in Spain*, *Journal of Energy Storage*. Available at: https://www.sciencedirect.com/science/article/pii/S2352152X22018771.
+
+- Medeas (2023) *Medeas vs Times **&** Leap*, *Medeas*. Available at: https://www.medeas.eu/model/medeas-vs-times-leap. 
+
+- Modu, B. *et al.* (2023) *A systematic review of hybrid renewable energy systems with hydrogen storage: Sizing, optimization, and Energy Management Strategy*, *International Journal of Hydrogen Energy*. Available at: https://www.sciencedirect.com/science/article/abs/pii/S0360319923029853.
+
+- Montoya, O.D. Grisales-Norena, L.F. Gil-Gonzalez, Q. Alcalá, W. Hernandez-Escobedo, G. Optimal location and sizing of PV sources in DC networks for minimizing greenhouse emissions in diesel generators, Symmetry (Basel) 12 (2) (2020).
+
+- Navas, S.J., Cabello González, G.M. and Pino, F.J. (2022) *Hybrid power-heat microgrid solution using hydrogen as an energy vector for residential houses in Spain. A case study*, *Energy Conversion and Management*. Available at: https://www.sciencedirect.com/science/article/pii/S0196890422005209#ab005.
+
+- Ozçelep, Y. Bekdaş, G. Apak, S. Investigation of photovoltaic-hydrogen power system for a real house in Turkey: hydrogen blending to natural gas effects on system design [J], Int. J. Hydrogen Energy 46 (74) (2021) 36678–36686.
+
+- Perissi, I. *et al.* (2021) *Cross-validation of the Medeas Energy-Economy-environment model with the integrated markal-EFOM system (times) and the long-range energy alternatives planning system (LEAP)*, *MDPI*. Available at: https://www.mdpi.com/2071-1050/13/4/1967. 
+
+- Royal Society of Chemistry. (2023). Hydrogen - element information, properties and uses: 
+
+- Sandri, O. *et al.* (2021) *Hydrogen for all? household energy vulnerability and the transition to hydrogen in Australia*, *Energy Research **&** Social Science*. Available at: https://www.sciencedirect.com/science/article/pii/S2214629621002723#s0105.
+
+- Schmid, F. and Behrendt, F. (2022) *Genetic sizing optimization of residential multi-carrier energy systems: The aim of energy autarky and its cost*, *Energy*. Available at: https://www.sciencedirect.com/science/article/pii/S0360544222023039#sec4.
+
+- Schob, T. *et al.* (2023) *The role of hydrogen for a greenhouse gas-neutral Germany by 2045*, *International Journal of Hydrogen Energy*. Available at: https://www.sciencedirect.com/science/article/pii/S0360319923022358. 
+
+- Scita, R., Raimondi, P.P. and Noussan, M. (2020) *Green hydrogen: The holy grail of decarbonisation? an analysis of the technical and geopolitical implications of the future Hydrogen Economy*, *SSRN*. Available at: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3709789.
+
+- SEI (2023) *Optimization in LEAP*, *Introduction to optimization*. Available at: https://leap.sei.org/help/Optimization/OptimizationIntroduction.htm.
+
+- SEI LEAP (2023) *LEAP Help*, *Leap help*. Available at: https://leap.sei.org/help/leap.htm#t=Supporting_Screens%2FScenario_Manager.htm.
+
+- Slorach, P.C. and Stamford, L. (2021) *Net zero in the heating sector: Technological options and environmental sustainability from now to 2050*, *Energy Conversion and Management*. Available at: https://www.sciencedirect.com/science/article/pii/S0196890421000157.
+
+- Smith, I. (2018). The buildings sector as a contributor to climate change. In S. Lehmann & D. Suter (Eds.), Handbook of Sustainability Science and Research (pp. 173-193). Springer.
+
+- Tozzi , P.J. and Ho Jo, J. (2017) *A comparative analysis of Renewable Energy Simulation Tools: Performance Simulation Model VS. system optimization*, *Renewable and Sustainable Energy Reviews*. Available at: https://www.sciencedirect.com/science/article/abs/pii/S1364032117307761.
+
+- Trask, A., Hanna, R. and Rhodes, A. (2022) *The future of Home Heating: The roles of heat pumps and hydrogen*. Available at: https://spiral.imperial.ac.uk/bitstream/10044/1/93856/2/The%20Future%20of%20Home%20Heating.pdf.
+
+- UK Science and Technology Committee (2022) *The role of hydrogen in achieving net zero*. Available at: https://committees.parliament.uk/publications/33292/documents/180198/default/. 
+
+- United Nations. (2019). The 2030 Agenda for Sustainable Development. https://sdgs.un.org/2030agenda.
+
+- USAID (2023) *Long Range Energy Alternatives Planning System (LEAP)*, *Global Climate Change*. Available at: https://www.climatelinks.org/resources/long-range-energy-alternatives-planning-system-leap.
+
+- Videira, N. *et al.* (2012) *Integrated modeling of coastal and Estuarine Ecosystem Services*, *Treatise on Estuarine and Coastal Science*. Available at: https://www.sciencedirect.com/science/article/abs/pii/B9780123747112012055. 
+
+- Vidoni, P. (2001) *Prediction and calibration in generalized linear models - ism*, *The Institute of Statistical Mathematics*. Available at: https://www.ism.ac.jp/editsec/aism/pdf/055_1_0169.pdf.
+
+- Wu, M. *et al.* (2022) *Barrier identification, analysis and solutions of hydrogen energy storage application in multiple power scenarios based on improved DEMATAL-ism approach*, *International Journal of Hydrogen Energy*. Available at: https://www.sciencedirect.com/science/article/pii/S0360319922030233.
+
+- Wu, Y. and Zhong, L. (2023) *An integrated energy analysis framework for evaluating the application of hydrogen-based energy storage systems in achieving net zero energy buildings and cities in Canada*, *Energy Conversion and Management*. Available at: https://www.sciencedirect.com/science/article/abs/pii/S0196890423004120) 
+
+- Xu, X. *et al.* (2021) *Optimal Operational Strategy for a future electricity and hydrogen supply system in a residential area*, *International Journal of Hydrogen Energy*. Available at: https://www.sciencedirect.com/science/article/pii/S0360319921044748#sec4.
+
+# **Appendices**
+
+## **Appendix 1 - Decarbonized hydrogen country announcements**
+
+**Table ****1****: ****Identified decarbonized**** hydrogen country announcements**
+
+| **Jurisdiction** | **Key Documents** | **Type** | **Release Date** |
+| --- | --- | --- | --- |
+| Argentina | 2030 National Low-Emission Hydrogen Strategy | National Strategy | Jun-22 |
+| Australia | Australia’s National Hydrogen Strategy | National Strategy | Nov-19 |
+| Austria | Hydrogen Strategy for Austria | National Strategy | Jun-22 |
+| Belgium | Federal Hydrogen Vision and Strategy | National Strategy | Oct-21 |
+| Brazil | Hydrogen strategy in preparation |  |  |
+| Canada | Hydrogen Strategy for Canada | National Strategy | Dec-20 |
+| Chile | National Green Hydrogen Strategy | National Strategy | Nov-20 |
+| China | China Fuel Cell Subsidy Policy / Medium and Long-Term Planning for the Development of Hydrogen Energy Industry (2021-2035) | Policy Statement / Planning Document | September 2020 / March 2022 |
+| Colombia | National Roadmap for Colombia | National Roadmap (draft) | Aug-21 |
+| Croatia | Croatia Hydrogen Strategy | National Strategy | Mar-22 |
+| Czech Republic | National Hydrogen Strategy of the Czech Republic | National Strategy | Jul-21 |
+| Denmark | The Government’s Strategy for Power-to-X | National Strategy | Dec-21 |
+| European Union | REPowerEU | Supranational Strategy | Mar-22 |
+| Egypt | Hydrogen strategy in preparation |  |  |
+| Finland | National Hydrogen Roadmap for Finland | National Roadmap | Nov-20 |
+| France | National Strategy for the Development of Decarbonised and Renewable Hydrogen in France | National Strategy | Sep-20 |
+| Germany | The National Hydrogen Strategy | National Strategy | Jun-20 |
+| Greece | National Strategy for the Promotion of Technologies – Applications of Hydrogen and Renewable Gases | National Strategy | Nov-22 |
+| Hungary | National Hydrogen Strategy | National Strategy | May-21 |
+| India | Green Hydrogen Policy | Policy | Feb-22 |
+| Italy | National Hydrogen Strategy Preliminary Guidelines | Preliminary Guidelines | Nov-20 |
+| Japan | Basic Hydrogen Strategy / The Strategic Roadmap for Hydrogen and Fuel Cells | National Strategy / National Roadmap | December 2017 / March 2019 |
+| Luxembourg | Luxembourg Hydrogen Strategy | National Strategy | Sep-21 |
+| Morocco | National Hydrogen Development Strategy | National Strategy | Aug-21 |
+| Namibia | Green Hydrogen Strategy | National Strategy | Nov-22 |
+| Netherlands | Government Strategy on Hydrogen | National Strategy | Apr-20 |
+| New Zealand | A Vision for Hydrogen in New Zealand | Vision | Sep-19 |
+| Norway | The Norwegian Government’s Hydrogen Strategy | National Strategy | Jun-20 |
+| Oman | Net Zero Emissions in 2050 and Green Hydrogen Strategy | Policy Announcement | Oct-22 |
+| Paraguay | Towards the Green Hydrogen Roadmap in Paraguay | National Roadmap | Jun-21 |
+| Poland | Draft Polish Hydrogen Strategy until 2030 with an Outlook until 2040 | Draft National Strategy | Jan-21 |
+| Portugal | Portugal National Hydrogen Strategy | National Strategy | Jul-20 |
+| Republic of Korea (South Korea) | Hydrogen Economy Roadmap of Korea | National Roadmap | Jan-19 |
+| Russia | Roadmap for Development of Hydrogen Energy for 2020-2024 / Concept for the Development of Hydrogen Energy in Russia | National Roadmap / Policy Statement | October 2020 / August 2021 |
+| Saudi Arabia | Hydrogen strategy in preparation |  |  |
+| Singapore | Singapore’s National Hydrogen Study | National Strategy | Oct-22 |
+| Slovakia | National Hydrogen Strategy | National Strategy | Jun-21 |
+| South Africa | Hydrogen Society Roadmap for South Africa 2021 | National Roadmap | Feb-22 |
+| Spain | Hydrogen Roadmap – A Commitment to Renewable Energy | National Roadmap | Oct-20 |
+| Sweden | Proposal for a national strategy for fossil-free Hydrogen, electric fuels and ammonia – Swedish Energy Agency | National Strategy | Nov-21 |
+| Turkey | Hydrogen strategy in preparation |  |  |
+| Switzerland | Theses on the future importance of Hydrogen in Swiss energy supply | Discussion Paper | Sep-22 |
+| Ukraine | Draft Roadmap for Production and Use of Hydrogen in Ukraine | Draft Roadmap | Mar-21 |
+| United Arab Emirates | Hydrogen Leadership Roadmap | National Roadmap | Nov-21 |
+| United Kingdom | UK Hydrogen Strategy | National Hydrogen Strategy | Aug-21 |
+| United States | DOE National Clean Hydrogen Strategy and Roadmap | Strategy and Roadmap | Sep-22 |
+| Uruguay | Green Hydrogen Roadmap in Uruguay | Draft National Roadmap | Jun-22 |
+
+Source: Based on author’s results (Alsulaiman, 2023)
+
+## **Appendix 2 – Data types**
+
+**Table ****2****: Possible data types**
+
+| **Data Type** | **Data Source** |
+| --- | --- |
+| Historical Energy Consumption Data | National and regional energy statistical agencies, energy reports and publications from government agencies and research institutions. |
+| Population and Economic Data | National statistical offices, international organizations like the United Nations and the World Bank. |
+| Energy Prices | Energy regulatory authorities or ministries of energy, energy market reports and publications from research institutions. |
+| Technology Data | Government reports on technology adoption and energy policies, research papers and studies from academic institutions and industry associations. |
+| Policy Data | Official government websites and publications for energy and climate policies, reports from intergovernmental organizations like the IEA and the European Commission. |
+| Carbon Intensity | Emission factors from environmental agencies and research institutions, data from international databases like EDGAR. |
+| Energy Efficiency Data | Energy efficiency reports from government agencies and international organizations, research studies on energy-saving technologies and measures. |
+| Hydrogen Production and Distribution Data | Reports from hydrogen industry associations and research institutions, data from hydrogen pilot projects and demonstration sites. |
+| Environmental Data | Environmental agencies' reports and databases for emissions data, research studies on the environmental impacts of different energy sources. |
+
+Source: Based on the literature review
+
+## **Appendix 3 – ****LEAP’s ****a****dvantages and limitations**** **
+
+**Table ****3****: ****LEAP’s ****general a****dvantages and limitations**
+
+| **Advantages of LEAP:** | **Limitations of LEAP:** |
+| --- | --- |
+| Comprehensive Integration: LEAP integrates energy and non-energy sector emissions, providing a holistic view of hydrogen integration in buildings. | Simplification: LEAP's detailed approach can lead to complexity, requiring a deep understanding of its intricacies for accurate results. |
+| Detailed Sectoral Insight: LEAP offers detailed sectoral analysis, crucial for studying hydrogen's role in buildings. | Data Requirements: Precise outcomes in LEAP rely on accurate and comprehensive data inputs, which can be resource-intensive to gather and maintain. |
+| Scenario Customization: LEAP's flexibility allows precise scenario tailoring to study hydrogen integration under NZE conditions. | Limited Behaviour Representation: LEAP might not fully capture nuanced behaviours due to its optimization and linear relationship focus, possibly missing complex interactions and non-linear dynamics. |
+| Policy Evaluation: LEAP excels in policy analysis, aiding the assessment of hydrogen transition policies for NZE by 2050. | Sensitivity to Assumptions: Like any modelling tool, LEAP's outputs are sensitive to assumptions made during scenario creation. Careful consideration of these assumptions is essential. |
+| Emission Assessment: LEAP models energy-related and non-energy-related emissions, aligning with NZE goals. |  |
+| Comparative Strength: LEAP's approach complements the study's MEDEAS and TIMES comparison, providing diverse perspectives. |  |
+| Localized Precision: LEAP incorporates regional factors for EU and Switzerland, ensuring realism. |  |
+
+Source: Based on reviewed literature (Perissi et al., 2021; Heaps, 2009)
+
+## **Appendix 4**** – Nomenclature**
+
+**Table ****4****: Nomenclature**
+
+| **Symbol** | **Significance** | **Symbol** | **Significance** |
+| --- | --- | --- | --- |
+| fC | Total investment cost | H | Hydrogen |
+| Cinst | Installation cost of energy supply equipment | HP | Heat Pump |
+| Com | Operation & maintenance cost | ∆ | Stands for the time interval of (t) |
+| Cfuel | Cost for the consumed fuels | t | Time |
+| Cedpur | Cost for purchasing energy demand energy from the utility grid | d | Day |
+| Cedsal | Revenue from selling energy demand energy to the grid | ∝d,t,tech,k | Defined as the operating level k of the technology tech at (d) and (t) |
+| Csubs | Power generation subsidies for distributed energy systems | Otech,ked | Explained as the end demand (ed) output of (tech) at operating level (k) |
+| CCO2 | Income from selling carbon emission allowances | ηtech,ktech,es | Represents the efficiency of the (tech) for (ed) at (k) |
+| CRF | Capital Recovery Factor | p | The price |
+| r | Signifies the interest rate | Efuel | Emissions from energy produced and consumed within the same country and destined to the buildings sector |
+| m | Stands for the lifespan of each component | Eedpur | Associated emissions beyond the country’s borders (EU single market, or energy imports beyond that) |
+| τtech | Choice limit of particular technologies | ∅ | Optimization constraint |
+| ctechtechn,inst | Installation cost of the given technology | fnmin | Corresponds to the optimum values of fn when independently optimized |
+| ctechtechn, om | Pertains to the maintenance of the specific technology | ωn | The analogous weight coefficients, which reflect the preferences of the decision-makers. |
+| FF | Fossil Fuels | β | Technology optimization constraint |
+
+Source: Based on author’s definition
+
+## **Appendix 5**** – ****Possible calibration tools**
+
+**Table ****5****: ****P****ossible ****Analytical tools and techniques**** for the calibration process**
+
+| **Calibration Techniques** | **Description** |
+| --- | --- |
+| Sensitivity analysis | Sensitivity analysis is employed to gain insights into how variations in uncertain inputs correspond to outputs. This method can help pinpoint insignificant parameters that are overlooked during calibration, or aid in prioritizing future efforts, such as identifying crucial parameters for measurements or in-depth investigations. |
+| High-resolution data | High-resolution data employs information at hourly or sub-hourly intervals, as opposed to daily or monthly time frames. |
+| Audits | Research detailed audits conducted on current case-studies in the building systems or sub-systems. |
+| Uncertainty quantification | Assessing parameter's uncertainty through error analysis such as through the use of predicative density. |
+| Expert feedback | Incorporating expert judgment and knowledge into the optimisation or model assumptions. |
+| Parameter reduction | Parameter reduction entails decreasing the number of model parameters. Examples include day-typing, where detailed schedules are condensed into typical day-type schedules; and zone-typing, which groups similar regions and zones. |
+| Base-load modelling | Base-load modelling utilizes measured base-loads for calibrating building models. |
+
+Source: Adapted from literature (Chong et al., 2021; Vidoni, 2001)
+
+17
+
+iii
+
+[^1]: Throughout this proposal, the sector is aligned with the IEA definition, which is “the buildings sector is the sector which includes energy used for constructing, heating, cooling and lighting homes and businesses, as well as the appliances and equipment installed in them” (IEA, 2023).
+[^2]: Coop, Migros, Travego, Galiker Logistics, Camion Transport, Murpf AG and G. Leclerc Transport AG (KED, 2020).
+[^3]: Although it has faced setbacks, the project is still active. Moreover, Hyundai automotive has already provided 47 vehicles and has established a foothold in Switzerland with its first H2 specialized service center, the first in continental Europe (Kastner, 2022).
+[^4]: Justification on selection and a detailed description on LEAP is provided within sub-chapter 2.1
+[^5]: To be decided based on input data granularity and compute power.
+[^6]: Could be changed if energy saving compensation mechanisms are instated.

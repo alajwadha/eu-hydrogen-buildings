@@ -1,0 +1,6 @@
+source,twh_yr,kwh_m2_yr_avg,note
+"Bottom-up: EUBUCCO + TABULA direct (this model, all classes)",167.305,66.9,TABULA × HDD ratio × retrofit blend + DHW; non-res flat
+Bottom-up: residential only (excludes NON_RESIDENTIAL),167.305,66.9,Comparable to Hotmaps + EU BSO + Odyssee residential figures
+Hotmaps 2015 baseline (existing model),173.59,69.4,Residential baseline (see cfg.reconciliation_benchmarks.hotmaps)
+EU BSO 2022 weighted-avg implied total,269.887,107.8,BSO per-cohort intensities × ES stock weights × our residential area
+Odyssee-Mure 2022 ES residential (back-calculated),83.0,33.2,National total only; final-energy basis -- definitional gap vs Hotmaps useful demand.

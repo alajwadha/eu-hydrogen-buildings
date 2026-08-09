@@ -1,0 +1,16 @@
+axis,setting,note,count_CURRENT_POLICIES,bound_pct_CURRENT_POLICIES,count_STATED_POLICIES,bound_pct_STATED_POLICIES,count_NET_ZERO,bound_pct_NET_ZERO,count_H2_PUSH,bound_pct_H2_PUSH
+pi_s_building_peak,30 EUR/MWh-e,,0,0.0,1,0.2,8,7.8,15,9.2
+pi_s_building_peak,60 EUR/MWh-e,published,0,0.0,4,5.1,9,7.9,16,9.3
+pi_s_building_peak,120 EUR/MWh-e,,0,0.0,5,5.3,10,8.2,18,11.3
+cop_derate,0.50 floor 1.6,,0,0.0,5,5.3,10,8.2,18,11.3
+cop_derate,0.55 floor 1.7,,0,0.0,4,5.1,10,8.2,18,11.3
+cop_derate,0.60 floor 1.8,published,0,0.0,4,5.1,9,7.9,16,9.3
+cop_derate,0.70 floor 2.0,,0,0.0,1,0.2,7,7.6,13,8.7
+cop_derate,0.75 floor 2.2,,0,0.0,1,0.2,7,7.6,10,8.1
+h2_last_mile,not charged,earlier_draft,0,0.0,4,5.1,9,7.9,16,9.3
+h2_last_mile,charged,headline,0,0.0,2,0.6,7,7.5,14,9.0
+cavern_set,published,DE; DK; FR; NL; PL; RO; UK,,,,,,,7,
+cavern_set,plus Iberia,DE; DK; ES; FR; NL; PL; PT; RO; UK,,,,,,,9,
+cavern_set,minus France,DE; DK; NL; PL; RO; UK,,,,,,,6,
+dh_gas_basis,residential retail,earlier_draft,0,,5,,11,,20,
+dh_gas_basis,wholesale hub 30,headline,0,,0,,7,,7,

@@ -1,0 +1,23 @@
+# Croatia climate + retrofit-state national assumptions
+#
+# Legacy national-parameters file consumed by 03_heat_intensity.py
+# (load_national_params). The authoritative source is hr.yaml; this file
+# mirrors the values for documentation. All values are numeric.
+#
+# Croatia is a TABULA PROXY country: Slovenia TABULA, climate-corrected by the
+# HDD_HR/HDD_SI ratio. Sources: Eurostat nrg_chdd_a; Slovenian TABULA / ZRMK
+# (proxy); Croatian Long-Term Renovation Strategy. See hr.yaml and
+# literature/croatia/classification_methodology.md.
+#
+parameter,value,unit,source
+hdd_hr_2018_2022_avg,2197.99,degree-days/yr,Eurostat nrg_chdd_a (JRC AGRI4CAST)
+hdd_proxy_si_2018_2022_avg,2693.30,degree-days/yr,Eurostat nrg_chdd_a (Slovenia TABULA reference)
+climate_multiplier,0.8161,dimensionless,2197.99 / 2693.30 (HR/SI HDD ratio)
+retrofit_share_original,0.88,fraction,modelling assumption (Croatian LTRS; low renovation rate)
+retrofit_share_standard,0.10,fraction,modelling assumption
+retrofit_share_advanced,0.02,fraction,modelling assumption
+retrofit_factor_standard,0.65,multiplier,"Slovenian TABULA standard refurbishment (proxy, provisional)"
+retrofit_factor_advanced,0.40,multiplier,"Slovenian TABULA advanced refurbishment (proxy, provisional)"
+dhw_intensity_sfh,20.0,kWh/m2/yr,Slovenian TABULA proxy (provisional)
+dhw_intensity_mfh,18.0,kWh/m2/yr,Slovenian TABULA proxy (provisional)
+non_residential_intensity,130,kWh/m2/yr,estimate (Croatian non-residential space heating)

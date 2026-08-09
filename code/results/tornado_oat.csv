@@ -1,0 +1,4 @@
+axis,lowering_setting,lowering_delta_mtco2,raising_setting,raising_delta_mtco2,baseline_mtco2,year,scenario,span_mtco2
+Discount rate,low,-0.1,high,0.4,539.4,2030,STATED_POLICIES,0.5
+ETS2 carbon price,high price,-0.3,low price,0.1,539.4,2030,STATED_POLICIES,0.4
+Hydrogen price,rapid,-0.0,stranded,0.3,539.4,2030,STATED_POLICIES,0.3
