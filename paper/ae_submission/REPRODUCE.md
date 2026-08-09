@@ -10,8 +10,8 @@ Stated Policies, Net Zero, H2 Push), not the earlier three-scenario naming.
 ## Setup
 
 ```bash
-git clone https://github.com/alajwadha/eu-hydrogen-buildings.git
-cd eu-hydrogen-buildings
+git clone https://github.com/alajwadha/EU-Building-Heat-Model.git
+cd EU-Building-Heat-Model
 pip install -r requirements.txt          # Python 3.10+; installs scipy, SALib, pulp
 ```
 
