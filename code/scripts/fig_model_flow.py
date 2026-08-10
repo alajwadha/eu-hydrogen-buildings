@@ -102,7 +102,11 @@ def assert_fits(fig, ax, label):
 # Three inputs, named by what they are rather than by the file they arrive in.
 INPUTS = [
     ("Building stock", "footprints, archetypes,\ndwelling counts"),
-    ("Costs and performance", "capital, efficiencies,\nlifetimes, cost of capital"),
+    # "capital ... cost of capital" read as the same input twice and left out the operating
+    # cost entirely, though every technology carries a fixed and a variable term
+    # (fom_eur_kw_yr, vom_eur_mwh in Economics.py). O&M takes the second slot and the
+    # discount rate is named as such, which is the same quantity without the repetition.
+    ("Costs and performance", "capital, O&M, efficiencies,\nlifetimes, discount rate"),
     ("Power and geology", "2050 capacity, renewables,\nsalt caverns"),
 ]
 
