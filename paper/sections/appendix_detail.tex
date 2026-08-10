@@ -376,14 +376,15 @@ fleet sized to the aggregate residual peak), the \emph{depth} of the synthetic c
 \emph{length} of that cold-and-still event (swept from two days to ten). The resulting
 ranges are reported with the result.
 
-The third was added last and is the largest of the three. The event length was a
+The third is the largest of the three. The event length is a
 hard-coded six days, and both the heat spike and the wind lull run on the same window in
-every country at once, so nothing in the earlier sweeps varied it. Sweeping it moves the
+every country at once, so the other two sweeps leave it fixed. Sweeping it moves the
 fleet sized on the inflexible load from 253.7~GW at two days to 302.0~GW at ten, against 277.7 at the
 central six, which is a wider band than either of the other two produces. It also
-retires an explanation this paper previously offered. The modest reduction a partially
-flexible heat-pump load delivers was attributed to the event being multi-day, on the
-argument that intra-day pre-heating cannot move load out of a six-day window. That is a restatement of the assumption, and the sweep refutes it; the
+disposes of a natural explanation for the modest reduction a partially
+flexible heat-pump load delivers. That reduction might be attributed to the event being
+multi-day, on the
+argument that intra-day pre-heating cannot move load out of a six-day window. That argument restates the assumption, and the sweep refutes it; the
 reduction is nearly invariant across the range, at 8.9 to 11.6~per~cent, because what binds is the share of load that can shift, and the length of the event does not. A fourth
 assumption, that the heat-pump load is completely inflexible, is bounded separately at
 4.3 to 10.7~per~cent of the fleet across three energy-conserving smoothing operators.
@@ -609,8 +610,7 @@ hydrogen's delivery cost across four per-country treatments, each annualised ove
 consumes per year (climate-scaled around an EU average of approximately 13~MWh):
 \begin{enumerate}
     \item \textbf{Free gas-grid reuse (lower bound).} Hydrogen inherits the
-    existing distribution grid at no incremental cost. This is the assumption
-    earlier drafts carried in the headline comparison.
+    existing distribution grid at no incremental cost. This is the free-reuse assumption.
     \item \textbf{Retrofit conversion.} The whole existing gas grid is
     \emph{converted} to 100 per cent hydrogen. This is still optimistic, since it
     assumes a usable grid already reaches every home and needs only conversion.
@@ -851,7 +851,7 @@ district-heating merit order, where hydrogen ranks last
 \label{sec:results:switzerland}
 
 To address RQ2 we integrate Switzerland into the analysis \emph{endogenously}, closing
-the three couplings that an earlier one-directional exogenous check left open. First,
+the three couplings that a one-directional exogenous check leaves open. First,
 the Swiss delivered-hydrogen cost is made consistent with the EU supply side. It is the
 bottom-up EU supply cost plus a pipeline-transport adder for the import distance (a
 representative 600~km from the major European hydrogen producers), never read from a
@@ -910,8 +910,8 @@ hydrogen-boiler LCOH in Switzerland falls from \euro{}298.3/MWh in 2025 to
 cheaper (Figure~\ref{fig:fig14}). Switzerland has no domestic salt caverns, so a
 Swiss hydrogen heating load is held across the season at about \euro{}3.0/kg rather
 than the \euro{}1.5/kg the cavern markets pay, and that charge is what holds the
-ordering. An earlier draft reported the opposite, with hydrogen crossing below the
-Swiss heat-pump band under the central supply trajectory. That reversal was an
+ordering. The opposite ordering, with hydrogen crossing below the
+Swiss heat-pump band under the central supply trajectory, is an
 artefact of omitting seasonal storage from the base-load comparison while charging
 it in the peak and dispatch tests, so that the same molecule was priced two
 different ways, and it does not survive the correction.
@@ -1003,7 +1003,7 @@ heat pumps up to their feasibility ceiling and then to district heat, and the mi
 renormalised. The cap is one-directional, so cost can push hydrogen below its drawn target
 but never above it. It exists because hydrogen enters this model as an exogenous adoption setting for a
 peaking share rather than a base-load winner, and without it the softmax and the fossil-ban
-reallocation inflate hydrogen well past its design value: an earlier build realised about
+reallocation inflate hydrogen well past its design value. Uncapped, the softmax realises about
 13~per cent under Stated Policies against a 5~per cent setting. The statement that hydrogen
 reaches at most about 8.5~per cent of useful heat in any scenario we run is therefore a
 property of this cap and not an independent result of the cost mechanism.
@@ -1176,9 +1176,8 @@ CAPEX and efficiency values are anchored to the Danish Energy Agency
 Technology Catalogue installed-cost figures \citep{DEA2023technology},
 cross-checked against the JRC Technology Data repository
 \citep{JRC2023technology,JRC2023smallheating}, the IEA \emph{Future of Heat
-Pumps} \citep{IEA2022heatpumps} and IRENA \citep{IRENA2022heatpumpcosts}; the
-provisional first-pass values were revised down to these DEA-anchored figures
-in a source audit (Appendix~\ref{sec:costopt}). The Danish Energy Agency
+Pumps} \citep{IEA2022heatpumps} and IRENA \citep{IRENA2022heatpumpcosts}, through the
+source audit set out in Appendix~\ref{sec:costopt}. The Danish Energy Agency
 catalogue is the primary anchor for every technology because it reports installed (turnkey) costs in place of equipment-only costs on a consistent basis; the
 other sources are used as cross-checks and to set the heat-pump and hydrogen
 values where the catalogue is less granular. The two tabulated years are the
@@ -1325,16 +1324,16 @@ year-specific boiler efficiency, 0.92 at 2050, where the dispatch tests divide b
 difference, and not the delivered price of the molecule, that separates the countries
 in which hydrogen holds base load from those in which it does not.
 
-Earlier drafts charged this term in the building-peak and power-dispatch tests but not
-in the base-load levelised cost, so the same molecule was priced two different ways and
-the base-load comparison omitted a cost the dispatch comparison imposed. Charging it on
-both is the correction, and the choice of fraction is deliberately conservative towards
+An asymmetric accounting charges this term in the building-peak and power-dispatch tests
+but not in the base-load levelised cost, so the same molecule is priced two different ways
+and the base-load comparison omits a cost the dispatch comparison imposes. We charge it on
+both, and the choice of fraction is deliberately conservative towards
 hydrogen in two respects. It credits hydrogen with meeting the whole non-seasonal half
 of its load from contemporaneous production, which no real supply chain would achieve
 exactly, and it ignores the within-winter swing, which also has to be stored somewhere.
 A fuller accounting would only charge more. The sensitivity is correspondingly
 one-sided, and because the count is close to linear in the charged fraction we sweep it
-continuously. Charging nothing, as earlier drafts did, leaves the best heat pump cheaper
+continuously. Charging nothing leaves the best heat pump cheaper
 in 12 of 29 countries at a median gap of $-$\euro{}5.1/MWh.
 
 A quarter of the load-derived fraction gives 15 countries at \euro{}0.0/MWh, half gives
@@ -1375,9 +1374,9 @@ hydrogen adder, so the two carriers are annualised on identical terms. Across th
 band the adder is worth \euro{}1.1 to 38.2/MWh, and it is highest in peaky, mild-climate
 systems where a small annual heat demand is delivered through a short, sharp
 season. Like the hydrogen adder it is \emph{on by default} at the central bound.
-Charging each carrier its own last-mile network removes the asymmetry earlier
-drafts carried, in which hydrogen paid for its pipes only inside a dedicated
-scenario while electric heating never paid for its wires. It also introduces a
+Charging each carrier its own last-mile network removes an asymmetry, in which
+hydrogen would pay for its pipes only inside a dedicated scenario while electric
+heating never paid for its wires. It also introduces a
 residual risk, that retail electricity tariffs already recover part of today's
 network cost so that the incremental charge may double-count, which is stated in
 Appendix~\ref{sec:limitations}.
@@ -1498,7 +1497,6 @@ construct. Under it heat pumps are cheaper than hydrogen in 10 of 29 countries a
 cheaper than gas in 21 of 29, and the mean heat-pump-to-hydrogen headroom is
 $-$\euro{}6.2/MWh, meaning that hydrogen leads on average by that margin
 (Appendix~\ref{sec:sensitivity}). Restoring hydrogen's own network charge, so that
-both carriers pay, returns the count to 22 of 29. This is a materially weaker robustness statement
-than earlier drafts carried, and it is stated as such. The base-load ranking does
-depend on how the two last-mile networks are charged.
+both carriers pay, returns the count to 22 of 29. The base-load ranking therefore depends on how the two last-mile networks are charged,
+and the robustness statement is weaker for it.
 

@@ -85,9 +85,7 @@ cost-responsive term whose weight ramps linearly from zero in 2025 to 0.50 by 20
 allocation responds to cost at all. A price axis moved alone at that date therefore
 reaches very little of the mix, and the 2030 spread across the four scenarios, from 512
 to 548~MtCO$_2$, is set by their share and demand levers rather than by the prices those
-levers are paired with. An earlier version of this table reported bounds of about
-$\pm 5$~MtCO$_2$ on each axis; those figures were never produced by a committed run and
-do not reproduce. The ordering the screen returns, with the discount rate widest and
+levers are paired with. The ordering the screen returns, with the discount rate widest and
 hydrogen price narrowest, is itself informative. At 2030 the levelised comparison is
 more sensitive to the cost of capital on equipment than to either fuel price, because
 the capital charge is annualised over the whole equipment life while a fuel price moves
@@ -289,9 +287,7 @@ warming scales demand without altering relative levelised costs.
 
 The headline hydrogen prices apply a per-country multiplier to a single
 north-west-European hub trajectory, which falls from \euro{}200/MWh in 2025 to
-\euro{}50/MWh in 2050. This multiplier was originally a crude $\pm$10~per~cent
-heuristic, under which a landlocked or import-dependent country was simply assumed
-dearer, and it was the least-grounded parameter in the cost layer. It is replaced by
+\euro{}50/MWh in 2050. The multiplier comes from
 the bottom-up delivered-cost model of Appendix~\ref{sec:method:h2}, which costs out
 five supply routes for each country and takes the cheapest, and normalises the result
 so that the median country pays the hub price. This subsection reports what that model
@@ -355,14 +351,14 @@ will be the one delivered to households.
 \subsection{Electricity Distribution Reinforcement and the Scarcity Premium}
 \label{sec:sensitivity:reinforce}
 
-Two network-side assumptions deserve explicit stress tests. First, earlier drafts
-charged hydrogen for its distribution network only inside a dedicated
-infrastructure scenario and never charged heat pumps for the low- and
+Two network-side assumptions deserve explicit stress tests. First, an accounting that
+charges hydrogen for its distribution network only inside a dedicated
+infrastructure scenario and never charges heat pumps for the low- and
 medium-voltage grid \emph{reinforcement} that their added coincident winter peak
 requires. That asymmetry has been removed. Both adders are now active by default in
 every levelised cost this paper reports, so each carrier pays for its own last mile
-(Appendix~\ref{sec:method:h2}). The reinforcement adder is no longer opt-in, and it
-is no longer optional; it is part of the headline number. The added
+(Appendix~\ref{sec:method:h2}). The reinforcement adder is
+not opt-in; it is part of the headline number. The added
 electric peak per dwelling, computed as annual heat over climate-scaled full-load
 hours, divided by the cold-snap coefficient of performance, with a coincidence
 factor of 0.5, is charged at \euro{}400, 800 and 1{,}600 per kW (low, central and

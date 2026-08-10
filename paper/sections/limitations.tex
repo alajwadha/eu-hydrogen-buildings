@@ -22,8 +22,7 @@ unit-commitment dispatch (Appendix~\ref{sec:method:merit} and
 Appendix~\ref{sec:results:dispatch}), a myopic rolling-horizon robustness test
 (Appendix~\ref{sec:costopt}), and an endogenous Swiss integration with EU-price feedback
 (the dedicated subsection below). All three strengthen the verdict they bear on, and the
-Swiss case, which an earlier draft reported as a base-load reversal, does so once the
-seasonal store is charged on the base-load comparison as well as on the peak. The
+Swiss case does so once the seasonal store is charged on the base-load comparison as well as on the peak. The
 residual sensitivities those upgrades introduce are documented below. The
 dispatch layer now preserves system adequacy through an explicit operating-reserve
 constraint, with a modelled loss of load of about 2~h/yr on average and at most the
@@ -76,7 +75,7 @@ Eurostat residential retail tariff, which carries network charges and taxes insi
 The asymmetry runs in hydrogen's favour and it is not small. Charging hydrogen the
 model's own adder in that arena takes the four counts from 0, 4, 9 and 16 of 29 to 0, 2,
 7 and 14, and the demand-weighted derived ceiling under Stated Policies from 5.1 to
-0.6~per cent. The symmetric pair is what we now report, because a comparison that charges
+0.6~per cent. The symmetric pair is what we report, because a comparison that charges
 one carrier a network the other avoids is not a comparison, and the asymmetric counts are
 kept beside it so a reader can see what the choice is worth. With the scarcity-premium bracket, this is the second of two independent reasons
 the Stated Policies ceiling is a range and not a point.
@@ -125,8 +124,7 @@ network asymmetry remaining in the cost layer.
 
 \subsection{Fiscal Asymmetry Between the Carriers Compared}
 The most important remaining asymmetry in the levelised-cost comparison is that its
-two sides are not taxed alike. It no longer decides the base-load result, since the
-heat pump now leads in 22 of 29 countries, but it sets how large that lead is and it
+two sides are not taxed alike. It does not decide the base-load result, since the heat pump leads in 22 of 29 countries, but it sets how large that lead is and it
 is what keeps the seven remaining markets on hydrogen's side. Electric heating is priced at the \emph{retail}
 tariff a European household actually pays, an EU median of about \euro{}209/MWh at 2050, which embeds energy taxes, value-added tax, renewables and
 social levies and the existing network charge. Hydrogen is priced
@@ -222,8 +220,7 @@ run is a linear program, but it optimises only the \emph{supply} mix
 at a demand path fixed to the Stated Policies LMDI trajectory; it does not
 co-optimise renovation depth. It should therefore be read as the cheapest way to serve a given demand, and not as a joint demand-and-supply optimum.
 
-The two frameworks still supply a cross-check, but a narrower one than earlier drafts
-claimed. Hydrogen remains negligible in both, at a scenario-set share in the simulations
+The two frameworks still supply a cross-check, and a narrow one. Hydrogen remains negligible in both, at a scenario-set share in the simulations
 and at 0.34~per cent of useful heat in the independently solved cost-optimal program, so
 the conclusion that hydrogen does not become a major residential carrier does not depend
 on which framework sets demand. Two qualifications now attach to that agreement. First,
@@ -248,8 +245,8 @@ emissions lie outside the cap, and the grid carbon intensity is exogenous and ne
 by 2050. A scope-1 cap systematically favours heat pumps and electric heating, which
 shift emissions to the grid, over hydrogen, which internalises them on site; a $-100\%$
 target therefore means net-zero on-site combustion, satisfied largely mechanically by
-removing fossil boilers, short of economy-wide net-zero for the heat supplied. The
-boundary matters less to the mix than it once appeared to, but it is no longer costless.
+removing fossil boilers, short of economy-wide net-zero for the heat supplied. The boundary matters less to the mix than to the cost comparison, but it is
+not costless.
 The cap is slack in most countries, because with ETS2 embedded in the levelised costs
 the least-cost mix already satisfies it, and the cost of even the deepest cap is
 0.05~per cent of present-value system cost. It is not slack everywhere. It binds in 4 of the 29 countries in 2050 and in seven at some point on the path, at an implied carbon
@@ -257,9 +254,8 @@ price of up to \euro{}81/tCO$_2$ (Appendix~\ref{sec:costopt}).
 
 Where the cap binds, the scope-1 boundary is doing real work, since a scope-2-inclusive
 accounting would charge the electric technologies for their grid emissions and change
-which countries bind and by how much. We therefore no longer claim the boundary is
-immaterial. The headline verdict does not rest on it, but the reason has changed. It
-rests on the missing-money problem, which is a capital-recovery result independent of
+which countries bind and by how much. We therefore do
+not claim the boundary is immaterial. The headline verdict does not rest on it. It rests on the missing-money problem, which is a capital-recovery result independent of
 any emissions accounting, and on the cost of holding a winter-weighted hydrogen load in
 seasonal store, which is a physical result equally independent of it. The levelised-cost
 difference now runs the same way in 22 of 29 countries, but it is not invoked here as an
@@ -284,11 +280,11 @@ the reported EU band is itself conditional on this knob.
 
 The knob does not, however, touch the technology ranking. Rankings are set by levelised
 cost within each country, which the EU aggregate does not set, so $\rho$ enters the width of the demand band alone. It leaves the relative ordering untouched, and the central scenario trajectories and medians are invariant across the full range from $\rho=0$ to $\rho=1$
-(Appendix~\ref{sec:sensitivity:rho}). What has changed is what that invariance buys.
-Earlier drafts read it as confirming a hydrogen cost disadvantage that held country by
-country. The disadvantage holds in 22 of the 29 countries, so the correct statement is
-the weaker one that $\rho$ leaves each country's own cost comparison, whichever way it
-falls, exactly where it was.
+(Appendix~\ref{sec:sensitivity:rho}). That invariance buys less than it appears to.
+It does not confirm a hydrogen cost disadvantage holding country by
+country, since the disadvantage holds in 22 of the 29 countries. What it establishes is
+the weaker statement that $\rho$ leaves each country's own cost comparison, whichever way
+it falls, exactly where it was.
 
 \subsection{Scenario Rates Scale Proportionally, Without Converging on a Common Target}
 The Net Zero and H2 Push scenarios scale each country's envelope-renovation rate by a
@@ -351,19 +347,18 @@ statistic. The levelised-cost and hydrogen-versus-heat-pump gap results, being
 expressed per MWh, are invariant to this basis.
 
 \subsection{Endogenous Switzerland}
-Earlier drafts treated Switzerland through a one-directional exogenous sensitivity
+Switzerland could be treated through a one-directional exogenous sensitivity
 on the OIES hydrogen import-price trajectory \citep{OIES2024hydrogenimportsET32,
 Alsulaiman2023ET24}, with the Swiss heating market taking EU prices but not affecting
-them. That one-way coupling has been replaced by an \emph{endogenous} integration,
+them. We use an \emph{endogenous} integration in place of that one-way coupling,
 reported in full in the RQ2 results (Appendix~\ref{sec:results:switzerland}). The net
 effect of the feedback itself is small, about \euro{}1 to 3/MWh on the levelised cost of
 heat, and it moves against hydrogen. It leaves the direction of the Swiss base-load
 verdict unchanged, the best Swiss heat pump ending \euro{}5.6/MWh below the hydrogen
-boiler on the uncoupled arm and \euro{}9.6/MWh below it on the endogenous one. An
-earlier draft reported a Swiss base-load reversal in hydrogen's
-favour; that was an artefact of omitting the seasonal store from the base-load
-comparison while charging it in the peak and dispatch tests, and it does not survive the
-correction.
+boiler on the uncoupled arm and \euro{}9.6/MWh below it on the endogenous one. A Swiss base-load reversal in hydrogen's
+favour is an artefact of omitting the seasonal store from the base-load
+comparison while charging it in the peak and dispatch tests, and it does not survive
+charging the store consistently.
 
 The margin is nonetheless narrow relative to the \euro{}1 to 3/MWh the feedback moves,
 so the Swiss base-load result should be read as the weaker of the two Swiss arguments,
@@ -451,8 +446,7 @@ hours; the missing-money conclusion is insensitive to these, since even doubling
 full-load hours leaves every observed inframarginal rent below the capital-recovery
 threshold. The verdict here is accordingly an economic one.
 
-The derate does, however, move the building-peak count, and it had not been swept until
-now. $\mathrm{COP}^{\mathrm{cold}}=\max(f\,\mathrm{SCOP},\text{floor})$ is published at
+The derate does, however, move the building-peak count, and we sweep it here. $\mathrm{COP}^{\mathrm{cold}}=\max(f\,\mathrm{SCOP},\text{floor})$ is published at
 $f=0.60$ with a 1.8 floor, giving a study-area median of 2.04, and the low-temperature
 field evidence supports roughly 0.5 to 0.75. Sweeping it, the four counts run 0, 5, 10
 and 18 of 29 at $f=0.50$; 0, 4, 10 and 18 at 0.55; 0, 4, 9 and 16 at the published 0.60;
@@ -505,14 +499,11 @@ dominates it in any case.
 
 \subsection{Electricity Network Costs and the Risk of Double-Counting Them}
 The incremental low- and medium-voltage reinforcement that mass heat-pump
-electrification requires is now charged in the headline levelised cost of heat, for
+electrification requires is charged in the headline levelised cost of heat, for
 every electric heating technology and in every result this paper reports, at the central
 bound of a \euro{}400 to 1{,}600 per added kW band with a coincidence factor of 0.5 and
 a 40-year annualisation (Appendix~\ref{sec:method:h2}). The hydrogen boiler is charged
-its own last-mile network on symmetric terms. What was previously an omission, and was
-defended as conservative towards the heat pump, is therefore no longer an omission, and
-the defence that went with it, that the headline conclusion survived the omission with
-about \euro{}19/MWh of headroom, does not survive the correction.
+its own last-mile network on symmetric terms.
 
 Charging the heat pump the \emph{high} reinforcement bound while charging hydrogen
 nothing at all for its network leaves heat pumps cheaper than hydrogen in 10 of 29

@@ -748,12 +748,15 @@ def build_checks():
         ("building-peak winners under Stated Policies, symmetric basis", arena_win_sp,
          [rf"under Stated Policies \((?!{arena_win_sp}\))[A-Z, and]+\)"],
          LONG, {"working paper": rf"under Stated Policies \({arena_win_sp}\)"}),
-        ("demand-weighted arena ceiling, earlier draft's basis", arena_bound_open,
-         [rf"earlier draft's accounting gives (?!{_opn_lo} and {_opn_hi}\b)[\d., and]+\.",
-          rf"against (?!{_opn_lo} and {_opn_hi}\b)[\d., and]+on the earlier draft's basis"],
+        # Named for what the accounting is rather than for which draft used it. The
+        # manuscripts no longer refer to earlier versions of themselves, so a pattern
+        # keyed on "earlier draft" would silently match nothing and assert nothing.
+        ("demand-weighted arena ceiling, asymmetric basis", arena_bound_open,
+         [rf"asymmetric accounting gives (?!{_opn_lo} and {_opn_hi}\b)[\d., and]+\.",
+          rf"against (?!{_opn_lo} and {_opn_hi}\b)[\d., and]+on the asymmetric basis"],
          SUBMISSION + LONG,
-         {"AE submission": rf"earlier draft's accounting gives {_opn_lo} and {_opn_hi}",
-          "working paper": rf"against {_opn_lo} and {_opn_hi} on the earlier draft's basis"}),
+         {"AE submission": rf"asymmetric accounting gives {_opn_lo} and {_opn_hi}",
+          "working paper": rf"against {_opn_lo} and {_opn_hi} on the asymmetric basis"}),
         # Both manuscripts phrase the H2 Push count identically, so one pattern covers it.
         ("MC median convergence, H2 Push draws", mc_med.split(", ")[3],
          [rf"only after (?!{mc_med.split(', ')[3]}\b)\d+ under H2"], SUBMISSION + LONG,

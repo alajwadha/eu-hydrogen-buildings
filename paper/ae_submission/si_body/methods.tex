@@ -22,8 +22,8 @@ settled.
 The thermodynamic ranking is not in question. A heat pump delivers several units of
 heat per unit of electricity and a boiler delivers less than one unit of heat per unit
 of fuel, and nothing here disturbs that. The cost ranking is another matter. When
-equipment capital is annualised over the heat a machine delivers, with no second
-division by its efficiency, when each carrier is charged the last-mile network its
+equipment capital is sized to peak heat demand and annualised over the heat that
+capacity delivers, when each carrier is charged the last-mile network its
 own delivery requires, and when hydrogen is charged the seasonal store its
 winter-weighted load requires (Section~\ref{sec:method:cost}), the 2050 base-load
 levelised cost of a hydrogen boiler falls below that of the best available heat pump in
@@ -415,8 +415,8 @@ Electric heating carries the matching charge, a low- and medium-voltage reinforc
 adder for the winter heat-pump peak, which prices the local distribution capacity that a
 concentrated electrified heat load requires; across its own bound it adds \euro{}1.1 to
 38.2/MWh to the heat-pump LCOH. Both adders are on in the baseline, and switching both
-off recovers the free-infrastructure case reported in earlier versions of this analysis,
-in which neither carrier paid for its own last mile. These two adders, together with the
+off recovers the free-infrastructure case, in which neither carrier pays for its own
+last mile. These two adders, together with the
 capital-annualisation convention of Eq.~\eqref{eq:lcoh} and the seasonal-storage charge
 below, set the headline base-load result, which is why we document them as baseline
 assumptions here and sweep them in the extended results.
@@ -589,13 +589,12 @@ own that we do not price here. The consequence of the charge is set out with the
 extended results (Section~\ref{sec:results:robustness}), where the charged fraction is
 swept continuously.
 
-Charging nothing, as earlier versions of this analysis did, leaves the best heat pump
-cheapest in 12 of the 29 markets; charging half the load-derived shift fraction gives
+Charging nothing leaves the best heat pump cheapest in 12 of the 29 markets; charging half the load-derived shift fraction gives
 19; charging the fraction itself, which is the basis adopted here, gives 22; and
 charging the full seasonal adder used at the peak, about four times the load-derived
-fraction, gives all 29. Earlier versions charged the adder in full in the peak and
-dispatch tests while charging none of it in the base-load test, so the same molecule was
-priced two ways and the arenas appeared to disagree for an accounting reason. Charging
+fraction, gives all 29. An asymmetric accounting, charging the adder in full in the peak
+and dispatch tests while charging none of it in the base-load test, prices the same
+molecule two ways and makes the arenas disagree for an accounting reason. Charging
 it consistently is what makes the base-load and peaking verdicts turn on the same
 physical quantity.
 
@@ -698,7 +697,7 @@ above it.
 It exists because hydrogen enters this model as an exogenous adoption setting for a peaking
 producer rather
 than a base-load winner, and without it the softmax and the fossil-ban reallocation inflate
-hydrogen well past its design value; an earlier build of this model realised about
+hydrogen well past its design value; uncapped, the softmax realises about
 13~per~cent under Stated~Policies against a 5~per~cent setting. The consequence for reading
 the results is that hydrogen's realised share is bounded above by construction, so the
 recurring statement that hydrogen reaches at most about 8.5~per~cent of useful heat in any
@@ -1109,7 +1108,7 @@ perfect-foresight optimum, so neither the near-zero hydrogen share nor the retro
 arm's 2050 zero is a foresight artefact.
 
 Third, an \emph{endogenous Switzerland} treatment closes three
-couplings that an earlier, one-directional check had left open. The Swiss delivered-hydrogen
+couplings that a one-directional exogenous check leaves open. The Swiss delivered-hydrogen
 cost is made EU-supply-consistent with a 600~km pipeline adder. A fixed-point feedback
 then couples incremental Swiss heat-pump load to the EU winter electricity price,
 converging to a tolerance of \euro{}0.01/MWh, with the winter price moving once from
