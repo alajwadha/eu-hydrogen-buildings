@@ -194,7 +194,11 @@ def check_numbers() -> None:
          tail[0].strip() if r.returncode and tail else "")
 
 
-BODY_WORD_CAP = 7400          # the author's own cap, tighter than the journal's ~8,000
+BODY_WORD_CAP = 7700          # the author's own cap, tighter than the journal's ~8,000.
+                              # Raised from 7,400 to pay for the corpus habits the AE
+                              # style review found missing: narrating Table 1 rather than
+                              # pointing at it, justifying modelling choices in the
+                              # sentence that makes them, and naming prior work.
 GA_MIN_W, GA_MIN_H = 1328, 531   # Elsevier's graphical-abstract floor, aspect near 2.5:1
 
 

@@ -43,18 +43,19 @@ steep within-border gradient a country-resolution model averages away.
 \begin{figure}[tbp]
  \centering
  \includegraphics[width=\textwidth]{P01_nuts3_map}
- \caption{\textbf{Useful residential heat demand
- by NUTS3 region, 2025.} From the bottom-up build. The regional resolution sets the demand surface and the demand weights carried through the study (Section~\ref{sec:method}). The colour scale is logarithmic over 0.3 to 12~TWh/yr, close to the 2nd and 98th percentiles of the mapped values, and the colourbar arrowheads mark the regions outside that range.}
+ \caption{\textbf{Useful residential heat demand by NUTS3 region, 2025.} From the bottom-up build.}
  \label{fig:nuts3map}
+ \par\vspace{3pt}{\footnotesize\raggedright
+ \textit{Note:} the colour scale is logarithmic over 0.3 to 12~TWh/yr, close to the 2nd
+ and 98th percentiles of the mapped values, and the colourbar arrowheads mark the regions
+ outside that range.\par}
 \end{figure}
 
 Each of the eight technologies, comprising gas, oil and biomass boilers, a resistance
 heater, air-source and ground-source heat pumps, district heat and a hydrogen boiler, is
 priced on a levelised cost of heat that annualises capital at the country
 weighted-average cost of capital and adds fuel, fixed and variable operating costs, in
-real EUR$_{2024}$ throughout (Supplementary Section~S1.3). Equipment capital is sized to
-peak heat demand and annualised over the heat that capacity delivers, the accounting
-choice that moves the base-load count furthest. Techno-economic parameters are anchored to the Danish Energy Agency Technology Catalogue
+real EUR$_{2024}$ throughout (Supplementary Section~S1.3). Equipment capital is sized to peak heat demand and annualised over the heat that capacity delivers, on the reasoning that a household buys a boiler for its coldest day rather than its average one, so efficiency changes the fuel bill and not the purchase price. Annualising over rated capacity instead would divide that charge a second time by each technology's own efficiency, which is why this is the accounting choice that moves the base-load count furthest. Techno-economic parameters are anchored to the Danish Energy Agency Technology Catalogue
 \citep{DEA2023technology} and cross-checked against JRC, IEA and IRENA cost data
 \citep{JRC2023technology,IEA2022heatpumps,IRENA2022heatpumpcosts}. Fossil fuels carry the second emissions trading system for buildings and road transport
 (ETS2) from its 2027 launch \citep{EuropeanCommission2024ETS2}, green hydrogen follows
@@ -70,15 +71,13 @@ country-by-year intensities that each scenario's grid lever scales
 trajectories rather than published projections, so the emissions levels inherit that
 calibration whereas the scenario ranking does not (Supplementary Section~S1.4).
 Furthermore, two last-mile network charges apply by default, one to each carrier, so that
-neither is priced as though its delivery were free. The hydrogen boiler carries a
-coverage-weighted blend of conversion and new build, a median \euro{}13.4/MWh, and the
-heat pump a low- and medium-voltage reinforcement adder, a median \euro{}4.9/MWh.
+neither is priced as though its delivery were free. The hydrogen boiler carries a coverage-weighted blend of conversion and new build at a median \euro{}13.4/MWh, and the heat pump a low- and medium-voltage reinforcement adder at a median \euro{}4.9/MWh, leaving the hydrogen route roughly 2.7 times the delivery charge of the electric one before any fuel cost enters.
 
 Levelised cost compares technologies as base-load suppliers, an arena the review literature
 treats as settled in the heat pump's favour
 \citep{Rosenow2022PipeDream,Rosenow2024MetaReview,Billerbeck2023Race}. Hydrogen's narrower
 case is as a peaker serving the cold-snap slice, modelled as a merit-order dispatch among
-quick-start options whose short-run marginal costs per MWh of useful heat are
+quick-start options whose SRMCs per MWh of useful heat are
 
 \begin{equation}
 \label{eq:srmc}
@@ -93,13 +92,11 @@ quick-start options whose short-run marginal costs per MWh of useful heat are
 \end{equation}
 
 \noindent where $\varphi_{y}$ is the carbon price, $\eta$ the conversion efficiencies
-and $\sigma_{c}$ the seasonal-storage adder, about \euro{}50/MWh-heat with domestic salt
-caverns and \euro{}100 without. Cold-snap heat-pump performance is derated from the
-seasonal figure, $\mathrm{COP}^{\mathrm{cold}}_{c}=\max(0.60\,\mathrm{SCOP}_{c},1.8)$
+and $\sigma_{c}$ the seasonal-storage adder, about \euro{}50/MWh-heat with domestic salt caverns and \euro{}100 without, the two ends spanning the cavern and above-ground rates reported in the bulk-storage literature \citep{Lord2014GeologicStorage,Papadias2021BulkStorage} and applied at the higher rate to the markets with no salt resource \citep{Caglayan2020caverns}. Cold-snap heat-pump COP is derated from the seasonal figure, $\mathrm{COP}^{\mathrm{cold}}_{c}=\max(0.60\,\mathrm{SCOP}_{c},1.8)$
 following the low-temperature field measurements \citep{Gibb2023Coming}, which gives 1.80 to 2.84 across the 29
 markets at a median of 2.04 in 2050. The scarcity electricity price
 $\pi^{\mathrm{peak}}_{c}$ that prices the heat-pump branch is taken from the power
-sector's own merit order, set by the marginal winter unit. A country counts as a hydrogen win where its hydrogen-ready turbine undercuts the gas turbine on short-run marginal cost, both machines held at the same efficiency.
+sector's own merit order, set by the marginal winter unit. A country counts as a hydrogen win where its hydrogen-ready turbine undercuts the gas turbine on SRMC, both machines held at the same efficiency.
 Winning the dispatch is necessary but not sufficient, because an investor must recover the
 peaker's capital from the few hundred hours a year it runs
 (Eq.~\eqref{eq:recovery}). The question therefore shifts from an energy share to one of
@@ -112,9 +109,7 @@ decarbonisation to 2050. \textbf{Current~Policies} freezes today's implemented m
 Commission long-term strategy \citep{EuropeanCommission2018LTS}; \textbf{Net~Zero}
 matches the IEA Net~Zero scenario \citep{IEA2023NZE}; and \textbf{H2 Push} is a
 deliberately hydrogen-favourable world along the lines of REPowerEU
-\citep{REpowerEU2022}. Each sets six levers (Table~\ref{tab:levers_body}), the hydrogen
-adoption setting among them. That setting is exogenous; the dispatch screen tests it
-rather than sets it.
+\citep{REpowerEU2022}. Table~\ref{tab:levers_body} summarises the six exogenous levers each scenario sets, which separate them most sharply on renovation and on fossil retreat. Current~Policies renovates at 0.70 times the announced-policy rate and still leaves 40~per~cent of 2050 heat on fossil fuels, whereas Net~Zero renovates at 2.73 times that rate and leaves 5~per~cent. H2~Push is the hydrogen-favourable world rather than the most ambitious one, pairing a high carbon price and the rapid hydrogen-price path with a 1.64 times renovation rate and a 15~per~cent fossil share. Hydrogen adoption is set at 0, 5, 3 and 8~per~cent, so its ordering does not follow climate ambition. That setting is exogenous, and the dispatch screen tests it rather than sets it. Set against the dispatch-supported potential in the final row, which runs 0, 0.6, 7.5 and 9.0~per~cent, only Stated~Policies places adoption above what the screen supports, a gap Section~\ref{sec:results:merit} reports as a finding.
 
 \begin{table}[htbp]
  \centering
@@ -150,7 +145,7 @@ rather than sets it.
  \textit{Source: Authors' contribution.}\par}
 \end{table}
 
-\paragraph{The weather the power layer runs on, and what it costs the result}
+\paragraph{Weather series for the power layer}
 The weather series is the strongest assumption in the paper and every power-sector
 number descends from it, so we state it here rather than leaving it to the Supplementary
 Information. The power layer runs on synthetic hourly series, not reanalysis or metered
@@ -175,8 +170,7 @@ endogenous Switzerland treatment couples incremental Swiss heat-pump load back t
 winter electricity price and credits the Swiss reservoir fleet as firm winter capacity.
 Parametric uncertainty is characterised with 200 Monte Carlo draws per scenario,
 sampling the envelope-renovation rate, fuel and hydrogen prices, equipment costs and
-heat-pump performance under a cross-country shock correlation of 0.5 on renovation and
-0.75 on fuel prices, and reported at the 10th, 50th and 90th percentiles. A Sobol screen ranks the four
+heat-pump performance under a cross-country shock correlation of 0.5 on renovation and 0.75 on fuel prices, set higher on prices because European gas and electricity markets clear against shared hubs whereas renovation policy is delivered nationally, and reported at the 10th, 50th and 90th percentiles. A Sobol screen ranks the four
 demand drivers, and rank-regression coefficients the cost-side ones. Each extension's formulation, the sampling distributions and the
 validation gates are in the Supplementary Information.
 
