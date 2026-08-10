@@ -123,20 +123,12 @@
 \affiliation[cornell]{organization={Cornell University}, city={Ithaca}, state={NY}, country={USA}}
 
 \begin{abstract}
-Continental models report hydrogen's role in building heat at national resolution, whereas building-stock assessments fix its share exogenously. Neither gives a peaker's standalone capital-recovery position by market. We bound that share from the winter-peak
-dispatch, test each scenario's setting against it across district heat and power, and
-charge each carrier its last mile on levelised cost, in a bottom-up model of 29 markets over 200 Monte Carlo draws per scenario.
+Hydrogen for European residential heating is usually assessed at national resolution or imposed as an adoption share, and neither approach tests whether peak-serving assets recover capital market by market. We reconstruct heat demand across 1{,}369 NUTS3 regions in 29 markets, aggregating to the country before each test, over 200 draws per scenario. Four policy scenarios impose exogenous hydrogen-adoption
+settings, which we compare with separately derived winter-peak dispatch support. Hydrogen is tested in three roles: annual levelised cost, cold-snap dispatch across buildings, district heat and power, and peaker capital recovery. Each carrier pays its own last mile.
 
-Four findings follow. On 2050 base-load levelised cost the best heat pump delivers
-\euro{}118.5/MWh against \euro{}122.8 for a hydrogen boiler and \euro{}132.7 for gas,
-beating hydrogen in 22 of 29 markets on the pro-rata firm-capacity basis and 19 then 17 on cost causation. That count is the least robust result, spanning
-13 to 29 across the hydrogen price paths, and two assumptions favour hydrogen, taxed retail electricity near \euro{}209/MWh against \euro{}50/MWh delivered, and a green price where blue costs \euro{}81/MWh.
-
-On short-run marginal cost, on the high carbon path and the equal-efficiency series, hydrogen wins the winter power peak in
-a different seven, all salt-cavern markets. No market recovers that peaker's capital from energy-only rents, about 9~per~cent of its annualised charge capacity-weighted, so at \euro{}600/kW a technology-neutral payment procures gas and selecting hydrogen needs an emissions-conditioned payment, about \euro{}172/tCO$_2$ of displaced gas generation, above the carbon price gas already pays. 2050 residential-heating emissions span 10 to 352~MtCO$_2$ from 644.
-
-The power-sector results rest on one constructed weather year and are a screening
-exercise, not an adequacy assessment.
+At central 2050 parameters the best heat pump delivers at \euro{}118.5/MWh against
+\euro{}122.8 for a hydrogen boiler and \euro{}132.7 for gas, beating hydrogen in 22 of 29 markets on the pro-rata firm-capacity basis, 19 then 17 on cost causation, and varying from 13 to 29 across the hydrogen price paths. On the high carbon path and equal-efficiency series, hydrogen undercuts gas at the power peak in a different seven, all salt-cavern markets. No modelled market reaches full peaker capital recovery over the \euro{}30 to 120/MWh scarcity premiums tested, and capacity-weighted recovery among the five that build is about 9\%. With the hydrogen-ready turbine at \euro{}600/kW, technology-neutral support favours gas, and selecting hydrogen needs an emissions-conditioned premium of about \euro{}172/tCO$_2$ of displaced gas.
+Operational residential-heating emissions fall from 644~MtCO$_2$ in 2025 to between 10 and 352 by 2050. Power-sector quantities rest on one constructed weather year and are screening results, not adequacy estimates.
 \end{abstract}
 
 \begin{graphicalabstract}
@@ -241,8 +233,15 @@ The authors declare that they have no known competing financial interests or per
 % TO DO BEFORE SUBMISSION -- author declaration, to be written by the authors.
 % Elsevier requires a "Declaration of generative AI and AI-assisted technologies in the
 % writing process" wherever such tools were used in preparing the manuscript. Insert that
-% section here, immediately before Data availability, or delete this comment if no such
-% tool was used. Submission will be incomplete until this is resolved either way.
+% section here, immediately before Data availability.
+%
+% The "no such tool was used" branch is not available: generative AI assisted the
+% language editing, the consistency checking and the code and reproducibility review of
+% this manuscript, so a declaration is owed. It names the tools and the uses, and it is
+% an author statement, so it is left for an author to write rather than drafted here.
+% Elsevier separately prohibits AI-generated artwork; the graphical abstract and every
+% figure are produced by the committed matplotlib generators, which satisfies that.
+% Submission is incomplete until this section exists.
 
 \section*{Data availability}
 The model, its input data and the country profiles are openly available at \url{https://github.com/alajwadha/EU-Building-Heat-Model} (MIT licence). Large third-party inputs are retrieved by the included download scripts for Hotmaps, Eurostat and GISCO. Two are not. The UK ONS TS044 accommodation-type table is a manual one-time download, and it is committed to the repository, and the EUBUCCO v0.2 building footprints that drive the bottom-up demand basis are fetched from the EUBUCCO object store by the per-country build scripts. The forward model runs from the committed intermediate CSVs; reproducing the bottom-up build from raw footprints additionally requires that object store and the per-country classification step.

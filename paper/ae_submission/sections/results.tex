@@ -1,8 +1,7 @@
 \section{Results and discussion}
 \label{sec:results}
 
-Three tests organise what follows, applied in order, and a technology that fails an
-earlier one is not rescued by a later one. They are annual levelised cost against the heat
+Three tests organise what follows, applied in order and addressing distinct operating roles, so a peaking win does not overturn a base-load loss. They are annual levelised cost against the heat
 pump and the gas boiler, where the headline count sits, then the peak hour on operating
 cost across three arenas, then whether a plant that wins the peak can be financed.
 Section~\ref{sec:results:mix} sets the demand, technology-mix and emissions spine those
@@ -172,7 +171,7 @@ wholesale hub price the district-heat operator actually pays and hydrogen carrie
 top 12 to 18~per~cent of the load over 2{,}000~hours at about 518 equivalent full-load
 hours, so sweeping all 20 is about 3~per~cent of residential
 heat (Supplementary Section~S2.3).
-Weighting each country's building-peak slice by its heat demand puts the symmetric counts at 0, 0.6, 7.5 and 9.0~per~cent of study-area residential heat under the four scenarios respectively, the bound three of the four ceilings sit at or below, compared with 0, 5.1, 7.9 and 9.3 on the asymmetric accounting.
+Weighting each country's building-peak slice by its heat demand gives dispatch-supported potentials of 0, 0.6, 7.5 and 9.0~per~cent of study-area residential heat under the four scenarios respectively. These are compared with, rather than imposed on, the exogenous adoption settings of 0, 5, 3 and 8~per~cent. The largest mismatch is under Stated~Policies, whose setting exceeds its dispatch-supported potential by 4.4 percentage points, compared with 0, 5.1, 7.9 and 9.3 on the asymmetric accounting.
 
 The model prices the dispatchable tip and holds the rungs below it at literature short-run
 costs. The figures are H2~Push, and Net~Zero holds the same ordering
@@ -244,13 +243,15 @@ plus the scarcity premium $\pi^{\mathrm{s}}$, so its rent is that premium and re
 
 \begin{equation}
 \label{eq:recovery}
- R_{c} = \frac{\pi^{\mathrm{s}}\, \mathrm{FLH}_{c}}
+ R_{c} = \frac{\pi^{\mathrm{s}}\, \mathrm{FLH}_{c}/1000}
  {(\mathrm{CRF}_{c}+f)\,K^{\mathrm{T}}},
 \end{equation}
 
 \noindent with $\mathrm{FLH}$ the peaker's full-load hours, $K^{\mathrm{T}}$ the turbine
 capital cost, $\mathrm{CRF}$ the country's capital-recovery factor over 25 years and
-$f=2.5$~per~cent a year the fixed operating charge. On an energy-only market at the assumed $\pi^{\mathrm{s}}$ of \euro{}60/MWh, $R_{c}<1$ in
+$f=2.5$~per~cent a year the fixed operating charge. Dividing by 1{,}000 converts one kW
+running $\mathrm{FLH}$ hours into MWh, so that a numerator in \euro{}/kW meets a
+denominator in \euro{}/kW-yr. On an energy-only market at the assumed $\pi^{\mathrm{s}}$ of \euro{}60/MWh, $R_{c}<1$ in
 every country and scenario, so no hydrogen peaker recovers its annualised capital charge even where its operating cost wins the cold snap. That shortfall, rather than its size, is the robust result. It holds at every scarcity premium tested and under every weather variant in
 Supplementary Section~S2.9. The five that build average 80 full-load hours weighted by
 capacity, against 139 for the whole fleet, so their rent covers about 9~per~cent of an
@@ -261,7 +262,7 @@ Recovery is a single-year ratio of rent to that year's capital charge, and the s
 tracks utilisation, since Eq.~\eqref{eq:recovery} is linear in run hours at a common
 margin. Five of the seven cavern markets build a peaker in 2050, over run windows from 48~hours in
 Germany to 343 in Denmark and recoveries from Poland's 5.1~per~cent to Denmark's 40.0
-(Supplementary Section~S2.4). None reaches the 100~per~cent private finance requires, the
+(Supplementary Section~S2.4). No modelled country or scenario reaches the 100~per~cent private finance requires over the \euro{}30 to 120/MWh scarcity premiums tested, the
 classic missing-money problem \citep{Joskow2008capacity,Newbery2016Missing}. Cumulated undiscounted over the 25 years to 2050 the H2~Push peaker loses about \euro{}357~bn against \euro{}142~bn
 for an equivalent gas peaker, widening to \euro{}563~bn under Current~Policies, so the
 shortfall is not an artefact of the hydrogen-heavy scenario (Supplementary
@@ -348,8 +349,7 @@ to 63/kW-yr closes the gap for the winning peakers (Supplementary Table~S11). Th
 markets recovers an even smaller share of its capital, yet needs a smaller payment,
 \euro{}41 to 52/kW-yr, because a gas turbine costs \euro{}450/kW against 600. Weighted by capacity the two are close,
 \euro{}45/kW-yr against 51, and gas is cheaper in four of the five markets that build,
-so a technology-neutral payment at the $K^{\mathrm{T}}$ of \euro{}600/kW we assume would
-procure unabated gas ahead of hydrogen, which is what the British auction shows a real
+so with the hydrogen-ready turbine at $K^{\mathrm{T}}$ of \euro{}600/kW against \euro{}450/kW for gas, a technology-neutral mechanism procures unabated gas ahead of hydrogen, which is what the British auction shows a real
 mechanism doing.
 
 That conclusion turns on the capex gap and reverses below about \euro{}520 to 540/kW, a premium of roughly 18~per~cent over the gas turbine, and published premia for hydrogen-ready machines straddle it. Above it hydrogen is selected only where the mechanism
@@ -364,7 +364,7 @@ but move which markets reach it.
 
 The four scenarios impose technology shares, so a parallel least-cost linear program
 minimising supply cost against a fixed demand path and a scope-1 emissions cap
-(Section~\ref{sec:method}) asks what a cost minimiser would choose. At the $-90$~per~cent cap the 2050 least-cost mix is 52.9~per~cent district heat, 45.4~per~cent heat pumps, 1.4~per~cent residual gas and 0.34~per~cent hydrogen, but the program's per-country hydrogen ceiling is zero in 27 of the 29 and it selects that ceiling exactly in the other two. The mix speaks to district heat and heat pumps, not to a technology the program was never free to choose. Supplementary Section~S2.8 gives three bounds on reading it, the largest district heat's unpriced connection charge. The \euro{}21.0/MWh of Section~\ref{sec:results:lcoh} sits outside this objective, so 52.9~per~cent is a share under that boundary, not an optimum.
+(Section~\ref{sec:method}) asks what a cost minimiser would choose. At the $-90$~per~cent cap the 2050 least-cost mix is 52.9~per~cent district heat, 45.4~per~cent heat pumps, 1.4~per~cent residual gas and 0.34~per~cent hydrogen, but the program's per-country hydrogen ceiling is zero in 27 of the 29 and it selects that ceiling exactly in the other two. The mix speaks to district heat and heat pumps, not to a technology the program was never free to choose. The 52.9~per~cent district-heat share is the least-cost solution conditional on excluding new-connection costs, and not an unconstrained system optimum. Supplementary Section~S2.8 gives three bounds on reading it, the largest district heat's unpriced connection charge. The \euro{}21.0/MWh of Section~\ref{sec:results:lcoh} sits outside this objective, so 52.9~per~cent is a share under that boundary, not an optimum.
 
 The discounted present-value system cost varies by only 0.05~per~cent between the $-75$ and $-100$~per~cent caps, so ambition is cheap in this program. The carbon price does not do the work everywhere, since the cap binds in Cyprus, Croatia,
 Poland and the United Kingdom in 2050 at a shadow price of up to \euro{}81/tCO$_2$, and

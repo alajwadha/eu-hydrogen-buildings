@@ -723,12 +723,16 @@ def build_checks():
         # beside it, so each quartet needs its own anchor phrase. When they briefly shared
         # the anchor "hydrogen share of", this pair failed, correctly: one slot cannot hold
         # two values and be checkable.
+        # Rekeyed to "dispatch-supported potentials of". The old anchor, "puts the
+        # symmetric counts at", came from a wording that read as though the dispatch
+        # set the scenario shares. It does not: adoption is exogenous and the bound is
+        # a diagnostic compared against it. The number asserted is unchanged.
         ("demand-weighted arena ceiling, symmetric basis", arena_bound_sym,
-         [rf"puts the symmetric counts at (?!{_sym_lo} and {_sym_hi}\b)[\d., and]+per cent",
+         [rf"dispatch-supported potentials of (?!{_sym_lo} and {_sym_hi}\b)[\d., and]+per cent",
           rf"hydrogen share of (?!{_sym_lo} and {_sym_hi}\b)"
           rf"[\d., and]+per cent of useful heat"],
          SUBMISSION + LONG,
-         {"AE submission": rf"puts the symmetric counts at {_sym_lo} and {_sym_hi} per cent",
+         {"AE submission": rf"dispatch-supported potentials of {_sym_lo} and {_sym_hi} per cent",
           "working paper": rf"hydrogen share of {_sym_lo} and {_sym_hi} per cent of useful heat"}),
         # The sentence that opens the arena section. It survived the switch to symmetric
         # accounting still reading "to 16 of 29 countries at the building winter peak, 20

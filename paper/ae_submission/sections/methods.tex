@@ -21,9 +21,10 @@ with 2025 the common anchor for demand, technology-share and cost trajectories a
  draws feed three tests applied in order.}
  \label{fig:arch}
  \par\vspace{3pt}{\footnotesize\raggedright
- \textit{Note:} a technology that fails an earlier test is not rescued by a later one.
- The first two tests are cost comparisons at different time scales, annual and peak-hour,
- whereas the third asks whether the plant that wins the peak can be financed at all. The
+ \textit{Note:} the tests address distinct operating roles, so a technology may lose the
+ annual comparison and still compete at a cold-snap peak. The first two are cost
+ comparisons at different time scales, annual and peak-hour, whereas the third asks
+ whether the plant that wins the peak can be financed at all. The
  text below and the Supplementary Information give the data sources, the price paths, the
  adder bounds and the parameter ranges the boxes summarise.\par}
 \end{figure}
@@ -63,7 +64,7 @@ the European Hydrogen Observatory central delivered-cost trajectory
 \citep{EHO2024hydrogencosts}, and retail gas and electricity prices are Eurostat
 first-half-2025 figures \citep{Eurostat2025electricityprices,Eurostat2025gasprices}.
 
-A scope-1 inventory runs alongside the cost layer on the same technology split, charging
+An operational CO$_2$ inventory runs alongside the cost layer on the same technology split, combining direct combustion with attributed electricity and district-heat generation intensities and excluding upstream, infrastructure and embodied emissions. It charges
 gas and oil fixed combustion factors \citep{Calvin2023Ipcc}, biomass and hydrogen zero
 on the European renewable-fuel convention, and electricity and district heat
 country-by-year intensities that each scenario's grid lever scales
@@ -72,6 +73,8 @@ trajectories rather than published projections, so the emissions levels inherit 
 calibration whereas the scenario ranking does not (Supplementary Section~S1.4).
 Furthermore, two last-mile network charges apply by default, one to each carrier, so that
 neither is priced as though its delivery were free. The hydrogen boiler carries a coverage-weighted blend of conversion and new build at a median \euro{}13.4/MWh, and the heat pump a low- and medium-voltage reinforcement adder at a median \euro{}4.9/MWh, leaving the hydrogen route roughly 2.7 times the delivery charge of the electric one before any fuel cost enters.
+
+Within each draw the observed 2025 country shares are interpolated to the sampled 2050 heat-pump, district-heat, hydrogen and fossil targets using sampled power-law uptake exponents, with NUTS3 feasibility factors scaling the heat-pump and district-heat targets. Among the non-fossil options a cost-responsive component then reallocates share on softmax weights $w_{i,c,t}=\exp(-\mathrm{LCOH}_{i,c,t}/T)/\sum_j \exp(-\mathrm{LCOH}_{j,c,t}/T)$ with $T$ set to \euro{}50/MWh, blended in on a weight rising linearly from zero in 2025 to 0.50 in 2050. Fossil shares stay policy-defined. Hydrogen is capped at its drawn adoption target and any excess goes first to heat pumps within feasibility and then to district heat. This is a heuristic scenario-allocation rule rather than an estimated choice model or a system-cost optimum (Supplementary Section~S1.5).
 
 Levelised cost compares technologies as base-load suppliers, an arena the review literature
 treats as settled in the heat pump's favour
@@ -109,12 +112,12 @@ decarbonisation to 2050. \textbf{Current~Policies} freezes today's implemented m
 Commission long-term strategy \citep{EuropeanCommission2018LTS}; \textbf{Net~Zero}
 matches the IEA Net~Zero scenario \citep{IEA2023NZE}; and \textbf{H2 Push} is a
 deliberately hydrogen-favourable world along the lines of REPowerEU
-\citep{REpowerEU2022}. Table~\ref{tab:levers_body} summarises the six exogenous levers each scenario sets, which separate them most sharply on renovation and on fossil retreat. Current~Policies renovates at 0.70 times the announced-policy rate and still leaves 40~per~cent of 2050 heat on fossil fuels, whereas Net~Zero renovates at 2.73 times that rate and leaves 5~per~cent. H2~Push is the hydrogen-favourable world rather than the most ambitious one, pairing a high carbon price and the rapid hydrogen-price path with a 1.64 times renovation rate and a 15~per~cent fossil share. Hydrogen adoption is set at 0, 5, 3 and 8~per~cent, so its ordering does not follow climate ambition. That setting is exogenous, and the dispatch screen tests it rather than sets it. Set against the dispatch-supported potential in the final row, which runs 0, 0.6, 7.5 and 9.0~per~cent, only Stated~Policies places adoption above what the screen supports, a gap Section~\ref{sec:results:merit} reports as a finding.
+\citep{REpowerEU2022}. Table~\ref{tab:levers_body} summarises the eight exogenous levers each scenario sets, which separate them most sharply on renovation and on fossil retreat. Current~Policies renovates at 0.70 times the announced-policy rate and still leaves 40~per~cent of 2050 heat on fossil fuels, whereas Net~Zero renovates at 2.73 times that rate and leaves 5~per~cent. H2~Push is the hydrogen-favourable world rather than the most ambitious one, pairing a high carbon price and the rapid hydrogen-price path with a 1.64 times renovation rate and a 15~per~cent fossil share. Hydrogen adoption is set at 0, 5, 3 and 8~per~cent, so its ordering does not follow climate ambition. That setting is exogenous, and the dispatch screen tests it rather than sets it. Set against the dispatch-supported potential in the final row, which runs 0, 0.6, 7.5 and 9.0~per~cent, only Stated~Policies places adoption above what the screen supports, a gap Section~\ref{sec:results:merit} reports as a finding.
 
 \begin{table}[htbp]
  \centering
- \caption{\textbf{Scenario lever settings, 2050.} Six exogenous levers per scenario, with
- the independently derived dispatch-supported potential beneath them.}
+ \caption{\textbf{Scenario lever settings, 2050.} Eight exogenous levers per scenario,
+ with the independently derived dispatch-supported potential beneath them.}
  \label{tab:levers_body}
  \begin{tabular}{lcccc}
  \toprule
@@ -126,9 +129,11 @@ deliberately hydrogen-favourable world along the lines of REPowerEU
  Hydrogen-price path & Stranded & Central & Central & Rapid \\
  Grid-decarbonisation speed\textsuperscript{a} & $\times$1.15 & $\times$1.00 & $\times$0.70 & $\times$1.00 \\
  Fossil share 2050 (ambition)\textsuperscript{c} & 40\% & 27\% & 5\% & 15\% \\
+  Heat-pump target 2050\textsuperscript{c} & 40\% & 50\% & 62\% & 46\% \\
+ District-heat target 2050\textsuperscript{c} & 16\% & 18\% & 22\% & 20\% \\
  H$_2$ adoption setting 2050\textsuperscript{b,c} & 0\% & 5\% & 3\% & 8\% \\
  \midrule
- \multicolumn{5}{l}{\textit{Derived independently, not a lever}} \\
+  \multicolumn{5}{l}{\textit{Derived diagnostic; not a lever and not used to set adoption}} \\
  Dispatch-supported potential\textsuperscript{d} & 0\% & 0.6\% & 7.5\% & 9.0\% \\
  \bottomrule
  \end{tabular}
@@ -170,8 +175,7 @@ endogenous Switzerland treatment couples incremental Swiss heat-pump load back t
 winter electricity price and credits the Swiss reservoir fleet as firm winter capacity.
 Parametric uncertainty is characterised with 200 Monte Carlo draws per scenario,
 sampling the envelope-renovation rate, fuel and hydrogen prices, equipment costs and
-heat-pump performance under a cross-country shock correlation of 0.5 on renovation and 0.75 on fuel prices, set higher on prices because European gas and electricity markets clear against shared hubs whereas renovation policy is delivered nationally, and reported at the 10th, 50th and 90th percentiles. A Sobol screen ranks the four
-demand drivers, and rank-regression coefficients the cost-side ones. Each extension's formulation, the sampling distributions and the
+heat-pump performance under a cross-country shock correlation of 0.5 on renovation and 0.75 on fuel prices, set higher on prices because European gas and electricity markets clear against shared hubs whereas renovation policy is delivered nationally, and reported at the 10th, 50th and 90th percentiles. A variance-based Sobol screen ranks the four demand drivers, and a regression-based global screen using standardised rank-regression coefficients ranks the cost-side ones. Each extension's formulation, the sampling distributions and the
 validation gates are in the Supplementary Information.
 
 The model, the scenario configurations and the analysis code are released in a public
