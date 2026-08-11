@@ -1,0 +1,13 @@
+# Matplotlib defaults to Type 3 fonts in PDF and EPS. Type 3 is a bitmapped glyph
+# program: the text cannot be searched or copied reliably, some viewers render it
+# poorly at small sizes, and Elsevier's artwork guidance asks for embedded TrueType
+# or Type 1. An AE review pass found Type 3 faces in seventeen submitted figures.
+#
+# scripts/_figstyle.py sets the same two keys, but only for generators that call
+# set_style(). Several power-sector and sensitivity figures build their own axes
+# without it, so the setting lives here as well: matplotlib reads matplotlibrc from
+# the working directory, and every generator runs with cwd=code.
+#
+# 42 is TrueType. The figures are otherwise unchanged.
+pdf.fonttype: 42
+ps.fonttype:  42

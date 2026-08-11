@@ -68,6 +68,13 @@ def set_style() -> None:
         # 300 dpi floor for combination artwork. The LaTeX path is unaffected, since it
         # includes the vector PDFs beside these.
         "savefig.dpi":         400,
+        # Matplotlib defaults to Type 3 fonts in PDF and EPS, which are bitmapped
+        # glyph programs: they cannot be searched or copied reliably, some viewers
+        # render them badly at small sizes, and Elsevier's own artwork guidance asks
+        # for embedded TrueType or Type 1. 42 is TrueType. Nothing else changes; the
+        # figures look identical and gain selectable, embeddable text.
+        "pdf.fonttype":        42,
+        "ps.fonttype":         42,
         "savefig.facecolor":   "white", # never transparent (transparent renders badly on dark UIs)
         "figure.dpi":          120,
         "figure.facecolor":    "white",
