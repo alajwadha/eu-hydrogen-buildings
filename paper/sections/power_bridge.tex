@@ -207,7 +207,12 @@ extension of carbon pricing to buildings and road transport under the second Emi
 System, ETS2 \citep{EuropeanCommission2024ETS2, BNEF2025ETS2}; the position of hydrogen in the
 stack is set as much by the fortunes of its fossil rival as by its own cost.
 
-\begin{table}[H]
+% [htbp], not [H]. With [H] this table was pinned directly under Table 4, the two
+% together ran 87 pt past the bottom of the text block, and the note overprinted the page
+% number. [H] cannot move a float that does not fit; it just lets it overrun. Allowing
+% this one to float puts it at the top of the following page, which also fills the page
+% that was left three-quarters empty behind it.
+\begin{table}[htbp]
     \centering
     \caption{Operating-cost wins do not translate into capital self-financing. The
     power-sector row is on the evolving-efficiency turbine series; the even-handed series,
@@ -238,16 +243,26 @@ stack is set as much by the fortunes of its fossil rival as by its own cost.
         \multicolumn{5}{l}{\textit{Panel B. Capital recovery on market rent (count of 29)}} \\
         Recovers peaker capital from market rent                  &  0 & 0 &  0 &  0 \\
         \bottomrule
-    \end{tabular}\\[4pt]
-    \footnotesize{\textit{Cumulatively to 2050 the H2 Push hydrogen peaker loses about
+    \end{tabular}
+
+    % The note was centred prose inheriting the table's \centering, so every line
+    % centred independently and the block sat wider than the table it annotates. Set it
+    % ragged-right in a box the width of the text block, which is what every other note
+    % in this paper does.
+    \smallskip
+    \begin{minipage}{\textwidth}
+    \raggedright\footnotesize
+    \textit{Cumulatively to 2050 the H2 Push hydrogen peaker loses about
     \euro{}357~bn against about \euro{}142~bn for an equivalent gas peaker, so neither fuel
     recovers its capital in any country (Section~\ref{sec:power:caveat}). District-heating wins
     in Panel A are countries in which hydrogen undercuts gas combined heat and power (CHP) on
     cost; gas CHP nonetheless remains the marginal source that sets the district-heat peak in 20
     of 29 countries (hydrogen in 9), because hydrogen is dispatched below it. Costs follow the
     Danish Energy Agency Technology Catalogue \citep{DEA2023technology} with the scenario carbon
-    and hydrogen price paths (Section~\ref{sec:method}).}}
-    \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+    and hydrogen price paths (Section~\ref{sec:method}).}\par
+    \smallskip
+    \textit{Source: Authors' contribution.}\par
+    \end{minipage}
 \end{table}
 
 The win counts of Table~\ref{tab:arenas} aggregate a heterogeneous country picture, and that
@@ -261,7 +276,10 @@ missing-money result will show, unfunded. So although hydrogen wins on operating
 7 and 15 of 29 countries across the three arenas, only about seven of those wins are
 decisive.
 
-\begin{figure}[H]
+% [tbp], not [H]. This is a 29-row heat map that needs most of a page, and [H] pinned it
+% directly under Table 5, where it ran off the bottom and over the folio. Excluding `h`
+% keeps it at a page top, which is the only place it fits whole.
+\begin{figure}[tbp]
     \centering
     \caption{Where hydrogen wins, by country and arena (H2 Push, 2050). The power-peaker
     column is the evolving-efficiency turbine series, which gives 15 wins; the

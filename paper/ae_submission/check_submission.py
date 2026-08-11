@@ -77,6 +77,16 @@ def check_log(where: Path, stem: str) -> None:
     nat = log.count("Package natbib Warning")
     gate(nat == 0, f"{stem}: no natbib warnings", f"{nat} found" if nat else "")
 
+    # An overfull \vbox is text past the BOTTOM of the page, and it is the one defect a
+    # reader sees before anyone else does: a co-author found page 65 of the long paper
+    # running 87 pt over, with the table note printed across the page number. Nothing in
+    # this suite looked at vertical overflow, only horizontal, so it survived every round.
+    # The usual cause is a [H] float that does not fit: [H] cannot move a float, so it
+    # lets it overrun instead. Any occurrence is a defect, so the tolerance is zero.
+    vb = re.findall(r"Overfull \\vbox \(([\d.]+)pt too high\)", log)
+    gate(not vb, f"{stem}: no text past the bottom of the page",
+         f"{len(vb)} overfull vbox, worst {max(float(v) for v in vb):.0f} pt" if vb else "")
+
     # A requested font size that does not exist is a warning, not an error, and the
     # document still compiles and still looks plausible. The title page was set at 27 pt,
     # then 32, then 40, and every one of them rendered at 24.88, because Computer Modern
