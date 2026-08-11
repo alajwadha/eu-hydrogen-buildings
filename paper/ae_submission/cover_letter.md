@@ -30,7 +30,7 @@ Four headline numbers are benchmarked against published values rather than left 
 
 We believe the work fits *Applied Energy*'s scope. It is a rigorous, reproducible, policy-relevant energy-systems assessment with direct implications for buildings decarbonisation and power-system adequacy. The full model, input-data provenance and figure generators are openly available under an MIT licence, and a Supplementary Information document provides the complete methodology, parameter tables, per-country results and sensitivity analyses.
 
-We confirm that this manuscript is original, is not under consideration for publication elsewhere, and has not been published in a peer-reviewed venue. A longer working paper by the same authors, covering the same model at greater length, has been released online. [Give the working paper's title, host, date and URL here, so the editor can match the disclosure to the reference list.] All authors have approved the submission and declare no competing interests [confirm competing-interest wording, given the OIES affiliation].
+We confirm that this manuscript is original, is not under consideration for publication elsewhere, and has not been published in a peer-reviewed venue. A longer working paper by the same authors, covering the same model at greater length, has been released online. [Give the working paper's title, host, date and URL here, so the editor can match the disclosure to the reference list.] All authors have approved the submission and declare no competing interests [confirm competing-interest wording].
 
 [Elsevier requires a "Declaration of Generative AI in the writing process" naming the tools and their purpose. Generative AI assisted the language editing, consistency checking and code and reproducibility review of this manuscript, so the declaration is owed and the omit branch does not apply. It is an author statement and is not drafted on your behalf.]
 
@@ -41,7 +41,7 @@ Thank you for considering our manuscript. We look forward to your response.
 Sincerely,
 
 Abdurahman Alsulaiman (corresponding author)
-Laboratory of Environmental and Urban Economics – LEURE, EPFL, Switzerland
+Laboratory of Environmental and Urban Economics (LEURE), EPFL, Switzerland
 a.alsulaiman@outlook.com [ORCID]
 
 Ali Alajwad [ORCID]

@@ -3,13 +3,13 @@
 This repository contains the model code, country profiles, dashboard, and manuscript source for:
 
 > **Hydrogen in residential heating and the power system: a merit-order and capital-recovery assessment for 29 European markets**
-> Abdurahman Alsulaiman (Laboratory of Environmental and Urban Economics – LEURE, EPFL) and Ali Alajwad (RENEW Lab, Johns Hopkins University; Cornell University)
+> Abdurahman Alsulaiman (LEURE, EPFL) and Ali Alajwad (RENEW Lab, Johns Hopkins University; Cornell University)
 > Manuscript prepared for *Applied Energy*
 
 A spatially-resolved techno-economic model of residential heating decarbonisation across **EU27, Switzerland, and the United Kingdom** at NUTS3 regional resolution, 2025–2050. The model evaluates the conditions under which decarbonised hydrogen deployment in buildings is economically and environmentally justified relative to heat pump electrification.
 
 **The submission and how to reproduce it:** the canonical LaTeX source is
-`paper/ae_submission/` (`V5.tex` plus `SI.tex`), and
+`paper/ae_submission/` (`V7.tex` plus `SI.tex`), and
 [`paper/ae_submission/REPRODUCE.md`](paper/ae_submission/REPRODUCE.md) maps every
 headline number in the manuscript to the script that produces it. That file supersedes
 this README wherever the two differ. `paper/` also holds a longer working version of the
@@ -52,7 +52,7 @@ eu-hydrogen-buildings/
 │   └── results/                  mc_summary_*.csv, mc_country_*.csv, README.md
 │
 ├── paper/
-│   ├── ae_submission/            THE APPLIED ENERGY SUBMISSION (V5.tex + SI.tex + REPRODUCE.md)
+│   ├── ae_submission/            THE APPLIED ENERGY SUBMISSION (V7.tex + SI.tex + REPRODUCE.md)
 │   ├── Paper_v20.tex             Long working manuscript, 156 pp (superseded by the submission)
 │   ├── Paper_v1..v5.tex          Archived earlier drafts (kept for diff)
 │   ├── References_v1.bib         BibTeX bibliography (294 entries, shared by both documents)
