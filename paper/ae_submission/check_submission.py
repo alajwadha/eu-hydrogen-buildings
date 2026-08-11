@@ -666,6 +666,11 @@ def check_upload_set() -> None:
     said so; the upload folder kept the old value, because it was a manual copy and every gate read the
     LaTeX corpus rather than the renderings. A gate that only reads source cannot see a
     stale rendering. This one compares bytes, and package_v6.py is what fixes it.
+
+    Matching is not sufficient on its own. Asserting that the current files are current says
+    nothing about what else sits beside them, and the previous revision's four files stayed in
+    the folder through a version bump while this gate reported it clean. An editor receives the
+    folder, so the second gate below asserts the folder holds nothing but the upload set.
     """
     sys.path.insert(0, str(HERE))
     import package_v6
@@ -678,6 +683,11 @@ def check_upload_set() -> None:
     gate(not st, "V6 upload set matches the built deliverables",
          ("stale: " + ", ".join(d.name for _, d in st) +
           "  (run python3 package_v6.py)") if st else "")
+
+    orph = package_v6.orphans()
+    gate(not orph, "V6 upload folder carries no superseded file",
+         (", ".join(p.name for p in orph) +
+          "  (run python3 package_v6.py)") if orph else "")
 
 
 def main() -> int:
