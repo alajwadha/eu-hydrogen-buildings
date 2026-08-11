@@ -424,6 +424,39 @@ def check_word_fields() -> None:
                        "so rebuild it after the LaTeX pass, not before")
 
 
+def check_table_note_spacing() -> None:
+    """A vertical skip attached to a table note must run in vertical mode.
+
+    After \\end{tabular} or \\end{tabularx} TeX is still in HORIZONTAL mode, and \\vspace,
+    \\smallskip and friends there do not open a gap before what follows: they defer the
+    skip until after the next line. Five tables in the long paper were written that way.
+    Each printed the opening line of its note hard against the bottom rule, so the note
+    read as one more row of the table, and the intended gap appeared underneath that line
+    instead. Rendering is the only way to see it, and no gate here rendered a table.
+
+    The fix is a \\par before the skip. Assert its presence at source, which is cheap and
+    catches the next one at the moment it is written.
+    """
+    print("\nTable notes")
+    pat = re.compile(
+        r"\\end\{tabularx?\}"          # end of the table body
+        r"(?:\s*%[^\n]*\n)*\s*"        # comments and blank space do not change the mode
+        r"(\\vspace|\\smallskip|\\medskip|\\bigskip)")
+    bad = []
+    for d in (REPO / "paper" / "sections", HERE / "sections", HERE / "si_body"):
+        if not d.is_dir():
+            continue
+        for f in sorted(d.glob("*.tex")):
+            src = f.read_text(errors="replace")
+            for m in pat.finditer(src):
+                # A blank line before the skip is itself a \par, so the gap lands right.
+                if "\n\n" in m.group(0) or "\\par" in m.group(0):
+                    continue
+                bad.append(f"{f.name}:{src[:m.start()].count(chr(10)) + 1}")
+    gate(not bad, "every table-note skip runs in vertical mode",
+         f"{len(bad)} need a \\par: " + ", ".join(bad[:4]) if bad else "")
+
+
 def check_obsolete_architecture():
     """Fail if the dispatch-generated-the-shares wording reappears.
 
@@ -749,6 +782,7 @@ def main() -> int:
     gate(*check_obsolete_architecture())
     check_word_styles()
     check_word_tex_ligatures()
+    check_table_note_spacing()
     check_word_table_rules()
     check_word_page_structure()
     check_numbers()

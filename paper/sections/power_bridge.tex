@@ -249,7 +249,11 @@ stack is set as much by the fortunes of its fossil rival as by its own cost.
     % centred independently and the block sat wider than the table it annotates. Set it
     % ragged-right in a box the width of the text block, which is what every other note
     % in this paper does.
-    \smallskip
+    %
+    % 8 pt, not \smallskip. The note printed 3.4 pt below the bottom rule and read as
+    % part of the table rather than as a note on it; the other 14 tables in this paper
+    % were between 2.4 and 4.3 pt for the same reason, and all now use 8 pt.
+    \vspace{8pt}
     \begin{minipage}{\textwidth}
     \raggedright\footnotesize
     \textit{Cumulatively to 2050 the H2 Push hydrogen peaker loses about

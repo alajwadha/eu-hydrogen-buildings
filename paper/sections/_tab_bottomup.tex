@@ -44,7 +44,10 @@ Malta & 143{,}277 & 1.0 & 0.7 & +35.6 & +9.6 \\
 \textbf{EU+UK+CH} & 317{,}590{,}992 & 3827.5 & 3858.8 & -0.8 & -8.3 \\
 \bottomrule
 \end{tabularx}
-\smallskip
+% \par first: after \end{tabularx} TeX is still in horizontal mode, where
+% \vspace defers the skip to AFTER the next line. The note's opening line printed
+% hard against the bottom rule and the gap appeared below it instead.
+\par\addvspace{8pt}
 \raggedright\small
 Bottom-up estimates from EUBUCCO v0.2 building footprints and TABULA per-vintage intensities; reported as-is, without calibration. Hotmaps figures are the all-class NUTS3 totals for 2015. A positive deviation means the bottom-up build is above the benchmark. Of the 29 countries, 19 fall within $\pm$15\,\% and 28 within $\pm$25\,\% on the raw deviation (only Malta, the smallest stock, exceeds the band), and the EU+UK+CH aggregate deviates by $-0.8$\,\%; the vintage-matched column shifts each country down by the 2015 to 2025 demand trend and is reported so the comparison is vintage-consistent. Three illustrative rows (Luxembourg, France, Finland) are discussed in the text.
 \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}

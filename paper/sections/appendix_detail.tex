@@ -332,7 +332,7 @@ $\mathrm{COP}^{\mathrm{cold}}_{c}$ throughout. Table~\ref{tab:copmap} states the
             & Demand $D_{c,t}$ in Eq.~\eqref{eq:dispatch} \\
         \bottomrule
     \end{tabular}
-    \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+    \\[8pt]{\footnotesize\textit{Source: Authors' contribution.}}
 \end{table}
 
 Each generator $g$ supplies
@@ -571,7 +571,7 @@ therefore a supply-side phenomenon, driven by source switching, conversion effic
         CO$_2$ emissions (MtCO$_2$)  &   644 &   231 & $-64\%$ \\
         \bottomrule
     \end{tabular}
-    \\[2pt]{\footnotesize\textit{Source: Authors' contribution.}}
+    \\[8pt]{\footnotesize\textit{Source: Authors' contribution.}}
 \end{table}
 
 The depth of the cut nonetheless depends in part on the exogenous grid trajectory,
@@ -1088,7 +1088,10 @@ Single-family (SFH)       & 0.3 & 0.1 to 0.4  & \citet{Persson2019Heat} \\
 Multi-family / high-rise  & 0.8 & 0.6 to 0.9  & \citet{Persson2019Heat} \\
 \bottomrule
 \end{tabularx}
-\smallskip
+% \par first: after \end{tabularx} TeX is still in horizontal mode, where
+% \vspace defers the skip to AFTER the next line. The note's opening line printed
+% hard against the bottom rule and the gap appeared below it instead.
+\par\addvspace{8pt}
 \raggedright\small
 The ranges are indicative bands synthesised from the cited heat-pump retrofit,
 adoption-barrier and linear-heat-density literature; they bracket the structural feasibility of each technology in each
@@ -1169,7 +1172,10 @@ District heat      & 500     & 450     & 0.95 / 0.97 & District heat \\
 H$_2$ boiler       & 600     & 550     & 0.90 / 0.92 & Hydrogen \\
 \bottomrule
 \end{tabularx}
-\smallskip
+% \par first: after \end{tabularx} TeX is still in horizontal mode, where
+% \vspace defers the skip to AFTER the next line. The note's opening line printed
+% hard against the bottom rule and the gap appeared below it instead.
+\par\addvspace{8pt}
 \raggedright\small
 CAPEX and efficiency values are anchored to the Danish Energy Agency
 Technology Catalogue installed-cost figures \citep{DEA2023technology},
@@ -1229,7 +1235,10 @@ District heat & 88  & 0.80      & Euroheat, national regulators \\
 Hydrogen      & 200 & see text  & European Hydrogen Observatory (2024) \\
 \bottomrule
 \end{tabularx}
-\smallskip
+% \par first: after \end{tabularx} TeX is still in horizontal mode, where
+% \vspace defers the skip to AFTER the next line. The note's opening line printed
+% hard against the bottom rule and the gap appeared below it instead.
+\par\addvspace{8pt}
 \raggedright\small
 Every carrier is priced per country, and the column above is the unweighted mean of
 those 29 values, so it reconciles with the per-country prices the model runs on. It is

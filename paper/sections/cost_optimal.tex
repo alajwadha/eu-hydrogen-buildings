@@ -53,7 +53,7 @@ technology.
     Air-source HP     & corroborates  & corrob. & corrob. & SCOP 3.3 & EHPA/Eurovent field value, against a regulatory average-climate floor of 3.0. \\
     \bottomrule
   \end{tabularx}
-  \\[2pt]{\footnotesize\textit{n.r. = not reported by that source. Source: Authors' contribution.}}
+  \\[8pt]{\footnotesize\textit{n.r. = not reported by that source. Source: Authors' contribution.}}
 \end{table}
 
 The same audit benchmarks the 2050 scenario technology shares against the EU
@@ -283,7 +283,10 @@ near-term figures are the larger ones.
     $-100$\,\% scope-1 & 7{,}429.8 & $+0.05$\,\%      & Binds in the same 4 even at net zero on-site combustion. \\
     \bottomrule
   \end{tabularx}
-  \smallskip
+  % \par first: after \end{tabularx} TeX is still in horizontal mode, where
+  % \vspace defers the skip to AFTER the next line. The note's opening line printed
+  % hard against the bottom rule and the gap appeared below it instead.
+  \par\addvspace{8pt}
   \raggedright\small
   The spread column is measured against the $-75$~per cent cap. In the headline
   program the cap binds in 4 of the 29 countries in 2050 (Cyprus, Croatia, Poland
