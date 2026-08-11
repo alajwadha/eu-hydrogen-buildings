@@ -56,7 +56,7 @@ Each of the eight technologies, comprising gas, oil and biomass boilers, a resis
 heater, air-source and ground-source heat pumps, district heat and a hydrogen boiler, is
 priced on a levelised cost of heat that annualises capital at the country
 weighted-average cost of capital and adds fuel, fixed and variable operating costs, in
-real EUR$_{2024}$ throughout (Supplementary Section~S1.3). Equipment capital is sized to peak heat demand and annualised over the heat that capacity delivers, on the reasoning that a household buys a boiler for its coldest day rather than its average one, so efficiency changes the fuel bill and not the purchase price. Annualising over rated capacity instead would divide that charge a second time by each technology's own efficiency, which is why this is the accounting choice that moves the base-load count furthest. Techno-economic parameters are anchored to the Danish Energy Agency Technology Catalogue
+real EUR$_{2024}$ throughout (Supplementary Section~S1.3). Equipment capital is sized to peak heat demand and annualised over the heat that capacity delivers, on the reasoning that a household buys a boiler for its coldest day rather than its average one, so efficiency changes the fuel bill and not the purchase price. This is the accounting choice that moves the base-load count furthest. Techno-economic parameters are anchored to the Danish Energy Agency Technology Catalogue
 \citep{DEA2023technology} and cross-checked against JRC, IEA and IRENA cost data
 \citep{JRC2023technology,IEA2022heatpumps,IRENA2022heatpumpcosts}. Fossil fuels carry the second emissions trading system for buildings and road transport
 (ETS2) from its 2027 launch \citep{EuropeanCommission2024ETS2}, green hydrogen follows
@@ -87,15 +87,16 @@ quick-start options whose SRMCs per MWh of useful heat are
  c^{\mathrm{gas}}_{c}
  = \frac{p^{\mathrm{gas}}_{c} + \varphi_{y}\, e_{\mathrm{g}}}{\eta_{\mathrm{g}}},
  \qquad
- c^{\mathrm{H_2}}_{c}
- = \frac{p^{\mathrm{H_2}}_{c}}{\eta_{\mathrm{h}}} + \sigma_{c},
+  c^{\mathrm{H_2}}_{c}
+ = \frac{p^{\mathrm{H_2}}_{c}}{\eta_{\mathrm{h}}} + \sigma_{c}
+ + a^{\mathrm{H_2,dist}}_{c},
  \qquad
  c^{\mathrm{HP}}_{c}
  = \frac{\pi^{\mathrm{peak}}_{c}}{\mathrm{COP}^{\mathrm{cold}}_{c}},
 \end{equation}
 
 \noindent where $\varphi_{y}$ is the carbon price, $\eta$ the conversion efficiencies
-and $\sigma_{c}$ the seasonal-storage adder, about \euro{}50/MWh-heat with domestic salt caverns and \euro{}100 without, the two ends spanning the cavern and above-ground rates reported in the bulk-storage literature \citep{Lord2014GeologicStorage,Papadias2021BulkStorage} and applied at the higher rate to the markets with no salt resource \citep{Caglayan2020caverns}. Cold-snap heat-pump COP is derated from the seasonal figure, $\mathrm{COP}^{\mathrm{cold}}_{c}=\max(0.60\,\mathrm{SCOP}_{c},1.8)$
+$a^{\mathrm{H_2,dist}}_{c}$ the hydrogen last-mile distribution adder the symmetric accounting charges, and $\sigma_{c}$ the seasonal-storage adder, about \euro{}50/MWh-heat with domestic salt caverns and \euro{}100 without, the two ends spanning the cavern and above-ground rates reported in the bulk-storage literature \citep{Lord2014GeologicStorage,Papadias2021BulkStorage} and applied at the higher rate to the markets with no salt resource \citep{Caglayan2020caverns}. Cold-snap heat-pump COP is derated from the seasonal figure, $\mathrm{COP}^{\mathrm{cold}}_{c}=\max(0.60\,\mathrm{SCOP}_{c},1.8)$
 following the low-temperature field measurements \citep{Gibb2023Coming}, which gives 1.80 to 2.84 across the 29
 markets at a median of 2.04 in 2050. The scarcity electricity price
 $\pi^{\mathrm{peak}}_{c}$ that prices the heat-pump branch is taken from the power
@@ -174,8 +175,7 @@ rolling-horizon test relaxes perfect foresight in the least-cost linear program;
 endogenous Switzerland treatment couples incremental Swiss heat-pump load back to the EU
 winter electricity price and credits the Swiss reservoir fleet as firm winter capacity.
 Parametric uncertainty is characterised with 200 Monte Carlo draws per scenario,
-sampling the envelope-renovation rate, fuel and hydrogen prices, equipment costs and
-heat-pump performance under a cross-country shock correlation of 0.5 on renovation and 0.75 on fuel prices, set higher on prices because European gas and electricity markets clear against shared hubs whereas renovation policy is delivered nationally, and reported at the 10th, 50th and 90th percentiles. A variance-based Sobol screen ranks the four demand drivers, and a regression-based global screen using standardised rank-regression coefficients ranks the cost-side ones. Each extension's formulation, the sampling distributions and the
+sampling the envelope-renovation rate, the fuel, hydrogen and carbon paths, the discount rate, ETS2 pass-through, the 2050 share settings and heat-pump feasibility, under a cross-country shock correlation of 0.5 on renovation and 0.75 on fuel prices, set higher on prices because European gas and electricity markets clear against shared hubs whereas renovation policy is delivered nationally, and reported at the 10th, 50th and 90th percentiles. Equipment capital and performance are swept instead. A variance-based Sobol screen ranks the four demand drivers, and a regression-based global screen using standardised rank-regression coefficients ranks the cost-side ones. Each extension's formulation, the sampling distributions and the
 validation gates are in the Supplementary Information.
 
 The model, the scenario configurations and the analysis code are released in a public

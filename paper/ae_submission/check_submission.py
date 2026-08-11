@@ -416,10 +416,17 @@ def check_obsolete_architecture():
     operating-cost support. The contradiction reached the abstract, so it is worth a
     gate rather than a memory.
     """
+    # The first three were the main paper's. The next three were the SI's, which kept
+    # the abandoned architecture for a further round because the gate named phrases
+    # rather than the claim. A gate that lists only what one document happened to say
+    # asserts nothing about the document that says it differently.
     banned = [
         r"bound that share from the winter-peak",
         r"cap each scenario at or below",
         r"each scenario ceiling is set at or below",
+        r"(?:sets|carries) six levers",
+        r"ceiling is bounded by the (?:merit-order )?dispatch",
+        r"heating share in each scenario is the peak slice",
     ]
     roots = [HERE / "sections", HERE / "si_body", HERE, REPO / "paper" / "sections"]
     hits = []
