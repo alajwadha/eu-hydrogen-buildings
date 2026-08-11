@@ -6,7 +6,7 @@ broken at least once during this paper's development:
   * LaTeX errors, undefined references and citations, natbib warnings
   * floats too large for the page, and overfull boxes above the 20 pt house tolerance
   * the Applied Energy front-matter limits (abstract 250 words, highlights 85 characters)
-  * that V5.tex and frontmatter_body.tex still carry a token-identical abstract and
+  * that V6.tex and frontmatter_body.tex still carry a token-identical abstract and
     highlights, since the second is the pandoc/Word path and drifts silently
   * that every figure inclusion is either above the print-scale review threshold or
     guarded at source (delegates to scripts.check_figure_print_scale)
@@ -29,7 +29,7 @@ sys.path.insert(0, str(HERE))
 
 W = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-DOCS = [(HERE, "V5"), (HERE, "SI"), (REPO / "paper", "Paper_v20")]
+DOCS = [(HERE, "V6"), (HERE, "SI"), (REPO / "paper", "Paper_v20")]
 OVERFULL_TOLERANCE_PT = 20.0
 ABSTRACT_WORD_CAP = 250
 HIGHLIGHT_CHAR_CAP = 85
@@ -113,11 +113,11 @@ def plain(tex: str) -> str:
 
 def check_frontmatter() -> None:
     print("\nFront matter")
-    a_main, h_main = frontmatter((HERE / "V5.tex").read_text())
+    a_main, h_main = frontmatter((HERE / "V6.tex").read_text())
     a_twin, h_twin = frontmatter((HERE / "frontmatter_body.tex").read_text())
 
-    gate(a_main == a_twin, "abstract identical in V5.tex and frontmatter_body.tex")
-    gate(h_main == h_twin, "highlights identical in V5.tex and frontmatter_body.tex")
+    gate(a_main == a_twin, "abstract identical in V6.tex and frontmatter_body.tex")
+    gate(h_main == h_twin, "highlights identical in V6.tex and frontmatter_body.tex")
 
     # The two files also duplicate the nomenclature and the keyword list, and neither was
     # gated. Both drifted: the nomenclature carried two definitions of the same symbol and
@@ -138,12 +138,12 @@ def check_frontmatter() -> None:
             return []
         return sorted(x.strip().lower() for x in re.split(r"\\sep|;", m.group(1)) if x.strip())
 
-    m_src = (HERE / "V5.tex").read_text()
+    m_src = (HERE / "V6.tex").read_text()
     t_src = (HERE / "frontmatter_body.tex").read_text()
     gate(_entries(m_src) == _entries(t_src),
-         "nomenclature identical in V5.tex and frontmatter_body.tex")
+         "nomenclature identical in V6.tex and frontmatter_body.tex")
     kw_m, kw_t = _keywords(m_src), _keywords(t_src)
-    gate(kw_m == kw_t, "keywords identical in V5.tex and frontmatter_body.tex",
+    gate(kw_m == kw_t, "keywords identical in V6.tex and frontmatter_body.tex",
          f"{len(kw_m)} vs {len(kw_t)}")
 
     words = len(plain(" ".join(a_main)).split())
@@ -194,14 +194,15 @@ def check_numbers() -> None:
          tail[0].strip() if r.returncode and tail else "")
 
 
-BODY_WORD_CAP = 7900          # the author's own cap, still under the journal's ~8,000.
+BODY_WORD_CAP = 8000          # Applied Energy's own guide, and now the binding one.
                               # 7,400 -> 7,700 paid for the corpus habits the AE style
                               # review found missing: narrating Table 1 rather than
                               # pointing at it, justifying modelling choices in the
                               # sentence that makes them, and naming prior work.
                               # 7,700 -> 7,900 pays for the technology-share allocation
                               # paragraph and the two scenario levers Table 1 had
-                              # omitted. The eight-reviewer round called that the most
+                              # omitted; 7,900 -> 8,000 pays for the V6 text
+                              # specification. The eight-reviewer round called that the most
                               # important missing methodological content: the softmax
                               # temperature, the cost-response weight and the feasibility
                               # rules decide the technology mix and were undisclosed.
@@ -213,7 +214,7 @@ def check_graphical_abstract() -> None:
 
     That split is deliberate (see the note in scripts/graphical_abstract.py): a 2.5:1
     canvas at \\textwidth scales every font below the 6 pt print floor, so the wide
-    variant cannot be the one V5.tex includes. What was missing is any gate that the
+    variant cannot be the one V6.tex includes. What was missing is any gate that the
     wide file exists and meets the spec, so nothing caught the case where the tall file
     is the only one built and gets uploaded by mistake.
     """
@@ -392,9 +393,9 @@ def check_word_fields() -> None:
     totals, because the right assertion is that the field machinery ran at all; pinning
     exact counts would fail on any legitimate edit that adds or removes a caption.
     """
-    docx_path = HERE / "V5.docx"
+    docx_path = HERE / "V6.docx"
     if not docx_path.exists():
-        gate(False, "Word twin carries live numbering fields", "V5.docx is missing")
+        gate(False, "Word twin carries live numbering fields", "V6.docx is missing")
         return
     with zipfile.ZipFile(docx_path) as z:
         xml = z.read("word/document.xml").decode("utf-8", "replace")
@@ -402,7 +403,7 @@ def check_word_fields() -> None:
     n_ref = len(re.findall(r"\bREF\s+\w+", xml))
     ok = n_seq > 0 and n_ref > 0
     gate(ok, f"Word twin carries live numbering fields ({n_seq} SEQ, {n_ref} REF)",
-         "" if ok else "V5.aux was probably missing when build_docx_elsevier.py ran, "
+         "" if ok else "V6.aux was probably missing when build_docx_elsevier.py ran, "
                        "so rebuild it after the LaTeX pass, not before")
 
 
@@ -458,9 +459,9 @@ def check_word_styles() -> None:
     the text was all present. Only a reader looking at the page would have seen it. So
     check the reference rather than the symptom, and assert none is dangling.
     """
-    docx_path = HERE / "V5.docx"
+    docx_path = HERE / "V6.docx"
     if not docx_path.exists():
-        gate(False, "every style the Word twin names is defined", "V5.docx is missing")
+        gate(False, "every style the Word twin names is defined", "V6.docx is missing")
         return
     with zipfile.ZipFile(docx_path) as z:
         doc = z.read("word/document.xml").decode("utf-8", "replace")
@@ -490,11 +491,11 @@ def check_word_table_rules() -> None:
     import build_docx_elsevier as bd
     from docx import Document
     from lxml import etree
-    docx_path = HERE / "V5.docx"
+    docx_path = HERE / "V6.docx"
     body = HERE / "_elsevier_body.tex"
     if not docx_path.exists() or not body.exists():
         gate(False, "the Word twin's tables carry the source's rules",
-             "V5.docx or the assembled source is missing; run build_docx_elsevier.py")
+             "V6.docx or the assembled source is missing; run build_docx_elsevier.py")
         return
     specs = bd._tabular_specs()
     doc = Document(str(docx_path))
@@ -534,14 +535,14 @@ def check_word_page_structure() -> None:
     last instead of first. Nothing noticed, because every earlier Word check read
     content and none read layout.
 
-    The expected order is derived from V5.pdf rather than typed here, so the check
+    The expected order is derived from V6.pdf rather than typed here, so the check
     follows the PDF wherever it goes. Each of the PDF's first five pages contributes its
     opening line as a marker; the Word file has to carry those markers in that order,
     with at least one page break between each consecutive pair.
     """
-    pdf, docx_path = HERE / "V5.pdf", HERE / "V5.docx"
+    pdf, docx_path = HERE / "V6.pdf", HERE / "V6.docx"
     if not (pdf.exists() and docx_path.exists()):
-        gate(False, "Word twin paginates like the PDF", "V5.pdf or V5.docx is missing")
+        gate(False, "Word twin paginates like the PDF", "V6.pdf or V6.docx is missing")
         return
     norm = lambda t: " ".join(t.split()).casefold()
 
@@ -621,7 +622,7 @@ def check_typeset_hazards() -> None:
     """
     import re as _re
     tex = list((HERE / "sections").glob("*.tex")) + list((HERE / "si_body").glob("*.tex"))
-    tex += [HERE / "V5.tex", HERE / "SI.tex"]
+    tex += [HERE / "V6.tex", HERE / "SI.tex"]
     bad = []
     for f in tex:
         if not f.exists():
@@ -664,19 +665,19 @@ def check_upload_set() -> None:
     correction reached every .tex file, both compiled PDFs and both papers, and the commit
     said so; the upload folder kept the old value, because it was a manual copy and every gate read the
     LaTeX corpus rather than the renderings. A gate that only reads source cannot see a
-    stale rendering. This one compares bytes, and package_v5.py is what fixes it.
+    stale rendering. This one compares bytes, and package_v6.py is what fixes it.
     """
     sys.path.insert(0, str(HERE))
-    import package_v5
-    missing = [s for s, _ in package_v5.PAIRS if not s.exists()]
+    import package_v6
+    missing = [s for s, _ in package_v6.PAIRS if not s.exists()]
     if missing:
-        gate(False, "V5 upload set matches the built deliverables",
+        gate(False, "V6 upload set matches the built deliverables",
              f"{len(missing)} deliverable(s) not built")
         return
-    st = package_v5.stale()
-    gate(not st, "V5 upload set matches the built deliverables",
+    st = package_v6.stale()
+    gate(not st, "V6 upload set matches the built deliverables",
          ("stale: " + ", ".join(d.name for _, d in st) +
-          "  (run python3 package_v5.py)") if st else "")
+          "  (run python3 package_v6.py)") if st else "")
 
 
 def main() -> int:

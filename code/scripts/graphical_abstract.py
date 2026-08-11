@@ -83,7 +83,7 @@ def wrapped(sentence: str, cols: int) -> str:
 
 # Two canvases, because the figure has two jobs with incompatible geometry.
 #
-# TALL is what V5.tex includes at \textwidth: the print-scale note above governs it.
+# TALL is what V6.tex includes at \textwidth: the print-scale note above governs it.
 # WIDE is what gets uploaded to Editorial Manager. Elsevier displays a graphical abstract
 # at about 13 x 5 cm and asks for at least 1328 x 531 px, an aspect near 2.5:1. The tall
 # canvas is 1.29:1 and 8 px short on width, so it fails the spec and prints at double the
@@ -308,5 +308,5 @@ def main(wide: bool = False):
 
 
 if __name__ == "__main__":
-    main(wide=False)   # the file V5.tex includes
+    main(wide=False)   # the file V6.tex includes
     main(wide=True)    # the file Editorial Manager wants

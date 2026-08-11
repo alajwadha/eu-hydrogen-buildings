@@ -45,7 +45,7 @@ SCRIPTS = Path(__file__).resolve().parent
 # prints is not a defect worth failing a build over.
 DOCS = [REPO / "paper" / "ae_submission" / "sections",
         REPO / "paper" / "ae_submission" / "si_body"]
-ROOTS = [REPO / "paper" / "ae_submission" / "V5.tex",
+ROOTS = [REPO / "paper" / "ae_submission" / "V6.tex",
          REPO / "paper" / "ae_submission" / "SI.tex"]
 
 INC = re.compile(r"\\includegraphics\[[^\]]*\]\{([^}]+)\}")

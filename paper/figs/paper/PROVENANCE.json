@@ -41,7 +41,7 @@
  },
  "graphical_abstract": {
   "generator": "graphical_abstract.py, rebuild_local.py",
-  "hash": "d1b0181198834bce"
+  "hash": "6046fcc2214169b9"
  },
  "switzerland_2050": {
   "generator": "figs_missing_switzerland_v2.py",

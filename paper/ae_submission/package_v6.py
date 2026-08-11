@@ -1,7 +1,7 @@
 """Refresh the V5 upload folder from the built deliverables.
 
 This exists because the folder went stale and shipped a wrong number. The folder held copies of
-V5.pdf, V5.docx and SI.pdf, its own README said "the two are refreshed together", and
+V6.pdf, V6.docx and SI.pdf, its own README said "the two are refreshed together", and
 nothing refreshed them. A correction to the demand-weighted derived ceiling reached the
 LaTeX sources, both compiled PDFs and both papers, and the commit message said so; the
 four files an editor would actually receive kept the old value for a further revision.
@@ -11,7 +11,7 @@ Copying is a build step, not a check. check_submission.py asserts the copies mat
 script is what makes them match. Keeping the two apart means a gate never silently repairs
 the thing it is judging.
 
-Run:  python3 paper/ae_submission/package_v5.py
+Run:  python3 paper/ae_submission/package_v6.py
 """
 from __future__ import annotations
 
@@ -21,17 +21,17 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
-V5 = HERE / "V5"
+V5 = HERE / "V6"
 
 # source -> the name Editorial Manager receives
 PAIRS = [
-    (HERE / "V5.pdf", "Hydrogen_residential_heating_V5.pdf"),
-    (HERE / "V5.docx", "Hydrogen_residential_heating_V5.docx"),
-    (HERE / "SI.pdf", "Hydrogen_residential_heating_SI_V5.pdf"),
+    (HERE / "V6.pdf", "Hydrogen_residential_heating_V6.pdf"),
+    (HERE / "V6.docx", "Hydrogen_residential_heating_V6.docx"),
+    (HERE / "SI.pdf", "Hydrogen_residential_heating_SI_V6.pdf"),
     # The graphical abstract is a separate Editorial Manager upload and was missing from
     # this folder entirely, while the gate validated it in place under paper/figs/.
     (REPO / "paper" / "figs" / "paper" / "graphical_abstract_wide.png",
-     "Hydrogen_residential_heating_graphical_abstract_V5.png"),
+     "Hydrogen_residential_heating_graphical_abstract_V6.png"),
 ]
 
 

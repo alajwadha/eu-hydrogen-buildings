@@ -30,7 +30,7 @@ RESULTS = REPO / "code" / "results"
 
 SUBMISSION = sorted((REPO / "paper" / "ae_submission" / "sections").glob("*.tex")) + \
              sorted((REPO / "paper" / "ae_submission" / "si_body").glob("*.tex")) + \
-             [REPO / "paper" / "ae_submission" / "V5.tex",
+             [REPO / "paper" / "ae_submission" / "V6.tex",
               REPO / "paper" / "ae_submission" / "frontmatter_body.tex",
               REPO / "paper" / "ae_submission" / "REPRODUCE.md",
               REPO / "paper" / "ae_submission" / "cover_letter.md"]
@@ -682,7 +682,7 @@ def build_checks():
          [rf"(?:and )?in (?!{blue_prop_hp}\b)\d+ with Denmark",
           rf"in (?!{blue_prop_hp}\b)\d+ if the German figure"], ALL,
          {"working paper": rf"in {blue_prop_hp} with Denmark",
-          "AE submission": r"Denmark alone holds"}),
+          "AE submission": r"leaves Denmark as the sole hydrogen win"}),
         ("unit-commitment easing, hydrogen, bn", f"{uc_ease_h2:.1f}",
          [rf"(?:hydrogen by about|by about) (?:\\euro\{{\}}|EUR ?)?"
           rf"(?!{uc_ease_h2:.1f}(?![\d]))\d\.\d bn(?=(?:[^.]|\.\d){{0,60}}?"
@@ -741,10 +741,10 @@ def build_checks():
         # above passed, because each was anchored on a phrase this sentence does not use.
         # A slot is only covered if some pattern names it.
         ("arena section opening counts, symmetric basis", arena_lastmile,
-         [r"win count rises with\s+carbon-pricing ambition in every arena, to "
+         [r"win count rises with\s+carbon-pricing ambition in every arena, reaching "
           r"(?!14 of 29\b)\d+"],
          SUBMISSION,
-         {"AE submission": r"in every arena, to 14 of 29\s+countries at the building "
+         {"AE submission": r"in every arena, reaching 14 of 29\s+countries at the building "
                            r"winter peak, seven in district heating and seven"}),
         # The named winners, not only how many. A count and a country list can disagree
         # silently, and they did: the long paper carried the asymmetric pair (DE, FR, NL
@@ -1152,17 +1152,17 @@ def backcast_gaps_per_file() -> list[str]:
 
 
 def si_figure_pointers() -> list[str]:
-    """Cross-check the SI's "Figure n of the main text" pointers against V5.aux.
+    """Cross-check the SI's "Figure n of the main text" pointers against V6.aux.
 
     The SI cites main-text figures by NUMBER, because the two documents compile
     separately and LaTeX cannot resolve a label across them. Inserting one figure in the
     body therefore silently redirects every SI pointer after it. That happened when the
     NUTS3 map went in as Fig. 2: four pointers began naming the figure before the one
-    they describe, which sends a reader to a real figure about the wrong thing. V5.aux
+    they describe, which sends a reader to a real figure about the wrong thing. V6.aux
     is the authority. Each pointer is keyed to the label its surrounding sentence is
     about, so the check fails on a wrong number and not merely on a changed one.
     """
-    aux = REPO / "paper" / "ae_submission" / "V5.aux"
+    aux = REPO / "paper" / "ae_submission" / "V6.aux"
     si = [REPO / "paper" / "ae_submission" / "si_body" / n
           for n in ("methods.tex", "results.tex")]
     if not aux.exists():

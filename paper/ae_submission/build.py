@@ -6,7 +6,7 @@ LaTeX sections — WITHOUT a system LaTeX install.
   PDF  : pandoc + weasyprint engine,   LaTeX -> .pdf
   Refs : numbered, via ../ieee.csl
 
-The canonical *submission* source remains V5.tex (elsarticle) — compile that on
+The canonical *submission* source remains V6.tex (elsarticle) — compile that on
 Overleaf for the official Applied Energy PDF. This script produces readable,
 shareable Word/PDF twins of the same content.
 
@@ -109,10 +109,10 @@ def main():
     if os.path.exists(CSL):
         common += ["--csl=%s" % CSL]
 
-    # These go to a scratch subdirectory, not alongside V5.pdf/V5.docx. They are a
+    # These go to a scratch subdirectory, not alongside V6.pdf/V6.docx. They are a
     # different pipeline (pandoc plus WeasyPrint) and a different word count, and shipping
     # them in the submission folder gave anyone uploading from it a coin-flip between two
-    # PDFs of the same paper. V5.pdf and V5.docx are the deliverables.
+    # PDFs of the same paper. V6.pdf and V6.docx are the deliverables.
     scratch = os.path.join(OUTDIR, "_reading_copies")
     os.makedirs(scratch, exist_ok=True)
     docx = os.path.join(scratch, "Paper_AE.docx")

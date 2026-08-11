@@ -25,7 +25,7 @@ frontmatter_body.tex plus sections/{intro,methods,results,concl}.tex, with citat
 resolved through the same .bib and the same numeric CSL.
 
 Run:  python3 paper/ae_submission/build_docx_elsevier.py
-Out:  paper/ae_submission/V5.docx
+Out:  paper/ae_submission/V6.docx
 """
 from __future__ import annotations
 
@@ -38,8 +38,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 BIB = os.path.abspath(os.path.join(HERE, "..", "References_v1.bib"))
 CSL = os.path.abspath(os.path.join(HERE, "..", "ieee.csl"))
 FIGDIR = os.path.abspath(os.path.join(HERE, "..", "figs", "paper"))
-# Named for its source, so V5.tex, V5.pdf and V5.docx are one set.
-OUT = os.path.join(HERE, "V5.docx")
+# Named for its source, so V6.tex, V6.pdf and V6.docx are one set.
+OUT = os.path.join(HERE, "V6.docx")
 REF = os.path.join(HERE, "_ref_elsevier.docx")
 
 BODY_FONT = "Times New Roman"
@@ -47,9 +47,9 @@ BODY_PT = 12
 LINE_SPACING = 2.0
 
 
-# ── front matter, read from V5.tex so it cannot drift from the submission ──────────
+# ── front matter, read from V6.tex so it cannot drift from the submission ──────────
 def frontmatter() -> dict:
-    t = open(os.path.join(HERE, "V5.tex"), encoding="utf-8").read()
+    t = open(os.path.join(HERE, "V6.tex"), encoding="utf-8").read()
 
     def grab(env):
         m = re.search(r"\\begin\{%s\}(.*?)\\end\{%s\}" % (env, env), t, re.S)
@@ -68,7 +68,7 @@ def frontmatter() -> dict:
     highlights = [h.strip() for h in re.findall(r"\\item\s+(.+)", grab("highlights"))]
     keywords = [k.strip() for k in re.split(r"\\sep", grab("keyword")) if k.strip()]
     # Read the corresponding author off \corref rather than hard-coding a name and
-    # address here, so changing either in V5.tex reaches the Word file.
+    # address here, so changing either in V6.tex reaches the Word file.
     cor = re.search(r"\\author\[[^\]]*\]\{((?:[^{}]|\{[^{}]*\})*?)\\corref", t)
     ead = re.search(r"\\ead\{([^}]*)\}", t)
     return dict(
@@ -212,7 +212,7 @@ def add_pandoc_styles(d) -> int:
     return added
 
 
-# Everything V5.tex prints outside sections/. The Nomenclature sits before the body and
+# Everything V6.tex prints outside sections/. The Nomenclature sits before the body and
 # CRediT after it, and both were silently dropped: the builder read only sections/*.tex, and
 # a comment here wrongly claimed CRediT came in through frontmatter_body.tex, which does not
 # contain it. Elsevier requires CRediT, so this was a desk-check risk.
@@ -222,13 +222,13 @@ BACK_MATTER = ("CRediT authorship contribution statement", "Funding", "Acknowled
 
 
 def _sections_from_main(names) -> str:
-    """Pull named \\section* blocks out of V5.tex, in the order given.
+    """Pull named \\section* blocks out of V6.tex, in the order given.
 
-    Taken from V5.tex rather than retyped, so the Word file cannot drift from the PDF.
+    Taken from V6.tex rather than retyped, so the Word file cannot drift from the PDF.
     A description list is flattened to "term -- definition" lines, because pandoc renders
     elsarticle's \\item[...] glossary as an unlabelled list otherwise.
     """
-    src = open(os.path.join(HERE, "V5.tex"), encoding="utf-8").read()
+    src = open(os.path.join(HERE, "V6.tex"), encoding="utf-8").read()
     out, missing = [], []
     for name in names:
         m = re.search(r"\\section\*\{" + re.escape(name)
@@ -250,7 +250,7 @@ def _sections_from_main(names) -> str:
         if body.strip():
             out.append("\\section*{%s}\n%s" % (name, body))
     if missing:
-        print("  NOT FOUND in V5.tex:", ", ".join(missing))
+        print("  NOT FOUND in V6.tex:", ", ".join(missing))
     print("  sections carried into Word: %d of %d" % (len(out), len(names)))
     return "\n\n".join(out)
 
@@ -265,7 +265,7 @@ def build_source() -> str:
         body = ae_build._read(os.path.join(HERE, "sections", key + ".tex"))
         if body:
             parts.append(ae_build.preprocess(body))
-    # Back matter, lifted verbatim from V5.tex. Without this the Word file ended at the
+    # Back matter, lifted verbatim from V6.tex. Without this the Word file ended at the
     # bibliography with no competing-interest, funding, acknowledgements or data
     # availability statement, all of which Elsevier requires and the PDF carries. CRediT
     # arrived only because it sits inside frontmatter_body.tex.
@@ -273,7 +273,7 @@ def build_source() -> str:
     parts.append(r"\section*{References}")
     body = "\n\n".join(parts)
 
-    # Resolve \ref and \eqref against V5.aux. Without this pandoc leaks the raw
+    # Resolve \ref and \eqref against V6.aux. Without this pandoc leaks the raw
     # label, so the Word file read "Eq. [eq:recovery]" where the PDF reads "Eq. (2)".
     # The long paper's build has always done this; this one never did, which is the
     # defect the second author reported.
@@ -283,7 +283,7 @@ def build_source() -> str:
 
     # Number the captions. pandoc emits a caption with no number at all, which is why
     # the Word file had no "Figure 1:" anywhere while the PDF numbered all seven. The
-    # number comes from the same V5.aux the cross-references resolve against, so the
+    # number comes from the same V6.aux the cross-references resolve against, so the
     # two agree by construction.
     body = _number_captions(body)
 
@@ -305,8 +305,8 @@ AUX_LABEL = re.compile(r"\\newlabel\{([^}]+)\}\{\{([^}]*)\}")
 
 
 def _aux_labels() -> dict:
-    """label -> printed number, read from the compiled V5.aux. Never guessed."""
-    path = os.path.join(HERE, "V5.aux")
+    """label -> printed number, read from the compiled V6.aux. Never guessed."""
+    path = os.path.join(HERE, "V6.aux")
     if not os.path.exists(path):
         # Returning {} here is what made a rename dangerous. Every \ref went unresolved,
         # no SEQ or REF field was written, and the script still exited 0, so the Word file
@@ -341,7 +341,7 @@ def _resolve_refs(text: str):
 
 
 def _number_captions(text: str) -> str:
-    """Prefix each float caption with "Figure N: " or "Table N: " from V5.aux."""
+    """Prefix each float caption with "Figure N: " or "Table N: " from V6.aux."""
     labels = _aux_labels()
 
     def sub(m):
@@ -704,7 +704,7 @@ def _tabular_specs() -> list:
 def set_page_size_letter(d) -> int:
     """Match the compiled PDF's paper. The twin shipped A4 against a Letter PDF.
 
-    elsarticle is loaded with letterpaper, so V5.pdf is 612 x 792 pt, while pandoc's
+    elsarticle is loaded with letterpaper, so V6.pdf is 612 x 792 pt, while pandoc's
     reference document defaults to A4. One submission arrived in two formats on two
     different papers, which is the kind of thing a desk editor notices and no gate here
     measured. Margins are set to one inch, the Word manuscript convention.
@@ -727,7 +727,7 @@ def flatten_empty_base_scripts(d) -> int:
     space there. Word draws U+200B as nothing and the result reads correctly, which is
     why every check so far passed: the paragraph text says "tCO2" and the OMML is valid.
 
-    Anything that is not Word draws the zero-width space as a box. Rendering V5.docx
+    Anything that is not Word draws the zero-width space as a box. Rendering V6.docx
     through LibreOffice put a visible box between the C-O and the 2 in all eighteen of
     them, in "tCO2", "MtCO2", "gCO2", "H2" and "real EUR2024", which is what an editor
     sees in a preview pane.

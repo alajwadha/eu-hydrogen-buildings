@@ -6,10 +6,7 @@ pump and the gas boiler, where the headline count sits, then the peak hour on op
 cost across three arenas, then whether a plant that wins the peak can be financed.
 Section~\ref{sec:results:mix} sets the demand, technology-mix and emissions spine those
 tests run on, and the last two sections are cross-checks, a heat-pump and district-heat cost program and the
-standalone Switzerland case. The 200-sample Monte Carlo carries the demand,
-technology-mix and emissions spine as medians with percentile bands, whereas the cost,
-dispatch and capital-recovery tests are evaluated at central parameters, because what
-decides each is a small set of prices and charges we sweep directly and never sample.
+standalone Switzerland case. The 200-sample Monte Carlo carries the demand, technology-mix and emissions spine as medians with percentile bands. The cost, dispatch and capital-recovery tests are evaluated at central parameters, with their governing prices and charges swept as deterministic axes.
 Running medians settle inside a $\pm1$~per~cent tube by draw 139 and the deciles only by 188, so we read medians as converged and deciles as indicative.
 
 \subsection{Heat demand, technology mix and emissions}
@@ -88,10 +85,7 @@ peak heat demand, and the hydrogen boiler's network-and-storage charge at about
 
 With each carrier charged the last-mile network it needs and hydrogen the seasonal store
 its winter-weighted load requires, hydrogen holds 7 and heat pumps the remaining 22. Across all 29 the median country gap is $+$\euro{}15.4/MWh, whereas the 2025 demand-weighted mean is only $+$\euro{}1.4/MWh, since hydrogen still competes in the large north-western markets
-(Supplementary Table~S6 and Section~S2.2). The seasonal store sets how wide those margins are and decides the peaking arena. Space
-heating draws about three-quarters of its annual energy between October and March while
-electrolytic production is far flatter, so the mismatch is held between seasons at an
-assumed \euro{}1.5/kg with salt caverns and \euro{}3.0/kg without, rates consistent in order with those Papadias et al.\ and Talukdar et al.\ report for bulk storage \citep{Lord2014GeologicStorage,Papadias2021BulkStorage,Talukdar2024UHSEurope}. Spread over the annual load, that is about \euro{}12/MWh with caverns and \euro{}24 without; and charged to the peak slice alone it is the \euro{}50 and \euro{}100/MWh-heat the dispatch tests use.
+(Supplementary Table~S6 and Section~S2.2). The seasonal store sets how wide those margins are and decides the peaking arena. Space heating draws about three-quarters of its annual energy between October and March, whereas electrolytic production is far flatter. The mismatch is held between seasons at an assumed \euro{}1.5/kg with salt caverns and \euro{}3.0/kg without, rates consistent in order with those Papadias et al.\ and Talukdar et al.\ report for bulk storage \citep{Lord2014GeologicStorage,Papadias2021BulkStorage,Talukdar2024UHSEurope}. Spread over the annual load, that is about \euro{}12/MWh with caverns and \euro{}24 without; and charged to the peak slice alone it is the \euro{}50 and \euro{}100/MWh-heat the dispatch tests use.
 Cheap geology widens the five cavern margins without selecting the set, since at the
 non-cavern rate five still hold, though not the same five.
 
@@ -111,24 +105,12 @@ taxes, so it records a policy choice about which carrier bears the system's cost
 
 The second is provenance. A detailed assessment of the German heating case concludes the
 hydrogen realistically supplied to heat would be blue, at about \euro{}81/MWh on the blue
-route we price \citep{IEAGHG2022blue,Dickel2024ET29}, a \euro{}31/MWh wedge over the
-green figure it replaces and wider than the \euro{}30/MWh by which hydrogen leads in Denmark, its
-widest win. Read flat across Europe, the reading we quote, that removes hydrogen's advantage in all
-seven; read as a ratio on each market's own price Denmark alone holds.
-
-The third runs against our own accounting and we apply it only as a bound, since
-electrified heat is charged distribution reinforcement but not the firm generating
-capacity the same winter evenings call on, which Section~\ref{sec:results:missing} costs
-at \euro{}51 to 66/kW-yr annualised. Charging heating pro rata to its 9.2~per~cent share of power demand costs \euro{}1.0 to 1.3/MWh over the 1{,}273~TWh of heat-pump heat and
-leaves the count at 22; charging the whole fleet to that load is \euro{}11.2 to 14.5/MWh
-and takes it to 17 and then 15. Between them sits the basis cost causation asks for, since a peaking asset is built for
-a peak. Removing the heat-pump load drops the fleet from 278 to 57~GW, so 79.6~per~cent of it
-exists because heat is electrified, far above heating's 9.2~per~cent share of electricity demand, a gap driven by the collapse in COP at the cold-snap peak. Charging on that share is \euro{}8.9 to 11.5/MWh and takes the count to 19 and then 17, so the 22
-holds on the pro-rata bound alone.
+route we price \citep{IEAGHG2022blue,Dickel2024ET29}, a \euro{}31/MWh wedge over the green price and wider than the \euro{}30/MWh by which hydrogen leads in Denmark, its widest win. The blue-hydrogen sensitivity is applied in two ways. A uniform \euro{}81/MWh price across all markets removes hydrogen's advantage in all seven green-hydrogen base-load markets. Scaling each country's green-hydrogen price by the 81/50 ratio instead leaves Denmark as the sole hydrogen win. The third assumption is firm generating capacity. It is not included in the central heat-pump levelised cost, since electrified heat is charged distribution reinforcement but not the firm capacity the same winter evenings call on, which Section~\ref{sec:results:missing} costs at \euro{}51 to 66/kW-yr annualised. We therefore report three attribution bounds. Allocating firm-generation cost pro rata to heating's 9.2~per~cent share of annual electricity demand costs \euro{}1.0 to 1.3/MWh over the 1{,}273~TWh of heat-pump heat and leaves the heat-pump base-load count at 22 of 29. Allocating the entire peaking fleet to heat-pump load is \euro{}11.2 to 14.5/MWh and takes that count to 17 at the low bound and 15 at the high one. Between the two sits allocation by the change in peaking capacity when heat-pump demand is removed, since a peaking asset is built for a peak. Removing the heat-pump load drops the fleet from 278 to 57~GW, so 79.6~per~cent of it
+exists because heat is electrified, far above heating's 9.2~per~cent share of electricity demand, a gap driven by the collapse in COP at the cold-snap peak. Allocating on that share is \euro{}8.9 to 11.5/MWh and takes the count to 19 at the low bound and 17 at the high one, so the count of 22 holds on the pro-rata allocation alone.
 
 The last-mile treatment moves the comparison as much. Sweeping it from free reuse of the gas grid to a dedicated new build takes the count at or below parity
 for hydrogen from 12 to 3, whereas loading the heat pump at the top of the reinforcement
-band and charging hydrogen nothing leaves heat pumps cheapest in only 10. The ordering is therefore robust to how dear electricity distribution proves, whereas it is fragile to whether hydrogen is charged for distribution at all. The four
+band and charging hydrogen nothing leaves heat pumps cheapest in only 10. The base-load ordering is therefore robust to how dear electricity distribution proves, whereas it is fragile to whether hydrogen is charged for distribution at all. The four
 pathways carry network bills of \euro{}249 to 506~bn cumulated to 2050, and H2~Push's
 hydrogen network does not displace the electricity reinforcement it still requires
 (Supplementary Table~S12). The fiscal treatment of electricity is therefore a first-order buildings-policy question.
@@ -151,12 +133,9 @@ hydrogen network does not displace the electricity reinforcement it still requir
 \subsection{Power-sector merit order and the cavern markets}
 \label{sec:results:merit}
 
-Fig.~\ref{fig:merit} presents the 2050 power merit order in Denmark under H2~Push, and Fig.~\ref{fig:cavern} the markets in which hydrogen undercuts the gas peaker. The levelised-cost test prices hydrogen as a base-load supplier, whereas its advocates cast it as a peaker serving only the cold-snap tip, when the air-source COP collapses. We therefore reprice it on SRMC across the
-building, district-heat and power-sector peaks. The scarcity electricity price the building peak is judged against comes from the power sector's merit order, averaging \euro{}215 to 307/MWh, a level driven by the high carbon price on the gas unit that sets it.
+Fig.~\ref{fig:merit} presents the 2050 power merit order in Denmark under H2~Push, and Fig.~\ref{fig:cavern} the markets in which hydrogen undercuts the gas peaker. Hydrogen's advocates cast it as a peaker serving only the cold-snap tip, when the air-source COP collapses, so we reprice it on SRMC across the building, district-heat and power-sector peaks. The scarcity electricity price the building peak is judged against comes from the power sector's merit order, averaging \euro{}215 to 307/MWh, a level driven by the high carbon price on the gas unit that sets it.
 
-On the symmetric accounting used throughout, hydrogen's win count rises with
-carbon-pricing ambition in every arena, to 14 of 29
-countries at the building winter peak, seven in district heating and seven in the power sector under H2~Push; on the asymmetric basis the first two read 16 and 20.
+On the symmetric accounting used throughout, hydrogen's win count rises with carbon-pricing ambition in every arena, reaching 14 of 29 countries at the building winter peak, seven in district heating and seven in the power sector under H2~Push. Under the sensitivity excluding hydrogen last-mile distribution and using the residential rather than wholesale gas tariff, the first two counts read 16 and 20.
 Two levers drive that ordering. Across the first three scenarios the carbon price on the
 competing gas plant opens the niche, ETS2 at the building peak and the existing power and industry system (ETS1) elsewhere
 \citep{Fabra2009etspassthrough}. H2~Push then shares Net~Zero's carbon path and adds only
@@ -171,7 +150,7 @@ wholesale hub price the district-heat operator actually pays and hydrogen carrie
 top 12 to 18~per~cent of the load over 2{,}000~hours at about 518 equivalent full-load
 hours, so sweeping all 20 is about 3~per~cent of residential
 heat (Supplementary Section~S2.3).
-Weighting each country's building-peak slice by its heat demand gives dispatch-supported potentials of 0, 0.6, 7.5 and 9.0~per~cent of study-area residential heat under the four scenarios respectively. These are compared with, rather than imposed on, the exogenous adoption settings of 0, 5, 3 and 8~per~cent. The largest mismatch is under Stated~Policies, whose setting exceeds its dispatch-supported potential by 4.4 percentage points, compared with 0, 5.1, 7.9 and 9.3 on the asymmetric accounting.
+Weighting each country's building-peak slice by its heat demand gives dispatch-supported potentials of 0, 0.6, 7.5 and 9.0~per~cent of study-area residential heat under the four scenarios respectively. These are compared with, rather than imposed on, the exogenous adoption settings of 0, 5, 3 and 8~per~cent. The largest mismatch is under Stated~Policies, whose setting exceeds its dispatch-supported potential by 4.4 percentage points, compared with 0, 5.1, 7.9 and 9.3 under the sensitivity excluding hydrogen last-mile distribution and using the residential rather than wholesale gas tariff.
 
 The model prices the dispatchable tip and holds the rungs below it at literature short-run
 costs. The figures are H2~Push, and Net~Zero holds the same ordering
@@ -181,26 +160,21 @@ win counts the hydrogen turbine's cross-country median is about \euro{}286/MWh-e
 Fig.~\ref{fig:merit}). Both run the high carbon path, which lifts the gas peaker to that
 \euro{}256/MWh-e; on the central path it sits near \euro{}181 and the cavern advantage
 narrows to a few euros, so this count is conditional on the carbon path, whereas the
-base-load ordering is not (Supplementary Section~S1.3). By contrast, on the evolving-efficiency series the medians close to \euro{}238 against \euro{}239/MWh-e and the undercut count rises to 15, or 8 without the backbone discount, no longer confined to cavern geology. We count wins on the equal-efficiency series, which declines to hand hydrogen the better
-machine, and price recovery on the evolving one, so the seven and the 15 answer different
-questions. In the seven the turbine falls to \euro{}168 to 184/MWh-e, \euro{}72 to 89 below the gas
+base-load ordering is not (Supplementary Section~S1.3). By contrast, on the evolving-efficiency series the medians close to \euro{}238 against \euro{}239/MWh-e and the undercut count rises to 15, or 8 without the backbone discount, no longer confined to cavern geology. The headline winner count uses equal turbine efficiencies. The evolving-efficiency sensitivity gives the hydrogen turbine the more efficient machine and yields 15 winners, or eight without the backbone discount. Capital recovery is evaluated separately under the evolving-efficiency assumptions for the five of the seven headline cavern markets that build peaking capacity. The seven-market dispatch count and the recovery ratios therefore answer different questions. In the seven the turbine falls to \euro{}168 to 184/MWh-e, \euro{}72 to 89 below the gas
 peaker, and across the 22 non-cavern markets sits about \euro{}36 above.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[width=\textwidth]{P26_merit_order}
- \caption{\textbf{2050 power merit order in Denmark, under H2~Push.} A salt-cavern
- market. Short-run marginal cost, fuel and carbon only, capital excluded, on the
- equal-efficiency series.}
+ \caption{\textbf{2050 Denmark merit-order prices under H2~Push, shown against the study-area peaking fleet sized on the Stated~Policies demand path.} Costs are country-specific; capacities are study-area totals. Short-run marginal cost includes fuel and carbon but excludes capital cost. The headline comparison uses equal turbine efficiencies.}
  \label{fig:merit}
  \par\vspace{3pt}{\footnotesize\raggedright
- \textit{Note:} costs are Denmark's, the capacity column the study-area 2050 fleet.
- The evolving series puts the two machines at \euro{}142 and \euro{}241/MWh-e, a different
- comparison from the medians above. Hydro carries no capacity figure because we hold only
- a whole-fleet series. Omitted
- from the rungs are 3~GW of coal, 421~GW of batteries and 195~GW of combined cycle.
+ \textit{Note:} the evolving-efficiency sensitivity puts the two machines at \euro{}142
+ and \euro{}241/MWh-e, a different comparison from the medians above. Hydro carries no
+ capacity figure because only a whole-fleet series is available. Omitted from the bars
+ are 3~GW of coal, 421~GW of batteries and 195~GW of combined cycle.
  Batteries deplete over a multi-day event, so only the combined cycle counts as sustained firm capacity (Supplementary Section~S2.4).
- Dispatchable rungs are model output.\par}
+ Dispatchable capacities are model output.\par}
 \end{figure}
 
 The seven winning markets are the salt-cavern countries, in descending advantage Denmark,
@@ -219,7 +193,7 @@ all seven reverse, while on a green-to-blue ratio they hold at \euro{}30 to 57/M
 (Supplementary Section~S1.3).
 
 Both the base-load and the peaking verdicts turn on the cost of storing the molecule between seasons, the peaking one
-on endowment and the base-load one partly on tax incidence. However, the peaking win covers only about 9~per~cent of the plant's annualised capital charge, because it runs about 139 hours a year.
+on endowment and the base-load one partly on tax incidence. However, at the central scarcity margin the peaking win covers only about 9~per~cent of the plant's annualised capital charge, because it runs about 139 hours a year.
 
 \begin{figure}[htbp]
  \centering
@@ -249,11 +223,7 @@ plus the scarcity premium $\pi^{\mathrm{s}}$, so its rent is that premium and re
 
 \noindent with $\mathrm{FLH}$ the peaker's full-load hours, $K^{\mathrm{T}}$ the turbine
 capital cost, $\mathrm{CRF}$ the country's capital-recovery factor over 25 years and
-$f=2.5$~per~cent a year the fixed operating charge. Dividing by 1{,}000 converts one kW
-running $\mathrm{FLH}$ hours into MWh, so that a numerator in \euro{}/kW meets a
-denominator in \euro{}/kW-yr. On an energy-only market at the assumed $\pi^{\mathrm{s}}$ of \euro{}60/MWh, $R_{c}<1$ in
-every country and scenario, so no hydrogen peaker recovers its annualised capital charge even where its operating cost wins the cold snap. That shortfall, rather than its size, is the robust result. It holds at every scarcity premium tested and under every weather variant in
-Supplementary Section~S2.9. The five that build average 80 full-load hours weighted by
+$f=2.5$~per~cent a year the fixed operating charge. Because 1~kW operating for $\mathrm{FLH}$ hours produces $\mathrm{FLH}/1{,}000$~MWh per year, the numerator is annual scarcity rent in \euro{}/kW-yr, matching the annualised capital-and-fixed-operating charge in the denominator. Under the modelled fixed scarcity-margin screen, at the central margin $\pi^{\mathrm{s}}$ of \euro{}60/MWh, $R_{c}<1$ in every modelled country and scenario, so no tested market reaches full peaker-capital recovery even where hydrogen's operating cost wins the cold snap. The shortfall, rather than its size, is the robust result, holding across the tested scarcity-margin range and every weather variant in Supplementary Section~S2.9. The five that build average 80 full-load hours weighted by
 capacity, against 139 for the whole fleet, so their rent covers about 9~per~cent of an
 annualised charge of \euro{}51 to 66/kW-yr in the central case, 4.4 to 17.4~per~cent
 across the scarcity grid below.
@@ -262,25 +232,20 @@ Recovery is a single-year ratio of rent to that year's capital charge, and the s
 tracks utilisation, since Eq.~\eqref{eq:recovery} is linear in run hours at a common
 margin. Five of the seven cavern markets build a peaker in 2050, over run windows from 48~hours in
 Germany to 343 in Denmark and recoveries from Poland's 5.1~per~cent to Denmark's 40.0
-(Supplementary Section~S2.4). No modelled country or scenario reaches the 100~per~cent private finance requires over the \euro{}30 to 120/MWh scarcity premiums tested, the
+(Supplementary Section~S2.4). No tested market reaches the 100~per~cent private finance requires over the \euro{}30 to 120/MWh scarcity-margin range, the
 classic missing-money problem \citep{Joskow2008capacity,Newbery2016Missing}. Cumulated undiscounted over the 25 years to 2050 the H2~Push peaker loses about \euro{}357~bn against \euro{}142~bn
 for an equivalent gas peaker, widening to \euro{}563~bn under Current~Policies, so the
 shortfall is not an artefact of the hydrogen-heavy scenario (Supplementary
 Section~S2.4).
 
-The unit commitment cross-check dispatches the fleet at 160 full-load hours on 2.8~GW more capacity, compared with the 139~hours quoted throughout, because ramp and minimum-output limits push residual load onto the peakers. However, the extra hours earn more rent, so the cross-check cuts against the finding.
+An explicit unit-commitment cross-check produces 2.8~GW more peaking capacity and 160 full-load hours, compared with 139 hours in the reduced-form screen. The additional capacity arises from the unit-commitment sizing pass, which adds capacity in Romania. The higher utilisation increases recovered rent and therefore cuts against the missing-money finding.
 
 The role the missing money implies divides in two. The firm dispatchable peaking fleet is
 about 278~GW on the constructed weather year, roughly 31~per~cent of the 889~GW system
 peak, computed on the Stated~Policies demand path and priced under each scenario's fuel and
 carbon paths, so only the margins move. On each scenario's own demand path, same stack and weather year, it runs 242 to 278~GW at
 131 to 148 full-load hours. It is an increment on a firm combined-cycle
-fleet of about 195~GW, so total firm dispatchable capacity is nearer 473~GW or
-53~per~cent of peak, and the increment is what hydrogen competes for. Both rest on that weather year and are not an adequacy assessment; EU pooling takes the
-requirement to 239~GW (Supplementary Section~S2.4). However,
-that fleet supplies only 0.86~per~cent of the study area's 4{,}513~TWh of 2050 electricity
-demand, about 1.2~per~cent were non-heat demand held flat rather than grown 1.40-fold,
-running about 139 full-load hours a year, so hydrogen's electricity role is a capacity role, the clean firm backstop for electrified
+fleet of about 195~GW, so the combined-cycle-plus-peaker thermal fleet is about 473~GW or 53~per~cent of peak, and the increment is what hydrogen competes for. EU pooling takes the requirement to an idealised copperplate lower bound of 239~GW (Supplementary Section~S2.4). However, that fleet supplies only 0.86~per~cent of the study area's 4{,}513~TWh of 2050 electricity demand, or about 1.2~per~cent with non-heat demand held flat rather than grown 1.40-fold. It runs about 139 full-load hours a year, so hydrogen's electricity role is a capacity role, the clean firm backstop for electrified
 heat rather than a source of kilowatt-hours
 \citep{Sepulveda2018Firm,Bistline2020ValueOfTechnology}.
 
@@ -313,10 +278,7 @@ peaker alone, the plant this section prices, and its rent covers at most 40.0~pe
  heat-pump peak without crediting a national reservoir fleet. Crediting Switzerland's
  removes it from the H2~Push count of 14 (Section~\ref{sec:results:switzerland}).\\
  \textsuperscript{b} The power arena is the seven salt-cavern markets.\\
- \textit{Note:} every row charges both carriers alike. On the asymmetric accounting,
- which charges hydrogen no last-mile network at the building peak and
- prices the district-heat comparison at the residential retail rather than the wholesale
- gas tariff, the first two rows read 0, 4, 9, 16 and 0, 5, 11, 20.\\
+ \textit{Note:} every row charges both carriers alike. Under the sensitivity excluding hydrogen last-mile distribution and using the residential rather than wholesale gas tariff, the building-peak and district-heat rows read 0, 4, 9, 16 and 0, 5, 11, 20.\\
  \textit{Note:} per-arena detail is in Supplementary Table~S7.\\
  \textit{Source: Authors' contribution.}\par}
 \end{table}
@@ -405,7 +367,4 @@ hydrogen-favourable of the pair.
  \label{fig:swiss}
 \end{figure}
 
-A win in one arena does not carry to another, so the three tests together establish the scope of hydrogen's role rather than a single verdict. The base-load market count is the least robust of the three, ranging from 13 to 29 markets across the hydrogen price paths sampled. That sensitivity turns in part on a fiscal asymmetry that policy could remove. The capital-recovery result is the most robust, resting on the arithmetic of a plant that runs about 139 hours a year, which no efficiency convention disturbs, whereas
-the confinement to cavern markets holds on the equal-efficiency series alone. The
-capacity magnitude sits between the two, a property of the one constructed weather year,
-whereas the recovery shortfall survives every sensitivity we ran.
+A win in one arena does not carry to another, so the three tests together establish the scope of hydrogen's role rather than a single verdict. The base-load market count is the least robust of the three, ranging from 13 to 29 markets across the hydrogen-price paths tested. That sensitivity turns in part on a fiscal asymmetry that policy could remove. The power-peak win set is conditional on the equal-efficiency comparison and the binary cavern classification. Conditional on entry, the capital-recovery screen is more stable because it depends on utilisation, scarcity margin, WACC, fixed O\&M and turbine CAPEX. The peaking-capacity magnitude remains conditional on the single constructed weather year.

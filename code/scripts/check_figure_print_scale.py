@@ -28,11 +28,11 @@ FIGDIR = REPO / "paper" / "figs"
 # Text-block width of each document, in points (measured with \the\textwidth).
 # Each document's text-block width in points, and every file that can carry an
 # \includegraphics for it. The root .tex files matter: the graphical abstract is
-# included directly in V5.tex and nowhere else, so globbing only sections/ let it
+# included directly in V6.tex and nowhere else, so globbing only sections/ let it
 # escape this check entirely.
 DOCS = {
     "AE body":  (345.00, [REPO / "paper" / "ae_submission" / "sections"],
-                 [REPO / "paper" / "ae_submission" / "V5.tex"]),
+                 [REPO / "paper" / "ae_submission" / "V6.tex"]),
     # 469.755 pt: the SI moved from a4paper to letterpaper so the submission is not two
     # page sizes. Measured with \the\textwidth, not assumed.
     "AE SI":    (469.76, [REPO / "paper" / "ae_submission" / "si_body"],

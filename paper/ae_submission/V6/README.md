@@ -1,22 +1,22 @@
 # V5 submission set
 
-**Upload the files in this folder.** They are copies of `V5.pdf`, `V5.docx`, `SI.pdf`
+**Upload the files in this folder.** They are copies of `V6.pdf`, `V6.docx`, `SI.pdf`
 and the wide graphical abstract, which is what the build and the gates produce. The parent
 copies are authoritative.
 
 They are no longer refreshed by hand. This folder once held a full revision's stale copy of
 the manuscript: a corrected number reached every LaTeX source, both compiled PDFs and both
 papers, and these four files kept the old value, because every gate read the LaTeX corpus
-and these are renderings. `package_v5.py` refreshes them from the built deliverables and
+and these are renderings. `package_v6.py` refreshes them from the built deliverables and
 `check_submission.py` fails if they differ, so the two cannot drift again. Run the build,
-then `python3 package_v5.py`, then the gate.
+then `python3 package_v6.py`, then the gate.
 
 | File | What it is |
 |---|---|
-| `Hydrogen_residential_heating_V5.pdf` | Main manuscript, elsarticle `[review]`: single column, double spaced |
-| `Hydrogen_residential_heating_V5.docx` | The same manuscript, written natively as Word |
-| `Hydrogen_residential_heating_SI_V5.pdf` | Supplementary Information |
-| `Hydrogen_residential_heating_graphical_abstract_V5.png` | Graphical abstract, 3984 x 1593 px, a separate Editorial Manager upload |
+| `Hydrogen_residential_heating_V6.pdf` | Main manuscript, elsarticle `[review]`: single column, double spaced |
+| `Hydrogen_residential_heating_V6.docx` | The same manuscript, written natively as Word |
+| `Hydrogen_residential_heating_SI_V6.pdf` | Supplementary Information |
+| `Hydrogen_residential_heating_graphical_abstract_V6.png` | Graphical abstract, 3984 x 1593 px, a separate Editorial Manager upload |
 
 ## The Word file is native, and matches the PDF
 
@@ -38,7 +38,7 @@ Data availability).
     pdflatex V5 && bibtex V5 && pdflatex V5 && pdflatex V5
     pdflatex SI && bibtex SI && pdflatex SI && pdflatex SI
     python3 build_docx_elsevier.py
-    python3 package_v5.py
+    python3 package_v6.py
 
 Gates: `python3 check_submission.py` (all pass, body at 7,395 words against a 7,400 cap)
 and `python3 -m scripts.check_manuscript_numbers` from `code/`.
