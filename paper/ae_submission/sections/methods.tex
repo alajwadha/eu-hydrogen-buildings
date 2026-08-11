@@ -8,9 +8,9 @@ a system-wide optimisation, reconstructing useful heat demand region by region, 
 it across eight technologies, pricing each on a levelised basis and then putting hydrogen
 against its rivals in operating-cost dispatch tests, so hydrogen's share is set
 exogenously and then tested, never co-optimised (Supplementary Section~S1.1). Coverage spans the EU-27, the United Kingdom and
-Switzerland, and demand resolves to the third level of the Nomenclature of Territorial
-Units for Statistics (NUTS3), 1{,}369 regions, aggregating to the country before the
-economic tests apply. The model runs on the milestone years 2025, 2030, 2040 and 2050,
+Switzerland. Demand is resolved at the third level of the Nomenclature of Territorial
+Units for Statistics as a 1{,}369-region NUTS3 demand surface, then aggregated to country
+level before the economic tests. The model runs on the milestone years 2025, 2030, 2040 and 2050,
 with 2025 the common anchor for demand, technology-share and cost trajectories alike
 (Fig.~\ref{fig:arch}).
 
@@ -33,8 +33,8 @@ The demand layer is built before the technology layer. A bottom-up strand recons
 residential heat from open building footprints and a harmonised archetype typology,
 while an independent top-down baseline from the Hotmaps regional database
 \citep{Hotmaps2020}, with census-derived building-type shares
-\citep{Eurostat2021census,ONS2021TS044}, benchmarks it. The two agree to $-0.8$~per~cent across the aggregate and to within $\pm 25$~per~cent in 28
-of the 29 countries. Section~\ref{sec:results:mix} gives the stricter vintage-matched
+\citep{Eurostat2021census,ONS2021TS044}, benchmarks it. The bottom-up reconstruction is 0.8~per~cent below the benchmark in aggregate, and 28 of
+the 29 country estimates lie within $\pm 25$~per~cent. Section~\ref{sec:results:mix} gives the stricter vintage-matched
 comparison (Supplementary Section~S1.2). National demand is then projected forward from 2025 on a multi-driver ratio identity,
 with population growth and falling household size adding demand and envelope renovation
 removing it. Boundary and terrain typologies come from the Eurostat GISCO service
@@ -47,7 +47,7 @@ steep within-border gradient a country-resolution model averages away.
  \caption{\textbf{Useful residential heat demand by NUTS3 region, 2025.} From the bottom-up build.}
  \label{fig:nuts3map}
  \par\vspace{3pt}{\footnotesize\raggedright
- \textit{Note:} the colour scale is logarithmic over 0.3 to 12~TWh/yr, close to the 2nd
+ \textit{Note:} the colour scale is logarithmic over 0.3--12~TWh/yr, close to the 2nd
  and 98th percentiles of the mapped values, and the colourbar arrowheads mark the regions
  outside that range.\par}
 \end{figure}
@@ -96,7 +96,7 @@ quick-start options whose SRMCs per MWh of useful heat are
 \end{equation}
 
 \noindent where $\varphi_{y}$ is the carbon price, $\eta$ denotes conversion efficiency, $a^{\mathrm{H_2,dist}}_{c}$ is the hydrogen last-mile distribution adder used in the symmetric accounting, and $\sigma_{c}$ is the seasonal-storage adder, about \euro{}50/MWh-heat with domestic salt caverns and \euro{}100 without, the two ends spanning the cavern rate and the high-cost non-salt-storage proxy reported in the bulk-storage literature \citep{Lord2014GeologicStorage,Papadias2021BulkStorage} and applied at the higher rate to the markets with no salt resource \citep{Caglayan2020caverns}. Cold-snap heat-pump COP is derated from the seasonal figure, $\mathrm{COP}^{\mathrm{cold}}_{c}=\max(0.60\,\mathrm{SCOP}_{c},1.8)$
-following the low-temperature field measurements \citep{Gibb2023Coming}, which gives 1.80 to 2.84 across the 29
+following the low-temperature field measurements \citep{Gibb2023Coming}, which gives 1.80--2.84 across the 29
 markets at a median of 2.04 in 2050. The scarcity electricity price
 $\pi^{\mathrm{peak}}_{c}$ that prices the heat-pump branch is taken from the power
 sector's own merit order, set by the marginal winter unit. A country counts as a hydrogen win where its hydrogen-ready turbine undercuts the gas turbine on SRMC, both machines held at the same efficiency.
@@ -110,7 +110,7 @@ Four multi-lever scenarios bracket the plausible range of European buildings
 decarbonisation to 2050. \textbf{Current~Policies} freezes today's implemented measures;
 \textbf{Stated~Policies} delivers announced policy, broadly consistent with the European
 Commission long-term strategy \citep{EuropeanCommission2018LTS}; \textbf{Net~Zero}
-matches the IEA Net~Zero scenario \citep{IEA2023NZE}; and \textbf{H2 Push} is a
+matches the IEA Net~Zero scenario \citep{IEA2023NZE}; and \textbf{H2~Push} is a
 deliberately hydrogen-favourable world along the lines of REPowerEU
 \citep{REpowerEU2022}. Table~\ref{tab:levers_body} summarises the eight exogenous levers each scenario sets, which separate them most sharply on renovation and on fossil retreat. Current~Policies renovates at 0.70 times the announced-policy rate and still leaves 40~per~cent of 2050 heat on fossil fuels, whereas Net~Zero renovates at 2.73 times that rate and leaves 5~per~cent. H2~Push is the hydrogen-favourable world rather than the most ambitious one, pairing a high carbon price and the rapid hydrogen-price path with a 1.64 times renovation rate and a 15~per~cent fossil share. Hydrogen adoption is set at 0, 5, 3 and 8~per~cent, so its ordering does not follow climate ambition. That setting is exogenous, and the dispatch screen tests it rather than sets it. Set against the dispatch-supported potential in the final row, which runs 0, 0.6, 7.5 and 9.0~per~cent, only Stated~Policies places adoption above what the screen supports, a gap Section~\ref{sec:results:merit} reports as a finding.
 
@@ -140,21 +140,20 @@ deliberately hydrogen-favourable world along the lines of REPowerEU
  \\[3pt]{\footnotesize\raggedright
  \textsuperscript{a} Multipliers on the announced-policy (Stated~Policies) central case.\\
  \textsuperscript{b} An exogenous adoption pathway, not an output of the dispatch screen.\\
- \textsuperscript{c} Share settings are Monte~Carlo means rather than hard caps, and the
- realised medians sit a little above them for the reason given in the text. Supplementary
- Table~S4 repeats the levers.\\
+ \textsuperscript{c} Share settings are Monte~Carlo means rather than hard caps, so
+ realised medians sit slightly above them. Supplementary Table~S4 repeats the levers.\\
  \textsuperscript{d} The demand-weighted peak slice the symmetric screen supports, at the
- central scarcity premium and derate. Stated~Policies sets adoption above it, which
- Section~\ref{sec:results:merit} reports as a finding. The asymmetric accounting
- gives 0, 5.1, 7.9 and 9.3~per~cent (Supplementary Sections~S1.3 and~S1.6).\\
+ central scarcity margin and derate. Stated~Policies sets adoption above it
+ (Section~\ref{sec:results:merit}). The sensitivity excluding hydrogen last-mile
+ distribution and using the residential rather than wholesale gas tariff gives 0, 5.1,
+ 7.9 and 9.3~per~cent (Supplementary Sections~S1.3 and~S1.6).\\
  \textit{Source: Authors' contribution.}\par}
 \end{table}
 
 \paragraph{Weather series for the power layer}
-The weather series is the strongest assumption in the paper and every power-sector
-number descends from it, so we state it here rather than leaving it to the Supplementary
-Information. The power layer runs on synthetic hourly series, not reanalysis or metered
-data, and on one realisation of a single year. Hourly heat demand is a seasonal profile
+The weather construction is the dominant limitation on the power-sector results. The
+power layer uses one synthetic hourly year rather than reanalysis or metered data.
+Hourly heat demand is a seasonal profile
 times a fixed daily shape, amplified over one six-day cold snap in mid-January; onshore
 wind is an AR(1) process forced down to a lull over those same six days in all 29
 countries at once; solar and the non-heat baseline load are deterministic. That
@@ -163,9 +162,10 @@ rule, which takes the fourth-highest residual hour of the year and so admits thr
 of lost load, is an order statistic on that one year rather than a loss-of-load
 expectation over a distribution of weather years.
 
-The firm-fleet requirement carries a band of about $\pm$9~per~cent from the assumed
-event length alone, and a reader should treat it, the full-load hours and the cumulative
-shortfall as conditional on this constructed year, and not as an adequacy assessment.
+The firm-fleet requirement varies by about $\pm$9~per~cent with the assumed event length.
+The resulting capacity requirement, full-load hours and cumulative shortfall are
+conditional on the constructed weather year and should not be interpreted as adequacy
+estimates.
 
 Three extensions strengthen the power-sector coupling. An explicit unit commitment
 cross-checks the reduced-form peak-capacity cap, respecting minimum stable output, ramp
@@ -173,7 +173,7 @@ limits, minimum up and down times and an operating-reserve margin; a myopic
 rolling-horizon test relaxes perfect foresight in the least-cost linear program; and an
 endogenous Switzerland treatment couples incremental Swiss heat-pump load back to the EU
 winter electricity price and credits the Swiss reservoir fleet as firm winter capacity.
-Parametric uncertainty is characterised with 200 draws per scenario. Each draw samples country renovation-rate shocks; 2050 heat-pump, district-heat, hydrogen and fossil targets; uptake exponents; ground-source heat-pump share; ETS2 pass-through; WACC; heat-pump-feasibility multipliers; and correlated country-carrier fuel-price multipliers, Cross-country shock correlation is 0.5 on renovation and 0.75 on fuel prices, higher on prices because European gas and electricity markets clear against shared hubs whereas renovation policy is national. Results are reported at the 10th, 50th and 90th percentiles. Carbon-price, hydrogen-price and grid-decarbonisation paths remain fixed within each scenario and are evaluated as deterministic axes; equipment CAPEX and performance are varied in deterministic sweeps. A variance-based Sobol screen ranks the four demand drivers, and a regression-based global screen using standardised rank-regression coefficients ranks the cost-side ones. Each extension's formulation, the sampling distributions and the
+Parametric uncertainty is characterised with 200 draws per scenario. Each draw samples country renovation-rate shocks; 2050 heat-pump, district-heat, hydrogen and fossil targets; uptake exponents; ground-source heat-pump share; ETS2 pass-through; WACC; heat-pump-feasibility multipliers; and correlated country-carrier fuel-price multipliers. Cross-country shock correlation is 0.5 on renovation and 0.75 on fuel prices, higher on prices because European gas and electricity markets clear against shared hubs whereas renovation policy is national. Results are reported at the 10th, 50th and 90th percentiles. Carbon-price, hydrogen-price and grid-decarbonisation paths remain fixed within each scenario and are evaluated as deterministic axes; equipment CAPEX and performance are varied in deterministic sweeps. A variance-based Sobol screen ranks the four demand drivers, and a regression-based global screen using standardised rank-regression coefficients ranks the cost-side ones. Each extension's formulation, the sampling distributions and the
 validation gates are in the Supplementary Information.
 
 The model, the scenario configurations and the analysis code are released in a public

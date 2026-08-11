@@ -60,7 +60,9 @@ def capacity_payment_band() -> str:
     """
     import pandas as pd
     cp = pd.read_csv(RESULTS / "capacity_payment.csv")
-    return (f"\N{EURO SIGN}{cp.standing_payment_h2.min():.0f} to "
+    # En dash, matching the manuscript's convention for a bare numeric range, so the
+    # figure and the sentence that quotes it are punctuated the same way.
+    return (f"\N{EURO SIGN}{cp.standing_payment_h2.min():.0f}\N{EN DASH}"
             f"{cp.standing_payment_h2.max():.0f}/kW-yr")
 
 
@@ -83,7 +85,7 @@ def wrapped(sentence: str, cols: int) -> str:
 
 # Two canvases, because the figure has two jobs with incompatible geometry.
 #
-# TALL is what V6.tex includes at \textwidth: the print-scale note above governs it.
+# TALL is what V7.tex includes at \textwidth: the print-scale note above governs it.
 # WIDE is what gets uploaded to Editorial Manager. Elsevier displays a graphical abstract
 # at about 13 x 5 cm and asks for at least 1328 x 531 px, an aspect near 2.5:1. The tall
 # canvas is 1.29:1 and 8 px short on width, so it fails the spec and prints at double the
@@ -195,9 +197,14 @@ def main(wide: bool = False):
     fig.text(HX, HY - 0.055, "hydrogen is a support-contingent capacity option",
              fontsize=fs_head, fontweight="bold", color=INK, ha="left", va="center")
     fig.text(HX, SY,
-             "29 markets: EU-27, UK, Switzerland\n1,369 NUTS3 regions · 2025 to 2050"
+             "29 markets: EU-27, UK, Switzerland\n"
+             "1,369-region NUTS3 demand surface · 2025 to 2050"
              if wide else
-             "29 European markets (EU-27, UK, Switzerland) · 1,369 NUTS3 regions · 2025 to 2050",
+             # Two lines here for the same reason as the headline above: naming the
+             # demand surface rather than counting regions lengthens the string past
+             # the right edge, and the clip gate rejects it as one line.
+             "29 European markets (EU-27, UK, Switzerland)\n"
+             "1,369-region NUTS3 demand surface · 2025 to 2050",
              fontsize=fs_sub, color=SOFT, ha="left", va="top" if wide else "center")
 
     # ---- Panel A: base-load LCOH ----
@@ -288,13 +295,14 @@ def main(wide: bool = False):
              # reported basis when the manuscript moved to symmetric accounting. Naming
              # the accounting rather than a second pair of numbers keeps the panel and the
              # paper from disagreeing the next time either moves.
-             wrapped(f"Counts charge both carriers symmetrically, hydrogen paying its own "
-                     f"last-mile network. No market recovers the "
-                     f"peaker’s capital from market rent. On the high carbon path "
-                     f"hydrogen wins the power peak only in the {wins[2]} salt-cavern "
-                     f"markets, a different {_WORDS.get(wins[2], wins[2])}; the "
-                     f"{_n_build} that build would need {capacity_payment_band()} to be "
-                     f"financeable.", kick_cols),
+             wrapped(f"Counts charge both carriers symmetrically, including hydrogen’s "
+                     f"own last-mile network. No tested market reaches full "
+                     f"peaker-capital recovery across the assumed scarcity margins. On "
+                     f"the high-carbon path, hydrogen wins the power peak in "
+                     f"{_WORDS.get(wins[2], wins[2])} salt-cavern markets, a different "
+                     f"set from its base-load wins; the "
+                     f"{_WORDS.get(_n_build, _n_build)} that build require "
+                     f"{capacity_payment_band()} to be financeable.", kick_cols),
              fontsize=fs_note, color=SOFT, va="top")
 
     stem = "graphical_abstract_wide" if wide else "graphical_abstract"
@@ -308,5 +316,5 @@ def main(wide: bool = False):
 
 
 if __name__ == "__main__":
-    main(wide=False)   # the file V6.tex includes
+    main(wide=False)   # the file V7.tex includes
     main(wide=True)    # the file Editorial Manager wants

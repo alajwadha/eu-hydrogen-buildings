@@ -158,8 +158,8 @@ def model_flow():
     y -= 2.6
     yb = band(y, 11.0, "Heat demand")
     fitted(ax, MID, yb + 4.0,
-           "Residential useful heat reconstructed bottom-up for 1,369 NUTS3 regions\n"
-           "across 29 markets, validated against national statistics",
+           "A 1,369-region NUTS3 residential useful-heat demand surface reconstructed\n"
+           "bottom-up across 29 markets and validated against national statistics",
            (X0, yb + 0.6, X1, yb + 7.8), fs=FS_SUB)
     y = yb
 

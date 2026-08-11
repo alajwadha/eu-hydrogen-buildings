@@ -30,7 +30,7 @@ RESULTS = REPO / "code" / "results"
 
 SUBMISSION = sorted((REPO / "paper" / "ae_submission" / "sections").glob("*.tex")) + \
              sorted((REPO / "paper" / "ae_submission" / "si_body").glob("*.tex")) + \
-             [REPO / "paper" / "ae_submission" / "V6.tex",
+             [REPO / "paper" / "ae_submission" / "V7.tex",
               REPO / "paper" / "ae_submission" / "frontmatter_body.tex",
               REPO / "paper" / "ae_submission" / "REPRODUCE.md",
               REPO / "paper" / "ae_submission" / "cover_letter.md"]
@@ -559,14 +559,17 @@ def build_checks():
         # it was quoted as "31 to 69" against a script that prints "31 to 63". The 69 is
         # Romania's annualised capex, and Romania builds nothing. Both ends of both ranges
         # are pinned here, to the builders, because a non-builder has no capital to recover.
+        # The separator alternates by manuscript: the AE submission writes bare ranges
+        # with an en dash and the working paper writes them with "to". Both forms have to
+        # match, or converting one manuscript's typography silently drops the guard.
         ("standing payment H2, EUR/kW-yr",
          f"{b.standing_payment_h2.min():.0f} to {b.standing_payment_h2.max():.0f}",
-         [rf"(?<![\d.]){b.standing_payment_h2.min():.0f} to "
+         [rf"(?<![\d.]){b.standing_payment_h2.min():.0f}(?: to |--)"
           rf"(?!{b.standing_payment_h2.max():.0f}\b)\d+(?=.{{0,45}}?(?:kW-yr|hydrogen))"], ALL,
-         rf"{b.standing_payment_h2.min():.0f} to {b.standing_payment_h2.max():.0f}"),
+         rf"{b.standing_payment_h2.min():.0f}(?: to |--){b.standing_payment_h2.max():.0f}"),
         ("annualised H2 capex, EUR/kW-yr",
          f"{b.ann_capex_h2.min():.0f} to {b.ann_capex_h2.max():.0f}",
-         [rf"\b{b.ann_capex_h2.min():.0f} to (?!{b.ann_capex_h2.max():.0f}\b)\d+/kW-yr",
+         [rf"\b{b.ann_capex_h2.min():.0f}(?: to |--)(?!{b.ann_capex_h2.max():.0f}\b)\d+/kW-yr",
           r"13\.9 to 18\.6"], ALL),
         # The only committed recovery trajectory rises monotonically to 2050. Any claim
         # that it peaks or plateaus earlier contradicts it.
@@ -755,11 +758,19 @@ def build_checks():
         # Named for what the accounting is rather than for which draft used it. The
         # manuscripts no longer refer to earlier versions of themselves, so a pattern
         # keyed on "earlier draft" would silently match nothing and assert nothing.
-        ("demand-weighted arena ceiling, asymmetric basis", arena_bound_open,
+        # The AE submission no longer names this sensitivity "asymmetric accounting"; it
+        # spells out what the sensitivity does. Both phrasings stay in the stale list, so
+        # neither manuscript loses its guard while only one of them has been rewritten.
+        ("demand-weighted arena ceiling, distribution-excluded sensitivity",
+         arena_bound_open,
          [rf"asymmetric accounting gives (?!{_opn_lo} and {_opn_hi}\b)[\d., and]+\.",
+          # Four values, or this fires on the Switzerland sentence, which now shares the
+          # phrase "wholesale gas tariff gives" and reports a different quantity.
+          rf"wholesale gas tariff gives (?!{_opn_lo} and {_opn_hi}\b)"
+          rf"[\d.]+, [\d.]+, [\d.]+ and [\d.]+",
           rf"against (?!{_opn_lo} and {_opn_hi}\b)[\d., and]+on the asymmetric basis"],
          SUBMISSION + LONG,
-         {"AE submission": rf"asymmetric accounting gives {_opn_lo} and {_opn_hi}",
+         {"AE submission": rf"wholesale gas tariff gives {_opn_lo} and {_opn_hi}",
           "working paper": rf"against {_opn_lo} and {_opn_hi} on the asymmetric basis"}),
         # Both manuscripts phrase the H2 Push count identically, so one pattern covers it.
         ("MC median convergence, H2 Push draws", mc_med.split(", ")[3],
@@ -1152,17 +1163,17 @@ def backcast_gaps_per_file() -> list[str]:
 
 
 def si_figure_pointers() -> list[str]:
-    """Cross-check the SI's "Figure n of the main text" pointers against V6.aux.
+    """Cross-check the SI's "Figure n of the main text" pointers against V7.aux.
 
     The SI cites main-text figures by NUMBER, because the two documents compile
     separately and LaTeX cannot resolve a label across them. Inserting one figure in the
     body therefore silently redirects every SI pointer after it. That happened when the
     NUTS3 map went in as Fig. 2: four pointers began naming the figure before the one
-    they describe, which sends a reader to a real figure about the wrong thing. V6.aux
+    they describe, which sends a reader to a real figure about the wrong thing. V7.aux
     is the authority. Each pointer is keyed to the label its surrounding sentence is
     about, so the check fails on a wrong number and not merely on a changed one.
     """
-    aux = REPO / "paper" / "ae_submission" / "V6.aux"
+    aux = REPO / "paper" / "ae_submission" / "V7.aux"
     si = [REPO / "paper" / "ae_submission" / "si_body" / n
           for n in ("methods.tex", "results.tex")]
     if not aux.exists():

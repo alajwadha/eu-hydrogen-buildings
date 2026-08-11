@@ -1,9 +1,9 @@
-"""Copy the AE abstract, highlights and title from V6.tex into frontmatter_body.tex.
+"""Copy the AE abstract, highlights and title from V7.tex into frontmatter_body.tex.
 
 The Word twin is built by pandoc from `frontmatter_body.tex` plus the section files, not
-from `V6.tex`, so the abstract and highlights existed twice. They diverged: the Word
-file shipped for four days with an abstract V6.tex no longer carried. This script makes
-V6.tex the single source and the gate checks the two still agree afterwards.
+from `V7.tex`, so the abstract and highlights existed twice. They diverged: the Word
+file shipped for four days with an abstract V7.tex no longer carried. This script makes
+V7.tex the single source and the gate checks the two still agree afterwards.
 
 Run:  cd code && PYTHONPATH=. python -m scripts.sync_frontmatter
 """
@@ -14,7 +14,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
 AE = REPO / "paper" / "ae_submission"
-MAIN = AE / "V6.tex"
+MAIN = AE / "V7.tex"
 FM = AE / "frontmatter_body.tex"
 BUILD = AE / "build.py"
 
@@ -22,7 +22,7 @@ BUILD = AE / "build.py"
 def _block(tex: str, env: str) -> str:
     m = re.search(r"\\begin\{" + env + r"\}\n(.*?)\\end\{" + env + r"\}", tex, re.S)
     if not m:
-        raise SystemExit(f"V6.tex has no {env} environment")
+        raise SystemExit(f"V7.tex has no {env} environment")
     return m.group(1).strip()
 
 

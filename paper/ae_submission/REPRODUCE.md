@@ -1,6 +1,6 @@
 # Reproducing the Applied Energy submission
 
-This guide maps each headline result in the manuscript (`V6.tex`) and the
+This guide maps each headline result in the manuscript (`V7.tex`) and the
 Supplementary Information (`SI.tex`) to the script that produces it, so a reader can
 regenerate the numbers from the public repository. It supersedes the top-level
 `README.md` where they differ: the submitted paper uses the four policy scenarios
@@ -118,7 +118,7 @@ which `requirements.txt` installs; the reduced-form results above do not require
 
 ```bash
 cd paper/ae_submission
-pdflatex V6.tex && bibtex V5 && pdflatex V6.tex && pdflatex V6.tex   # -> V6.pdf
+pdflatex V7.tex && bibtex V5 && pdflatex V7.tex && pdflatex V7.tex   # -> V7.pdf
 pdflatex SI.tex   && bibtex SI   && pdflatex SI.tex   && pdflatex SI.tex     # -> SI.pdf
 ```
 

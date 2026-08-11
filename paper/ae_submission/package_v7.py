@@ -1,7 +1,7 @@
-"""Refresh the V6 upload folder from the built deliverables.
+"""Refresh the V7 upload folder from the built deliverables.
 
 This exists because the folder went stale and shipped a wrong number. The folder held copies of
-V6.pdf, V6.docx and SI.pdf, its own README said "the two are refreshed together", and
+V7.pdf, V7.docx and SI.pdf, its own README said "the two are refreshed together", and
 nothing refreshed them. A correction to the demand-weighted derived ceiling reached the
 LaTeX sources, both compiled PDFs and both papers, and the commit message said so; the
 four files an editor would actually receive kept the old value for a further revision.
@@ -16,7 +16,7 @@ folder beside the current ones, so the set an editor would receive held two vers
 the same manuscript and nothing said which to take. What ships is the folder, not the
 subset a script happens to touch.
 
-Run:  python3 paper/ae_submission/package_v6.py
+Run:  python3 paper/ae_submission/package_v7.py
 """
 from __future__ import annotations
 
@@ -26,20 +26,20 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
-UPLOAD = HERE / "V6"
+UPLOAD = HERE / "V7"
 
 # Everything else in the folder is packaged output and gets pruned.
 KEEP = {"README.md"}
 
 # source -> the name Editorial Manager receives
 PAIRS = [
-    (HERE / "V6.pdf", "Hydrogen_residential_heating_V6.pdf"),
-    (HERE / "V6.docx", "Hydrogen_residential_heating_V6.docx"),
-    (HERE / "SI.pdf", "Hydrogen_residential_heating_SI_V6.pdf"),
+    (HERE / "V7.pdf", "Hydrogen_residential_heating_V7.pdf"),
+    (HERE / "V7.docx", "Hydrogen_residential_heating_V7.docx"),
+    (HERE / "SI.pdf", "Hydrogen_residential_heating_SI_V7.pdf"),
     # The graphical abstract is a separate Editorial Manager upload and was missing from
     # this folder entirely, while the gate validated it in place under paper/figs/.
     (REPO / "paper" / "figs" / "paper" / "graphical_abstract_wide.png",
-     "Hydrogen_residential_heating_graphical_abstract_V6.png"),
+     "Hydrogen_residential_heating_graphical_abstract_V7.png"),
 ]
 
 

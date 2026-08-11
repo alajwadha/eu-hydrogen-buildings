@@ -22,7 +22,7 @@ import zipfile
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
-DOCX = REPO / "paper" / "ae_submission" / "V6.docx"
+DOCX = REPO / "paper" / "ae_submission" / "V7.docx"
 MIN_DPI = 300.0          # Elsevier: 300 for combination artwork, 500+ for line art
 EMU_PER_INCH = 914400.0
 

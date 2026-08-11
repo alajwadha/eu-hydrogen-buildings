@@ -1,8 +1,8 @@
 %% ============================================================
 %% FRONT MATTER -- Applied Energy submission
 %% pandoc-friendly LaTeX fragment.
-%% GENERATED: the abstract and highlights below are copied verbatim from V6.tex
-%% by scripts/sync_frontmatter.py. Edit V6.tex, then re-run that script; the gate
+%% GENERATED: the abstract and highlights below are copied verbatim from V7.tex
+%% by scripts/sync_frontmatter.py. Edit V7.tex, then re-run that script; the gate
 %% checks the two agree, because an earlier divergence shipped a stale abstract in
 %% the Word twin.
 %% ============================================================
@@ -10,10 +10,9 @@
 %% ABSTRACT
 \section*{Abstract}
 
-Hydrogen for European residential heating is usually assessed at national resolution or imposed as an adoption share, and neither tests whether peak-serving assets recover capital market by market. We reconstruct heat demand on a 1{,}369-region NUTS3 surface across 29 markets, aggregating to the country before each test, over 200 draws per scenario. Four scenarios impose exogenous hydrogen-adoption settings, compared with separately derived winter-peak dispatch support. Hydrogen is tested in three roles: annual levelised cost, cold-snap dispatch across buildings, district heat and power, and peaker capital recovery.
+Hydrogen for European residential heating is usually assessed at national resolution or imposed as an adoption share, neither of which tests market-level capital recovery for peak-serving assets. We reconstruct a 1{,}369-region NUTS3 heat-demand surface across 29 markets, aggregate it to country level, and represent scenario uncertainty with 200 draws per scenario. Four scenarios impose exogenous hydrogen-adoption settings, compared with independently derived winter-peak dispatch support. Three roles are tested: annual levelised cost; cold-snap dispatch across buildings, district heat and power; and peaker capital recovery.
 
-At central 2050 parameters the best heat pump delivers at \euro{}118.5/MWh against \euro{}122.8 for a hydrogen boiler and \euro{}132.7 for gas, beating hydrogen in 22 of 29 markets with firm-generation cost allocated pro rata to heating's demand share, and in 19 to 17 when allocated by the change in peaking capacity. The count spans 13 to 29 across the hydrogen-price paths tested. On the high carbon path and equal-efficiency series, hydrogen undercuts gas at the power peak in a different seven, all salt-cavern. No tested market reaches full peaker-capital recovery over the \euro{}30 to 120/MWh scarcity-margin range; capacity-weighted recovery among the five that build is about 9\%. With the hydrogen-ready turbine at \euro{}600/kW, technology-neutral support favours gas; selecting hydrogen needs an emissions-conditioned premium of about \euro{}172/tCO$_2$ of displaced gas.
-Operational residential-heating emissions fall from 644~MtCO$_2$ in 2025 to between 10 and 352 by 2050. Power-sector quantities rest on one constructed weather year and are screening results, not adequacy estimates.
+At central 2050 parameters, the best heat pump costs \euro{}118.5/MWh, versus \euro{}122.8/MWh for hydrogen and \euro{}132.7/MWh for gas. With firm-generation cost allocated pro rata to heating's annual electricity-demand share, heat pumps beat hydrogen in 22 of 29 markets. Allocation by the change in peaking capacity gives 19 heat-pump wins at the low bound and 17 at the high bound. Heat-pump wins range from 13 to 29 across the hydrogen-price paths tested. On the high-carbon, equal-efficiency series, hydrogen undercuts gas at the power peak in a different set of seven markets, all with salt caverns. No tested market reaches full peaker-capital recovery over the \euro{}30--120/MWh scarcity-margin range; capacity-weighted recovery among the five that build is about 9\%. At \euro{}600/kW for a hydrogen-ready turbine, technology-neutral support favours gas; selecting hydrogen requires an emissions-conditioned premium of about \euro{}172/tCO$_2$ of displaced gas. Operational residential-heating emissions fall from 644~MtCO$_2$ in 2025 to 10--352~MtCO$_2$ in 2050. Power-sector quantities rest on one constructed weather year and are screening results, not adequacy estimates.
 
 %% HIGHLIGHTS
 \section*{Highlights}
@@ -53,8 +52,7 @@ the asset life (25 yr for the peaking turbine)
  \item[$H_{c}^{2015}$] Hotmaps 2015 benchmark demand for country $c$ (TWh)
  \item[$K^{\mathrm{T}}$] Hydrogen-ready peaking-turbine overnight capital cost ($=$
 \euro{}600/kW; conventional open-cycle gas $=$ \euro{}450/kW). Eq.~\eqref{eq:recovery}
-turns it into an annual charge by applying $\mathrm{CRF}_{c}+f$; this is the
-\euro{}600/kW of the abstract and of Section~\ref{sec:results:missing}
+annualises this cost by applying $\mathrm{CRF}_{c}+f$
  \item[$K^{\mathrm{pk}}_{c}$] Firm peaking-fleet capacity in country $c$ (GW)
  \item[$N$] Monte Carlo / Saltelli sample size
  \item[$p^{\mathrm{gas}}_{c}$] Retail gas price in country $c$ (\euro{}/MWh)
@@ -77,15 +75,15 @@ Eq.~\eqref{eq:recovery})
 \begin{description}
  \item[$\varphi_{y}$] Carbon price (ETS2) in year $y$ (\euro{}/tCO$_2$)
  \item[$\eta_{\mathrm{g}},\ \eta_{\mathrm{h}}$] Gas-boiler (0.92) and hydrogen-boiler (0.90) efficiencies
- \item[$\eta_{\mathrm{OCGT}},\ \eta_{\mathrm{T}}$] Open-cycle gas turbine and hydrogen turbine electrical efficiencies. The winter-peak merit order that sets the win counts holds both at $0.40$, so that comparison is even-handed. The capital-recovery layer instead lets them evolve, the gas turbine to $0.42$ by 2050 and the hydrogen turbine to $0.44$, or $0.48$ under H2~Push, which assumes an advanced simple-cycle machine; there the hydrogen unit is deliberately given the better turbine
+ \item[$\eta_{\mathrm{OCGT}},\ \eta_{\mathrm{T}}$] Open-cycle gas turbine and hydrogen turbine electrical efficiencies. The headline winter-peak merit order holds both turbines at an efficiency of $0.40$. The capital-recovery layer uses evolving efficiencies: $0.42$ for gas and $0.44$ for hydrogen by 2050, rising to $0.48$ for hydrogen under H2~Push, which assumes an advanced simple-cycle machine
  \item[$\mu_{c,s},\ \sigma_{c,s}$] Mean and standard deviation of the sampled renovation rate $r_{c,s}$
  \item[$\pi^{\mathrm{peak}}_{c}$] Derived scarcity (peak) electricity price in country $c$ (\euro{}/MWh-e)
- \item[$\pi^{\mathrm{s}}$] Scarcity premium (low/central/high $\{30,60,120\}$ \euro{}/MWh; the sensitivity grid adds 90)
+ \item[$\pi^{\mathrm{s}}$] Scarcity margin (low/central/high $\{30,60,120\}$ \euro{}/MWh; the sensitivity grid adds 90)
  \item[$\rho$] Cross-country shock correlation: renovation rate ($=0.5$),
  fuel prices ($=0.75$); all other sampled parameters are EU-wide scalars, i.e.
  $\rho=1$ implicitly
  \item[$a^{\mathrm{H_2,dist}}_{c}$] Hydrogen last-mile distribution adder in country $c$, charged in the symmetric accounting (median \euro{}13.4/MWh)
- \item[$\sigma_{c}$] Seasonal hydrogen-storage adder, heat side ($\approx$\euro{}50 to 100/MWh-heat)
+ \item[$\sigma_{c}$] Seasonal hydrogen-storage adder, heat side ($\approx$\euro{}50--100/MWh-heat)
  \item[$\sigma^{e}_{c}$] Seasonal hydrogen-storage adder, electricity side (\euro{}/MWh-e)
  \item[$\Delta_{c}^{\mathrm{VM}}$] Vintage-matched deviation of the bottom-up backcast from the Hotmaps 2015 benchmark in country $c$
  \item[$\Phi_{\mathrm{cap}},\ \Phi_{\mathrm{en}}$] Firm dispatchable peaking fleet's share of system peak capacity and of generated energy
@@ -93,7 +91,7 @@ Eq.~\eqref{eq:recovery})
 
 \textit{Subscripts and superscripts}
 \begin{description}
- \item[$c$] Country (region) index
+ \item[$c$] Country index
  \item[$s$] Scenario index
  \item[$t,\ t_{0},\ y$] Year; base year; carbon-price year
  \item[$\mathrm{gas},\ \mathrm{H_2},\ \mathrm{HP}$] Gas-boiler, hydrogen-boiler and heat-pump branches
