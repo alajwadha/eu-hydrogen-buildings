@@ -41,7 +41,7 @@ Thank you for considering our manuscript. We look forward to your response.
 Sincerely,
 
 Abdurahman Alsulaiman (corresponding author)
-Oxford Institute for Energy Studies, Oxford, UK
+Laboratory of Environmental and Urban Economics – LEURE, EPFL, Switzerland
 a.alsulaiman@outlook.com [ORCID]
 
 Ali Alajwad [ORCID]

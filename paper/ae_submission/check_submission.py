@@ -483,6 +483,31 @@ def check_word_styles() -> None:
          "" if not dangling else "not in styles.xml: " + ", ".join(dangling))
 
 
+def check_word_tex_ligatures() -> None:
+    """No TeX ligature may survive into the Word twin as its source characters.
+
+    The body reaches Word through pandoc, which resolves "--" and "---" to the dashes
+    they mean. The front matter does not: build_docx_elsevier.py parses the title,
+    authors, affiliations, abstract and highlights out of the .tex itself. So the moment
+    the manuscript adopted en dashes for bare numeric ranges, the abstract shipped
+    "EUR30--120/MWh" with two hyphens where the PDF printed an en dash, and the affiliation
+    did the same. Both files were otherwise correct and every other gate passed.
+
+    Check the rendered characters, not the converter, because the next field parsed out of
+    the .tex by hand will have the same hole.
+    """
+    docx_path = HERE / "V7.docx"
+    if not docx_path.exists():
+        gate(False, "no TeX dash ligature reaches the Word twin", "V7.docx is missing")
+        return
+    with zipfile.ZipFile(docx_path) as z:
+        doc = z.read("word/document.xml").decode("utf-8", "replace")
+    text = re.sub(r"<[^>]+>", "", doc)
+    hits = [h.strip() for h in re.findall(r".{0,30}-{2,3}.{0,30}", text)]
+    gate(not hits, "no TeX dash ligature reaches the Word twin",
+         f"{len(hits)}: " + " | ".join(hits[:2]) if hits else "")
+
+
 def check_word_table_rules() -> None:
     """The Word twin's tables must be ruled the way the PDF's are.
 
@@ -713,6 +738,7 @@ def main() -> int:
     check_word_fields()
     gate(*check_obsolete_architecture())
     check_word_styles()
+    check_word_tex_ligatures()
     check_word_table_rules()
     check_word_page_structure()
     check_numbers()

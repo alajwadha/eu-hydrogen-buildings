@@ -3,7 +3,7 @@
 This repository contains the model code, country profiles, dashboard, and manuscript source for:
 
 > **Hydrogen in residential heating and the power system: a merit-order and capital-recovery assessment for 29 European markets**
-> Abdurahman Alsulaiman (Oxford Institute for Energy Studies) and Ali Alajwad (RENEW Lab, Johns Hopkins University; Cornell University)
+> Abdurahman Alsulaiman (Laboratory of Environmental and Urban Economics – LEURE, EPFL) and Ali Alajwad (RENEW Lab, Johns Hopkins University; Cornell University)
 > Manuscript prepared for *Applied Energy*
 
 A spatially-resolved techno-economic model of residential heating decarbonisation across **EU27, Switzerland, and the United Kingdom** at NUTS3 regional resolution, 2025–2050. The model evaluates the conditions under which decarbonised hydrogen deployment in buildings is economically and environmentally justified relative to heat pump electrification.

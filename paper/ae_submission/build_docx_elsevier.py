@@ -105,6 +105,11 @@ def clean(s: str) -> str:
     s = re.sub(r"\\text\w*\{([^}]*)\}", r"\1", s)
     s = re.sub(r"\$([^$]*)\$", r"\1", s)
     s = s.replace("_2", "₂").replace("{,}", ",")
+    # TeX ligatures. The body goes through pandoc, which resolves these, but the front
+    # matter is parsed here and did not: the abstract's "\euro{}30--120/MWh" reached the
+    # Word file as "€30--120/MWh" with two hyphens, and so did the affiliation's dash.
+    # Longest first, or "---" is consumed as "--" plus a stray hyphen.
+    s = s.replace("---", "—").replace("--", "–")
     s = re.sub(r"\\[a-zA-Z]+\*?", "", s)
     s = s.replace("{", "").replace("}", "")
     return re.sub(r"\s+", " ", s).strip()

@@ -64,7 +64,7 @@ MIT. See `LICENSE`.
 
 ## Authors
 
-Abdurahman Alsulaiman, Oxford Institute for Energy Studies
+Abdurahman Alsulaiman, Laboratory of Environmental and Urban Economics – LEURE, EPFL, Switzerland
 Ali Alajwad, RENEW Lab, Johns Hopkins University, and Cornell University
 
 Access to anything not in this repository is available from the authors on request.

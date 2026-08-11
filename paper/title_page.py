@@ -48,7 +48,8 @@ def build_title_page(doc):
     add("A Merit-Order Assessment for the EU, the United Kingdom and", 16, bold=True, after=2)
     add("Switzerland under Net-Zero by 2050", 16, bold=True, after=30)
     add("Abdurahman Alsulaiman¹˒*      Ali Alajwad²˒³", 13, after=16)
-    add("¹ Oxford Institute for Energy Studies, Oxford, UK", 11, italic=True, after=2)
+    add("¹ Laboratory of Environmental and Urban Economics – LEURE, EPFL, Switzerland",
+        11, italic=True, after=2)
     add("² RENEW Lab, Johns Hopkins University, Baltimore, MD, USA", 11, italic=True, after=2)
     add("³ Cornell University, Ithaca, NY, USA", 11, italic=True, after=6)
     add("* Corresponding author.", 11, italic=True, after=18)
